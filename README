@@ -185,4 +185,5 @@ List of most often used Subversion commands
   svn ci --editor-cmd EDITOR
 
 
-Revision: $Revision$             Date: $Date$
+$Revision$
+$Date$
