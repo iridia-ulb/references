@@ -106,8 +106,9 @@ Using the IRIDIA BibTeX Repository
 
    svn co https://iridia-dev.ulb.ac.be/projects/optbib/svn/ bib
 
-2. Then copy or link (see ln --help) all *.bib files to the directory
-   of your paper.
+2. Then copy all *.bib files to the directory of your paper. If you
+   instead create symbolic links (see ln --help), you do not need to
+   copy files back and forth between directories to keep them in sync.
 
 3. If you copy the files, you will have to copy the files again to the
    directory of your paper after "Updating your working copy".
