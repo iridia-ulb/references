@@ -89,6 +89,16 @@ uses UTF8 encoding. Otherwise, DO NOT USE non-ASCII characters.
 Using the IRIDIA BibTeX Repository
 ----------------------------------
 
+To use the *.bib files, you need to keep a copy (or a symbolic link)
+in the directory of your paper and use the following line in your main
+.tex file:
+
+ \bibliography{abbrev,journals,authors,biblio,crossref}
+
+There are three methods to keep your copy of the files in sync with
+the IRIDIA BibTeX Repository:
+
+
  * Method A (if you do not use subversion for your paper)
 
 1. Checkout a copy of the files to the directory of the paper.
