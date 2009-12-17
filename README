@@ -169,6 +169,9 @@ If you find a mistake on the generated file or want to add new
 entries, you should modify your working copy, and then run aux2bib
 again to regenerate the file.
 
+Some bibtex styles generate separated entries for cross references. To
+avoid this use `bibtex -min-crossrefs=9000'.
+
 
 List of most often used Subversion commands
 -------------------------------------------
