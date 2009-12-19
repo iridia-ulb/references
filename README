@@ -39,7 +39,8 @@ these rules:
      followed by the year. Example: ANTS2001
 
    * Technical Reports: use the identificative key that technical
-     reports often have, for example IRIDIA-2009-015.
+     reports often have, for example IRIDIA-2009-015. Be careful to
+     not use '/', '\' or ',' in keys.
    
    * Theses (PhD, etc): after the year, add the type of thesis.
 
