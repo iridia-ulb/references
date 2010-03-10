@@ -19,16 +19,23 @@ Format of keys
 When any bib entry is added, the key should be constructed following
 these rules:
 
-1. Use the first three letters of the first surname of each author, up
-   to the third author.
+1. Only use alphanumeric characters plus ':', '-'. Never use accents
+   or non-ASCII characters.
 
-   Examples: Stuetzle and Dorigo -> StuDor
-             Aho and Hopcroft and Ullman -> AhoHopUll
-             Bleuler and Laumanns and Thiele and Zitzler -> BleLauThi
+2. Use the first three letters of the first surname of each author (up
+   to four authors, first letter capitalized), the full year of
+   publication (if this is not known, make a good guess because this
+   should not be changed afterwards and it is confusing that the year
+   in the key does not matches the year of publication), a colon ':'
+   and the acronym of the conference, journal, or publisher.
 
-2. Use the two last digits of the date of publication (if this is not
-   known, make a good guess because this should not be changed
-   afterwards).
+   Examples: 
+
+      @Article{NouGhiBirDor2005:ki,
+         author = 	 {S. Nouyan and R. Ghizzioli and 
+                         M. Birattari and M.  Dorigo},
+         journal = 	 KI,
+         year = 	 2005,
 
 3. If there is a conflict, use another distinct single word, either
    from the title of the paper, or the title of the proceedings.
@@ -39,7 +46,7 @@ these rules:
      followed by the year. Example: ANTS2001
 
    * Technical Reports: use the identificative key that technical
-     reports often have, for example IRIDIA-2009-015. Be careful to
+     reports often have, for example, IRIDIA-2009-015. Be careful to
      not use '/', '\' or ',' in keys.
    
    * Theses (PhD, etc): after the year, add the type of thesis.
@@ -139,8 +146,8 @@ Read about svn:external in the Subversion book:
 Updating your working copy
 --------------------------
 
-You may update your working copy with the changes in the repository with the
-following command:
+You may update your working copy with the changes in the repository
+with the following command:
 
   svn up
 
@@ -172,6 +179,17 @@ again to regenerate the file.
 
 Some bibtex styles generate separated entries for cross references. To
 avoid this use `bibtex -min-crossrefs=9000'.
+
+If you want to modify a bibtex style to use short names (only the
+initial for the name), edit the *.bst file, search for something such
+as:
+
+        {ff~}{vv~}{ll}{, jj}" format.name$
+
+and replace it with:
+
+        {f.~}{vv~}{ll}{, jj}" format.name$
+
 
 
 List of most often used Subversion commands
