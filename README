@@ -85,8 +85,8 @@ Example:
 
 2009-11-01  Manuel López-Ibáñez <manuel.lopez-ibanez@ulb.ac.be>
 
-  * biblio.bib (AngWoo09): New entry.
-  (Asch01tsptw): Update year.
+  * biblio.bib (AngWoo2009:ejor): New entry.
+  (Asc2001t:cor): Update year.
   * crossref.bib (GECCO2000): Fix editor names.
 
 
