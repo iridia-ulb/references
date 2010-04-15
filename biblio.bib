@@ -43,7 +43,7 @@
 }
 
 @inproceedings{AlaSolGhe07,
-  author =       {I. Alaya and C. Solnon and K. Gh{\'e}dira},
+  author =       {I. Alaya} #and# Solnon #and# { K. Gh{\'e}dira},
   title =        {Ant Colony Optimization for Multi-Objective
                   Optimization Problems},
   booktitle =    {19th IEEE International Conference on Tools with
@@ -1223,6 +1223,14 @@ crossref = {GECCO2002},
   year =         1999,
 }
 
+@TechReport{DorGam1996:iridia,
+  author =       Dorigo #and# Gambardella,
+  title =        "Ant {C}olony {S}ystem",
+  institution =  iridia,
+  year =         1996,
+  number =       "IRIDIA/96-05",
+}
+
 @Article{DorGam1997:tec,
   key =          "DorGam97:tec",
   alias =        "DorGam97:tec",
@@ -2086,8 +2094,8 @@ crossref = {GECCO2002},
 }
 
 @TechReport{IRIDIA-2010-002,
-  author =       Stuetzle #and# Lopez-Ibanez #and# MontesDeOca #and#
-                  Birattari #and# Dorigo,
+  author =       Stuetzle #and# Lopez-Ibanez #and# Pellegrini #and#
+                  Maur #and# MontesDeOca #and# Birattari #and# Dorigo,
   title =        "Parameter Adaptation in Ant Colony Optimization",
   institution =  iridia,
   number =       "TR/IRIDIA/2010-002",
@@ -2304,7 +2312,7 @@ crossref = {GECCO2002},
 }
 
 @InCollection{KhiAlbSol08,
-  author =       {M. Khichane and P. Albert and C. Solnon},
+  author =       {M. Khichane and P. Albert} #and# Solnon,
   title =        {Integration of {ACO} in a Constraint Programming
                   Language},
   pages =        {84--95},
@@ -2389,7 +2397,7 @@ crossref = {GECCO2002},
   author =       Korosec #and# Silc #and# Robic,
   title =        {Solving the mesh-partitioning problem with an
                   ant-colony algorithm},
-  journal =      {Parallel Computing},
+  journal =      pc,
   year =         2004,
   volume =       30,
   pages =        {785--801}
@@ -2806,17 +2814,14 @@ crossref = {GECCO2002},
 }
 
 @Article{Man1999:joc,
-  author =   Maniezzo,
-  title =    {Exact and Approximate Nondeterministic Tree-Search Procedures for the Quadratic Assignment Problem},
-  journal =      {INFORMS Journal on Computing},
-  year =     {1999},
-  OPTkey =   {},
-  volume =   {11},
-  number =   {4},
-  pages =    {358-369},
-  OPTmonth =     {},
-  OPTnote =      {},
-  OPTannote =    {}
+  author =       Maniezzo,
+  title =        {Exact and Approximate Nondeterministic Tree-Search
+                  Procedures for the Quadratic Assignment Problem},
+  journal =      informs,
+  year =         1999,
+  volume =       11,
+  number =       4,
+  pages =        {358--369}
 }
 
 @Incollection{ManBosJel04:ants2004,
@@ -2961,16 +2966,12 @@ crossref = {GECCO2002},
   pages =        {333--346}
 }
 
-@INCOLLECTION{MeyErn04:ants,
-  AUTHOR = {B.~Meyer and A.~Ernst},
-  TITLE = {Integrating {ACO} and Constraint Propagation},
-  YEAR = {2004},
-  PAGES = {166--177},
-  BOOKTITLE = {Proceedings of ANTS 2004 -- Fourth International Workshop on Ant Colony Optimization and Swarm Intelligence},
-  SERIES = {Lecture Notes in Computer Science},
-  VOLUME = {3172},
-  EDITOR = {M.~Dorigo and M.~Birattari and C.~Blum and L.~M.~Gambardella and F.~Mondada and T.~St{\"u}tzle},
-  PUBLISHER = {Springer Verlag, Berlin, Germany}
+@incollection{MeyErn04:ants,
+  author =       Meyer_Bernd #and# Ernst_Andreas,
+  title =        {Integrating {ACO} and Constraint Propagation},
+  pages =        {166--177},
+  year =         2004,
+  crossref =     {ANTS2004:proceedings},
 }
 
 @Book{MicFog04:howtosolveit,
@@ -3435,8 +3436,8 @@ doi = {10.1016/j.cor.2006.12.014},
                   for Multiobjective Combinatorial Optimization
                   Problems through Experimental Design",
   editor =       {Karl F. Doerner and Michel Gendreau and Peter
-                  Greistorfer and Walter Gutjahr and Richard F. Hartl
-                  and Marc Reimann},
+                  Greistorfer} #and# Gutjahr #and#{ Richard F. Hartl}
+                  #and# Reimann,
   BOOKTITLE =    "6th Metaheuristics International Conference (MIC
                   2005)",
   YEAR =         2005,
@@ -3477,8 +3478,8 @@ doi = {10.1016/j.cor.2006.12.014},
   annote =       {Post-Conference Proceedings of the 6th
                   Metaheuristics International Conference (MIC 2005)},
   editor =       {Karl F. Doerner and Michel Gendreau and Peter
-                  Greistorfer and Walter Gutjahr and Richard F. Hartl
-                  and Marc Reimann},
+                  Greistorfer} #and# Gutjahr #and#{ Richard F. Hartl}
+                  #and# Reimann,
   abstract =     {Stochastic Local Search (SLS) algorithms can be seen
                   as being composed of several algorithmic components,
                   each playing some specific role with respect to
@@ -3665,8 +3666,16 @@ doi = {10.1016/j.cor.2006.12.014},
   month =        sep,
 }
 
+@InCollection{Rei2007:hm,
+  author =       Reimann,
+  title =        "Guiding {ACO} by Problem Relaxation: {A} Case Study
+                  on the Symmetric {TSP}",
+  pages =        {45--56},
+  crossref =     {HM2007},
+}
+
 @Article{ReiDoeHar04:cor,
-  author =       {M.~Reimann} #and# Doerner #and# Hartl,
+  author =       Reimann #and# Doerner #and# Hartl,
   title =        "{D}-ants: {S}avings based ants divide and conquer
                   the vehicle routing problems",
   journal =      cor,
@@ -3929,18 +3938,14 @@ doi = {10.1016/j.cor.2006.12.014},
   crossref =     "ANTS2004:proceedings",
 }
 
-@Article{Sol2002:ieee-tec,
-  author =   {C.~Solnon},
-  title =    {Ant can solve constraint satisfaction problems},
-  journal =      {IEEE Transactions on Evolutionary Computation},
-  year =     {2002},
-  OPTkey =   {},
-  volume =   {6},
-  number =   {4},
-  pages =    {347--357},
-  OPTmonth =     {},
-  OPTnote =      {},
-  OPTannote =    {}
+@Article{Sol2002:tec,
+  author =       Solnon,
+  title = 	 "Ants Can Solve Constraint Satisfaction Problems",
+  journal =      tec,
+  year =         2002,
+  volume =       6,
+  number =       4,
+  pages =        {347--357}
 }
 
 @Article{Solomon87vrptw,
@@ -4035,6 +4040,16 @@ doi = {10.1016/j.cor.2006.12.014},
   year =	 2002,
 }
 
+
+@TechReport{StuHoo1996:aida,
+  author =       Stuetzle #and# Hoos,
+  title =        "Improving the {A}nt {S}ystem: A Detailed Report on
+                  the {\MaxMinAntSystem}",
+  institution =  tud,
+  year =         1996,
+  number =       "AIDA--96--12",
+  month =        aug,
+}
 
 @Article{StuHoo2000:fgcs,
   author =       Stuetzle #and# Hoos,
