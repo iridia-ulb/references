@@ -244,7 +244,7 @@
 
 @InCollection{BalBirStu07,
   author =       Balaprakash #and# Birattari #and# Stuetzle,
-  title =        {Improvement Strategies for the {F-Race} algorithm:
+  title =        {Improvement Strategies for the {F}-Race algorithm:
                   Sampling Design and Iterative Refinement},
   pages =        {108--122},
   crossref = "HM2007",
@@ -323,13 +323,13 @@
   address =      {Insbruck, Austria}
 }
 
-@BOOK{BatBruMas08:book,
-  AUTHOR =       Battiti #and# "M. Brunato and F. Mascia",
-  TITLE =        {Reactive Search and Intelligent Optimization},
-  PUBLISHER =    {Springer Verlag},
-  YEAR =         {2008},
+@book{BatBruMas08:book,
+  author =       Battiti #and# "M. Brunato and F. Mascia",
+  title =        {Reactive Search and Intelligent Optimization},
+  publisher =    {Springer Verlag},
+  YEAR =         2008,
   series =       {Operations research/Computer Science Interfaces},
-  volume =       {45},
+  volume =       45,
 }
 
 @Article{BauPer2007:ejor,
@@ -465,13 +465,14 @@ crossref = {GECCO2002},
 @Book{Birattari09tuning,
   title =        {Tuning Metaheuristics: A Machine Learning
                   Perspective},
-  doi =         {10.1007/978-3-642-00483-4},
+  doi =          {10.1007/978-3-642-00483-4},
   author =       Birattari,
   year =         2009,
   volume =       197,
   series =       {Studies in Computational Intelligence},
   publisher =    {Springer},
   address =      {Berlin / Heidelberg},
+  alias =        {Bir09:book},
 }
 
 @InProceedings{BleBlu04:disjoint,
@@ -807,12 +808,14 @@ crossref = {GECCO2002},
 }
 
 @Article{CaiHuaQuiMa2009,
-  author =       {Zhaoquan Cai and Han Huang and Yong Qin and Xianheng Ma},
-  title =        {Ant Colony Optimization Based on Adaptive Volatility Rate of Pheromone Trail},
+  author =       {Zhaoquan Cai and Han Huang and Yong Qin and Xianheng
+                  Ma},
+  title =        {Ant Colony Optimization Based on Adaptive Volatility
+                  Rate of Pheromone Trail},
   year =         2009,
-  journal =      ijcnss, 
+  journal =      ijcnss,
   volume =       2,
-  number = 	 8,
+  number =       8,
   pages =        {792--796},
 }
 
@@ -943,7 +946,7 @@ crossref = {GECCO2002},
   anote =        {makespan optimization},
 }
 
-@inproceedings{ChuNuaJanPho06,
+@incollection{ChuNuaJanPho06,
   author =       {S. Chusanapiputt and D. Nualhong and S. Jantarang
                   and S. Phoomvuthisarn},
   title =        {Selective self-adaptive approach to ant system for
@@ -989,6 +992,15 @@ crossref = {GECCO2002},
   number =       2,
   pages =        {146--155},
   month =        mar,
+}
+
+@incollection{ColMonGauSli07,
+  author =       {Sonia Colas and Nicolas Monmarch{\'e} and Pierre
+                  Gaucher and Mohamed Slimane},
+  pages =        {87-99},
+  title =        {Artificial Ants for the Optimization of Virtual
+                  Keyboard Arrangement for Disabled People},
+  crossref =     "EA2007",
 }
 
 @Book{Conover99:pns,
@@ -1192,6 +1204,7 @@ crossref = {GECCO2002},
   year      =    2003,
 }
 
+
 @Article{DoeMerStu2009:swarm,
   author =       Doerner #and# Merkle #and# Stuetzle,
   title =        {Special issue on Ant Colony Optimization},
@@ -1200,7 +1213,15 @@ crossref = {GECCO2002},
   volume =       3,
   number =       1,
 }
-
+@Article{DorBirStu06:ci,
+  author =       Dorigo #and#  Birattari #and# Stuetzle,
+  title =        {Ant Colony Optimization: Artificial Ants as a Computational Intelligence Technique},
+  journal =      cim,
+  year =         2006,
+  volume =	 1,
+  number =	 4,
+  pages =	 {28--39}
+}
 
 @article{DorBlu2005:tcs,
   author =       Dorigo #and#Blum,
@@ -1298,17 +1319,18 @@ crossref = {GECCO2002},
   number       = "91-016",
 }
 
-@Book{DorStu04:AcoBook,
+
+@Book{DorStu2004:book,
   author =       Dorigo #and# Stuetzle,
   title =        {Ant Colony Optimization},
   publisher =    mit-pub,
   address =      mit-ad,
   year =         2004,
   pagination =   305,
-  anote =         "305 p",
-  alias = {DorStu04:book},
+  anote =        "305 p",
+  alias =        {DorStu04:AcoBook},
+  alias =        {DorStu04:book},
 }
-
 
 @Article{DorStuDic2000:fgcs,
   author =       Dorigo #and# Stuetzle #and# DiCaro,
@@ -1487,6 +1509,14 @@ crossref = {GECCO2002},
   series =       lnems,
 }
 
+@InCollection{EibMichSChSmi07,
+  author =       {A. E. Eiben and Z. Michalewicz and M. Schoenauer and
+                  J. E. Smith},
+  title =        {Parameter Control in Evolutionary Algorithms},
+  crossref =     {LobLimMic07:book},
+  pages =        {19--46}
+}
+
 @InProceedings{Ertin01,
   author =       Ertin # and # Dean_Anthony # and # Moore_Mathew # and #
                   Priddy,
@@ -1560,6 +1590,21 @@ crossref = {GECCO2002},
   number =	 2,
   pages =	 {263--284}}
 
+@InProceedings{FavMorPel09:sls,
+  author =       {D. Favaretto and E. Moretti and P. Pellegrini},
+  title =        {On the explorative behavior of MAX-MIN Ant System},
+  editor =       Stuetzle #and# Birattari #and# Hoos,
+  booktitle =    {Engineering Stochastic Local Search
+                  Algorithms. Designing, Implementing and Analyzing
+                  Effective Heuristics. SLS~2007},
+  publisher =    springer-berl,
+  year =         2009,
+  series =       lncs,
+  address =      {Berlin, Germany},
+  volume =       5752,
+  pages =        {115--119},
+}
+
 @Article{FocLodMil02tsptw,
   author =       Focacci #and# Lodi #and# Milano,
   title =        "A Hybrid Exact Algorithm for the {TSPTW}",
@@ -1613,6 +1658,15 @@ crossref = {GECCO2002},
   pdf =          {FonPaqLop06-hypervolume.pdf}
 }
 
+@inproceedings{FosBickHardKok2007,
+  author =       {Manuel F\"{o}rster and Bettina Bickel and Bernd
+                  Hardung and Gabriella K\'{o}kai},
+  title =        {Self-adaptive ant colony optimisation applied to
+                  function allocation in vehicle networks},
+  pages =        {1991--1998},
+  crossref =     "GECCO2007",
+}
+
 @PhdThesis{Fra95:phd,
   author =       Fraser,
   title =        {Subsequences and supersequences of strings},
@@ -1641,6 +1695,17 @@ crossref = {GECCO2002},
   number =	 3,
   pages =	 {655--673}}
 
+@INPROCEEDINGS{GaeCla04,
+  author =       {D. Gaertner and K. Clark},
+  title =        {On Optimal Parameters for Ant Colony Optimization
+                  Algorithms},
+  booktitle =    {Proceedings of the International Conference on
+                  Artificial Intelligence 2005},
+  year =         2005,
+  pages =        {83--89},
+  publisher =    {CSREA Press}
+}
+
 @Article{GagPriGra02:jors,
   author =       {C.~Gagn{\'e} and W.~L.~Price and M.~Gravel},
   title =        {Comparing an {ACO} algorithm with other heuristics
@@ -1662,6 +1727,14 @@ crossref = {GECCO2002},
   journal =      informs,
   year =         2000,
   anote =        "IJ.26",
+}
+
+@InCollection{GamDor95:ml,
+  author =       Gambardella#and#Dorigo,
+  title =        "Ant-{Q}: A Reinforcement Learning Approach to the
+                  Traveling Salesman Problem",
+  pages =        "252--260",
+  crossref =     "ML1995",
 }
 
 @InProceedings{GamDor96:icec,
@@ -1712,6 +1785,21 @@ crossref = {GECCO2002},
   year =	 1976,
   volume =	 1,
   pages =	 {117--129}
+}
+
+@InProceedings{GarSosVaz07,
+  author =       {Beatriz A. Garro and Humberto Sossa and Roberto
+                  A. Vazquez},
+  title =        {Evolving ant colony system for optimizing path
+                  planning in mobile robots},
+  booktitle =    {Electronics, Robotics and Automotive Mechanics
+                  Conference},
+  year =         2007,
+  pages =        {444-449},
+  doi =          {10.1109/CERMA.2007.60},
+  publisher =    {IEEE Computer Society},
+  address =      {Los Alamitos, CA},
+  pdf =          {2007-IEEE-Proc-444-449CERMA.pdf},
 }
 
 @Incollection{GasScha07:easysyn,
@@ -1891,6 +1979,7 @@ crossref = {GECCO2002},
   year =         1997,
 }
 
+
 @InCollection{Gut04:ants,
   author =       {W. J. Gutjahr},
   title =        {{S-ACO}: An Ant-Based Approach to Combinatorial
@@ -1908,7 +1997,6 @@ crossref = {GECCO2002},
   number =       8,
   pages =        "873--888",
 }
-
 
 @Article{Gut2002:ipl,
   author =       Gutjahr,
@@ -1970,6 +2058,33 @@ crossref = {GECCO2002},
   year =	 {1998},
   number =	 {IMM-REP-1998-7},
   address =	 {Lyngby, Denmark},
+}
+
+@inproceedings{HaoCaiHua2006,
+  author =       {Zhifeng Hao and Ruichu Cai and Han Huang},
+  title =        {An Adaptive Parameter Control Strategy for ACO},
+  booktitle =    {International Conference on Machine Learning and
+                  Cybernetics, 2006},
+  publisher =    {Institute of Electrical and Electronics Engineers (
+                  IEEE )},
+  year =         2006,
+  pages =        {203--206},
+}
+
+@inCollection{HaoHuaQinCai2007,
+  author =       {Zhifeng Hao and Han Huang and Yong Qin and Ruichu
+                  Cai},
+  title =        {An ACO Algorithm with Adaptive Volatility Rate of
+                  Pheromone Trail},
+  booktitle =    {International Conference on Computational Science
+                  (4)},
+  editor =       {Yong Shi and G. Dick van Albada and Jack Dongarra
+                  and Peter M. A. Sloot},
+  publisher =    springer-lncs,
+  series =       lncs,
+  volume =       4490,
+  year =         2007,
+  pages =        {1167-1170},
 }
 
 @article{HazGunEre08customer,
@@ -2074,6 +2189,19 @@ crossref = {GECCO2002},
   address =      mk-add-san,
   year =         2005,
   alias = {HooStu04:book}
+}
+
+@incollection{HuaYaHaoCai2006,
+  author =       {Han Huang and Xiaowei Yang and Zhifeng Hao and
+                  Ruichu Cai},
+  title =        {A Novel {ACO} Algorithm with Adaptive Parameter},
+  booktitle =    {ICIC (3)},
+  editor =       {De-Shuang Huang and Kang Li and George W. Irwin},
+  year =         2006,
+  pages =        {12-21},
+  publisher =    {Springer},
+  series =       {Lecture Notes in Computer Science},
+  volume =       4115
 }
 
 @InProceedings{HuaYanTse04:ics,
@@ -2356,6 +2484,12 @@ crossref = {GECCO2002},
   crossref =     "ANTS2008:proceedings",
 }
 
+@InProceedings{KhiAlbSol09,
+  author =       {M. Khichane and P. Albert} #and# Solnon,
+  title =        {A reactive framework for Ant Colony Optimization},
+  crossref =     "LION2009",
+}
+
 @InProceedings{KhuXuHooLey2009:satenstein,
   author =       KhudaBukhsh #and# Xu_L #and# Hoos #and# Leyton-Brown,
   title =        "{SATenstein}: Automatically building local search
@@ -2452,6 +2586,16 @@ crossref = {GECCO2002},
                   {http://iridia.ulb.ac.be/~meta/downloads/Blu2002_ANTS.pdf},
 }
 
+@inproceedings{KovSkr08,
+  author =       {O. Kov\'{a}\v{r}\'{\i}k and M. Skrbek},
+  title =        {Ant Colony Optimization with Castes},
+  booktitle =    {ICANN '08: Proceedings of the 18th international
+                  conference on Artificial Neural Networks, Part I},
+  year =         2008,
+  pages =        {435--442},
+  publisher =    {Springer-Verlag},
+}
+
 @Article{Langevin93tsptw,
   author =       Langevin #and# Desrochers #and# Desrosiers #and#
                   Gelinas_S #and# Soumis,
@@ -2463,6 +2607,7 @@ crossref = {GECCO2002},
   number = 7,
   pages =        {631--640},
 }
+
 
 @Article{Lansey94,
   author =       Lansey # and # Awumah,
@@ -2486,7 +2631,6 @@ crossref = {GECCO2002},
   pages =        {65--74},
 }
 
-
 @InCollection{LesDumStu04:ants,
   author =       {L. Lessing and I. Dumitrescu and T. St{\"u}tzle},
   title =        {A Comparison Between {ACO} Algorithms for the Set
@@ -2494,6 +2638,31 @@ crossref = {GECCO2002},
   pages =        {1--12},
   crossref =     "ANTS2004:proceedings",
 }
+@article{LiLi07,
+  author =       {Y. Li and W. Li},
+  title =        {Adaptive Ant Colony Optimization Algorithm Based on
+                  Information Entropy: Foundation and Application},
+  journal =      {Fundamenta Informaticae},
+  volume =       77,
+  number =       3,
+  year =         2007,
+  pages =        {229--242},
+  publisher =    ios-pub,
+  address =      ios-ad,
+}
+
+@inproceedings{LiWanYuZhaLi08,
+  author =       {Z. Li and Y. Wang and J. Yu and Y. Zhang and X. Li},
+  title =        {A Novel Cloud-Based Fuzzy Self-Adaptive Ant Colony
+                  System},
+  booktitle =    {ICNC '08: Proceedings of the 2008 Fourth
+                  International Conference on Natural Computation},
+  volume =       7,
+  year =         2008,
+  pages =        {460--465},
+  publisher =    {IEEE Computer Society},
+  address =      {Washington, DC},
+} 
 
 @article{LiaTseLua07,
   author =       Liao_CJ #and# Tseng_CT #and# Luarn,
@@ -2505,6 +2674,19 @@ crossref = {GECCO2002},
   pages =        "3099--3111",
   year =         2007,
   issn =         "0305-0548",
+}
+
+@inproceedings{LinLuo07,
+  author =       {W. Ling and H. Luo},
+  title =        {An Adaptive Parameter Control Strategy for Ant
+                  Colony Optimization},
+  booktitle =    {CIS '07: Proceedings of the 2007 International
+                  Conference on Computational Intelligence and
+                  Security},
+  year =         2007,
+  pages =        {142--146},
+  publisher =    {IEEE Computer Society},
+  address =      {Washington, DC},
 }
 
 @InCollection{Lop07:HPC_ACO,
@@ -2914,6 +3096,17 @@ crossref = {GECCO2002},
   month =        sep,
 }
 
+@article{MarDeBHaeVanSnoBae07,
+  author =       {D. Martens and M. De Backer and R. Haesen and
+                  J. Vanthienen and M. Snoeck and B. Baesens},
+  title =        {Classification With Ant Colony Optimization},
+  journal =      tec,
+  year =         2007,
+  volume =       11,
+  number =       5,
+  pages =        {651--665},
+}
+
 @Incollection{MarMor99,
   author =       Mariano #and# Morales,
   title =        {{MOAQ}: An {A}nt-{Q} Algorithm for Multiple
@@ -2986,6 +3179,21 @@ crossref = {GECCO2002},
   crossref =     "EA2009",
 }
 
+@InProceedings{MerMid01,
+  author =       Merkle #and# Middendorf,
+  title =        {Prospects for Dynamic Algorithm Control: Lessons
+                  from the Phase Structure of Ant Scheduling
+                  Algorithms},
+  booktitle =    {Proceedings of the 2000 Genetic and Evolutionary
+                  Computation Conference -- Workshop Program. Workshop
+                  "The Next Ten Years of Scheduling Research"},
+  pages =        {121--126},
+  year =         2001,
+  editor =       {R. B. Heckendorn},
+  address =      {San Francisco, CA},
+  publisher =    mk,
+}
+
 @Article{MerMid2002:ec,
   author =       Merkle #and# Middendorf,
   title =        "Modeling the Dynamics of Ant Colony Optimization",
@@ -3012,6 +3220,17 @@ crossref = {GECCO2002},
   volume =       6,
   number =       4,
   pages =        {333--346}
+}
+
+
+@InProceedings{Mey2004:gecco,
+  author =       Meyer_Bernd,
+  title =        {Convergence control in {ACO}},
+  annote =       {Late-breaking paper available on CD},
+  year =         2004,
+  booktitle =    {Genetic and Evolutionary Computation Conference
+                  (GECCO)},
+  address =      {Seattle, WA},
 }
 
 @incollection{MeyErn04:ants,
@@ -3182,6 +3401,7 @@ doi = {10.1016/j.cor.2006.12.014},
   keywords =     "crossover, intermediate, line"
 }
 
+
 @InProceedings{Murphy94,
   author =       Murphy # and # Dandy # and # Simpson,
   title =        {Optimum Design and Operation of Pumped Water
@@ -3207,7 +3427,6 @@ doi = {10.1016/j.cor.2006.12.014},
   number =       1,
   pages =        {91--95}
 }
-
 
 @Article{NeuSudWit2009:swarm,
   author =       {F. Neumann and D. Sudholt and C. Witt},
@@ -3267,6 +3486,8 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {148--164},
   note =         notreadyet,
 }
+  
+
 
 @Article{Ormsbee94,
   author =       Ormsbee # and # Lansey,
@@ -3288,8 +3509,6 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {302--309},
   month =        jul # " / " # aug,
 }
-  
-
 
 @InProceedings{OstSal04,
   author =       Ostfeld #and# Salomons,
@@ -3336,7 +3555,7 @@ doi = {10.1016/j.cor.2006.12.014},
   year =         1988,
   volume =       26,
   pages =        {297--307}
-}
+} 
 
 @MastersThesis{Paq2001:Msc,
   author =       Paquete,
@@ -3381,7 +3600,7 @@ doi = {10.1016/j.cor.2006.12.014},
                   and Analysis",
   school =       tud,
   year =         2005,
-} 
+}
 
 @TECHREPORT{PaqFonLop06-CSI-klee,
   AUTHOR =       Paquete #and# Fonseca #and# Lopez-Ibanez,
@@ -3552,6 +3771,14 @@ doi = {10.1016/j.cor.2006.12.014},
   number =   4,
   pages =    {321--332}}
 
+@InCollection{PelFavMor09:NICSO,
+  author =       {P. Pellegrini and D. Favaretto and E. Moretti},
+  title =        {Exploration in stochastic algorithms: An application
+                  on {$MAX$--$MIN$ }ant system},
+  pages =        {1--13},
+  crossref =     "NICSO2009",
+}
+
 @Article{Pesant98tsptw,
   author =       Pesant #and# Gendreau #and# Potvin #and# Rousseau_JM,
   title =        {An Exact Constraint Logic Programming Algorithm
@@ -3573,6 +3800,13 @@ doi = {10.1016/j.cor.2006.12.014},
   number =       1,
   pages =        {57--63},
   month =        jan # " / " # feb,
+}
+
+@incollection{PilWhi02,
+  author =       {M. L. Pilat and T. White},
+  title =        {Using Genetic Algorithms to optimize {ACS-TSP}},
+  crossref =     "ANTS2002:proceedings",
+  pages =        {282--287},
 }
 
 @InCollection{PinRunSoup07:maxsat,
@@ -3696,6 +3930,21 @@ doi = {10.1016/j.cor.2006.12.014},
   number =       2,
   pages =        "426--438",
   year =         2004,
+}
+
+@incollection{Ran04,
+  title =        "Near Parameter Free Ant Colony Optimisation",
+  author =       Randall_M,
+  crossref =     "ANTS2004:proceedings",
+  pages =        "374--381",
+}
+
+@incollection{RanMon2002:ants,
+  author =       Randall_M #and# Montgomery,
+  title =        "Candidate Set Strategies for Ant Colony
+                  Optimisation",
+  crossref =     "ANTS2002:proceedings",
+  pages =        {243--249},
 }
 
 @InProceedings{Rao05,
@@ -4055,6 +4304,7 @@ doi = {10.1016/j.cor.2006.12.014},
   year =         2002,
 }
 
+
 @TechReport{Stu97:qap,
   author =       Stuetzle,
   title =        "{\MaxMinAntSystem} for the Quadratic Assignment
@@ -4087,7 +4337,6 @@ doi = {10.1016/j.cor.2006.12.014},
   journal =	 tec,
   year =	 2002,
 }
-
 
 @TechReport{StuHoo1996:aida,
   author =       Stuetzle #and# Hoos,
@@ -4252,7 +4501,7 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       2,
   publisher =    rsp,
   address =      {Baldock, United Kingdom}
-}
+} 
 
 @Article{WalCro2000:siam-jsc,
   author =   {C.~Walshaw and M.~Cross},
@@ -4279,6 +4528,18 @@ doi = {10.1016/j.cor.2006.12.014},
   editor =       {Rollin H. Hotchkiss and Michael Glade},
   address =      {Minneapolis, USA},
   pdf =          {Wegley00 - Pump Scheduling using Particle Swarm Optimization.pdf},
+}
+
+@InProceedings{WhiPagOpp98,
+  author =       "T. White and B. Pagurek and F. Oppacher",
+  title =        "Connection management using adaptive mobile agents",
+  booktitle =    "Proceedings of the International Conference on
+                  Parallel and Distributed Processing Techniques and
+                  Applications (PDPTA'98)",
+  editor =       "H. R. Arabnia",
+  year =         1998,
+  publisher =    "CSREA Press",
+  pages =        "802--809"
 }
 
 @InCollection{WieStu2006:ants,
@@ -4382,7 +4643,6 @@ doi = {10.1016/j.cor.2006.12.014},
   aurl =
                   {http://www.aaai.org/ojs/index.php/aimagazine/article/viewArticle/1232},
 }
-
 @article{ZitThi99:spea,
   author =       Zitzler #and# Thiele,
   title =        {Multiobjective Evolutionary Algorithms: {A}
@@ -4411,6 +4671,18 @@ doi = {10.1016/j.cor.2006.12.014},
   amonth =       apr,
   pages =        "117--132",
   alias =        {perfassess},
+}
+
+@article{ZloBirMeuDor2004:aor,
+  author =       {M. Zlochin} #and# Birattari #and# { N. Meuleau }
+                  #and# Dorigo,
+  journal =      aor,
+  number =       {1--4},
+  pages =        {373--395},
+  title =        {Model-Based Search for Combinatorial Optimization: A
+                  Critical Survey},
+  volume =       131,
+  year =         2004
 }
 
 @InCollection{ants2008-benedigaroli,
@@ -4544,6 +4816,7 @@ doi = {10.1016/j.cor.2006.12.014},
   crossref =    "EMO2003",
 }
 
+
 @PhdThesis{montgomery05:phd,
   author =       Montgomery,
   title =        {Solution Biases and Pheromone Representation
@@ -4607,5 +4880,4 @@ doi = {10.1016/j.cor.2006.12.014},
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
 }
-
 
