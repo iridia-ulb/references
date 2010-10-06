@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{ifpdf}
+\ifpdf
+ \newcommand{\URL}[1]{\protect\url{#1}}
+\else
+ \newcommand{\URL}[1]{\protect\nolinkurl{#1}}
+\fi
+
+\usepackage[numbers]{natbib}
+\begin{document}
+\nocite{*}
+%\cite{Something}
+\bibliographystyle{plainnat}
+\bibliography{abbrev,authors,journals,biblio,crossref}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
