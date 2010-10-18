@@ -707,6 +707,15 @@ crossref = {GECCO2002},
   alias = {BluYabBle08},
 }
 
+@book{BorEly1998online,
+  author =       {Borodin, Allan and El-Yaniv, Ran},
+  title =        {Online computation and competitive analysis},
+  year =         1998,
+  isbn =         {0-521-56392-5},
+  publisher =    cup-ny,
+  address =      cup-ny-ad,
+}
+
 @Article{BotBon98,
   author =       {Hozefa M. Botee and Eric Bonabeau},
   title =        {Evolving Ant Colony Optimization},
@@ -754,6 +763,31 @@ crossref = {GECCO2002},
   publisher = {Marcel Dekker, New York}}
 
 
+@incollection{BriFri2009emo,
+  author =       {Karl Bringmann and Tobias Friedrich},
+  title =        {Approximating the Least Hypervolume Contributor:
+                  {NP}-Hard in General, But Fast in Practice},
+  pages =        {6--20},
+  crossref =     "EMO2009",
+}
+
+@incollection{BriFri2010gecco,
+  author =       {K. Bringmann and T. Friedrich},
+  title =        {The Maximum Hypervolume Set Yields Near-optimal
+                  Approximation},
+  crossref =     "GECCO2010",
+  pages =        {511--518},
+}
+
+@inproceedings{BrigFri2009foga,
+  author =       {Bringmann, K. and Friedrich, T.},
+  title =        {Don't be greedy when calculating hypervolume
+                  contributions},
+  pages =        {103--112},
+  crossref =     {FOGA2009},
+  alias =        {bringmann2009don},
+}
+
 @Article{BucGoo2004maxima,
   author =       {A.~L.~Buchsbaum and M.~T.Goodrich},
   title =        {Three-Dimensional Layers of Maxima},
@@ -763,6 +797,7 @@ crossref = {GECCO2002},
   pages =        {275--289},
   alias =        {Buchsbaum04},
 }
+
 
 @InCollection{BuiRiz04:gecco,
   author =       {T.~N.~Bui and J.~R.~Rizzo~Jr},
@@ -1051,6 +1086,14 @@ crossref = {GECCO2002},
   publisher =    jws-ny,
   year =         1999,
   edition =      {Third}
+}
+
+@incollection{CorKno2003cec,
+  author =       Corne #and# Knowles,
+  title =        {Some Multiobjective Optimizers are Better than
+                  Others},
+  pages =        {2506--2512},
+  crossref = "CEC2003",
 }
 
 @Article{CorKoz04:compu,
@@ -1671,6 +1714,14 @@ crossref = {GECCO2002},
   crossref =     "SLS2009",
 }
 
+@inCollection{Fleischer2003emo,
+  author =       {M. Fleischer},
+  title =        "The Measure of {P}areto Optima. Applications to
+                  Multi-objective Metaheuristics",
+  pages =        {519--533},
+  crossref =     "EMO2003",
+}
+
 @Article{FocLodMil02tsptw,
   author =       Focacci #and# Lodi #and# Milano,
   title =        "A Hybrid Exact Algorithm for the {TSPTW}",
@@ -2143,13 +2194,36 @@ crossref = {GECCO2002},
   edition =      {First},
 }
 
-@TechReport{Hansen98,
-  author =	 Hansen #and# Jaszkiewicz,
-  title =	 {Evaluating the quality of approximations to the non-dominated set},
-  institution =  {Institute of Mathematical Modelling, Technical University of Denmark},
-  year =	 {1998},
-  number =	 {IMM-REP-1998-7},
-  address =	 {Lyngby, Denmark},
+@TechReport{HanJas1998,
+  author =       Hansen #and# Jaszkiewicz,
+  title =        {Evaluating the quality of approximations to the
+                  non-dominated set},
+  institution =  {Institute of Mathematical Modelling, Technical
+                  University of Denmark},
+  year =         1998,
+  number =       {IMM-REP-1998-7},
+  address =      {Lyngby, Denmark},
+}
+
+@article{Hanne1999ejor,
+  author =       {Thomas Hanne},
+  journal =      ejor,
+  title =        {On the convergence of multiobjective evolutionary
+                  algorithms},
+  volume =       117,
+  number =       3,
+  pages =        {553--564},
+  year =         1999
+}
+
+@phdthesis{Hansen1998PhD,
+  author =       Hansen,
+  title =        {Metaheuristics for multiple objective combinatorial
+                  optimization},
+  school =       {Institute of Mathematical Modelling, Technical
+                  University of Denmark},
+  month =        {March},
+  year =         1998
 }
 
 @inproceedings{HaoCaiHua2006,
@@ -2655,6 +2729,13 @@ crossref = {GECCO2002},
   doi =         {10.1162/106365600568167},
 }
 
+@InCollection{KnoCor2002cec,
+  author =       Knowles #and# Corne,
+  title =        {On Metrics for Comparing Non-Dominated Sets},
+  pages =        {711--716},
+  crossref =     "CEC2002",
+}
+
 @Article{KnoCor2003tec,
   author =       Knowles #and# Corne,
   title =        {Properties of an Adaptive Archiving Algorithm for
@@ -2764,11 +2845,10 @@ crossref = {GECCO2002},
 
 
 @Article{LTDZ2002b,
-  author =       {M. Laumanns and L. Thiele and K. Deb
-                  and E. Zitzler},
+  author =       Laumanns #and# Thiele #and# Deb #and# Zitzler,
   title =        {Combining Convergence and Diversity in Evolutionary
                   Multiobjective Optimization},
-  journal =      {Evolutionary Computation},
+  journal =      ec,
   year =         2002,
   volume =       10,
   number =       3,
@@ -2797,6 +2877,24 @@ crossref = {GECCO2002},
   number =       1,
   pages =        {17--35},
   month =        jan #" / "# feb,
+}
+
+@article{Lau2007arxiv,
+  title =        {Stochastic convergence of random search to fixed
+                  size {P}areto set approximations},
+  author =       Laumanns,
+  journal =      {Arxiv preprint arXiv:0711.2949},
+  year =         2007,
+  alias =        {laumanns2007stochastic},
+}
+
+@Unpublished{LauZen2010prep,
+  author =       Laumanns #and# {Zenklusen, R.},
+  title =        {Stochastic convergence of random search for
+                  approximating {P}areto fronts with bounded memory},
+  note =         {(Preparatory manuscript)},
+  month =        {September},
+  year =         2010
 }
 
 @InCollection{LegMic1999:cec,
@@ -4891,6 +4989,16 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {279--287},
 }
 
+@inproceedings{VelLam1998gp,
+  alias =        {Veldhuizen98a},
+  key =          {Van Veldhuizen and Lamont, 1998a},
+  title =        "Evolutionary Computation and Convergence to a
+                  {P}areto Front",
+  author =       {David A. Van Veldhuizen and Gary B. Lamont},
+  pages =        {221--228},
+  crossref =     {GP1998},
+}
+
 @Book{WIS:MOA_vol2,
   editor =       Savic # and # Walters,
   title =        {Water Industry Systems: Modelling and Optimization
@@ -5062,8 +5170,8 @@ doi = {10.1016/j.cor.2006.12.014},
   crossref =     "PPSN1998",
   pages =        {292--301},
   alias =        {Zitzler98},
+  annote =       {introduces hypervolume measure},
 }
-
 
 @article{ZitThi99:spea,
   author =       Zitzler #and# Thiele,
@@ -5079,6 +5187,14 @@ doi = {10.1016/j.cor.2006.12.014},
                   {http://www.tik.ee.ethz.ch/sop/publicationListFiles/zt1999a.pdf},
   pdf =          {ZitzlerThiele99-SPEA.pdf},
   annote =       {introduces the hypervolume, introduces SPEA}
+}
+
+@incollection{ZitThiBad2008ppsn,
+  author =       Zitzler #and# Thiele #and# {Johannes Bader},
+  title =        "{SPAM}: {S}et Preference Algorithm for
+                  Multiobjective Optimization",
+  pages =        {847--858},
+  crossref =     "PPSN2008",
 }
 
 @Article{ZitThiLauFon2003:tec,
@@ -5160,6 +5276,7 @@ doi = {10.1016/j.cor.2006.12.014},
   year =         2000,
 }
 
+
 @Article{jin05fitness,
   author =       Jin_Yaochu,
   title =        {A comprehensive survey of fitness approximation in
@@ -5171,7 +5288,6 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {3--12},
   pdf =          {Jin05 - Fitness approximation in EA.pdf}
 }
-
 
 @InCollection{lpaquete:8,
   author =       Paquete #and# Stuetzle,
@@ -5190,6 +5306,7 @@ doi = {10.1016/j.cor.2006.12.014},
   address =      {Australia},
 }
 
+
 @Article{msc:special-issue,
   author =       Cordon #and# Herrera_F #and# Stuetzle,
   title =        "Special Issue on Ant Colony Optimization: Models and
@@ -5200,7 +5317,6 @@ doi = {10.1016/j.cor.2006.12.014},
   number =       3,
   pages =        {137--268},
 }
-
 
 @InCollection{paquete18,
   author =       Paquete #and# Stuetzle,
@@ -5245,4 +5361,3 @@ doi = {10.1016/j.cor.2006.12.014},
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
 }
-
