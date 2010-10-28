@@ -55,10 +55,15 @@ these rules:
 Contributing to the IRIDIA BibTeX Repository
 --------------------------------------------
 
-You should submit patches to bib-patches@iridia.ulb.ac.be 
+People with a SVN account are able to commit changes. However, any
+changes should still be submitted for review. To create a patch for
+review, follow first "Updating your working copy", then use
 
-People with a SVN account are able to commit changes. Any changes
-should still be submitted to bib-patches@iridia.ulb.ac.be.
+ svn diff > mypatch.diff
+
+then send mypatch.diff to manuel.lopez-ibanez@ulb.ac.be and
+jeremie.dubois-lacoste@ulb.ac.be. Once your patch is approved, you may
+commit it.
 
 Before committing any change, follow first "Updating your working
 copy", then use
@@ -74,21 +79,15 @@ Changes may be committed with any of the following commands:
     svn ci -F log_message
     svn ci --editor-cmd EDITOR
 
-The commit message (log message) should follow the GNU Coding
-Standards:
-
-YEAR-MONTH-DAY  NAME  <EMAIL>
+The commit message (log message) should be of the following form:
 
  * file (entry): What changed.
 
 Example:
 
-2009-11-01  Manuel López-Ibáñez <manuel.lopez-ibanez@ulb.ac.be>
-
   * biblio.bib (AngWoo2009:ejor): New entry.
   (Asc2001t:cor): Update year.
   * crossref.bib (GECCO2000): Fix editor names.
-
 
 IMPORTANT: If you use non-ASCII characters BE SURE that your editor
 uses UTF8 encoding. Otherwise, DO NOT USE non-ASCII characters.
@@ -203,6 +202,9 @@ and replace it with:
 List of most often used Subversion commands
 -------------------------------------------
 
+This is a very basic list of the most useful commands, to get the most
+out of Subversion, please read the book: http://svnbook.red-bean.com/
+
 * Checkout a copy of the files to some directory:
 
    svn co https://iridia-dev.ulb.ac.be/projects/optbib/svn/
@@ -225,6 +227,7 @@ List of most often used Subversion commands
   or
   svn ci --editor-cmd EDITOR
 
+  where EDITOR is something like emacs, vi or gedit.
 
 $Revision$
 $Date$
