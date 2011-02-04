@@ -19,6 +19,7 @@
 %% 8. Always use quotes "" instead of braces {} for the string definition.
 %% 9. Articles in proceedings published as books (e.g., LNCS) should use 
 %%    InCollection type.
+%%10. InBook should be used ONLY for books where chapters do not have titles.
 %% Z. Some of the entries do not follow the above rules.
 %%    Please help us to update them little by little.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -540,19 +541,19 @@
 }
 
 @InProceedings{BleBlu04:disjoint,
-  author =       "M. Blesa and C. Blum",
+  author =       Blesa #and# Blum,
   title =        "Ant Colony Optimization for the Maximum
                   Edge-Disjoint Paths Problem",
   booktitle =    evoworkshops04,
   series =       lncs,
   publisher =    "Springer Verlag, Berlin, Germany",
-  volume =       "3005",
+  volume =       3005,
   editor =       "G.~R.~Raidl and S.~Cagnoni and J.~Branke and
                   D.~W.~Corne and R.~Drechsler and Y.~Jin and
                   C.~G.~Johnson and P.~Machado and E.~Marchiori and
                   R.~Rothlauf and G.~D.~Smith and G.~Squillero",
   pages =        "160--169",
-  year =         "2004",
+  year =         2004,
 }
 
 @ARTICLE{BleBlu2007:jmma,
@@ -680,11 +681,11 @@
   PUBLISHER = {Springer Verlag, Berlin, Germany}
 }
 
-@InBook{BluLop2011ieh,
+@InCollection{BluLop2011ieh,
   author =       Blum #and# Lopez-Ibanez,
-  title =        {The Industrial Electronics Handbook: Intelligent
+  booktitle =    {The Industrial Electronics Handbook: Intelligent
                   Systems},
-  chapter =      {Ant Colony Optimization},
+  title =        {Ant Colony Optimization},
   publisher =    {CRC Press},
   year =         {2011},
   edition =      {Second},
@@ -1874,16 +1875,13 @@
                   results.}
 }
 
-@InProceedings{FonPaqLop06:hypervolume,
+@InCollection{FonPaqLop06:hypervolume,
   author =       Fonseca #and# Paquete #and# Lopez-Ibanez,
-  title =        {An improved dimension\hspace{0pt}-\hspace{0pt}sweep algorithm for the
-                  hypervolume indicator},
-  booktitle =    "{IEEE} Congress on Evolutionary Computation",
+  title =        {An improved dimension\hspace{0pt}-\hspace{0pt}sweep
+                  algorithm for the hypervolume indicator},
+  crossref =     "CEC2006",
   pages =        {1157--1163},
-  year =         2006,
-  month =        jul,
-  publisher =    {IEEE Press},
-  address =      ieeep-ad,
+  doi =          {10.1109/CEC.2006.1688440},
   pdf =          {FonPaqLop06-hypervolume.pdf}
 }
 
@@ -2064,10 +2062,10 @@
   organization = {ASCE},
 }
 
-@InBook{Glo98,
+@InCollection{Glo98,
   author =       Glover_F,
-  title =        "Artificial Evolution",
-  chapter =      "A Template for Scatter Search and Path Relinking",
+  booktitle =        "Artificial Evolution",
+  title =      "A Template for Scatter Search and Path Relinking",
   publisher =    springer-lncs,
   doi =          {10.1007/BFb0026589},
   pages =        {1--51},
@@ -2544,6 +2542,7 @@
   number =       "TR/IRIDIA/2010-002",
   year =         2010,
   month =        jan,
+  note =         "Published as a book chapter~\cite{StuLopPel2011autsea}",
 }
 
 @TechReport{IRIDIA-2010-019,
@@ -3296,30 +3295,23 @@
   doi =         {10.1061/(ASCE)0733-9496(2008)134:4(337)}
 }
 
-@InProceedings{LopPraPae:gecco07,
+@InCollection{LopPraPae:gecco07,
   author =       Lopez-Ibanez #and# Prasad #and# Paechter,
-  title =        {Solving Optimal Pump Control Problem using
-                  {\MaxMinAntSystem}},
-  booktitle =    {Genetic and Evolutionary Computation Conference
-                  (GECCO)},
-  pages =        176,
-  year =         2007,
-  editor =       {Dirk Thierens and others},
+  title =        "Solving Optimal Pump Control Problem using
+                  {\MaxMinAntSystem}",
   volume =       1,
-  address =      {London, UK},
-  month =        jul,
+  pages =        176,
+  crossref =     "GECCO2007",
 }
 
-@InProceedings{LopPraPaech05:cec,
+@InCollection{LopPraPaech05:cec,
   author =       Lopez-Ibanez #and# Prasad #and# Paechter,
   title =        "Multi-objective Optimisation of the Pump Scheduling
                   Problem using {SPEA2}",
-  booktitle =    "{IEEE} Congress on Evolutionary Computation",
+  crossref =     "CEC2005",
   pages =        "435--442",
-  year =         2005,
   volume =       1,
-  address =      "Edinburgh, UK",
-  month =        sep
+  doi =          {10.1109/CEC.2005.1554716}
 }
 
 @InProceedings{LopPraPaech:ccwi2005,
@@ -3349,7 +3341,7 @@
 
 @InCollection{LopStu2010:ants,
   author =       Lopez-Ibanez #and# Stuetzle,
-  title =        "Automatic Configuration of Multi-Objective ACO Algorithms",
+  title =        "Automatic Configuration of Multi-Objective {ACO} Algorithms",
   pages =        {95--106},
   crossref =     "ANTS2010",
   doi =          {10.1007/978-3-642-15461-4_9},
@@ -4477,6 +4469,26 @@ doi = {10.1016/j.cor.2006.12.014},
   alias =        "preparata:computational",
 }
 
+@Manual{R:Rmpi,
+  title =        {Rmpi: Interface (Wrapper) to MPI (Message-Passing
+                  Interface)},
+  author =       {Hao Yu},
+  year =         2010,
+  note =         {R package version 0.5-8},
+  url =          {http://cran.r-project.org/package=Rmpi},
+}
+
+
+@Manual{R:multicore,
+  title =        {multicore: Parallel processing of R code on machines
+                  with multiple cores or CPUs},
+  author =       {Simon Urbanek},
+  year =         2010,
+  note =         {R package version 0.1-3},
+  url =          {http://www.rforge.net/multicore/},
+}
+
+
 @article{Raj93,
   title =        "Heuristic algorithm for scheduling in a flowshop to
                   minimize total flowtime",
@@ -5008,11 +5020,19 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {137--154}
 }
 
-@InBook{StuLopDor2010:wiley,
+@InCollection{StuLopDor2011eorms,
   author =       Stuetzle #and# Lopez-Ibanez #and# Dorigo,
-  chapter =      "A Concise Overview of Applications of Ant Colony
-                  Optimization ",
-  crossref =     "EORMS2010",
+  title =      "A Concise Overview of Applications of Ant Colony
+                  Optimization",
+  doi =          "10.1002/9780470400531.eorms0001",
+  crossref =     "EORMS2011",
+}
+
+@InCollection{StuLopPel2011autsea,
+  author =       Stuetzle #and# Lopez-Ibanez #and# Pellegrini #and#
+                  Maur #and# MontesDeOca #and# Birattari #and# Dorigo,
+  title =        "Parameter Adaptation in Ant Colony Optimization",
+  crossref =     "AUTSEA2011",
 }
 
 @MastersThesis{Sutton98,
@@ -5083,7 +5103,7 @@ doi = {10.1016/j.cor.2006.12.014},
   number =       6,
   pages =        {507--520},
   doi =          {10.1023/B:HEUR.0000012449.84567.1a},
-}
+} 
 
 @Article{TkiMonTer2002ejor,
   author =       Tkindt #and# Monmarche_N #and# "F. Tercinet and
@@ -5095,7 +5115,7 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       142,
   number =       2,
   pages =        {250--257},
-} 
+}
 
 @article{TseLin09,
   title =        "A hybrid genetic local search algorithm for the
@@ -5220,6 +5240,7 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        "802--809",
 }
 
+
 @InCollection{WieStu2006:ants,
   author =       {W. Wiesemann} #and# Stuetzle,
   title =        "Iterated Ants: An Experimental Study for the
@@ -5227,7 +5248,6 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {179--190},
   crossref =     "ANTS2006",
 }
-
 
 @INcollection{Wierzbicki1980mcdmta,
   AUTHOR =       {A.P. Wierzbicki},
@@ -5247,7 +5267,6 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       8,
   number =       3
 }
-
 @Article{WolMac97:ieee-tec,
   author =	 {D.~H.~Wolpert and W.~G.~Macready},
   title =	 {No free lunch theorems for optimization},
@@ -5261,6 +5280,7 @@ doi = {10.1016/j.cor.2006.12.014},
   OPTnote =	 {},
   OPTannote =	 {}
 }
+
 @Article{WooYim98,
   author= Woo_HS #and# Yim_DS,
   title={A heuristic algorithm for mean flowtime objective in flowshop scheduling},
@@ -5323,11 +5343,11 @@ doi = {10.1016/j.cor.2006.12.014},
                   {http://www.aaai.org/ojs/index.php/aimagazine/article/viewArticle/1232},
 }
 
-@InBook{ZitKnoThi2008quality,
+@InCollection{ZitKnoThi2008quality,
   author =       Zitzler #and# Knowles #and# Thiele,
-  title =        {Multi-objective Optimization - Interactive and
+  booktitle =        {Multi-objective Optimization - Interactive and
                   Evolutionary Approaches},
-  chapter =      {Quality Assessment of Pareto Set Approximations},
+  title =      {Quality Assessment of Pareto Set Approximations},
   year =         2008,
   volume =       5252,
   series =       lncs,
@@ -5384,6 +5404,7 @@ doi = {10.1016/j.cor.2006.12.014},
   alias =        {perfassess},
 }
 
+
 @article{ZloBirMeuDor2004:aor,
   author =       {M. Zlochin} #and# Birattari #and# { N. Meuleau }
                   #and# Dorigo,
@@ -5395,7 +5416,6 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       131,
   year =         2004
 }
-
 
 @InCollection{ants2008-benedigaroli,
   author =       {Benedettini, S. and Roli, A. and Di Gaspero, L.},
@@ -5413,6 +5433,7 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {48--59},
 }
 
+
 @ARTICLE{coo96mul,
   author =       {Cook, Richard J. and Farewell, Vern T.},
   year =         1996,
@@ -5427,7 +5448,6 @@ doi = {10.1016/j.cor.2006.12.014},
                   marginally, there may be no need for controlling
                   experimentwise error rate}
 }
-
 
 @InCollection{dandy03,
   author =       Dandy # and # Gibbs,
@@ -5471,6 +5491,8 @@ doi = {10.1016/j.cor.2006.12.014},
   crossref =    "EMO2003",
 }
 
+
+
 @PhdThesis{montgomery05:phd,
   author =       Montgomery,
   title =        {Solution Biases and Pheromone Representation
@@ -5479,8 +5501,6 @@ doi = {10.1016/j.cor.2006.12.014},
   year =         2005,
   address =      {Australia},
 }
-
-
 
 @Article{msc:special-issue,
   author =       Cordon #and# Herrera_F #and# Stuetzle,
@@ -5536,4 +5556,3 @@ doi = {10.1016/j.cor.2006.12.014},
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
 }
-
