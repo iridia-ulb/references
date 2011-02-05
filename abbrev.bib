@@ -5,17 +5,21 @@
 %% $Date$
 %
 %% READ THESE RULES FIRST BEFORE MODIFYING THIS FILE
-%% 1. Keep each one of Series, Publishers and Institutes sorted.
-%% 2. Check that what you are adding has not been added already with a different name.
-%% 3. Publishers should have a -pub and -ad form, for the publisher field and the address field. 
+%% 1. Keep each one of Series, Publishers, Institutes and Proceedings sorted.
+%% 2. Check that what you are adding has not been added already with a
+%%    different name.
+%% 3. Publishers should have a -pub and -ad form, for the publisher field
+%%    and the address field. 
 %%    If the publisher has several addresses, add them as -ad-city.
 %% 4. The address of proceedings refers to the location of the proceedings. 
 %%    Only in that case, the publisher field should be constructed by joining 
 %%    the -pub and -ad forms like: publisher = ams-pub # ", " # ams-ad,
-%% 5. If you want to use months, the correct way is using the following abbrevations, 
-%%    which are directly supported by BibTeX:
+%% 5. If you want to use months, the correct way is using the following 
+%%    abbrevations, which are directly supported by BibTeX:
 %%    jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
 %% 6. Always use quotes "" instead of braces {} for the string definition.
+%% 7. Add a string for booktitles of proceedings. Add the short form to
+%%    abbrevshort.bib.
 %% Z. Some of the entries do not follow the above rules.
 %%    Please help us to update them little by little.
 @PREAMBLE{ "\providecommand{\MaxMinAntSystem}{{$\cal MAX$--$\cal MIN$} {A}nt {S}ystem} "
@@ -144,6 +148,99 @@
 @string{ulb     = "Universit{\'e} Libre de Bruxelles, Brussels, Belgium"}
 @string{urbana  = "University of Illinois at Urbana-Champaign, Urbana, IL"}
 %%%%%%%% End of PUBLISHERS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Proceedings
+@string{aaai   = "Proceedings of the AAAI National Conference on
+                  Artificial Intelligence"}
+@string{aaai11	= "Proceedings of the 11th National Conference on
+                  Artificial Intelligence"}
+@string{aaai14	= "Proceedings of the 14th National Conference on
+                  Artificial Intelligence"}
+@string{cec99  = "Proceedings of the 1999 Congress on Evolutionary
+                  Computation (CEC'99)"}
+@string{cec00  = "Proceedings of the 2000 Congress on Evolutionary
+                  Computation (CEC'00)"}
+@string{cec01  = "Proceedings of the 2001 Congress on Evolutionary
+                  Computation (CEC'01)"}
+@string{cec02  = "Proceedings of the 2002 Congress on Evolutionary
+                  Computation (CEC'02)"}
+@string{ecai   = "Proceedings of the European Conference on Artificial
+		                Intelligence"}
+@string{ecai9 = "Proceedings of the 9th European Conference on Artificial
+		                Intelligence"}
+@string{ecai11 = "Proceedings of the 11th European Conference on Artificial
+                  Intelligence"}
+@string{ecai14 = "Proceedings of the 14th European Conference on Artificial
+		                Intelligence"}
+@string{ecal92  = "Proceedings of the First European Conference on
+                  Artificial Life"}
+@string{ecal97  = "Proceedings of the Fourth European Conference on
+                  Artificial Life"}
+@string{ecal01  = "Proceedings of the Sixth European Conference on
+                  Artificial Life"}
+@string{evoworkshops01 = "Applications of Evolutionary Computing,
+                  Proceedings of  EvoWorkshops 2001"}
+@string{evoworkshops02 = "Applications of Evolutionary Computing,
+                  Proceedings of  EvoWorkshops 2002"}
+@string{evoworkshops03 = "Applications of Evolutionary Computing,
+                  Proceedings of EvoWorkshops 2003"}
+@string{evoworkshops04 = "Applications of Evolutionary Computing, Proceedings of EvoWorkshops 2004"}
+@string{evocop2009 = "Proceedings of EvoCOP 2009 -- 9th European Conference Evolutionary Computation in Combinatorial Optimization"}
+@string{gecco01 = "Proceedings of the Genetic and Evolutionary Computation
+                   Conference (GECCO-2001)"}
+@string{gecco03 = "Proceedings of the Genetic and Evolutionary Computation
+                  Conference (GECCO 2003)"}
+@string{icga3  = "Proceedings of the Third International Conference
+                  on Genetic Algorithms (ICGA'89)"}
+@string{icga4  = "Proceedings of the Fourth International Conference
+                  on Genetic Algorithms (ICGA'91)"}
+@string{icga7  = "Proceedings of the Seventh International Conference
+                  on Genetic Algorithms (ICGA'97)"}
+@string{ijcai  = "Proceedings of the International Joint Conference on
+                  Artificial Intelligence"}
+@string{ijcai13  = "Proceedings of the 13th International Joint Conference on
+                  Artificial Intelligence"}
+@string{ijcai15  = "Proceedings of the 15th International Joint Conference on  Artificial Intelligence"}
+@string{ijcai17  = "Proceedings of the 17th International Joint Conference on
+                  Artificial Intelligence"}
+@string{isr33  = "Proceedings of the 33rd International Symposium on Robotics"}
+@string{mic1   = "Proceedings of the Metaheuristics International Conference"}
+@string{mic4   = "Proceedings of the Fourth Metaheuristics International
+                  Conference"}
+@string{ml10   = "Proceedings of the Tenth International Conference on
+                  Machine Learning (ML-93)"}
+@string{ml14   = "Proceedings of the Fourteenth International Conference on
+                  Machine Learning (ML-97)"}
+@string{nips6  = "Advances in Neural Information Processing Systems	6 ({NIPS6})"}
+@string{nips8  = "Advances in Neural Information Processing Systems	8 ({NIPS8})"}
+@string{nips9  = "Advances in Neural Information Processing Systems	9 ({NIPS9})"}
+@string{ppsn1  = "Proceedings of PPSN-I, First International Conference on
+                  Parallel Problem Solving from Nature"}
+@string{ppsn2  = "Proceedings of PPSN-II, Second International Conference on
+                  Parallel Problem Solving from Nature"}
+@string{ppsn3  = "Proceedings of PPSN-III, Third International Conference on
+                  Parallel Problem Solving from Nature"}
+@string{ppsn6  = "Proceedings of PPSN-VI, Sixth International Conference on
+                  Parallel Problem Solving from Nature"}
+@string{ppsn7  = "Proceedings of PPSN-VII, Seventh International Conference on
+                  Parallel Problem Solving from Nature"}
+@string{sab2   = "From Animals to Animats 2. Proceedings of the Second
+                  International Conference on Simulation of Adaptive
+                  Behavior (SAB92)"}
+@string{sab3   = "From Animals to Animats 3. Proceedings of the Third
+                  International Conference on Simulation of Adaptive
+                  Behavior (SAB94)"}
+
+@string{soda5  = "Proceedings of the Fifth Annual ACM-SIAM Symposium on Discrete Algorithms"}
+@string{soda6  = "Proceedings of the Sixth Annual ACM-SIAM Symposium on Discrete Algorithms"}
+@string{soda7  = "Proceedings of the Seventh Annual ACM-SIAM Symposium on Discrete Algorithms"}
+
+@string{smc02  = "Proceedings of the IEEE International Conference on
+                  Systems, Man and Cybernetics"}
+%% End of proceedings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Local Variables:
 % sort-fold-case: t

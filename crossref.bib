@@ -8,9 +8,10 @@
 %% 1. Keep the entries sorted.
 %% 2. Check that what you are adding has not been added already with a
 %%    different name.
-%% 3. Do not add a separate string for the title of the proceedings. 
-%%    There should be just one Proceedings entry for each book, 
-%%    so there is no need. Please help to remove them.
+%% 3. For the booktitle of proceedings (whatever is format Book, Proceedings,
+%%    etc), please add a separate string in abbrev.bib. In the future, we would 
+%%    like to have two files abbrevshort.bib and abbrevfull.bib, with short
+%%    and long titles.
 %% 4. 'booktitle' is the title that appears in the crossreferences, 
 %%    'title' is the title that appears when the book is cited directly. 
 %%    Normally, the latter is longer than the former, but they might be the
@@ -24,94 +25,6 @@
 %%    and not the type Proceedings.
 %% Z. Some of the entries do not follow the above rules.
 %%    Please help us to update them little by little.
-
-@string{aaai   = "Proceedings of the AAAI National Conference on
-                  Artificial Intelligence"}
-@string{aaai11	= "Proceedings of the 11th National Conference on
-                  Artificial Intelligence"}
-@string{aaai14	= "Proceedings of the 14th National Conference on
-                  Artificial Intelligence"}
-@string{cec99  = "Proceedings of the 1999 Congress on Evolutionary
-                  Computation (CEC'99)"}
-@string{cec00  = "Proceedings of the 2000 Congress on Evolutionary
-                  Computation (CEC'00)"}
-@string{cec01  = "Proceedings of the 2001 Congress on Evolutionary
-                  Computation (CEC'01)"}
-@string{cec02  = "Proceedings of the 2002 Congress on Evolutionary
-                  Computation (CEC'02)"}
-@string{ecai   = "Proceedings of the European Conference on Artificial
-		                Intelligence"}
-@string{ecai9 = "Proceedings of the 9th European Conference on Artificial
-		                Intelligence"}
-@string{ecai11 = "Proceedings of the 11th European Conference on Artificial
-                  Intelligence"}
-@string{ecai14 = "Proceedings of the 14th European Conference on Artificial
-		                Intelligence"}
-@string{ecal92  = "Proceedings of the First European Conference on
-                  Artificial Life"}
-@string{ecal97  = "Proceedings of the Fourth European Conference on
-                  Artificial Life"}
-@string{ecal01  = "Proceedings of the Sixth European Conference on
-                  Artificial Life"}
-@string{evoworkshops01 = "Applications of Evolutionary Computing,
-                  Proceedings of  EvoWorkshops 2001"}
-@string{evoworkshops02 = "Applications of Evolutionary Computing,
-                  Proceedings of  EvoWorkshops 2002"}
-@string{evoworkshops03 = "Applications of Evolutionary Computing,
-                  Proceedings of EvoWorkshops 2003"}
-@string{evoworkshops04 = "Applications of Evolutionary Computing, Proceedings of EvoWorkshops 2004"}
-@string{evocop2009 = "Proceedings of EvoCOP 2009 -- 9th European Conference Evolutionary Computation in Combinatorial Optimization"}
-@string{gecco01 = "Proceedings of the Genetic and Evolutionary Computation
-                   Conference (GECCO-2001)"}
-@string{gecco03 = "Proceedings of the Genetic and Evolutionary Computation
-                  Conference (GECCO 2003)"}
-@string{icga3  = "Proceedings of the Third International Conference
-                  on Genetic Algorithms (ICGA'89)"}
-@string{icga4  = "Proceedings of the Fourth International Conference
-                  on Genetic Algorithms (ICGA'91)"}
-@string{icga7  = "Proceedings of the Seventh International Conference
-                  on Genetic Algorithms (ICGA'97)"}
-@string{ijcai  = "Proceedings of the International Joint Conference on
-                  Artificial Intelligence"}
-@string{ijcai13  = "Proceedings of the 13th International Joint Conference on
-                  Artificial Intelligence"}
-@string{ijcai15  = "Proceedings of the 15th International Joint Conference on  Artificial Intelligence"}
-@string{ijcai17  = "Proceedings of the 17th International Joint Conference on
-                  Artificial Intelligence"}
-@string{isr33  = "Proceedings of the 33rd International Symposium on Robotics"}
-@string{mic1   = "Proceedings of the Metaheuristics International Conference"}
-@string{mic4   = "Proceedings of the Fourth Metaheuristics International
-                  Conference"}
-@string{ml10   = "Proceedings of the Tenth International Conference on
-                  Machine Learning (ML-93)"}
-@string{ml14   = "Proceedings of the Fourteenth International Conference on
-                  Machine Learning (ML-97)"}
-@string{nips6  = "Advances in Neural Information Processing Systems	6 ({NIPS6})"}
-@string{nips8  = "Advances in Neural Information Processing Systems	8 ({NIPS8})"}
-@string{nips9  = "Advances in Neural Information Processing Systems	9 ({NIPS9})"}
-@string{ppsn1  = "Proceedings of PPSN-I, First International Conference on
-                  Parallel Problem Solving from Nature"}
-@string{ppsn2  = "Proceedings of PPSN-II, Second International Conference on
-                  Parallel Problem Solving from Nature"}
-@string{ppsn3  = "Proceedings of PPSN-III, Third International Conference on
-                  Parallel Problem Solving from Nature"}
-@string{ppsn6  = "Proceedings of PPSN-VI, Sixth International Conference on
-                  Parallel Problem Solving from Nature"}
-@string{ppsn7  = "Proceedings of PPSN-VII, Seventh International Conference on
-                  Parallel Problem Solving from Nature"}
-@string{sab2   = "From Animals to Animats 2. Proceedings of the Second
-                  International Conference on Simulation of Adaptive
-                  Behavior (SAB92)"}
-@string{sab3   = "From Animals to Animats 3. Proceedings of the Third
-                  International Conference on Simulation of Adaptive
-                  Behavior (SAB94)"}
-
-@string{soda5  = "Proceedings of the Fifth Annual ACM-SIAM Symposium on Discrete Algorithms"}
-@string{soda6  = "Proceedings of the Sixth Annual ACM-SIAM Symposium on Discrete Algorithms"}
-@string{soda7  = "Proceedings of the Seventh Annual ACM-SIAM Symposium on Discrete Algorithms"}
-
-@string{smc02  = "Proceedings of the IEEE International Conference on
-                  Systems, Man and Cybernetics"}
 
 @Proceedings{AAAI2007,
   booktitle =    {Proc. of the Twenty-Second Conference on Artifical
@@ -135,7 +48,9 @@
   title =        "Abstract proceedings of ANTS 2000 -- From Ant
                   Colonies to Artificial Ants: Second International
                   Workshop on Ant Algorithms",
-  booktitle =    "Abstract proceedings of ANTS 2000",
+  booktitle =    "Abstract proceedings of ANTS 2000 -- From Ant
+                  Colonies to Artificial Ants: Second International
+                  Workshop on Ant Algorithms",
   year =         2000,
   aeditor =      Dorigo # and # Middendorf # and # Stuetzle,
   editor =       Dorigo # " and others ",
@@ -145,23 +60,26 @@
 
 
 @Book{ANTS2002,
-  title =        {Ant Algorithms: Third International Workshop, ANTS 2002},
-  booktitle =    {Ant Algorithms: Third International Workshop, ANTS 2002},
+  title =        {Ant Algorithms, Third International Workshop, ANTS
+                  2002, Brussels, Belgium, September 12-14, 2002,
+                  Proceedings},
+  booktitle =    {Ant Algorithms, Third International Workshop, ANTS
+                  2002},
   year =         2002,
   series =       lncs,
   volume =       2463,
-  aeditor =       Dorigo #and# DiCaro #and# Sampels,
+  fulleditor =   Dorigo #and# DiCaro #and# Sampels,
   editor =       Dorigo # " and others ",
   publisher =    springer-lncs,
 }
 
 @Book{ANTS2004,
-  title =        {Ant Colony Optimization and Swarm Intelligence: 4th
+  title =        {Ant Colony Optimization and Swarm Intelligence, 4th
                   International Workshop, ANTS 2004},
-  booktitle =    {Ant Colony Optimization and Swarm Intelligence: 4th
+  booktitle =    {Ant Colony Optimization and Swarm Intelligence, 4th
                   International Workshop, ANTS 2004},
   year =         2004,
-  aeditor =      Dorigo #and# Gambardella #and# Mondada #and# Stuetzle
+  fulleditor =      Dorigo #and# Gambardella #and# Mondada #and# Stuetzle
                   #and# Birattari #and# Blum,
   editor =       Dorigo # " and others ",
   volume =       3172,
@@ -171,11 +89,11 @@
 
 
 @Book{ANTS2006,
-  title =        {Ant Colony Optimization and Swarm Intelligence: 5th
+  title =        {Ant Colony Optimization and Swarm Intelligence, 5th
                   International Workshop, ANTS 2006},
-  booktitle =    {Ant Colony Optimization and Swarm Intelligence: 5th
+  booktitle =    {Ant Colony Optimization and Swarm Intelligence, 5th
                   International Workshop, ANTS 2006},
-  aeditor =      Dorigo #and# Gambardella #and# Birattari #and# "
+  fulleditor =      Dorigo #and# Gambardella #and# Birattari #and# "
                   Martinoli, A." #and# " Poli, R. " #and# Stuetzle,
   editor =       Dorigo # " and others ",
   series =       lncs,
@@ -185,12 +103,12 @@
 }
 
 @Book{ANTS2008,
-  title =        {Ant Colony Optimization and Swarm Intelligence: 6th
+  title =        {Ant Colony Optimization and Swarm Intelligence, 6th
                   International Conference, ANTS 2008},
-  booktitle =    {Ant Colony Optimization and Swarm Intelligence: 6th
+  booktitle =    {Ant Colony Optimization and Swarm Intelligence, 6th
                   International Conference, ANTS 2008},
   year =         2008,
-  aeditor =      Dorigo #and# Birattari #and# Blum #and# {M. Clerc}
+  fulleditor =      Dorigo #and# Birattari #and# Blum #and# {M. Clerc}
                   #and# Stuetzle #and# {A.F.T. Winfield},
   editor =       Dorigo # " and others ",
   publisher =    springer-lncs,
@@ -199,9 +117,10 @@
 }
 
 @Book{ANTS2010,
-  title =        {Ant Colony Optimization and Swarm Intelligence: 7th
+  title =        {Ant Colony Optimization and Swarm Intelligence, 7th
                   International Conference, ANTS 2010},
-  booktitle =    {ANTS 2010},
+  booktitle =        {Ant Colony Optimization and Swarm Intelligence, 7th
+                  International Conference, ANTS 2010},
   year =         2010,
   editor =       Dorigo # " and others ",
   publisher =    springer-lncs,
@@ -409,7 +328,7 @@
   booktitle =    {Evolutionary Multi-criterion Optimization (EMO
                   2005)},
   year =         2005,
-  aeditor =      {C.~C.~Coello and A.~H.~Aguirre and E.~Zitzler},
+  fulleditor =   {C.~C.~Coello and A.~H.~Aguirre and E.~Zitzler},
   editor =       {C.~C.~Coello and others},
   series =       lncs,
   volume =       3410,
@@ -496,24 +415,26 @@
 }
 
 @Book{GECCO1999,
-  aeditor =      {Wolfgang Banzhaf and Jason M. Daida and A. E. Eiben
+  fulleditor =   {Wolfgang Banzhaf and Jason M. Daida and A. E. Eiben
                   and Max H. Garzon and Vasant Honavar and Mark
                   J. Jakiela and Robert E. Smith},
   editor =       {Wolfgang Banzhaf and others},
   title =        {Proceedings of the Genetic and Evolutionary
-                  Computation Conference (GECCO 1999), 13-17 July
+                  Computation Conference, GECCO 1999, 13-17 July
                   1999, Orlando, Florida, USA},
-  booktitle =    {GECCO 1999},
+  booktitle =    {Proceedings of the Genetic and Evolutionary
+                  Computation Conference, GECCO 1999},
   year =         1999,
   publisher =    mk-s
 }
 
 @Book{GECCO2000,
   title =        "Proceedings of the Genetic and Evolutionary
-                  Computation Conference (GECCO-2000)",
-  booktitle =    "GECCO 2000",
+                  Computation Conference, GECCO 2000",
+  booktitle =     "Proceedings of the Genetic and Evolutionary Computation 
+                  Conference, GECCO 2000",
   year =         2000,
-  aeditor =      "D.~Whitley and D.~Goldberg and E.~Cantu-Paz and
+  fulleditor =      "D.~Whitley and D.~Goldberg and E.~Cantu-Paz and
                   L.~Spector and I.~Parmee and H.-G.~Beyer",
   editor =       "D.~Whitley and others",
   publisher =    mk-s
@@ -521,8 +442,9 @@
 
 @Book{GECCO2002,
   title =        "Proceedings of the Genetic and Evolutionary
-                  Computation Conference (GECCO 2002)",
-  booktitle =    "GECCO 2002",
+                  Computation Conference, GECCO 2002",
+  booktitle =    "Proceedings of the Genetic and Evolutionary
+                  Computation Conference, GECCO 2002",
   year =         2002,
   editor =       {W. B. Langdon and others},
   publisher =    mk-s
@@ -531,8 +453,9 @@
 
 @Book{GECCO2004,
   title =        "Proceedings of the Genetic and Evolutionary
-                  Computation Conference (GECCO 2004)",
-  booktitle =    "GECCO 2004",
+                  Computation Conference, GECCO 2004",
+  booktitle = "Proceedings of the Genetic and Evolutionary
+                  Computation Conference, GECCO 2004",
   year =         2004,
   editor =       Deb # "and others",
   volume =       3102,
@@ -542,8 +465,9 @@
 
 @Book{GECCO2006,
   title =        "Proceedings of the Genetic and Evolutionary
-                  Computation Conference (GECCO 2006)",
-  booktitle =    "GECCO 2006",
+                  Computation Conference, GECCO 2006",
+  booktitle =        "Proceedings of the Genetic and Evolutionary
+                  Computation Conference, GECCO 2006",
   editor =       {M. Cattolico and others},
   year =         2006,
   publisher =    acm-pub,
@@ -553,7 +477,8 @@
 @Book{GECCO2007,
   title =        {GECCO'07: Proceedings of the 9th Annual Conference
                   on Genetic and Evolutionary Computation, London, UK},
-  booktitle =    {GECCO 2007},
+  booktitle =        "Proceedings of the Genetic and Evolutionary
+                  Computation Conference, GECCO 2007",
   editor =       {Dirk Thierens and others},
   year =         2007,
   publisher =    acm-pub,
@@ -565,19 +490,20 @@
   title =        {Genetic and Evolutionary Computation Conference,
                   GECCO 2010, Proceedings, Portland, Oregon, USA, July
                   7-11, 2010},
-  booktitle =    {GECCO 2010},
+  booktitle =        "Proceedings of the Genetic and Evolutionary
+                  Computation Conference, GECCO 2010",
   year =         2010,
   publisher =    acm-pub,
   address =      acm-ad,
 }
 
 @Proceedings{GP1998,
-  booktitle =    {Late Breaking Papers at the Genetic Programming 1998
-                  Conference},
   title =        "Genetic Programming 1998: Proceedings of the Third
                   Annual Conference, Late Breaking Papers",
+  booktitle =    {Late Breaking Papers at the Genetic Programming 1998
+                  Conference},
   editor =       {John R. Koza},
-  month =        {July},
+  month =        jul,
   address =      {Stanford University, California},
   publisher =    {Stanford University Bookstore},
   year =         1998
