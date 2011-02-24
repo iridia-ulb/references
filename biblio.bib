@@ -434,6 +434,38 @@
   number =       5,
   pages =        {1075--1082},
   doi =          {10.1109/TEVC.2009.2015575},
+  abstract =     {The goal of multi-objective optimization is to find
+                  a set of best compromise solutions for typically
+                  conflicting objectives. Due to the complex nature of
+                  most real-life problems, only an approximation to
+                  such an optimal set can be obtained within
+                  reasonable (computing) time. To compare such
+                  approximations, and thereby the performance of
+                  multi-objective optimizers providing them, unary
+                  quality measures are usually applied. Among these,
+                  the \emph{hypervolume indicator} (or
+                  \emph{S-metric}) is of particular relevance due to
+                  its favorable properties. Moreover, this indicator
+                  has been successfully integrated into stochastic
+                  optimizers, such as evolutionary algorithms, where
+                  it serves as a guidance criterion for finding good
+                  approximations to the Pareto front.\\ Recent results
+                  show that computing the hypervolume indicator can be
+                  seen as solving a specialized version of Klee's
+                  Measure Problem.  In general, Klee's Measure Problem
+                  can be solved with $\mathcal{O}(n \log n +
+                  n^{d/2}\log n)$ comparisons for an input instance of
+                  size $n$ in $d$ dimensions; as of this writing, it
+                  is unknown whether a lower bound higher than
+                  $\Omega(n \log n)$ can be proven.\\ In this article,
+                  we derive a lower bound of $\Omega(n\log n)$ for the
+                  complexity of computing the hypervolume indicator in
+                  any number of dimensions $d>1$ by reducing the
+                  so-called \textsc{UniformGap} problem to it.  For
+                  the three dimensional case, we also present a
+                  matching upper bound of $\mathcal{O}(n\log n)$
+                  comparisons that is obtained by extending an
+                  algorithm for finding the maxima of a point set.},
 }
 
 @Article{BeuNauEmm2007ejor,
@@ -1075,6 +1107,21 @@
   pages =        {1225--1235},
   doi =          {10.1016/j.mcm.2006.11.035},
   pdf =          {ChinChun07-acs-tsptw.pdf}
+}
+
+@Article{ChiBirSocRos2006jos,
+  author =       Chiarandini #and# Birattari #and# Socha #and#
+                  "O. Rossi-Doria",
+  title =        {An Effective Hybrid Algorithm for University Course
+                  Timetabling},
+  journal =      jos,
+  year =         2006,
+  volume =       9,
+  pages =        {403--432},
+  number =       5,
+  month =        oct,
+  doi =          {10.1007/s10951-006-8495-8},
+  keywords =     {2003 international timetabling competition, F-race}
 }
 
 @Article{ChrMinTot81tsptw,
@@ -1926,7 +1973,21 @@
   crossref =     "CEC2006",
   pages =        {1157--1163},
   doi =          {10.1109/CEC.2006.1688440},
-  pdf =          {FonPaqLop06-hypervolume.pdf}
+  pdf =          {FonPaqLop06-hypervolume.pdf},
+  abstract =     {This paper presents a recursive, dimension-sweep
+                  algorithm for computing the hypervolume indicator of
+                  the quality of a set of $n$ non-dominated points in
+                  $d>2$ dimensions. It improves upon the existing HSO
+                  (Hypervolume by Slicing Objectives) algorithm by
+                  pruning the recursion tree to avoid repeated
+                  dominance checks and the recalculation of partial
+                  hypervolumes. Additionally, it incorporates a recent
+                  result for the three-dimensional special case.  The
+                  proposed algorithm achieves $O(n^{d-2} \log n)$ time
+                  and linear space complexity in the worst-case, but
+                  experimental results show that the pruning
+                  techniques used may reduce the time complexity
+                  exponent even further.},
 }
 
 @inproceedings{FosBickHardKok2007,
@@ -2511,7 +2572,7 @@
   year =         2009,
   volume =       36,
   pages =        "267--306",
-  month =        "October"
+  month =        oct,
 }
 
 @inproceedings{HutHooStu07aaai,
@@ -3255,13 +3316,30 @@
   pages =        "1570--1583",
   keywords =     "Ant colony optimization",
   keywords =     "Travelling salesman problem with time windows",
-  keywords =     "Hybridization"
+  keywords =     "Hybridization",
+  abstract =     {The travelling salesman problem with time windows is
+                  a difficult optimization problem that arises, for
+                  example, in logistics. This paper deals with the
+                  minimization of the travel-cost. For solving this
+                  problem, this paper proposes a Beam-ACO algorithm,
+                  which is a hybrid method combining ant colony
+                  optimization with beam search.  In general, Beam-ACO
+                  algorithms heavily rely on accurate and
+                  computationally inexpensive bounding information for
+                  differentiating between partial solutions. This work
+                  uses stochastic sampling as a useful alternative. An
+                  extensive experimental evaluation on seven benchmark
+                  sets from the literature shows that the proposed
+                  Beam-ACO algorithm is currently a state-of-the-art
+                  technique for the travelling salesman problem with
+                  time windows when travel-cost optimization is
+                  concerned.},
 }
 
 @TechReport{LopDubStu2011irace,
   author =       Lopez-Ibanez #and# Dubois-Lacoste #and# Stuetzle
                   #and# Birattari,
-  title =        "The \texttt{irace} package, Iterated Race for
+  title =        "The irace package, Iterated Race for
                   Automatic Algorithm Configuration",
   institution =  iridia,
   year =         2011,
@@ -3338,6 +3416,22 @@
   pages =        {209--222},
   doi =          {10.1007/978-3-642-02538-9_9},
   crossref =     "BarChiPaqPre2010emaoa",
+  abstract =     {This chapter introduces two Perl programs that
+                  implement graphical tools for exploring the
+                  performance of stochastic local search algorithms
+                  for biobjective optimization problems. These tools
+                  are based on the concept of the empirical attainment
+                  function (EAF), which describes the probabilistic
+                  distribution of the outcomes obtained by a
+                  stochastic algorithm in the objective space. In
+                  particular, we consider the visualization of
+                  attainment surfaces and differences between the
+                  first-order EAFs of the outcomes of two
+                  algorithms. This visualization allows us to identify
+                  certain algorithmic behaviors in a graphical way.
+                  We explain the use of these visualization tools and
+                  illustrate them with examples arising from
+                  practice.},
 }
 
 @Misc{LopPaqStu2010:eaftools,
@@ -3383,13 +3477,53 @@
 
 @Article{LopPraPae2011ec,
   author =       Lopez-Ibanez #and# Prasad #and# Paechter,
-  title =        "Representations and Evolutionary Operators for the Scheduling of Pump Operations in Water Distribution Networks",
+  title =        "Representations and Evolutionary Operators for the
+                  Scheduling of Pump Operations in Water Distribution
+                  Networks",
   journal =      ec,
   year =         {2011},
+  doi =          {10.1162/EVCO_a_00035},
   OPTvolume =    {},
   OPTnumber =    {},
   OPTpages =     {},
-  note =         {Accepted for publication},
+  note =         {In Press},
+  abstract =     {Reducing the energy consumption of water
+                  distribution networks has never had more
+                  significance. The greatest energy savings can be
+                  obtained by carefully scheduling the operations of
+                  pumps. Schedules can be defined either implicitly,
+                  in terms of other elements of the network such as
+                  tank levels, or explicitly by specifying the time
+                  during which each pump is on/off.  The traditional
+                  representation of explicit schedules is a string of
+                  binary values with each bit representing pump on/off
+                  status during a particular time interval.  In this
+                  paper, we formally define and analyze two new
+                  explicit representations based on time-controlled
+                  triggers, where the maximum number of pump switches
+                  is established beforehand and the schedule may
+                  contain less switches than the maximum. In these
+                  representations, a pump schedule is divided into a
+                  series of integers with each integer representing
+                  the number of hours for which a pump is
+                  active/inactive.  This reduces the number of
+                  potential schedules compared to the binary
+                  representation, and allows the algorithm to operate
+                  on the feasible region of the search space.  We
+                  propose evolutionary operators for these two new
+                  representations. The new representations and their
+                  corresponding operations are compared with the two
+                  most-used representations in pump scheduling,
+                  namely, binary representation and level-controlled
+                  triggers. A detailed statistical analysis of the
+                  results indicates which parameters have the greatest
+                  effect on the performance of evolutionary
+                  algorithms. The empirical results show that an
+                  evolutionary algorithm using the proposed
+                  representations improves over the results obtained
+                  by a recent state-of-the-art Hybrid Genetic
+                  Algorithm for pump scheduling using level-controlled
+                  triggers.}
 }
 
 @InCollection{LopPraPae:gecco07,
@@ -3440,10 +3574,29 @@
 
 @InCollection{LopStu2010:ants,
   author =       Lopez-Ibanez #and# Stuetzle,
-  title =        "Automatic Configuration of Multi-Objective {ACO} Algorithms",
+  title =        "Automatic Configuration of Multi-Objective {ACO}
+                  Algorithms",
   pages =        {95--106},
   crossref =     "ANTS2010",
   doi =          {10.1007/978-3-642-15461-4_9},
+  abstract =     {In the last few years a significant number of ant
+                  colony optimization (ACO) algorithms have been
+                  proposed for tackling multi-objective optimization
+                  problems. In this paper, we propose a software
+                  framework that allows to instantiate the most
+                  prominent multi-objective ACO (MOACO)
+                  algorithms. More importantly, the flexibility of
+                  this MOACO framework allows the application of
+                  automatic algorithm configuration techniques. The
+                  experimental results presented in this paper show
+                  that such an automatic configuration of MOACO
+                  algorithms is highly desirable, given that our
+                  automatically configured algorithms clearly
+                  outperform the best performing MOACO algorithms that
+                  have been proposed in the literature. As far as we
+                  are aware, this paper is also the first to apply
+                  automatic algorithm configuration techniques to
+                  multi-objective stochastic local search algorithms.},
 }
 
 @InCollection{LopStu2010:gecco,
@@ -3454,6 +3607,25 @@
   crossref =     {GECCO2010},
   doi =          {10.1145/1830483.1830494},
   pages =        "71--78",
+  abstract =     {Over the last few years, there have been a number of
+                  proposals of ant colony optimization (ACO)
+                  algorithms for tackling multiobjective combinatorial
+                  optimization problems. These proposals adapt ACO
+                  concepts in various ways, for example, some use
+                  multiple pheromone matrices and multiple heuristic
+                  matrices and others use multiple ant colonies.\\ In
+                  this article, we carefully examine several of the
+                  most prominent of these proposals. In particular, we
+                  identify commonalities among the approaches by
+                  recasting the original formulation of the algorithms
+                  in different terms. For example, several proposals
+                  described in terms of multiple colonies can be cast
+                  equivalently using a single ant colony, where ants
+                  use different weights for aggregating the pheromone
+                  and/or the heuristic information. We study
+                  algorithmic choices for the various proposals and we
+                  identify previously undetected trade-offs in their
+                  performance.},
 }
 
 @Misc{LopStu2010:gecco-supp,
@@ -5716,4 +5888,5 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
   crossref =     {CEC2009},
   pages =        {399--406},
 }
+
 
