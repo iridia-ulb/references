@@ -12,6 +12,7 @@ Contents
  * Updating your working copy
  * Before submitting a paper
  * List of most often used Subversion commands
+ * Copyright
 
 Format of keys
 --------------
@@ -228,6 +229,20 @@ out of Subversion, please read the book: http://svnbook.red-bean.com/
   svn ci --editor-cmd EDITOR
 
   where EDITOR is something like emacs, vi or gedit.
+
+
+Copyright
+---------
+
+To the extent that the contents of bib files may be subject to
+copyright, the contents of the IRIDIA BibTeX Repository are placed
+under the public domain by associating it to the Creative Commons CC0
+1.0 Universal license (http://creativecommons.org/publicdomain/zero/1.0/).
+
+However, as a personal note, we will appreciate if the repository
+is not made publicly available, and that modifications are submitted
+back to us for consideration.
+
 
 $Revision$
 $Date$
