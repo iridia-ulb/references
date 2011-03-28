@@ -3272,6 +3272,14 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
   address =      {Washington, DC},
 }
 
+@incollection{LiaMonDogStuDor2011gecco,
+  Author =       {Tianjun Liao} #and# MontesDeOca #and# {Dogan Aydin}
+                  #and# Stuetzle #and# Dorigo,
+  Title =        "An Incremental {ACO$_{\mathbb{R}}$} with Local
+                  Search for Continuous Optimization Problems",
+  crossref =     "GECCO2011",
+}
+
 @article{LiaTseLua07,
   author =       Liao_CJ #and# Tseng_CT #and# Luarn,
   title =        "A discrete version of particle swarm optimization
@@ -3389,6 +3397,35 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
   author =       Lopez-Ibanez #and# Knowles #and# Laumanns,
   title =        "On Sequential Online Archiving of Objective Vectors",
   pages =        {46--60},
+  abstract =     {In this paper, we examine the problem of maintaining
+                  an approximation of the set of nondominated points
+                  visited during a multiobjective optimization, a
+                  problem commonly known as archiving. Most of the
+                  currently available archiving algorithms are
+                  reviewed, and what is known about their convergence
+                  and approximation properties is summarized. The main
+                  scenario considered is the restricted case where the
+                  archive must be updated online as points are
+                  generated one by one, and at most a fixed number of
+                  points are to be stored in the archive at any one
+                  time. In this scenario, the better-monotonicity of
+                  an archiving algorithm is proposed as a weaker, but
+                  more practical, property than negative efficiency
+                  preservation. This paper shows that
+                  hypervolume-based archivers and a recently proposed
+                  multi-level grid archiver have this property. On the
+                  other hand, the archiving methods used by SPEA2 and
+                  NSGA-II do not, and they may better-deteriorate with
+                  time. The better-monotonicity property has meaning
+                  on any input sequence of points. We also classify
+                  archivers according to limit properties,
+                  i.e. convergence and approximation properties of the
+                  archiver in the limit of infinite (input) samples
+                  from a finite space with strictly positive
+                  generation probabilities for all points. This paper
+                  establishes a number of research questions, and
+                  provides the initial framework and analysis for
+                  answering them.},
   crossref =     {EMO2011},
 }
 
@@ -3638,6 +3675,7 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
                   multi-objective stochastic local search algorithms.},
 }
 
+
 @InCollection{LopStu2010:gecco,
   author =       Lopez-Ibanez #and# Stuetzle,
   title =        "The impact of design choices of multi-objective ant
@@ -3666,7 +3704,6 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
                   identify previously undetected trade-offs in their
                   performance.},
 }
-
 
 @Misc{LopStu2010:gecco-supp,
   author =       Lopez-Ibanez #and# Stuetzle,
@@ -3936,6 +3973,7 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
   doi =          {10.1061/(ASCE)0733-9496(2003)129:5(372)}
 }
 
+
 @InProceedings{McCormick03,
   author =       McCormick # and # Powell,
   title =        "A progressive mixed integer-programming method for
@@ -3943,7 +3981,6 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
   pages =        {307--313},
   crossref =     "AWSM03",
 }
-
 
 @Article{McCormick04,
   author =       McCormick #and# Powell,
@@ -4116,6 +4153,7 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
   publisher =    {Springer Berlin / Heidelberg},
 }
 
+
 @article{MinRuiCia08,
   author =       Minella #and# Ruiz_Ruben #and# Ciavotta,
   title =        {A Review and Evaluation of Multiobjective Algorithms
@@ -4129,6 +4167,16 @@ title = "Sequential Model-Based Optimization for General Algorithm Configuration
   alias =        {MinRuiCia08mfsp}
 }
 
+@article{MonAydStu2011soco,
+  author =       MontesDeOca #and# {Dogan Aydin} #and# Stuetzle,
+  title =        {An Incremental Particle Swarm for Large-Scale
+                  Continuous Optimization Problems: An Example of
+                  Tuning-in-the-loop (Re)Design of Optimization
+                  Algorithms},
+  journal =      soco,
+  year =         2011,
+  doi =          {10.1007/s00500-010-0649-0}
+}
 
 @Article{MonRandHen08:bias,
   author =       Montgomery #and# Randall_M #and# Hendtlass_T,
@@ -4221,6 +4269,8 @@ doi = {10.1016/j.cor.2006.12.014},
   note =         notreadyet,
   keywords =     "crossover, intermediate, line"
 }
+  
+
 
 @InProceedings{Murphy94,
   author =       Murphy # and # Dandy # and # Simpson,
@@ -4236,8 +4286,6 @@ doi = {10.1016/j.cor.2006.12.014},
   organization = {The Institution of Engineers},
   note =         notreadyet,
 }
-  
-
 
 @InCollection{NanEib2006gecco,
   author =       {V. Nannen} #and# Eiben,
@@ -4269,7 +4317,7 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       3,
   number =       1,
   pages =        {35--68}
-}
+} 
 
 @Article{NeuWit2006:eccc,
   author    = {F. Neumann and C. Witt},
@@ -4278,7 +4326,7 @@ doi = {10.1016/j.cor.2006.12.014},
   volume    = 13,
   number    = 084,
   year      = 2006,
-} 
+}
 
 @Article{Nitivatta96,
   author =	 Nitivattananon # and # Sadowski # and # Quimpo,
@@ -4699,6 +4747,7 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {282--287},
 }
 
+
 @InCollection{PinRunSoup07:maxsat,
   author =       "Pedro Pinto and Thomas Runkler and Jo{\~a}o Sousa",
   title =        {Ant Colony Optimization and its Application to
@@ -4730,7 +4779,6 @@ doi = {10.1016/j.cor.2006.12.014},
                   of dealing with systematic changes of dynamic
                   {MAX-SAT} instances derived from static problems.  },
 }
-
 
 @Article{PitAlmDoe06,
   author =       "Rapeepan Pitakaso and " # Almeder #and# Doerner
@@ -4803,6 +4851,7 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {129--136},
 }
 
+
 @InProceedings{Prasad03,
   author =       Prasad # and # Walters,
   title =        {Optimal rerouting to minimise residence times in
@@ -4820,7 +4869,6 @@ doi = {10.1016/j.cor.2006.12.014},
   edition =      2,
   alias =        "preparata:computational",
 }
-
 
 @Manual{R:Rmpi,
   title =        {Rmpi: Interface (Wrapper) to MPI (Message-Passing
@@ -5200,6 +5248,7 @@ doi = {10.1016/j.cor.2006.12.014},
   alias = {SocBlu2007:nca},
 }
 
+
 @article{SocDor2008:ejor,
   author =       Socha #and# Dorigo,
   title =        {Ant Colony Optimization for Continuous Domains},
@@ -5210,7 +5259,6 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {1155--1173},
   doi =         {10.1016/j.ejor.2006.06.046}
 }
-
 
 @InCollection{SocKnoSam02:ants,
   author =	 {K. Socha and J. Knowles and M. Sampels},
@@ -5419,7 +5467,7 @@ doi = {10.1016/j.cor.2006.12.014},
   publisher =    " Morgan Kaufmann Publishers, San Mateo",
   note =         notreadyet,
   keywords =     "uniform crossover",
-}
+} 
 
 @Article{Tai90,
   author =       Taillard,
@@ -5430,7 +5478,7 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       47,
   number =       1,
   pages =        {65--74}
-} 
+}
 
 @Article{Tai93,
   author =	 Taillard,
@@ -5569,6 +5617,7 @@ doi = {10.1016/j.cor.2006.12.014},
   address =      {Baldock, United Kingdom}
 }
 
+
 @Article{WalCro2000:siam-jsc,
   author =   {C.~Walshaw and M.~Cross},
   title =    {Mesh Partitioning: {A} Multilevel Balancing and Refinement Algorithm},
@@ -5582,7 +5631,6 @@ doi = {10.1016/j.cor.2006.12.014},
   OPTnote =      {},
   OPTannote =    {}
 }
-
 
 @InProceedings{Wegley00,
   author =       Wegley # and # Eusuff # and # Lansey,
@@ -5606,13 +5654,13 @@ doi = {10.1016/j.cor.2006.12.014},
   crossref =     "PPSN2010",
   doi =          {10.1007/978-3-642-15844-5_73},
 }
-
 @Incollection{WhiPagOpp98,
   author =       "T. White and B. Pagurek and F. Oppacher",
   title =        "Connection management using adaptive mobile agents",
   crossref =     "PDPTA1998",
   pages =        "802--809",
 }
+
 @InCollection{WieStu2006:ants,
   author =       {W. Wiesemann} #and# Stuetzle,
   title =        "Iterated Ants: An Experimental Study for the
@@ -5695,6 +5743,13 @@ doi = {10.1016/j.cor.2006.12.014},
   doi =         {10.1109/TEVC.2007.892759}
 }
 
+@InCollection{ZhaMin2010ccie,
+  author =      Zhaoxu #and# Min,
+  title =       "Multi-criteria Decision Making Based on {PROMETHEE} Method",
+  crossref =    "CCIE2010",
+  pages =       {416--418}
+}
+
 @Misc{Zhang09moeacomp,
   author =       {Qingfu Zhang and Ponnuthurai N. Suganthan},
   title =        "Special Session on Performance Assessment of
@@ -5715,6 +5770,7 @@ doi = {10.1016/j.cor.2006.12.014},
   aurl =
                   {http://www.aaai.org/ojs/index.php/aimagazine/article/viewArticle/1232},
 }
+
 
 @InCollection{ZitKnoThi2008quality,
   author =       Zitzler #and# Knowles #and# Thiele,
@@ -5739,7 +5795,6 @@ doi = {10.1016/j.cor.2006.12.014},
   annote =       {introduces hypervolume measure},
 }
 
-
 @article{ZitThi99:spea,
   author =       Zitzler #and# Thiele,
   title =        {Multiobjective Evolutionary Algorithms: {A}
@@ -5755,6 +5810,7 @@ doi = {10.1016/j.cor.2006.12.014},
   pdf =          {ZitzlerThiele99-SPEA.pdf},
   annote =       {introduces the hypervolume, introduces SPEA}
 }
+
 
 @incollection{ZitThiBad2008ppsn,
   author =       Zitzler #and# Thiele #and# {Johannes Bader},
@@ -5777,7 +5833,6 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        "117--132",
   alias =        {perfassess},
 }
-
 
 @article{ZloBirMeuDor2004:aor,
   author =       {M. Zlochin} #and# Birattari #and# { N. Meuleau }
@@ -5807,6 +5862,8 @@ doi = {10.1016/j.cor.2006.12.014},
   pages =        {48--59},
 }
 
+
+
 @ARTICLE{coo96mul,
   author =       {Cook, Richard J. and Farewell, Vern T.},
   year =         1996,
@@ -5834,8 +5891,6 @@ doi = {10.1016/j.cor.2006.12.014},
   doi =         {10.1061/40685(2003)127},
   note =         {on CD-ROM}
 }
-
-
 
 @Book{furlong00:stats,
   author =       {Nancy E. Furlong and Eugene A. Lovelace and Kristin
@@ -5875,6 +5930,7 @@ doi = {10.1016/j.cor.2006.12.014},
   address =      {Australia},
 }
 
+
 @Article{msc:special-issue,
   author =       Cordon #and# Herrera_F #and# Stuetzle,
   title =        "Special Issue on Ant Colony Optimization: Models and
@@ -5898,7 +5954,6 @@ doi = {10.1016/j.cor.2006.12.014},
   year =         2007,
   editor =       {T. F. Gonzalez},
 }
-
 
 @Article{powel03:demand,
   author =       McCormick #and# Powell,
@@ -5929,11 +5984,4 @@ doi = {10.1016/j.cor.2006.12.014},
   title =        "A Methodology for Improved Operational Optimization of Water Distribution Systems",
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
-}
-
-@InCollection{ZhaMin2010ccie,
-  author =      Zhaoxu #and# Min,
-  title =       "Multi-criteria Decision Making Based on {PROMETHEE} Method",
-  crossref =    "CCIE2010",
-  pages =       {416--418}
 }
