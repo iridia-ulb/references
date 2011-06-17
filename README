@@ -27,12 +27,12 @@ these rules:
    to four authors, first letter capitalized), the full year of
    publication (if this is not known, make a good guess because this
    should not be changed afterwards and it is confusing that the year
-   in the key does not matches the year of publication), a colon ':'
+   in the key does not matches the year of publication), 
    and the acronym of the conference, journal, or publisher.
 
    Examples: 
 
-      @Article{NouGhiBirDor2005:ki,
+      @Article{NouGhiBirDor2005ki,
          author = 	 {S. Nouyan and R. Ghizzioli and 
                          M. Birattari and M.  Dorigo},
          journal = 	 KI,
@@ -44,13 +44,15 @@ these rules:
 4. Exceptions are:
 
    * Proceedings: keys should be the acronym of the proceedings
-     followed by the year. Example: ANTS2001
+     followed by the year. Examples: ANTS2008, GECCO2010, etc.
+
 
    * Technical Reports: use the identificative key that technical
      reports often have, for example, IRIDIA-2009-015. Be careful to
      not use '/', '\' or ',' in keys.
    
    * Theses (PhD, etc): after the year, add the type of thesis.
+     Examples: Birattari2004PhD.
 
 
 Contributing to the IRIDIA BibTeX Repository
