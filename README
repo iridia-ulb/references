@@ -13,6 +13,7 @@ Contents
  * Before submitting a paper
  * List of most often used Subversion commands
  * Copyright
+ * Howto: Advanced usage
 
 Format of keys
 --------------
@@ -246,5 +247,26 @@ is not made publicly available, and that modifications are submitted
 back to us for consideration.
 
 
+Howto: Advanced Usage
+---------------------------
+
+* A journal insists on using "Springer-Verlag" instead of "Springer",
+  how to change everything?
+
+  You could generate the *.bbl file once and edit it, but if you need
+  to recompile the bibliography, you'll have to edit it again.
+
+  A better way is to create a dummy.bib file with:
+  
+  @string{springer = "Springer-Verlag"}
+  @string{springer-lncs = "Springer-Verlag, Heidelberg, Germany"}
+  ... and so on.
+
+  and then include it *after* abbrev.bib:
+
+  \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
+
+
+  
 $Revision$
 $Date$
