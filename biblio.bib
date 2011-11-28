@@ -8,7 +8,7 @@
 %% 1. Keep the entries sorted with respect to the key.
 %% 2. Check that what you are adding has not been added already with a
 %%    different name.
-%% 3. 'author' and 'editor' fields should be taken from authors.bib.
+S%% 3. 'author' and 'editor' fields should be taken from authors.bib.
 %% 4. 'publishers', 'series' and 'institution' should taken from abbrev.bib.
 %% 5. 'journal' should be taken from journal.bib.
 %% 6. 'InProceedings', 'InCollection' and 'InBook' should take crossreferences 
@@ -881,6 +881,16 @@
   pages =        {149--159},
 }
 
+@Article{BouForGliPir2010:ejor,
+  author =       Bous #and# Fortemps #and# Glineur #and# Pirlot,
+  title =        "{ACUTA}: {A} novel method for eliciting additive value functions on the basis of holistic preference statements",
+  journal =      ejor,
+  year =         2010,
+  volume =       206,
+  number =       2,
+  pages =        "435--444",
+}
+
 @InProceedings{Boulos01,
   author =       Boulos # and # Orr # and # DeSchaetzen #and# Chatila
                   #and# Moore_Michael # and # Hsiung # and #
@@ -892,16 +902,6 @@
   address =      {Denver, USA},
   publisher =    {American Water Works Association},
   pdf = {Boulos01 - Optimal Pump using GA.pdf},
-}
-
-@Article{BouForGliPir2010:ejor,
-  author =       Bous #and# Fortemps #and# Glineur #and# Pirlot,
-  title =        "{ACUTA}: {A} novel method for eliciting additive value functions on the basis of holistic preference statements",
-  journal =      ejor,
-  year =         2010,
-  volume =       206,
-  number =       2,
-  pages =        "435--444",
 }
 
 @Article{Bra++06,
@@ -1259,19 +1259,19 @@
   note =	 notreadyet,
 }
 
+@Book{CoeLamVVe2007:book,
+ author = 	Coello #and# Lamont #and# VanVeldhuizen,
+ title = 	"Evolutionary Algorithms for Solving Multi-Objective Problems (Genetic and Evolutionary Computation)",
+ year = 	2007,
+ publisher = 	springer-ny
+}
+
 @incollection{Coello2000cec,
   author =       Coello,
   title =        {Handling Preferences in Evolutionary Multiobjective
                   Optimization: A Survey},
   pages =        {30-37},
   crossref =     "CEC2000",
-}
-
-@Book{CoeLamVVe2007:book,
- author = 	Coello #and# Lamont #and# VanVeldhuizen,
- title = 	"Evolutionary Algorithms for Solving Multi-Objective Problems (Genetic and Evolutionary Computation)",
- year = 	2007,
- publisher = 	springer-ny
 } 
 
 @InCollection{Cohen82,
@@ -1390,17 +1390,6 @@
   note =         searchforit,
 }
 
-@Article{DauDouPesSte2010:po1,
-  author =       Daunizeau #and# denOuden #and# Pessiglione #and# Stephan #and# Kiebel #and# Friston,
-  title =        "Observing the observer ({I}): meta-{B}ayesian models of learning and decision-making",
-  journal =      pone,
-  year =         2010,
-  volume =       5,
-  number =       12,
-  pages =        "e15554",
-  doi =          "10.1371/journal.pone.0015554",
-}
-
 @Article{DauDouPesKie2010:po2,
   author =       Daunizeau #and# denOuden #and# Pessiglione #and# Kiebel #and# Friston #and# Stephan,
   title =        "Observing the observer ({II}): deciding when to decide",
@@ -1410,6 +1399,17 @@
   number =       12,
   pages =        "e15555",
   doi =          "10.1371/journal.pone.0015555",
+}
+
+@Article{DauDouPesSte2010:po1,
+  author =       Daunizeau #and# denOuden #and# Pessiglione #and# Stephan #and# Kiebel #and# Friston,
+  title =        "Observing the observer ({I}): meta-{B}ayesian models of learning and decision-making",
+  journal =      pone,
+  year =         2010,
+  volume =       5,
+  number =       12,
+  pages =        "e15554",
+  doi =          "10.1371/journal.pone.0015554",
 }
 
 @InProceedings{DeSchaetzen98,
@@ -1445,14 +1445,6 @@
  doi =         {10.1016/S0045-7825(99)00389-8}
 }
 
-@InCollection{DebAgrPra2000ppsn,
-  title=     {A fast elitist non-dominated sorting genetic algorithm 
-             for multi-objective optimization: {NSGA-II}},
-  author=    Deb #and# Agarwal #and# Pratap #and# Meyarivan,
-  crossref= "PPSN2000",
-  pages=     {849--858},
-}
-
 @Article{Deb02nsga2,
   author =       Deb #and# Pratap #and# Agarwal #and# Meyarivan,
   title =        {A fast and elitist multi-objective genetic
@@ -1472,6 +1464,14 @@
   year =         2001,
   publisher =    {Wiley},
   address =      {Chichester, UK},
+}
+
+@InCollection{DebAgrPra2000ppsn,
+  title=     {A fast elitist non-dominated sorting genetic algorithm 
+             for multi-objective optimization: {NSGA-II}},
+  author=    Deb #and# Agarwal #and# Pratap #and# Meyarivan,
+  crossref= "PPSN2000",
+  pages=     {849--858},
 }
 
 @TechReport{DebJain02,
@@ -1852,6 +1852,13 @@
   crossref =     "LION2010",
 }
 
+@Misc{DubLopStu2011:gecco-supp,
+  author =       {Anonymous},
+  title =        {{Supplementary material: Automatic Configuration of State-of-the-art Multi-objective Optimizers Using the TPLS+PLS Framework}},
+  howpublished = {\url{http://anonymous.anonym.an/supplementtpls}},
+  year =         2011,
+}
+
 @Article{DubLopStu2011amai,
   author =       Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
   title =        "Improving the Anytime Behavior of Two-Phase Local
@@ -1863,13 +1870,6 @@
   pages =        {125--154},
   doi =          {10.1007/s10472-011-9235-0},
   alias =        {DubLopStu2010amai}
-}
-
-@Misc{DubLopStu2011:gecco-supp,
-  author =       {Anonymous},
-  title =        {{Supplementary material: Automatic Configuration of State-of-the-art Multi-objective Optimizers Using the TPLS+PLS Framework}},
-  howpublished = {\url{http://anonymous.anonym.an/supplementtpls}},
-  year =         2011,
 }
 
 @Article{DubLopStu2011cor,
@@ -1891,6 +1891,13 @@
   crossref =     "GECCO2011",
   pages =        {2019-2026},
   doi =          {10.1145/2001576.2001847}
+}
+
+@Misc{DubLopStu2012:evocop-supp,
+  author =       Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
+  title =        {{Supplementary Material: Pareto Local Search Variants for Anytime Bi-Objective Optimization}},
+  howpublished = {\url{http://www.internet.net/supplementary-material}},
+  year =         2012,
 }
 
 @MastersThesis{Dubois2009,
@@ -2011,18 +2018,18 @@ For Bi-Objective Permutation Flowshop Scheduling},
   pages =        {19--46}
 }
 
-@InCollection{EppLopStuDeS2011:cec,
-  author =       Eppe #and# Lopez-Ibanez #and# Stuetzle #and# DeSmet,
-  title =        "An Experimental Study of Preference Model Integration into Multi-Objective Optimization Heuristics",
-  crossref =     "CEC2011",
-  pages =        "2751--2758"
-}
-
 @InCollection{EppDeSStu2011:adt,
   author =       Eppe #and# DeSmet #and# Stuetzle,
   title =        "A bi-objective optimization model to eliciting decision maker's preferences for the {PROMETHEE II} method",
   crossref =     "ADT2011",
   pages =        "56--66"
+}
+
+@InCollection{EppLopStuDeS2011:cec,
+  author =       Eppe #and# Lopez-Ibanez #and# Stuetzle #and# DeSmet,
+  title =        "An Experimental Study of Preference Model Integration into Multi-Objective Optimization Heuristics",
+  crossref =     "CEC2011",
+  pages =        "2751--2758"
 }
 
 @InProceedings{Ertin01,
@@ -4628,6 +4635,13 @@ doi = {10.1016/j.cor.2006.12.014},
   publisher =    {Springer Verlag, Berlin, Germany},
 }
 
+@PhdThesis{Mou2003:PhD,
+  author =       Mousseau,
+  title =        "Elicitation des pr{\'e}f{\'e}rences pour l'aide multicrit{\`e}re {\`a} la d{\'e}cision",
+  school =       upd,
+  year =         2003,
+}
+
 @article{MouSlo1998:jgo,
   author =       Mousseau #and# Slowinski,
   year =         1998,
@@ -4636,13 +4650,6 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       12,
   number =       2,
   pages =        "157--174",
-}
-
-@PhdThesis{Mou2003:PhD,
-  author =       Mousseau,
-  title =        "Elicitation des pr{\'e}f{\'e}rences pour l'aide multicrit{\`e}re {\`a} la d{\'e}cision",
-  school =       upd,
-  year =         2003,
 }
 
 @Article{Muhlenbein93,
@@ -4728,14 +4735,6 @@ doi = {10.1016/j.cor.2006.12.014},
   month =	 sep # " / " # oct,
 }
 
-@InCollection{OztTsoVin2005:mcda,
-  author =   Oztuerk #and# Tsoukias #and# Vincke,
-  title =    "Preference Modelling",
-  crossref = "FigGreEhr2005:mcda",
-  chapter =  2,
-  pages =    {27--72},
-}
-
 @article{OhlTho07tsptw_sa,
   author =       Ohlmann #and# Thomas_BW,
   title =        {A Compressed-Annealing Heuristic for the Traveling
@@ -4762,7 +4761,7 @@ doi = {10.1016/j.cor.2006.12.014},
   number =       2,
   pages =        {148--164},
   note =         notreadyet,
-} 
+}
 
 @Article{Ormsbee94,
   author =       Ormsbee # and # Lansey,
@@ -4772,7 +4771,7 @@ doi = {10.1016/j.cor.2006.12.014},
   volume =       120,
   number =       2,
   pages =        {237--252},
-}
+} 
 
 @Article{Ormsbee95,
   author =       Ormsbee # and # Reddy,
@@ -4840,6 +4839,14 @@ doi = {10.1016/j.cor.2006.12.014},
   year =         2007, 
   volume =       59,
   pages =        {1253--1268}
+}
+
+@InCollection{OztTsoVin2005:mcda,
+  author =   Oztuerk #and# Tsoukias #and# Vincke,
+  title =    "Preference Modelling",
+  crossref = "FigGreEhr2005:mcda",
+  chapter =  2,
+  pages =    {27--72},
 }
 
 @Book{PapSte1982:ph,
