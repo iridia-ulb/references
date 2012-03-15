@@ -266,7 +266,9 @@ Howto: Advanced Usage
 
   \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
 
+* I made a mistake in the commit message. Can this be fixed?
 
+  Yes: svn propedit 'svn:log' --revprop -r REVISION
   
 $Revision$
 $Date$
