@@ -250,11 +250,11 @@ back to us for consideration.
 Howto: Advanced Usage
 ---------------------------
 
-* A journal insists on using "Springer-Verlag" instead of "Springer",
-  how to change everything?
+Q: A journal insists on using "Springer-Verlag" instead of "Springer",
+   how to change everything?
 
-  You could generate the *.bbl file once and edit it, but if you need
-  to recompile the bibliography, you'll have to edit it again.
+A: You could generate the *.bbl file once and edit it, but if you need
+   to recompile the bibliography, you'll have to edit it again.
 
   A better way is to create a dummy.bib file with:
   
@@ -266,9 +266,27 @@ Howto: Advanced Usage
 
   \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
 
-* I made a mistake in the commit message. Can this be fixed?
 
-  Yes: svn propedit 'svn:log' --revprop -r REVISION
+Q: I want to save space and abbreviate journal names and titles of
+   books. Should I just edit the journal.bib and abbrev.bib files?
+
+A: You could do that, but you cannot commit the changes. So it would
+   be cumbersome for you to maintain your own copy.
+
+   You could generate the *.bbl file once and edit it, but if you need
+   to recompile the bibliography, you'll have to edit it again.
+
+   The best way is to add the shorter variants to abbrevshort.bib, and
+   then include it *after* both abbrev.bib and journals.bib:
+
+  \bibliography{abbrev,authors,journals,abbrevshort,biblio,crossref}
+
+
+Q: I made a mistake in the commit message. Can this be fixed?
+
+A: Yes: svn propedit 'svn:log' --revprop -r REVISION
+
+
   
 $Revision$
 $Date$
