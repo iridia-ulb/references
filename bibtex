@@ -1,0 +1,9 @@
+#!/bin/sh
+##
+# Wrapper to preventbibtex from generating separated entries for cross
+# references. Put it in your ~/bin/ and add ~/bin to your PATH
+#
+# FIXME: Test that /usr/bin/bibtex exists and it is executable. Test
+# also ~/bin/bibtex.
+crossrefs=${BIBTEX_MIN_CROSSREFS-999}
+exec /usr/bin/bibtex -min-crossrefs=${crossrefs} "$@"

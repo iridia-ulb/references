@@ -189,7 +189,8 @@ entries, you should modify your working copy, and then run aux2bib
 again to regenerate the file.
 
 Some bibtex styles generate separated entries for cross references. To
-avoid this use `bibtex -min-crossrefs=9000'.
+avoid this use `bibtex -min-crossrefs=9000'. Or use the bibtex wrapper
+included in the repository.
 
 If you want to modify a bibtex style to use short names (only the
 initial for the name), edit the *.bst file, search for something such
@@ -286,6 +287,12 @@ Q: I made a mistake in the commit message. Can this be fixed?
 
 A: Yes: svn propedit 'svn:log' --revprop -r REVISION
 
+Q: There is a separate entry for each cross-reference, and individual
+   references cite it. I think it is ugly, how to prevent this?
+
+A: Unhelpfully, bibtex generates by default separated entries for
+   cross references. To avoid this, use `bibtex -min-crossrefs=9000'.
+   Or use the bibtex wrapper included in the repository.
 
   
 $Revision$
