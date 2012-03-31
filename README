@@ -294,6 +294,23 @@ A: Unhelpfully, bibtex generates by default separated entries for
    cross references. To avoid this, use `bibtex -min-crossrefs=9000'.
    Or use the bibtex wrapper included in the repository.
 
+
+Q: Why I should not use "{{Title}}" in title? If not, should I use
+   title case or sentence case?
+
+A: Because it prevents the bibtex style to change the case of the
+   title to the style used by the journal, it breaks consistency: Some
+   titles will be in a case style different from others. In fact,
+   most journals use sentence case for journal papers. Sentence case
+   is like "This is a title". However, some journals use title case:
+   "This Is a Title". Since a bibtex style can convert from title case
+   to sentence case, but not the other way around, it is always better
+   to use title case in bib files without adding braces around the
+   whole title. That is, instead of:
+        title = {{This is a title that Manuel likes}}
+   use 
+        title = "This Is a Title that {M}anuel Likes"
+
   
 $Revision$
 $Date$
