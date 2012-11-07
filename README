@@ -59,15 +59,9 @@ these rules:
 Contributing to the IRIDIA BibTeX Repository
 --------------------------------------------
 
-People with a SVN account are able to commit changes. However, any
-changes should still be submitted for review. To create a patch for
-review, follow first "Updating your working copy", then use
-
- svn diff > mypatch.diff
-
-then send mypatch.diff to manuel.lopez-ibanez@ulb.ac.be and
-jeremie.dubois-lacoste@ulb.ac.be. Once your patch is approved, you may
-commit it.
+People with a SVN account are able to commit changes. People
+subscribed to the optbibsvn@iridia.ulb.ac.be mailing list will be able
+to see the commit, review it and ask for modifications.
 
 Before committing any change, follow first "Updating your working
 copy", then use
