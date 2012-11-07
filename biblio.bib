@@ -11,7 +11,7 @@
 %% 3. 'author' and 'editor' fields should be taken from authors.bib.
 %% 4. 'publishers', 'series' and 'institution' should be taken from abbrev.bib.
 %% 5. 'journal' should be taken from journal.bib.
-%% 6. 'InProceedings', 'InCollection' and 'InBook' should take crossreferences
+%% 6. 'InProceedings', 'InCollection' and 'InBook' should take cross-references
 %%    from crossref.bib
 %% 7. The 'alias' field is used when a repeated entry is found.
 %%    Delete one and add its key as the alias field of the other.
@@ -20,6 +20,12 @@
 %% 9. Articles in proceedings published as books (e.g., LNCS) should use
 %%    InCollection type.
 %%10. InBook should be used ONLY for books where chapters do not have titles.
+%%11. Since some bib-styles mandate title-case but others mandate sentence-case
+%%    and converting from title-case to sentence-case is done automatically but
+%%    the opposite cannot be done, then titles should preferably be in
+%%    title-case like "Data Structures and Algorithms". If a word or a letter
+%%    should always be in upper (or lower) case, then surround them with
+%%    braces, like in "The {ACO} Book", or "The {P}areto Front".
 %% Z. Some of the entries do not follow the above rules.
 %%    Please help us to update them little by little.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
