@@ -8,14 +8,17 @@
 %% 1. Keep the entries sorted.
 %% 2. Check that what you are adding has not been added already with a
 %%    different name.
-%% 3. For the booktitle of proceedings (whatever is format Book, Proceedings,
-%%    etc), please add a separate string in abbrev.bib. In the future, we would 
-%%    like to have two files abbrevshort.bib and abbrevfull.bib, with short
-%%    and long titles.
-%% 4. 'booktitle' is the title that appears in the crossreferences, 
+%% 3. 'booktitle' is the title that appears in the crossreferences, 
 %%    'title' is the title that appears when the book is cited directly. 
 %%    Normally, the latter is longer than the former, but they might be the
 %%    same.
+%% 4. Ideally, a separate string should be defined in abbrev.bib to be used as
+%%    the  booktitle of proceedings (whatever its format Book, Proceedings,
+%%    etc). This allows to override long titles with shorter versions by
+%%    adding the short version to abbrevshort.bib and including it after
+%%    abbrev.bib. However, since this is quite extra work for a very unusual
+%%    case, we currently do not enforce this rule unless you want to replace
+%%    a long title with a shorter version.
 %% 5. The 'address' field of Proceedings refers to the location of the
 %%    proceedings. Do not use the address of the publisher. The publisher 
 %%    field should be constructed by joining the -pub and -ad forms like: 
