@@ -276,10 +276,16 @@ A: You could do that, but you cannot commit the changes. So it would
 
   \bibliography{abbrev,authors,journals,abbrevshort,biblio,crossref}
 
+   Moreover, if you want to abbreviate titles of books but not journal
+   names, then use:
 
+  \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
+
+  
 Q: I made a mistake in the commit message. Can this be fixed?
 
 A: Yes: svn propedit 'svn:log' --revprop -r REVISION
+
 
 Q: There is a separate entry for each cross-reference, and individual
    references cite it. I think it is ugly, how to prevent this?
