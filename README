@@ -74,8 +74,10 @@ described above and within each bib file.
 
 Changes may be committed with any of the following commands:
 
-    svn ci -F log_message
+    svn ci -F log_message_file
     svn ci --editor-cmd EDITOR
+
+(see svn ci --help for more ways to specify the log message).
 
 The commit message (log message) should be of the following form:
 
@@ -206,27 +208,31 @@ out of Subversion, please read the book: http://svnbook.red-bean.com/
 
 * Checkout a copy of the files to some directory:
 
-   svn co https://iridia-dev.ulb.ac.be/projects/optbib/svn/
+     svn co https://iridia-dev.ulb.ac.be/projects/optbib/svn/
 
 * See changes in the repository before updating:
 
-  svn diff -rBASE:HEAD https://iridia-dev.ulb.ac.be/projects/optbib/svn/
+     svn diff -rBASE:HEAD https://iridia-dev.ulb.ac.be/projects/optbib/svn/
 
 * Update your local copy with the changes in the repository
 
-  svn up
+     svn up
 
 * See your local changes
 
-  svn diff
+     svn diff
 
 * Commit changes:
 
-  svn ci -F log_message
+    svn ci -F log_message_file
   or
-  svn ci --editor-cmd EDITOR
+    svn ci --editor-cmd EDITOR
 
-  where EDITOR is something like emacs, vi or gedit.
+  where EDITOR is something like emacs, vi or gedit. You can see
+  EDITOR in your .bashrc, and then you don't need to specify it every
+  time. For short commit messages, you can use 
+
+    svn ci -m " message "
 
 
 Copyright
