@@ -293,9 +293,9 @@ Q: I want to save space and reduce the number of editors (say et
    publisher address or other such fields. Can I edit the .bib files?
 
 A: You could do that, but you cannot commit the changes since the
-   additional information could be useful for other.  It would be
+   additional information could be useful for others.  It would be
    cumbersome for you to maintain your own copy, so an automatic way
-   to make these changes would be better. 
+   to make these changes would be better.
 
    The best way is to edit the .bst file to not emit these
    fields. Unfortunately, editing .bst files is sometimes not trivial,
