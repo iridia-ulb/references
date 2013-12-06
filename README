@@ -287,7 +287,20 @@ A: You could do that, but you cannot commit the changes. So it would
 
   \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
 
-  
+Q: I want to save space and reduce the number of editors (say et
+   al. for any editor after the first one), or remove all DOIs, URLs, publisher address or
+   other such fields. Can I edit the .bib files?
+
+   You could do that, but you cannot commit the changes since the
+   additional information could be useful for other.  It would be
+   cumbersome for you to maintain your own copy, so an automatic way
+   to make these changes would be better. The best way is to edit
+   the .bst file to not emit these fields. Unfortunately, editing
+   .bst files is sometimes not trivial, but often one can find examples in
+   Internet. If you edit a popular bst file to make it shorter, commit
+   the new version to optbib so others can use it. Currently, there is
+   an abbreviated version of Springer's LNCS bst file.
+
 Q: I made a mistake in the commit message. Can this be fixed?
 
 A: Yes: svn propedit 'svn:log' --revprop -r REVISION
