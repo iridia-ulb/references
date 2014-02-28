@@ -661,25 +661,25 @@ FUNCTION {word.in}
 
 FUNCTION {format.date}
 {
-  month "month" bibinfo.check
-  duplicate$ empty$
+  % month "month" bibinfo.check
+  % duplicate$ empty$
   year  "year"  bibinfo.check duplicate$ empty$
-    { swap$ 'skip$
-        { "there's a month but no year in " cite$ * warning$ }
-      if$
-      *
-    }
-    { swap$ 'skip$
-        {
-          swap$
-          " " * swap$
-        }
-      if$
-      *
-      remove.dots
-    }
-  if$
-  duplicate$ empty$
+  %   { swap$ 'skip$
+  %       { "there's a month but no year in " cite$ * warning$ }
+  %     if$
+  %     *
+  %   }
+  %   { swap$ 'skip$
+  %       {
+  %         swap$
+  %         " " * swap$
+  %       }
+  %     if$
+  %     *
+  %     remove.dots
+  %   }
+  % if$
+  % duplicate$ empty$
     'skip$
     {
       before.all 'output.state :=
