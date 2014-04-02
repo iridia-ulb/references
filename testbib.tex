@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{doc} % for \BibTeX
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{amsmath,amssymb}
@@ -13,10 +14,13 @@
 \fi
 
 \usepackage[numbers]{natbib}
+
+\renewcommand{\refname}{\textsf{IRIDIA} \BibTeX{} Repository}
+%FIXME: Add \textsf{IRIDIA} \BibTeX{} Repository and date to headers and page X out of Z to footer.
 \begin{document}
 \nocite{*}
-%\bibliographystyle{plainnat}
 \newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{\normalfont\texttt{doi:\nolinkurl{#1}}}}
+% \bibliographystyle{plainnat}
 \bibliographystyle{testbib}
 \bibliography{abbrev,authors,journals,biblio,crossref}
 \end{document}
