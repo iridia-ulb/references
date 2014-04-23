@@ -289,9 +289,69 @@
   alias =        "Ansotegui2009",
 }
 
+@Article{AppCoo91,
+  author =	 Applegate_D #and# Cook_W,
+  title =	 "A Computational Study of the Job-Shop Scheduling
+                  Problem",
+  journal =	 orsa,
+  year =	 1991,
+  volume =	 3,
+  number =	 2,
+  pages =	 "149--156",
+}
+
+@TechReport{AppBixChvCoo95:tr,
+  author =	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
+  title =	 "Finding Cuts in the {TSP}",
+  institution =	 "DIMACS Center, Rutgers University, Piscataway, NJ, USA",
+  year =	 1995,
+  number =	 "95--05",
+  month =	 "March",
+}
+
+@TechReport{AppBixChvCoo99:tr,
+  author =	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
+  title =	 {Finding Tours in the {TSP}},
+  institution =	 {Forschungsinstitut f{\"u}r Diskrete Mathematik,
+                  University of Bonn, Germany},
+  year =	 1999,
+  number =	 99885
+}
+
+@Article{AppBixChvCoo98,
+  author  = 	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
+  title   = 	 "On the Solution of Traveling Salesman Problems",
+  journal = 	 "Documenta Mathematica",
+  year    = 	 1998,
+  volume  =	 "Extra Volume ICM III",
+  pages   =	 "645--656",
+}
+
+@Article{AppCooRoh99,
+  author =	 {D. Applegate and W. Cook and A. Rohe},
+  title =	 {Chained {L}in-{K}ernighan for Large Traveling
+                  Salesman Problems},
+  journal =	 informs,
+  year =	 2003,
+  volume =	 15,
+  number =	 1,
+  pages =	 {82--92}
+}
+
+@Article{AppBixChvCoo03:mp,
+  author = 	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
+  title = 	 {Implementing the {D}antzig-{F}ulkerson-{J}ohnson Algorithm for Large Traveling Salesman Problems},
+  journal = 	 mpb,
+  year = 	 2003,
+  volume =	 97,
+  number =	 {1--2},
+  pages =	 {91--153}
+}
+
+
 @article{AppCoRoh2003,
   title =        {Chained {L}in-{K}ernighan for large traveling salesman problems},
-  author =       {David Applegate and William J. Cook and Andr{\'e} Rohe},
+  author =       Applegate_D #and# Cook_W #and# " Andr{\'e} Rohe",
   journal =      informs,
   volume =       15,
   number =       1,
@@ -300,14 +360,14 @@
 }
 
 @Book{AppEtAl06,
-  author =	 "David Applegate and Robert E. Bixby and Vasek Chvatal and William J. Cook",
+  author =	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
   title =	 "The Traveling Salesman Problem: A Computational Study",
   publisher =    pup,
   year =	 2006
 }
 
 @article{AppEtAl09,
-  author    = {D. Applegate and R. E. Bixby and V. Chv{\'a}tal and W. Cook and D. Espinoza and M. Goycoolea and K. Helsgaun},
+  author    = Applegate_D #and# Bixby #and# Chvatal #and# Cook_W #and# " D. Espinoza and M. Goycoolea " #and# Helsgaun,
   title     = {Certification of an Optimal {TSP} Tour Through 85,900 Cities},
   journal   = orl,
   volume    = 37,
@@ -1869,8 +1929,7 @@
 }
 
 @Misc{ConcordeSolver,
-  author =       "David Applegate and Robert E. Bixby and Vasek
-                  Chvatal and William J. Cook",
+  author =       Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
   title =        "Concorde {TSP} Solver",
   howpublished = {\url{http://www.math.uwaterloo.ca/tsp/concorde.html}},
   note =	 {Version visited last on 15 April 2014},
@@ -3923,7 +3982,7 @@
 }
 
 @Article{Helsgaun00,
-  author = 	 {Keld Helsgaun},
+  author = 	 Helsgaun,
   title = 	 {An Effective Implementation of the {L}in-{K}ernighan
 Traveling Salesman Heuristic},
   journal = 	 ejor,
@@ -3934,7 +3993,7 @@ Traveling Salesman Heuristic},
 
 
 @Article{Helsgaun09,
-  author = 	 {Keld Helsgaun},
+  author = 	 Helsgaun,
   title = 	 {General {\it k}-opt Submoves for the {L}in-{K}ernighan {TSP}
                Heuristic},
   journal = 	 mpc,
@@ -4052,7 +4111,7 @@ Traveling Salesman Heuristic},
   alias = {HooStu04:book}
 }
 
-@Article{HooStu14,
+@Article{HooStu2014,
   author = 	Hoos #and# Stuetzle,
   title = 	 {On the Empirical Scaling of Run-time for Finding Optimal Solutions to
 the Traveling Salesman Problem},
@@ -5217,8 +5276,7 @@ year =           {1998}
 }
 
 @Book{LawLenRinShm85,
-  author =	 {E. L. Lawler and J. K. Lenstra and A. H. G. Rinnooy
-                  Kan and D. B. Shmoys},
+  author =	 {E. L. Lawler and J. K. Lenstra and A. H. G. {Rinnooy Kan} and D. B. Shmoys},
   title =	 {The Traveling Salesman Problem},
   publisher =	 jws-c,
   year =	 1985
@@ -7829,6 +7887,16 @@ Meta-parameters},
   crossref =     {HM2007},
 }
 
+@Article{Rei91a,
+  author =	 {G.~Reinelt},
+  title =	 {{TSPLIB} --- A Traveling Salesman Problem Library},
+  journal =	 orsa,
+  year =	 1991,
+  volume =	 3,
+  number =	 4,
+  pages =	 {376--384},
+}
+
 @Book{Rei94,
   author =	 {Gerhard Reinelt},
   title =	 {The Traveling Salesman: Computational Solutions for
@@ -8844,18 +8912,16 @@ Twin-Screw Extrusion Configuration Problem},
   year =         2009,
 }
 
-@Misc{TSPLIB,
+@Misc{url:TSPLIB,
   author =	 {G. Reinelt},
   title =	 {{TSPLIB}},
   howpublished = {\url{http://www.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95}},
   note =	 {Version visited last on 15 June 2012},
-  year =	 {2012}
 }
 
-@Misc{TSPsite,
+@Misc{url:TSPsite,
   title = 	 {The Traveling Salesman Problem},
-  howpublished = {http://www.math.uwaterloo.ca/tsp/},
-  year = 	 2014,
+  howpublished = {\url{http://www.math.uwaterloo.ca/tsp}},
   note = 	 {Version visited last on 15 April 2014}
 }
 
