@@ -302,15 +302,14 @@
   alias =        "Ansotegui2009",
 }
 
-@Article{AppCoo91,
-  author =	 Applegate_D #and# Cook_W,
-  title =	 "A Computational Study of the Job-Shop Scheduling
-                  Problem",
-  journal =	 orsa,
-  year =	 1991,
-  volume =	 3,
-  number =	 2,
-  pages =	 "149--156",
+@Article{AppBixChvCoo03:mp,
+  author = 	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
+  title = 	 {Implementing the {D}antzig-{F}ulkerson-{J}ohnson Algorithm for Large Traveling Salesman Problems},
+  journal = 	 mpb,
+  year = 	 2003,
+  volume =	 97,
+  number =	 {1--2},
+  pages =	 {91--153}
 }
 
 @TechReport{AppBixChvCoo95:tr,
@@ -322,6 +321,15 @@
   month =	 "March",
 }
 
+@Article{AppBixChvCoo98,
+  author  = 	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
+  title   = 	 "On the Solution of Traveling Salesman Problems",
+  journal = 	 "Documenta Mathematica",
+  year    = 	 1998,
+  volume  =	 "Extra Volume ICM III",
+  pages   =	 "645--656",
+}
+
 @TechReport{AppBixChvCoo99:tr,
   author =	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
   title =	 {Finding Tours in the {TSP}},
@@ -331,13 +339,25 @@
   number =	 99885
 }
 
-@Article{AppBixChvCoo98,
-  author  = 	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
-  title   = 	 "On the Solution of Traveling Salesman Problems",
-  journal = 	 "Documenta Mathematica",
-  year    = 	 1998,
-  volume  =	 "Extra Volume ICM III",
-  pages   =	 "645--656",
+@article{AppCoRoh2003,
+  title =        {Chained {L}in-{K}ernighan for large traveling salesman problems},
+  author =       Applegate_D #and# Cook_W #and# " Andr{\'e} Rohe",
+  journal =      informs,
+  volume =       15,
+  number =       1,
+  pages =        {82--92},
+  year =         2003
+}
+
+@Article{AppCoo91,
+  author =	 Applegate_D #and# Cook_W,
+  title =	 "A Computational Study of the Job-Shop Scheduling
+                  Problem",
+  journal =	 orsa,
+  year =	 1991,
+  volume =	 3,
+  number =	 2,
+  pages =	 "149--156",
 }
 
 @Article{AppCooRoh99,
@@ -351,26 +371,6 @@
   pages =	 {82--92}
 }
 
-@Article{AppBixChvCoo03:mp,
-  author = 	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
-  title = 	 {Implementing the {D}antzig-{F}ulkerson-{J}ohnson Algorithm for Large Traveling Salesman Problems},
-  journal = 	 mpb,
-  year = 	 2003,
-  volume =	 97,
-  number =	 {1--2},
-  pages =	 {91--153}
-}
-
-
-@article{AppCoRoh2003,
-  title =        {Chained {L}in-{K}ernighan for large traveling salesman problems},
-  author =       Applegate_D #and# Cook_W #and# " Andr{\'e} Rohe",
-  journal =      informs,
-  volume =       15,
-  number =       1,
-  pages =        {82--92},
-  year =         2003
-}
 
 @Book{AppEtAl06,
   author =	 Applegate_D #and# Bixby #and# Chvatal #and# Cook_W,
@@ -938,6 +938,13 @@
   year =         2013,
 }
 
+@Misc{BezLopStu2013:lion-supp,
+  author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
+  title =        "Deconstructing Multi-Objective Evolutionary Algorithms: An Iterative Analysis on the Permutation Flowshop: Supplementary material",
+  howpublished = {\url{http://iridia.ulb.ac.be/supp/IridiaSupp2013-010/}},
+  year =         2013,
+}
+
 @InCollection{BezLopStu2013evocop,
   author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
   title =        "An Analysis of Local Search for the Bi-objective
@@ -945,13 +952,6 @@
   pages =        {85--96},
   doi =          {10.1007/978-3-642-37198-1_8},
   crossref =     "EVOCOP2013",
-}
-
-@Misc{BezLopStu2013:lion-supp,
-  author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
-  title =        "Deconstructing Multi-Objective Evolutionary Algorithms: An Iterative Analysis on the Permutation Flowshop: Supplementary material",
-  howpublished = {\url{http://iridia.ulb.ac.be/supp/IridiaSupp2013-010/}},
-  year =         2013,
 }
 
 @inCollection{BezLopStu2014lion,
@@ -1016,7 +1016,6 @@
   crossref =     "ANTS2002",
 }
 
-
 @Article{BirPelDor2007:tec,
   author =       Birattari #and# Pellegrini #and# Dorigo,
   title =        {On the invariance of ant colony optimization},
@@ -1029,6 +1028,7 @@
   alias =        {BirPelDor2007ieee-tevc},
   pdf =          {BirPelDor2007ieee-tevc.pdf},
 }
+
 
 @InCollection{BirStuPaqVar02:gecco,
   author =       Birattari #and# Stuetzle #and# Paquete #and# Varrentrapp,
@@ -1100,13 +1100,6 @@
                   Edge-Disjoint Paths Problem",
   pages =        "160--169",
   crossref =     "evoworkshops2004"
-}
-
-@inCollection{KnoCorFle2003,
-  title =        {Bounded archiving using the {L}ebesgue measure},
-  author =       Knowles #and# Corne #and# {Fleischer, Mark},
-  pages =        {2490--2497},
-  crossref =     {CEC2003}
 }
 
 @ARTICLE{BleBlu2007:jmma,
@@ -1471,13 +1464,6 @@
   pages =        {163--195}
 }
 
-@InCollection{BranElo2013lion,
-  author =       Branke #and# " Jawad Elomari ",
-  title =        "Racing with a Fixed Budget and a Self-Adaptive
-                  Significance Level",
-  crossref =     "LION2013",
-}
-
 @InCollection{BranElo2011gecco,
   author =       Branke #and# " Jawad Elomari ",
   title =        {Simultaneous tuning of metaheuristic parameters for
@@ -1488,6 +1474,13 @@
   keywords =     {meta-optimization, offline parameter optimization},
 }
 
+@InCollection{BranElo2013lion,
+  author =       Branke #and# " Jawad Elomari ",
+  title =        "Racing with a Fixed Budget and a Self-Adaptive
+                  Significance Level",
+  crossref =     "LION2013",
+}
+
 @incollection{BriFri2009emo,
   author =       Bringmann_K #and# Friedrich_T,
   title =        {Approximating the Least Hypervolume Contributor:
@@ -1496,15 +1489,12 @@
   crossref =     "EMO2009",
 }
 
-@incollection{BriFri2012gecco,
-  Title =        {Convergence of Hypervolume-Based Archiving
-                  Algorithms~{II}: Competitiveness},
-  Author =       Bringmann_K #and# Friedrich_T,
-  Pages =        {457--464},
-  doi =          {10.1145/2330163.2330229},
-  aurl =
-                  {http://docs.theinf.uni-jena.de/paper/2012GECCO_Hyp.pdf},
-  crossref =     {GECCO2012},
+@incollection{BriFri2010gecco,
+  author =       Bringmann_K #and# Friedrich_T,
+  title =        {The Maximum Hypervolume Set Yields Near-optimal
+                  Approximation},
+  crossref =     "GECCO2010",
+  pages =        {511--518},
 }
 
 @incollection{BriFri2011gecco,
@@ -1517,12 +1507,15 @@
   aurl =         {http://docs.theinf.uni-jena.de/paper/2011GECCO.pdf},
 }
 
-@incollection{BriFri2010gecco,
-  author =       Bringmann_K #and# Friedrich_T,
-  title =        {The Maximum Hypervolume Set Yields Near-optimal
-                  Approximation},
-  crossref =     "GECCO2010",
-  pages =        {511--518},
+@incollection{BriFri2012gecco,
+  Title =        {Convergence of Hypervolume-Based Archiving
+                  Algorithms~{II}: Competitiveness},
+  Author =       Bringmann_K #and# Friedrich_T,
+  Pages =        {457--464},
+  doi =          {10.1145/2330163.2330229},
+  aurl =
+                  {http://docs.theinf.uni-jena.de/paper/2012GECCO_Hyp.pdf},
+  crossref =     {GECCO2012},
 }
 
 @inproceedings{BrigFri2009foga,
@@ -1848,7 +1841,6 @@
   pages =        {15--24}
 }
 
-
 @PhdThesis{ChiarandiniPhD,
   author =       Chiarandini,
   title =        "Stochastic Local Search Methods for Highly
@@ -1869,6 +1861,7 @@
   pages =        {145--164},
   anote =        {makespan optimization},
 }
+
 
 @incollection{ChuNuaJanPho06,
   author =       {S. Chusanapiputt and D. Nualhong and S. Jantarang
@@ -1891,7 +1884,6 @@
   note =	 notreadyet,
 }
 
-
 @Book{CoeLamVVe2007:book,
  author = 	Coello #and# Lamont #and# VanVeldhuizen,
  title = 	"Evolutionary Algorithms for Solving Multi-Objective Problems",
@@ -1906,6 +1898,7 @@
   pages =        {30--37},
   crossref =     "CEC2000",
 }
+
 
 @InCollection{Cohen82,
   author =       Cohen_G,
@@ -2005,7 +1998,6 @@
   author = "Wagner Emanoel Costa and Marco C. Goldbarg and Elizabeth F. G. Goldbarg"
 }
 
-
 @Article{CosHer97:jors,
   author =   {D. Costa and A. Hertz},
   title =    {Ants can color graphs},
@@ -2025,6 +2017,7 @@
   number = 1,
   pages = {77--97},
 }
+
 
 @Article{CzyJas1998,
   title =        "Pareto simulated annealing -- a metaheuristic
@@ -2606,6 +2599,15 @@
   pages =        {483--495}
 }
 
+@TechReport{Dub2009:sls-ds,
+  author =       Dubois-Lacoste,
+  title =        {Weight Setting Strategies for Two-Phase Local Search: 
+                  A Study on Biobjective Permutation Flowshop Scheduling},
+  institution =  iridia,
+  year =         2009,
+  number =       "TR/IRIDIA/2009-024",
+}
+
 @Incollection{DubLopStu09:hm-bfsp,
   author =       Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
   title =        {Effective Hybrid Stochastic Local Search Algorithms
@@ -2752,15 +2754,6 @@
                   Scheduling},
   school =       iridia,
   year =         2009,
-}
-
-@TechReport{Dub2009:sls-ds,
-  author =       Dubois-Lacoste,
-  title =        {Weight Setting Strategies for Two-Phase Local Search: 
-                  A Study on Biobjective Permutation Flowshop Scheduling},
-  institution =  iridia,
-  year =         2009,
-  number =       "TR/IRIDIA/2009-024",
 }
 
 @MastersThesis{Dubois2010,
@@ -3589,14 +3582,6 @@
   pages =        "4--32",
 }
 
-@Book{GloLag97,
-  author = 	 {F.~Glover and M.~Laguna},
-  title = 	 {Tabu Search},
-  publisher = 	 kap,
-  address =      "Boston, MA, USA",
-  year = 	 1997,
-}
-
 @InCollection{Glo98,
   author =       Glover_F,
   title =        "A Template for Scatter Search and Path Relinking",
@@ -3604,6 +3589,14 @@
   doi =          {10.1007/BFb0026589},
   pages =        {1--51},
   year =         1998,
+}
+
+@Book{GloLag97,
+  author = 	 {F.~Glover and M.~Laguna},
+  title = 	 {Tabu Search},
+  publisher = 	 kap,
+  address =      "Boston, MA, USA",
+  year = 	 1997,
 }
 
 @inCollection{GolSouGol2006:pso,
@@ -3870,8 +3863,6 @@
   annote =          {http://coco.gforge.inria.fr/bbob2012-downloads}
 }
 
-
-
 @TechReport{HanJas1998,
   author =       Hansen_MP #and# Jaszkiewicz,
   title =        {Evaluating the quality of approximations to the
@@ -3892,6 +3883,8 @@
   doi =          {10.1007/978-3-540-72964-8_7},
   pages =        {131--151},
 }
+
+
 
 @Article{HanMla01:ejor,
   title =        {Variable neighborhood search: Principles and applications},
@@ -4023,7 +4016,6 @@ Traveling Salesman Heuristic},
   pages =	 {106--130}
 }
 
-
 @Article{Helsgaun09,
   author = 	 Helsgaun,
   title = 	 {General {\it k}-opt Submoves for the {L}in-{K}ernighan {TSP}
@@ -4042,6 +4034,7 @@ Traveling Salesman Heuristic},
   crossref =     {AAAI2007},
   pages =        {273--278},
 }
+
 
 @article{HerBlu2009:si,
   author =       {H. Hern{\'a}ndez} #and# Blum,
@@ -4309,7 +4302,6 @@ the Traveling Salesman Problem},
   alias =        {HutHooStu07}
 }
 
-
 @PhdThesis{HutterPhD,
   author =       Hutter_Frank,
   title =        {Automated Configuration of Algorithms for Solving
@@ -4331,6 +4323,7 @@ the Traveling Salesman Problem},
   number =       {RR-7871},
   pdf =          {http://hal.inria.fr/hal-00665421/PDF/RR-7871.pdf}
 }
+
 
 @TechReport{IRIDIA-2003-037,
   author =       Birattari,
@@ -4479,14 +4472,6 @@ the Traveling Salesman Problem},
   number =       {TR/IRIDIA/2011-022},
 }
 
-@TECHREPORT{IRIDIA-2013-002,
-  author =       Liao_Tianjun #and# Stuetzle #and# MontesDeOca #and# Dorigo,
-  title =        "A Unified Ant Colony Optimization Algorithm for Continuous Optimization",
-  institution =  iridia,
-  year =         2013,
-  number =       {TR/IRIDIA/2013-002}
-}
-
 @TECHREPORT{IRIDIA-2012-012,
   author =       Lopez-Ibanez #and# Stuetzle,
   title =        "Automatically Improving the Anytime Behaviour of
@@ -4498,8 +4483,6 @@ the Traveling Salesman Problem},
   note =         "Published in European Journal of Operations Research~\cite{LopStu2013ejor}"
 }
 
-
-
 @TECHREPORT{IRIDIA-2012-019,
   author =       Radulescu_A #and# Lopez-Ibanez #and# Stuetzle,
   title =        "Automatically Improving the Anytime Behaviour of
@@ -4508,6 +4491,14 @@ the Traveling Salesman Problem},
   year =         2012,
   number =       {TR/IRIDIA/2012-019},
   note =         "Published in the proceedings of EMO 2013~\cite{RadLopStu2013emo}"
+}
+
+@TECHREPORT{IRIDIA-2013-002,
+  author =       Liao_Tianjun #and# Stuetzle #and# MontesDeOca #and# Dorigo,
+  title =        "A Unified Ant Colony Optimization Algorithm for Continuous Optimization",
+  institution =  iridia,
+  year =         2013,
+  number =       {TR/IRIDIA/2013-002}
 }
 
 @TechReport{IRIDIA-2013-015,
@@ -4520,6 +4511,8 @@ the Traveling Salesman Problem},
   institution =  iridia,
   number =       {TR/IRIDIA/2013-015},
 }
+
+
 
 @TechReport{IRIDIA-2014-009,
   author =       Lopez-Ibanez #and# Liefooghe #and# Verel,
@@ -4553,7 +4546,6 @@ the Traveling Salesman Problem},
   url = {http://www.jmlr.org/papers/volume9/igel08a/igel08a.pdf},
   alias =        {Igel:2008ut}
 }
-
 
 @Article{Ilich98,
   author =       Ilich # and # Simonovic ,
@@ -4606,6 +4598,7 @@ the Traveling Salesman Problem},
   alias =        {IrediMid01,IreMerMid01},
   keyword = {BicriterionAnt}
 }
+
 
 @Misc{IridiaSupp2012-011,
   author =       Lopez-Ibanez #and# Stuetzle,
@@ -5024,6 +5017,13 @@ year =           {1998}
   crossref =     "MMO2004",
   pages =        {39--64},
   alias =        {Knowles+CorneLNEMS535},
+}
+
+@inCollection{KnoCorFle2003,
+  title =        {Bounded archiving using the {L}ebesgue measure},
+  author =       Knowles #and# Corne #and# {Fleischer, Mark},
+  pages =        {2490--2497},
+  crossref =     {CEC2003}
 }
 
 @InCollection{KnoCorRey09emo,
@@ -6216,6 +6216,14 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {495--520},
   year =         2012,
   doi =          {10.1111/j.1475-3995.2011.00840.x},
+}
+
+@Incollection{LusThi2010,
+  author=        Lust #and# Teghem,
+  title=         {The multiobjective traveling salesman problem:
+                  A survey and a new approach},
+  crossref =     "AMONIC2010",
+  pages =        {119--141},
 }
 
 @article{Lust09,
@@ -8294,15 +8302,6 @@ Meta-parameters},
                   orienteering problem.},
 }
 
-@InCollection{Schaerf97,
-  author =       Schaerf,
-  title =        {Combining Local Search and Look-Ahead for Scheduling
-                  and Constraint Satisfaction Problems},
-  crossref =     "IJCAI1997",
-  pages =        {1254--1259},
-  volume =       2,
-}
-
 @InCollection{SchHoo2012quanti,
   title =        "Quantifying Homogeneity of Instance Sets for
                   Algorithm Configuration",
@@ -8324,6 +8323,15 @@ Meta-parameters},
   year =         2000,
   author =       "Gerhard Schrimpf and Johannes Schneider and Hermann
                   Stamm-Wilbrandt and Gunter Dueck"
+}
+
+@InCollection{Schaerf97,
+  author =       Schaerf,
+  title =        {Combining Local Search and Look-Ahead for Scheduling
+                  and Constraint Satisfaction Problems},
+  crossref =     "IJCAI1997",
+  pages =        {1254--1259},
+  volume =       2,
 }
 
 @InProceedings{Ser1992,
@@ -9034,19 +9042,6 @@ Twin-Screw Extrusion Configuration Problem},
   year =         2009,
 }
 
-@Misc{url:TSPLIB,
-  author =	 {G. Reinelt},
-  title =	 {{TSPLIB}},
-  howpublished = {\url{http://www.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95}},
-  note =	 {Version visited last on 15 June 2012},
-}
-
-@Misc{url:TSPsite,
-  title = 	 {The Traveling Salesman Problem},
-  howpublished = {\url{http://www.math.uwaterloo.ca/tsp}},
-  note = 	 {Version visited last on 15 April 2014}
-}
-
 @InCollection{Tsu06,
   title =        {An Enhanced Aggregation Pheromone System for
                   Real-Parameter Optimization in the {ACO} Metaphor},
@@ -9349,7 +9344,6 @@ Twin-Screw Extrusion Configuration Problem},
   keywords =     {anytime}
 }
 
-
 @Article{WooYim98,
   author= Woo_HS #and# Yim_DS,
   title={A heuristic algorithm for mean flowtime objective in flowshop scheduling},
@@ -9371,6 +9365,7 @@ Twin-Screw Extrusion Configuration Problem},
                   {http://www.aaai.org/ocs/index.php/AAAI/AAAI10/paper/view/1929},
   crossref =     {AAAI2010},
 }
+
 
 @TechReport{XuHutHoo2011tr01,
   title =        "{Hydra-MIP}: Automated Algorithm Configuration and
@@ -9551,7 +9546,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   doi =          {10.1109/TEVC.2009.2016569}
 }
 
-
 @article{ZitThiDeb2000ec,
   author =       Zitzler #and# Thiele #and# Deb,
   title =        {Comparison of Multiobjective Evolutionary
@@ -9578,6 +9572,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        "117--132",
   alias =        {perfassess},
 }
+
 
 @article{ZloBirMeuDor2004:aor,
   author =       {M. Zlochin} #and# Birattari #and# { N. Meuleau }
@@ -9664,6 +9659,20 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   crossref =    "EMO2003",
 }
 
+@article{merz02,
+  author =      {Merz, Peter and Freisleben, Bernd},
+  title =       {Greedy and Local Search Heuristics for Unconstrained Binary Quadratic Programming},
+  year =        {2002},
+  issn =        {1381-1231},
+  journal =     {Journal of Heuristics},
+  volume =      {8},
+  number =      {2},
+  doi =         {10.1023/A:1017912624016},
+  publisher =   {Kluwer Academic Publishers},
+  pages =       {197-213},
+  language =    {English}
+}
+
 @PhdThesis{montgomery05:phd,
   author =       Montgomery,
   title =        {Solution Biases and Pheromone Representation
@@ -9709,6 +9718,19 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   month =        sep #" / "#oct,
 }
 
+@Misc{url:TSPLIB,
+  author =	 {G. Reinelt},
+  title =	 {{TSPLIB}},
+  howpublished = {\url{http://www.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95}},
+  note =	 {Version visited last on 15 June 2012},
+}
+
+@Misc{url:TSPsite,
+  title = 	 {The Traveling Salesman Problem},
+  howpublished = {\url{http://www.math.uwaterloo.ca/tsp}},
+  note = 	 {Version visited last on 15 April 2014}
+}
+
 @Article{vanZyl04,
   author =       vanZyl # and # Savic # and # Walters,
   title =        {Operational Optimization of Water Distribution
@@ -9726,20 +9748,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   title =        "A Methodology for Improved Operational Optimization of Water Distribution Systems",
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
-}
-
-@article{merz02,
-  author =      {Merz, Peter and Freisleben, Bernd},
-  title =       {Greedy and Local Search Heuristics for Unconstrained Binary Quadratic Programming},
-  year =        {2002},
-  issn =        {1381-1231},
-  journal =     {Journal of Heuristics},
-  volume =      {8},
-  number =      {2},
-  doi =         {10.1023/A:1017912624016},
-  publisher =   {Kluwer Academic Publishers},
-  pages =       {197-213},
-  language =    {English}
 }
 
 
