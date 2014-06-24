@@ -334,6 +334,14 @@ A: Because it prevents the bibtex style to change the case of the
    use 
         title = "This Is a Title that {M}anuel Likes"
 
+Q: I want to keep an eye on someone else altering my references by
+   mistake.
+
+A: If you subscribe to the irace mailing list
+   (https://iridia.ulb.ac.be/cgi-bin/mailman/listinfo/irace), you will
+   receive an email for each commit. You can then quickly review the
+   commit and comment on it.
+
   
 $Revision$
 $Date$
