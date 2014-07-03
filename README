@@ -337,10 +337,8 @@ A: Because it prevents the bibtex style to change the case of the
 Q: I want to keep an eye on someone else altering my references by
    mistake.
 
-A: If you subscribe to the irace mailing list
-   (https://iridia.ulb.ac.be/cgi-bin/mailman/listinfo/irace), you will
-   receive an email for each commit. You can then quickly review the
-   commit and comment on it.
+A: Send an email to optbibsvn@iridia.ulb.ac.be asking to subscribe to
+   the commit emails.
 
   
 $Revision$
