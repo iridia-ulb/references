@@ -868,7 +868,7 @@
                   has been successfully integrated into stochastic
                   optimizers, such as evolutionary algorithms, where
                   it serves as a guidance criterion for finding good
-                  approximations to the Pareto front.\\ Recent results
+                  approximations to the Pareto front. Recent results
                   show that computing the hypervolume indicator can be
                   seen as solving a specialized version of Klee's
                   Measure Problem.  In general, Klee's Measure Problem
@@ -876,7 +876,7 @@
                   n^{d/2}\log n)$ comparisons for an input instance of
                   size $n$ in $d$ dimensions; as of this writing, it
                   is unknown whether a lower bound higher than
-                  $\Omega(n \log n)$ can be proven.\\ In this article,
+                  $\Omega(n \log n)$ can be proven. In this article,
                   we derive a lower bound of $\Omega(n\log n)$ for the
                   complexity of computing the hypervolume indicator in
                   any number of dimensions $d>1$ by reducing the
@@ -974,8 +974,11 @@
 
 @InCollection{BezLopStu2014:ppsn,
   author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
-  title =        "Automatic Design of Evolutionary Algorithms for Multi-Objective Combinatorial Optimization",
+  title =        "Automatic Design of Evolutionary Algorithms for
+                  Multi-Objective Combinatorial Optimization",
   crossref =     "PPSN2014",
+  doi =          {10.1007/978-3-319-10762-2_50},
+  pages =        {508--517}
 }
 
 @Misc{BezLopStu2014:ppsn-supp,
@@ -5830,6 +5833,16 @@ Optimization},
   year =         2012,
 }
 
+@InCollection{LopLieVer2014ppsn,
+  author =       Lopez-Ibanez #and# Liefooghe #and# Verel,
+  doi =          {10.1007/978-3-319-10762-2_61},
+  title =        {Local Optimal Sets and Bounded Archiving on
+                  Multi-objective NK-Landscapes with Correlated
+                  Objectives},
+  pages =        {621--630},
+  crossref =     "PPSN2014",
+}
+
 @Incollection{LopPaqStu04:ants,
   author =       Lopez-Ibanez #and# Paquete #and# Stuetzle,
   title =        {On the Design of {ACO} for the Biobjective Quadratic
@@ -5949,7 +5962,37 @@ Optimization},
   publisher =    "{ASCE}",
   pdf =          {LopezPrasadPaechter08-jwrpm.pdf},
   aurl =          {http://link.aip.org/link/?QWR/134/337/1},
-  doi =         {10.1061/(ASCE)0733-9496(2008)134:4(337)}
+  doi =         {10.1061/(ASCE)0733-9496(2008)134:4(337)},
+abstract = {Reducing energy consumption of water distribution
+  networks has never had more significance than today. The greatest
+  energy savings can be obtained by careful scheduling of operation of
+  pumps. Schedules can be defined either implicitly, in terms of other
+  elements of the network such as tank levels, or explicitly by
+  specifying the time during which each pump is on/off. The
+  traditional representation of explicit schedules is a string of
+  binary values with each bit representing pump on/off status during a
+  particular time interval. In this paper a new explicit
+  representation is presented. It is based on time controlled
+  triggers, where the maximum number of pump switches is specified
+  beforehand. In this representation a pump schedule is divided into a
+  series of integers with each integer representing the number of
+  hours for which a pump is active/inactive. This reduces the number
+  of potential schedules (search space) compared to the binary
+  representation. Ant colony optimization (ACO) is a stochastic
+  meta-heuristic for combinatorial optimization problems that is
+  inspired by the foraging behavior of some species of ants. In this
+  paper, an application of the ACO framework was developed for the
+  optimal scheduling of pumps. The proposed representation was adapted
+  to an ant colony Optimization framework and solved for the optimal
+  pump schedules. Minimization of electrical cost was considered as
+  the objective, while satisfying system constraints. Instead of using
+  a penalty function approach for constraint violations, constraint
+  violations were ordered according to their importance and solutions
+  were ranked based on this order. The proposed approach was tested on
+  a small test network and on a large real-world network. Results are
+  compared with those obtained using a simple genetic algorithm based
+  on binary representation and a hybrid genetic algorithm that uses
+  level-based triggers.}
 }
 
 @Article{LopPraPae2011ec,
@@ -6196,6 +6239,26 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          "10.1016/j.ejor.2013.10.043",
   pdf =          "doc/LopStu2014ejor.pdf",
   supplement =   {http://iridia.ulb.ac.be/supp/IridiaSupp2012-011/},
+abstract = {Optimisation algorithms with good anytime behaviour try to return
+  as high-quality solutions as possible independently of the
+  computation time allowed. Designing algorithms with good anytime
+  behaviour is a difficult task, because performance is often
+  evaluated subjectively, by plotting the trade-off curve between
+  computation time and solution quality. Yet, the trade-off curve may
+  be modelled also as a set of mutually nondominated, bi-objective
+  points. Using this model, we propose to combine an automatic
+  configuration tool and the hypervolume measure, which assigns a
+  single quality measure to a nondominated set. This allows us to
+  improve the anytime behaviour of optimisation algorithms by means of
+  automatically finding algorithmic configurations that produce the
+  best nondominated sets. Moreover, the recently proposed weighted
+  hypervolume measure is used here to incorporate the decision-maker's
+  preferences into the automatic tuning procedure. We report on the
+  improvements reached when applying the proposed method to two
+  relevant scenarios: (i) the design of parameter variation strategies
+  for MAX-MIN Ant System and (ii) the tuning of the anytime behaviour
+  of SCIP, an open-source mixed integer programming solver with more
+  than 200 parameters.}
 }
 
 @PhdThesis{LopezDiploma,
@@ -10004,4 +10067,5 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
 }
+
 
