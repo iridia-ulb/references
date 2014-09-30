@@ -1028,7 +1028,7 @@ FUNCTION {format.org.or.pub}
   if$
 }
 FUNCTION {format.publisher.address}
-{ publisher "publisher" bibinfo.warn format.org.or.pub
+{ publisher "publisher" bibinfo.warn %format.org.or.pub
 }
 
 FUNCTION {format.organization.address}
