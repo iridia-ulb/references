@@ -1,2 +1,18 @@
 #!/bin/bash
-uptodate=$(svn up); if [[ $uptodate == "At revision"* ]]; then for file in abbrev.bib abbrevshort.bib authors.bib biblio.bib crossref.bib journals.bib; do  svn diff $file | grep + > tmp; if [ ! -s tmp ]; then continue; fi; new=""; for line in $(grep "^+@" tmp | cut -f 1 -d " " | cut -f 2 -d "{" | cut -f 1 -d ","); do new="$line,$new"; done; echo "* $file (${new%\,}): New."; done; else echo $uptodate; fi
+uptodate=$(svn up)
+
+if [[ $uptodate == "At revision"* ]]; then
+    for file in abbrev.bib abbrevshort.bib authors.bib biblio.bib crossref.bib journals.bib; do
+        svn diff $file | grep + > tmp; 
+        if [ ! -s tmp ]; then
+            continue
+        fi
+        new=""
+        for line in $(grep "^+@" tmp | cut -f 1 -d " " | cut -f 2 -d "{" | cut -f 1 -d ","); do
+            new="$line,$new"
+        done
+        echo "* $file (${new%\,}): New."
+    done
+else
+    echo $uptodate
+fi
