@@ -1,12 +1,18 @@
 #!/bin/bash
 uptodate=$(svn up)
-
+# FIXME: I don't understand what the "if" is testing. svn up always
+# returns "At revision" no?
 if [[ $uptodate == "At revision"* ]]; then
     for file in abbrev.bib abbrevshort.bib authors.bib biblio.bib crossref.bib journals.bib; do
-        svn diff $file | grep + > tmp; 
+        # FIXME: It would be better to check the output of 'svn st'
+        # and look for ^M
+        svn diff $file | grep + > tmp
         if [ ! -s tmp ]; then
             continue
         fi
+        # FIXME: Also it would be better to not create a temporary
+        # file and do svn diff within the $(). Then simply test if
+        # "new" is empty.
         new=""
         for line in $(grep "^+@" tmp | cut -f 1 -d " " | cut -f 2 -d "{" | cut -f 1 -d ","); do
             new="$line,$new"
