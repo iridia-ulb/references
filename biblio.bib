@@ -1035,7 +1035,7 @@
 @techreport{BezLopStu2014:automoeaTR,
   author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
   title={Automatic Component-Wise Design of Multi-Objective Evolutionary Algorithms},
-  institution={IRIDIA, Universit{\'e} Libre de Bruxelles},
+  institution=iridia,
   year={2014},
   number={TR/IRIDIA/2014-012},
   address={Brussels, Belgium},
@@ -4021,7 +4021,7 @@
 @Article{HajLin1992decomposition,
   title={Genetic search strategies in multicriterion optimal design},
   author={Hajela, Prabhat and Lin, C-Y},
-  journal={Structural optimization},
+  journal=so,
   volume={4},
   number={2},
   pages={99--107},
@@ -5675,6 +5675,23 @@ year =           {1998}
   pages =        {460--465},
   publisher =    {IEEE Computer Society},
   address =      {Washington, DC},
+}
+
+@incollection{LiYanLiuShe2013:many,
+  crossref={EMO2013},
+  title={A Comparative Study on Evolutionary Algorithms for Many-Objective Optimization},
+  author={Li, Miqing and Yang, Shengxiang and Liu, Xiaohui and Shen, Ruimin},
+pages={261-275}
+}
+
+@article{LiZha2009:moead-de,
+  title={Multiobjective optimization problems with complicated {Pareto} sets, {MOEA/D} and {NSGA-II}},
+  author={Li, Hui and Zhang, Qingfu},
+  journal=tec,
+  volume={13},
+  number={2},
+  pages={284--302},
+  year={2009}
 }
 
 @Article{LiaAydStu13,
@@ -7544,10 +7561,8 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
 @InCollection{Now2014hv,
   title={Empirical Performance of the Approximation of the Least Hypervolume Contributor},
   author={Nowak, Krzysztof and M{\"a}rtens, Marcus and Izzo, Dario},
-  booktitle={Parallel Problem Solving from Nature--PPSN XIII},
-  pages={662--671},
-  year={2014},
-  publisher={Springer}
+  crossref={PPSN2014},
+  pages={662--671}
 }
 
 @article{OhlTho07tsptw_sa,
@@ -8286,7 +8301,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   title={Differential Evolution: A Practical Approach to Global Optimization},
   author={Price, Kenneth and Storn, Rainer M and Lampinen, Jouni A},
   year={2005},
-  publisher={Springer-Verlag New York, Inc.}
+  publisher=springer-ny
 }
 
 @inCollection{PulCoe2003emo,
@@ -8599,7 +8614,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
 }
 
 @InProceedings{RobFil05demo,
-  author = {Tea Robi{\v c} and Bogdan Filipi{\v c}},
+  author = Robic_T #and# Filipic,
   title = {{DEMO}: Differential Evolution for Multiobjective Optimization},
   crossref = {EMO2005},
   pages = {520--533}
@@ -9558,14 +9573,14 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 @InProceedings{TusFil2007,
-  author = {Tea Tu{\v s}ar and Bogdan Filipi{\v c}},
+  author = Tusar #and# Filipic,
   title = {Differential Evolution versus Genetic Algorithms in Multiobjective Optimization},
   crossref = {EMO2007},
   pages = {257--271}
 }
 
 @MastersThesis{Tusar07master,
-	author = {Tea Tu{\v s}ar},
+	author = Tusar,
 	title = {Design of an Algorithm for Multiobjective Optimization with Differential Evolution},
 	school = {Faculty of Computer and Information Science, University of Ljubljana},
 	year = {2007},
@@ -10006,20 +10021,10 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   doi =         {10.1109/TEVC.2007.892759}
 }
 
-@article{LiZha2009:moead-de,
-  title={Multiobjective optimization problems with complicated Pareto sets, MOEA/D and NSGA-II},
-  author={Li, Hui and Zhang, Qingfu},
-  journal=tec,
-  volume={13},
-  number={2},
-  pages={284--302},
-  year={2009},
-  publisher={IEEE}
-}
 @InProceedings{ZhaLiuLi2009moead, 
   author={Qingfu Zhang and Wudong Liu and Hui Li}, 
   crossref={CEC2009},
-  title={The performance of a new version of MOEA/D on CEC09 unconstrained MOP test instances}, 
+  title={The performance of a new version of {MOEA/D} on {CEC09} unconstrained {MOP} test instances}, 
   pages={203-208}, 
 }
 
@@ -10319,7 +10324,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   year =         2001
 }
 
-@InProceedings{WagBeuNau2007:many,
+@InCollection{WagBeuNau2007:many,
   author    = {Tobias Wagner and Nicola Beume and Boris Naujoks},
   title     = {Pareto-, Aggregation-, and Indicator-Based Methods in Many-Objective
                Optimization},
