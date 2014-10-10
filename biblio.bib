@@ -44,18 +44,18 @@
 %%    Please help us to update them little by little.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-@InProceedings{AbbSarNew2001pde,
-  title={{PDE}: a {P}areto-frontier differential evolution approach for multi-objective optimization problems},
-  author={Abbass, Hussein A and Sarker, Ruhul and Newton, Charles},
-  crossref={CEC2001},
-  pages={971--978}
-}
-
 @inproceedings{Abb2002selfpde,
   title={The self-adaptive {P}areto differential evolution algorithm},
   author={Abbass, Hussein A},
   crossref={CEC2002},
   pages={831--836},
+}
+
+@InProceedings{AbbSarNew2001pde,
+  title={{PDE}: a {P}areto-frontier differential evolution approach for multi-objective optimization problems},
+  author={Abbass, Hussein A and Sarker, Ruhul and Newton, Charles},
+  crossref={CEC2001},
+  pages={971--978}
 }
 
 @InProceedings{AbdKriCha1997,
@@ -998,6 +998,16 @@
   crossref =     "EVOCOP2013",
 }
 
+@techreport{BezLopStu2014:automoeaTR,
+  author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
+  title={Automatic Component-Wise Design of Multi-Objective Evolutionary Algorithms},
+  institution=iridia,
+  year={2014},
+  number={TR/IRIDIA/2014-012},
+  address={Brussels, Belgium},
+  month={August}
+}
+
 @inCollection{BezLopStu2014:lion,
   author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
   title =        "Deconstructing Multi-Objective Evolutionary
@@ -1030,16 +1040,6 @@
   title =        "Automatic Component-Wise Design of Multi-Objective Evolutionary Algorithms",
   howpublished = {\url{http://iridia.ulb.ac.be/supp/IridiaSupp2014-010/}},
   year =         2015
-}
-
-@techreport{BezLopStu2014:automoeaTR,
-  author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
-  title={Automatic Component-Wise Design of Multi-Objective Evolutionary Algorithms},
-  institution=iridia,
-  year={2014},
-  number={TR/IRIDIA/2014-012},
-  address={Brussels, Belgium},
-  month={August}
 }
 
 @Article{Bia++06,
@@ -1177,14 +1177,6 @@
   year =         2010
 }
 
-@InCollection{BisMerTraPre12:gecco,
-  author = 	 Bischl_B #and# Mersmann_O #and# Trautmann #and# Preuss_M,
-  title = 	 {Algorithm Selection Based on Exploratory Landscape Analysis and Cost-sensitive Learning},
-  crossref =  {GECCO2012},
-  pages = 	 {313--320},
-  keywords = {continuous optimization, landscape analysis, algorithm selection},
-}
-
 @Article{BisIzzYam2010:pagmo-arxiv,
   title =        {A Global Optimisation Toolbox for Massively Parallel
                   Engineering Optimisation},
@@ -1193,6 +1185,14 @@
   journal =      arxiv # {1004.3824},
   year =         2010,
   url =          {http://arxiv.org/abs/1004.3824}
+}
+
+@InCollection{BisMerTraPre12:gecco,
+  author = 	 Bischl_B #and# Mersmann_O #and# Trautmann #and# Preuss_M,
+  title = 	 {Algorithm Selection Based on Exploratory Landscape Analysis and Cost-sensitive Learning},
+  crossref =  {GECCO2012},
+  pages = 	 {313--320},
+  keywords = {continuous optimization, landscape analysis, algorithm selection},
 } 
 
 @InCollection{BleBlu04:disjoint,
@@ -3250,13 +3250,6 @@
   keywords =     {TSPTW}
 }
 
-@inCollection{FlePurLyg2005,
-  title={Many-objective optimization: An engineering design perspective},
-  author=Fleming #and# {Purshouse, Robin C. and Lygoe, Robert J.},
-  crossref={EMO2005},
-  pages={14--32},
-}
-
 @article{FleGlo99,
   title =        {Improved constructive multistart strategies for the
                   quadratic assignment problem using adaptive memory},
@@ -3266,6 +3259,13 @@
   number =       {2},
   pages =        {198--204},
   year =         {1999},
+}
+
+@inCollection{FlePurLyg2005,
+  title={Many-objective optimization: An engineering design perspective},
+  author=Fleming #and# {Purshouse, Robin C. and Lygoe, Robert J.},
+  crossref={EMO2005},
+  pages={14--32},
 }
 
 @InCollection{Fleischer2003emo,
@@ -5498,13 +5498,6 @@ year =           {1998}
   pages =        "263--282"
 }
 
-@InProceedings{LauZitThi2000:elitism, 
-  author={Laumanns, M. and Zitzler, E. and Thiele, L.}, 
-  crossref = {CEC2000},
-  title={A unified model for multi-objective evolutionary algorithms with elitism}, 
-  pages={46-53}, 
-}
-
 @Article{LaTMuePen11:soco,
   author = {LaTorre, Antonio and Muelas, Santiago and Pe{\~n}a, Jos{\'e}-Mar{\'\i}a},
   title = {A {MOS}-based dynamic memetic differential evolution algorithm for
@@ -5526,7 +5519,6 @@ year =           {1998}
   pages =        "1945--1951",
 }
 
-
 @Article{LanKotMar2014jscs,
   author =       {M. Lang and H. Kotthaus and Marwedel and C. Weihs
                   and J. Rahnenführer and B. Bischl},
@@ -5536,6 +5528,7 @@ year =           {1998}
   year =         2014,
   doi =          {10.1080/00949655.2014.929131},
 }
+
 
 @Article{Langevin93tsptw,
   author =       Langevin #and# Desrochers #and# Desrosiers #and#
@@ -5600,6 +5593,13 @@ year =           {1998}
   pages =        {414--421},
   year =         2011,
   doi =          {10.1016/j.ejor.2011.03.039},
+}
+
+@InProceedings{LauZitThi2000:elitism, 
+  author={Laumanns, M. and Zitzler, E. and Thiele, L.}, 
+  crossref = {CEC2000},
+  title={A unified model for multi-objective evolutionary algorithms with elitism}, 
+  pages={46-53}, 
 }
 
 @Book{LawLenRinShm85,
@@ -6559,6 +6559,14 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   doi =          {10.1016/j.ejor.2010.06.039},
 }
 
+@Incollection{LusTeg2010,
+  author =        Lust #and# Teghem,
+  title =         {The multiobjective traveling salesman problem:
+                  A survey and a new approach},
+  crossref =     "AMONIC2010",
+  pages =        {119--141},
+}
+
 @article{LusTeg2010arxiv,
   author =       Lust #and# Teghem,
   title =        "The multiobjective multidimensional knapsack
@@ -6578,14 +6586,6 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   pages =        {495--520},
   year =         2012,
   doi =          {10.1111/j.1475-3995.2011.00840.x},
-}
-
-@Incollection{LusTeg2010,
-  author =        Lust #and# Teghem,
-  title =         {The multiobjective traveling salesman problem:
-                  A survey and a new approach},
-  crossref =     "AMONIC2010",
-  pages =        {119--141},
 }
 
 @article{Lust09,
@@ -7105,6 +7105,18 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   annote =       {TR: http://hdl.handle.net/2003/26671}
 }
 
+@article{Merz2002joh,
+  author =       {Merz, Peter and Freisleben, Bernd},
+  title =        {Greedy and Local Search Heuristics for Unconstrained
+                  Binary Quadratic Programming},
+  year =         2002,
+  journal =      joh,
+  volume =       8,
+  number =       2,
+  doi =          {10.1023/A:1017912624016},
+  pages =        {197--213},
+}
+
 @InProceedings{Mey2004:gecco,
   author =       Meyer_Bernd,
   title =        {Convergence control in {ACO}},
@@ -7115,6 +7127,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   address =      {Seattle, WA},
 }
 
+
 @incollection{MeyErn04:ants,
   author =       Meyer_Bernd #and# Ernst_Andreas,
   title =        {Integrating {ACO} and Constraint Propagation},
@@ -7122,7 +7135,6 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   year =         2004,
   crossref =     {ANTS2004},
 }
-
 
 @inCollection{MezReyCoe2008,
   author =       {Mezura-Montes, E. and Reyes-Sierra, M.} #and# Coello,
@@ -7237,6 +7249,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   doi =          {10.1007/s00500-010-0649-0}
 }
 
+
 @InCollection{MonPerRiffCoe12dummy,
   author =	 Montero #and# Perez_L #and# Riff #and# Coello ,
   title =	 {Are State-of-the-Art Fine-Tuning Algorithms Able to 
@@ -7245,7 +7258,6 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   pages =        "306--315",
   doi =          {10.1007/978-3-642-32937-1_31} 
 }
-
 
 @Article{MonRandHen08:bias,
   author =       Montgomery #and# Randall_M #and# Hendtlass_T,
@@ -7365,6 +7377,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   pages =        {1185--1191}
 }
 
+
 @Article {MorMerLarMilTor09,
   author = {Mora, A. M. and Merelo, J. J. and Laredo,
   		J. L. J. and Millan, C. and Torrecillas, J.},
@@ -7377,7 +7390,6 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   pages = {818--843},
   year = {2009}
 }
-
 
 @inproceedings{MosJoh03:bioinf,
   author =       {J.~D.~Moss and C.~G.~Johnson},
@@ -7523,7 +7535,6 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   number =       1,
   pages =        {35--68}
 }
-
 @Article{NeuWit2006:eccc,
   author    = {F. Neumann and C. Witt},
   title     = "Runtime Analysis of a Simple Ant Colony Optimization Algorithm",
@@ -7532,6 +7543,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   number    = 084,
   year      = 2006,
 }
+
 @InProceedings{NisOyaAkiAguTan2014:space,
   author = {Y. Nishio and A. Oyama and Y. Akimoto and H. Aguirre and K. Tanaka},
   title = {Many-objective Optimization of Trajectory Design for {DESTINY} Mission},
@@ -8314,14 +8326,6 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   doi =          {10.1007/3-540-36970-8_18},
 }
 
-@Manual{R:mlr,
-  title =        "{\Rpackage{mlr}}: Machine Learning in \proglang{R}",
-  author =       "Bernd Bischl and Michel Lang and Jakob Bossek and Leonard Judt and Jakob Richter and Tobias Kuehn and Erich Studerus",
-  year =         2013,
-  note =         {\proglang{R} package},
-  url =          {http://cran.r-project.org/package=mlr},
-}
-
 
 
 @Manual{R:Rmpi,
@@ -8349,6 +8353,14 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   note =         {\proglang{R} package},
   url = {http://cran.r-project.org/package=cmaes},
   year =         2011,
+}
+
+@Manual{R:mlr,
+  title =        "{\Rpackage{mlr}}: Machine Learning in \proglang{R}",
+  author =       "Bernd Bischl and Michel Lang and Jakob Bossek and Leonard Judt and Jakob Richter and Tobias Kuehn and Erich Studerus",
+  year =         2013,
+  note =         {\proglang{R} package},
+  url =          {http://cran.r-project.org/package=mlr},
 }
 
 @Manual{R:multicore,
@@ -8454,19 +8466,19 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   year =         1971
 }
 
-@InCollection{Ree2013:many,
-  title={Many-Objective Visual Analytics: Rethinking the Design of Complex Engineered Systems},
-  author={Reed, Patrick M.},
-  pages={1-1},
-  crossref="EMO2013",
-}
-
 @InCollection{Ree2010:ga,
   author =       {Colin Reeves},
   title =        {Genetic algorithms},
   chapter =      5,
   pages =        {109--140},
   crossref =     "Handbook2010",
+}
+
+@InCollection{Ree2013:many,
+  title={Many-Objective Visual Analytics: Rethinking the Design of Complex Engineered Systems},
+  author={Reed, Patrick M.},
+  pages={1-1},
+  crossref="EMO2013",
 }
 
 @article{ReeEre2004jors,
@@ -8919,13 +8931,13 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   address =      {New York, NY},
 }
 
+
 @InProceedings{SilRunSouPal2002:ants,
   author =   {C.~A.~Silva and T.~A.~Runkler and J.~M.~Sousa and R.~Palm},
   title =    {Ant Colonies as Logistic Processes Optimizers},
   pages     =   "76--87",
   crossref =     "ANTS2002",
 }
-
 
 @InCollection{Simpson99,
   author =       Simpson # and # Sutton # and # Keane # and # Sherriff,
@@ -9309,6 +9321,8 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   pages =        {191--215}
 }
 
+
+
 @inCollection{StyHoo2013gecco,
   author    = {James Styles} #and# Hoos,
   title     = {Ordered racing protocols for automatically configuring algorithms
@@ -9317,8 +9331,6 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   pages     = {551--558},
   doi        = {10.1145/2463372.2463438},
 }
-
-
 
 @TECHREPORT{SugHanLia2005cec,
   author =       {P. N. Suganthan} #and# Hansen_N #and# {J. J. Liang}
@@ -9494,6 +9506,7 @@ Twin-Screw Extrusion Configuration Problem},
   alias =        "Teo:2004vg"
 }
 
+
 @Article{Thi2011cw,
   author =       {Patrick Thibodeau},
   title =        {Machine-based decision-making is coming},
@@ -9503,7 +9516,6 @@ Twin-Screw Extrusion Configuration Problem},
   url = {http://www.computerworld.com/s/article/359630/Machine_Based_Decision_Making_Is_Coming},
   note =      {\url{http://www.computerworld.com/s/article/359630/Machine_Based_Decision_Making_Is_Coming}. Last accessed: 15 January 2014},
 }
-
 
 @Article{TinRaoLoo2003joh,
   author =       Ting #and# Rao_MVC #and# Loo #and# Ngu,
@@ -9745,6 +9757,15 @@ Twin-Screw Extrusion Configuration Problem},
   address =      {Baldock, United Kingdom}
 }
 
+@InCollection{WagBeuNau2007:many,
+  author    = {Tobias Wagner and Nicola Beume and Boris Naujoks},
+  title     = {Pareto-, Aggregation-, and Indicator-Based Methods in Many-Objective
+               Optimization},
+  crossref = {EMO2007},
+  pages     = {742--756}
+}
+
+
 @InCollection{WahChe2000cp,
   author =       Wah_Benjamin #and# Chen_YX,
   title =        {Optimal Anytime Constrained Simulated Annealing for
@@ -9764,7 +9785,6 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {1387--1396},
   year =         1975,
 }
-
 
 @Article{WalCro2000:siam-jsc,
   author =       {C. Walshaw and M. Cross},
@@ -9912,6 +9932,7 @@ Twin-Screw Extrusion Configuration Problem},
   keywords =     {anytime}
 }
 
+
 @Article{WooYim98,
   author =       Woo_HS #and# Yim_DS,
   title =        {A heuristic algorithm for mean flowtime objective in
@@ -9934,7 +9955,6 @@ Twin-Screw Extrusion Configuration Problem},
                   {http://www.aaai.org/ocs/index.php/AAAI/AAAI10/paper/view/1929},
   crossref =     {AAAI2010},
 }
-
 
 @TechReport{XuHutHoo2011tr01,
   title =        "{Hydra-MIP}: Automated Algorithm Configuration and
@@ -10122,6 +10142,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   doi =          {10.1109/TEVC.2009.2016569}
 }
 
+
 @article{ZitThiDeb2000ec,
   author =       Zitzler #and# Thiele #and# Deb,
   title =        {Comparison of Multiobjective Evolutionary
@@ -10148,7 +10169,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        "117--132",
   alias =        {perfassess},
 }
-
 
 @article{ZloBirMeuDor2004:aor,
   author =       {M. Zlochin} #and# Birattari #and# { N. Meuleau }
@@ -10235,18 +10255,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   crossref =    "EMO2003",
 }
 
-@article{Merz2002joh,
-  author =       {Merz, Peter and Freisleben, Bernd},
-  title =        {Greedy and Local Search Heuristics for Unconstrained
-                  Binary Quadratic Programming},
-  year =         2002,
-  journal =      joh,
-  volume =       8,
-  number =       2,
-  doi =          {10.1023/A:1017912624016},
-  pages =        {197--213},
-}
-
 @PhdThesis{montgomery05:phd,
   author =       Montgomery,
   title =        {Solution Biases and Pheromone Representation
@@ -10322,14 +10330,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   title =        "A Methodology for Improved Operational Optimization of Water Distribution Systems",
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
-}
-
-@InCollection{WagBeuNau2007:many,
-  author    = {Tobias Wagner and Nicola Beume and Boris Naujoks},
-  title     = {Pareto-, Aggregation-, and Indicator-Based Methods in Many-Objective
-               Optimization},
-  crossref = {EMO2007},
-  pages     = {742--756}
 }
 
 
