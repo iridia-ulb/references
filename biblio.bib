@@ -1648,13 +1648,26 @@
 }
 
 @InCollection{BroLopNau2012ppsn,
-  author =       Brockhoff #and# Lopez-Ibanez #and# Naujoks #and#
-                  Rudolph_G,
+  author =       Brockhoff #and# Lopez-Ibanez #and# Naujoks #and# Rudolph_G,
   title =        {Runtime Analysis of Simple Interactive Evolutionary
                   Biobjective Optimization Algorithms},
   crossref =     "PPSN2012-1",
   pages =        {123--132},
   doi =          {10.1007/978-3-642-32937-1_13},
+  abstract =     {Development and deployment of interactive evolutionary
+                  multiobjective optimization algorithms (EMOAs) have recently
+                  gained broad interest. In this study, first steps towards a
+                  theory of interactive EMOAs are made by deriving bounds on
+                  the expected number of function evaluations and queries to a
+                  decision maker. We analyze randomized local search and the
+                  (1+1)-EA on the biobjective problems LOTZ and COCZ under the
+                  scenario that the decision maker interacts with these
+                  algorithms by providing a subjective preference whenever
+                  solutions are incomparable. It is assumed that this decision
+                  is based on the decision maker’s internal utility
+                  function. We show that the performance of the interactive
+                  EMOAs may dramatically worsen if the utility function is
+                  non-linear instead of linear.}
 }
 
 @article{Buc1994jors,
@@ -6140,6 +6153,38 @@ Optimization},
   year =         2011,
   number =       {TR/IRIDIA/2011-004},
   url = {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2011-004.pdf},
+}
+
+@InCollection{LopKno2015emo,
+  author =       Lopez-Ibanez #and# Knowles,
+  title =        "Machine Decision Makers as a Laboratory for Interactive EMO",
+  note =         {(To appear)},
+  abstract =     {A key challenge, perhaps the central challenge, of
+                  multi-objective optimization is how to deal with candidate
+                  solutions that are ultimately evaluated by the hidden or
+                  unknown preferences of a human decision maker (DM) who
+                  understands and cares about the optimization problem.
+                  Alternative ways of addressing this challenge exist but
+                  perhaps the favoured one currently is the interactive
+                  approach (proposed in various forms). Here, an evolutionary
+                  multi-objective optimization algorithm (EMOA) is controlled
+                  by a series of interactions with the DM so that preferences
+                  can be elicited and the direction of search controlled. MCDM
+                  has a key role to play in designing and evaluating these
+                  approaches, particularly in testing them with real DMs, but
+                  so far quantitative assessment of interactive EMOAs has been
+                  limited.  In this paper, we propose a conceptual framework
+                  for this problem of quantitative assessment, based on the
+                  definition of machine decision makers (machine DMs), made
+                  somewhat realistic by the incorporation of various
+                  non-idealities. The machine DM proposed here draws from
+                  earlier models of DM biases and inconsistencies in the MCDM
+                  literature.  As a practical illustration of our approach, we
+                  use the proposed machine DM to study the performance of an
+                  interactive EMOA, and discuss how this framework could help
+                  in the evaluation and development of better interactive
+                  EMOAs.},
+  crossref =     {EMO2015}
 }
 
 @InCollection{LopKnoLau2011emo,
