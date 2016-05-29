@@ -608,24 +608,14 @@
   pages =        {92--93}
 }
 
-@Misc{BBOB2016bi,
-  author =       Auger_A #and# Brockhoff #and# Hansen_N #and# 
-  			{Dejan Tusar} #and# Tusar #and# {Tobias Wagner},
-  title =        "{GECCO} Workshop on Real-Parameter Black-Box Optimization Benchmarking ({BBOB} 2016) - focus on multi-objective problems",
-  howpublished = {\url{https://numbbo.github.io/workshops/BBOB-2016/}},
-  year =         2016,
-}
-
-GECCO Workshop on Real-Parameter Black-Box Optimization Benchmarking (BBOB 2016) - focus on multi-objective problems
-
 @InCollection{AugHan2005cec,
   author =       Auger_A #and# Hansen_N,
-  title =        {A restart {CMA} evolution strategy with increasing
-                  population size},
+  title =        {A restart {CMA} evolution strategy with increasing population
+                  size},
   crossref =     "CEC2005",
   pages =        {1769--1776},
   doi =          {10.1109/CEC.2005.1554902},
-  annote = {IPOP-CMA-ES},
+  annote =       {IPOP-CMA-ES},
 }
 
 @article{AziTay2014eaai,
@@ -637,6 +627,16 @@ GECCO Workshop on Real-Parameter Black-Box Optimization Benchmarking (BBOB 2016)
   year =         2014,
   doi =          {10.1016/j.engappai.2014.07.021},
   keywords =     {F-race},
+}
+
+@Misc{BBOB2016bi,
+  author =       Auger_A #and# Brockhoff #and# Hansen_N #and# {Dejan Tusar}
+                  #and# Tusar #and# {Tobias Wagner},
+  title =        "{GECCO} Workshop on Real-Parameter Black-Box Optimization
+                  Benchmarking ({BBOB} 2016): Focus on multi-objective
+                  problems",
+  howpublished = {\url{https://numbbo.github.io/workshops/BBOB-2016/}},
+  year =         2016,
 }
 
 @InCollection{BLTZ2003a,
@@ -2123,10 +2123,11 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @inproceedings{BrinFriNeuWag2011,
- author = Bringmann_K #and# Friedrich_T #and# {Neumann, Frank and Wagner, Markus},
- title = {Approximation-guided Evolutionary Multi-objective Optimization},
- crossref={IJCAI2011},
- pages = {1198--1203}
+  author =       Bringmann_K #and# Friedrich_T #and# Neumann_F #and# Wagner_M,
+  title =        {Approximation-guided Evolutionary Multi-objective
+                  Optimization},
+  crossref =     {IJCAI2011},
+  pages =        {1198--1203}
 } 
 
 @InCollection{BroLopNau2012ppsn,
@@ -2438,17 +2439,15 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @article{ChaWag2015many,
-  title = "Evolutionary many-objective optimization: A quick-start guide ",
-  journal = "Surveys in Operations Research and Management Science ",
-  volume = "20",
-  number = "2",
-  pages = "35 - 42",
-  year = "2015",
-  note = "",
-  issn = "1876-7354",
-  doi = "http://dx.doi.org/10.1016/j.sorms.2015.08.001",
+  title = "Evolutionary many-objective optimization: A quick-start guide",
+  journal = "Surveys in Operations Research and Management Science",
+  volume = 20,
+  number = 2,
+  pages = "35--42",
+  year = 2015,
+  doi = "10.1016/j.sorms.2015.08.001",
   url = "http://www.sciencedirect.com/science/article/pii/S1876735415000148",
-  author = "Shelvin Chand and Markus Wagner"
+  author = "Shelvin Chand" #and# Wagner_M,
 }
 
 @MastersThesis{Chang99,
@@ -2512,33 +2511,36 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2010,
 
 }
+
+@article{CheChiSto2012,
+  title =        {Business Intelligence and Analytics: From Big Data to Big
+                  Impact},
+  author =       {Chen, Hsinchun and Chiang, Roger H. L. and Storey, Veda C.},
+  journal =      {MIS quarterly},
+  volume =       36,
+  number =       4,
+  pages =        {1165--1188},
+  year =         2012
+}
+
+@Article{CheHaoGlo2016,
+  title =        {A hybrid metaheuristic approach for the capacitated arc
+                  routing problem},
+  author =       {Yuning Chen} #and# Hao #and# Glover_F,
+  journal =      ejor,
+  volume =       553,
+  number =       1,
+  pages =        {25--39},
+  year =         2016,
+  doi =          {10.1016/j.ejor.2016.02.015},
+  keywords =     {irace},
+}
+
 @inproceedings{CheXuChe04,
   author =       {L. Chen and X. H. Xu and Y. X. Chen},
   title =        {An adaptive ant colony clustering algorithm},
   crossref =     "ICMLC2004",
   pages =        {1387--1392},
-}
-
-@article{CheChiSto2012,
-  title={Business Intelligence and Analytics: From Big Data to Big Impact.},
-  author={Chen, Hsinchun and Chiang, Roger HL and Storey, Veda C},
-  journal={MIS quarterly},
-  volume={36},
-  number={4},
-  pages={1165--1188},
-  year={2012}
-}
-
-@Article{CheHaoGlo2016,
-  title=     {A hybrid metaheuristic approach for the capacitated arc routing problem},
-  author=    {Yuning Chen} #and# Hao #and# Glover_F,
-  journal=   ejor,
-  volume=    {553},
-  number=    {1},
-  pages=     {25--39},
-  year=      {2016},
-  doi =      {10.1016/j.ejor.2016.02.015},
-  keywords = {irace},
 }
 
 @Article{ChengMao07:acs_tsptw,
@@ -2699,10 +2701,11 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @InCollection{CoeSie2004igd,
-  author= Coello #and# {Reyes-Sierra, Margarita},
-  title={A Study of the Parallelization of a Coevolutionary Multi-objective Evolutionary Algorithm},
-  year={2004},
-  crossref={MICAI2004}
+  author =       Coello #and# {Reyes-Sierra, Margarita},
+  title =        {A Study of the Parallelization of a Coevolutionary
+                  Multi-objective Evolutionary Algorithm},
+  year =         {2004},
+  crossref =     "MICAI2004"
 }
 
 @InCollection{Cohen82,
@@ -7677,17 +7680,17 @@ Optimization},
 }
 
 @inproceedings{LinHooHutSch2015aaai,
-  title={Autofolio: Algorithm configuration for algorithm selection},
-  author={Lindauer, Marius and Hoos, H and Hutter, Frank and Schaub, Torsten},
-  booktitle={AAAI2015}
- }
+  title =        {Autofolio: Algorithm configuration for algorithm selection},
+  author =       Lindauer_M #and# Hoos #and# Hutter #and# {Schaub, Torsten},
+  crossref =     "AAAI2015"
+}
 
 @Article{LinHooHutSch2015autofolio,
-  title={AutoFolio: an automatically configured algorithm selector},
-  author=Lindauer_M #and# Hoos #and# Hutter #and# {Schaub, Torsten},
-  journal=jair,
-  pages={745--778},
-  year={2015}
+  title =        {AutoFolio: an automatically configured algorithm selector},
+  author =       Lindauer_M #and# Hoos #and# Hutter #and# {Schaub, Torsten},
+  journal =      jair,
+  pages =        {745--778},
+  year =         2015
 }
 
 @inproceedings{LinLuo07,
@@ -9682,12 +9685,13 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   pages = 	 {346--363}
 }
 
-@InCollection{NagSucDum2012, 
-  author={R. Nagy and M. Suciu and D. Dumitrescu}, 
-  booktitle={Symbolic and Numeric Algorithms for Scientific Computing (SYNASC), 2012 14th International Symposium on}, 
-  title={Exploring Lorenz Dominance}, 
-  year={2012}, 
-  pages={254-259}, 
+@InProceedings{NagSucDum2012,
+  author =       {R. Nagy and M. Suciu and D. Dumitrescu},
+  booktitle =    {Symbolic and Numeric Algorithms for Scientific Computing
+                  (SYNASC), 2012 14th International Symposium on},
+  title =        {Exploring Lorenz Dominance},
+  year =         2012,
+  pages =        {254--259},
 }
 
 @incollection{NalWagNeu2014ppsn,
@@ -11741,6 +11745,18 @@ crossref={EMO2015_1}
   doi = {10.1111/itor.12001},
 }
 
+@InProceedings{SotBasDol20016_ES,
+  alias =        "Sotelo_ES",
+  year =         2001,
+  author =       Sotelo # and # Basulado # and # Doldan # and # Baran,
+  title =        {Algoritmos Evolutivos Multiobjetivo Combinados para la
+                  Optimizaci{\'o}n de la Programaci{\'o}n de Bombeo en Sistemas
+                  de Suministro de Agua},
+  booktitle =    "Congreso Internacional de Tecnolog{\'\i}as y Aplicaciones
+                  Inform\'aticas, JIT-CITA 2001, Asunci\'on, Paraguay",
+  note =         {(In Spanish)}
+}
+
 @InProceedings{Sotelo02,
   author =       Sotelo # and # vonLucken # and # Baran,
   title =        "Multiobjective Evolutionary Algorithms in Pump
@@ -11770,14 +11786,6 @@ crossref={EMO2015_1}
                   problem. Moreover, SPEA's set of solutions provide
                   pumping station operation engineers with a wide
                   range of optimal pump schedules to chose from."
-}
-
-@Unpublished{Sotelo_ES,
-  author =       Sotelo # and # Basulado # and # Doldan # and # Baran,
-  title =        {Algoritmos Evolutivos Multiobjetivo Combinados para
-                  la Optimizaci{\'o}n de la Programaci{\'o}n de Bombeo
-                  en Sistemas de Suministro de Agua},
-  note =         {(In Spanish)}
 }
 
 @article{SprHarDre1997ors,
@@ -12709,11 +12717,11 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 @inCollection{WagNeu2013,
-  title={A fast approximation-guided evolutionary multi-objective algorithm},
-  author={Wagner, Markus and Neumann, Frank},
-  booktitle={GECCO2015},
-  pages={687--694},
-  year={2013},
+  title =        {A fast approximation-guided evolutionary multi-objective
+                  algorithm},
+  author =      Wagner_M #and# Neumann_F,
+  crossref =    "GECCO2015",
+  pages =        {687--694},
 }
 
 @InCollection{WagBeuNau2007:many,
@@ -13225,15 +13233,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   alias =        {perfassess},
 }
 
-@PhDThesis{ZitzlerPhD,
-  title={Evolutionary Algorithms for Multiobjective Optimization: Methods and Applications},
-  author = Zitzler,
-  institution = {ETH Z{\"u}rich},
-  department = {Institut f{\"u}r Technische Informatik und Kommunikationsnetze},
-  year = {1999},
-  atype =         "{Ph.D.} thesis"
-}
-
 @article{ZloBirMeuDor2004:aor,
   author =       {M. Zlochin} #and# Birattari #and# { N. Meuleau }
                   #and# Dorigo,
@@ -13295,6 +13294,15 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   address =      {Philadelphia, USA},
   doi =         {10.1061/40685(2003)127},
   note =         {on CD-ROM}
+}
+
+@PhDThesis{ZitzlerPhD,
+  title =        {Evolutionary Algorithms for Multiobjective Optimization:
+                  Methods and Applications},
+  author =       Zitzler,
+  school =       {ETH Z{\"u}rich, Switzerland},
+  year =         1999,
+  atype =        "{Ph.D.} thesis"
 }
 
 @Book{furlong00:stats,
