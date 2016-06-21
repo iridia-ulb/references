@@ -40,7 +40,12 @@
 %%    These fields will be ignored by most BibTeX styles (.bst files), but
 %%    they can be used with custom styles to, for example, generate an HTML
 %%    bibliography, a list of publications. See testbib.tex for an example.
-%%13. Use the following abbreviations for months: jan, feb, mar, apr, may, jun,
+%%13. If you wish to add an entry for supplementary material to another
+%%    publication, please use a Misc entry with the same label as for the main
+%%    publication adding -supp at the end. Example: the supplementary material
+%%    entry for BezLopStu2012:ants would be BezLopStu2012:ants-supp.
+%%    This keeps the entries together, making easier to keep them in sync.
+%%14. Use the following abbreviations for months: jan, feb, mar, apr, may, jun,
 %%    jul, aug, sep, oct, nov, dec. Some bibstyles will abbreviate the months, 
 %%    others may use numeric values and others will use the full name. Using
 %%    the abbreviations allows this customization to be consistent.
@@ -100,7 +105,9 @@
 }
 
 @Article{AcoMes2014jbi,
-  author =       {H{\'e}ctor-Gabriel Acosta-Mesa and Fernando Rechy-Ram{\'i}rez and Efr{\'e}n Mezura-Montes and Nicandro Cruz-Ram{\'i}rez and Rodolfo Hern{\'a}ndez Jim{\'e}nez},
+  author =       {H{\'e}ctor-Gabriel Acosta-Mesa and Fernando Rechy-Ram{\'i}rez
+                  and Efr{\'e}n Mezura-Montes and Nicandro Cruz-Ram{\'i}rez and
+                  Rodolfo Hern{\'a}ndez Jim{\'e}nez},
   title =       {Application of time series discretization using evolutionary programming for classification of precancerous cervical lesions},
   journal =     jbi,
   volume =      49,
@@ -123,8 +130,8 @@
 }
 
 @article{AguTan2007ejor,
-  title =        "Working principles, behavior, and performance of
-                  {MOEAs} on {MNK}-landscapes",
+  title =        "Working principles, behavior, and performance of {MOEAs} on
+                  {MNK}-landscapes",
   author =       Aguirre #and# Tanaka,
   journal =      ejor,
   volume =       181,
@@ -382,7 +389,8 @@
 }
 
 @InCollection{AnsMalSamSelTie2015:ijcai,
-  author = 	 {Carlos Ans{\'{o}}tegui and Yuri Malitsky and Horst Samulowitz and Meinolf Sellmann and Kevin Tierney},
+  author = 	 {Carlos Ans{\'{o}}tegui and Yuri Malitsky and Horst Samulowitz
+                  and Meinolf Sellmann and Kevin Tierney},
   title = 	 {Model-Based Genetic Algorithms for Algorithm Configuration},
   crossref =     {IJCAI2015},
   pages = 	 {733--739},
