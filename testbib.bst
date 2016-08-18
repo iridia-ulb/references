@@ -206,6 +206,13 @@ FUNCTION {field.or.null}
   if$
 }
 
+FUNCTION {boldface}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "{\bf " swap$ * "}" * }
+  if$
+}
+
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
@@ -315,7 +322,7 @@ FUNCTION {format.keywords}
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { title "t" change.case$ }
+    { title boldface "t" change.case$ }
   if$
 }
 
