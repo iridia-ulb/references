@@ -51,6 +51,7 @@ ENTRY
     chapter
     doi
     supplement
+    keywords
     eid
     edition
     editor
@@ -301,6 +302,13 @@ FUNCTION {format.supplement}
 { supplement empty$
     { "" }
     { new.block "Supplementary material: \url{" supplement * "}" * }
+  if$
+}
+
+FUNCTION {format.keywords}
+{ keywords empty$
+    { "" }
+    { new.block "\newline{\footnotesize Keywords: " keywords * "}" * }
   if$
 }
 
@@ -731,6 +739,7 @@ FUNCTION {article}
   format.supplement output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -769,6 +778,7 @@ FUNCTION {book}
   format.supplement output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -788,6 +798,7 @@ FUNCTION {booklet}
   format.supplement output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -836,6 +847,7 @@ FUNCTION {inbook}
   format.supplement output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -876,6 +888,7 @@ FUNCTION {incollection}
   format.supplement output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -917,6 +930,7 @@ FUNCTION {inproceedings}
   format.supplement output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -936,6 +950,7 @@ FUNCTION {manual}
   format.date output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -953,6 +968,7 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -969,6 +985,7 @@ FUNCTION {misc}
   format.issn output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
   empty.misc.check
@@ -987,6 +1004,7 @@ FUNCTION {phdthesis}
   format.date "year" output.check
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -1009,6 +1027,7 @@ FUNCTION {proceedings}
   format.supplement output
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
@@ -1026,6 +1045,7 @@ FUNCTION {techreport}
   format.date "year" output.check
   format.url output
   new.block
+  format.keywords output
   note output
   fin.entry
 }
