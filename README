@@ -102,6 +102,12 @@ in the directory of your paper and use the following line in your main
 
  \bibliography{abbrev,journals,authors,biblio,crossref}
 
+You may also checkout (or symbolic link to) a copy of the whole optbib
+repository into a directory 'optbib' and use:
+
+ \bibliography{optbib/abbrev,optbib/journals,optbib/authors,optbib/biblio,optbib/crossref}
+
+
 
 The bib files define some commands, for example \MaxMinAntSystem. You
 can override any command by just defining it with \newcommand or
