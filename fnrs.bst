@@ -279,7 +279,8 @@ FUNCTION {format.editor.names}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
-    { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
+    { s nameptr "{vv~}{ll}{, jj}{, f{.}.}" format.name$ highlight.if.cv.author
+      't :=
       nameptr #1 >
 	{ namesleft #1 >
 	    { ", " * t * }
