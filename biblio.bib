@@ -4896,7 +4896,7 @@ keywords =      {F-race},
 }
 
 @inCollection{FriKotKre2015gecco,
-  author =       Friedrich_T #and# {K\"{o}tzing, Timo and Krejca, Martin S.}
+  author =       Friedrich_T #and# Kotzing_T #and# {Krejca, Martin S.}
                   #and# Sutton_A,
   title =        {Robustness of Ant Colony Optimization to Noise},
   crossref =     {GECCO2015},
@@ -7541,6 +7541,38 @@ year =           {1998}
   pages =        {1669--1681}
 }
 
+@Article{KotNeuRogWit2012swarm,
+  author =       Kotzing_T #and# Neumann_F #and# {R{\"o}glin, Heiko} #and# Witt,
+  title =        "Theoretical analysis of two {ACO} approaches for the
+                  traveling salesman problem",
+  journal =      swarm,
+  year =         2012,
+  volume =       6,
+  number =       1,
+  pages =        "1--21",
+  abstract =     "Bioinspired algorithms, such as evolutionary algorithms and
+                  ant colony optimization, are widely used for different
+                  combinatorial optimization problems. These algorithms rely
+                  heavily on the use of randomness and are hard to understand
+                  from a theoretical point of view. This paper contributes to
+                  the theoretical analysis of ant colony optimization and
+                  studies this type of algorithm on one of the most prominent
+                  combinatorial optimization problems, namely the traveling
+                  salesperson problem (TSP). We present a new construction
+                  graph and show that it has a stronger local property than one
+                  commonly used for constructing solutions of the TSP. The
+                  rigorous runtime analysis for two ant colony optimization
+                  algorithms, based on these two construction procedures, shows
+                  that they lead to good approximation in expected polynomial
+                  time on random instances. Furthermore, we point out in which
+                  situations our algorithms get trapped in local optima and
+                  show where the use of the right amount of heuristic
+                  information is provably beneficial.",
+  doi =          "10.1007/s11721-011-0059-7",
+}
+
+
+
 @Book{KouYu1997:robustopt,
   author =        Kouvelis #and# Yu_G,
   title =         "Robust discrete optimization and its applications",
@@ -7565,31 +7597,18 @@ year =           {1998}
   address =      mit-ad,
   year =         1992,
 }
-@article{DBLP:journals/memetic/Kramer10,
-  author    = {Oliver Kramer},
-  title     = {Iterated local search with Powell's method: a memetic algorithm for
-               continuous global optimization},
-  journal   = {Memetic Computing},
-  volume    = {2},
-  number    = {1},
-  pages     = {69--83},
-  year      = {2010},
-  url       = {http://dx.doi.org/10.1007/s12293-010-0032-9},
-  doi       = {10.1007/s12293-010-0032-9},
-  timestamp = {Tue, 19 May 2015 17:01:18 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/memetic/Kramer10},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
-}
 
 @Article{Kra2010,
-  author = 	 {Oliver Kramer},
-  title = 	 {Iterated Local Search with {P}owell's Method: A Memetic Algorithm for
-               Continuous Global Optimization},
-  journal = 	 mc,
-  year = 	 2010,
-  volume = 	 2,
-  number = 	 1,
-  pages = 	 {69--83}
+  author =       {Oliver Kramer},
+  title =        {Iterated Local Search with {P}owell's Method: A Memetic
+                  Algorithm for Continuous Global Optimization},
+  journal =      mc,
+  year =         2010,
+  volume =       2,
+  number =       1,
+  pages =        {69--83},
+  doi =          {10.1007/s12293-010-0032-9},
+  alias =        {DBLP:journals/memetic/Kramer10}
 }
 
 @InCollection {KreBraHofBer2009:aisc,
@@ -12099,10 +12118,12 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 }
 
 @InCollection{SeaDeb2015unsga3,
-  author={Seada, Haitham} #and# Deb,
-  title="{U-NSGA-III}: A Unified Evolutionary Optimization Procedure for Single, Multiple, and Many Objectives: Proof-of-Principle Results",
-  pages="34--49",
-  crossref={EMO2015_1}
+  author =       {Seada, Haitham} #and# Deb,
+  title =        "{U-NSGA-III}: A Unified Evolutionary Optimization Procedure
+                  for Single, Multiple, and Many Objectives: Proof-of-Principle
+                  Results",
+  pages =        "34--49",
+  crossref =     {EMO2015_1}
 }
 
 @inProceedings{SeiSieHelHut2015cedalion,
@@ -13010,8 +13031,8 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 @Article{TkiMonTer2002ejor,
-  author =       Tkindt #and# Monmarche_N #and# "F. Tercinet and
-                  D. La{\"u}gt",
+  author =       Tkindt #and# Monmarche_N #and# "F. Tercinet" #and#
+                  "D. La{\"u}gt",
   title =        {An ant colony optimization algorithm to solve a
                   2-machine bicriteria flowshop scheduling problem},
   journal =      ejor,
@@ -13021,13 +13042,28 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {250--257},
 }
 
+@article{TorRosKefetal2010:si,
+  Author =       {C. E. Torres and L. F. Rossi and J. Keffer and K. Li and
+                  C.-C. Shen},
+  Title =        {Modeling, analysis and simulation of ant-based network
+                  routing protocols},
+  Journal =      swarm,
+  Volume =       4,
+  Number =       3,
+  Pages =        {221--244},
+  Year =         2010
+}
+
 @InCollection{ToyShoMorMiy2012,
-  author = 	 {Toyama, F. and Shoji, K. and Mori, H. and Miyamichi, J.},
-  title = 	 {An Iterated Greedy Algorithm for the Binary Quadratic Programming Problem},
-  booktitle = 	 {Joint 6th International Conference on Soft Computing and Intelligent Systems (SCIS) and 13th International Symposium on Advanced Intelligent Systems (ISIS), 2012}, 
-  publisher = ieeep,
-  year = 	 2012,
-  pages = 	 {2183--2188}
+  author =       {Toyama, F. and Shoji, K. and Mori, H. and Miyamichi, J.},
+  title =        {An Iterated Greedy Algorithm for the Binary Quadratic
+                  Programming Problem},
+  booktitle =    {Joint 6th International Conference on Soft Computing and
+                  Intelligent Systems (SCIS) and 13th International Symposium
+                  on Advanced Intelligent Systems (ISIS), 2012},
+  publisher =    ieeep,
+  year =         2012,
+  pages =        {2183--2188}
 }
 
 @article{TraMeh2009eo,
@@ -14143,6 +14179,20 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   school =       {School of Engineering and Computer Science, University of Exeter, UK},
   year =         2001
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @Comment Local Variables:
