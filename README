@@ -13,7 +13,9 @@ Contents
  * Before submitting a paper
  * List of most often used Subversion commands
  * Copyright
+ * BibTeX Advice
  * Howto: Advanced usage
+ * TODO
 
 Format of keys
 --------------
@@ -254,6 +256,25 @@ is not made publicly available, and that modifications are submitted
 back to us for consideration.
 
 
+
+BibTeX Advice
+--------------
+
+There is advice at the top of each .bib file about the contents within that
+file. The following is general advice on how to format bib entries.
+
+ * Do not use non-ASCII characters, different editors from different OSs will
+   mess them up and not all BibTeX versions support them. Use LaTeX instead. In
+   emacs, one can use '(occur "[^[:ascii:]]"))'
+
+ * 'doi' field is just the DOI, without the http://dx.doi.org/
+
+ @article
+
+    * Do not use fields: publisher, ISSN
+
+
+
 Howto: Advanced Usage
 ---------------------------
 
@@ -346,6 +367,18 @@ Q: I want to keep an eye on someone else altering my references by
 A: Send an email to optbibsvn@iridia.ulb.ac.be asking to subscribe to
    the commit emails.
 
+
+TODO
+----
+
+ * Implement a pre-commit hook script
+   (http://svnbook.red-bean.com/nightly/en/svn.reposadmin.create.html#svn.reposadmin.hooks)
+   that tries to compile (pdflatex + bibtex + pdflatex) testbib.tex and rejects
+   the commit if there is an error.
+   
+ * Improve 'mklog' to detect files changed, new entries, deleted entries,
+   updates and prefill a commit log template.
+   
   
 $Revision$
 $Date$
