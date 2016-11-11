@@ -2812,18 +2812,21 @@ Los Angeles, CA},
 
 
 @inproceedings{CirJohMcGZha2001,
-  author    = {Jill Cirasella} #and# Johnson_DS #and# {Lyle A. McGeoch and Weixiong Zhang},
-  title     = {The Asymmetric Traveling Salesman Problem: Algorithms, Instance Generators,
-               and Tests},
-  booktitle = {Algorithm Engineering and Experimentation, Third International Workshop,
-               {ALENEX} 2001, Washington, DC, USA, January 5-6, 2001, Revised Papers},
-  pages     = {32--59},
-  series    = lncs,
-  volume    = 2153,
-  publisher = springer,
-  address   = springer-lncs-ad, 
-  year      = 2001,
-  editor    = {Adam L. Buchsbaum and Jack Snoeyink},
+  author =       {Jill Cirasella} #and# Johnson_DS #and# McGeoch_LA #and#
+                  {Weixiong Zhang},
+  title =        {The Asymmetric Traveling Salesman Problem: Algorithms,
+                  Instance Generators, and Tests},
+  booktitle =    {Algorithm Engineering and Experimentation, Third
+                  International Workshop, {ALENEX} 2001, Washington, DC, USA,
+                  January 5-6, 2001, Revised Papers},
+  pages =        {32--59},
+  series =       lncs,
+  volume =       2153,
+  publisher =    springer,
+  address =      springer-lncs-ad,
+  year =         2001,
+  doi =          {10.1007/3-540-44808-X_3},
+  editor =       {Adam L. Buchsbaum and Jack Snoeyink},
 }
 
 @Article{Clark95,
@@ -5327,6 +5330,51 @@ keywords =      {F-race},
   pages =        {330--335}
 }
 
+@article{McG1992vrt,
+  author =       McGeoch_CC,
+  title =        {Analyzing Algorithms by Simulation: Variance Reduction
+                  Techniques and Simulation Speedups},
+  abstract =     {Although experimental studies have been widely applied to the
+                  investigation of algorithm performance, very little attention
+                  has been given to experimental method in this area. This is
+                  unfortunate, since much can be done to improve the quality of
+                  the data obtained; often, much improvement may be needed for
+                  the data to be useful. This paper gives a tutorial discussion
+                  of two aspects of good experimental technique: the use of
+                  variance reduction techniques and simulation speedups in
+                  algorithm studies.  In an illustrative study, application of
+                  variance reduction techniques produces a decrease in variance
+                  by a factor 1000 in one case, giving a dramatic improvement
+                  in the precision of experimental results. Furthermore, the
+                  complexity of the simulation program is improved from
+                  $\Theta(m n/H_n)$ to $\Theta(m + n \log n)$ (where $m$ is
+                  typically much larger than $n$), giving a much faster
+                  simulation program and therefore more data per unit of
+                  computation time. The general application of variance
+                  reduction techniques is also discussed for a variety of
+                  algorithm problem domains.},
+  volume =       24,
+  doi =          {10.1145/130844.130853},
+  number =       2,
+  journal =      acm-cs,
+  year =         1992,
+  keywords =     {experimental analysis of algorithms, move-to-front rule,
+                  self-organizing sequential search, statistical analysis of
+                  algorithms, transpose rule, variance reduction techniques},
+  pages =        {195--212},
+}
+
+@Article{McG1998joc,
+  author =       McGeoch_CC,
+  title =        {Toward an Experimental Method for Algorithm Simulation},
+  journal =      informs,
+  year =         1996,
+  volume =       8,
+  number =       1,
+  pages =        {1--15},
+  doi =          {10.1287/ijoc.8.1.1},
+}
+
 @InCollection{GesHutKotMal2014lion,
   author =       {Daniel Geschwender} #and# Hutter #and# {Lars Kotthoff}
                   #and# {Yuri Malitsky} #and# Hoos #and# Leyton-Brown,
@@ -7067,7 +7115,7 @@ year =           {1998}
 }
 
 @InCollection{JohMcG97,
-  author =       Johnson_DS #and# McGeoch,
+  author =       Johnson_DS #and# McGeoch_LA,
   title =        {The Traveling Salesman Problem: A Case Study in
                   Local Optimization},
   booktitle =    {Local Search in Combinatorial Optimization},
@@ -7101,8 +7149,8 @@ year =           {1998}
   pages =	 {446--461}
 }
 
-@MISC{Johnson2001,
-  author =       Johnson_DS #and# McGeoch #and# "Rego, C." #and#
+@Misc{Johnson2001,
+  author =       Johnson_DS #and# McGeoch_LA #and# "Rego, C." #and#
                   Glover_F,
   title =        "8th {DIMACS} Implementation Challenge",
   year =         2001,
@@ -7121,19 +7169,19 @@ year =           {1998}
   address =      ams-ad,
   year =         2002,
   pages =        "215--250",
-  editor =       "M. H. Goldwasser" #and# Johnson_DS #and# "C. C. McGeoch",
+  editor =       "M. H. Goldwasser" #and# Johnson_DS #and# McGeoch_CC,
 }
 
 @InCollection{JohMcG02:stsp,
-  author =	 Johnson_DS #and# {L. A. McGeoch},
+  author =	 Johnson_DS #and# McGeoch_LA,
   title =	 {Experimental Analysis of Heuristics for the {STSP}},
   pages =	 {369--443},
   crossref = "GutPun2002tsp",
 }
 
 @InCollection{JohGutMcG++02:atsp,
-  author =	 Johnson_DS #and# {G. Gutin and L. A. McGeoch and
-                  A. Yeo and W. Zhang and A. Zverovitch},
+  author =	 Johnson_DS #and# {G. Gutin} #and# McGeoch_LA #and#
+                  {A. Yeo and W. Zhang and A. Zverovitch},
   title =	 {Experimental Analysis of Heuristics for the {ATSP}},
   pages =	 {445--487},
   crossref = "GutPun2002tsp",
