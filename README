@@ -35,11 +35,17 @@ to backport any improvements, tends to introduce errors when entries are
 incorrectly modified for the sake of consistency and leads to repeated work and
 mistakes.
 
+Since the goal is to share high-quality entries rather than a comprehensive
+repository, it is better to not add entries if one is unsure about correctness
+and short of time to double-check and fix them. In that case, it is better to
+keep those entries in a separate personal bib file until one has time to fix
+them.
+
 The motivation for the current separation between authors, journals, abbrev,
 biblio and crossref files is to avoid spurious divergences of common strings.
-In particular, given non-ascii characters, the not-so-obvious grouping rules
-for names with more than two words and differences between full names and
-abbreviated names, keeping author names consistent is problematic. With the
+In particular, keeping author names consistent is problematic given non-ascii
+characters, the not-so-obvious grouping rules for names with more than two
+words and differences between full names and abbreviated names. With the
 current system, there is a single definition of an author's name in authors.bib
 and any mistake will result in a warning for an undefined string when compiling
 with bibtex. Moreover, the @Strings labels tend to be shorter than what they
