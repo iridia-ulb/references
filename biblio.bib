@@ -1392,8 +1392,18 @@ BogNas
   year =         1998,
 }
 
+@incollection{BerBarBen2011nips,
+  title =        {Algorithms for Hyper-Parameter Optimization},
+  author =       Bergstra #and# {Bardenet, R\'{e}mi} #and# Bengio_Y #and#
+                  {Bal\'{a}zs K\'{e}gl},
+  crossref =     "NIPS2011",
+  pages =        {2546--2554},
+  url =
+                  {http://papers.nips.cc/paper/4443-algorithms-for-hyper-parameter-optimization.pdf}
+}
+
 @Article{BerBen2012jmlr,
-  author =       "James Bergstra and Yoshua Bengio",
+  author =       Bergstra #and# Bengio_Y,
   title =        {Random Search for Hyper-Parameter Optimization},
   journal =      jmlr,
   year =         2012,
@@ -1939,6 +1949,19 @@ BogNas
   year =         2016,
   volume =       237,
   pages =        {41--58}
+}
+
+@Article{BisLanKot2016mlr,
+  title =        {{\Rpackage{mlr}}: Machine Learning in \proglang{R}},
+  author =       Bischl_B #and# {Michel Lang and Lars Kotthoff and Julia
+                  Schiffner and Jakob Richter and Erich Studerus and Giuseppe
+                  Casalicchio and Zachary M. Jones},
+  journal =      jmlr,
+  year =         2016,
+  volume =       17,
+  number =       170,
+  pages =        {1--5},
+  aurl =         {http://jmlr.org/papers/v17/15-066.html},
 }
 
 @InCollection{BisMerTraPre12:gecco,
@@ -5251,6 +5274,14 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "SLS2009",
 }
 
+@Inproceedings{FawHelHooKar2011icaps,
+  author =       Fawcett #and# {Malte Helmert} #and# Hoos #and# {Erez Karpas
+                  and Gabriele R\"{o}ger and Jendrik Seipp},
+  title =        {{FD-Autotune}: Domain-Specific Configuration using
+                  Fast-Downward},
+  crossref =     "ICAPS-PAL2011",
+}
+
 @InProceedings{FawHoos2013mic,
   author =       Fawcett #and# Hoos,
   title =        {Analysing differences between algorithm
@@ -5396,7 +5427,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Efficient and robust automated machine learning},
   author =       {Feurer, Matthias and Klein, Aaron and Eggensperger, Katharina
                   and Springenberg, Jost and Blum, Manuel} #and# Hutter,
-  crossref =     "NIPS2005",
+  crossref =     "NIPS2015",
   pages =        {2962--2970},
 }
 
@@ -5476,7 +5507,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   is largely unavoidable. We propose a bet-and-run approach to
                   actually turn erraticism to one's advantage. The idea is to
                   make a number of short sample runs with randomized initial
-                  conditions, to bet on the “most promising” run selected
+                  conditions, to bet on the "most promising" run selected
                   according to certain simple criteria, and to bring it to
                   completion. Computational results on a large testbed of mixed
                   integer linear programs from the literature are presented,
@@ -6389,7 +6420,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 @inproceedings{GloBen2010,
   title =        {Understanding the difficulty of training deep feedforward
                   neural networks},
-  author =       {Glorot, Xavier and Bengio, Yoshua},
+  author =       {Glorot, Xavier} #and# Bengio_Y,
   booktitle =    {Proceedings of the Thirteenth International Conference on
                   Artificial Intelligence and Statistics},
   pages =        {249--256},
@@ -7744,6 +7775,7 @@ Solutions vs.\ Proving Optimality for {E}uclidean {TSP} Instances},
   pages =        {36--40},
   crossref =     "LION2014",
   doi =          {10.1007/978-3-319-09584-4_4},
+  pdf =          {HutLopFaw2014lion.pdf}
 }
 
 @Article{HutXuHooLey2014,
@@ -9762,7 +9794,7 @@ doi=      {10.1057/jors.1993.3},
 
 @article{LeCBen1995convnet,
   title =        {Convolutional networks for images, speech, and time series},
-  author =       {LeCun, Yann and Bengio, Yoshua and others},
+  author =       {LeCun, Yann} #and# Bengio_Y #and# {others},
   journal =      {The handbook of brain theory and neural networks},
   volume =       3361,
   number =       10,
@@ -9772,7 +9804,7 @@ doi=      {10.1057/jors.1993.3},
 
 @article{LeCBenHin2015nature,
   title =        {Deep learning},
-  author =       {LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},
+  author =       {LeCun, Yann} #and# Bengio_Y #and# {Hinton, Geoffrey},
   journal =      nature,
   volume =       521,
   number =       7553,
@@ -12214,7 +12246,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 }
 
 @inCollection{MniSzeAud2008,
-  title =        {Empirical {B}ernstein stopping},
+  title =        {Empirical {Bernstein} stopping},
   author =       {Mnih, Volodymyr and Szepesv{\'a}ri, Csaba and Audibert,
                   Jean-Yves},
   crossref =     "ICML2008",
@@ -13886,7 +13918,7 @@ material},
 }
 
 @Article{PotBen96vrptw_gene,
-  author =       Potvin #and# Bengio,
+  author =       Potvin #and# Bengio_S,
   title =        "The Vehicle Routing Problem with Time Windows Part
                   {II}: Genetic Search",
   journal =      informs,
@@ -16612,6 +16644,14 @@ Twin-Screw Extrusion Configuration Problem},
   title =        "Evolutionary Medical Image Registration using Automatic Parameter Tuning",
   crossref =     "CEC2013",
   pages =        {1326--1333}
+}
+
+@InProceedings{ValFawGerHoo2011icaps,
+  author =       {Mauro Vallati} #and# Fawcett #and# {Alfonso E. Gerevini}
+                  #and# Hoos #and# {Alessandro Saetti},
+  title =        {Generating Fast Domain-Optimized Planners by Automatically
+                  Configuring a Generic Parameterised Planner},
+  crossref =     "ICAPS-PAL2011",
 }
 
 @article{ValRui2010,
