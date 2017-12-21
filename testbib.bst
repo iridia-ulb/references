@@ -46,6 +46,7 @@
  %
 ENTRY
   { address
+    annote
     author
     booktitle
     chapter
@@ -315,7 +316,14 @@ FUNCTION {format.supplement}
 FUNCTION {format.keywords}
 { keywords empty$
     { "" }
-    { new.block "\newline{\footnotesize Keywords: " keywords * "}" * }
+    { new.block "\newline{\footnotesize\emph{Keywords:} " keywords * "}" * }
+  if$
+}
+
+FUNCTION {format.annote}
+{ annote empty$
+    { "" }
+    { new.block "\newline{\footnotesize\emph{Annotation:} " annote * "}" * }
   if$
 }
 
@@ -748,6 +756,7 @@ FUNCTION {article}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -787,6 +796,7 @@ FUNCTION {book}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -807,6 +817,7 @@ FUNCTION {booklet}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -856,6 +867,7 @@ FUNCTION {inbook}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -897,6 +909,7 @@ FUNCTION {incollection}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -939,6 +952,7 @@ FUNCTION {inproceedings}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -959,6 +973,7 @@ FUNCTION {manual}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -977,6 +992,7 @@ FUNCTION {mastersthesis}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -994,6 +1010,7 @@ FUNCTION {misc}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
   empty.misc.check
 }
@@ -1013,6 +1030,7 @@ FUNCTION {phdthesis}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -1036,6 +1054,7 @@ FUNCTION {proceedings}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
@@ -1054,6 +1073,7 @@ FUNCTION {techreport}
   new.block
   format.keywords output
   note output
+  format.annote output
   fin.entry
 }
 
