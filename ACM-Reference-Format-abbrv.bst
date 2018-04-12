@@ -1130,6 +1130,30 @@ FUNCTION { format.names.fml }
   while$
 }
 
+FUNCTION { format.ed.names.fml }
+{
+  % Format names in "familiar" format, with first initial followed by
+  % last name. Like format.names, ALL names are formatted.
+  % jtb: The names are NOT put in small caps
+
+'s :=
+  "\bibinfo{person}{" * s  #1 "{f.~}{vv~}{ll}{, jj}" format.name$ "}" *
+  s num.names$ duplicate$
+  #2 >
+    { pop$ " {et~al\mbox{.}}" * }
+    { #2 <
+        'skip$
+        {  "\bibinfo{person}{" s #2 "{f.~}{vv~}{ll}{, jj}" format.name$ * "}" * 't :=
+           t "\bibinfo{person}{others}" =
+                { " {et~al\mbox{.}}" * }
+                { " {and} " * t * }
+          if$
+        }
+      if$
+    }
+  if$
+}
+
 FUNCTION { format.authors }
 {
   author empty.or.unknown
@@ -1167,7 +1191,7 @@ FUNCTION { format.editors.fml }
     { "" }
     {
       "\bibfield{editor}{"
-      editor format.names.fml
+      editor format.ed.names.fml
       *  "}" *
       editor num.names$ #1 >
         { " (Eds.)" * }
