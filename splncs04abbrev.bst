@@ -499,6 +499,56 @@ FUNCTION {format.names}
   while$
   } if$
 }
+FUNCTION {format.names.editors}
+{ 'bibinfo :=
+  duplicate$ empty$ 'skip$ {
+  's :=
+  "" 't :=
+  #1 'nameptr :=
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+    { namesleft #0 > }
+    { s nameptr
+      "{vv~}{ll}{, jj}{, f{.}.}"
+      format.name$
+      bibinfo bibinfo.check
+      't :=
+      nameptr #1 >
+         {
+          nameptr #1
+          #1 + =
+          numnames #1
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+            { ", " * t * }
+            {
+              s nameptr "{ll}" format.name$ duplicate$ "others" =
+                { 't := }
+                { pop$ }
+              if$
+              "," *
+              t "others" =
+                {
+                  " " * bbl.etal *
+                }
+                { " " * t * }
+              if$
+            }
+          if$
+        }
+        't
+      if$
+      nameptr #1 + 'nameptr :=
+      namesleft #1 - 'namesleft :=
+    }
+  while$
+  } if$
+}
+
 FUNCTION {format.names.ed}
 {
   'bibinfo :=
@@ -549,7 +599,7 @@ FUNCTION {get.bbl.editor}
 { editor num.names$ #1 > 'bbl.editors 'bbl.editor if$ }
 
 FUNCTION {format.editors}
-{ editor "editor" format.names duplicate$ empty$ 'skip$
+{ editor "editor" format.names.editors duplicate$ empty$ 'skip$
     {
       " " *
       get.bbl.editor
@@ -628,25 +678,25 @@ FUNCTION {word.in}
 
 FUNCTION {format.date}
 {
-  month "month" bibinfo.check
-  duplicate$ empty$
+  % month "month" bibinfo.check
+  % duplicate$ empty$
   year  "year"  bibinfo.check duplicate$ empty$
-    { swap$ 'skip$
-        { "there's a month but no year in " cite$ * warning$ }
-      if$
-      *
-    }
-    { swap$ 'skip$
-        {
-          swap$
-          " " * swap$
-        }
-      if$
-      *
-      remove.dots
-    }
-  if$
-  duplicate$ empty$
+  %   { swap$ 'skip$
+  %       { "there's a month but no year in " cite$ * warning$ }
+  %     if$
+  %     *
+  %   }
+  %   { swap$ 'skip$
+  %       {
+  %         swap$
+  %         " " * swap$
+  %       }
+  %     if$
+  %     *
+  %     remove.dots
+  %   }
+  % if$
+  % duplicate$ empty$
     'skip$
     {
       before.all 'output.state :=
@@ -841,7 +891,7 @@ FUNCTION {format.in.ed.booktitle}
 { format.booktitle duplicate$ empty$ 'skip$
     {
 %     editor "editor" format.names.ed duplicate$ empty$ 'pop$ % changed by titto
-      editor "editor" format.names duplicate$ empty$ 'pop$
+      editor "editor" format.names.editors duplicate$ empty$ 'pop$
         {
           " " *
           get.bbl.editor
@@ -1024,7 +1074,7 @@ FUNCTION {article}
   if$
 %  new.block
   format.doi output
-  format.url output
+%  format.url output
 %  new.block
   format.note output
   fin.entry
@@ -1061,7 +1111,7 @@ FUNCTION {book}
   format.date "year" output.check
 %  new.block
   format.doi output
-  format.url output
+%  format.url output
 %  new.block
   format.note output
   fin.entry
@@ -1078,7 +1128,7 @@ FUNCTION {booklet}
   format.date output
 %  new.block
   format.doi output
-  format.url output
+%  format.url output
 %  new.block
   format.note output
   fin.entry
@@ -1119,7 +1169,7 @@ FUNCTION {inbook}
   format.date "year" output.check
 %  new.block
   format.doi output
-  format.url output
+%  format.url output
 %  new.block
   format.note output
   fin.entry
@@ -1148,7 +1198,7 @@ FUNCTION {incollection}
   if$
 %  new.block
   format.doi output
-  format.url output
+%  format.url output
 %  new.block
   format.note output
   fin.entry
@@ -1181,7 +1231,7 @@ FUNCTION {inproceedings}
   if$
 %  new.block
   format.doi output
-  format.url output
+%  format.url output
 %  new.block
   format.note output
   fin.entry
@@ -1342,7 +1392,7 @@ FUNCTION {techreport}
   format.date "year" output.check
 %  new.block
   format.doi output
-  format.url output
+%  format.url output
 %  new.block
   format.note output
   fin.entry
