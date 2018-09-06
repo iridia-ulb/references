@@ -1961,7 +1961,6 @@ BogNas
   crossref =     {AAAI2017},
   url =          {https://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14750},
 }
-
 @incollection{BilPar1995:aisb,
   title =        {The Ant Colony Metaphor for Searching Continuous Design
                   Spaces},
@@ -8375,6 +8374,16 @@ Solutions vs.\ Proving Optimality for {E}uclidean {TSP} Instances},
   url       = {http://arxiv.org/abs/1310.1947}
 }
 
+@inCollection{HutHooLey2013lion,
+  author =       Hutter #and# Hoos #and# Leyton-Brown,
+  title =        {Identifying key algorithm parameters and instance features
+                  using forward selection},
+  crossref =     "LION2013",
+  pages =        {364--381},
+  doi =          {10.1007/978-3-642-44973-4_40},
+  keywords = "parameter importance"
+}
+
 @inproceedings{HutHooLey2014icml,
   author =       Hutter #and# Hoos #and# Leyton-Brown,
   title =        {An Efficient Approach for Assessing Hyperparameter
@@ -8382,7 +8391,20 @@ Solutions vs.\ Proving Optimality for {E}uclidean {TSP} Instances},
   crossref =     "ICML2014",
   pages =        {754--762},
   url =          {http://jmlr.org/proceedings/papers/v32/hutter14.html},
+  keywords = {fANOVA, parameter importance}
 }
+
+@article{ProBisBou2018tuna,
+  title =        {Tunability: Importance of Hyperparameters of Machine Learning
+                  Algorithms},
+  author =       "Probst, Philipp" #and# Bischl_B #and# "Boulesteix,
+                  Anne-Laure",
+  journal =      arxiv # {1802.09596},
+  year =         2018,
+  arxiv =        {https://arxiv.org/abs/1802.09596},
+  keywords =     {parameter importance},
+}
+        
 
 @InCollection{HutHooLeyMur2010lion,
   author =       Hutter #and# Hoos #and# Leyton-Brown #and# {Kevin Murphy},
@@ -8473,7 +8495,6 @@ Solutions vs.\ Proving Optimality for {E}uclidean {TSP} Instances},
   number =       {RR-7871},
   pdf =          {http://hal.inria.fr/hal-00665421/PDF/RR-7871.pdf}
 }
-
 
 @TechReport{IRIDIA-2003-037,
   author =       Birattari,
@@ -8598,6 +8619,23 @@ Solutions vs.\ Proving Optimality for {E}uclidean {TSP} Instances},
   number =       {TR/IRIDIA/2011-001},
   url = {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2011-001.pdf},
   note = "This is a revised version of the paper published in EMO 2011~\cite{LopKnoLau2011emo}",
+}
+
+@InCollection{BirChiSaeStu2011,
+  author =       Birattari #and# Chiarandini #and# Saerens #and# Stuetzle,
+  year =         2011,
+  title =        "Learning Graphical Models for Algorithm Configuration",
+  crossref = "CPAIOR2011",
+  
+}
+
+@TechReport{IRIDIA-2011-002,
+  author =       Birattari #and# Chiarandini #and# Saerens #and# Stuetzle,
+  year =         2011,
+  title =        "Learning graphical models for parameter tuning",
+  number =       {TR/IRIDIA/2011-002},
+  institution =  iridia,
+  url =          {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2011-002.pdf},
 }
 
 @TechReport{IRIDIA-2011-003,
@@ -10755,6 +10793,21 @@ year =           {1998}
   doi =       {10.1016/j.orp.2014.12.001},
 }
 
+@article{LiJamSal2018hyperband,
+  author =       {Lisha Li and Kevin Jamieson and Giulia DeSalvo and Afshin
+                  Rostamizadeh and Ameet Talwalkar},
+  title =        {Hyperband: A Novel Bandit-Based Approach to Hyperparameter
+                  Optimization},
+  journal =      jmlr,
+  year =         2018,
+  volume =       18,
+  number =       185,
+  pages =        {1--52},
+  url =          {http://jmlr.org/papers/v18/16-558.html},
+  abstract = {Performance of machine learning algorithms depends critically on identifying a good set of hyperparameters. While recent approaches use Bayesian optimization to adaptively select configurations, we focus on speeding up random search through adaptive resource allocation and early-stopping. We formulate hyperparameter optimization as a pure-exploration non-stochastic infinite-armed bandit problem where a predefined resource like iterations, data samples, or features is allocated to randomly sampled configurations. We introduce a novel algorithm, our algorithm , for this framework and analyze its theoretical properties, providing several desirable guarantees. Furthermore, we compare our algorithm with popular Bayesian optimization methods on a suite of hyperparameter optimization problems. We observe that our algorithm can provide over an order-of-magnitude speedup over our competitor set on a variety of deep-learning and kernel-based learning problems.},
+  keywords = {racing}
+}
+
 @article{LiLi07,
   author =       {Y. Li and W. Li},
   title =        {Adaptive Ant Colony Optimization Algorithm Based on
@@ -11399,6 +11452,7 @@ Optimization},
                   and identify SPEA2 hybridized with very short tabu
                   search runs as the most promising variant.}
 }
+
 
 @InCollection{LopPaqStu09emaa,
   author =       Lopez-Ibanez #and# Paquete #and# Stuetzle,
@@ -13492,6 +13546,17 @@ material},
   keywords =     {irace},
 }
 
+@article{MunSunKirHal2015sel,
+  title =        {Algorithm selection for black-box continuous optimization
+                  problems: a survey on methods and challenges},
+  author =       {Mu{\~n}oz, Mario A. and Sun, Yuan and Kirley, Michael and
+                  Halgamuge, Saman K.},
+  journal =      is,
+  volume =       317,
+  pages =        {224--245},
+  year =         2015,
+}
+
 @InProceedings{Murphy94,
   author =       Murphy # and # Dandy # and # Simpson,
   title =        {Optimum Design and Operation of Pumped Water
@@ -14660,9 +14725,42 @@ material},
   pages =        {103--124},
 }
 
+@InCollection{PerPagFraStu2017gcc,
+  author =       Perez_L #and# Pagnozzi #and# Franzin #and# Stuetzle,
+  title =        "Automatic Configuration of {GCC} Using Irace",
+  crossref =     "EA2017",
+  year =         2018,
+  pages =        "202--216",
+  abstract =     "Automatic algorithm configuration techniques have proved to
+                  be successful in finding performance-optimizing parameter
+                  settings of many search-based decision and optimization
+                  algorithms. A recurrent, important step in software
+                  development is the compilation of source code written in some
+                  programming language into machine-executable code. The
+                  generation of performance-optimized machine code itself is a
+                  difficult task that can be parametrized in many different
+                  possible ways. While modern compilers usually offer different
+                  levels of optimization as possible defaults, they have a
+                  larger number of other flags and numerical parameters that
+                  impact properties of the generated machine-code. While the
+                  generation of performance-optimized machine code has received
+                  large attention and is dealt with in the research area of
+                  auto-tuning, the usage of standard automatic algorithm
+                  configuration software has not been explored, even though, as
+                  we show in this article, the performance of the compiled code
+                  has significant stochasticity, just as standard optimization
+                  algorithms. As a practical case study, we consider the
+                  configuration of the well-known GNU compiler collection (GCC)
+                  for minimizing the run-time of machine code for various
+                  heuristic search methods. Our experimental results show that,
+                  depending on the specific code to be optimized, improvements
+                  of up to 40{\%} of execution time when compared to the -O2
+                  and -O3 optimization flags is possible.",
+}
+
 @Misc{PerPagFraStu2017gccsup,
   author =       Perez_L #and# Pagnozzi #and# Franzin #and# Stuetzle,
-  title =        " Automatic configuration of GCC using irace: Supplementary material.",
+  title =        "Automatic configuration of {GCC} using irace: Supplementary material",
   howpublished = {\url{http://iridia.ulb.ac.be/supp/IridiaSupp2017-009/}},
   year =         2017,
 }
@@ -18817,6 +18915,14 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        {48--59},
 }
 
+@PhdThesis{Dang2018PhD,
+  title =        {Data analytics for algorithm design},
+  school =       "KU Leuven, Belgium",
+  author =       DangThiThanh,
+  year =         2018,
+  annote =       {Supervised by }#DeCausmaecker,
+}
+
 @InCollection{dePDoeDoe2015:gecco,
   author =       {Axel {de Perthuis de Laillevault}} #and# Doerr_B #and#
                   Doerr_C,
@@ -18961,6 +19067,39 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   note =         {Version visited last on July 2017},
   year =         2017
 }
+
+@incollection{OlsUrbAnd2016evobio,
+    author={Olson, Randal S. and Urbanowicz, Ryan J. and Andrews, Peter C. and Lavender, Nicole A. and Kidd, La Creis and Moore, Jason H.},
+    title={Automating Biomedical Data Science Through Tree-Based Pipeline Optimization},
+    crossref = "EVOAPP2016",
+    pages={123--137},
+    doi={10.1007/978-3-319-31204-0_9},
+}
+
+@incollection{OlsBarUrb2016gecco,
+  author =       {Olson, Randal S. and Bartley, Nathan and Urbanowicz, Ryan
+                  J. and Moore, Jason H.},
+  title =        {Evaluation of a Tree-based Pipeline Optimization Tool for
+                  Automating Data Science},
+  crossref =     "GECCO2016",
+  pages =        {485--492},
+  numpages =     {8},
+  doi =          {10.1145/2908812.2908918},
+  acmid =        {2908918},
+}
+
+@incollection{CarPinOli2017recipe,
+  author    = {Alex Guimar{\~{a}}es Cardoso de S{\'{a}} and
+               Walter Jos{\'{e}} G. S. Pinto and
+               Luiz Ot{\'{a}}vio Vilas Boas Oliveira and
+               Gisele L. Pappa},
+  title     = {{RECIPE:} {A} Grammar-Based Framework for Automatically Evolving Classification
+               Pipelines},
+  pages     = {246--261},
+  crossref  = {EuroGP2017},
+  doi       = {10.1007/978-3-319-55696-3\_16},
+}
+
 
 @Article{vanZyl04,
   author =       vanZyl # and # Savic # and # Walters,
