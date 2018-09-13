@@ -1971,6 +1971,44 @@ BogNas
   alias =        {BilPar1995}
 }
 
+@article{BinGinRou2015gaupar,
+  title =        {Quantifying uncertainty on {P}areto fronts with {G}aussian
+                  process conditional simulations},
+  volume =       243,
+  doi =          {10.1016/j.ejor.2014.07.032},
+  abstract =     {Multi-objective optimization algorithms aim at finding
+                  Pareto-optimal solutions. Recovering Pareto fronts or Pareto
+                  sets from a limited number of function evaluations are
+                  challenging problems. A popular approach in the case of
+                  expensive-to-evaluate functions is to appeal to
+                  metamodels. Kriging has been shown efficient as a base for
+                  sequential multi-objective optimization, notably through
+                  infill sampling criteria balancing exploitation and
+                  exploration such as the Expected Hypervolume
+                  Improvement. Here we consider Kriging metamodels not only for
+                  selecting new points, but as a tool for estimating the whole
+                  Pareto front and quantifying how much uncertainty remains on
+                  it at any stage of Kriging-based multi-objective optimization
+                  algorithms. Our approach relies on the Gaussian process
+                  interpretation of Kriging, and bases upon conditional
+                  simulations. Using concepts from random set theory, we
+                  propose to adapt the Vorob’ev expectation and deviation to
+                  capture the variability of the set of non-dominated
+                  points. Numerical experiments illustrate the potential of the
+                  proposed workflow, and it is shown on examples how Gaussian
+                  process simulations and the estimated Vorob’ev deviation can
+                  be used to monitor the ability of Kriging-based
+                  multi-objective optimization algorithms to accurately learn
+                  the Pareto front.},
+  number =       2,
+  journal =      ejor,
+  author =       {Binois, M. and Ginsbourger, D. and Roustant, O.},
+  year =         2015,
+  keywords =     {Attainment function, Expected Hypervolume Improvement,
+                  Kriging, Multi-objective optimization, Vorob’ev expectation},
+  pages =        {386--394},
+}
+
 @InCollection{BirBalDor06,
   author =       Birattari #and# Balaprakash #and# Dorigo,
   title =        "The {ACO/F-RACE} algorithm for combinatorial optimization
@@ -3418,6 +3456,31 @@ Los Angeles, CA},
   pages =        {1165--1188},
   year =         2012
 }
+
+@InCollection{CheGinBecMol2013moda,
+  author =       "Chevalier, Cl{\'e}ment and Ginsbourger, David and Bect,
+                  Julien and Molchanov, Ilya",
+  title =        "Estimating and Quantifying Uncertainties on Level Sets Using
+                  the {V}orob'ev Expectation and Deviation with {G}aussian
+                  Process Models",
+  crossref =     "MODA10",
+  pages =        "35--43",
+  abstract =     "Several methods based on Kriging have recently been proposed
+                  for calculating a probability of failure involving
+                  costly-to-evaluate functions. A closely related problem is to
+                  estimate the set of inputs leading to a response exceeding a
+                  given threshold. Now, estimating such a level set---and not
+                  solely its volume---and quantifying uncertainties on it are
+                  not straightforward. Here we use notions from random set
+                  theory to obtain an estimate of the level set, together with
+                  a quantification of estimation uncertainty. We give explicit
+                  formulae in the Gaussian process set-up and provide a
+                  consistency result. We then illustrate how space-filling
+                  versus adaptive design strategies may sequentially reduce
+                  level set estimation uncertainty.",
+  doi =          "10.1007/978-3-319-00218-7_5"
+}
+
 
 @Article{CheHaoGlo2016,
   title =        {A hybrid metaheuristic approach for the capacitated arc
