@@ -1582,7 +1582,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\urlprefix}{URL }"
   write$ newline$
-  "\providecommand{\doi}[1]{\url{https://doi.org/#1}}"
+  "\providecommand{\doi}[1]{doi:\hspace{.16667em plus .08333em}\discretionary{}{}{}\href{https://doi.org/#1}{\urlstyle{rm}\nolinkurl{#1}}}"
   write$ newline$
 }
 EXECUTE {begin.bib}

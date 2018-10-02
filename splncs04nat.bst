@@ -1530,7 +1530,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else"
   write$ newline$
-  "  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi"
+  "  \providecommand{\doi}[1]{doi:\hspace{.16667em plus .08333em}\discretionary{}{}{}\href{https://doi.org/#1}{\urlstyle{rm}\nolinkurl{#1}}}\fi"
   write$ newline$
 }
 EXECUTE {begin.bib}
