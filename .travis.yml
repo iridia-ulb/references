@@ -12,7 +12,7 @@ dist: bionic
 # - fc-cache -f -v
 
 install:
-  - source ./texlive/texlive_install.sh
+  - source ./test/texlive/texlive_install.sh
 
 cache:
   directories:
@@ -25,7 +25,6 @@ script:
   # Texliveonfly will download packages automatically
   - texliveonfly testbib.tex
   # You can use latexmk to automatically handle bibtex and references (recommended)
-  #- latexmk -pdf main.tex
   - latexmk --pdf testbib.tex
 
   # But you could use any other compiler as well instead of latexmk. Example:
