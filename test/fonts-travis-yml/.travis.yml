@@ -11,7 +11,7 @@ before_install:
   - fc-cache -f -v
 
 install:
-  - source ./texlive/texlive_install.sh
+  - source ./test/texlive/texlive_install.sh
 cache:
   directories:
     - /tmp/texlive
