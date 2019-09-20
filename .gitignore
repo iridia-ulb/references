@@ -1,0 +1,19 @@
+
+# /
+/.auctex-auto
+/auto
+/*.dvi
+/*.fls
+/*.fdb_latexmk
+/*.out
+/*.log
+/*.blg
+/*.aux
+/*.bbl
+/*~
+/*.rel
+/.svnignore
+/*.tmp
+/TAGS
+/*.synctex.gz
+/citefile
