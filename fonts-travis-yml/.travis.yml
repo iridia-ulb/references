@@ -1,0 +1,36 @@
+language: generic
+
+# Dependency of the minted package
+#before_install:
+# - sudo apt-get install python-pygments
+
+# Install fonts
+before_install:
+  - mkdir $HOME/.fonts
+  - cp -a $TRAVIS_BUILD_DIR/src/fonts/. $HOME/.fonts/
+  - fc-cache -f -v
+
+install:
+  - source ./texlive/texlive_install.sh
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+# Change working directory so including files will work
+before_script: cd $TRAVIS_BUILD_DIR/src/
+script:
+  # Texliveonfly will download packages automatically
+  # Compile with lualatex to handle fonts properly
+  - texliveonfly fonts.tex --compiler=lualatex
+  # You can use latexmk to automatically handle bibtex and references (recommended)
+  # We run it with lualatex to handle fonts properly
+  - latexmk -pdflua fonts.tex
+
+  # But you could use any other compiler as well instead of latexmk. Example:
+#  - pdflatex main.tex
+#  - bibtex main
+#  - pdflatex main.tex
+#  - pdflatex main.tex # Compile twice to fix references
+
+  # You can also pass arguments to texliveonfly:
+#  - texliveonfly --arguments='-shell-escape' main.tex
