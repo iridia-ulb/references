@@ -2,41 +2,24 @@ language: generic
 
 dist: bionic
 
-## Uncomment the following lines if you require extra dependencies
-#before_install:
-# - sudo apt-get install ghostscript # If you use latex > dvips > ps2pdf
-# - sudo apt-get install python-pygments # If you use the minted package
-  # If you use custom fonts:
-# - mkdir $HOME/.fonts
-# - cp -a $TRAVIS_BUILD_DIR/src/fonts/. $HOME/.fonts/
-# - fc-cache -f -v
-
 install:
-  - source ./test/texlive/texlive_install.sh
+- source ./test/texlive/texlive_install.sh
 
 cache:
   directories:
-    - /tmp/texlive
-    - $HOME/.texlive
+  - "/tmp/texlive"
+  - "$HOME/.texlive"
 
-# Change working directory so including files will work
 before_script: cd test
 script:
-  # Texliveonfly will download packages automatically
-  - texliveonfly testbib.tex
-  # You can use latexmk to automatically handle bibtex and references (recommended)
-  - latexmk --pdf testbib.tex
+- texliveonfly testbib.tex
+- latexmk --pdf testbib.tex
 
-  # But you could use any other compiler as well instead of latexmk. Example:
-#  - pdflatex main.tex
-#  - bibtex main
-#  - pdflatex main.tex
-#  - pdflatex main.tex # Compile twice to fix references
-
-  # You can also pass arguments to texliveonfly:
-#  - texliveonfly --arguments='-shell-escape' main.tex
-
-## Uncomment the following lines to see the packages installed in travis
-#after_script:
-#  - export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
-#  - tlmgr list --only-installed | grep -oP 'i \K.+?(?=:)'
+deploy:
+  provider: script
+  script: sh test/travis_deploy.sh
+  skip_cleanup: true
+env:
+  global:
+  - GH_REPO="github.com/iridia-ulb/references.git"
+  - secure: G9hhk2nrIWFeUdltTx9+5YVyBGjmNUSn7iLZgQg3FQjJUK9Fkcq6Ayhp8VMz5mhwJNuXOAqyhOxUE1xBzRufT4fdqZzTwM5NqfhD4hfejPCzACDkI8lv4zlJgQBGN+kOArPT9GCzI7tneCUz0Sw8wbnyCLZVeLByqaI/2a3cY18V5GEUdO/orpogAy69NOkkvJ7XDtAZflVjwhiTE1tqZfhpmvBwAciTIWVAEiWlo3wB8aOhA+7PNfUfcKiM2OnJXblh7rNWbJnswD+r+OQ22SmZgiHFBoe0K/f45/rVLTv0p9XN5oaDPo3uShl54cxw0oTaegoXH8MI7feSKbyM+r+vT+/x1AOt0R3u7GVsToTMDAvtb9Pb7XDQrik2k8VmMs6M6d3OKyCcDKTSZkU9DsXH/Dj76XuUGj4N1c9pr0a7iRimE8JNvsUMDMvpvhAA9BSCiLwuNDWbvQnASYzqnojYW0RbslpGbS+WSNuj1LJrOapbduLs2BsS2tpYMHvhKu3yJjlt8zJ1Mg+OMtGHf4mljZON/NqiiUakGiKLoHFSVUK8gMSymNIQW7+McfeWSOAtzs40osDt3iN8tVfPPm858nmawhDSBA5w2fgPbPKJxW3614LkwMb59drOT/2h58em95CR3jHEb8wTcxRllimZHBClLWGMNypI3csGKjI=
