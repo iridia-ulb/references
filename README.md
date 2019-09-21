@@ -9,6 +9,7 @@ the top of each file.
 Contents
 --------
 
+ * [Rationale](#rationale)
  * Format of keys.
  * Contributing to the IRIDIA BibTeX Repository
  * Using the IRIDIA BibTeX Repository
@@ -18,7 +19,7 @@ Contents
  * Copyright
  * BibTeX Advice
  * Howto: Advanced usage
- * TODO
+ * [TODO](#todo)
 
 
 Rationale
@@ -120,7 +121,7 @@ to see the commit, review it and ask for modifications.
 Before committing any change, follow first "Updating your working
 copy", then use
 
- svn diff
+    git diff
 
 to check that your local changes are really what you want to
 commit. Please do not commit changes that do not follow the rules
@@ -131,17 +132,17 @@ Changes may be committed with any of the following commands:
     svn ci -F log_message_file
     svn ci --editor-cmd EDITOR
 
-(see svn ci --help for more ways to specify the log message).
+(see `git ci --help` for more ways to specify the log message).
 
 The commit message (log message) should be of the following form:
 
- * file (entry): What changed.
+    * file (entry): What changed.
 
 Example:
 
-  * biblio.bib (AngWoo2009:ejor): New entry.
-  (Asc2001t:cor): Update year.
-  * crossref.bib (GECCO2000): Fix editor names.
+    * biblio.bib (AngWoo2009:ejor): New entry.
+    (Asc2001t:cor): Update year.
+    * crossref.bib (GECCO2000): Fix editor names.
 
 IMPORTANT: If you use non-ASCII characters BE SURE that your editor
 uses UTF8 encoding. Otherwise, DO NOT USE non-ASCII characters.
@@ -154,12 +155,12 @@ To use the *.bib files, you need to keep a copy (or a symbolic link)
 in the directory of your paper and use the following line in your main
 .tex file:
 
- \bibliography{abbrev,journals,authors,biblio,crossref}
+    \bibliography{abbrev,journals,authors,biblio,crossref}
 
 You may also checkout (or symbolic link to) a copy of the whole optbib
 repository into a directory 'optbib' and use:
 
- \bibliography{optbib/abbrev,optbib/journals,optbib/authors,optbib/biblio,optbib/crossref}
+    \bibliography{optbib/abbrev,optbib/journals,optbib/authors,optbib/biblio,optbib/crossref}
 
 
 
@@ -216,21 +217,23 @@ Updating your working copy
 You may update your working copy with the changes in the repository
 with the following command:
 
-  svn up
+    git pull
 
 This will change your local files and you may need to resolve
 conflicts between your changes and the changes in the repository. To
 resolve a conflict, edit the file, look for markers such as:
 
+```
 >>>>
 my change
 ---------
 the repository change
 <<<<<
+```
 
 Remove the incorrect text and the markers and run
 
-  svn resolved filename
+    svn resolved filename
 
 
 Before submitting a paper
@@ -303,9 +306,8 @@ copyright, the contents of the IRIDIA BibTeX Repository are placed
 under the public domain by associating it to the Creative Commons CC0
 1.0 Universal license (http://creativecommons.org/publicdomain/zero/1.0/).
 
-However, as a personal note, we will appreciate if the repository
-is not made publicly available, and that modifications are submitted
-back to us for consideration.
+As a personal note, we will appreciate if modifications are submitted back to
+us for consideration.
 
 
 
@@ -321,9 +323,7 @@ file. The following is general advice on how to format bib entries.
 
  * 'doi' field is just the DOI, without the http://dx.doi.org/
 
- @article
-
-    * Do not use fields: publisher, ISSN
+ * Do not use fields: publisher, ISSN in `@article`
 
 
 
@@ -338,13 +338,12 @@ A: You could generate the *.bbl file once and edit it, but if you need
 
   A better way is to create a dummy.bib file with:
   
-  @string{springer = "Springer-Verlag"}
-  @string{springer-lncs = "Springer-Verlag, Heidelberg, Germany"}
-  ... and so on.
+    @string{springer = "Springer-Verlag"}
+    @string{springer-lncs = "Springer-Verlag, Heidelberg, Germany"}
 
-  and then include it *after* abbrev.bib:
+  ... and so on, and then include it *after* abbrev.bib:
 
-  \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
+    \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
 
 
 Q: I want to save space and abbreviate journal names and titles of
@@ -359,12 +358,12 @@ A: You could do that, but you cannot commit the changes. So it would
    The best way is to add the shorter variants to abbrevshort.bib, and
    then include it *after* both abbrev.bib and journals.bib:
 
-  \bibliography{abbrev,authors,journals,abbrevshort,biblio,crossref}
+    \bibliography{abbrev,authors,journals,abbrevshort,biblio,crossref}
 
    Moreover, if you want to abbreviate titles of books but not journal
    names, then use:
 
-  \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
+    \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
 
 
 Q: I want to save space and reduce the number of editors (say et
@@ -386,7 +385,7 @@ A: You could do that, but you cannot commit the changes since the
 
 Q: I made a mistake in the commit message. Can this be fixed?
 
-A: Yes: svn propedit 'svn:log' --revprop -r REVISION
+A: Yes: `svn propedit 'svn:log' --revprop -r REVISION`
 
 
 Q: There is a separate entry for each cross-reference, and individual
@@ -409,9 +408,12 @@ A: Because it prevents the bibtex style to change the case of the
    to sentence case, but not the other way around, it is always better
    to use title case in bib files without adding braces around the
    whole title. That is, instead of:
-        title = {{This is a title that Manuel likes}}
+   
+    title = {{This is a title that Manuel likes}}
+
    use 
-        title = "This Is a Title that {M}anuel Likes"
+
+    title = "This Is a Title that {M}anuel Likes"
 
 Q: I want to keep an eye on someone else altering my references by
    mistake.
@@ -431,6 +433,4 @@ TODO
  * Improve 'mklog' to detect files changed, new entries, deleted entries,
    updates and prefill a commit log template.
    
-  
-$Revision$
-$Date$
+
