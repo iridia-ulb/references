@@ -1,5 +1,9 @@
 language: generic
 dist: bionic
+
+before_install:
+- source ./test/travis_maybe_skip.sh
+
 install:
 - source ./test/texlive/texlive_install.sh
 cache:
