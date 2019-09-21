@@ -1,10 +1,10 @@
 #!/bin/sh
 MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
-#git config user.email "travis@travis-ci.com"
-#git config user.name "Travis CI"
+git config user.email "${GIT_EMAIL}"
+git config user.name "${GIT_USER}"
 #git checkout -b master
 git add testbib.pdf
-git commit --message "testbib.pdf: $MESSAGE $TRAVIS_BUILD_NUMBER"
+git commit --message "testbib.pdf: $MESSAGE"
 #git remote add origin-pages https://${GH_TOKEN}@github.com/MVSE-outreach/resources.git > /dev/null 2>&1
 #git push --quiet --set-upstream origin gh-pages
-git push "https://${TRAVIS_SECURE_TOKEN_NAME}@${GH_REPO}" master
+git push "https://${GH_TOKEN}@${GH_REPO}" master

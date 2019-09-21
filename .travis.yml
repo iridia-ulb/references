@@ -1,20 +1,15 @@
 language: generic
-
 dist: bionic
-
 install:
 - source ./test/texlive/texlive_install.sh
-
 cache:
   directories:
   - "/tmp/texlive"
   - "$HOME/.texlive"
-
 before_script: cd test
 script:
 - texliveonfly testbib.tex
 - latexmk --pdf testbib.tex
-
 deploy:
   provider: script
   script: sh travis_deploy.sh
@@ -22,4 +17,4 @@ deploy:
 env:
   global:
   - GH_REPO="github.com/iridia-ulb/references.git"
-  - secure: G9hhk2nrIWFeUdltTx9+5YVyBGjmNUSn7iLZgQg3FQjJUK9Fkcq6Ayhp8VMz5mhwJNuXOAqyhOxUE1xBzRufT4fdqZzTwM5NqfhD4hfejPCzACDkI8lv4zlJgQBGN+kOArPT9GCzI7tneCUz0Sw8wbnyCLZVeLByqaI/2a3cY18V5GEUdO/orpogAy69NOkkvJ7XDtAZflVjwhiTE1tqZfhpmvBwAciTIWVAEiWlo3wB8aOhA+7PNfUfcKiM2OnJXblh7rNWbJnswD+r+OQ22SmZgiHFBoe0K/f45/rVLTv0p9XN5oaDPo3uShl54cxw0oTaegoXH8MI7feSKbyM+r+vT+/x1AOt0R3u7GVsToTMDAvtb9Pb7XDQrik2k8VmMs6M6d3OKyCcDKTSZkU9DsXH/Dj76XuUGj4N1c9pr0a7iRimE8JNvsUMDMvpvhAA9BSCiLwuNDWbvQnASYzqnojYW0RbslpGbS+WSNuj1LJrOapbduLs2BsS2tpYMHvhKu3yJjlt8zJ1Mg+OMtGHf4mljZON/NqiiUakGiKLoHFSVUK8gMSymNIQW7+McfeWSOAtzs40osDt3iN8tVfPPm858nmawhDSBA5w2fgPbPKJxW3614LkwMb59drOT/2h58em95CR3jHEb8wTcxRllimZHBClLWGMNypI3csGKjI=
+  - secure: kjOx0fpByE+qAwoemFemRcP3B3dRSrqzis2qaWc4EYzGQgvsRAuTe4xtOOUoKlJAvbVAaaFemGQtyKHCycsbWvdYGR2dngznQd2WmcsnVod+ido0KYujlcgdedWisOzO3ZuIIfgEcDIhvc+AfmivSj46QZttMu/C86Fo2ZjJK211fK0BvpZ8Iz+LFM6kNrrLf4DmgwteeAHhpiGDdhBgN6OOai7FU5wE1Q4Yn4wYv+TNsatkv9FuvUFG2+Hk2tzDzuOiJmhTJYM1RLm9rkw8u7rfoG3R9pbfEm/cCqB5gBiNoUX5+d0aRRl+hkBRhsfWaPDUaZSELAJMuR7KNxjop7am/fjRMOOp5oHjxcZTtLjIqc7JIFgL8DT1jEst14ZDarLYLEI5hkFt48PgLDyb4eUjTaMnn8ipGYldbM5EumMw9oV288mu0T/xqmrevY7p52B8Z/J0G9pbhizbs3H0oyB6kI4h1QRXGH5LZ12JVHlD7KaIbWkx+ATLpYvv4zaxzMxAR7qAi4+QTxOTgqtI19YzRPYWEbYbBAhRrsbPPeOpnEH5iTjaiJfe0264gCPF3e8Aayg66RKx82wgYQXIkZ/H/vOjRrnQ07C+8EUFRBIt8BTfrDyZcs5JDYurW+UuEzROk2Vt9BJ2oSbQ6bqdjfJ3xYKprNvoPOEKtGZjx6k=
