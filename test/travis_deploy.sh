@@ -1,7 +1,7 @@
 #!/bin/sh
 MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
-git config user.email "${GIT_EMAIL}"
-git config user.name "${GIT_USER}"
+git config --global user.email "${GIT_EMAIL}"
+git config --global user.name "${GIT_USER}"
 #git checkout -b master
 git add testbib.pdf
 git commit --message "testbib.pdf: $MESSAGE"
