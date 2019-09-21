@@ -17,7 +17,7 @@ script:
 
 deploy:
   provider: script
-  script: sh test/travis_deploy.sh
+  script: sh travis_deploy.sh
   skip_cleanup: true
 env:
   global:
