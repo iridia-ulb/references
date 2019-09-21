@@ -1,11 +1,13 @@
 IRIDIA BibTeX Repository
 ========================
 
-[![Build
-Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references) [testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf)
+[![Build Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references) 
 
 Before modifying any file, please read and follow the instructions at
 the top of each file.
+
+PDF file of all references: [testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf)
+
 
 Contents
 --------
