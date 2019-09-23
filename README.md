@@ -21,7 +21,7 @@ Contents
  * List of most often used Subversion commands
  * Copyright
  * BibTeX Advice
- * Howto: Advanced usage
+ * [Howto: Advanced usage](#howto-advanced-usage)
  * [TODO](#todo)
 
 
@@ -428,11 +428,6 @@ A: Send an email to optbibsvn@iridia.ulb.ac.be asking to subscribe to
 TODO
 ----
 
- * Implement a pre-commit hook script
-   (http://svnbook.red-bean.com/nightly/en/svn.reposadmin.create.html#svn.reposadmin.hooks)
-   that tries to compile (pdflatex + bibtex + pdflatex) testbib.tex and rejects
-   the commit if there is an error.
-   
  * Improve 'mklog' to detect files changed, new entries, deleted entries,
    updates and prefill a commit log template.
    
