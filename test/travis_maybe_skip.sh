@@ -8,4 +8,4 @@ if [ $? -ne 0 ]; then
     travis_terminate 0
     exit 1
 fi
-exit 0
+# exit 0
