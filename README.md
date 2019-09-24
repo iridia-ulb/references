@@ -124,9 +124,6 @@ or if you have been given access to the
 you can push your commits without additional intervention.
 Otherwise, you can submit your contribution with a pull request.
 
-[//]: # (People subscribed to the optbibsvn@iridia.ulb.ac.be mailing list will be able)
-[//]: # (to see the commit, review it and ask for modifications.)
-
 Before committing any change, follow first ["Updating your working
 copy"](#updating-your-working-copy), then use
 
@@ -448,8 +445,8 @@ A: Because it prevents the bibtex style to change the case of the
 Q: I want to keep an eye on someone else altering my references by
    mistake.
 
-A: Send an email to optbibsvn@iridia.ulb.ac.be asking to subscribe to
-   the commit emails.
+A: Being this repository hosted on GitHub, you can click on the "Watch"
+   and "Star" buttons on top of the [GitHub page](https://github.com/iridia-ulb/references).
 
 
 TODO
