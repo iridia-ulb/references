@@ -14,7 +14,7 @@ Contents
 
  * [Rationale](#rationale)
  * Format of keys.
- * Contributing to the IRIDIA BibTeX Repository
+ * [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
  * Using the IRIDIA BibTeX Repository
  * Updating your working copy
  * Before submitting a paper
@@ -126,16 +126,35 @@ copy", then use
 
     git diff
 
+and
+
+    git status
+
 to check that your local changes are really what you want to
 commit. Please do not commit changes that do not follow the rules
 described above and within each bib file.
 
-Changes may be committed with any of the following commands:
+Add the files with the changes you want to submit to the
+repository using
 
-    svn ci -F log_message_file
-    svn ci --editor-cmd EDITOR
+    git add LIST OF FILES
 
-(see `git ci --help` for more ways to specify the log message).
+and commit the changes with any of the following commands:
+
+    git commit -m "log_message"
+    git commit -F COMMIT_FILE
+    git commit
+
+(see `git help commit` for more ways to specify the log message).
+
+The third method will open a vi editor where you can write your
+commit message. The first line of the commit is equivalent to
+the "log_message" specified using the `-m` option, and it is
+essentially a title.
+
+In case of a commit with many edits, it is recommended to use
+either the `-F` or the editor option, with the possibility of
+having a longer and more clear message body.
 
 The commit message (log message) should be of the following form:
 
