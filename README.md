@@ -412,7 +412,8 @@ A: You could do that, but you cannot commit the changes since the
 
 Q: I made a mistake in the commit message. Can this be fixed?
 
-A: Yes: `svn propedit 'svn:log' --revprop -r REVISION`
+A: Yes, using: `git commit --amend`. More information
+   [here](https://help.github.com/en/articles/changing-a-commit-message).
 
 
 Q: There is a separate entry for each cross-reference, and individual
