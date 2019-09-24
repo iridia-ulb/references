@@ -18,7 +18,7 @@ Contents
  * [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
  * Updating your working copy
  * [Before submitting a paper](#before-submitting-a-paper)
- * List of most often used Subversion commands
+ * List of most often used Git commands
  * Copyright
  * BibTeX Advice
  * [Howto: Advanced usage](#howto-advanced-usage)
@@ -63,7 +63,7 @@ publications (conference proceedings, book series, different editions).
 Finally, the separation makes trivial to apply various "tricks", such as
 switching to a much abbreviated format for conference and journal names. The
 idea is to override the desired `@String` definitions rather than editing the
-.bib files.
+`.bib` files.
 
 Although some software tools (Mendeley, Zotero, etc) aim to achieve similar
 goals, they tend to introduce spurious fields, many of them fail to achieve
@@ -90,13 +90,13 @@ these rules:
    and the acronym of the conference, journal, or publisher.
 
    Examples: 
-
+```bibtex
       @Article{NouGhiBirDor2005ki,
          author = 	 {S. Nouyan and R. Ghizzioli and 
                          M. Birattari and M.  Dorigo},
          journal = 	 KI,
          year = 	 2005,
-
+```
 3. If there is a conflict, use another distinct single word, either
    from the title of the paper, or the title of the proceedings.
 
@@ -150,10 +150,10 @@ and commit the changes with any of the following commands:
 
 (see `git help commit` for more ways to specify the log message).
 
-The third method will open a vi editor where you can write your
-commit message. The first line of the commit is equivalent to
-the `"log_message"` specified using the `-m` option, and it is
-essentially a title.
+The third method will open an editor (set the environment variable `$EDITOR` to
+customize it) where you can write your commit message. The first line of the
+commit is equivalent to the `"log_message"` specified using the `-m` option,
+and it is essentially a title.
 
 In case of a commit with many edits, it is recommended to use
 either the `-F` or the editor option, with the possibility of
@@ -169,24 +169,23 @@ Example:
     (Asc2001t:cor): Update year.
     * crossref.bib (GECCO2000): Fix editor names.
 
-IMPORTANT: If you use non-ASCII characters BE SURE that your editor
-uses UTF8 encoding. Otherwise, DO NOT USE non-ASCII characters.
+***IMPORTANT:*** If you use non-ASCII characters BE SURE that your editor
+uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
 
 
 Using the IRIDIA BibTeX Repository
 ----------------------------------
 
-To use the *.bib files, you need to keep a copy (or a symbolic link)
+To use the `*.bib` files, you need to keep a copy (or a symbolic link)
 in the directory of your paper and use the following line in your main
 .tex file:
 
     \bibliography{abbrev,journals,authors,biblio,crossref}
 
-You may also checkout (or symbolic link to) a copy of the whole IRIDIA BibTex
+You may also clone (or symbolic link to) a copy of the whole IRIDIA BibTex
 repository into a directory 'references' and use:
 
     \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
-
 
 
 The bib files define some commands, for example `\MaxMinAntSystem`. You
@@ -202,13 +201,11 @@ the IRIDIA BibTeX Repository:
 
  * Method A (preferred, whether you use a versioning system for your paper or not)
 
-1. Checkout a copy of the files to the directory of the paper.
-
-   `git clone git@github.com:iridia-ulb/references.git`
-
-   or
+1. Clone a copy of the files to the directory of the paper.
 
    `git clone https://github.com/iridia-ulb/references.git`
+
+
 
 2. See the sections ["Updating"](#updating-your-working-copy),
    ["Contributing"](#contributing-to-the-iridia-bibtex-repository), and
@@ -219,10 +216,6 @@ the IRIDIA BibTeX Repository:
 
 1. Checkout a copy of the files to some directory. This directory is
    your working copy.
-
-   `git clone git@github.com:iridia-ulb/references.git`
-
-   or
 
    `git clone https://github.com/iridia-ulb/references.git`
 
@@ -266,17 +259,17 @@ Remove the incorrect text and the markers and run
 Before submitting a paper
 -------------------------
 
-It is preferable that you do not submit all `*.bib` files. Use the
-program `aux2bib` to generate a BibTeX file with only the entries that
-you are using. 
+If you prefer to not submit several `*.bib` files, just use the program
+[`aux2bib`](https://ctan.org/pkg/bibtools?lang=en) to generate a BibTeX file
+with only the entries that you are using.
 
 If you find a mistake on the generated file or want to add new
 entries, you should modify your working copy, and then run `aux2bib`
 again to regenerate the file.
 
-Some bibtex styles generate separated entries for cross references. To
-avoid this use `bibtex -min-crossrefs=9000'. Or use the bibtex wrapper
-included in the repository.
+Some bibtex styles generate separated entries for cross references. See the
+[corresponding answer in the FAQ below]().
+
 
 If you want to modify a bibtex style to use short names (only the
 initial for the name), edit the `*.bst` file, search for something such
@@ -290,7 +283,7 @@ and replace it with:
 
 
 
-List of most often used Subversion commands
+List of most often used Git commands
 -------------------------------------------
 
 This is a very basic list of the most useful commands, to get the most
@@ -416,15 +409,18 @@ A: Yes, using: `git commit --amend`. More information
    [here](https://help.github.com/en/articles/changing-a-commit-message).
 
 
-Q: There is a separate entry for each cross-reference, and individual
-   references cite it. I think it is ugly, how to prevent this?
+#### Q: There is a separate entry for each cross-reference, and individual references cite it. I think it is ugly, how to prevent this? ####
 
 A: Unhelpfully, bibtex generates by default separated entries for
-   cross references. To avoid this, use `bibtex -min-crossrefs=9000'.
+   cross references. To avoid this, use `bibtex -min-crossrefs=9000`.
    Or use the bibtex wrapper included in the repository.
+   If you use Overleaf, you can add a file `.latexmkrc` with the following
+   line:
+   
+    $bibtex = "bibtex -min-crossrefs=999 %O %S";
 
-
-Q: Why I should not use "{{Title}}" in title? If not, should I use
+   
+Q: Why I should not use `{{Title}}` in title? If not, should I use
    title case or sentence case?
 
 A: Because it prevents the bibtex style to change the case of the
