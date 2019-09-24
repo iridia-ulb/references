@@ -34,7 +34,7 @@ curated over time by as many people as possible and that are used directly
 as-is, that is, without further alteration. Significantly, while errors tend to
 persist if they were present when the entry was added, they are almost never
 introduced at a later phase since entries are almost never adjusted and any
-customization happens via overriding @String definitions. Thus, the quality of
+customization happens via overriding `@String` definitions. Thus, the quality of
 the references monotonically increases with time.
 
 By contrast, manually copying and customizing a subset of entries often fails
@@ -53,16 +53,16 @@ biblio and crossref files is to avoid spurious divergences of common strings.
 In particular, keeping author names consistent is problematic given non-ascii
 characters, the not-so-obvious grouping rules for names with more than two
 words and differences between full names and abbreviated names. With the
-current system, there is a single definition of an author's name in authors.bib
+current system, there is a single definition of an author's name in `authors.bib`
 and any mistake will result in a warning for an undefined string when compiling
-with bibtex. Moreover, the @Strings labels tend to be shorter than what they
+with bibtex. Moreover, the `@Strings` labels tend to be shorter than what they
 expand to and they make searching / grepping much easier. In addition, the use
-of crossref.bib makes easier to keep consistency in the data for related
+of `crossref.bib` makes easier to keep consistency in the data for related
 publications (conference proceedings, book series, different editions).
 
 Finally, the separation makes trivial to apply various "tricks", such as
 switching to a much abbreviated format for conference and journal names. The
-idea is to override the desired @String definitions rather than editing the
+idea is to override the desired `@String` definitions rather than editing the
 .bib files.
 
 Although some software tools (Mendeley, Zotero, etc) aim to achieve similar
@@ -79,7 +79,7 @@ Format of keys
 When any bib entry is added, the key should be constructed following
 these rules:
 
-1. Only use alphanumeric characters plus ':', '-'. Never use accents
+1. Only use alphanumeric characters plus `:`, `-`. Never use accents
    or non-ASCII characters.
 
 2. Use the first three letters of the first surname of each author (up
@@ -108,7 +108,7 @@ these rules:
 
    * Technical Reports: use the identificative key that technical
      reports often have, for example, IRIDIA-2009-015. Be careful to
-     not use '/', '\' or ',' in keys.
+     not use `/`, `\` or `,` in keys.
    
    * Theses (PhD, etc): after the year, add the type of thesis.
      Examples: Birattari2004PhD.
@@ -127,8 +127,8 @@ Otherwise, you can submit your contribution with a pull request.
 [//]: # (People subscribed to the optbibsvn@iridia.ulb.ac.be mailing list will be able)
 [//]: # (to see the commit, review it and ask for modifications.)
 
-Before committing any change, follow first "Updating your working
-copy", then use
+Before committing any change, follow first ["Updating your working
+copy"](#updating-your-working-copy), then use
 
     git diff
 
@@ -192,11 +192,11 @@ repository into a directory 'references' and use:
 
 
 
-The bib files define some commands, for example \MaxMinAntSystem. You
-can override any command by just defining it with \newcommand or
-\providecommand before the bibliography line. This trick also works for other
-commands defined by BibTeX styles (.bst). For example, disabling doi
-information can be normally achieved with \providecommand{\doi}[1]{}.
+The bib files define some commands, for example `\MaxMinAntSystem`. You
+can override any command by just defining it with `\newcommand` or
+`\providecommand` before the bibliography line. This trick also works for other
+commands defined by BibTeX styles (`.bst`). For example, disabling doi
+information can be normally achieved with `\providecommand{\doi}[1]{}`.
 
 
 There are three methods to keep your copy of the files in sync with
@@ -207,14 +207,15 @@ the IRIDIA BibTeX Repository:
 
 1. Checkout a copy of the files to the directory of the paper.
 
-   git clone git@github.com:iridia-ulb/references.git
+   `git clone git@github.com:iridia-ulb/references.git`
 
    or
 
-   git clone https://github.com/iridia-ulb/references.git
+   `git clone https://github.com/iridia-ulb/references.git`
 
-2. See the sections "Updating", "Contributing", and "Before
-   Submitting a paper".
+2. See the sections ["Updating"](#updating-your-working-copy),
+   ["Contributing"](#contributing-to-the-iridia-bibtex-repository), and
+   ["Before Submitting a paper"](#before-submitting-a-paper).
 
 
  * Method B (if you use a versioning system for your paper)
@@ -222,22 +223,22 @@ the IRIDIA BibTeX Repository:
 1. Checkout a copy of the files to some directory. This directory is
    your working copy.
 
-    git clone git@github.com:iridia-ulb/references.git
+   `git clone git@github.com:iridia-ulb/references.git`
 
    or
 
-   git clone https://github.com/iridia-ulb/references.git
+   `git clone https://github.com/iridia-ulb/references.git`
 
-2. Then copy all *.bib files to the directory of your paper. If you
-   instead create symbolic links (see ln --help), you do not need to
+2. Then copy all `*.bib` files to the directory of your paper. If you
+   instead create symbolic links (see `ln --help`), you do not need to
    copy files back and forth between directories to keep them in sync.
 
 3. If you copy the files, you will have to copy the files again to the
-   directory of your paper after "Updating your working copy".
+   directory of your paper after ["Updating your working copy"](#updating-your-working-copy).
 
 4. Similarly, you will have to copy the files from the directory of
    your paper to your working copy before following the instructions
-   described in "Contributing".
+   described in ["Contributing"](#contributing-to-the-iridia-bibtex-repository).
 
 
 Updating your working copy
@@ -268,12 +269,12 @@ Remove the incorrect text and the markers and run
 Before submitting a paper
 -------------------------
 
-It is preferable that you do not submit all *.bib files. Use the
-program aux2bib to generate a BibTeX file with only the entries that
+It is preferable that you do not submit all `*.bib` files. Use the
+program `aux2bib` to generate a BibTeX file with only the entries that
 you are using. 
 
 If you find a mistake on the generated file or want to add new
-entries, you should modify your working copy, and then run aux2bib
+entries, you should modify your working copy, and then run `aux2bib`
 again to regenerate the file.
 
 Some bibtex styles generate separated entries for cross references. To
@@ -281,7 +282,7 @@ avoid this use `bibtex -min-crossrefs=9000'. Or use the bibtex wrapper
 included in the repository.
 
 If you want to modify a bibtex style to use short names (only the
-initial for the name), edit the *.bst file, search for something such
+initial for the name), edit the `*.bst` file, search for something such
 as:
 
         {ff~}{vv~}{ll}{, jj}" format.name$
