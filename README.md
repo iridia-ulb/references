@@ -15,9 +15,9 @@ Contents
  * [Rationale](#rationale)
  * Format of keys.
  * [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
- * Using the IRIDIA BibTeX Repository
+ * [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
  * Updating your working copy
- * Before submitting a paper
+ * [Before submitting a paper](#before-submitting-a-paper)
  * List of most often used Subversion commands
  * Copyright
  * BibTeX Advice
@@ -117,9 +117,15 @@ these rules:
 Contributing to the IRIDIA BibTeX Repository
 --------------------------------------------
 
-People with a SVN account are able to commit changes. People
-subscribed to the optbibsvn@iridia.ulb.ac.be mailing list will be able
-to see the commit, review it and ask for modifications.
+People with a GitHub account are able to commit changes. 
+If you are a member of the [iridia-ulb GitHub organization](https://github.com/iridia-ulb),
+or if you have been given access to the
+[references repository](https://github.com/iridia-ulb/references),
+you can push your commits without additional intervention.
+Otherwise, you can submit your contribution with a pull request.
+
+[//]: # (People subscribed to the optbibsvn@iridia.ulb.ac.be mailing list will be able)
+[//]: # (to see the commit, review it and ask for modifications.)
 
 Before committing any change, follow first "Updating your working
 copy", then use
@@ -149,7 +155,7 @@ and commit the changes with any of the following commands:
 
 The third method will open a vi editor where you can write your
 commit message. The first line of the commit is equivalent to
-the "log_message" specified using the `-m` option, and it is
+the `"log_message"` specified using the `-m` option, and it is
 essentially a title.
 
 In case of a commit with many edits, it is recommended to use
@@ -179,10 +185,10 @@ in the directory of your paper and use the following line in your main
 
     \bibliography{abbrev,journals,authors,biblio,crossref}
 
-You may also checkout (or symbolic link to) a copy of the whole optbib
-repository into a directory 'optbib' and use:
+You may also checkout (or symbolic link to) a copy of the whole IRIDIA BibTex
+repository into a directory 'references' and use:
 
-    \bibliography{optbib/abbrev,optbib/journals,optbib/authors,optbib/biblio,optbib/crossref}
+    \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
 
 
 
@@ -197,22 +203,30 @@ There are three methods to keep your copy of the files in sync with
 the IRIDIA BibTeX Repository:
 
 
- * Method A (if you do not use subversion for your paper)
+ * Method A (preferred, whether you use a versioning system for your paper or not)
 
 1. Checkout a copy of the files to the directory of the paper.
 
-   svn co https://iridia-dev.ulb.ac.be/projects/optbib/svn/ .
+   git clone git@github.com:iridia-ulb/references.git
+
+   or
+
+   git clone https://github.com/iridia-ulb/references.git
 
 2. See the sections "Updating", "Contributing", and "Before
    Submitting a paper".
 
 
- * Method B (if you do use subversion for your paper)
+ * Method B (if you use a versioning system for your paper)
 
 1. Checkout a copy of the files to some directory. This directory is
    your working copy.
 
-   svn co https://iridia-dev.ulb.ac.be/projects/optbib/svn/ bib
+    git clone git@github.com:iridia-ulb/references.git
+
+   or
+
+   git clone https://github.com/iridia-ulb/references.git
 
 2. Then copy all *.bib files to the directory of your paper. If you
    instead create symbolic links (see ln --help), you do not need to
@@ -224,13 +238,6 @@ the IRIDIA BibTeX Repository:
 4. Similarly, you will have to copy the files from the directory of
    your paper to your working copy before following the instructions
    described in "Contributing".
-
-
- * Method C (svn:external)
-
-Read about svn:external in the Subversion book:
-
-     http://svnbook.red-bean.com/
 
 
 Updating your working copy
