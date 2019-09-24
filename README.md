@@ -13,12 +13,12 @@ Contents
 --------
 
  * [Rationale](#rationale)
- * Format of keys.
+ * [Format of keys](#format-of-keys)
  * [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
  * [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
  * Updating your working copy
  * [Before submitting a paper](#before-submitting-a-paper)
- * List of most often used Git commands
+ * [List of most often used git commands](#list-of-most-often-used-git-commands)
  * BibTeX Advice
  * [Frequently Asked Questions](#frequently-asked-questions)
  * [TODO](#todo)
@@ -87,9 +87,7 @@ these rules:
    publication (if this is not known, make a good guess because this
    should not be changed afterwards and it is confusing that the year
    in the key does not matches the year of publication), 
-   and the acronym of the conference, journal, or publisher.
-
-   Examples: 
+   and the acronym of the conference, journal, or publisher. Examples: 
 ```bibtex
       @Article{NouGhiBirDor2005ki,
          author = 	 {S. Nouyan and R. Ghizzioli and 
@@ -98,39 +96,34 @@ these rules:
          year = 	 2005,
 ```
 3. If there is a conflict, use another distinct single word, either
-   from the title of the paper, or the title of the proceedings.
-
-4. Exceptions are:
+   from the title of the paper, or the title of the proceedings. Exceptions are:
 
    * Proceedings: keys should be the acronym of the proceedings
      followed by the year. Examples: ANTS2008, GECCO2010, etc.
 
-
    * Technical Reports: use the identificative key that technical
      reports often have, for example, IRIDIA-2009-015. Be careful to
-     not use `/`, `\` or `,` in keys.
+     not use "`/`", "`\`" or "`,`" in keys.
    
    * Theses (PhD, etc): after the year, add the type of thesis.
-     Examples: Birattari2004PhD.
+     Example: Birattari2004PhD.
 
 
 Contributing to the IRIDIA BibTeX Repository
 --------------------------------------------
 
-People with a GitHub account are able to commit changes. 
 If you are a member of the [iridia-ulb GitHub organization](https://github.com/iridia-ulb),
 or if you have been given access to the
 [references repository](https://github.com/iridia-ulb/references),
-you can push your commits without additional intervention.
-Otherwise, you can submit your contribution with a pull request.
+you can push your commits directly to the repository.
+Otherwise, you can submit your [contribution with a pull request](https://help.github.com/en/articles/about-pull-requests).
 
 Before committing any change, follow first ["Updating your working
 copy"](#updating-your-working-copy), then use
 
     git diff
-
 and
-
+    
     git status
 
 to check that your local changes are really what you want to
@@ -179,14 +172,14 @@ Using the IRIDIA BibTeX Repository
 To use the `*.bib` files, you need to keep a copy (or a symbolic link)
 in the directory of your paper and use the following line in your main
 .tex file:
-
+```latex
     \bibliography{abbrev,journals,authors,biblio,crossref}
-
+```
 You may also clone (or symbolic link to) a copy of the whole IRIDIA BibTex
 repository into a directory 'references' and use:
-
+```latex
     \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
-
+```
 
 The bib files define some commands, for example `\MaxMinAntSystem`. You
 can override any command by just defining it with `\newcommand` or
@@ -199,7 +192,7 @@ There are three methods to keep your copy of the files in sync with
 the IRIDIA BibTeX Repository:
 
 
- * Method A (preferred, whether you use a versioning system for your paper or not)
+***Method A** (preferred, whether you use a versioning system for your paper or not)
 
 1. Clone a copy of the files to the directory of the paper.
 
@@ -230,6 +223,25 @@ the IRIDIA BibTeX Repository:
    your paper to your working copy before following the instructions
    described in ["Contributing"](#contributing-to-the-iridia-bibtex-repository).
 
+***Method C** You are already using git for your main files. Recommended for Overleaf.
+
+1. Within your existing local repository, create a *fake submodule*. The trailing "slash (`/`) is important!
+
+```
+    git clone https://github.com/iridia-ulb/references.git references
+    git add references/
+```
+
+2. Now git commands at the top directory, operate in your own git
+   repository, but git commands within the directory `references` operate in
+   the `iridia-ulb` repository. The `references` directory will be available to
+   all users of the repository, however, only the users who perform the above
+   command can perform operations in the `iridia-ulb` repository.
+   
+   
+
+   
+   
 
 Updating your working copy
 --------------------------
@@ -268,7 +280,7 @@ entries, you should modify your working copy, and then run `aux2bib`
 again to regenerate the file.
 
 Some bibtex styles generate separated entries for cross references. See the
-[corresponding answer in the FAQ below]().
+[corresponding answer in the FAQ below](#q-there-is-a-separate-entry-for-each-cross-reference-and-individual-references-cite-it-i-think-it-is-ugly-how-to-prevent-this).
 
 
 If you want to modify a bibtex style to use short names (only the
@@ -283,27 +295,27 @@ and replace it with:
 
 
 
-List of most often used Git commands
--------------------------------------------
+List of most often used git commands
+------------------------------------
 
 This is a very basic list of the most useful commands, to get the most
-out of Subversion, please read the book: http://svnbook.red-bean.com/
+out of Git, please read the book: https://git-scm.com/book/en/
 
 * Checkout a copy of the files to some directory:
 
-     git clone https://github.com/iridia-ulb/references references
+        git clone https://github.com/iridia-ulb/references references
 
 * See changes in the repository before updating:
 
-     svn diff -rBASE:HEAD https://iridia-dev.ulb.ac.be/projects/optbib/svn/
+        svn diff -rBASE:HEAD https://iridia-dev.ulb.ac.be/projects/optbib/svn/
 
 * Update your local copy with the changes in the repository
 
-     git pull
+        git pull
 
 * See your local changes
 
-     git diff
+        git diff
 
  * Commit changes to your local repository:
 
