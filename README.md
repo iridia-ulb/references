@@ -19,10 +19,10 @@ Contents
  * Updating your working copy
  * [Before submitting a paper](#before-submitting-a-paper)
  * List of most often used Git commands
- * Copyright
  * BibTeX Advice
- * [Howto: Advanced usage](#howto-advanced-usage)
+ * [Frequently Asked Questions](#frequently-asked-questions)
  * [TODO](#todo)
+ * [Copyright](#copyright)
 
 
 Rationale
@@ -145,7 +145,7 @@ repository using
 and commit the changes with any of the following commands:
 
     git commit -m "log_message"
-    git commit -F COMMIT_FILE
+    git commit -F LOG_MESSAGE_FILE
     git commit
 
 (see `git help commit` for more ways to specify the log message).
@@ -291,7 +291,7 @@ out of Subversion, please read the book: http://svnbook.red-bean.com/
 
 * Checkout a copy of the files to some directory:
 
-     svn co https://iridia-dev.ulb.ac.be/projects/optbib/svn/
+     git clone https://github.com/iridia-ulb/references references
 
 * See changes in the repository before updating:
 
@@ -299,35 +299,28 @@ out of Subversion, please read the book: http://svnbook.red-bean.com/
 
 * Update your local copy with the changes in the repository
 
-     svn up
+     git pull
 
 * See your local changes
 
-     svn diff
+     git diff
 
-* Commit changes:
+ * Commit changes to your local repository:
 
-    svn ci -F log_message_file
-  or
-    svn ci --editor-cmd EDITOR
+        git commit -m "log_message"
+        git commit -F COMMIT_FILE
+        git commit
 
-  where EDITOR is something like emacs, vi or gedit. You can see
-  EDITOR in your .bashrc, and then you don't need to specify it every
-  time. For short commit messages, you can use 
+   (see `git help commit` for more ways to specify the log message). The third
+   method will open an editor (set the environment variable `$EDITOR` to
+   customize it) where you can write your commit message. The first line of the
+   commit is equivalent to the `"log_message"` specified using the `-m` option,
+   and it is essentially a title.
 
-    svn ci -m " message "
-
-
-Copyright
----------
-
-To the extent that the contents of bib files may be subject to
-copyright, the contents of the IRIDIA BibTeX Repository are placed
-under the public domain by associating it to the Creative Commons CC0
-1.0 Universal license (http://creativecommons.org/publicdomain/zero/1.0/).
-
-As a personal note, we will appreciate if modifications are submitted back to
-us for consideration.
+ * Send changes to the github repository:
+ 
+        git push
+        
 
 
 
@@ -347,11 +340,10 @@ file. The following is general advice on how to format bib entries.
 
 
 
-Howto: Advanced Usage
+Frequently Asked Questions
 ---------------------------
 
-Q: A journal insists on using "Springer-Verlag" instead of "Springer",
-   how to change everything?
+#### Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything? ####
 
 A: You could generate the *.bbl file once and edit it, but if you need
    to recompile the bibliography, you'll have to edit it again.
@@ -366,8 +358,7 @@ A: You could generate the *.bbl file once and edit it, but if you need
     \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
 
 
-Q: I want to save space and abbreviate journal names and titles of
-   books. Should I just edit the journal.bib and abbrev.bib files?
+#### Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files? ####
 
 A: You could do that, but you cannot commit the changes. So it would
    be cumbersome for you to maintain your own copy.
@@ -386,9 +377,7 @@ A: You could do that, but you cannot commit the changes. So it would
     \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
 
 
-Q: I want to save space and reduce the number of editors (say et
-   al. for any editor after the first one), or remove all DOIs, URLs,
-   publisher address or other such fields. Can I edit the .bib files?
+#### Q: I want to save space and reduce the number of editors (say et   al. for any editor after the first one), or remove all DOIs, URLs,   publisher address or other such fields. Can I edit the .bib files? ####
 
 A: You could do that, but you cannot commit the changes since the
    additional information could be useful for others.  It would be
@@ -403,7 +392,7 @@ A: You could do that, but you cannot commit the changes since the
    Springer's LNCS bst file.
 
 
-Q: I made a mistake in the commit message. Can this be fixed?
+#### Q: I made a mistake in the commit message. Can this be fixed? ####
 
 A: Yes, using: `git commit --amend`. More information
    [here](https://help.github.com/en/articles/changing-a-commit-message).
@@ -420,8 +409,7 @@ A: Unhelpfully, bibtex generates by default separated entries for
     $bibtex = "bibtex -min-crossrefs=999 %O %S";
 
    
-Q: Why I should not use `{{Title}}` in title? If not, should I use
-   title case or sentence case?
+#### Q: Why I should not use `{{Title}}` in title? If not, should I use  title case or sentence case? ####
 
 A: Because it prevents the bibtex style to change the case of the
    title to the style used by the journal, it breaks consistency: Some
@@ -439,11 +427,12 @@ A: Because it prevents the bibtex style to change the case of the
 
     title = "This Is a Title that {M}anuel Likes"
 
-Q: I want to keep an eye on someone else altering my references by
-   mistake.
+#### Q: I want to keep an eye on someone else altering my references by mistake. ####
 
-A: Being this repository hosted on GitHub, you can click on the "Watch"
-   and "Star" buttons on top of the [GitHub page](https://github.com/iridia-ulb/references).
+A: You can click on the "Watch"
+   and "Star" buttons on top of the [GitHub
+   page](https://github.com/iridia-ulb/references). You can also fork the
+   repository and only merge changes into your fork that you have reviewed.
 
 
 TODO
@@ -453,3 +442,13 @@ TODO
    updates and prefill a commit log template.
    
 
+Copyright
+---------
+
+To the extent that the contents of bib files may be subject to
+copyright, the contents of the IRIDIA BibTeX Repository are placed
+under the public domain by associating it to the Creative Commons CC0
+1.0 Universal license (http://creativecommons.org/publicdomain/zero/1.0/).
+
+As a personal note, we will appreciate if modifications are submitted back to
+us for consideration.
