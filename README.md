@@ -382,14 +382,14 @@ A: You could generate the *.bbl file once and edit it, but if you need
    to recompile the bibliography, you'll have to edit it again.
 
   A better way is to create a dummy.bib file with:
-
+```bibtex
     @string{springer = "Springer-Verlag"}
     @string{springer-lncs = "Springer-Verlag, Heidelberg, Germany"}
-
+```
   ... and so on, and then include it *after* abbrev.bib:
-
+```latex
     \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
-
+```
 
 #### Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files? ####
 
@@ -401,14 +401,14 @@ A: You could do that, but you cannot commit the changes. So it would
 
    The best way is to add the shorter variants to abbrevshort.bib, and
    then include it *after* both abbrev.bib and journals.bib:
-
+```latex
     \bibliography{abbrev,authors,journals,abbrevshort,biblio,crossref}
-
+```
    Moreover, if you want to abbreviate titles of books but not journal
    names, then use:
-
+```latex
     \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
-
+```
 
 #### Q: I want to save space and reduce the number of editors (say et   al. for any editor after the first one), or remove all DOIs, URLs,   publisher address or other such fields. Can I edit the .bib files? ####
 
@@ -462,8 +462,7 @@ A: Because it prevents the bibtex style to change the case of the
 
 #### Q: I want to keep an eye on someone else altering my references by mistake. ####
 
-A: You can click on the "Watch"
-   and "Star" buttons on top of the [GitHub
+A: You can click on the "Watch" and "Star" buttons on top of the [GitHub
    page](https://github.com/iridia-ulb/references). You can also fork the
    repository and only merge changes into your fork that you have reviewed.
 
