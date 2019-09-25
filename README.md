@@ -225,9 +225,11 @@ the repository change
 <<<<<
 ```
 
-Remove the incorrect text and the markers and run
+Remove the incorrect text and the markers, save, commit and push the changes
 
-    svn resolved filename
+    git add FILE
+    git commit -m "FILE: conflict resolved"
+    git push
 
 
 
@@ -325,10 +327,6 @@ out of Git, please read the book: https://git-scm.com/book/en/
 * Checkout a copy of the files to some directory:
 
         git clone https://github.com/iridia-ulb/references references
-
-* See changes in the repository before updating:
-
-        svn diff -rBASE:HEAD https://iridia-dev.ulb.ac.be/projects/optbib/svn/
 
 * Update your local copy with the changes in the repository
 
