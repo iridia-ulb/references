@@ -150,7 +150,7 @@ follows the same instructions.
    ```
    If you use a versioning system to work on the paper with other coauthors,
    do not add the link to the paper repository; instead, ask your
-   collaborators to to the same in their working copy.
+   collaborators to do the same in their working copy.
 
 3. In the main `tex` file of your paper, include the BibTex files with
    ```latex
@@ -199,7 +199,7 @@ collaborators) on web-based systems such as Overleaf.
   We especially discourage methods that "break" the tracking of the changes,
   such as copying or linking single files.
 
-  Should you got his way (e.g. because you or your collaborators are already
+  Should you go this way (e.g. because you or your collaborators are already
   used to a certain workflow) please be aware that it will be your
   responsibility to keep your local copy updated, in particular when you
   submit your changes (see Section ["Contributing"](#contributing-to-the-iridia-bibtex-repository)).
