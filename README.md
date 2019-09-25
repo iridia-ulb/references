@@ -324,6 +324,16 @@ List of most often used git commands
 This is a very basic list of the most useful commands, to get the most
 out of Git, please read the book: https://git-scm.com/book/en/
 
+An explanation of the commands can also be found with
+
+        git help
+
+in general, or
+
+        git help COMMAND
+
+to get the various option of the specific command COMMAND.
+
 * Checkout a copy of the files to some directory:
 
         git clone https://github.com/iridia-ulb/references references
@@ -336,7 +346,18 @@ out of Git, please read the book: https://git-scm.com/book/en/
 
         git diff
 
- * Commit changes to your local repository:
+* See the current status of your local copy, such as which files have
+  been modified since the last commit, or which files are untracked
+
+        git status
+
+* Select the files that you want to include in the commit. There might be
+  files with changes not yet ready for commit, so include only what you
+  consider to be in a consistent state
+
+        git add LIST OF FILES
+
+* Commit changes to your local repository:
 
         git commit -m "log_message"
         git commit -F COMMIT_FILE
@@ -348,7 +369,7 @@ out of Git, please read the book: https://git-scm.com/book/en/
    commit is equivalent to the `"log_message"` specified using the `-m` option,
    and it is essentially a title.
 
- * Send changes to the github repository:
+* Send changes to the github repository:
 
         git push
 
