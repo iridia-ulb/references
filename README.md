@@ -1,7 +1,7 @@
 IRIDIA BibTeX Repository
 ========================
 
-[![Build Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references) 
+[![Build Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references)
 
 Before modifying any file, please read and follow the instructions at
 the top of each file.
@@ -14,9 +14,9 @@ Contents
 
  * [Rationale](#rationale)
  * [Format of keys](#format-of-keys)
- * [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
  * [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
  * Updating your working copy
+ * [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
  * [Before submitting a paper](#before-submitting-a-paper)
  * [List of most often used git commands](#list-of-most-often-used-git-commands)
  * BibTeX Advice
@@ -86,11 +86,11 @@ these rules:
    to four authors, first letter capitalized), the full year of
    publication (if this is not known, make a good guess because this
    should not be changed afterwards and it is confusing that the year
-   in the key does not matches the year of publication), 
-   and the acronym of the conference, journal, or publisher. Examples: 
+   in the key does not matches the year of publication),
+   and the acronym of the conference, journal, or publisher. Examples:
 ```bibtex
       @Article{NouGhiBirDor2005ki,
-         author = 	 {S. Nouyan and R. Ghizzioli and 
+         author = 	 {S. Nouyan and R. Ghizzioli and
                          M. Birattari and M.  Dorigo},
          journal = 	 KI,
          year = 	 2005,
@@ -104,126 +104,68 @@ these rules:
    * Technical Reports: use the identificative key that technical
      reports often have, for example, IRIDIA-2009-015. Be careful to
      not use "`/`", "`\`" or "`,`" in keys.
-   
+
    * Theses (PhD, etc): after the year, add the type of thesis.
      Example: Birattari2004PhD.
-
-
-Contributing to the IRIDIA BibTeX Repository
---------------------------------------------
-
-If you are a member of the [iridia-ulb GitHub organization](https://github.com/iridia-ulb),
-or if you have been given access to the
-[references repository](https://github.com/iridia-ulb/references),
-you can push your commits directly to the repository.
-Otherwise, you can submit your [contribution with a pull request](https://help.github.com/en/articles/about-pull-requests).
-
-Before committing any change, follow first ["Updating your working
-copy"](#updating-your-working-copy), then use
-
-    git diff
-and
-    
-    git status
-
-to check that your local changes are really what you want to
-commit. Please do not commit changes that do not follow the rules
-described above and within each bib file.
-
-Add the files with the changes you want to submit to the
-repository using
-
-    git add LIST OF FILES
-
-and commit the changes with any of the following commands:
-
-    git commit -m "log_message"
-    git commit -F LOG_MESSAGE_FILE
-    git commit
-
-(see `git help commit` for more ways to specify the log message).
-
-The third method will open an editor (set the environment variable `$EDITOR` to
-customize it) where you can write your commit message. The first line of the
-commit is equivalent to the `"log_message"` specified using the `-m` option,
-and it is essentially a title.
-
-In case of a commit with many edits, it is recommended to use
-either the `-F` or the editor option, with the possibility of
-having a longer and more clear message body.
-
-The commit message (log message) should be of the following form:
-
-    * file (entry): What changed.
-
-Example:
-
-    * biblio.bib (AngWoo2009:ejor): New entry.
-    (Asc2001t:cor): Update year.
-    * crossref.bib (GECCO2000): Fix editor names.
-
-***IMPORTANT:*** If you use non-ASCII characters BE SURE that your editor
-uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
 
 
 Using the IRIDIA BibTeX Repository
 ----------------------------------
 
-To use the `*.bib` files, you need to keep a copy (or a symbolic link)
-in the directory of your paper and use the following line in your main
-.tex file:
-```latex
-    \bibliography{abbrev,journals,authors,biblio,crossref}
-```
-You may also clone (or symbolic link to) a copy of the whole IRIDIA BibTex
-repository into a directory 'references' and use:
-```latex
-    \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
-```
+The IRIDIA BibTex repository is essentially a collection of `bib` files,
+so all you need to do is to include these files in your paper.
 
-The bib files define some commands, for example `\MaxMinAntSystem`. You
+The `bib` files define some commands, for example `\MaxMinAntSystem`. You
 can override any command by just defining it with `\newcommand` or
 `\providecommand` before the bibliography line. This trick also works for other
 commands defined by BibTeX styles (`.bst`). For example, disabling doi
 information can be normally achieved with `\providecommand{\doi}[1]{}`.
 
+However, one of the purposes of this repository is to keep the list of
+references as independent as possible from the working paper(s),
+whenever possible. Hence, we suggest two main ways of setting up your
+local copy of the IRIDIA BibTex repository.
+The instructions below work for Linux/Mac, but can of course be adapted
+for Windows too.
 
-There are three methods to keep your copy of the files in sync with
-the IRIDIA BibTeX Repository:
+* **Method A**
 
+This method is suggested especially when working on your paper offline,
+whether you are using a versioning system for your paper or not. In case
+you use a versioning system to work on your paper with other collaborators,
+make sure everyone in the team uses the IRIDIA BibTex repository and
+follows the same instructions.
 
-***Method A** (preferred, whether you use a versioning system for your paper or not)
+1. Clone the repository
+   ```
+   cd /path/to/work/
+   git clone https://github.com/iridia-ulb/references.git
+   ```
 
-1. Clone a copy of the files to the directory of the paper.
+2. In the folder of the working paper, create a link to the local copy
+   of the repository.
+   ```
+   cd /path/to/paper/
+   ln -s /path/to/work/references references
+   ```
+   If you use a versioning system to work on the paper with other coauthors,
+   do not add the link to the paper repository; instead, ask your
+   collaborators to to the same in their working copy.
 
-   `git clone https://github.com/iridia-ulb/references.git`
+3. In the main `tex` file of your paper, include the BibTex files with
+   ```latex
+    \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
+   ```   
 
-
-
-2. See the sections ["Updating"](#updating-your-working-copy),
+4. See the sections ["Updating"](#updating-your-working-copy),
    ["Contributing"](#contributing-to-the-iridia-bibtex-repository), and
    ["Before Submitting a paper"](#before-submitting-a-paper).
 
 
- * Method B (if you use a versioning system for your paper)
+* **Method B**
 
-1. Checkout a copy of the files to some directory. This directory is
-   your working copy.
-
-   `git clone https://github.com/iridia-ulb/references.git`
-
-2. Then copy all `*.bib` files to the directory of your paper. If you
-   instead create symbolic links (see `ln --help`), you do not need to
-   copy files back and forth between directories to keep them in sync.
-
-3. If you copy the files, you will have to copy the files again to the
-   directory of your paper after ["Updating your working copy"](#updating-your-working-copy).
-
-4. Similarly, you will have to copy the files from the directory of
-   your paper to your working copy before following the instructions
-   described in ["Contributing"](#contributing-to-the-iridia-bibtex-repository).
-
-***Method C** You are already using git for your main files. Recommended for Overleaf.
+This method is suggested in case you work on your paper (alone or with your
+collaborators) on web-based systems such as Overleaf.
 
 1. Within your existing local repository, create a *fake submodule*. The trailing "slash (`/`) is important!
 
@@ -232,16 +174,36 @@ the IRIDIA BibTeX Repository:
     git add references/
 ```
 
-2. Now git commands at the top directory, operate in your own git
-   repository, but git commands within the directory `references` operate in
+2. Now `git` commands at the top directory operate in your own git
+   repository, but `git` commands within the directory `references` operate in
    the `iridia-ulb` repository. The `references` directory will be available to
    all users of the repository, however, only the users who perform the above
    command can perform operations in the `iridia-ulb` repository.
-   
-   
 
-   
-   
+3. In the main `tex` file of your paper, include the BibTex files with
+   ```latex
+    \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
+   ```
+
+4. See the sections ["Updating"](#updating-your-working-copy),
+   ["Contributing"](#contributing-to-the-iridia-bibtex-repository), and
+   ["Before Submitting a paper"](#before-submitting-a-paper).   
+
+
+* **Other methods**
+
+  You might prefer alternative ways of setting up the local copy of this
+  repository. However, be aware that this might come with additional burden
+  (for you) of managing the consistency and compatibility with the
+  main central repository.
+  We especially discourage methods that "break" the tracking of the changes,
+  such as copying or linking single files.
+
+  Should you got his way (e.g. because you or your collaborators are already
+  used to a certain workflow) please be aware that it will be your
+  responsibility to keep your local copy updated, in particular when you
+  submit your changes (see Section ["Contributing"](#contributing-to-the-iridia-bibtex-repository)).
+
 
 Updating your working copy
 --------------------------
@@ -266,6 +228,65 @@ the repository change
 Remove the incorrect text and the markers and run
 
     svn resolved filename
+
+
+
+Contributing to the IRIDIA BibTeX Repository
+--------------------------------------------
+
+    If you are a member of the [iridia-ulb GitHub organization](https://github.com/iridia-ulb),
+    or if you have been given access to the
+    [references repository](https://github.com/iridia-ulb/references),
+    you can push your commits directly to the repository.
+    Otherwise, you can submit your [contribution with a pull request](https://help.github.com/en/articles/about-pull-requests).
+
+    Before committing any change, follow first ["Updating your working
+    copy"](#updating-your-working-copy), then use
+
+        git diff
+    and
+
+        git status
+
+    to check that your local changes are really what you want to
+    commit. Please do not commit changes that do not follow the rules
+    described above and within each bib file. Changes that are not
+    incremental to the latest online version will be rejected.
+
+    Add the files with the changes you want to submit to the
+    repository using
+
+        git add LIST OF FILES
+
+    and commit the changes with any of the following commands:
+
+        git commit -m "log_message"
+        git commit -F LOG_MESSAGE_FILE
+        git commit
+
+    (see `git help commit` for more ways to specify the log message).
+
+    The third method will open an editor (set the environment variable `$EDITOR` to
+    customize it) where you can write your commit message. The first line of the
+    commit is equivalent to the `"log_message"` specified using the `-m` option,
+    and it is essentially a title.
+
+    In case of a commit with many edits, it is recommended to use
+    either the `-F` or the editor option, with the possibility of
+    having a longer and more clear message body.
+
+    The commit message (log message) should be of the following form:
+
+        * file (entry): What changed.
+
+    Example:
+
+        * biblio.bib (AngWoo2009:ejor): New entry.
+        (Asc2001t:cor): Update year.
+        * crossref.bib (GECCO2000): Fix editor names.
+
+    ***IMPORTANT:*** If you use non-ASCII characters BE SURE that your editor
+    uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
 
 
 Before submitting a paper
@@ -330,9 +351,9 @@ out of Git, please read the book: https://git-scm.com/book/en/
    and it is essentially a title.
 
  * Send changes to the github repository:
- 
+
         git push
-        
+
 
 
 
@@ -361,7 +382,7 @@ A: You could generate the *.bbl file once and edit it, but if you need
    to recompile the bibliography, you'll have to edit it again.
 
   A better way is to create a dummy.bib file with:
-  
+
     @string{springer = "Springer-Verlag"}
     @string{springer-lncs = "Springer-Verlag, Heidelberg, Germany"}
 
@@ -417,10 +438,10 @@ A: Unhelpfully, bibtex generates by default separated entries for
    Or use the bibtex wrapper included in the repository.
    If you use Overleaf, you can add a file `.latexmkrc` with the following
    line:
-   
+
     $bibtex = "bibtex -min-crossrefs=999 %O %S";
 
-   
+
 #### Q: Why I should not use `{{Title}}` in title? If not, should I use  title case or sentence case? ####
 
 A: Because it prevents the bibtex style to change the case of the
@@ -432,10 +453,10 @@ A: Because it prevents the bibtex style to change the case of the
    to sentence case, but not the other way around, it is always better
    to use title case in bib files without adding braces around the
    whole title. That is, instead of:
-   
+
     title = {{This is a title that Manuel likes}}
 
-   use 
+   use
 
     title = "This Is a Title that {M}anuel Likes"
 
@@ -452,7 +473,7 @@ TODO
 
  * Improve 'mklog' to detect files changed, new entries, deleted entries,
    updates and prefill a commit log template.
-   
+
 
 Copyright
 ---------
