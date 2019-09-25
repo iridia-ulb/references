@@ -234,59 +234,59 @@ Remove the incorrect text and the markers and run
 Contributing to the IRIDIA BibTeX Repository
 --------------------------------------------
 
-    If you are a member of the [iridia-ulb GitHub organization](https://github.com/iridia-ulb),
-    or if you have been given access to the
-    [references repository](https://github.com/iridia-ulb/references),
-    you can push your commits directly to the repository.
-    Otherwise, you can submit your [contribution with a pull request](https://help.github.com/en/articles/about-pull-requests).
+If you are a member of the [iridia-ulb GitHub organization](https://github.com/iridia-ulb),
+or if you have been given access to the
+[references repository](https://github.com/iridia-ulb/references),
+you can push your commits directly to the repository.
+Otherwise, you can submit your [contribution with a pull request](https://help.github.com/en/articles/about-pull-requests).
 
-    Before committing any change, follow first ["Updating your working
-    copy"](#updating-your-working-copy), then use
+Before committing any change, follow first ["Updating your working
+copy"](#updating-your-working-copy), then use
 
-        git diff
-    and
+    git diff
+and
 
-        git status
+    git status
 
-    to check that your local changes are really what you want to
-    commit. Please do not commit changes that do not follow the rules
-    described above and within each bib file. Changes that are not
-    incremental to the latest online version will be rejected.
+to check that your local changes are really what you want to
+commit. Please do not commit changes that do not follow the rules
+described above and within each bib file. Changes that are not
+incremental to the latest online version will be rejected.
 
-    Add the files with the changes you want to submit to the
-    repository using
+Add the files with the changes you want to submit to the
+repository using
 
-        git add LIST OF FILES
+    git add LIST OF FILES
 
-    and commit the changes with any of the following commands:
+and commit the changes with any of the following commands:
 
-        git commit -m "log_message"
-        git commit -F LOG_MESSAGE_FILE
-        git commit
+    git commit -m "log_message"
+    git commit -F LOG_MESSAGE_FILE
+    git commit
 
-    (see `git help commit` for more ways to specify the log message).
+(see `git help commit` for more ways to specify the log message).
 
-    The third method will open an editor (set the environment variable `$EDITOR` to
-    customize it) where you can write your commit message. The first line of the
-    commit is equivalent to the `"log_message"` specified using the `-m` option,
-    and it is essentially a title.
+The third method will open an editor (set the environment variable `$EDITOR` to
+customize it) where you can write your commit message. The first line of the
+commit is equivalent to the `"log_message"` specified using the `-m` option,
+and it is essentially a title.
 
-    In case of a commit with many edits, it is recommended to use
-    either the `-F` or the editor option, with the possibility of
-    having a longer and more clear message body.
+In case of a commit with many edits, it is recommended to use
+either the `-F` or the editor option, with the possibility of
+having a longer and more clear message body.
 
-    The commit message (log message) should be of the following form:
+The commit message (log message) should be of the following form:
 
-        * file (entry): What changed.
+    * file (entry): What changed.
 
-    Example:
+Example:
 
-        * biblio.bib (AngWoo2009:ejor): New entry.
-        (Asc2001t:cor): Update year.
-        * crossref.bib (GECCO2000): Fix editor names.
+    * biblio.bib (AngWoo2009:ejor): New entry.
+    (Asc2001t:cor): Update year.
+    * crossref.bib (GECCO2000): Fix editor names.
 
-    ***IMPORTANT:*** If you use non-ASCII characters BE SURE that your editor
-    uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
+***IMPORTANT:*** If you use non-ASCII characters BE SURE that your editor
+uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
 
 
 Before submitting a paper
