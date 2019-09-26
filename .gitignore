@@ -15,3 +15,6 @@
 TAGS
 *.synctex.gz
 /citefile
+/cvcustom.bib
+/LopezIbanez.bib
+/bib2html*
