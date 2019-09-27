@@ -15,11 +15,11 @@ Contents
  * [Rationale](#rationale)
  * [Format of keys](#format-of-keys)
  * [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
- * Updating your working copy
+ * [Updating your working copy]((#updating-your-working-copy))
  * [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
  * [Before submitting a paper](#before-submitting-a-paper)
  * [List of most often used git commands](#list-of-most-often-used-git-commands)
- * BibTeX Advice
+ * [BibTeX Advice](#bibtex-advice)
  * [Frequently Asked Questions](#frequently-asked-questions)
  * [TODO](#todo)
  * [Copyright](#copyright)
@@ -287,8 +287,25 @@ Example:
     (Asc2001t:cor): Update year.
     * crossref.bib (GECCO2000): Fix editor names.
 
+Finally, push the commits to the repository with
+
+    git push
+
 ***IMPORTANT:*** If you use non-ASCII characters BE SURE that your editor
 uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
+
+***IMPORTANT:*** If you have modified a `tex` or `bib` file (as it is often
+the case), the push will trigger a compilation using the Travis continuous
+integration system (which should take at most a couple of minutes).
+If the compilation fails, you will receive an email; in this case, fix the
+error and retry.
+If the build is successful, the resulting file `test/testbib.pdf` will be
+automatically pushed to the repository. This automatic step is effectively
+a new commit, so make sure you do another
+
+    git pull
+
+to sync your local repo before modifying again the files.
 
 
 Before submitting a paper
