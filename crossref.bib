@@ -35,6 +35,8 @@
 %% 6. Always use quotes "" instead of braces {} for the string definition.
 %% 7. Proceedings published as books (e.g., LNCS) should use the type Book
 %%    and not the type Proceedings.
+%% 8. If a book/proceedings has no author nor editor, use
+%%    key="short name for the book". Check online to make sure. 
 %% Z. Some of the entries do not follow the above rules.
 %%    Please help us to update them little by little.
 
@@ -484,11 +486,12 @@
   volume =       9422,
 }
 
-@Book{CCIE2010,
-  title =        {Proceedings of the 2010 International Conference 
-                  on Computing, Control and Industrial Engineering},
-  booktitle =    {Proceedings of the 2010 International Conference 
-                  on Computing, Control and Industrial Engineering},
+@Proceedings{CCIE2010,
+  key =          "CCIE",
+  title =        {Proceedings of the 2010 International Conference on
+                  Computing, Control and Industrial Engineering},
+  booktitle =    {Proceedings of the 2010 International Conference on
+                  Computing, Control and Industrial Engineering},
   year =         2010,
   publisher =    ieee-csp,
   address =      ieee-csp-ad,
@@ -508,16 +511,18 @@
 
 
 @Proceedings{CEC1999,
-  title =        {Proceedings of the 1999 Congress on Evolutionary
-                  Computation (CEC 1999)},
-  booktitle =    {Proceedings of the 1999 Congress on Evolutionary
-                  Computation (CEC 1999)},
+  key =          "IEEE CEC",
+  title =        {Proceedings of the 1999 Congress on Evolutionary Computation
+                  (CEC 1999)},
+  booktitle =    {Proceedings of the 1999 Congress on Evolutionary Computation
+                  (CEC 1999)},
   year =         1999,
   publisher =    ieeep,
   address =      ieeep-ad,
 }
 
 @Proceedings{CEC2000,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2000 Congress on Evolutionary
                   Computation (CEC 2000)},
   booktitle =    cec00,
@@ -528,6 +533,7 @@
 }
 
 @Proceedings{CEC2001,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2001 Congress on Evolutionary
                   Computation (CEC 2001)},
   booktitle =    cec01,
@@ -537,6 +543,7 @@
 }
 
 @Proceedings{CEC2002,
+  key =          "IEEE CEC",
   booktitle =    cec02,
   title =        cec02,
   publisher =    ieeep,
@@ -545,6 +552,7 @@
 }
 
 @Proceedings{CEC2003,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2003 Congress on Evolutionary
                   Computation (CEC 2003)},
   booktitle =    {Proceedings of the 2003 Congress on Evolutionary
@@ -557,6 +565,7 @@
 }
 
 @Proceedings{CEC2004,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2004 Congress on Evolutionary
                   Computation (CEC 2004)},
   booktitle =    {Proceedings of the 2004 Congress on Evolutionary
@@ -568,6 +577,7 @@
 }
 
 @Proceedings{CEC2005,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2005 Congress on Evolutionary
                   Computation (CEC 2005)},
   booktitle =   cec05,
@@ -578,6 +588,7 @@
 }
 
 @Proceedings{CEC2006,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2006 Congress on Evolutionary
                   Computation (CEC 2006)},
   booktitle =    cec06,
@@ -587,6 +598,7 @@
   address =      ieeep-ad,
 }
 @Proceedings{CEC2007,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2007 Congress on Evolutionary
                   Computation (CEC 2007)},
   booktitle =    {Proceedings of the 2007 Congress on Evolutionary
@@ -597,6 +609,7 @@
 }
 
 @Proceedings{CEC2008,
+  key =          "IEEE CEC",
   title =        {Proceedings of the {IEEE} Congress on Evolutionary
                   Computation, {CEC} 2008, June 1-6, 2008, Hong Kong, China},
   booktitle =    {Proceedings of the 2008 Congress on Evolutionary Computation
@@ -607,6 +620,7 @@
 }
 
 @Proceedings{CEC2009,
+  key =          "IEEE CEC",
   title =        cec09,
   booktitle =    cec09,
   year =         2009,
@@ -615,7 +629,7 @@
 }
 
 @Proceedings{CEC2010,
-  editor =       {Ishibuchi, H. and others},
+  editor =       Ishibuchi #and# "others",
   title =        {Proceedings of the 2010 Congress on Evolutionary
                   Computation (CEC 2010)},
   booktitle =    {Proceedings of the 2010 Congress on Evolutionary
@@ -626,6 +640,7 @@
 }
 
 @Proceedings{CEC2011,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2011 Congress on Evolutionary
                   Computation (CEC 2011)},
   booktitle =    {Proceedings of the 2011 Congress on Evolutionary
@@ -636,6 +651,7 @@
 }
 
 @Proceedings{CEC2012,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2012 Congress on Evolutionary
                   Computation (CEC 2012)},
   booktitle =    cec12,
@@ -645,6 +661,7 @@
 }
 
 @Proceedings{CEC2013,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2013 Congress on Evolutionary
                   Computation (CEC 2013)},
   booktitle =    {Proceedings of the 2013 Congress on Evolutionary
@@ -655,6 +672,7 @@
 }
 
 @Proceedings{CEC2014,
+  key =          "IEEE CEC",
   title =        {Proceedings of the 2014 Congress on Evolutionary
                   Computation (CEC 2014)},
   booktitle =    {Proceedings of the 2014 Congress on Evolutionary
@@ -665,7 +683,7 @@
 }
 
 @Proceedings{CEC2015,
-  key =          {IEEE CEC 2015},
+  key =          {IEEE CEC},
   title =        {Proceedings of the 2015 Congress on Evolutionary
                   Computation (CEC 2015)},
   booktitle =    {Proceedings of the 2015 Congress on Evolutionary
@@ -676,7 +694,7 @@
 }
 
 @Proceedings{CEC2016,
-  key =          {IEEE CEC 2016},
+  key =          {IEEE CEC},
   title =        {{IEEE} Congress on Evolutionary Computation, {CEC} 2016,
                   Vancouver, BC, Canada, July 24-29, 2016},
   booktitle =    {Proceedings of the 2016 Congress on Evolutionary Computation
@@ -690,7 +708,7 @@
 }
 
 @Proceedings{CEC2017,
-  key =          {IEEE CEC 2017},
+  key =          {IEEE CEC},
   title =        {Proceedings of the 2017 Congress on Evolutionary
                   Computation (CEC 2017)},
   booktitle =    {Proceedings of the 2017 Congress on Evolutionary
@@ -701,6 +719,7 @@
 }
 
 @Proceedings{CGO2008,
+  key =          {CGO},
   title     =    {Proceedings of the 6th Annual IEEE/ACM International 
                   Symposium on Code Generation and Optimization},
   booktitle =    {Proceedings of the 6th Annual IEEE/ACM International 
@@ -745,10 +764,9 @@
 }
 
 @Book{CP2002,
-  title =        {Principles and Practice of Constraint Programming,
-                  CP 2002},
-  booktitle =    {Principles and Practice of Constraint Programming,
-                  CP 2002},
+  editor =       Hentenryck,
+  title =        {Principles and Practice of Constraint Programming, CP 2002},
+  booktitle =    {Principles and Practice of Constraint Programming, CP 2002},
   publisher =    springer-lncs,
   series =       lncs,
   year =         2002,
@@ -967,9 +985,12 @@
 }
 
 @Proceedings{EALS2014,
-  booktitle =    {Evolving and Autonomous Learning Systems (EALS), 2014 IEEE Symposium on},
-  title =        {Evolving and Autonomous Learning Systems (EALS), 2014 IEEE Symposium on},
-  year = 	       2014,
+  key =          "EALS",
+  booktitle =    {Evolving and Autonomous Learning Systems (EALS), 2014 IEEE
+                  Symposium on},
+  title =        {Evolving and Autonomous Learning Systems (EALS), 2014 IEEE
+                  Symposium on},
+  year =         2014,
   publisher =    {IEEE},
 }
 
@@ -1157,25 +1178,23 @@
 }
 
 @Proceedings{ESANN2014,
-  title =        {Proceedings of the 22st European Symposium on Artificial
-                  Neural Networks, Computational Intelligence And Machine
-                  Learning, Bruges, April 23-24-25, 2014},
-  booktitle =    {22st European Symposium on Artificial Neural Networks,
-                  Computational Intelligence And Machine Learning, Bruges,
-                  April 23-24-25, 2014},
+  key =          "ESANN",
+  title =        "Proceedings of 22th European Symposium on Artificial Neural
+                  Networks, {ESANN} 2014, Bruges, Belgium, April 23-25, 2014",
+  booktitle =    {European Symposium on Artificial Neural Networks, ESSAN},
   year =         2014,
-  publisher =    {ESANN},
+  annote =
+                  {\url{https://www.elen.ucl.ac.be/esann/proceedings/papers.php?ann=2014}},
 }
 
 @Proceedings{ESANN2015,
-  title =        {Proceedings of the 22st European Symposium on Artificial
-                  Neural Networks, Computational Intelligence And Machine
-                  Learning, Bruges, April 23-24-25, 2014},
-  booktitle =    {22st European Symposium on Artificial Neural Networks,
-                  Computational Intelligence And Machine Learning, Bruges,
-                  April 23-24-25, 2014},
+  key =          "ESANN",
+  title =        {Proceedings of 23rd European Symposium on Artificial Neural
+                  Networks, {ESANN} 2015, Bruges, Belgium, April 22-24, 2015},
+  booktitle =    {European Symposium on Artificial Neural Networks, ESSAN},
   year =         2015,
-  publisher =    {ESANN},
+  annote =
+                  {\url{https://www.elen.ucl.ac.be/esann/proceedings/papers.php?ann=2015}},
 }
 
 @Proceedings{EUME2009,
@@ -1422,7 +1441,7 @@
 @Book{EVOPROG98,
   booktitle = {Evolutionary Programming VII},
   title     = {7th International Conference, EP98 San Diego, California, USA, March 25--27, 1998 Proceedings},
-  editors   = {V. W. Porto and N. Saravanan and D. Waagen} #and# Eiben,
+  editor   = {V. W. Porto and N. Saravanan and D. Waagen} #and# Eiben,
   series    = lncs,
   volume    = 1447,
   publisher = springer-lncs,
@@ -1441,21 +1460,22 @@
 }
 
 @Proceedings{FMCAD2007,
-  booktitle =    {FMCAD'07: Proceedings of the 7th International
-                  Conference Formal Methods in Computer Aided Design},
-  title =        {FMCAD'07: Proceedings of the 7th International
-                  Conference Formal Methods in Computer Aided Design},
+  key =          "FMCAD",
+  booktitle =    {FMCAD'07: Proceedings of the 7th International Conference
+                  Formal Methods in Computer Aided Design},
+  title =        {FMCAD'07: Proceedings of the 7th International Conference
+                  Formal Methods in Computer Aided Design},
   publisher =    {IEEE Computer Society, Washington, DC, USA},
   year =         2007,
-  address =  {Austin, Texas, USA},
+  address =      {Austin, Texas, USA},
 }
 
 @Proceedings{FOCS2000,
-  booktitle =    {41st Annual Symposium on Foundations of Computer
-                  Science},
-  title =        {41st Annual Symposium on Foundations of Computer
-                  Science, FOCS 2000, 12-14 November 2000, Redondo
-                  Beach, California, USA},
+  key =          "FOCS",
+  booktitle =    {41st Annual Symposium on Foundations of Computer Science},
+  title =        {41st Annual Symposium on Foundations of Computer Science,
+                  FOCS 2000, 12-14 November 2000, Redondo Beach, California,
+                  USA},
   year =         2000,
   publisher =    ieee-csp,
 }
@@ -1470,19 +1490,21 @@
 
 @Book{FOGA1992,
   editor =       Whitley,
-  title =        {Proceedings of the Second Workshop on Foundations of
-                  Genetic Algorithms},
-  booktitle =    {FOGA},
+  title =        {Proceedings of the Second Workshop on Foundations of Genetic
+                  Algorithms},
+  booktitle =    {Foundations of Genetic Algorithms (FOGA)},
   publisher =    mk,
   year =         1993,
   isbn =         {1-55860-263-1},
 }
 
 @Book{FOGA1996,
-  title =    {Foundations of Genetic Algorithms (FOGA)},
   booktitle =    {Foundations of Genetic Algorithms (FOGA)},
+  editor =       {Richard K. Belew and Michael D. Vose},
   year =         1996,
-  publisher =    {Morgan Kaufmann Publishers, San Francisco, CA}
+  title =        {Proceedings of the 4th Workshop on Foundations of Genetic
+                  Algorithms, San Diego, CA, USA, August 5 1996},
+  publisher =    mk,
 }
 
 @Book{FOGA2009,
@@ -2068,15 +2090,20 @@
 }
 
 @Book{ICANNGA1999,
-  booktitle =    "Proceedings of the International Conference on Artificial
-                  Neural Networks and Genetic Algorithms (ICANNGA-99)",
-  title =        "Proceedings of the International Conference on Artificial
-                  Neural Networks and Genetic Algorithms (ICANNGA-99)",
+  key =          "ICANNGA",
+  booktitle =    "Artificial Neural Nets and Genetic Algorithms (ICANNGA-99)",
+  title =        "Artificial Neural Nets and Genetic Algorithms (ICANNGA-99),
+                  Proceedings of the International Conference in Portorož,
+                  Slovenia, 1999",
   year =         1999,
   publisher =    springer-verlag,
+  editor =       "Andrej Dobnikar" #and# "Nigel C. Steele" #and# "David
+                  W. Pearson" #and# "Rudolf F. Albrecht",
+  doi =          "10.1007/978-3-7091-6384-9"
 }
 
 @Proceedings{ICAPS-PAL2011,
+  key =          "ICAPS-PAL",
   title =        "Proceedings of the 3rd Workshop on Learning and Planning,
                   collocated with the 21st International Conference on
                   Automated Planning and Scheduling (ICAPS-PAL'11)",
@@ -2205,6 +2232,7 @@
 
 
 @Proceedings{ICML1994,
+  key =          "ICML",
   title =        {Proceedings of the 11th International Conference on Machine
                   Learning, {ICML} 1994, New Brunswick, NJ, USA},
   booktitle =    {Proceedings of the 11th International Conference on Machine
@@ -2215,6 +2243,7 @@
 }
 
 @Proceedings{ICML2008,
+  key =          "ICML",
   booktitle =    {Proceedings of the 25th International Conference on Machine
                   Learning},
   title =        {Proceedings of the 25th International Conference on Machine
@@ -2236,6 +2265,7 @@
 }
 
 @Proceedings{ICML2010,
+  key =          "ICML",
   title =        {Proceedings of the 27th international conference on machine
                   learning (ICML-10)},
   booktitle =    {Proceedings of the 27th international conference on machine
@@ -2245,6 +2275,7 @@
 }
 
 @proceedings{ICML2014,
+  key =          "ICML",
   title =        {Proceedings of the 31th International Conference on Machine
                   Learning, {ICML} 2014, Beijing, China, 21-26 June 2014},
   booktitle =    {Proceedings of the 31th International Conference on Machine
@@ -2256,6 +2287,7 @@
 
 
 @Proceedings{ICMLC2004,
+  key =          "ICMLC",
   title =        {Proceedings of the 3rd International Conference on
                   Machine Learning and Cybernetics},
   booktitle =    {Proceedings of the International Conference on
@@ -2265,6 +2297,7 @@
 }
 
 @Proceedings{ICMLC2006,
+  key =          "ICMLC",
   title =        {Proceedings of the International Conference on
                   Machine Learning and Cybernetics},
   booktitle =    {Proceedings of the International Conference on
@@ -2306,6 +2339,7 @@
 }
 
 @Proceedings{IJCAI2001,
+  key =          "IJCAI",
   title =        {IJCAI 2001, Proceedings of the 17th International Joint
                   Conference on Artificial Intelligence},
   booktitle =    {Proceedings of the Seventeenth International Joint Conference
@@ -2381,6 +2415,7 @@
 }
 
 @Proceedings{ISDA2005,
+  key =          "ISDA",
   title =        {Proceedings of the 5th International Conference on
                   Intelligent Systems Design and Applications},
   booktitle =    {Proceedings of the 5th International Conference on
@@ -2595,27 +2630,23 @@
 }
 
 @Proceedings{MIC1997,
-  booktitle =    {Proceedings of MIC 1997, the 2nd Metaheuristics
-                  International Conference},
-  title = {Proceedings of MIC 1997, the 2nd Metaheuristics
-                  International Conference},
-  year = 	 1999,
-  editor =       {},
-  publisher =    {},
-  address = 	 {Sophia-Antipolis}
+  key =          "MIC",
+  booktitle =    {Proceedings of MIC 1997, the 2nd Metaheuristics International
+                  Conference},
+  title =        {Proceedings of MIC 1997, the 2nd Metaheuristics International
+                  Conference, Sophia-Antipolis, France, July 21-24, 1997},
+  year =         1997,
 }
 
+
 @Proceedings{MIC2005,
- editor =       {Karl F. Doerner and Michel Gendreau and Peter
-                  Greistorfer} #and# Gutjahr #and#{ Richard F. Hartl}
-                  #and# Reimann,
-  title =    "6th Metaheuristics International Conference (MIC
-                  2005)",
-  booktitle =    "6th Metaheuristics International Conference (MIC
-                  2005)",
+  editor =       Doerner #and# Gendreau #and# {Peter Greistorfer}
+                  #and# Gutjahr #and# Hartl #and# Reimann,
+  title =        "6th Metaheuristics International Conference (MIC 2005)",
+  booktitle =    "6th Metaheuristics International Conference (MIC 2005)",
   year =         2005,
   address =      {Vienna, Austria},
- }
+}
 
 @Proceedings{MIC2009,
   title =    {Proceedings of MIC 2009, the 8th Metaheuristics International Conference},
@@ -2638,6 +2669,7 @@
 }
 
 @Proceedings{MIC2013,
+  key =          "MIC",
   title =        {Proceedings of MIC 2013, the 10th Metaheuristics
                   International Conference},
   booktitle =    {Proceedings of MIC 2013, the 10th Metaheuristics
@@ -2646,6 +2678,7 @@
 } 
 
 @Proceedings{MIC2015,
+  key =          "MIC",
   title =        {Proceedings of MIC 2015, the 11th Metaheuristics
                   International Conference},
   booktitle =    {Proceedings of MIC 2015, the 11th Metaheuristics
@@ -2672,7 +2705,7 @@
   booktitle =    {Multidisciplinary International Conference on Scheduling:
                   Theory and Applications (MISTA 2013)},
   address =      {Gent, Belgium},
-  editor =       {Graham Kendall}#and# VandenBerghe #and# {Barry McCollum},
+  editor =      Kendall_G #and# VandenBerghe #and# {Barry McCollum},
   year =         2013,
 }
 
@@ -2775,6 +2808,7 @@ Programming},
 }
 
 @Proceedings{NAFIPS2002,
+  key =          "NAFIPS",
   booktitle =    {Proceedings of the NAFIPS-FLINT International
                   Conference'2002},
   title =        {Proceedings of the NAFIPS-FLINT International
@@ -2786,15 +2820,19 @@ Programming},
 }
 
 @Book{NICSO2009,
-  booktitle =    {Nature Inspired Cooperative Strategies for
-                  Optimization (NICSO 2008)},
-  title =        {Nature Inspired Cooperative Strategies for
-                  Optimization (NICSO 2008)},
+  booktitle =    {Nature Inspired Cooperative Strategies for Optimization
+                  (NICSO 2008)},
+  title =        {Nature Inspired Cooperative Strategies for Optimization
+                  (NICSO 2008)},
   publisher =    springer,
   year =         2009,
   series =       {Studies in Computational Intelligence},
   volume =       236,
   address =      {Berlin, Germany},
+  editor =       "Natalio Krasnogor" #and# "Belén Melián-Batista" #and# "José
+                  Andrés Moreno-Pérez" #and# "J. Marcos Moreno-Vega" #and#
+                  "David Alejandro Pelta",
+  doi =          {10.1007/978-3-642-03211-0}
 }
 
 @Book{NIO1999,
@@ -2869,6 +2907,7 @@ Programming},
 
 
 @Proceedings{PACT2014,
+  key =          "PACT",
   title =        {Proceedings of the 23rd International Conference on Parallel
                   Architectures and Compilation},
   booktitle =    {Proceedings of the 23rd International Conference on Parallel
@@ -2886,11 +2925,14 @@ Programming},
 } 
 
 @Proceedings{PDP2011,
-  title     = {Proceedings of the 2011 IEEE International Parallel \& Distributed Processing Symposium},
-  booktitle = {Proceedings of the 2011 IEEE International Parallel \& Distributed Processing Symposium},
-  series    = {IPDPS '11},
-  year      = 2011,
-  publisher = {IEEE Computer Society}
+  key =          "IPDPS",
+  title =        {Proceedings of the 2011 IEEE International Parallel \&
+                  Distributed Processing Symposium},
+  booktitle =    {Proceedings of the 2011 IEEE International Parallel \&
+                  Distributed Processing Symposium},
+  series =       {IPDPS '11},
+  year =         2011,
+  publisher =    {IEEE Computer Society}
 }
 
 @Book{PDPTA1998,
@@ -3174,9 +3216,13 @@ Programming},
 }
 
 @Book{SIGKDD2000,
-  title =        {The 6th {ACM} {SIGKDD} International Conference on Knowledge
-                  Discovery and Data Mining, {KDD} 2000, Boston, MA, USA,
-                  August 20-23, 2000},
+  key =          "SIGKDD",
+  editor =       {Raghu Ramakrishnan and Salvatore J. Stolfo and Roberto
+                  J. Bayardo and Ismail Parsa},
+  title =        {Proceedings of the sixth {ACM} {SIGKDD} international
+                  conference on Knowledge discovery and data mining, Boston,
+                  MA, USA, August 20-23, 2000},
+  annote =       "\url{http://dl.acm.org/citation.cfm?id=347090}",
   booktitle =    {The 6th {ACM} {SIGKDD} International Conference on Knowledge
                   Discovery and Data Mining, {KDD} 2000},
   publisher =    acm,
@@ -3229,6 +3275,7 @@ Programming},
 }
 
 @Proceedings{SSCI2016,
+  key =          "SSCI",
   title =        {Computational Intelligence (SSCI), 2016 IEEE Symposium Series
                   on},
   booktitle =    {Computational Intelligence (SSCI), 2016 IEEE Symposium Series
@@ -3237,7 +3284,7 @@ Programming},
 }
 
 @Book{Smart-CT2016,
-  editor =       "Alba, Enrique and Chicano, Francisco and Luque, Gabriel",
+  editor =       Alba_E #and# Chicano_F #and# Luque_G,
   booktitle =    "Smart Cities (Smart-CT 2016)",
   title =        "Smart Cities: First International Conference, Smart-CT 2016,
                   M{\'a}laga, Spain, June 15-17, 2016, Proceedings",
@@ -3295,16 +3342,20 @@ Programming},
   year = 	 2002
 }
 
-@Book{WCCI1994,
+@Proceedings{WCCI1994,
+  key =          "WCCI",
   booktitle =    wcci94,
-  title =        wcci94,
+  title =        {Proceedings of the First {IEEE} Conference on Evolutionary
+                  Computation, {IEEE} World Congress on Computational
+                  Intelligence, Orlando, Florida, USA, June 27-29, 1994},
   publisher =    ieeep,
   address =      ieeep-ad,
   year =         1994,
   month =        jun,
 }
 
-@Book{WCCI2002,
+@Proceedings{WCCI2002,
+  key =          "WCCI",
   booktitle =   wcci02,
   title =    wcci02,
   publisher =    ieeep,
@@ -3399,3 +3450,7 @@ Programming},
   publisher = {Max-Planck-Institut f{\"{u}}r Informatik, Saarbr\"ucken, Germany},
   year      = 1998,
 }
+
+@Comment Local Variables:
+@Comment bibtex-string-files: ("abbrev.bib" "journals.bib" "authors.bib")
+@Comment End:
