@@ -1,7 +1,7 @@
 #!/bin/sh
 set -u
 
-INCLUDE_ONLY="\.bib\|\.tex"
+INCLUDE_ONLY="\.bib\|\.tex\|testbib\.best\|travis"
 
 git diff-tree --no-commit-id --name-only -r ${TRAVIS_COMMIT} | grep -e ${INCLUDE_ONLY} --quiet
 if [ $? -ne 0 ]; then
