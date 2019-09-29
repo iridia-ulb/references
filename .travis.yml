@@ -11,7 +11,7 @@ cache:
 before_script: cd test
 script:
 - texliveonfly testbib.tex
-- latexmk -halt-on-error --pdf testbib.tex
+- source ./test/test.sh
 deploy:
   provider: script
   script: sh travis_deploy.sh
