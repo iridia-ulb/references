@@ -18,5 +18,6 @@
 /bib2html*
 /citefile
 /cvcustom.bib
+/test/.bibtex-warnings
 TAGS
 
