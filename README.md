@@ -226,11 +226,20 @@ the repository change
 ```
 
 Remove the incorrect text and the markers, save, commit and push the changes
-
+```bash
     git add FILE
     git commit -m "FILE: conflict resolved"
     git push
+```
 
+Git may create a merge commit when you pull/push if you have local commits. It is better to configure git to *replay* your commits on
+top of the changes in the server:
+
+    git config branch.master.rebase true
+
+If you are making many *dirty* commits locally before syncing with the server,
+it is better to create a branch/fork and merge it with `master` once you are
+ready.
 
 
 Contributing to the IRIDIA BibTeX Repository
@@ -282,11 +291,11 @@ The commit message (log message) should be of the following form:
     * file (entry): What changed.
 
 Example:
-
+```
     * biblio.bib (AngWoo2009:ejor): New entry.
     (Asc2001t:cor): Update year.
     * crossref.bib (GECCO2000): Fix editor names.
-
+```
 Finally, push the commits to the repository with
 
     git push
@@ -359,17 +368,20 @@ to get the various option of the specific command COMMAND.
 
         git pull
 
-* See your local changes
+  (avoid empty merge commits with `git config  branch.master.rebase true` or
+  `git pull --rebase`)
+  
+* See your local changes (both staged and not staged yet)
 
-        git diff
+        git diff HEAD
 
 * See the current status of your local copy, such as which files have
   been modified since the last commit, or which files are untracked
 
         git status
 
-* Select the files that you want to include in the commit. There might be
-  files with changes not yet ready for commit, so include only what you
+* Select the files that you want to include (stage) in the commit. There might
+  be files with changes not yet ready for commit, so include only what you
   consider to be in a consistent state
 
         git add LIST OF FILES
