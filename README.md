@@ -21,7 +21,6 @@ Contents
  * [List of most often used git commands](#list-of-most-often-used-git-commands)
  * [BibTeX Advice](#bibtex-advice)
  * [Frequently Asked Questions](#frequently-asked-questions)
- * [TODO](#todo)
  * [Copyright](#copyright)
 
 
@@ -508,18 +507,12 @@ A: Because it prevents the bibtex style to change the case of the
 
     title = "This Is a Title that {M}anuel Likes"
 
+
 #### Q: I want to keep an eye on someone else altering my references by mistake. ####
 
 A: You can click on the "Watch" and "Star" buttons on top of the [GitHub
    page](https://github.com/iridia-ulb/references). You can also fork the
    repository and only merge changes into your fork that you have reviewed.
-
-
-TODO
-----
-
- * Improve 'mklog' to detect files changed, new entries, deleted entries,
-   updates and prefill a commit log template.
 
 
 Copyright
