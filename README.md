@@ -410,13 +410,13 @@ BibTeX Advice
 There is advice at the top of each .bib file about the contents within that
 file. The following is general advice on how to format bib entries.
 
- * Do not use non-ASCII characters, different editors from different OSs will
-   mess them up and not all BibTeX versions support them. Use LaTeX instead. In
-   emacs, one can use '(occur "[^[:ascii:]]"))'
+ * Do not use non-ASCII characters unless you use UTF-8. It may be better to
+   just use LaTeX instead. In emacs, one can use `'(occur "[^[:ascii:]]"))'` to
+   find all non-ASCII characters.
 
- * 'doi' field is just the DOI, without the http://dx.doi.org/
+ * `'doi'` field is just the DOI, without the http://dx.doi.org/
 
- * Do not use fields: publisher, ISSN in `@article`
+ * Do not use fields: `publisher`, `ISSN` in `@article`
 
 
 
