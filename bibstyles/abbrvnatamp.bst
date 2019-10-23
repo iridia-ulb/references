@@ -317,12 +317,12 @@ FUNCTION {format.full.names}
             { ", " * t * }
             {
               numnames #2 >
-                { "," * }
+                { "" * }
                 'skip$
               if$
               t "others" =
                 { " et~al." * }
-                { " and " * t * }
+                { " \& " * t * }
               if$
             }
           if$
@@ -643,7 +643,7 @@ FUNCTION {format.article.crossref}
     }
     { "In " }
   if$
-  " \citet{" * crossref * "}" *
+  " \citep{" * crossref * "}" *
 }
 
 FUNCTION {format.book.crossref}
@@ -1108,7 +1108,7 @@ FUNCTION {format.lab.names}
         'skip$
         { s #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
             { " et~al." * }
-            { " and " * s #2 "{vv~}{ll}" format.name$ * }
+            { " \& " * s #2 "{vv~}{ll}" format.name$ * }
           if$
         }
       if$
