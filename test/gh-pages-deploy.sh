@@ -16,16 +16,17 @@ SHA=`git rev-parse --verify HEAD`
 git config --global user.name "${GIT_NAME}"
 git config --global user.email "${GIT_EMAIL}"
 
-if [ ! -e index.html ]; then
+if [ ! -e references.html ]; then
     cd ..
-    if [ ! -e index.html ]; then
-        echo "$0: error: cannot find index.html !"
+    if [ ! -e references.html ]; then
+        echo "$0: error: cannot find references.html !"
         exit 1
     fi
 fi
 
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-
+mv references.html index.html
+mv references_bib.html index_bib.html
 git add index.html index_bib.html
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
