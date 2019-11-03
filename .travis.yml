@@ -2,9 +2,11 @@ language: generic
 dist: bionic
 before_install:
 - source ./test/travis_maybe_skip.sh
+- sudo apt-get update
+- sudo apt install -y -qq bibtex2html
 install:
   - source ./test/texlive/texlive_install.sh
-  - sudo apt install -qq bibtex2html
+
 cache:
   apt:
   directories:
