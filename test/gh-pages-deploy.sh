@@ -21,7 +21,9 @@ if [ ! -e references.html ]; then
     exit 1
 fi
 
-git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+git checkout $TARGET_BRANCH
+git status
+git reset --hard
 git status
 mv references.html index.html
 mv references_bib.html index_bib.html
