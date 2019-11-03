@@ -22,9 +22,12 @@ if [ ! -e references.html ]; then
 fi
 
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+git status
 mv references.html index.html
 mv references_bib.html index_bib.html
-git add index.html index_bib.html
+mv tmp-bibtex.css bibtex.css
+git add -f index.html index_bib.html bibtex.css
+git status
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if git diff --quiet; then
