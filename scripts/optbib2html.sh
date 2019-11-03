@@ -1,14 +1,11 @@
 #!/bin/sh
 if [ ! -e biblio.bib ]; then
-    cd ..
-    if [ ! -e biblio.bib ]; then
-        echo "$0: error: cannot find references.html !"
-        exit 1
-    fi
+    echo "$0: error: cannot find biblio.bib !"
+    exit 1
 fi
+
 tmpbib=$(mktemp --tmpdir tmpXXXXXXXXXX.bib)
 tmpcitefile=$(mktemp --tmpdir citefileXXXXXXXXXX)
-
 
 bib2bib --warn-error --expand --expand-xrefs authors.bib abbrev.bib journals.bib biblio.bib crossref.bib -ob $tmpbib -oc $tmpcitefile
 

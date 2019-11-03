@@ -17,11 +17,8 @@ git config --global user.name "${GIT_NAME}"
 git config --global user.email "${GIT_EMAIL}"
 
 if [ ! -e references.html ]; then
-    cd ..
-    if [ ! -e references.html ]; then
-        echo "$0: error: cannot find references.html !"
-        exit 1
-    fi
+    echo "$0: error: cannot find references.html !"
+    exit 1
 fi
 
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH

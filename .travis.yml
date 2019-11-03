@@ -12,13 +12,15 @@ cache:
   directories:
   - "/tmp/texlive"
   - "$HOME/.texlive"
+
 script:
-- cd test && texliveonfly testbib.tex
-- cd test && bash ./travis_test.sh
-- ./scripts/optbib2html.sh
+  - cd test && texliveonfly testbib.tex && ./travis_test.sh && cd .. && ./scripts/optbib2html.sh
+
 deploy:
   provider: script
-  script: cd test && sh travis_deploy.sh
+  script:
+    - travis_deploy.sh
+    - gh-pages-deploy.sh
   skip_cleanup: true
 env:
   global:
