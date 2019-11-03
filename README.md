@@ -3,10 +3,12 @@ IRIDIA BibTeX Repository
 
 [![Build Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references)
 
+PDF file of all references: [testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf)
+
+[IRIDIA BibTeX Repository Webpage](https://iridia-ulb.github.io/references/)
+
 Before modifying any file, please read and follow the instructions at
 the top of each file.
-
-PDF file of all references: [testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf)
 
 
 Contents
@@ -425,15 +427,15 @@ Frequently Asked Questions
 
 #### Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything? ####
 
-A: You could generate the *.bbl file once and edit it, but if you need
+A: You could generate the `*.bbl` file once and edit it, but if you need
    to recompile the bibliography, you'll have to edit it again.
 
-  A better way is to create a dummy.bib file with:
+  A better way is to create a `dummy.bib` file with:
 ```bibtex
     @string{springer = "Springer-Verlag"}
     @string{springer-lncs = "Springer-Verlag, Heidelberg, Germany"}
 ```
-  ... and so on, and then include it *after* abbrev.bib:
+  ... and so on, and then include it *after* `abbrev.bib`:
 ```latex
     \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
 ```
@@ -443,11 +445,11 @@ A: You could generate the *.bbl file once and edit it, but if you need
 A: You could do that, but you cannot commit the changes. So it would
    be cumbersome for you to maintain your own copy.
 
-   You could generate the *.bbl file once and edit it, but if you need
+   You could generate the `*.bbl` file once and edit it, but if you need
    to recompile the bibliography, you'll have to edit it again.
 
-   The best way is to add the shorter variants to abbrevshort.bib, and
-   then include it *after* both abbrev.bib and journals.bib:
+   The best way is to add the shorter variants to `abbrevshort.bib`, and
+   then include it *after* both `abbrev.bib` and `journals.bib`:
 ```latex
     \bibliography{abbrev,authors,journals,abbrevshort,biblio,crossref}
 ```
@@ -464,8 +466,8 @@ A: You could do that, but you cannot commit the changes since the
    cumbersome for you to maintain your own copy, so an automatic way
    to make these changes would be better.
 
-   The best way is to edit the BibTeX style file (.bst) to not emit these
-   fields. Unfortunately, editing .bst files is sometimes not trivial,
+   The best way is to edit the BibTeX style file (`.bst`) to not emit these
+   fields. Unfortunately, editing `.bst` files is sometimes not trivial,
    but often one can find examples in Internet. If you edit a popular
    bst file to make it shorter, commit the new version to optbib so
    others can use it. Currently, there is an abbreviated version of
