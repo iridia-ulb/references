@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 set -u
+set -x
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
@@ -21,6 +22,7 @@ if [ ! -e references.html ]; then
     exit 1
 fi
 
+git remote add origin-travis "https://${GH_TOKEN}@${GH_REPO}" > /dev/null 2>&1
 git checkout $TARGET_BRANCH
 git status
 git reset --hard
@@ -32,7 +34,7 @@ git add -f index.html index_bib.html bibtex.css
 git status
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if git diff --quiet; then
+if git diff --cached --quiet; then
     echo "No changes to the output on this push; exiting."
     exit 0
 fi
@@ -41,6 +43,5 @@ fi
 # The delta will show diffs between new and old versions.
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
-git remote add origin-travis "https://${GH_TOKEN}@${GH_REPO}" > /dev/null 2>&1
-git push  --quiet --set-upstream origin-travis $TARGET_BRANCH
+git push --quiet --set-upstream origin-travis $TARGET_BRANCH
 
