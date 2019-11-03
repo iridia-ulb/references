@@ -16,11 +16,11 @@ if [ $? -eq 0 ]; then
     exit 1
 fi
 
-travis_fold_start
+travis_fold_start latexmk.1 "latexmk testbib.tex"
 
 latexmk -halt-on-error -interaction=nonstopmode -gg --pdf testbib.tex | tee .bibtex-warnings
 
-travis_fold_end
+travis_fold_end latexmk.1
 
 if [ $? -ne 0 ]; then
     echo "Error: latexmk failed"
