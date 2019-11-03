@@ -4,7 +4,6 @@
 *.dvi
 *.fdb_latexmk
 *.fls
-*.html
 *.log
 *.out
 *.rel

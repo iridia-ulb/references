@@ -16,4 +16,4 @@ git commit --message "testbib.pdf: Regenerate (build: $TRAVIS_BUILD_NUMBER) [ski
 git remote add origin-travis "https://${GH_TOKEN}@${GH_REPO}" > /dev/null 2>&1
 git push  --quiet --set-upstream origin-travis
 
-./test/gh-pages-deploy.sh
+#./test/gh-pages-deploy.sh
