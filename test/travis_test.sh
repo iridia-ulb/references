@@ -22,5 +22,4 @@ if [ $? -eq 0 ]; then
 fi
 echo "No bibtex warnings! Good job!"
 
-cd ../ && ./scripts/optbib2html.sh
 exit 0
