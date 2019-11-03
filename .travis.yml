@@ -8,7 +8,6 @@ install:
   - source ./test/texlive/texlive_install.sh
 
 cache:
-  apt:
   directories:
   - "/tmp/texlive"
   - "$HOME/.texlive"
