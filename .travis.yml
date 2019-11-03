@@ -3,8 +3,10 @@ dist: bionic
 before_install:
 - source ./test/travis_maybe_skip.sh
 install:
-- source ./test/texlive/texlive_install.sh
+  - source ./test/texlive/texlive_install.sh
+  - sudo apt install -qq bibtex2html
 cache:
+  apt:
   directories:
   - "/tmp/texlive"
   - "$HOME/.texlive"

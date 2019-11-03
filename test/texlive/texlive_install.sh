@@ -23,10 +23,6 @@ fi
 # Just including texlua so the cache check above works
 tlmgr install luatex
 
-tlmgr install bib2bib
-
-tlmgr install bibtex2html
-
 # We specify the directory in which it is located texlive_packages
 tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' test/texlive/texlive_packages)
 
