@@ -20,7 +20,6 @@ deploy:
   provider: script
   script:
     - bash ./test/travis_deploy.sh
-    - bash ./test/gh-pages-deploy.sh
   skip_cleanup: true
 env:
   global:
