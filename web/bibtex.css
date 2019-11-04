@@ -117,3 +117,12 @@ ul.publinks:after {
 .inline-citation {
     max-width:50em; margin-left: 4em; margin-right: 4em;
 }
+
+.repo-gh {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #9d9d9d;
+    text-decoration: none;
+}
