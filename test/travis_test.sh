@@ -19,20 +19,20 @@ fi
 travis_fold_start latexmk.1 "latexmk testbib.tex"
 
 latexmk -halt-on-error -interaction=nonstopmode -gg --pdf testbib.tex | tee .bibtex-warnings
-
-travis_fold_end latexmk.1
-
 if [ $? -ne 0 ]; then
+    travis_fold_end latexmk.1
     echo "Error: latexmk failed"
     exit 1
 fi
 
 grep --quiet "Warning--" .bibtex-warnings
 if [ $? -eq 0 ]; then
+    travis_fold_end latexmk.1
     echo "Error: Please fix bibtex Warnings:"
     grep "Warning--" .bibtex-warnings
     exit 1
 fi
+travis_fold_end latexmk.1
 echo "No bibtex warnings! Good job!"
 
 exit 0
