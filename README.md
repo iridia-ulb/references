@@ -1,3 +1,28 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+**Table of Contents**
+
+- [Rationale](#rationale)
+- [Format of keys](#format-of-keys)
+- [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
+- [Updating your working copy](#updating-your-working-copy)
+- [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
+- [Before submitting a paper](#before-submitting-a-paper)
+- [List of most often used git commands](#list-of-most-often-used-git-commands)
+- [BibTeX Advice](#bibtex-advice)
+    - [Q: Some entries are Proceedings published by LNCS but the entry does not mention the word "Proceedings" or "Conference"](#q-some-entries-are-proceedings-published-by-lncs-but-the-entry-does-not-mention-the-word-proceedings-or-conference)
+    - [Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those?](#q-do-we-need-to-mention-that-the-proceedings-are-published-by-lncs-why-not-use-proceedings-for-those)
+- [Frequently Asked Questions](#frequently-asked-questions)
+    - [Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files?](#q-i-want-to-save-space-and-abbreviate-journal-names-and-titles-of-books-should-i-just-edit-the-journalbib-and-abbrevbib-files)
+    - [Q: I want to save space and reduce the number of editors (say et   al. for any editor after the first one), or remove all DOIs, URLs,   publisher address or other such fields. Can I edit the .bib files?](#q-i-want-to-save-space-and-reduce-the-number-of-editors-say-et---al-for-any-editor-after-the-first-one-or-remove-all-dois-urls---publisher-address-or-other-such-fields-can-i-edit-the-bib-files)
+    - [Q: I made a mistake in the commit message. Can this be fixed?](#q-i-made-a-mistake-in-the-commit-message-can-this-be-fixed)
+    - [Q: There is a separate entry for each cross-reference, and individual references cite it. I think it is ugly, how to prevent this?](#q-there-is-a-separate-entry-for-each-cross-reference-and-individual-references-cite-it-i-think-it-is-ugly-how-to-prevent-this)
+    - [Q: Why I should not use `{{Title}}` in title? If not, should I use  title case or sentence case?](#q-why-i-should-not-use-title-in-title-if-not-should-i-use--title-case-or-sentence-case)
+    - [Q: I want to keep an eye on someone else altering my references by mistake.](#q-i-want-to-keep-an-eye-on-someone-else-altering-my-references-by-mistake)
+- [Copyright](#copyright)
+
+<!-- markdown-toc end -->
+
+
 IRIDIA BibTeX Repository
 ========================
 
@@ -11,19 +36,29 @@ Before modifying any file, please read and follow the instructions at
 the top of each file.
 
 
-Contents
---------
+**Table of Contents**
 
- * [Rationale](#rationale)
- * [Format of keys](#format-of-keys)
- * [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
- * [Updating your working copy]((#updating-your-working-copy))
- * [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
- * [Before submitting a paper](#before-submitting-a-paper)
- * [List of most often used git commands](#list-of-most-often-used-git-commands)
- * [BibTeX Advice](#bibtex-advice)
- * [Frequently Asked Questions](#frequently-asked-questions)
- * [Copyright](#copyright)
+- [Contents](#contents)
+- [Rationale](#rationale)
+- [Format of keys](#format-of-keys)
+- [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
+- [Updating your working copy](#updating-your-working-copy)
+- [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
+- [Before submitting a paper](#before-submitting-a-paper)
+- [List of most often used git commands](#list-of-most-often-used-git-commands)
+- [BibTeX Advice](#bibtex-advice)
+    - [Q: Some entries are Proceedings published by LNCS but the entry does not mention the word "Proceedings" or "Conference"](#q-some-entries-are-proceedings-published-by-lncs-but-the-entry-does-not-mention-the-word-proceedings-or-conference)
+    - [Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those?](#q-do-we-need-to-mention-that-the-proceedings-are-published-by-lncs-why-not-use-proceedings-for-those)
+- [Frequently Asked Questions](#frequently-asked-questions)
+    - [-](#-)
+    - [Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files?](#q-i-want-to-save-space-and-abbreviate-journal-names-and-titles-of-books-should-i-just-edit-the-journalbib-and-abbrevbib-files)
+    - [Q: I want to save space and reduce the number of editors (say et   al. for any editor after the first one), or remove all DOIs, URLs,   publisher address or other such fields. Can I edit the .bib files?](#q-i-want-to-save-space-and-reduce-the-number-of-editors-say-et---al-for-any-editor-after-the-first-one-or-remove-all-dois-urls---publisher-address-or-other-such-fields-can-i-edit-the-bib-files)
+    - [Q: I made a mistake in the commit message. Can this be fixed?](#q-i-made-a-mistake-in-the-commit-message-can-this-be-fixed)
+    - [Q: There is a separate entry for each cross-reference, and individual references cite it. I think it is ugly, how to prevent this?](#q-there-is-a-separate-entry-for-each-cross-reference-and-individual-references-cite-it-i-think-it-is-ugly-how-to-prevent-this)
+    - [Q: Why I should not use `{{Title}}` in title? If not, should I use  title case or sentence case?](#q-why-i-should-not-use-title-in-title-if-not-should-i-use--title-case-or-sentence-case)
+    - [Q: I want to keep an eye on someone else altering my references by mistake.](#q-i-want-to-keep-an-eye-on-someone-else-altering-my-references-by-mistake)
+- [Copyright](#copyright)
+
 
 
 Rationale
@@ -407,7 +442,7 @@ to get the various option of the specific command COMMAND.
 
 
 BibTeX Advice
---------------
+-------------
 
 There is advice at the top of each .bib file about the contents within that
 file. The following is general advice on how to format bib entries.
@@ -419,11 +454,35 @@ file. The following is general advice on how to format bib entries.
  * `'doi'` field is just the DOI, without the http://dx.doi.org/
 
  * Do not use fields: `publisher`, `ISSN` in `@article`
+ 
+#### Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list ###
 
+A: Ideally, we would have the DOI of everything, since it helps to find the
+actual paper and verify its details, and let the bibtex style control whether
+to show it or not. In practice, it is very easy to hide all DOIs, either by
+redefining the command that prints the doi or commenting out a few lines in the
+bibtex style. Thus, one should ALWAYS add a DOI if possible.
+
+#### Q: Some entries are Proceedings published by LNCS but the entry does not mention the word "Proceedings" or "Conference" ####
+
+A: Those are the official names of the books (except for mistakes that should
+   be fixed). This is how Springer recommends to cite them and how DBLP cites
+   them. There is no reason to call the book by a different title from its
+   actual title.
+    
+#### Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those? ####
+   
+A: There is an important difference in terms of publication importance. LNCS
+are books (`@Book`) published by Springer and they contain peer-reviewed
+article-length papers/chapters. That is different from conference proceedings
+(`@Proceedings`) published by the conference organisation themselves that may
+not be available in book form, may not be peer-reviewed and may contain only
+abstracts. Citations from/to LNCS are counted by JCR. For some funding
+agencies, LNCS count almost as much as journal publications.
 
 
 Frequently Asked Questions
----------------------------
+-------------------------
 
 #### Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything? ####
 
