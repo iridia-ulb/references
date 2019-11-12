@@ -4,6 +4,8 @@ set -u
 INCLUDE_ONLY="\.bib\|\.tex\|travis\|optbib2html\|deploy"
 
 # Use -m so that merge commits are also considered
+echo ${TRAVIS_COMMIT_RANGE}
+echo ${TRAVIS_COMMIT}
 git diff-tree -m  --no-commit-id --name-only -r ${TRAVIS_COMMIT_RANGE} | tee /dev/tty | grep -e ${INCLUDE_ONLY} --quiet
 if [ $? -ne 0 ]; then
     travis_terminate 0
