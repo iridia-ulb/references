@@ -16,12 +16,27 @@
 \fi
 
 \usepackage[numbers]{natbib}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsf{IRIDIA} \BibTeX{} Repository}
+\rhead{\today}
+\rfoot{Page \thepage}
+\lfoot{\url{https://github.com/iridia-ulb/references}}
+\fancypagestyle{firstpage}{%
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{}
+  \rfoot{Page \thepage}
+  \lfoot{\url{https://github.com/iridia-ulb/references}}
+}
 
 \renewcommand{\refname}{\textsf{IRIDIA} \BibTeX{} Repository (\today)}
-%FIXME: Add \textsf{IRIDIA} \BibTeX{} Repository and date to headers and page X out of Z to footer.
+
 \begin{document}
 \nocite{*}
 \newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{\normalfont\texttt{doi:\nolinkurl{#1}}}}
+\thispagestyle{firstpage}
 % \bibliographystyle{plainnat}
 \bibliographystyle{testbib}
 \bibliography{../abbrev,../authors,../journals,../biblio,../crossref}
