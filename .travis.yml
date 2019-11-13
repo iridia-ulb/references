@@ -5,7 +5,7 @@ before_install:
 - sudo apt-get update
 - sudo apt install -y -qq bibtex2html
 install:
-  - .travis/texlive/texlive_install.sh
+  - source .travis/texlive/texlive_install.sh
 
 cache:
   directories:

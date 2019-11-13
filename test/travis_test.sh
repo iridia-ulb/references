@@ -1,6 +1,7 @@
 #!/bin/bash
 set -u
 set -o pipefail
+PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 
 travis_fold_start() {
   echo -e "travis_fold:start:$1\033[33;1m$2\033[0m"
