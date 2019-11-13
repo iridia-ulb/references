@@ -18,7 +18,7 @@ script:
 deploy:
   - provider: script
     script:
-      - bash ./.test/travis_deploy.sh
+      - .travis/travis_deploy.sh
     skip_cleanup: true
   - provider: pages
     skip_cleanup: true
