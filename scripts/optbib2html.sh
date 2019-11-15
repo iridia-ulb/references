@@ -14,8 +14,11 @@ bibtex2html --nodoc --html-entities -linebreak -css bibtex.css --named-field url
 
 cat header.htm index.html footer.htm > tmp.html
 mv tmp.html index.html
+tidy -config tidy.conf -m index.html
+
 cat header.htm index_bib.html footer.htm > tmp.html
 mv tmp.html index_bib.html
+tidy -config tidy.conf -m index_bib.html
 
 # remove temporary files
 rm -f bib2html*
