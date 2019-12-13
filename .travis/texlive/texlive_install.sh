@@ -3,7 +3,7 @@
 # Originally from https://github.com/latex3/latex3
 
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
-#if ! command -v texlua > /dev/null; then
+if ! command -v tlmgr > /dev/null; then
   # Obtain TeX Live
   wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
   tar -xzf install-tl-unx.tar.gz
@@ -13,13 +13,10 @@ export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
   ./install-tl --profile=../.travis/texlive/texlive.profile
 
   cd ..
-#fi
+fi
 
 # Update tlmgr itself
 tlmgr update --self
-
-# Just including texlua so the cache check above works
-tlmgr install luatex
 
 # We specify the directory in which it is located texlive_packages
 tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' .travis/texlive/texlive_packages)
