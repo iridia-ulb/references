@@ -19,6 +19,8 @@ if ! command -v texlua > /dev/null; then
 
   cd ..
 fi
+# Update the TL install but add nothing new
+tlmgr update --self --all --no-auto-install
 
 # Just including texlua so the cache check above works
 tlmgr install luatex
@@ -29,6 +31,4 @@ tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' .travis/texlive/texlive_packages)
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
 
-# Update the TL install but add nothing new
-tlmgr update --self --all --no-auto-install
 
