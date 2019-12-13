@@ -16,9 +16,9 @@ bibtex2html --nodoc --html-entities -linebreak -css bibtex.css --named-field url
 
 cat header.htm index.html footer.htm > tmp.html
 mv tmp.html index.html
-tidy -config $TIDYCONF -m index.html
 # Add clickable anchors
 sed -i 's/<a name="\([^"]\+\)">/<a href="#\1" name="\1">/g' index.html
+tidy -config $TIDYCONF -m index.html
 
 cat header.htm index_bib.html footer.htm > tmp.html
 mv tmp.html index_bib.html
