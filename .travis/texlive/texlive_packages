@@ -24,6 +24,7 @@ amsmath graphics tools
 # warnings with some packages and errors with others
 metafont mfware
 
+intcalc
 amsfonts
 epstopdf-pkg
 fandol
