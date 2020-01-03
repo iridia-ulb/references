@@ -27,6 +27,7 @@ metafont mfware
 etexcmds
 intcalc
 bigintcalc
+uniquecounter
 amsfonts
 epstopdf-pkg
 fandol
