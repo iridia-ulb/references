@@ -15,7 +15,7 @@ luaotfload
 # texliveonfly does not detect the following packages automatically
 minted fvextra upquote lineno xstring framed caption
 
-pdftexcmds ltxcmds kvsetkeys infwarerr pdfescape
+pdftexcmds ltxcmds kvdefinekeys kvsetkeys infwarerr pdfescape
 
 # Then get the rest of required LaTeX
 amsmath graphics tools
