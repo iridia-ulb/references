@@ -1,7 +1,7 @@
 language: generic
 dist: bionic
 before_install:
-- .travis/travis_maybe_skip.sh
+- .travis/travis_maybe_skip.sh || travis_terminate 0
 - sudo apt-get update
 - sudo apt install -y -qq bibtex2html tidy
 install:
