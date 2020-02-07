@@ -13,10 +13,13 @@
 /.auctex-auto
 /.svnignore
 /LopezIbanez.bib
+/LopezIbanez.html
+/LopezIbanez_bib.html
 /auto
 /bib2html*
 /citefile
 /cvcustom.bib
 /test/.bibtex-warnings
+/web/index.html
+/web/index_bib.html
 TAGS
-
