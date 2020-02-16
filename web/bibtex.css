@@ -42,7 +42,7 @@ div#navlist  { background-color: #f5f5f5; border: 1px solid #C9D1D7; padding: 1e
 #navlist h2 { color: black; font-size: 85%; }
 #navlist ul, #navlist ol { list-style-type: decimal; color:#326fa3; font-size: 85%;  }
 
-
+blockquote { font-size: smaller; }
 
 ol.publications { 
     margin-left: 3em;
