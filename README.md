@@ -139,7 +139,7 @@ local copy of the IRIDIA BibTex repository.
 The instructions below work for Linux/Mac, but can of course be adapted
 for Windows too.
 
-* **Method A**
+* **Method A: Symbolic links**
 
 This method is suggested especially when working on your paper offline,
 whether you are using a versioning system for your paper or not. In case
@@ -173,7 +173,7 @@ follows the same instructions.
    ["Before Submitting a paper"](#before-submitting-a-paper).
 
 
-* **Method B**
+* **Method B: fake submodule**
 
 This method is suggested in case you work on your paper (alone or with your
 collaborators) on web-based systems such as Overleaf.
@@ -201,14 +201,49 @@ collaborators) on web-based systems such as Overleaf.
    ["Before Submitting a paper"](#before-submitting-a-paper).   
 
 
+* **Method C: worktrees**
+
+This method is suggested if you have write access to the iridia-ulb
+repository and you want to update the master repository frequently.
+
+1. Get a copy of the master repository in some folder, e.g., `/path/to/references-master`:
+
+```
+    git clone https://github.com/iridia-ulb/references.git /path/to/references-master
+```
+
+2. Now, assuming that your paper resides in `/path/to/mypaper`, create a branch
+   and a worktree for your paper:
+   
+```
+    cd /path/to/references-master
+    git worktree add -b mypaper /path/to/mypaper/references
+```
+   
+3. If you wish to import changes from the master branch, you do:
+```
+    cd /path/to/mypaper/references
+    git merge master
+```
+
+4. If you wish to push changes to iridia-ulb master, you do:
+```
+    cd /path/to/references-master
+    git merge mypaper
+    git push
+```
+5. You can also easily find out which worktrees need to be merged into master:
+```
+    git branch --no-merged master
+```
+
 * **Other methods**
 
   You might prefer alternative ways of setting up the local copy of this
   repository. However, be aware that this might come with additional burden
-  (for you) of managing the consistency and compatibility with the
-  main central repository.
-  We especially discourage methods that "break" the tracking of the changes,
-  such as copying or linking single files.
+  (for you) of managing the consistency and compatibility with the main central
+  repository.  We especially discourage methods that "break" the tracking of
+  the changes, such as copying or linking single files.
 
   Should you go this way (e.g. because you or your collaborators are already
   used to a certain workflow) please be aware that it will be your
