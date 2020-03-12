@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # Originally from https://github.com/latex3/latex3/blob/master/support/texlive.sh
+texlive_profile=./.travis/texlive/texlive.profile
 
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 if ! command -v pdflatex > /dev/null; then
@@ -9,8 +10,12 @@ if ! command -v pdflatex > /dev/null; then
      wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
      tar -xzf install-tl-unx.tar.gz
      # Install a minimal system
-     ./install-tl-*/install-tl --profile=../.travis/texlive/texlive.profile
-     echo "Finished install TexLive"
+     if [ ! -r "$texlive_profile" ]; then
+         echo "error: $texlive_profile"
+         exit 1
+     fi
+     ./install-tl-*/install-tl --profile="$texlive_profile"
+     echo "Finished installing TexLive"
  fi
 
 echo "Updating TexLive"
