@@ -1,28 +1,28 @@
 #!/usr/bin/env sh
 
-# Originally from https://github.com/latex3/latex3
+# Originally from https://github.com/latex3/latex3/blob/master/support/texlive.sh
 
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
-if ! command -v tlmgr > /dev/null; then
-  # Obtain TeX Live
-  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-  tar -xzf install-tl-unx.tar.gz
-  cd install-tl-20*
-  # Install a minimal system
-  ./install-tl --profile=../.travis/texlive/texlive.profile
-  cd ..
-fi
+if ! command -v pdflatex > /dev/null; then
+     echo "Texlive not installed"
+     echo "Downloading texlive and installing"
+     wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+     tar -xzf install-tl-unx.tar.gz
+     # Install a minimal system
+     ./install-tl-*/install-tl --profile=../.travis/texlive/texlive.profile
+     echo "Finished install TexLive"
+ fi
 
+echo "Updating TexLive"
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
-
-# Update tlmgr itself
+echo "Updating tlmgr itself"
 tlmgr update --self
 
-tlmgr init-usertree
-
-# We specify the directory in which it is located texlive_packages
+echo "Install .travis/texlive/texlive_packages"
 tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' .travis/texlive/texlive_packages)
 
-# Update the TL install but add nothing new
+echo "Update the TL install but add nothing new"
 tlmgr update --self --all --no-auto-install
+
+echo "Finished texlive_install.sh"
