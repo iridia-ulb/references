@@ -9,42 +9,49 @@ texliveonfly latexmk
 collection-langeuropean
 collection-fontsrecommended
 
-# LuaTeX
-luaotfload
-
-# texliveonfly does not detect the following packages automatically
-minted fvextra upquote lineno xstring framed caption
-
-pdftexcmds ltxcmds kvdefinekeys kvsetkeys infwarerr letltxmacro hycolor pdfescape
-
-# Then get the rest of required LaTeX
-amsmath graphics tools
-
 # Assuming a 'basic' font set up, metafont is required to avoid
 # warnings with some packages and errors with others
 metafont mfware
 
-gettitlestring
-refcount
-etexcmds
-intcalc
-bigintcalc
-uniquecounter
+# texliveonfly does not detect the following packages automatically
 amsfonts
-epstopdf-pkg
-fandol
-pdftexcmds
-xcolor
-xkeyval
+amsmath
+bigintcalc
+bitset
 bookmark
+caption
 enumitem
+epstopdf-pkg
+etexcmds
 fancyvrb
+fandol
+framed
+fvextra
+gettitlestring
+graphics
+hycolor
 hyperref
+hyphenat
+infwarerr
+intcalc
+kvdefinekeys
 kvoptions
+kvsetkeys
 letltxmacro
+lineno
 listings
+ltxcmds
+minted
 oberdiek
+pdfescape
+pdftexcmds
 psnfss
 ragged2e
+refcount
 rerunfilecheck
-bitset
+tools
+uniquecounter
+upquote
+xcolor
+xkeyval
+xstring
