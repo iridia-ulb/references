@@ -349,6 +349,18 @@ Assignment with Controllable Processing Times},
   year =         2013
 }
 
+@inproceedings{AllKno2011ecta,
+  title =        {Evolutionary Search in Lethal Environments},
+  author =       Allmendinger #and# Knowles,
+  booktitle =    {International Conference on Evolutionary Computation Theory
+                  and Applications (ECTA)},
+  pages =        {63--72},
+  year =         2011,
+  publisher =    {SciTePress},
+  doi =          "10.5220/0003673000630072",
+  eprint =       "https://www.scitepress.org/papers/2011/36730/36730.pdf"
+}
+
 @phdthesis{Allmendinger2012phd,
   title =        {Tuning evolutionary search for closed-loop optimization},
   author =       Allmendinger,
@@ -4238,6 +4250,19 @@ Los Angeles, CA},
   author =       Coello,
   crossref =     "CEC2000",
   pages =        {30--37},
+}
+
+@Article{Coe2002constraint,
+  author =       Coello,
+  title =        {Theoretical and numerical constraint-handling techniques used
+                  with evolutionary algorithms: a survey of the state of the
+                  art},
+  journal =      CMinAppMechEng,
+  year =         2002,
+  volume =       191,
+  number =       {11-12},
+  pages =        {1245--1287},
+  doi =          "10.1016/S0045-7825(01)00323-1"
 }
 
 @incollection{Coe2015multi,
@@ -18777,6 +18802,23 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   note =         {Keynote talk}
 }
 
+
+
+@article{SmaMcCAll2011efficient,
+  title =        {Efficient discovery of anti-inflammatory small-molecule
+                  combinations using evolutionary computing},
+  author =       {Small, Ben G. and McColl, Barry W.} #and# Allmendinger #and#
+                  {Pahle, J{\"u}rgen and L{\'o}pez-Castej{\'o}n, Gloria and
+                  Rothwell, Nancy J.} #and# Knowles #and# {Mendes, Pedro and
+                  Brough, David and Kell, Douglas B.},
+  journal =      naturechembio,
+  volume =       7,
+  number =       12,
+  pages =        {902–-908},
+  year =         2011,
+  publisher =    {Nature Publishing Group}
+}
+
 @Article{SmiBow2015:cor,
   author = 	 Smith-Miles_K #and# {Simon Bowly},
   title = 	 {Generating New Test Instances by Evolving in Instance Space},
@@ -19537,6 +19579,38 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   Laboratory, IIT Kanpur)},
 }
 
+@InProceedings{SuiGotBur2015icml,
+  title =        {Safe Exploration for Optimization with {G}aussian Processes},
+  author =       {Yanan Sui and Alkis Gotovos and Joel Burdick and Andreas
+                  Krause},
+  pages =        {997--1005},
+  crossref =     "ICML2015",
+  pdf =          {http://proceedings.mlr.press/v37/sui15.pdf},
+  eprint =       {http://proceedings.mlr.press/v37/sui15.html},
+  abstract =     {We consider sequential decision problems under uncertainty,
+                  where we seek to optimize an unknown function from noisy
+                  samples. This requires balancing exploration (learning about
+                  the objective) and exploitation (localizing the maximum), a
+                  problem well-studied in the multi-armed bandit literature. In
+                  many applications, however, we require that the sampled
+                  function values exceed some prespecified "safety" threshold,
+                  a requirement that existing algorithms fail to meet. Examples
+                  include medical applications where patient comfort must be
+                  guaranteed, recommender systems aiming to avoid user
+                  dissatisfaction, and robotic control, where one seeks to
+                  avoid controls causing physical harm to the platform. We
+                  tackle this novel, yet rich, set of problems under the
+                  assumption that the unknown function satisfies regularity
+                  conditions expressed via a Gaussian process prior. We develop
+                  an efficient algorithm called SafeOpt, and theoretically
+                  guarantee its convergence to a natural notion of optimum
+                  reachable under safety constraints. We evaluate SafeOpt on
+                  synthetic data, as well as two real applications: movie
+                  recommendation, and therapeutic spinal cord stimulation.},
+  keywords =     "SafeOpt"
+}
+
+
 @InProceedings{SunHan2010:ccie,
   author =       Sun_Zhaoxu #and# Han_Min,
   title =        "Multi-criteria Decision Making Based on {PROMETHEE} Method",
@@ -19547,7 +19621,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 
 @Article{SupSefPar2000,
   title =        {A simulated annealing algorithm for multiobjective optimization},
-  author =       {Suppapitnarm, A. and Seffen, KA and Parks, GT and Clarkson, PJ},
+  author =       {Suppapitnarm, A. and Seffen, K. A. and Parks, G. T. and Clarkson, P. J.},
   journal =      eo,
   volume =       33,
   number =       1,
@@ -19562,6 +19636,14 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   year =         1998
 }
 
+@Book{SutBar2018reinf,
+  author =       "Richard S. Sutton and Andrew G. Barto",
+  title =        "Reinforcement Learning: An Introduction",
+  publisher =    mit,
+  edition =      "2nd",
+  year =         2018
+}
+
 @MastersThesis{Sutton98,
   author =       Sutton_DC # and # Keane # and # Sherriff,
   title =        {Optimizing the Real Time Operation of a Pumping
@@ -19571,7 +19653,6 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   The University of Adelaide},
   year =         1998,
   type =         {Honors Thesis},
-  note =         notreadyet # notavailable,
 }
 
 @InCollection{SwaOzcKen2011lion,
@@ -20187,6 +20268,17 @@ Twin-Screw Extrusion Configuration Problem},
   publisher =    {American Society of Civil Engineers}
 }
 
+@inproceedings{TurBerKra2016safemdp,
+  title =        {Safe Exploration in Finite {M}arkov Decision Processes with
+                  {G}aussian Processes},
+  author =       {Turchetta, Matteo and Berkenkamp, Felix and Krause, Andreas},
+  crossref =     "NIPS2016",
+  pages =        {4312--4320},
+  keywords =     "SafeMDP",
+  eprint =
+                  {http://papers.nips.cc/paper/6357-safe-exploration-in-finite-markov-decision-processes-with-gaussian-processes},
+}
+
 @InProceedings{TusFil2007,
   author =       Tusar #and# Filipic,
   title =        {Differential Evolution versus Genetic Algorithms in
@@ -20618,7 +20710,7 @@ Twin-Screw Extrusion Configuration Problem},
 @inproceedings{WacSuiYueOno2018aaai,
   author =       {Akifumi Wachi and Yanan Sui and Yisong Yue and Masahiro Ono},
   title =        {Safe Exploration and Optimization of Constrained {MDP}s Using
-                  Gaussian Processes},
+                  {G}aussian Processes},
   crossref =     "AAAI2018",
   pages =        {6548--6556},
   keywords =     {Markov Decision Process, Gaussian Processes},
@@ -20629,7 +20721,7 @@ Twin-Screw Extrusion Configuration Problem},
                   probability of entering unsafe states, defined using a safety
                   function being within some tolerance. The safety values of
                   all states are not known a priori, and we probabilistically
-                  model them via aGaussian Process (GP) prior. As such,
+                  model them via a Gaussian Process (GP) prior. As such,
                   properly behaving in such an environment requires balancing a
                   three-way trade-off of exploring the safety function,
                   exploring the reward function, and exploiting acquired
