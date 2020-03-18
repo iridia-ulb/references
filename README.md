@@ -223,13 +223,13 @@ repository and you want to update the master repository frequently.
 3. If you wish to import changes from the master branch, you do:
 ```
     cd /path/to/mypaper/references
-    git merge master
+    git rebase -i master
 ```
 
 4. If you wish to push changes to iridia-ulb master, you do:
 ```
     cd /path/to/references-master
-    git merge mypaper
+    git merge --ff-only mypaper
     git push
 ```
 5. You can also easily find out which worktrees need to be merged into master:
