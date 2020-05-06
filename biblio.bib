@@ -549,13 +549,15 @@ Assignment with Controllable Processing Times},
   title =        {Model-Based Genetic Algorithms for Algorithm Configuration},
   crossref =     {IJCAI2015},
   pages =        {733--739},
+  keywords = "GGA++"
 }
 
 @inproceedings{AnsMalSel2014isacpp,
-  title={{MaxSAT} by Improved Instance-Specific Algorithm Configuration},
-  author= Ansotegui #and# {Malitsky, Yuri and Sellmann, Meinolf},
-  crossref={AAAI2014},
-  pages={2594--2600},
+  title =        {{MaxSAT} by Improved Instance-Specific Algorithm
+                  Configuration},
+  author =       Ansotegui #and# {Malitsky, Yuri and Sellmann, Meinolf},
+  crossref =     {AAAI2014},
+  pages =        {2594--2600},
 }
 
 @inCollection{AnsSelTie2009cp,
@@ -567,6 +569,7 @@ Assignment with Controllable Processing Times},
   doi =          {10.1007/978-3-642-04244-7_14},
   crossref =     "CP2009",
   alias =        "Ansotegui2009",
+  keywords =     "GGA"
 }
 
 @Article{AppBixChvCoo03:mp,
@@ -1597,6 +1600,15 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   note =         {Currently available from
                   \url{http://people.brunel.ac.uk/~mastjjb/jeb/info.html}},
 }
+
+@TechReport{Beasley1998,
+  title =        {Heuristic algorithms for the unconstrained binary quadratic
+                  programming problem},
+  author =       Beasley,
+  address =      {London, England},
+  year =         1998,
+  institution =  {The Management School, Imperial College},
+ }
 
 @InProceedings{BecGotStu05,
   author =       {S. Becker and J. Gottlieb} #and# Stuetzle,
@@ -2659,7 +2671,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 
 @article{BluCaBle2015swarm,
   author =       Blum #and# "Borja Calvo" #and# Blesa,
-  title =        {Frog{COL} and Frog{MIS}: new decentralized algorithms for finding large independent sets in graphs},
+  title =        {{FrogCOL} and {FrogMIS}: new decentralized algorithms for finding large independent sets in graphs},
   journal =      swarm,
   year =         {2015},
   volume =       {9},
@@ -5382,6 +5394,7 @@ Los Angeles, CA},
   publisher =    {Elsevier}
 }
 
+
 @Article{DelIorMarMon2016,
   author = 	 {Mauro Dell'Amico} #and# Iori #and# Martello_S #and# {Michele Monaci},
   title = 	 {Heuristic and Exact Algorithms for the Identical Parallel Machine Scheduling Problem},
@@ -5390,6 +5403,16 @@ Los Angeles, CA},
   volume = 	 20,
   number = 	 3,
   pages = 	 {333--344}
+}
+
+@article{DelIorMarc2018bpplib,
+  title =        {{BPPLIB}: a library for bin packing and cutting stock problems},
+  author =       {Delorme, Maxence} #and# Iori #and# Martello_S,
+  journal =      ol,
+  volume =       12,
+  number =       2,
+  pages =        {235--250},
+  year =         2018,
 }
 
 @article{DelIorNovStu2016,
@@ -6660,6 +6683,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {88--99},
   crossref =     "ANTS2002",
 }
+
+@inCollection{FalLinHut2015spysmac,
+  title =        {{SpySMAC}: Automated configuration and performance analysis
+                  of {SAT} solvers},
+  author =       {Falkner, Stefan} #and# Lindauer_M #and# Hutter,
+  crossref =     "SAT2015",
+  doi =          "10.1007/978-3-319-24318-4_16",
+  pages =        {215--222},
+}
+
+
 @article{FanBif2013,
   title =        {Mining big data: current status, and forecast to the future},
   author =       {Fan, Wei and Bifet, Albert},
@@ -11072,6 +11106,15 @@ Traveling Salesman Heuristic},
   pages =        {383--395}
 }
 
+@inCollection{KarParStu2018lion,
+  title =        {Algorithm Configuration: Learning policies for the quick
+                  termination of poor performers},
+  author =       {Karapetyan, Daniel and Parkes, Andrew J.}#and# Stuetzle,
+  crossref =     "LION2018",
+  pages =        {220--224},
+}
+
+
 @article{KasNatRee2017ems,
   title =        {Many objective robust decision making for complex
                   environmental systems undergoing change},
@@ -11628,8 +11671,8 @@ Traveling Salesman Heuristic},
 }
 
 @Article{KocGloAli2004ors,
-  author =       "Kochenberger, Gary A.  and Glover, Fred and Alidaee, Bahram
-                  and Rego, Cesar",
+  author =       Kochenberger#and# Glover_F #and# {Alidaee, Bahram and Rego,
+                  Cesar},
   title =        "A unified modeling and solution framework for combinatorial
                   optimization problems",
   journal =      ors,
@@ -11637,6 +11680,18 @@ Traveling Salesman Heuristic},
   volume =       26,
   number =       2,
   pages =        "237--250"
+}
+
+@article{KocHaoGlo2014bqap,
+  title =        {The unconstrained binary quadratic programming problem: a
+                  survey},
+  author =       Kochenberger#and# Hao #and# Glover_F #and# {Lewis, Mark} #and#
+                  {L{\"u}, Zhipeng and Wang, Haibo and Wang, Yang},
+  journal =      jco,
+  volume =       28,
+  number =       1,
+  pages =        {58--81},
+  year =         2014,
 }
 
 @article{Koe2009jmcda,
@@ -12503,7 +12558,18 @@ Traveling Salesman Heuristic},
   year =         2016,
   doi =          {10.1007/978-3-319-25730-3},
   publisher =    springer-cham,
+  annote =       "Supplementary material available at \cite{Lewis2016sup}",
 }
+
+@Misc{Lewis2016sup,
+  author =       Lewis_R,
+  title =        {Suite of Graph Colouring Algorithms -- Supplementary Material
+                  to the Book ``{A} Guide to Graph Colouring: Algorithms and
+                  Applications''},
+  howpublished = {\url{http://rhydlewis.eu/resources/gCol.zip}},
+  year =         2016
+}
+
 
 @inCollection{LeyNudSho2002,
   title =        {Learning the Empirical Hardness of Optimization Problems: The
@@ -12987,6 +13053,16 @@ Optimization},
   year =         2004,
   publisher =    {Springer}
 }
+
+@Misc{LodiEtAl2004sup,
+  author =       Lodi #and# Martello_S #and# {Vigo, Daniele},
+  title =        {Two- and Three-Dimensional Bin Packing -- Source Code of
+                  {TSpack}},
+  howpublished =
+                  {\url{http://or.dei.unibo.it/research_pages/ORcodes/TSpack.html}},
+  year =         2004
+}
+
 
 @inProceedings{LohNow2013faster,
   title =        {Faster {H}oeffding Racing: {B}ernstein Races via Jackknife
@@ -14053,8 +14129,8 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
 @Article{MaiRon2012,
   title =        {New heuristics for total tardiness minimization in
                   a flexible flowshop},
-  author =       {Mainieri, Guilherme B and Ronconi, D{\'e}bora P},
-  journal =      {Optimization Letters},
+  author =       {Mainieri, Guilherme B. and Ronconi, D{\'e}bora P.},
+  journal =      ol,
   pages =        {1--20},
   year =         2012
 }
@@ -14093,13 +14169,22 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
 
 @Article{Males85,
   author =       Males # and # Clark # and # Wehrman # and # Gateset,
-  title =        " Algorithm for mixing problems in water systems",
+  title =        "Algorithm for mixing problems in water systems",
   journal =      jhe,
   year =         1985,
   volume =       111,
   number =       2,
   pages =        {206--219},
-  note =         notreadyet,
+}
+
+@inCollection{MalitskyEtAl2013tuning,
+  title =        {Tuning parameters of large neighborhood search for the
+                  machine reassignment problem},
+  author =       {Malitsky, Yuri and Mehta, Deepak and O’Sullivan, Barry and
+                  Simonis, Helmut},
+  crossref =     "CPAIOR2013",
+  pages =        {176--192},
+  doi =          "10.1007/978-3-642-38171-3_12",
 }
 
 @Article{Man1999:joc,
@@ -21120,13 +21205,26 @@ Twin-Screw Extrusion Configuration Problem},
   year =         2013,
 }
 
+@article{WangEtAl2012ejor,
+  title =        {Path relinking for unconstrained binary quadratic
+                  programming},
+  author =       {Wang, Yang and L{\"u}, Zhipeng} #and# Glover_F #and# Hao,
+  journal =      ejor,
+  volume =       223,
+  number =       3,
+  pages =        {595--604},
+  year =         2012,
+  publisher =    {Elsevier}
+}
+
+
 @incollection{Ward2008multivariate,
-  title={Multivariate data glyphs: Principles and practice},
-  author={Ward, Matthew O.},
-  booktitle={Handbook of data visualization},
-  pages={179--198},
-  year=2008,
-  publisher={Springer}
+  title =        {Multivariate data glyphs: Principles and practice},
+  author =       {Ward, Matthew O.},
+  booktitle =    {Handbook of data visualization},
+  pages =        {179--198},
+  year =         2008,
+  publisher =    {Springer}
 }
 
 @Article{WatBarWhiHow02,
@@ -21299,6 +21397,23 @@ Twin-Screw Extrusion Configuration Problem},
                   Quadratic Assignment Problem",
   pages =        {179--190},
   crossref =     "ANTS2006",
+}
+
+@TechReport{Wiegele2007biqmac,
+  title =        {{Biq} {Mac} {Library} -- A collection of Max-Cut and
+                  quadratic 0-1 programming instances of medium size},
+  author =       {Wiegele, Angelika},
+  institution =  {Institut f{\"u}r Mathematik, Alpen-Adria-Universit{\"a}t
+                  Klagenfurt},
+  year =         2007,
+  url =          {http://biqmac.aau.at/biqmaclib.pdf}
+}
+
+@Misc{Wiegele2007sup,
+  author =       {Wiegele, Angelika},
+  title =        {{Biq} {Mac} {Library} -- Binary Quadratic and Max Cut Library},
+  howpublished = {\url{http://biqmac.aau.at/biqmaclib.html}},
+  year =         2007
 }
 
 @INcollection{Wierzbicki1980mcdmta,
