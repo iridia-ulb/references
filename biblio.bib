@@ -278,6 +278,7 @@ Assignment with Controllable Processing Times},
   number      = {BCOL.07.01}
 }
 
+
 @incollection{AlaSolGhe07,
   author =       {I. Alaya} #and# Solnon #and# { Khaled Gh{\'e}dira},
   title =        {Ant Colony Optimization for Multi-Objective
@@ -351,7 +352,7 @@ Assignment with Controllable Processing Times},
   title =        {Evolutionary Search in Lethal Environments},
   author =       Allmendinger #and# Knowles,
   booktitle =    {International Conference on Evolutionary Computation Theory
-                  and Applications (ECTA)},
+                  and Applications},
   pages =        {63--72},
   year =         2011,
   publisher =    {SciTePress},
@@ -825,6 +826,34 @@ Assignment with Controllable Processing Times},
   pages =        {642--664}
 }
 
+
+@article{Aue2002using,
+  title =        {Using Confidence Bounds for Exploitation-Exploration
+                  Trade-offs},
+  author =       {Auer, Peter},
+  journal =      jmlr,
+  volume =       3,
+  month =        nov,
+  pages =        {397--422},
+  year =         2002,
+  abstract =     "We show how a standard tool from statistics --- namely
+                  confidence bounds --- can be used to elegantly deal with
+                  situations which exhibit an exploitation-exploration
+                  trade-off. Our technique for designing and analyzing
+                  algorithms for such situations is general and can be applied
+                  when an algorithm has to make exploitation-versus-exploration
+                  decisions based on uncertain information provided by a random
+                  process.  We apply our technique to two models with such an
+                  exploitation-exploration trade-off. For the adversarial
+                  bandit problem with shifting our new algorithm suffers only
+                  $O((ST)^{1/2})$ regret with high probability over $T$ trials
+                  with $S$ shifts. Such a regret bound was previously known
+                  only in expectation. The second model we consider is
+                  associative reinforcement learning with linear value
+                  functions. For this model our technique improves the regret
+                  from $O(T^{3/4})$ to $O(T^{1/2})$."
+}
+
 @article{AueCesFis2002finite,
   title =        {Finite-time analysis of the multiarmed bandit problem},
   author =       {Auer, Peter and Cesa-Bianchi, Nicolo and Fischer, Paul},
@@ -990,6 +1019,21 @@ Assignment with Controllable Processing Times},
   author =         Baeck_Thomas #and# Fogel #and# Michalewicz,
   year   =         1997,
   publisher =      iop,
+}
+
+  
+@article{BacHelPic2020gaussian,
+  TITLE =        {Gaussian process optimization with failures: Classification
+                  and convergence proof},
+  AUTHOR =       {Bachoc, Fran{\c c}ois and Helbert, C{\'e}line and Picheny,
+                  Victor},
+  JOURNAL =      jgo,
+  YEAR =         2020,
+  eprint =
+                  {https://hal.archives-ouvertes.fr/hal-02100819/file/optimwithfailurerevised_hal.pdf},
+  keywords =     "crashed simulation; latent gaussian process; automotive fan
+                  design; industrial application; GP classification",
+  note =         "In Press"
 }
 
 @TechReport{BacSteWot1994tr,
@@ -1873,6 +1917,28 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   publisher =    {INFORMS}
 }
 
+@inproceedings{BerSchKra2016safe,
+  title =        {Safe controller optimization for quadrotors with {G}aussian
+                  processes},
+  author =       {Berkenkamp, Felix and Schoellig, Angela P. and Krause,
+                  Andreas},
+  booktitle =    {2016 IEEE International Conference on Robotics and Automation
+                  (ICRA)},
+  pages =        {491--496},
+  year =         2016,
+  organization = {IEEE},
+  doi =          {10.1109/ICRA.2016.7487170}
+}
+
+@article{BerKraSch2016bayesian,
+  author =       {Felix Berkenkamp and Andreas Krause and Angela P. Schoellig},
+  title =        {Bayesian Optimization with Safety Constraints: Safe and
+                  Automatic Parameter Tuning in Robotics},
+  year =         2016,
+  url =          {http://arxiv.org/abs/1602.04450},
+  journal =      arxiv # {1602.04450},
+}
+
 @Article{BerTsiWu1997:joh,
   author =       {Dimitri P. Bertsekas and John N. Tsitsiklis and Cynara Wu},
   title =        {Rollout Algorithms for Combinatorial Optimization},
@@ -2561,9 +2627,9 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @inproceedings{BiyMarAli2019acc,
-  author =       {Erdem Biyik and Jonathan Margoliash and Shahrouz Ryan Alimo
+  author =       {Erdem B{\i }y{\i }k and Jonathan Margoliash and Shahrouz Ryan Alimo
                   and Dorsa Sadigh},
-  title =        {Efficient and Safe Exploration in Deterministic Markov
+  title =        {Efficient and Safe Exploration in Deterministic {M}arkov
                   Decision Processes with Unknown Transition Models},
   pages =        {1792--1799},
   crossref =     "ACC2019",
@@ -3414,6 +3480,16 @@ Los Angeles, CA},
   pages =        "85--94",
 }
 
+@article{BroCorFre2010tutorial,
+  author =       {Brochu, Eric and Cora, Vlad and de Freitas, Nando},
+  year =         2010,
+  month =        dec,
+  title =        {A Tutorial on {B}ayesian Optimization of Expensive Cost
+                  Functions, with Application to Active User Modeling and
+                  Hierarchical Reinforcement Learning},
+  journal =      arxiv # {1012.2599},
+  url =          {https://arxiv.org/abs/1012.2599}
+}
 
 @InCollection{BroLopNau2012ppsn,
   author =       Brockhoff #and# Lopez-Ibanez #and# Naujoks #and# Rudolph_G,
@@ -7504,6 +7580,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher = springer
 }
 
+@article{Fra2018tutorial,
+  author =       {Peter I. Frazier},
+  title =        {A Tutorial on {B}ayesian Optimization},
+  journal =      arxiv # {1807.02811},
+  year =         2018,
+  url =          {http://arxiv.org/abs/1807.02811},
+  archivePrefix ={arXiv},
+}
+
 @PhdThesis{Fra95:phd,
   author =       Fraser,
   title =        {Subsequences and Supersequences of Strings},
@@ -8054,7 +8139,8 @@ doi =           {10.1007/978-3-642-38516-2_16},
   volume =       16,
   number =       1,
   pages =        {1437--1480},
-  year =         2015
+  year =         2015,
+  eprint = {http://jmlr.org/papers/volume16/garcia15a/garcia15a.pdf}
 }
 
 @article{GarFerLueHer2010tests,
@@ -8174,6 +8260,23 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Stefan},
   crossref =     {LPNMR2013},
   pages =        {352--357}
+}
+
+@InProceedings{Gei2006ecml,
+  author =       "Geibel, Peter",
+  title =        "Reinforcement Learning for {MDPs} with Constraints",
+  pages =        "646--653",
+  crossref =     "ECML2006",
+  doi =          "10.1007/11871842_63",
+  abstract =     "In this article, I will consider Markov Decision Processes
+                  with two criteria, each defined as the expected value of an
+                  infinite horizon cumulative return. The second criterion is
+                  either itself subject to an inequality constraint, or there
+                  is maximum allowable probability that the single returns
+                  violate the constraint. I describe and discuss three new
+                  reinforcement learning approaches for solving such control
+                  problems.",
+  keywords =     "Safe RL"
 }
 
 @Article{Gei2011,
@@ -8525,6 +8628,19 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "ICEC1997",
   pages =        "171--174",
 }
+
+@article{Gos2009rl,
+  author =       {Gosavi, Abhijit},
+  title =        {Reinforcement Learning: A Tutorial Survey and Recent
+                  Advances},
+  journal =      informs,
+  volume =       21,
+  number =       2,
+  pages =        {178--192},
+  year =         2009,
+  doi =          {10.1287/ijoc.1080.0305},
+}
+
 
 @InProceedings{GotPucSol03:evoworkshops,
   author =       {J. Gottlieb and M. Puchta} #and# Solnon,
@@ -9751,6 +9867,19 @@ Traveling Salesman Heuristic},
                   {M}iddleton and {L}evine (BML) model},
   year =         2017,
   alias =        "Hu2017"
+}
+
+@article{HuaAllNot2006global,
+  title =        {Global Optimization of Stochastic Black-Box Systems via Sequential Kriging Meta-Models},
+  author =       {Huang, Deng and Allen, Theodore T. and Notz, William I. and
+                  Zeng, Ning},
+  journal =      jgo,
+  volume =       34,
+  number =       3,
+  pages =        {441--466},
+  year =         2006,
+  publisher =    {Springer},
+  doi =          {10.1007/s10898-005-2454-3}
 }
 
 @incollection{HuaYaHaoCai2006,
@@ -13093,6 +13222,19 @@ Optimization},
   crossref =     "EVOCOP2011",
 }
 
+@article{LikKoc2007predictive,
+  title =        {Predictive control of a gas--liquid separation plant based on
+                  a {G}aussian process model},
+  author =       {Likar, Bojan and Kocijan, Ju{\v{s}}},
+  journal =      compchemeng,
+  volume =       31,
+  number =       3,
+  pages =        {142--152},
+  year =         2007,
+  publisher =    {Elsevier},
+  doi = {10.1016/j.compchemeng.2006.05.011}
+}
+
 @inproceedings{LinHooHutSch2015aaai,
   title =        {{AutoFolio}: Algorithm Configuration for Algorithm Selection},
   author =       Lindauer_M #and# Hoos #and# Hutter #and# {Schaub, Torsten},
@@ -15476,6 +15618,15 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   Lionel},
   crossref =     {EMO2011},
   pages =        {520--534}
+}
+
+@inproceedings{MolTeo2012safe,
+  author =       {Moldovan, Teodor Mihai and Abbeel, Pieter},
+  title =        {Safe Exploration in {M}arkov Decision Processes},
+  crossref =     "ICML2012",
+  pages =        {1451--1458},
+  numpages =     8,
+  eprint =       {http://icml.cc/2012/papers/838.pdf},
 }
 
 @article{MonAydStu2011soco,
@@ -17918,14 +18069,16 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 }
 
 @Book{RasWil2006gp,
-  Title =        {Gaussian Processes for Machine Learning},
-  Author =       {Rasmussen, Carl Edward and Williams, Christopher K. I.},
-  Publisher =    {MIT Press},
-  Year =         2006,
-  alias =        "Rasmussen2006"
+  title =        {Gaussian Processes for Machine Learning},
+  author =       {Rasmussen, Carl Edward} #and# {Williams, Christopher K. I.},
+  year =         2006,
+  keywords =     {Gaussian processes, data processing},
+  language =     {eng},
+  publisher =    mit-pub,
+  address =      mit-ad,
+  alias =        "Rasmussen2006",
+  isbn =         {026218253X},
 }
-
-
 
 @TechReport{Ray2011gart,
   author =       {Rayner, N.},
@@ -18507,6 +18660,25 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   pages   = {309--325}
 }
 
+@article{SacDuvMai2018ego-ls-svm,
+  title =        {A classification approach to efficient global optimization in
+                  presence of non-computable domains},
+  author =       {Sacher, Matthieu and Duvigneau, R{\'e}gis and Le Maitre,
+                  Olivier and Durand, Mathieu and Berrini, Elisa and Hauville,
+                  Fr{\'e}d{\'e}ric and Astolfi, Jacques-Andr{\'e}},
+  journal =      smo,
+  volume =       58,
+  number =       4,
+  pages =        {1537--1557},
+  year =         2018,
+  publisher =    {Springer},
+  doi =          {10.1007/s00158-018-1981-8},
+  keywords =     "Safe optimization; CMA-ES, Gaussian processes; Least-Squares
+                  Support Vector Machine",
+  annote =       "Proposed EGO-LS-SVM"
+}
+
+
 @article{SadFow2012nosql,
   title =        {{NoSQL} distilled},
   author =       {Sadalage, Pramod J. and Fowler, Martin},
@@ -18811,6 +18983,20 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   doi       =    {10.2307/1268280}
 }
 
+@article{SchHarSka2017safe,
+  title =        {Safe active learning and safe {B}ayesian optimization for
+                  tuning a {PI}-controller},
+  author =       {Schillinger, Mark and Hartmann, Benjamin and Skalecki, Patric
+                  and Meister, Mona and Nguyen-Tuong, Duy and Nelles, Oliver},
+  journal =      ifac,
+  volume =       50,
+  number =       1,
+  pages =        {5967--5972},
+  year =         2017,
+  doi =          {10.1016/j.ifacol.2017.08.1258},
+  publisher =    {Elsevier}
+}
+
 @InCollection{SchHoo2012quanti,
   title =        "Quantifying Homogeneity of Instance Sets for
                   Algorithm Configuration",
@@ -18888,6 +19074,23 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   pages =        {231--251}
 }
 
+
+@inproceedings{SchOrtHart2018safe,
+  title =        {Safe active learning of a high pressure fuel supply system},
+  author =       {Schillinger, Mark and Ortelt, Benedikt and Hartmann, Benjamin
+                  and Schreiter, Jens and Meister, Mona and Nguyen-Tuong, Duy
+                  and Nelles, Oliver},
+  booktitle =    {Proceedings of the 9th {EUROSIM} Congress on Modelling and
+                  Simulation, {EUROSIM} 2016 and the 57th {SIMS} Conference on
+                  Simulation and Modelling {SIMS} 2016},
+  numpages =     7,
+  pages =        {286--292},
+  year =         2018,
+  doi =          {10.3384/ecp17142286},
+  organization = {Link{\"o}ping University Electronic Press}
+}
+
+
 @article{SchSchStaDue2000,
   title =        "Record Breaking Optimization Results Using the Ruin
                   and Recreate Principle",
@@ -18910,6 +19113,18 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   pages =        {446--459},
   year =         2019,
   publisher =    {Elsevier}
+}
+
+@article{SchSpeKra2018gptut,
+  author =       {Schulz, Eric and Speekenbrink, Maarten and Krause, Andreas},
+  year =         2018,
+  month =        aug,
+  pages =        {1--16},
+  title =        {A tutorial on {G}aussian process regression: {M}odelling,
+                  exploring, and exploiting functions},
+  volume =       85,
+  journal =      jmp,
+  doi =          {10.1016/j.jmp.2018.03.001}
 }
 
 @Article{SchStu2004:jmma,
@@ -19141,7 +19356,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 
 @Article{ShaSweWanAdaFre2016,
   author = 	 {Bobak Shahriari and Kevin Swersky and Ziyu Wang and Ryan P. Adams and Nando de Freitas},
-  title = 	 {Taking the Human Out of the Loop: {A} Review of Bayesian Optimization},
+  title = 	 {Taking the Human Out of the Loop: {A} Review of {B}ayesian Optimization},
   journal = 	 prcieee,
   year = 	 2016,
   volume = 	 104,
@@ -19474,7 +19689,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   address =      {Ames, IA, USA}
 }
 
-@InCollection{SnoLarAda2012:nips,
+@InCollection{SnoLarAda2012nips,
   author = 	  Snoek_J #and# {Hugo Larochelle}  #and# Adams_RP,
   title = 	 {Practical {B}ayesian Optimization of Machine Learning Algorithms},
   crossref =     "NIPS2012",
@@ -20176,6 +20391,17 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   Laboratory, IIT Kanpur)},
 }
 
+@inCollection{SchNguEbe2015sal,
+  title =        {Safe Exploration for Active Learning with {G}aussian
+                  Processes},
+  author =       {Schreiter, Jens and Nguyen-Tuong, Duy and Eberts, Mona and
+                  Bischoff, Bastian and Markert, Heiner and Toussaint, Marc},
+  crossref =     "ECMLPKDD2015-3",
+  pages =        {133--149},
+  doi =          {10.1007/978-3-319-23461-8_9},
+  annote =       "Proposed Safe Active Learning (SAL) algorithm"
+}
+
 @InProceedings{SuiGotBur2015icml,
   title =        {Safe Exploration for Optimization with {G}aussian Processes},
   author =       {Sui, Yanan and Alkis Gotovos and Burdick, Joel W. and Andreas
@@ -20207,8 +20433,9 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   keywords =     "SafeOpt"
 }
 
-@article{SuiZhuBur2018stageopt,
-  title =        {Stagewise Safe {B}ayesian Optimization with {G}aussian Processes},
+@article{SuiZhuBur2018arxiv,
+  title =        {Stagewise Safe {B}ayesian Optimization with {G}aussian
+                  Processes},
   author =       {Sui, Yanan and Zhuang, Vincent and Burdick, Joel W. and Yue,
                   Yisong},
   journal =      arxiv # {1806.07555},
@@ -20237,8 +20464,22 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   safe optimization approaches, and is able to safely and
                   effectively optimize spinal cord stimulation therapy in our
                   clinical experiments.",
+  keywords =     {StageOpt},
+  annote =       "Published as \cite{SuiZhuBur2018stageopt}"
+}
+
+@inproceedings{SuiZhuBur2018stageopt,
+  author =       {Sui, Yanan and Zhuang, Vincent and Burdick, Joel W. and Yue,
+                  Yisong},
+  title =        {Stagewise Safe {B}ayesian Optimization with {G}aussian
+                  Processes},
+  pages =        {4788--4796},
+  crossref =     "ICML2018",
+  eprint =       {http://proceedings.mlr.press/v80/sui18a.html},
   keywords =     {StageOpt}
 }
+
+
 
 @InProceedings{SunHan2010:ccie,
   author =       Sun_Zhaoxu #and# Han_Min,
@@ -20282,6 +20523,19 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   The University of Adelaide},
   year =         1998,
   type =         {Honors Thesis},
+}
+
+@article{SuyVan1999least,
+  title =        {Least Squares Support Vector Machine Classifiers},
+  author =       {Suykens, Johan A. K. and Vandewalle, Joos},
+  journal =      npl,
+  volume =       9,
+  number =       3,
+  pages =        {293--300},
+  year =         1999,
+  publisher =    {Springer},
+  doi =          {10.1023/A:1018628609742},
+  keywords =     "LS-SVM"
 }
 
 @InCollection{SwaOzcKen2011lion,
@@ -21761,6 +22015,7 @@ Twin-Screw Extrusion Configuration Problem},
   crossref =     "ANTS2006",
 }
 
+
 @TechReport{Wiegele2007biqmac,
   title =        {{Biq} {Mac} {Library} -- A collection of Max-Cut and
                   quadratic 0-1 programming instances of medium size},
@@ -22211,6 +22466,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   keywords =     "performance profiles"
 }
 
+
 @InCollection{ZitBroThi2007emo,
   author =       Zitzler #and# Brockhoff #and# Thiele,
   title =        {The Hypervolume Indicator Revisited: On the Design
@@ -22356,12 +22612,21 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   keywords =     "Machine Decision Maker"
 }
 
+
 @InCollection{ants2008-cminer,
   author =       {F. E. B. Otero and A. A. Freitas and C. G. Johnson},
   title =        {{cAnt-Miner}: An Ant Colony Classification Algorithm
                   to Cope with Continuous Attributes},
   crossref =     "ANTS2008",
   pages =        {48--59},
+}
+
+@book{Back1996evolutionary,
+  title =        {Evolutionary algorithms in theory and practice: evolution
+                  strategies, evolutionary programming, genetic algorithms},
+  author =       Baeck_Thomas,
+  year =         1996,
+  publisher =    {Oxford University Press}
 }
 
 @InCollection{dePDoeDoe2015:gecco,
