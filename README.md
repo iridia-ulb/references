@@ -13,7 +13,6 @@ the top of each file.
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
-
 - [Rationale](#rationale)
 - [Format of keys](#format-of-keys)
 - [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
@@ -22,9 +21,11 @@ the top of each file.
 - [Before submitting a paper](#before-submitting-a-paper)
 - [List of most often used git commands](#list-of-most-often-used-git-commands)
 - [BibTeX Advice](#bibtex-advice)
+- [Frequently Asked Questions](#frequently-asked-questions)
+    - [Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list](#q-some-entries-dont-have-doi-this-is-inconsistent-or-i-dont-like-the-dois-in-the-references-list)
     - [Q: Some entries are Proceedings published by LNCS but the entry does not mention the word "Proceedings" or "Conference"](#q-some-entries-are-proceedings-published-by-lncs-but-the-entry-does-not-mention-the-word-proceedings-or-conference)
     - [Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those?](#q-do-we-need-to-mention-that-the-proceedings-are-published-by-lncs-why-not-use-proceedings-for-those)
-- [Frequently Asked Questions](#frequently-asked-questions)
+    - [Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything?](#q-a-journal-insists-on-using-springer-verlag-instead-of-springer-how-to-change-everything)
     - [Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files?](#q-i-want-to-save-space-and-abbreviate-journal-names-and-titles-of-books-should-i-just-edit-the-journalbib-and-abbrevbib-files)
     - [Q: I want to save space and reduce the number of editors (say et   al. for any editor after the first one), or remove all DOIs, URLs,   publisher address or other such fields. Can I edit the .bib files?](#q-i-want-to-save-space-and-reduce-the-number-of-editors-say-et---al-for-any-editor-after-the-first-one-or-remove-all-dois-urls---publisher-address-or-other-such-fields-can-i-edit-the-bib-files)
     - [Q: I made a mistake in the commit message. Can this be fixed?](#q-i-made-a-mistake-in-the-commit-message-can-this-be-fixed)
@@ -139,7 +140,7 @@ local copy of the IRIDIA BibTex repository.
 The instructions below work for Linux/Mac, but can of course be adapted
 for Windows too.
 
-* **Method A**
+* **Method A: Symbolic links**
 
 This method is suggested especially when working on your paper offline,
 whether you are using a versioning system for your paper or not. In case
@@ -173,7 +174,7 @@ follows the same instructions.
    ["Before Submitting a paper"](#before-submitting-a-paper).
 
 
-* **Method B**
+* **Method B: fake submodule**
 
 This method is suggested in case you work on your paper (alone or with your
 collaborators) on web-based systems such as Overleaf.
@@ -201,14 +202,49 @@ collaborators) on web-based systems such as Overleaf.
    ["Before Submitting a paper"](#before-submitting-a-paper).   
 
 
+* **Method C: worktrees**
+
+This method is suggested if you have write access to the iridia-ulb
+repository and you want to update the master repository frequently.
+
+1. Get a copy of the master repository in some folder, e.g., `/path/to/references-master`:
+
+```
+    git clone https://github.com/iridia-ulb/references.git /path/to/references-master
+```
+
+2. Now, assuming that your paper resides in `/path/to/mypaper`, create a branch
+   and a worktree for your paper:
+   
+```
+    cd /path/to/references-master
+    git worktree add -b mypaper /path/to/mypaper/references
+```
+   
+3. If you wish to import changes from the master branch, you do:
+```
+    cd /path/to/mypaper/references
+    git rebase -i master
+```
+
+4. If you wish to push changes to iridia-ulb master, you do:
+```
+    cd /path/to/references-master
+    git merge --ff-only mypaper
+    git push
+```
+5. You can also easily find out which worktrees need to be merged into master:
+```
+    git branch --no-merged master
+```
+
 * **Other methods**
 
   You might prefer alternative ways of setting up the local copy of this
   repository. However, be aware that this might come with additional burden
-  (for you) of managing the consistency and compatibility with the
-  main central repository.
-  We especially discourage methods that "break" the tracking of the changes,
-  such as copying or linking single files.
+  (for you) of managing the consistency and compatibility with the main central
+  repository.  We especially discourage methods that "break" the tracking of
+  the changes, such as copying or linking single files.
 
   Should you go this way (e.g. because you or your collaborators are already
   used to a certain workflow) please be aware that it will be your
@@ -415,7 +451,6 @@ to get the various option of the specific command COMMAND.
 
 
 
-
 BibTeX Advice
 -------------
 
@@ -429,11 +464,15 @@ file. The following is general advice on how to format bib entries.
  * `'doi'` field is just the DOI, without the http://dx.doi.org/
 
  * Do not use fields: `publisher`, `ISSN` in `@article`
- 
-#### Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list ###
+
+
+Frequently Asked Questions
+--------------------------
+
+#### Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list ####
 
 A: Ideally, we would have the DOI of everything, since it helps to find the
-actual paper and verify its details, and let the bibtex style control whether
+actual paper and verify its details. Let the bibtex style control whether
 to show it or not. In practice, it is very easy to hide all DOIs, either by
 redefining the command that prints the doi or commenting out a few lines in the
 bibtex style. Thus, one should ALWAYS add a DOI if possible.
@@ -454,10 +493,6 @@ article-length papers/chapters. That is different from conference proceedings
 not be available in book form, may not be peer-reviewed and may contain only
 abstracts. Citations from/to LNCS are counted by JCR. For some funding
 agencies, LNCS count almost as much as journal publications.
-
-
-Frequently Asked Questions
--------------------------
 
 #### Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything? ####
 

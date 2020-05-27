@@ -53,8 +53,6 @@
 %%    Please help us to update them little by little.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 @InCollection{AarKorMic2005,
   title =        {Simulated Annealing},
   author =       Aarts #and# Korst_JHM #and# Michiels_W,
@@ -136,7 +134,7 @@
   number =       1,
   month =        jul,
   pages =        {1--41},
-  annote =       {\url{http://mpc.zib.de/index.php/MPC/article/view/4}}
+  annote =       {\url{http://mpc.zib.de/archive/2009/1/Achterberg2009_Article_SCIPSolvingConstraintIntegerPr.pdf}}
 }
 
 @Article{AcoMes2014jbi,
@@ -176,7 +174,7 @@
 }
 
 @Article{AdeLag06tuning,
-  author =       {B. Adenso-D{\'\i}az and M. Laguna},
+  author =       {B. Adenso-D{\'\i}az} #and# Laguna,
   title =        {Fine-Tuning of Algorithms Using Fractional
                   Experimental Design and Local Search},
   journal =      or,
@@ -232,8 +230,7 @@
 }
 
 @Article{AhuErgOrlPun2002:dam,
-  author =       {R. K. Ahuja and O. Ergun and J. B. Orlin and
-                  A. P. Punnen},
+  author =       Ahuja_RK #and# {O. Ergun} #and# {A. P. Punnen},
   title =        {A Survey of Very Large-scale Neighborhood Search
                   Techniques},
   journal =      dam,
@@ -243,6 +240,13 @@
   pages =        {75--102}
 }
 
+
+@Book{AhujMagOrl1993netflows,
+  author =       Ahuja_RK #and# {T. Magnanti} #and# Orlin_JB,
+  title =        {Network Flows: Theory, Algorithms and Applications},
+  publisher =    {Prentice-Hall},
+  year =         1993,
+}
 
 @InCollection{AikBurLi2006,
   author =       {Uwe Aickelin} #and# Burke_E #and# {Jingpeng Li},
@@ -351,6 +355,25 @@ Assignment with Controllable Processing Times},
   year =         2013
 }
 
+@inproceedings{AllKno2011ecta,
+  title =        {Evolutionary Search in Lethal Environments},
+  author =       Allmendinger #and# Knowles,
+  booktitle =    {International Conference on Evolutionary Computation Theory
+                  and Applications (ECTA)},
+  pages =        {63--72},
+  year =         2011,
+  publisher =    {SciTePress},
+  doi =          "10.5220/0003673000630072",
+  eprint =       "https://www.scitepress.org/papers/2011/36730/36730.pdf"
+}
+
+@phdthesis{Allmendinger2012phd,
+  title =        {Tuning evolutionary search for closed-loop optimization},
+  author =       Allmendinger,
+  year =         2012,
+  school =       {The University of Manchester, UK}
+}
+
 @article{Alm10,
   author =       Almeder,
   title =        {A hybrid optimization approach for multi-level
@@ -397,6 +420,16 @@ Assignment with Controllable Processing Times},
   volume =       12,
   number =       10,
   pages =        {1118--1122}
+}
+
+@inproceedings{AmaAliThr2019nips,
+  title =        {Linear Stochastic Bandits Under Safety Constraints},
+  author =       {Amani, Sanae and Alizadeh, Mahnoosh and Thrampoulidis,
+                  Christos},
+  pages =        {9256--9266},
+  crossref =     "NIPS2019",
+  eprint =
+                  {http://papers.nips.cc/paper/9124-linear-stochastic-bandits-under-safety-constraints.pdf}
 }
 
 @Article{AmiBadFar2007:cis,
@@ -504,7 +537,7 @@ Assignment with Controllable Processing Times},
 
 @inproceedings{AnsKamVeeRag2014open,
   author    =  {J. Ansel and S. Kamil and K. Veeramachaneni and J. Ragan-Kelley and J. Bosboom and U. M. O'Reilly and S. Amarasinghe},
-  title     =  {OpenTuner: An extensible framework for program autotuning},
+  title     =  {{OpenTuner}: An extensible framework for program autotuning},
   crossref  =  "PACT2014",
   pages     =  {303--315}, 
   doi       =  {10.1145/2628071.2628092}
@@ -516,13 +549,15 @@ Assignment with Controllable Processing Times},
   title =        {Model-Based Genetic Algorithms for Algorithm Configuration},
   crossref =     {IJCAI2015},
   pages =        {733--739},
+  keywords = "GGA++"
 }
 
 @inproceedings{AnsMalSel2014isacpp,
-  title={{MaxSAT} by Improved Instance-Specific Algorithm Configuration},
-  author= Ansotegui #and# {Malitsky, Yuri and Sellmann, Meinolf},
-  crossref={AAAI2014},
-  pages={2594--2600},
+  title =        {{MaxSAT} by Improved Instance-Specific Algorithm
+                  Configuration},
+  author =       Ansotegui #and# {Malitsky, Yuri and Sellmann, Meinolf},
+  crossref =     {AAAI2014},
+  pages =        {2594--2600},
 }
 
 @inCollection{AnsSelTie2009cp,
@@ -534,6 +569,7 @@ Assignment with Controllable Processing Times},
   doi =          {10.1007/978-3-642-04244-7_14},
   crossref =     "CP2009",
   alias =        "Ansotegui2009",
+  keywords =     "GGA"
 }
 
 @Article{AppBixChvCoo03:mp,
@@ -574,14 +610,15 @@ Assignment with Controllable Processing Times},
 }
 
 @article{AppBlaNew1961,
-  author =       {Appleby, JS and Blake, DV and Newman, EA},
-  title =        {Techniques for producing school timetables on a computer
-                 and their application to other scheduling problems},
+  author =       {Appleby, J. S. and Blake, D. V. and Newman, E. A.},
+  title =        {Techniques for producing school timetables on a computer and
+                  their application to other scheduling problems},
   journal =      {The Computer Journal},
   volume =       3,
   number =       4,
   pages =        {237--245},
-  year =         1961
+  year =         1961,
+  doi =          {10.1093/comjnl/3.4.237}
 }
 
 @Article{AppCoo91,
@@ -885,7 +922,6 @@ Assignment with Controllable Processing Times},
   title = 	 {Artificial Bee Colony Framework to Non-convex Economic Dispatch Problem with Valve Point Effects: A Case Study},
   crossref = {GECCO2017c},
   pages = {1311--1318},
-  year     = 2017,
 }
 
 @Article{AydYavStu2017:si,
@@ -1001,7 +1037,7 @@ Assignment with Controllable Processing Times},
                   major challenge lies in balancing the complexity and
                   uncertainty of the problem with time and resource
                   constraints. To address this problem, we propose a
-                  location–allocation model that divides the topography of
+                  location-allocation model that divides the topography of
                   affected areas into multiple layers; considers constrained
                   number and capacity of facilities and fleets; and allows
                   decision-makers to explore trade-offs between response time
@@ -1133,7 +1169,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   title =        "Linear Time Dynamic-Programming Algorithms for New
                   Classes of Restricted {TSP}s: {A} Computational Study",
   volume =       13,
-  aurl =
+  eprint =
                   {http://joc.journal.informs.org/cgi/content/abstract/13/1/56},
   doi =         {10.1287/ijoc.13.1.56.9748},
   abstract =     {Consider the following restricted (symmetric or
@@ -1361,7 +1397,9 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2010,
   pages =        {671--687},
   doi =          {10.1109/TEVC.2010.2058118},
-  keywords =     {BC-EMOA}
+  keywords =     {BC-EMOA},
+  annote =       {Errata: DTLZ6 and DTLZ7 in the paper are actually DTLZ7 and
+                  DTLZ8 in \cite{DebThiLau2005dtlz}}
 }
 
 @Article{BatPro1996:jea,
@@ -1520,12 +1558,36 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BeaShaSmiLop2018review,
-  author =       {Bealt, Jennifer and Shaw, Duncan and Smith, C. M.} #and#
+  author =       {Bealt, Jennifer and Shaw, Duncan and Smith, Chris M.} #and#
                   Lopez-Ibanez,
   year =         2019,
   title =        {Peer Reviews for Making Cities Resilient: A Systematic
                   Literature Review},
   journal =      ijemgmt,
+  volume =       15,
+  number =       4,
+  pages =        {334--359},
+  doi =          "10.1504/IJEM.2019.104201",
+  abstract =     "Peer reviews are a unique governance tool that use expertise
+                  from one city or country to assess and strengthen the
+                  capabilities of another. Peer review tools are gaining
+                  momentum in disaster management and remain an important but
+                  understudied topic in risk governance. Methodologies to
+                  conduct a peer review are still in their infancy. To enhance
+                  these, a systematic literature review (SLR) of academic and
+                  non-academic literature was conducted on city resilience peer
+                  reviews. Thirty-three attributes of resilience are
+                  identified, which provides useful insights into how research
+                  and practice can inform risk governance, and utilise peer
+                  reviews, to drive meaningful change. Moreover, it situates
+                  the challenges associated with resilience building tools
+                  within risk governance to support the development of
+                  interdisciplinary perspectives for integrated city resilience
+                  frameworks. Results of this research have been used to
+                  develop a peer review methodology and an international
+                  standard on conducting peer reviews for disaster risk
+                  reduction.",
+  keywords =     "city resilience, city peer review, disaster risk governance"
 }
 
 
@@ -1539,6 +1601,15 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   note =         {Currently available from
                   \url{http://people.brunel.ac.uk/~mastjjb/jeb/info.html}},
 }
+
+@TechReport{Beasley1998,
+  title =        {Heuristic algorithms for the unconstrained binary quadratic
+                  programming problem},
+  author =       Beasley,
+  address =      {London, England},
+  year =         1998,
+  institution =  {The Management School, Imperial College},
+ }
 
 @InProceedings{BecGotStu05,
   author =       {S. Becker and J. Gottlieb} #and# Stuetzle,
@@ -1867,9 +1938,9 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BeySch2002:es,
-  author =       {Hans-Georg Beyer and Hans-Paul Schwefel},
+  author =       {Hans-Georg Beyer} #and# Schwefel,
   title =        {Evolution stratagies: a comprehensive introduction},
-  journal =      natc,
+  journal =      natcomp,
   volume =       1,
   pages =        {3--52},
   year =         2002
@@ -2053,10 +2124,10 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   novelty of this study is the separation between the
                   higher-level algorithmic components related to
                   multi-objective optimization (MO), which characterize each
-                  particular MOEA, and the underlying parameters—such as
-                  evolutionary operators, population size, etc.—whose
+                  particular MOEA, and the underlying parameters-such as
+                  evolutionary operators, population size, etc.-whose
                   configuration may be tuned for each scenario. Instead of
-                  relying on a common or “default” parameter configuration that
+                  relying on a common or "default" parameter configuration that
                   may be low-performing for particular MOEAs or scenarios and
                   unintentionally biased, we tune the parameters of each MOEA
                   for each scenario using automatic algorithm configuration
@@ -2169,7 +2240,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   title =        {A survey on metaheuristics for stochastic combinatorial
                   optimization},
   author =       Bianchi_L #and# Dorigo #and# Gambardella #and# Gutjahr,
-  journal =      natc,
+  journal =      natcomp,
   volume =       8,
   number =       2,
   pages =        {239--287},
@@ -2238,11 +2309,11 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   algorithms. Our approach relies on the Gaussian process
                   interpretation of Kriging, and bases upon conditional
                   simulations. Using concepts from random set theory, we
-                  propose to adapt the Vorob’ev expectation and deviation to
+                  propose to adapt the Vorob'ev expectation and deviation to
                   capture the variability of the set of non-dominated
                   points. Numerical experiments illustrate the potential of the
                   proposed workflow, and it is shown on examples how Gaussian
-                  process simulations and the estimated Vorob’ev deviation can
+                  process simulations and the estimated Vorob'ev deviation can
                   be used to monitor the ability of Kriging-based
                   multi-objective optimization algorithms to accurately learn
                   the Pareto front.},
@@ -2251,7 +2322,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   author =       {Binois, M. and Ginsbourger, D. and Roustant, O.},
   year =         2015,
   keywords =     {Attainment function, Expected Hypervolume Improvement,
-                  Kriging, Multi-objective optimization, Vorob’ev expectation},
+                  Kriging, Multi-objective optimization, Vorob'ev expectation},
   pages =        {386--394},
 }
 
@@ -2274,10 +2345,8 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 
 @InCollection{BirChiSaeStu2011,
   author =       Birattari #and# Chiarandini #and# Saerens #and# Stuetzle,
-  year =         2011,
   title =        "Learning Graphical Models for Algorithm Configuration",
-  crossref = "CPAIOR2011",
-  
+  crossref =     "CPAIOR2011",
 }
 
 @InCollection{BirDicDor02:ants,
@@ -2372,17 +2441,48 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   author =       {Biscani, Francesco and Izzo, Dario and Yam, Chit Hong},
   booktitle =    icatt2010,
   year =         2010,
-  url =          {http://arxiv.org/abs/1004.3824}
+  url =          {http://arxiv.org/abs/1004.3824},
+  keywords = "PaGMO"
 }
 
 @Article{BisIzzYam2010:pagmo-arxiv,
   title =        {A Global Optimisation Toolbox for Massively Parallel
                   Engineering Optimisation},
-  author =       {Biscani, Francesco and Izzo, Dario and Yam, Chit
-                  Hong},
+  author =       {Biscani, Francesco and Izzo, Dario and Yam, Chit Hong},
   journal =      arxiv # {1004.3824},
   year =         2010,
-  url =          {http://arxiv.org/abs/1004.3824}
+  url =          {http://arxiv.org/abs/1004.3824},
+  keywords =     {PaGMO},
+  abstract =     {A software platform for global optimisation, called PaGMO,
+                  has been developed within the Advanced Concepts Team (ACT) at
+                  the European Space Agency, and was recently released as an
+                  open-source project. PaGMO is built to tackle
+                  high-dimensional global optimisation problems, and it has
+                  been successfully used to find solutions to real-life
+                  engineering problems among which the preliminary design of
+                  interplanetary spacecraft trajectories - both chemical
+                  (including multiple flybys and deep-space maneuvers) and
+                  low-thrust (limited, at the moment, to single phase
+                  trajectories), the inverse design of nano-structured
+                  radiators and the design of non-reactive controllers for
+                  planetary rovers. Featuring an arsenal of global and local
+                  optimisation algorithms (including genetic algorithms,
+                  differential evolution, simulated annealing, particle swarm
+                  optimisation, compass search, improved harmony search, and
+                  various interfaces to libraries for local optimisation such
+                  as SNOPT, IPOPT, GSL and NLopt), PaGMO is at its core a C++
+                  library which employs an object-oriented architecture
+                  providing a clean and easily-extensible optimisation
+                  framework. Adoption of multi-threaded programming ensures the
+                  efficient exploitation of modern multi-core architectures and
+                  allows for a straightforward implementation of the island
+                  model paradigm, in which multiple populations of candidate
+                  solutions asynchronously exchange information in order to
+                  speed-up and improve the optimisation process. In addition to
+                  the C++ interface, PaGMO's capabilities are exposed to the
+                  high-level language Python, so that it is possible to easily
+                  use PaGMO in an interactive session and take advantage of the
+                  numerous scientific Python libraries available.}
 }
 
 @Article{BisKerKot++16:ASlib,
@@ -2407,7 +2507,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       17,
   number =       170,
   pages =        {1--5},
-  aurl =         {http://jmlr.org/papers/v17/15-066.html},
+  eprint =         {http://jmlr.org/papers/v17/15-066.html},
 }
 
 @InCollection{BisMerTraPre12:gecco,
@@ -2423,6 +2523,16 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   author =       {Bishop, Christopher M.},
   year =         2006,
   publisher =    springer
+}
+
+@inproceedings{BiyMarAli2019acc,
+  author =       {Erdem Biyik and Jonathan Margoliash and Shahrouz Ryan Alimo
+                  and Dorsa Sadigh},
+  title =        {Efficient and Safe Exploration in Deterministic Markov
+                  Decision Processes with Unknown Transition Models},
+  pages =        {1792--1799},
+  crossref =     "ACC2019",
+  doi =          {10.23919/ACC.2019.8815276},
 }
 
 @Article{BlaRayEde2017:corr,
@@ -2466,7 +2576,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   case study on a bi-objective permutation flowshop scheduling
                   problem},
   pages =        {227--234},
-  year =         2017,
   crossref =     {GECCO2017},
   doi =          {10.1145/3071178.3071323},
 }
@@ -2559,7 +2668,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 
 @article{BluCaBle2015swarm,
   author =       Blum #and# "Borja Calvo" #and# Blesa,
-  title =        {Frog{COL} and Frog{MIS}: new decentralized algorithms for finding large independent sets in graphs},
+  title =        {{FrogCOL} and {FrogMIS}: new decentralized algorithms for finding large independent sets in graphs},
   journal =      swarm,
   year =         {2015},
   volume =       {9},
@@ -2623,7 +2732,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   title =        {Swarm Intelligence--Introduction and Applications},
   year =         2008,
   editor =       Blum #and# Merkle,
-  series =       natcomp,
+  series =       natcompser,
   publisher =    {Springer Verlag, Berlin, Germany}
 }
 
@@ -2805,6 +2914,17 @@ Los Angeles, CA},
   journal =      acs,
   volume =       1,
   pages =        {149--159},
+}
+
+@article{BotSch2019dominance,
+  title =        {Dominance for multi-objective robust optimization concepts},
+  author =       {Botte, Marco} #and# Schobel_A,
+  journal =      ejor,
+  volume =       273,
+  number =       2,
+  pages =        {430--440},
+  year =         2019,
+  publisher =    {Elsevier}
 }
 
 @Article{BouBluBou2012,
@@ -3123,7 +3243,7 @@ Los Angeles, CA},
 
 @InCollection{BreSch2011ea,
   author   =  {M\'aty\'as Brendel} #and# Schoenauer,
-  title    =  {Learn-and-Optimize: A Parameter Tuning Framework for Evolutionary AI Planning},
+  title    =  {Learn-and-Optimize: A Parameter Tuning Framework for Evolutionary {AI} Planning},
   crossref =  "EA2011",
   pages    =  {145--155},
   doi      =  {10.1007/978-3-642-35533-2_13}
@@ -3172,7 +3292,7 @@ Los Angeles, CA},
   Pages =        {745--752},
   doi =          {10.1145/2001576.2001678},
   crossref =     "GECCO2011",
-  aurl =         {http://docs.theinf.uni-jena.de/paper/2011GECCO.pdf},
+  eprint =         {http://docs.theinf.uni-jena.de/paper/2011GECCO.pdf},
 }
 
 @incollection{BriFri2012gecco,
@@ -3181,7 +3301,7 @@ Los Angeles, CA},
   Author =       Bringmann_K #and# Friedrich_T,
   Pages =        {457--464},
   doi =          {10.1145/2330163.2330229},
-  aurl =
+  eprint =
                   {http://docs.theinf.uni-jena.de/paper/2012GECCO_Hyp.pdf},
   crossref =     {GECCO2012},
 }
@@ -3302,13 +3422,12 @@ Los Angeles, CA},
 }
 
 
-@Inproceedings{BruRit2018cec, 
-  author    = Brum #and# Ritt, 
-  booktitle = {2018 IEEE Congress on Evolutionary Computation (CEC)}, 
-  title     = {Automatic Design of Heuristics for Minimizing the Makespan in Permutation Flow Shops}, 
-  year      = 2018, 
-  pages     = {1--8},
-  publisher = {IEEE}
+@Inproceedings{BruRit2018cec,
+  author =       Brum #and# Ritt,
+  title =        {Automatic Design of Heuristics for Minimizing the Makespan in
+                  Permutation Flow Shops},
+  crossref =     "CEC2018",
+  pages =        {1--8},
 }
 
 @InProceedings{BruRit2018evo,
@@ -3411,7 +3530,6 @@ Los Angeles, CA},
 @Inproceedings{BurHydKen2007gecco,
   author   = Burke_E #and# Hyde_M #and# Kendall_G #and# Woodward_J,
   title    = {Automatic Heuristic Generation with Genetic Programming: Evolving a Jack-of-all-trades or a Master of One},
-  year     = 2007,
   pages    = {1559--1565},
   doi      = {10.1145/1276958.1277273},
   crossref = "GECCO2007"
@@ -3607,7 +3725,7 @@ Los Angeles, CA},
   journal =      intsys,
   volume =       28,
   number =       2,
-  pages =        "15-–21",
+  pages =        "15--21",
   doi =          {10.1109/MIS.2013.30}
 }
 
@@ -3707,7 +3825,7 @@ Los Angeles, CA},
   number =       6,
   year =         2001,
   pages =        {779--806},
-  aurl =         {http://arxiv.org/abs/cs/0405092},
+  eprint =         {http://arxiv.org/abs/cs/0405092},
 }
 
 @Article{CatAbsFeiVig2014:cor,
@@ -4219,6 +4337,19 @@ Los Angeles, CA},
   pages =        {30--37},
 }
 
+@Article{Coe2002constraint,
+  author =       Coello,
+  title =        {Theoretical and numerical constraint-handling techniques used
+                  with evolutionary algorithms: a survey of the state of the
+                  art},
+  journal =      CMinAppMechEng,
+  year =         2002,
+  volume =       191,
+  number =       {11-12},
+  pages =        {1245--1287},
+  doi =          "10.1016/S0045-7825(01)00323-1"
+}
+
 @incollection{Coe2015multi,
   title =        {Multi-objective Evolutionary Algorithms in Real-World
                   Applications: Some Recent Results and Current Challenges},
@@ -4242,11 +4373,10 @@ Los Angeles, CA},
   author =       Coello #and# {Reyes-Sierra, Margarita},
   title =        {A Study of the Parallelization of a Coevolutionary
                   Multi-objective Evolutionary Algorithm},
-  year =         2004,
   crossref =     "MICAI2004",
   pages =        "688--697",
   keywords =     "IGD",
-  annote =       "first paper on IGD?"
+  annote =       "Introduces Inverted Generational Distance (IGD)"
 }
 
 @incollection{Coello2000cec,
@@ -4488,6 +4618,19 @@ Los Angeles, CA},
   doi =          {10.1111/itor.12631}
 }
 
+@incollection{CorKno2001pesa2,
+  author =       Corne #and# {Jerram, Nick R.} #and# Knowles #and# {Oates,
+                  Martin J.},
+  title =        {{PESA-II}: Region-Based Selection in Evolutionary
+                  Multiobjective Optimization},
+  crossref =     "GECCO2001",
+  pages =        {283--290},
+  numpages =     8,
+  doi =          "10.5555/2955239.2955289",
+  keywords =     "PESA-II"
+}
+
+
 @InCollection{CorKno2003nfl,
   author =       Corne #and# Knowles,
   title =        {No free lunch and free leftovers theorems for multiobjective
@@ -4529,12 +4672,12 @@ Los Angeles, CA},
 
 @inproceedings{CorRey2011gecco,
   author =       Corne #and# {Reynolds, Alan},
-  title =        {Evaluating optimization algorithms: bounds on the
-                  performance of optimizers on unseen problems},
+  title =        {Evaluating optimization algorithms: bounds on the performance
+                  of optimizers on unseen problems},
   crossref =     "GECCO2011",
   pages =        {707--710},
   doi =          {10.1145/2001858.2002073},
-  aurl =         {http://is.gd/evalopt}
+  supplement =   {http://is.gd/evalopt}
 }
 
 @InProceedings{CorViaHerMor2000bwas,
@@ -4987,6 +5130,7 @@ Los Angeles, CA},
   address =      {Chichester, UK}
 }
 
+
 @InCollection{DebAg1999polymut,
   author =       Deb #and# "S. Agrawal",
   title =        "A Niched-Penalty Approach for Constraint Handling in Genetic
@@ -5005,7 +5149,7 @@ Los Angeles, CA},
   number =       2,
   pages =        {115--148},
   year =         1995,
-  aurl =
+  eprint =
                   {http://www.complex-systems.com/abstracts/v09_i02_a02.html},
   keywords =     {SBX},
 }
@@ -5162,16 +5306,41 @@ Los Angeles, CA},
   keywords =     "scenario-based"
 }
 
+@Article{DecSor2012ejor,
+  author =       {Annelies De Corte} #and# Sorensen,
+  title =        {Optimisation of gravity-fed water distribution network
+                  design: A critical review},
+  journal =      ejor,
+  volume =       228,
+  number =       1,
+  pages =        {1--10},
+  doi =          "10.1016/j.ejor.2012.11.046",
+  year =         2013,
+}
+
 @Article{DecSor2016,
   author =       {Annelies De Corte} #and# Sorensen,
-  title =        {An Iterated Local Search Algorithm for Water Distribution Network
-               Design Optimization},
+  title =        {An Iterated Local Search Algorithm for Water Distribution
+                  Network Design Optimization},
   journal =      networks,
   year =         2016,
   volume =       67,
   number =       3,
   pages =        {187--198}
 }
+
+@Article{DecSor2016water,
+  author =       {Annelies De Corte} #and# Sorensen,
+  title =        {An Iterated Local Search Algorithm for multi-period water
+                  distribution network design optimization},
+  journal =      {Water},
+  volume =       8,
+  number =       8,
+  pages =        359,
+  doi =          "10.3390/w8080359",
+  year =         2016,
+}
+
 
 @InCollection{DeeKar1982,
   author = 	 {William A. {Dees, Jr.} and Patrick G. Karger},
@@ -5215,6 +5384,19 @@ Los Angeles, CA},
   pages =        {1213--1217}
 }
 
+@article{DelIorMar2016binpack,
+  title =        {Bin packing and cutting stock problems: Mathematical models
+                  and exact algorithms},
+  author =       {Delorme, Maxence} #and# Iori #and# Martello_S,
+  journal =      ejor,
+  volume =       255,
+  number =       1,
+  pages =        {1--20},
+  year =         2016,
+  publisher =    {Elsevier}
+}
+
+
 @Article{DelIorMarMon2016,
   author = 	 {Mauro Dell'Amico} #and# Iori #and# Martello_S #and# {Michele Monaci},
   title = 	 {Heuristic and Exact Algorithms for the Identical Parallel Machine Scheduling Problem},
@@ -5223,6 +5405,16 @@ Los Angeles, CA},
   volume = 	 20,
   number = 	 3,
   pages = 	 {333--344}
+}
+
+@article{DelIorMarc2018bpplib,
+  title =        {{BPPLIB}: a library for bin packing and cutting stock problems},
+  author =       {Delorme, Maxence} #and# Iori #and# Martello_S,
+  journal =      ol,
+  volume =       12,
+  number =       2,
+  pages =        {235--250},
+  year =         2018,
 }
 
 @article{DelIorNovStu2016,
@@ -5243,6 +5435,18 @@ Los Angeles, CA},
   year =         1993,
   volume =       41,
   pages =        {231--252}
+}
+
+@article{DemEichFli2015effects,
+  title =        {On the effects of combining objectives in multi-objective
+                  optimization},
+  author =       {Dempe, Stephan and Eichfelder, Gabriele and Fliege, J{\"o}rg},
+  journal =      mmor,
+  volume =       82,
+  number =       1,
+  pages =        {1--18},
+  year =         2015,
+  publisher =    {Springer}
 }
 
 @Article{DenAroGosPas1990,
@@ -5312,12 +5516,11 @@ Los Angeles, CA},
 }
 
 @Inproceedings{DesRit2018cec,
-  author    = DeSouza #and# Ritt,
-  booktitle ={2018 IEEE Congress on Evolutionary Computation (CEC)}, 
-  title     ={An Automatically Designed Recombination Heuristic for the Test-Assignment Problem}, 
-  year      = 2018,
-  publisher = {IEEE},
-  pages     ={1--8} 
+  author =       DeSouza #and# Ritt,
+  title =        {An Automatically Designed Recombination Heuristic for the
+                  Test-Assignment Problem},
+  crossref =     "CEC2018",
+  pages =        {1--8}
 }
 
 @Inproceedings{DesRit2018evo,
@@ -5450,7 +5653,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   Publisher =    jws,
   Title =        {\textsc{EasyLocal++}: An object-oriented framework
                   for flexible design of local search algorithms},
-  Url =          {http://www.diegm.uniud.it/satt/papers/DiSc03.pdf},
+  eprint =          {http://www.diegm.uniud.it/satt/papers/DiSc03.pdf},
   Volume =       33,
   Year =         2003
 }
@@ -6192,6 +6395,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    elsevier
 }
 
+@article{Ehr2006discussion,
+  title =        {A discussion of scalarization techniques for multiple
+                  objective integer programming},
+  author =       Ehrgott,
+  journal =      aor,
+  volume =       147,
+  number =       1,
+  pages =        {343--360},
+  year =         2006,
+  publisher =    {Springer}
+}
+
 @Article{EhrGan04,
   author =       Ehrgott #and# Gandibleux,
   title =        "Approximative Solution Methods for Combinatorial
@@ -6229,6 +6444,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   exact methods.  },
   crossref =     "BluBleRol2008hybrid",
   pages =        {221--259}
+}
+
+@Book{Ehrgott2005multicrit,
+  author =       Ehrgott,
+  title =        {Multicriteria Optimization},
+  publisher =    springer-berl,
+  year =         2005,
+  edition =      "2nd",
+  doi =          "10.1007/3-540-27659-9",
 }
 
 @Book{Ehrgott00:multicriteria,
@@ -6283,7 +6507,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Introduction to Evolutionary Computing},
   publisher =    springer,
   year =         2007,
-  series =       natcomp,
+  series =       natcompser,
   edition =      2,
   alias =        "EibSmi07"
 }
@@ -6429,7 +6653,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
 @inproceedings{EshSch1992,
   author =       Eshelman #and# Schaffer,
   title =        {Real-Coded Genetic Algorithms and Interval-Schemata},
-  year =         1992,
   pages =        {187--202},
   alias =        {DBLP:conf/foga/EshelmanS92},
   crossref =     {FOGA1992},
@@ -6460,6 +6683,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {88--99},
   crossref =     "ANTS2002",
 }
+
+@inCollection{FalLinHut2015spysmac,
+  title =        {{SpySMAC}: Automated configuration and performance analysis
+                  of {SAT} solvers},
+  author =       {Falkner, Stefan} #and# Lindauer_M #and# Hutter,
+  crossref =     "SAT2015",
+  doi =          "10.1007/978-3-319-24318-4_16",
+  pages =        {215--222},
+}
+
+
 @article{FanBif2013,
   title =        {Mining big data: current status, and forecast to the future},
   author =       {Fan, Wei and Bifet, Albert},
@@ -6762,7 +6996,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title    = {Iterated-greedy-based algorithms with Beam Search Initialization for the Permutation Flowshop to Minimise Total Tardiness},
   journal  = esa,
   volume   = 94,
-  pages    = {58 -- 69},
+  pages    = {58--69},
   year     = 2018,
 }
 
@@ -6839,6 +7073,22 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       3,
   pages =        {305--323},
   year =         2003,
+}
+
+@article{FigFonHalKla2017easy,
+  title =        {Easy to say they are Hard, but Hard to see they are
+                  Easy-Towards a Categorization of Tractable Multiobjective
+                  Combinatorial Optimization Problems},
+  author =       Figueira #and# Fonseca #and# {Halffmann, Pascal} #and#
+                  Klamroth #and# Paquete #and# {Ruzika, Stefan and Schulze,
+                  Britta and Stiglmayr, Michael and Willems, David},
+  journal =      jmcda,
+  volume =       24,
+  number =       {1-2},
+  pages =        {82--98},
+  year =         2017,
+  publisher =    {Wiley Online Library},
+  doi =          "10.1002/mcda.1574",
 }
 
 @InCollection{FinVos2002,
@@ -7120,6 +7370,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   exponent even further.},
 }
 
+@article{ForKea2009surrogate,
+  author =       {Forrester, Alexander I. J. and Keane, Andy J.},
+  title =        {Recent advances in surrogate-based optimization},
+  journal =      {Progress in Aerospace Sciences},
+  volume =       45,
+  number =       {1-3},
+  pages =        {50--79},
+  doi =          {10.1016/j.paerosci.2008.11.001},
+  year =         2009,
+  keywords =     "Kriging; Gaussian Process; EGO; Design of Experiments"
+}
+
 @inCollection{FosBickHardKok2007,
   author =       {Manuel F\"{o}rster and Bettina Bickel and Bernd
                   Hardung and Gabriella K\'{o}kai},
@@ -7250,7 +7512,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title   = "Revisiting simulated annealing: A component-based analysis",
   journal = cor,
   volume  = 104,
-  pages   = {191 -- 206},
+  pages   = {191--206},
   year    = 2019,
   doi     = {10.1016/j.cor.2018.12.015},
 }
@@ -7289,13 +7551,13 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   a new mutation operator and analyze its performance on the
                   (1+1) Evolutionary Algorithm (EA). Our analyses show that
                   this mutation operator competes with pre-existing ones, when
-                  used by the (1+1)Â EA on classes of problems for which
+                  used by the (1+1)-EA on classes of problems for which
                   results on the other mutation operators are available. We
                   present a ``jump'' function for which the performance of the
-                  (1+1)Â EA using any static uniform mutation and any restart
-                  strategy can be worse than the performance of the (1+1)Â EA
+                  (1+1)-EA using any static uniform mutation and any restart
+                  strategy can be worse than the performance of the (1+1)-EA
                   using our mutation operator with no restarts. We show that
-                  the (1+1)Â EA using our mutation operator finds a
+                  the (1+1)-EA using our mutation operator finds a
                   (1/3)-approximation ratio on any non-negative submodular
                   function in polynomial time. This performance matches that of
                   combinatorial local search algorithms specifically designed
@@ -7497,7 +7759,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Algorithm Survival Analysis},
   crossref =     "BarChiPaqPre2010emaoa",
   pages =        {161--184},
-  aurl = {http://como.vub.ac.be/~mgagliol/Gagliolo10Survival.pdf},
+  eprint = {http://como.vub.ac.be/~mgagliol/Gagliolo10Survival.pdf},
   doi =          {10.1007/978-3-642-02538-9_7},
   abstract =     {Algorithm selection is typically based on models of
                   algorithm performance,learned during a separate
@@ -7526,6 +7788,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2002,
   volume =       53,
   pages =        {895--906}
+}
+
+@article{GalHao1999heacol,
+  title =        {Hybrid evolutionary algorithms for graph coloring},
+  author =       {Galinier, Philippe} #and# Hao,
+  journal =      jco,
+  volume =       3,
+  number =       4,
+  pages =        {379--397},
+  year =         1999,
+  publisher =    {Springer}
 }
 
 @Article{GamDor00:informs,
@@ -7669,6 +7942,16 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref=      {LION2008}
 }
 
+@article{GarFer2015saferl,
+  title =        {A comprehensive survey on safe reinforcement learning},
+  author =       {Garc{\'\i}a, Javier and Fern{\'a}ndez, Fernando},
+  journal =      jmlr,
+  volume =       16,
+  number =       1,
+  pages =        {1437--1480},
+  year =         2015
+}
+
 @article{GarFerLueHer2010tests,
   title =        {Advanced nonparametric tests for multiple comparisons in the
                   design of experiments in computational intelligence and data
@@ -7771,7 +8054,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   author =       {Melvin, Gauci} #and# {Tony J. Dodd} #and# Gross_R,
   title =        {Why `{GSA}: a gravitational search algorithm' is not
                   genuinely based on the law of gravity},
-  journal =      natc,
+  journal =      natcomp,
   year =         2012,
   volume =       11,
   number =       4,
@@ -7821,7 +8104,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 
 @TechReport{GenGraMac1997hownotto,
   author =       Gent_IP #and# {Stuart A. Grant and Ewen MacIntyre and Patrick
-                  Prosser and Paul Shaw and Barbara M Smith and Toby Walsh},
+                  Prosser and Paul Shaw and Barbara M. Smith and Toby Walsh},
   title =        {How Not To Do It},
   institution =  {School of Computer Studies, University of Leeds},
   year =         1997,
@@ -7926,7 +8209,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   only be approximated. We highlight key concepts with examples
                   that show the potential for interchange between computer
                   science, cognitive science, and neuroscience.},
-  aurl =         {https://science.sciencemag.org/content/349/6245/273},
   eprint =       {https://science.sciencemag.org/content/349/6245/273.full.pdf},
   journal =      science
 }
@@ -8293,11 +8575,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
 @InCollection{Grunert01,
   author =       Grunert_da_Fonseca #and# Fonseca #and# Hall_Andreia,
   key =          {Fonseca et al., 2001},
-  title =        {Inferential Performance Assessment of Stochastic
-                  Optimisers and the Attainment Function},
+  title =        {Inferential Performance Assessment of Stochastic Optimisers
+                  and the Attainment Function},
   pages =        "213--225",
   crossref =     "EMO2001",
   alias =        {Fonseca01},
+  doi =          "10.1007/3-540-44719-9_15",
+  annote =       "Proposed looking at anytime behavior as a multi-objective
+                  problem",
+  keywords =     "EAF"
 }
 
 @Incollection{GueMonSli04:ants2004,
@@ -8549,7 +8835,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       1,
   pages =        {25--34},
   year =         1969,
-  aurl =         {https://www.jstor.org/stable/1811090},
+  eprint =         {https://www.jstor.org/stable/1811090},
   keywords =     "stochastic dominance"
 }
 
@@ -8567,6 +8853,19 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    {Haestad Methods, Inc., Haestad Press},
   year =         2003,
   edition =      {First},
+}
+
+@article{HaiLasWis1971bicriterion,
+  title =        {On a bicriterion formation of the problems of integrated
+                  system identification and system optimization},
+  author =       {Haimes, Y. and Lasdon, L. and Da Wismer, D.},
+  journal =      tsmc,
+  volume =       1,
+  number =       3,
+  pages =        {296--297},
+  year =         1971,
+  doi =          "10.1109/TSMC.1971.4308298",
+  keywords =     "epsilon-constraint method"
 }
 
 @Article{HajLin1992decomposition,
@@ -8623,10 +8922,11 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{HamStu2017,
-  author = 	 Hammami #and# Stuetzle,
-  title = 	 {A Computational Study of Neighborhood Operators for Job-Shop Scheduling Problems with Regular Objectives},
-  crossref={EVOCOP2017},
-  pages = 	 {1--17},
+  author =       Hammami #and# Stuetzle,
+  title =        {A Computational Study of Neighborhood Operators for Job-Shop
+                  Scheduling Problems with Regular Objectives},
+  crossref =     {EVOCOP2017},
+  pages =        {1--17},
 }
 
 @InCollection{Han1997,
@@ -8637,14 +8937,13 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @TECHREPORT{HanAugFin2009bbob_setup,
-  author =       Hansen_N #and# Auger_A #and# {Finck, S. and Ros,
-                  R.},
-  title =        {Real-Parameter Black-Box Optimization Benchmarking
-                  2009: Experimental setup},
+  author =       Hansen_N #and# Auger_A #and# {Finck, S. and Ros, R.},
+  title =        {Real-Parameter Black-Box Optimization Benchmarking 2009:
+                  Experimental setup},
   institution =  inria,
   year =         2009,
   number =       {RR-6828},
-  annote =          {\url{http://coco.gforge.inria.fr/bbob2012-downloads}}
+  annote =       {\url{http://coco.gforge.inria.fr/bbob2012-downloads}}
 }
 
 @article{HanAugMer2016coco,
@@ -9992,10 +10291,10 @@ Traveling Salesman Heuristic},
 
 
 @Article{IdeSch2016,
-  author =       "Ide, Jonas and Sch{\"o}bel, Anita",
+  author =       "Ide, Jonas" #and# Schobel_A,
   title =        "Robustness for uncertain multi-objective optimization: a
                   survey and analysis of different concepts",
-  journal =      ors,
+  journal =      orspec,
   year =         2016,
   volume =       38,
   number =       1,
@@ -10543,13 +10842,28 @@ Traveling Salesman Heuristic},
 
 @Article{JonSchWel98go,
   author =       {D. R. Jones and M. Schonlau and W. J. Welch},
-  title =        {Efficient Global Optimization of Expensive Black-Box Functions},
+  title =        {Efficient Global Optimization of Expensive Black-Box
+                  Functions},
   journal =      jgo,
   year =         1998,
   volume =       13,
   number =       4,
-  pages =        {455--492}
+  pages =        {455--492},
+  keywords =     "EGO"
 }
+
+@article{JonSpe1992formal,
+  title =        {A formal analysis of the role of multi-point crossover in
+                  genetic algorithms},
+  author =       DeJong #and# {Spears, William M.},
+  journal =      amai,
+  volume =       5,
+  number =       1,
+  pages =        {1--26},
+  year =         1992,
+  publisher =    {Springer}
+}
+
 
 @Article{JosCle1999:jair,
   author =       {D. E. Joslin and D. P. Clements},
@@ -10700,6 +11014,22 @@ Traveling Salesman Heuristic},
   year =         2003,
 }
 
+@Inproceedings{KajIkeHaj2009cec,
+  author =       {H. Kaji and Ikeda, Kokolo and Hajime Kita},
+  title =        {Avoidance of constraint violation for experiment-based
+                  evolutionary multi-objective optimization},
+  pages =        {2756--2763},
+  crossref =     "CEC2009",
+  keywords =     {evolutionary computation;constraint
+                  violation;experiment-based evolutionary multiobjective
+                  optimization;evolutionary algorithm;risky-constraint
+                  violation;Constraint optimization;Diesel
+                  engines;Calibration;Evolutionary computation;Electric
+                  breakdown;Optimization methods;Uncertainty;Computational
+                  fluid dynamics;Cost function;Temperature},
+  doi =          {10.1109/CEC.2009.4983288},
+}
+
 @Article{KanHeWei2013,
   author =       {Qinma Kang and Hong He and Jun Wei},
   title =        {An Effective Iterated Greedy Algorithm for Reliability-oriented Task Allocation in Distributed Computing Systems},
@@ -10796,6 +11126,15 @@ Traveling Salesman Heuristic},
   volume =       279,
   pages =        {383--395}
 }
+
+@inCollection{KarParStu2018lion,
+  title =        {Algorithm Configuration: Learning policies for the quick
+                  termination of poor performers},
+  author =       {Karapetyan, Daniel and Parkes, Andrew J.}#and# Stuetzle,
+  crossref =     "LION2018",
+  pages =        {220--224},
+}
+
 
 @article{KasNatRee2017ems,
   title =        {Many objective robust decision making for complex
@@ -10915,9 +11254,8 @@ Traveling Salesman Heuristic},
 
 @InProceedings{KelPol2007cec,
   author =       {Robert E. Keller and Riccardo Poli},
-  booktitle =    {2007 IEEE Congress on Evolutionary Computation},
+  crossref =     "CEC2007",
   title =        {Linear genetic programming of parsimonious metaheuristics},
-  year =         2007,
   pages =        {4508--4515},
   doi =          {10.1109/CEC.2007.4425062}
 }
@@ -11213,7 +11551,7 @@ Traveling Salesman Heuristic},
   crossref =     {ISDA2005},
   annote =       {\url{http://dbkgroup.org/knowles/plot_attainments/}},
   doi =          {10.1109/ISDA.2005.15},
-  pdf =         {\url{http://dbkgroup.org/knowles/ISDA05_Knowles_J.pdf}},
+  eprint =         {http://dbkgroup.org/knowles/ISDA05_Knowles_J.pdf},
 }
 
 @Article{Kno2005tec,
@@ -11226,7 +11564,18 @@ Traveling Salesman Heuristic},
   volume =       10,
   number =       1,
   pages =        {50--66},
-  keywords =     {ParEgo, online, metamodel},
+  keywords =     {ParEGO, online, metamodel},
+}
+
+@article{Kno2009closed,
+  author =       Knowles,
+  title =        "Closed-loop evolutionary multiobjective optimization",
+  journal =      cim,
+  volume =       4,
+  issue =        3,
+  pages =        "77--91",
+  doi =          "10.1109/MCI.2009.933095",
+  year =         2009
 }
 
 @article{KnoCor00paes,
@@ -11268,14 +11617,17 @@ Traveling Salesman Heuristic},
 
 @Article{KnoCor2003tec,
   author =       Knowles #and# Corne,
-  title =        {Properties of an Adaptive Archiving Algorithm for
-                  Storing Nondominated Vectors},
+  title =        {Properties of an Adaptive Archiving Algorithm for Storing
+                  Nondominated Vectors},
   journal =      tec,
   year =         2003,
   volume =       7,
   number =       2,
   pages =        {100--116},
   month =        apr,
+  keywords = "S-metric, hypervolume",
+  annote =       "Proposed to use S-metric (hypervolume metric) for
+                  environmental selection"
 }
 
 @InCollection{KnoCor2004lnems,
@@ -11328,7 +11680,7 @@ Traveling Salesman Heuristic},
   number =       214,
   month =        feb,
   note =         {Revised version},
-  aurl =         {http://dbkgroup.org/knowles/TIK214b.pdf},
+  eprint =         {http://dbkgroup.org/knowles/TIK214b.pdf},
   pdf =          {KnoThiZit06- Tutorial Performance Assessment-revised.pdf}
 }
 
@@ -11342,8 +11694,8 @@ Traveling Salesman Heuristic},
 }
 
 @Article{KocGloAli2004ors,
-  author =       "Kochenberger, Gary A.  and Glover, Fred and Alidaee, Bahram
-                  and Rego, Cesar",
+  author =       Kochenberger#and# Glover_F #and# {Alidaee, Bahram and Rego,
+                  Cesar},
   title =        "A unified modeling and solution framework for combinatorial
                   optimization problems",
   journal =      ors,
@@ -11351,6 +11703,18 @@ Traveling Salesman Heuristic},
   volume =       26,
   number =       2,
   pages =        "237--250"
+}
+
+@article{KocHaoGlo2014bqap,
+  title =        {The unconstrained binary quadratic programming problem: a
+                  survey},
+  author =       Kochenberger#and# Hao #and# Glover_F #and# {Lewis, Mark} #and#
+                  {L{\"u}, Zhipeng and Wang, Haibo and Wang, Yang},
+  journal =      jco,
+  volume =       28,
+  number =       1,
+  pages =        {58--81},
+  year =         2014,
 }
 
 @article{Koe2009jmcda,
@@ -11727,11 +12091,11 @@ Traveling Salesman Heuristic},
 }
 
 @Book{KruTan1978,
-  author = {William H. Kruskal and Judith M. Tanur},
-  year = {1978},
-  title={Linear Hypotheses},
-  publisher={Free Press},
-  volume={1}
+  author =       {William H. Kruskal and Judith M. Tanur},
+  year =         1978,
+  title =        {Linear Hypotheses},
+  publisher =    {Free Press},
+  volume =       1
 }
 
 @Article{KuhBie2016:cor,
@@ -12035,7 +12399,7 @@ Traveling Salesman Heuristic},
   Title =        {Running time analysis of evolutionary algorithms on a
                   simplified multiobjective knapsack problem},
   Volume =       3,
-  Journal =      natc,
+  Journal =      natcomp,
   Number =       1,
   Pages =        {37--51},
   Year =         2004
@@ -12210,6 +12574,25 @@ Traveling Salesman Heuristic},
   pages =        {1--12},
   crossref =     "ANTS2004",
 }
+
+@book{Lewis2016,
+  title =        {A Guide to Graph Colouring: Algorithms and Applications},
+  author =       {Lewis, R. M. R.},
+  year =         2016,
+  doi =          {10.1007/978-3-319-25730-3},
+  publisher =    springer-cham,
+  annote =       "Supplementary material available at \cite{Lewis2016sup}",
+}
+
+@Misc{Lewis2016sup,
+  author =       Lewis_R,
+  title =        {Suite of Graph Colouring Algorithms -- Supplementary Material
+                  to the Book ``{A} Guide to Graph Colouring: Algorithms and
+                  Applications''},
+  howpublished = {\url{http://rhydlewis.eu/resources/gCol.zip}},
+  year =         2016
+}
+
 
 @inCollection{LeyNudSho2002,
   title =        {Learning the Empirical Hardness of Optimization Problems: The
@@ -12676,6 +13059,40 @@ Optimization},
   pages =        {1--12}
 }
 
+@article{LodMarVig1999binpack,
+  title =        {Heuristic and metaheuristic approaches for a class of
+                  two-dimensional bin packing problems},
+  author =       Lodi #and# Martello_S #and# {Vigo, Daniele},
+  journal =      informs,
+  volume =       11,
+  number =       4,
+  pages =        {345--357},
+  year =         1999,
+  publisher =    {INFORMS}
+}
+
+
+@article{LodMarVig2004tspack,
+  title =        {{TSpack}: a unified tabu search code for multi-dimensional bin
+                  packing problems},
+  author =       Lodi #and# Martello_S #and# {Vigo, Daniele},
+  journal =      aor,
+  volume =       131,
+  number =       {1-4},
+  pages =        {203--213},
+  year =         2004,
+  publisher =    {Springer}
+}
+
+@Misc{LodiEtAl2004sup,
+  author =       Lodi #and# Martello_S #and# {Vigo, Daniele},
+  title =        {Two- and Three-Dimensional Bin Packing -- Source Code of
+                  {TSpack}},
+  howpublished =
+                  {\url{http://or.dei.unibo.it/research_pages/ORcodes/TSpack.html}},
+  year =         2004
+}
+
 @inProceedings{LohNow2013faster,
   title =        {Faster {H}oeffding Racing: {B}ernstein Races via Jackknife
                   Estimates},
@@ -13057,7 +13474,7 @@ Optimization},
   pages =        {337--346},
   publisher =    "{ASCE}",
   pdf =          {LopezPrasadPaechter08-jwrpm.pdf},
-  aurl =          {http://link.aip.org/link/?QWR/134/337/1},
+  eprint =          {http://link.aip.org/link/?QWR/134/337/1},
   doi =         {10.1061/(ASCE)0733-9496(2008)134:4(337)},
 abstract = {Reducing energy consumption of water distribution
   networks has never had more significance than today. The greatest
@@ -13390,7 +13807,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   school =       {School of Engineering and the Built Environment},
   year =         2009,
   address =      {Edinburgh Napier University, UK},
-  url =          {http://researchrepository.napier.ac.uk/3044/},
+  url =          {http://researchrepository.napier.ac.uk/id/eprint/3044},
 }
 
 @InCollection{LosSchSeb2012ppsn,
@@ -13693,10 +14110,11 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   http = {http://intl.ieeexplore.ieee.org/xpl/freeabs_all.jsp?tp=&arnumber=501705&isnumber=10616},
 }
 
+
 @InProceedings{Mad2002pdea,
   title =        {Multiobjective optimization using a {P}areto differential
                   evolution approach},
-  author =       {Madavan, Nateri K},
+  author =       {Madavan, Nateri K.},
   crossref =     {WCCI2002},
   pages =        {1145--1150}
 }
@@ -13740,8 +14158,8 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
 @Article{MaiRon2012,
   title =        {New heuristics for total tardiness minimization in
                   a flexible flowshop},
-  author =       {Mainieri, Guilherme B and Ronconi, D{\'e}bora P},
-  journal =      {Optimization Letters},
+  author =       {Mainieri, Guilherme B. and Ronconi, D{\'e}bora P.},
+  journal =      ol,
   pages =        {1--20},
   year =         2012
 }
@@ -13780,13 +14198,22 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
 
 @Article{Males85,
   author =       Males # and # Clark # and # Wehrman # and # Gateset,
-  title =        " Algorithm for mixing problems in water systems",
+  title =        "Algorithm for mixing problems in water systems",
   journal =      jhe,
   year =         1985,
   volume =       111,
   number =       2,
   pages =        {206--219},
-  note =         notreadyet,
+}
+
+@inCollection{MalitskyEtAl2013tuning,
+  title =        {Tuning parameters of large neighborhood search for the
+                  machine reassignment problem},
+  author =       {Malitsky, Yuri and Mehta, Deepak and O’Sullivan, Barry and
+                  Simonis, Helmut},
+  crossref =     "CPAIOR2013",
+  pages =        {176--192},
+  doi =          "10.1007/978-3-642-38171-3_12",
 }
 
 @Article{Man1999:joc,
@@ -14180,7 +14607,7 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
   pages =        {372--379},
   keywords =     {water supply; pumps; Markov processes; cost optimal
                   control},
-  aurl =          {http://link.aip.org/link/?QWR/129/372/1},
+  eprint =          {http://link.aip.org/link/?QWR/129/372/1},
   doi =          {10.1061/(ASCE)0733-9496(2003)129:5(372)}
 }
 
@@ -14218,6 +14645,18 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
                   solutions in a few minutes. Iterative recalibration
                   ensures that the solution agrees closely with the
                   results from a full hydraulic simulation.",
+}
+
+@article{McDermott2020nfl,
+  author =       {James McDermott},
+  title =        {When and Why Metaheuristics Researchers can Ignore "No Free
+                  Lunch" Theorems},
+  journal =      sncs,
+  volume =       1,
+  number =       60,
+  pages =        {1--18},
+  year =         2020,
+  doi =          {10.1007/s42979-020-0063-3},
 }
 
 @article{McG1992vrt,
@@ -14347,9 +14786,9 @@ abstract = {Optimisation algorithms with good anytime behaviour try to return
 }
 
 @inProceedings{MenCoe2015gde,
-  author =       {A. Menchaca-Mendez} #and# Coello,
+  author =       {Menchaca-Mendez, Adriana} #and# Coello,
   crossref =     {CEC2015},
-  title =        {{GDE-MOEA}: A new {MOEA} based on the generational distance
+  title =        {{GDE-MOEA}: A New {MOEA} based on the generational distance
                   indicator and $\epsilon$-dominance},
   pages =        {947--955},
 }
@@ -14668,6 +15107,17 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   pages =        298
 }
 
+@article{MieMusSte2014nimbus,
+  title =        {Interactive multiobjective optimization with {NIMBUS} for
+                  decision making under uncertainty},
+  author =       Miettinen #and# {Mustajoki, Jyri} #and# Stewart_TJ,
+  journal =      orspec,
+  volume =       36,
+  number =       1,
+  pages =        {39--56},
+  year =         2014,
+}
+
 @incollection{MieRuiWie08interactive,
   author =       Miettinen #and# Ruiz_Francisco #and# Wierzbicki,
   title =        {Introduction to Multiobjective Optimization:
@@ -14694,7 +15144,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 @article{MilAnd2005repl,
   Author =       {R. B. {Millar} and M. J. {Anderson}},
   Title =        {Remedies for pseudoreplication},
-  Journal =      {Fisheries Research},
+  Journal =      fishres,
   volume =       70,
   number =       {2--3},
   Pages =        {397--407},
@@ -15313,9 +15763,27 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   volume =       25,
   number =       2,
   pages =        {346--363},
-  keywords =     {TSP, EAX, evolutionary algorithms}
+  doi =          "10.1287/ijoc.1120.0506",
+  keywords =     {TSP, EAX, evolutionary algorithms},
+  abstract =     {This paper presents a genetic algorithm (GA) for solving the
+                  traveling salesman problem (TSP). To construct a powerful GA,
+                  we use edge assembly crossover (EAX) and make substantial
+                  enhancements to it: (i) localization of EAX together with its
+                  efficient implementation and (ii) the use of a local search
+                  procedure in EAX to determine good combinations of building
+                  blocks of parent solutions for generating even better
+                  offspring solutions from very high-quality parent
+                  solutions. In addition, we develop (iii) an innovative
+                  selection model for maintaining population diversity at a
+                  negligible computational cost. Experimental results on
+                  well-studied TSP benchmarks demonstrate that the proposed GA
+                  outperforms state-of-the-art heuristic algorithms in finding
+                  very high-quality solutions on instances with up to 200,000
+                  cities. In contrast to the state-of-the-art TSP heuristics,
+                  which are all based on the Lin-Kernighan (LK) algorithm, our
+                  GA achieves top performance without using an LK-based
+                  algorithm.}
 }
-
 
 @article{NagRosMar2019:eo,
   title   = {High-performing heuristics to minimize flowtime in no-idle permutation flowshop},
@@ -15514,7 +15982,8 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   year =         2014,
   volume =       22,
   number =       1,
-  pages =        {105--138}}
+  pages =        {105--138}
+}
 
 @Article{NguZhaJohChe14:tec,
   author =       {Su Nguyen and Mengjie Zhang and Mark Johnston} #and# Tan_KC,
@@ -15786,12 +16255,14 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 
 @Article{Oltean05,
   author =       {Mihai Oltean},
-  title =        {Evolving Evoluionary Algorithms Using Linear Genetic Programming},
+  title =        {Evolving Evolutionary Algorithms Using Linear Genetic
+                  Programming},
   journal =      ec,
   year =         2005,
   volume =       13,
   number =       3,
-  pages =        {387--410}
+  pages =        {387--410},
+  doi =          {10.1162/1063656054794815}
 }
 
 @article{OneRya2001tec,
@@ -16589,7 +17060,6 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   author =       Perez_L #and# Pagnozzi #and# Franzin #and# Stuetzle,
   title =        "Automatic Configuration of {GCC} Using Irace",
   crossref =     "EA2017",
-  year =         2018,
   pages =        "202--216",
   abstract =     "Automatic algorithm configuration techniques have proved to
                   be successful in finding performance-optimizing parameter
@@ -16635,7 +17105,10 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   title =        {Multiobjective evolutionary optimization of traffic flow and
                   pollution in {M}ontevideo, {U}ruguay},
   year =         2018,
-  alias =        "Peres2018"
+  alias =        "Peres2018",
+  volume =       70,
+  pages =        {472--485},
+  publisher =    {Elsevier}
 }
 
 @Article{PesUchAraRod2010,
@@ -16922,7 +17395,8 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   Optimization},
   author =       {Price, Kenneth and Storn, Rainer M. and Lampinen, Jouni A.},
   year =         2005,
-  publisher =    springer-ny
+  publisher =    springer-ny,
+  doi =          "10.1007/3-540-31306-0"
 }
 
 @article{ProBisBou2018tuna,
@@ -17245,7 +17719,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 }
 
 @phdthesis{Rec1971PhD,
-  author =       {I. Rechenberg},
+  author =       Rechenberg,
   title =        {Evolutionsstrategie: {O}ptimierung technischer {S}ysteme
                   nach {P}rinzipien der biologischen {E}volution},
   school =       {Department of Process Engineering, Technical
@@ -17254,12 +17728,26 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 }
 
 @Book{Rec1973,
-  author = 	 {I. Rechenberg},
+  author = 	 Rechenberg,
   title = 	 {Evolutionsstrategie: {O}ptimierung technischer {S}ysteme
                   nach {P}rinzipien der biologischen {E}volution},
   publisher = 	 {Frommann-Holzboog, Stuttgart, Germany},
   year = 	 1973
 }
+
+@article{Rech2000case,
+  title =        {Case studies in evolutionary experimentation and computation},
+  author =       Rechenberg,
+  journal =      CMinAppMechEng,
+  volume =       186,
+  number =       {2-4},
+  pages =        {125--140},
+  year =         2000,
+  doi =          "10.1016/S0045-7825(99)00381-3",
+  publisher =    {Elsevier}
+}
+
+
 
 @InCollection{Ree2010:ga,
   author =       Reeves_CR,
@@ -17285,7 +17773,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   volume =       55,
   number =       7,
   year =         2004,
-  aurl =         {http://www.jstor.org/stable/4102015}
+  eprint =         {http://www.jstor.org/stable/4102015}
 }
 
 @article{ReeHadHerKas2013water,
@@ -17762,13 +18250,15 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 }
 
 @InProceedings{SUMO2011,
-  author =       {Behrisch, Michael and Bieker, Laura and Erdmann, Jakob} #and# Krajzewicz_D,
+  author =       {Behrisch, Michael and Bieker, Laura and Erdmann, Jakob} #and#
+                  Krajzewicz_D,
   title =        "{SUMO} - {S}imulation of {U}rban {MO}bility: An Overview",
   booktitle =    {SIMUL 2011, The Third International Conference on Advances in
                   System Simulation},
   year =         2011,
   pages =        {63--68},
-  address =      {Barcelona, Spain}
+  address =      {Barcelona, Spain},
+  organization = {ThinkMind}
 }
 
 @Article{SabAyoKen2013tec, 
@@ -18006,6 +18496,16 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   keywords =     {VEGA},
 }
 
+@inproceedings{Sch1996exploiting,
+  title =        {Exploiting model uncertainty estimates for safe dynamic
+                  control learning},
+  author =       Schneider_JG,
+  crossref =     "NIPS1996",
+  pages =        {1047--1053},
+  eprint =
+                  {http://papers.nips.cc/paper/1317-exploiting-model-uncertainty-estimates-for-safe-dynamic-control-learning},
+}
+
 @article{SchDoeHar09,
   author =       Schilde #and# Doerner #and# Hartl #and# "Guenter
                   Kiechle",
@@ -18091,7 +18591,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   crossref =     "LION2012",
   keywords =     {Quantifying Homogeneity; Empirical Analysis;
                   Parameter Optimization; Algorithm Configuration},
-  author =       Schneider #and# Hoos,
+  author =       Schneider_M #and# Hoos,
   pages =        {190--204},
   doi =          {10.1007/978-3-642-34413-8_14},
 }
@@ -18170,7 +18670,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   number =       2,
   pages =        "139--171",
   year =         2000,
-  author =       "Gerhard Schrimpf and Johannes Schneider and Hermann
+  author =       "Gerhard Schrimpf and Schneider, Johannes and Hermann
                   Stamm-Wilbrandt and Gunter Dueck"
 }
 
@@ -18417,7 +18917,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   year =         2018,
   school =       {UCT Statistical sciences},
   address =      {South Africa},
-  aurl =
+  eprint =
                   {https://open.uct.ac.za/bitstream/handle/11427/28122/thesis_sci_2018_shavazipour_babooshka.pdf?sequence=1}
 }
 
@@ -18445,6 +18945,19 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   publisher =    chapman,
   Year =         2011,
   Edition =      {Fifth}
+}
+
+@article{ShiBac2009niching,
+  title =        {Niching with derandomized evolution strategies in artificial
+                  and real-world landscapes},
+  author =       Shir_OM #and# Baeck_Thomas,
+  journal =      natcomp,
+  volume =       8,
+  number =       1,
+  pages =        {171--196},
+  year =         2009,
+  doi =          "10.1007/s11047-007-9065-5",
+  publisher =    {Springer}
 }
 
 @Incollection{ShiEbe1998,
@@ -18567,7 +19080,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   number =       1,
   pages =        {99--118},
   year =         1955,
-  aurl =         {http://www.jstor.org/stable/1884852}
+  eprint =         {http://www.jstor.org/stable/1884852}
 }
 
 @InCollection{Simpson99,
@@ -18606,6 +19119,23 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   author =       Slowinski,
   howpublished = {Evolutionary Multi-Criterion Optimization, EMO 2011},
   note =         {Keynote talk}
+}
+
+
+
+@article{SmaMcCAll2011efficient,
+  title =        {Efficient discovery of anti-inflammatory small-molecule
+                  combinations using evolutionary computing},
+  author =       {Small, Ben G. and McColl, Barry W.} #and# Allmendinger #and#
+                  {Pahle, J{\"u}rgen and L{\'o}pez-Castej{\'o}n, Gloria and
+                  Rothwell, Nancy J.} #and# Knowles #and# {Mendes, Pedro and
+                  Brough, David and Kell, Douglas B.},
+  journal =      naturechembio,
+  volume =       7,
+  number =       12,
+  pages =        {902--908},
+  year =         2011,
+  publisher =    {Nature Publishing Group}
 }
 
 @Article{SmiBow2015:cor,
@@ -19384,6 +19914,71 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   Laboratory, IIT Kanpur)},
 }
 
+@InProceedings{SuiGotBur2015icml,
+  title =        {Safe Exploration for Optimization with {G}aussian Processes},
+  author =       {Sui, Yanan and Alkis Gotovos and Burdick, Joel W. and Andreas
+                  Krause},
+  pages =        {997--1005},
+  crossref =     "ICML2015",
+  pdf =          {http://proceedings.mlr.press/v37/sui15.pdf},
+  eprint =       {http://proceedings.mlr.press/v37/sui15.html},
+  abstract =     {We consider sequential decision problems under uncertainty,
+                  where we seek to optimize an unknown function from noisy
+                  samples. This requires balancing exploration (learning about
+                  the objective) and exploitation (localizing the maximum), a
+                  problem well-studied in the multi-armed bandit literature. In
+                  many applications, however, we require that the sampled
+                  function values exceed some prespecified "safety" threshold,
+                  a requirement that existing algorithms fail to meet. Examples
+                  include medical applications where patient comfort must be
+                  guaranteed, recommender systems aiming to avoid user
+                  dissatisfaction, and robotic control, where one seeks to
+                  avoid controls causing physical harm to the platform. We
+                  tackle this novel, yet rich, set of problems under the
+                  assumption that the unknown function satisfies regularity
+                  conditions expressed via a Gaussian process prior. We develop
+                  an efficient algorithm called SafeOpt, and theoretically
+                  guarantee its convergence to a natural notion of optimum
+                  reachable under safety constraints. We evaluate SafeOpt on
+                  synthetic data, as well as two real applications: movie
+                  recommendation, and therapeutic spinal cord stimulation.},
+  keywords =     "SafeOpt"
+}
+
+
+@article{SuiZhuBur2018stageopt,
+  title =        {Stagewise Safe {B}ayesian Optimization with {G}aussian Processes},
+  author =       {Sui, Yanan and Zhuang, Vincent and Burdick, Joel W. and Yue,
+                  Yisong},
+  journal =      arxiv # {1806.07555},
+  eprint =       {https://arxiv.org/abs/1806.07555},
+  year =         2018,
+  abstract =     "Enforcing safety is a key aspect of many problems pertaining
+                  to sequential decision making under uncertainty, which
+                  require the decisions made at every step to be both
+                  informative of the optimal decision and also safe. For
+                  example, we value both efficacy and comfort in medical
+                  therapy, and efficiency and safety in robotic control. We
+                  consider this problem of optimizing an unknown utility
+                  function with absolute feedback or preference feedback
+                  subject to unknown safety constraints. We develop an
+                  efficient safe Bayesian optimization algorithm, StageOpt,
+                  that separates safe region expansion and utility function
+                  maximization into two distinct stages. Compared to existing
+                  approaches which interleave between expansion and
+                  optimization, we show that StageOpt is more efficient and
+                  naturally applicable to a broader class of problems. We
+                  provide theoretical guarantees for both the satisfaction of
+                  safety constraints as well as convergence to the optimal
+                  utility value. We evaluate StageOpt on both a variety of
+                  synthetic experiments, as well as in clinical practice. We
+                  demonstrate that StageOpt is more effective than existing
+                  safe optimization approaches, and is able to safely and
+                  effectively optimize spinal cord stimulation therapy in our
+                  clinical experiments.",
+  keywords =     {StageOpt}
+}
+
 @InProceedings{SunHan2010:ccie,
   author =       Sun_Zhaoxu #and# Han_Min,
   title =        "Multi-criteria Decision Making Based on {PROMETHEE} Method",
@@ -19394,7 +19989,7 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
 
 @Article{SupSefPar2000,
   title =        {A simulated annealing algorithm for multiobjective optimization},
-  author =       {Suppapitnarm, A. and Seffen, KA and Parks, GT and Clarkson, PJ},
+  author =       {Suppapitnarm, A. and Seffen, K. A. and Parks, G. T. and Clarkson, P. J.},
   journal =      eo,
   volume =       33,
   number =       1,
@@ -19409,6 +20004,14 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
   year =         1998
 }
 
+@Book{SutBar2018reinf,
+  author =       "Richard S. Sutton and Andrew G. Barto",
+  title =        "Reinforcement Learning: An Introduction",
+  publisher =    mit,
+  edition =      "2nd",
+  year =         2018
+}
+
 @MastersThesis{Sutton98,
   author =       Sutton_DC # and # Keane # and # Sherriff,
   title =        {Optimizing the Real Time Operation of a Pumping
@@ -19418,7 +20021,6 @@ title        =   "Ant Colony Optimization and Stochastic Gradient Descent",
                   The University of Adelaide},
   year =         1998,
   type =         {Honors Thesis},
-  note =         notreadyet # notavailable,
 }
 
 @InCollection{SwaOzcKen2011lion,
@@ -19744,7 +20346,9 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {172--177},
   title =        {Optimization of traffic flow within an urban traffic light
                   intersection with genetic algorithm},
-  year =         2010
+  year =         2010,
+  organization = {IEEE},
+  publisher =    ieeep,
 }
 
 @article{TeoAbb2004ec,
@@ -19992,12 +20596,30 @@ Twin-Screw Extrusion Configuration Problem},
   author =       {Tufte, Edward R.},
   title =        {The Visual Display of Quantitative Information},
   publisher =    {Graphics Press},
-  address =      {Cheshire, Conn.},
+  abstract =     {The classic book on statistical graphics, charts,
+                  tables. Theory and practice in the design of data graphics,
+                  250 illustrations of the best (and a few of the worst)
+                  statistical graphics, with detailed analysis of how to
+                  display data for precise, effective, quick analysis. Design
+                  of the high-resolution displays, small multiples. Editing and
+                  improving graphics. The data-ink ratio. Time-series,
+                  relational graphics, data maps, multivariate
+                  designs. Detection of graphical deception: design variation
+                  vs. data variation. Sources of deception. Aesthetics and data
+                  graphical displays. This new edition provides excellent color
+                  reproductions of the many graphics of William Playfair, adds
+                  color to other images, and includes all the changes and
+                  corrections accumulated during 17 printings of the first
+                  edition.},
+  address =      {Cheshire, CT},
   edition =      "2nd",
   ISBN =         "0-9613921-4-2",
   year =         2001,
-  origyear =     1982
+  origyear =     1982,
+  keywords =     {data visualization, information graphics, cognitive science},
 }
+
+
 
 @article{TugThrFil2017jbe,
   title =        {Conceptual Design of Modular Bridges Including Layout
@@ -20012,6 +20634,25 @@ Twin-Screw Extrusion Configuration Problem},
   keywords =     "scenario-based",
   doi =          "10.1061/(ASCE)BE.1943-5592.0001138",
   publisher =    {American Society of Civil Engineers}
+}
+
+@inproceedings{TurBerKra2016safemdp,
+  title =        {Safe Exploration in Finite {M}arkov Decision Processes with
+                  {G}aussian Processes},
+  author =       {Turchetta, Matteo and Berkenkamp, Felix and Krause, Andreas},
+  crossref =     "NIPS2016",
+  pages =        {4312--4320},
+  keywords =     "SafeMDP",
+  doi =          {10.1109/TEVC.2014.2313407},
+  eprint =
+                  {http://papers.nips.cc/paper/6357-safe-exploration-in-finite-markov-decision-processes-with-gaussian-processes},
+}
+@inproceedings{TurBerKra2019safe,
+  title =        {Safe Exploration for Interactive Machine Learning},
+  author =       {Turchetta, Matteo and Berkenkamp, Felix and Krause, Andreas},
+  crossref =     "NIPS2019",
+  pages =        {2887--2897},
+  keywords =     "Reinforcement Learning; Markov Decision Process; SafeML"
 }
 
 @InProceedings{TusFil2007,
@@ -20252,6 +20893,18 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {3281--3290}
 }
 
+@article{VarDel2000effsize,
+  author =       {Vargha, A. and Delaney, H. D.},
+  title =        {A critique and improvement of the {CL} common language effect
+                  size statistics of {McGraw} and {Wong}},
+  journal =      jebs,
+  year =         2000,
+  volume =       25,
+  number =       2,
+  pages =        {101--132},
+  keywords =     "effect size test, A12 test"
+}
+
 @article{VarRaj05,
   author =       Varadharajan #and# Rajendran,
   title =        "A multi-objective simulated-annealing algorithm for
@@ -20430,6 +21083,38 @@ Twin-Screw Extrusion Configuration Problem},
   address =      {Baldock, United Kingdom}
 }
 
+@inproceedings{WacSuiYueOno2018aaai,
+  author =       {Akifumi Wachi and Yanan Sui and Yisong Yue and Masahiro Ono},
+  title =        {Safe Exploration and Optimization of Constrained {MDP}s Using
+                  {G}aussian Processes},
+  crossref =     "AAAI2018",
+  pages =        {6548--6556},
+  keywords =     {Markov Decision Process, Gaussian Processes},
+  abstract =     {We present a reinforcement learning approach to explore and
+                  optimize a safety-constrained Markov Decision
+                  Process(MDP). In this setting, the agent must maximize
+                  discounted cumulative reward while constraining the
+                  probability of entering unsafe states, defined using a safety
+                  function being within some tolerance. The safety values of
+                  all states are not known a priori, and we probabilistically
+                  model them via a Gaussian Process (GP) prior. As such,
+                  properly behaving in such an environment requires balancing a
+                  three-way trade-off of exploring the safety function,
+                  exploring the reward function, and exploiting acquired
+                  knowledge to maximize reward. We propose a novel approach to
+                  balance this trade-off. Specifically, our approach explores
+                  unvisited states selectively; that is, it prioritizes the
+                  exploration of a state if visiting that state significantly
+                  improves the knowledge on the achievable cumulative
+                  reward. Our approach relies on a novel information gain
+                  criterion based on Gaussian Process representations of the
+                  reward and safety functions. We demonstrate the effectiveness
+                  of our approach on a range of experiments, including a
+                  simulation using the real Martian terrain data.},
+  eprint =
+                  {https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17016},
+}
+
 @InCollection{WagBeuNau2007:many,
   author    = {Tobias Wagner and Nicola Beume and Boris Naujoks},
   title     = {{P}areto-, Aggregation-, and Indicator-Based Methods in Many-Objective
@@ -20546,7 +21231,7 @@ Twin-Screw Extrusion Configuration Problem},
   author =       {Wang, Handing and Doherty, John}#and# Jin_Yaochu,
   crossref =     "CEC2018",
   pages =        {1--8},
-  keywords = "scenario-based",
+  keywords =     "scenario-based",
 }
 
 
@@ -20592,13 +21277,26 @@ Twin-Screw Extrusion Configuration Problem},
   year =         2013,
 }
 
+@article{WangEtAl2012ejor,
+  title =        {Path relinking for unconstrained binary quadratic
+                  programming},
+  author =       {Wang, Yang and L{\"u}, Zhipeng} #and# Glover_F #and# Hao,
+  journal =      ejor,
+  volume =       223,
+  number =       3,
+  pages =        {595--604},
+  year =         2012,
+  publisher =    {Elsevier}
+}
+
+
 @incollection{Ward2008multivariate,
-  title={Multivariate data glyphs: Principles and practice},
-  author={Ward, Matthew O.},
-  booktitle={Handbook of data visualization},
-  pages={179--198},
-  year=2008,
-  publisher={Springer}
+  title =        {Multivariate data glyphs: Principles and practice},
+  author =       {Ward, Matthew O.},
+  booktitle =    {Handbook of data visualization},
+  pages =        {179--198},
+  year =         2008,
+  publisher =    {Springer}
 }
 
 @Article{WatBarWhiHow02,
@@ -20773,6 +21471,23 @@ Twin-Screw Extrusion Configuration Problem},
   crossref =     "ANTS2006",
 }
 
+@TechReport{Wiegele2007biqmac,
+  title =        {{Biq} {Mac} {Library} -- A collection of Max-Cut and
+                  quadratic 0-1 programming instances of medium size},
+  author =       {Wiegele, Angelika},
+  institution =  {Institut f{\"u}r Mathematik, Alpen-Adria-Universit{\"a}t
+                  Klagenfurt},
+  year =         2007,
+  url =          {http://biqmac.aau.at/biqmaclib.pdf}
+}
+
+@Misc{Wiegele2007sup,
+  author =       {Wiegele, Angelika},
+  title =        {{Biq} {Mac} {Library} -- Binary Quadratic and Max Cut Library},
+  howpublished = {\url{http://biqmac.aau.at/biqmaclib.html}},
+  year =         2007
+}
+
 @INcollection{Wierzbicki1980mcdmta,
   AUTHOR =       {A. P. Wierzbicki},
   TITLE =        {The Use of Reference Objectives in Multiobjective
@@ -20850,8 +21565,9 @@ Twin-Screw Extrusion Configuration Problem},
                   V and Norouzi, Mohammad and Macherey, Wolfgang and Krikun,
                   Maxim and Cao, Yuan and Gao, Qin and Macherey, Klaus and
                   others},
-  journal =      {arXiv preprint arXiv:1609.08144},
-  year =         2016
+  journal =      arxiv # {1609.08144 [cs.CL]},
+  eprint =       {https://arxiv.org/abs/1609.08144},
+  year =         2016,
 }
 
 @article{WuZhuWeDin2014mining,
@@ -21076,6 +21792,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   title =        {Distance Measures for Permutations in Combinatorial Efficient
                   Global Optimization},
   pages =        {373--383},
+  doi =          "10.1007/978-3-319-10762-2_37"
 }
 
 @InCollection{ZaeStoFriFisNauBar2014,
@@ -21084,6 +21801,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   crossref =     {GECCO2014},
   title =        {Efficient Global Optimization for Combinatorial Problems},
   pages =        {871--878},
+  doi =          "10.1145/2576768.2598282"
 }
 
 @InProceedings{Zar2005,
@@ -21136,14 +21854,16 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
 
 @Article{ZhaLi07:moead,
   author =       Zhang_Qingfu#and#{Hui Li},
-  title =        "{MOEA/D}: A Multiobjective Evolutionary Algorithm
-                  Based on Decomposition",
+  title =        "{MOEA/D}: A Multiobjective Evolutionary Algorithm Based on
+                  Decomposition",
   journal =      tec,
   year =         2007,
   volume =       11,
   number =       6,
   pages =        {712--731},
-  doi =         {10.1109/TEVC.2007.892759}
+  doi =          {10.1109/TEVC.2007.892759},
+  annote =       "Introduces penalty-based boundary intersection (PBI)
+                  function"
 }
 
 @InProceedings{ZhaLiuLi2009moead,
@@ -21193,7 +21913,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   volume =       17,
   number =       3,
   pages =        {73--83},
-  aurl =
+  eprint =
                   {http://www.aaai.org/ojs/index.php/aimagazine/article/viewArticle/1232},
 }
 
@@ -21215,6 +21935,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   title =        "Quality Assessment of {P}areto Set Approximations",
   pages =        {373--404},
   alias =        {ZKT2008},
+  doi =          {10.1109/TEVC.2009.2016569}
 }
 
 @incollection{ZitKun2004ppsn,
@@ -21235,12 +21956,13 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
 
 @InProceedings{ZitThi1998ppsn,
   author =       Zitzler #and# Thiele,
-  title =        {Multiobjective Optimization Using Evolutionary
-                  Algorithms - {A} Comparative Case Study},
+  title =        {Multiobjective Optimization Using Evolutionary Algorithms -
+                  {A} Comparative Case Study},
   crossref =     "PPSN1998",
   pages =        {292--301},
   alias =        {Zitzler98},
-  annote =       {introduces hypervolume measure},
+  doi =          "10.1007/BFb0056872",
+  annote =       {Introduces hypervolume measure},
 }
 
 @article{ZitThi99:spea,
@@ -21254,7 +21976,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        {257--271},
   year =         1999,
   pdf =          {ZitzlerThiele99-SPEA.pdf},
-  annote =       {introduces the hypervolume, introduces SPEA, \url{http://www.tik.ee.ethz.ch/sop/publicationListFiles/zt1999a.pdf}}
+  annote =       {Introduces SPEA, \url{http://www.tik.ee.ethz.ch/sop/publicationListFiles/zt1999a.pdf}}
 }
 
 @incollection{ZitThiBad2008ppsn,
@@ -21273,7 +21995,10 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   volume =       14,
   number =       1,
   pages =        {58--79},
-  doi =          {10.1109/TEVC.2009.2016569}
+  doi =          {10.1109/TEVC.2009.2016569},
+  keywords =     "Performance assessment; Preference articulation; refinement;
+                  Set Partitioning; Set-preference",
+  annote =       "Proposed SPAM and explores combination of quality indicators"
 }
 
 @article{ZitThiDeb2000ec,
@@ -21290,10 +22015,10 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
 }
 
 @Article{ZitThiLauFon2003:tec,
-  author =       Zitzler # and # Thiele # and # Laumanns # and #
-                  Fonseca # and # Grunert_da_Fonseca,
-  title =        {Performance Assessment of Multiobjective Optimizers:
-                  an Analysis and Review},
+  author =       Zitzler # and # Thiele # and # Laumanns # and # Fonseca # and
+                  # Grunert_da_Fonseca,
+  title =        {Performance Assessment of Multiobjective Optimizers: an
+                  Analysis and Review},
   journal =      tec,
   year =         2003,
   volume =       7,
@@ -21301,6 +22026,8 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   amonth =       apr,
   pages =        "117--132",
   alias =        {perfassess},
+  doi =          "10.1109/TEVC.2003.810758",
+  annote =       "Proposed the combination of quality indicators"
 }
 
 @PhDThesis{ZitzlerPhD,
@@ -21350,6 +22077,18 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
                   Through Better Initialization},
   pages =        {815--822},
   crossref =     "GECCO2015",
+}
+
+@article{Fli2007effects,
+  title =        {The effects of adding objectives to an optimisation problem
+                  on the solution set},
+  author =       {Fliege, J{\"o}rg},
+  journal =      orl,
+  volume =       35,
+  number =       6,
+  pages =        {782--790},
+  year =         2007,
+  publisher =    {Elsevier}
 }
 
 @Article{mlrMBO,

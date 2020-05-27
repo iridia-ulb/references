@@ -1,9 +1,16 @@
 language: generic
-dist: bionic
+latex: true
+
+addons:
+  apt:
+    update: true
+    packages:
+      - bibtex2html
+      - tidy
+
 before_install:
-- .travis/travis_maybe_skip.sh
-- sudo apt-get update
-- sudo apt install -y -qq bibtex2html tidy
+  - .travis/travis_maybe_skip.sh || travis_terminate 0
+
 install:
   - source .travis/texlive/texlive_install.sh
 
