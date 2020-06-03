@@ -487,7 +487,7 @@ A: An incomplete list of reasons:
  
  * Experience has shown that there are some common tricks and tips that are
    rather obscure but prevent certain errors. Many of the rules are inspired by
-   the document: ["BibTeX Tips and FAQ](http://mirrors.ctan.org/biblio/bibtex/contrib/doc/btxFAQ.pdf).
+   the document: [BibTeX Tips and FAQ](http://mirrors.ctan.org/biblio/bibtex/contrib/doc/btxFAQ.pdf).
 
 
 #### Q: Why not take the entries directly from Google Scholar, DBLP, Elsevier,...? ####
