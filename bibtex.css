@@ -126,6 +126,11 @@ ol.publications > li:before {
     counter-increment: publication;
 }
 
+dd:target {
+    border:1px solid #dac89d;
+    background: #ffffd3;
+}
+
 ul.publinks {
    margin: 0 auto 1em;
     margin: 0;
