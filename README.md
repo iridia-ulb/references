@@ -3,7 +3,10 @@ IRIDIA BibTeX Repository
 
 [![Build Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references)
 
-PDF file of all references: [testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf)
+PDF file of all references:
+[testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf) 
+[testshortbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testshortbib.pdf)
+
 
 [IRIDIA BibTeX Repository Webpage](https://iridia-ulb.github.io/references/)
 
@@ -352,13 +355,12 @@ Finally, push the commits to the repository with
 ***IMPORTANT:*** If you use non-ASCII characters BE SURE that your editor
 uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
 
-***IMPORTANT:*** If you have modified a `tex` or `bib` file (as it is often
-the case), the push will trigger a compilation using the Travis continuous
-integration system (which should take at most a couple of minutes).
-If the compilation fails, you will receive an email; in this case, fix the
-error and retry.
-If the build is successful, the resulting file `test/testbib.pdf` will be
-automatically pushed to the repository. This automatic step is effectively
+***IMPORTANT:*** If you have modified a `tex` or `bib` file (as it is often the
+case), the push will trigger a compilation using the Travis continuous
+integration system (which should take at most a couple of minutes).  If the
+compilation fails, you will receive an email; in this case, fix the error and
+retry.  If the build is successful, the resulting file `test/testbib.pdf` will
+be automatically pushed to the repository.  This automatic step is effectively
 a new commit, so make sure you do another
 
     git pull

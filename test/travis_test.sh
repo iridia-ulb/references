@@ -18,13 +18,33 @@ if [ $? -eq 0 ]; then
     exit 1
 fi
 
-travis_fold_start texliveonfly.1 "texliveonfly testbib.tex"
-texliveonfly testbib.tex
+TEXMAIN="testbib.tex"
+travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
+texliveonfly $TEXMAIN
 travis_fold_end texliveonfly.1
 
-travis_fold_start latexmk.1 "latexmk testbib.tex"
+travis_fold_start latexmk.1 "latexmk $TEXMAIN"
 
-latexmk -halt-on-error -interaction=nonstopmode -gg --pdf testbib.tex | tee .bibtex-warnings
+latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
+if [ $? -ne 0 ]; then
+    travis_fold_end latexmk.1
+    echo "Error: latexmk failed"
+    exit 1
+fi
+
+grep --quiet "Warning--" .bibtex-warnings
+if [ $? -eq 0 ]; then
+    travis_fold_end latexmk.1
+    echo "Error: Please fix bibtex Warnings:"
+    grep "Warning--" .bibtex-warnings
+    exit 1
+fi
+travis_fold_end latexmk.1
+
+TEXMAIN="testbib.tex"
+travis_fold_start latexmk.1 "latexmk $TEXMAIN"
+
+latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
 if [ $? -ne 0 ]; then
     travis_fold_end latexmk.1
     echo "Error: latexmk failed"
@@ -40,5 +60,4 @@ if [ $? -eq 0 ]; then
 fi
 travis_fold_end latexmk.1
 echo "No bibtex warnings! Good job!"
-
 exit 0

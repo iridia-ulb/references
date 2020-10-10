@@ -6,6 +6,7 @@ git config --global user.name "${GIT_NAME}"
 git config --global user.email "${GIT_EMAIL}"
 git checkout master
 git add -f test/testbib.pdf
+git add -f test/testshortbib.pdf
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if git diff --cached --quiet; then
     echo "No changes to the output on this push; exiting."
