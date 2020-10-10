@@ -41,7 +41,7 @@ if [ $? -eq 0 ]; then
 fi
 travis_fold_end latexmk.1
 
-TEXMAIN="testbib.tex"
+TEXMAIN="testshortbib.tex"
 travis_fold_start latexmk.1 "latexmk $TEXMAIN"
 
 latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
