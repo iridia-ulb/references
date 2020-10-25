@@ -339,6 +339,55 @@ Assignment with Controllable Processing Times},
   doi =          {10.1145/2996355}
 }
 
+@inproceedings{CarProSha2013votes,
+  title =        {When Do Noisy Votes Reveal the Truth?},
+  author =       {Ioannis Caragiannis and Ariel D. Procaccia and Nisarg Shah},
+  doi =          {10.1145/2482540.2482570},
+  keywords =     {computer social choice, mallows model, sample complexity},
+  pages =        {143--160},
+  crossref =     "EC2013",
+  abstract =     {A well-studied approach to the design of voting rules views
+                  them as maximum likelihood estimators; given votes that are
+                  seen as noisy estimates of a true ranking of the
+                  alternatives, the rule must reconstruct the most likely true
+                  ranking. We argue that this is too stringent a requirement,
+                  and instead ask: How many votes does a voting rule need to
+                  reconstruct the true ranking? We define the family of
+                  pairwise-majority consistent rules, and show that for all
+                  rules in this family the number of samples required from the
+                  Mallows noise model is logarithmic in the number of
+                  alternatives, and that no rule can do asymptotically better
+                  (while some rules like plurality do much worse). Taking a
+                  more normative point of view, we consider voting rules that
+                  surely return the true ranking as the number of samples tends
+                  to infinity (we call this property accuracy in the limit);
+                  this allows us to move to a higher level of abstraction. We
+                  study families of noise models that are parametrized by
+                  distance functions, and find voting rules that are accurate
+                  in the limit for all noise models in such general
+                  families. We characterize the distance functions that induce
+                  noise models for which pairwise-majority consistent rules are
+                  accurate in the limit, and provide a similar result for
+                  another novel family of position-dominance consistent
+                  rules. These characterizations capture three well-known
+                  distance functions.},
+}
+
+@article{AliMei2011kemeny,
+  annote =       {Computational Foundations of Social Choice},
+  year =         2012,
+  month =        jul,
+  publisher =    {Elsevier {BV}},
+  volume =       64,
+  number =       1,
+  pages =        {28--40},
+  author =       {Alnur Ali and Marina Meil{\u{a}}},
+  doi =          {10.1016/j.mathsocsci.2011.08.008},
+  journal =      mss,
+  title =        {Experiments with {K}emeny ranking: What Works When?},
+  keywords =     "Borda ranking, Kemeny ranking"
+}
+
 @inproceedings{AliSimHar2019,
   author =       {Alissa, Mohamad and Sim, Kevin} #and# Hart_E,
   title =        {Algorithm Selection Using Deep Learning without Feature Extraction},
@@ -4815,6 +4864,22 @@ Los Angeles, CA},
   doi =          "10.1007/978-3-319-91908-9_3"
 }
 
+@article{CopFleRur2010ordering,
+  title =        {Ordering by Weighted Number of Wins Gives a Good Ranking for
+                  Weighted Tournaments},
+  author =       {Coppersmith, Don and Fleischer, Lisa K. and Rurda, Atri},
+  doi =          {10.1145/1798596.1798608},
+  journal =      acm-talgo,
+  keywords =     {Approximation algorithms,Borda's method,feedback arc set
+                  problem,rank aggregation,tournaments},
+  month =        jul,
+  number =       3,
+  volume =       6,
+  pages =        {1--13},
+  publisher =    {ACM},
+  year =         2010
+}
+
 @Article{CorDam2006,
   author =       Cordon #and# {Sergio Damas},
   title =        {Image Registration with Iterated Local Search},
@@ -4895,7 +4960,7 @@ Los Angeles, CA},
 }
 
 @Article{CorLapMer2001,
-  author  = {Jean{-}Fran{\c{c}}ois Cordeau and G. Laporte and A. Mercier},
+  author  = {Jean{-}Fran{\c{c}}ois Cordeau} #and# Laporte #and# {A. Mercier},
   title   = "A unified tabu search heuristic for vehicle routing problems with time windows",
   journal = jors,
   year    = 2001,
@@ -6663,6 +6728,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {183-197}
 }
 
+@inCollection{DwoKumNao2001rank,
+  title =        {Rank aggregation methods for the Web},
+  author =       {Dwork, Cynthia and Kumar, Ravi and Naor, Moni and Sivakumar,
+                  D.},
+  doi =          {10.1145/371920.372165},
+  crossref =     "WWW2001",
+  keywords =     {Kemeny ranking,multi-word queries,rank aggregation,ranking
+                  functions,spam},
+  pages =        {613--622},
+}
+
+
 @Manual{EPANET2Manual,
   title =        "{EPANET} 2 Users Manual",
   author =       Rossman,
@@ -6963,6 +7040,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        "2751--2758",
   doi =          {10.1109/CEC.2011.5949963}
 }
+
+@inproceedings{EriPeaGar2019scalable,
+  title =        {Scalable Global Optimization via Local {B}ayesian Optimization},
+  author =       {Eriksson, David and Pearce, Michael and Gardner, Jacob and
+                  Turner, Ryan D and Poloczek, Matthias},
+  crossref =     "NIPS2019",
+  pages =        {5496--5507},
+  aurl =
+                  {http://papers.nips.cc/paper/8788-scalable-global-optimization-via-local-bayesian-optimization.pdf},
+  annote =       "Arxiv: \url{https://arxiv.org/abs/1910.01739}"
+}
+
 
 @InProceedings{Ertin01,
   author =       Ertin # and # Dean_Anthony # and # Moore_Mathew # and #
@@ -10973,6 +11062,30 @@ Traveling Salesman Heuristic},
   pages = 	 {270--287}
 }
 
+@article{IruCalLoz2016permallows,
+  title =        {{\Rpackage{PerMallows}}: An \proglang{R} Package for Mallows
+                  and Generalized Mallows Models},
+  author =       Irurozki_E #and# {Calvo, Borja} #and# Lozano_JA,
+  abstract =     {In this paper we present the R package PerMallows, which is a
+                  complete toolbox to work with permutations, distances and
+                  some of the most popular probability models for permutations:
+                  Mallows and the Generalized Mallows models. The Mallows model
+                  is an exponential location model, considered as analogous to
+                  the Gaussian distribution. It is based on the definition of a
+                  distance between permutations. The Generalized Mallows model
+                  is its best-known extension. The package includes functions
+                  for making inference, sampling and learning such
+                  distributions. The distances considered in PerMallows are
+                  Kendall's $\tau$, Cayley, Hamming and Ulam.},
+  doi =          {10.18637/jss.v071.i12},
+  issn =         15487660,
+  journal =      jss,
+  keywords =     {Cayley,Generalized Mallows,Hamming,Kendall's
+                  $\tau$,Learning,Mallows,Permutation,R,Ranking,Sampling,Ulam},
+  volume =       71,
+  year =         2019
+}
+
 @article{Ish1998,
   author =       Ishibuchi #and# Murata,
   title =        "A multi-objective genetic local search algorithm and its
@@ -11381,7 +11494,8 @@ Traveling Salesman Heuristic},
   volume =       13,
   number =       4,
   pages =        {455--492},
-  keywords =     "EGO"
+  keywords =     "EGO",
+  annote =       "Proposed EGO algorithm"
 }
 
 @article{JonSpe1992formal,
@@ -12922,7 +13036,7 @@ Traveling Salesman Heuristic},
 }
 
 @Article{Laporte2009,
-  author = 	 {Gilbert Laporte},
+  author = 	 Laporte,
   title = 	 {Fifty Years of Vehicle Routing},
   journal = 	 ts,
   year = 	 2009,
@@ -12932,16 +13046,17 @@ Traveling Salesman Heuristic},
 }
 
 @Book{LarLoz2002eda,
-  author = {Larra{\~n}aga, Pedro and Lozano, Jose A.},
-  title = {Estimation of distribution algorithms: A new tool for evolutionary computation},
-  publisher = {Kluwer Academic Publishers},
-  address = {Boston},
-  year = {2002}
+  author =       {Larra{\~n}aga, Pedro} #and# Lozano_JA,
+  title =        {Estimation of Distribution Algorithms: A New Tool for
+                  Evolutionary Computation},
+  publisher =    kap,
+  address =      ad-boston,
+  year =         2002
 }
 
 @Book{Larman2005,
   author = 	 {Craig Larman},
-  title = 	 {Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development},
+  title = 	 {Applying {UML} and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development},
   publisher = 	 ph,
   year = 	 2004,
   edition = 	 Third,
@@ -13187,13 +13302,9 @@ Traveling Salesman Heuristic},
 
 @InCollection{LeyPeaSho2000acmec,
   author =       Leyton-Brown #and# " M. Pearson and Y. Shoham",
-  title =        "Towards a Universal Test Suite for Combinatorial
-                  Auction Algorithms",
-  booktitle =    "ACM Conference on Electronic Commerce (EC-00)",
-  year =         2000,
-  publisher =    acm-pub,
-  address =      acm-ad,
-  editor =       "Anant Jhingran and others",
+  title =        "Towards a Universal Test Suite for Combinatorial Auction
+                  Algorithms",
+  crossref =     "EC2000",
   pages =        "66--76",
   doi =          "10.1145/352871.352879",
   annote =       {CPLEX-regions200 benchmark set,
@@ -18976,6 +19087,21 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {505--512},
 }
 
+@article{RomKraArn2012protein,
+  author =       {P. A. Romero and A. Krause and F. H. Arnold},
+  title =        {Navigating the Protein Fitness Landscape with {G}aussian
+                  Processes},
+  doi =          {10.1073/pnas.1215251110},
+  year =         2012,
+  month =        dec,
+  volume =       110,
+  number =       3,
+  pages =        {E193--E201},
+  journal =      pnas,
+  keywords =     "Combinatorial Black-box Expensive"
+}
+
+
 @Article{RomSan1991,
   title =        {A Theoretical Framework for Simulated Annealing},
   author =       Romeo_F #and# Sangiovanni-Vincentelli_A,
@@ -20249,6 +20375,15 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages     = {18--27}, 
   publisher = {IEEE},
   doi       = {10.1109/KBSE.1992.252912}
+}
+
+@inproceedings{SmiStoSer2016explo,
+  doi =          {10.1145/2908812.2908854},
+  crossref =     "GECCO2016",
+  author =       {Jim Smith and Christopher Stone and Martin Serpell},
+  title =        {Exploiting Diverse Distance Metrics for Surrogate-Based
+                  Optimisation of Ordering Problems},
+  pages =        "701--708"
 }
 
 @InProceedings{SmiVanLim2010,
@@ -23028,7 +23163,8 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   title =        {Distance Measures for Permutations in Combinatorial Efficient
                   Global Optimization},
   pages =        {373--383},
-  doi =          "10.1007/978-3-319-10762-2_37"
+  doi =          "10.1007/978-3-319-10762-2_37",
+  keywords = "CEGO, Bayesian optimization"
 }
 
 @InCollection{ZaeStoFriFisNauBar2014,
@@ -23037,7 +23173,9 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   crossref =     {GECCO2014},
   title =        {Efficient Global Optimization for Combinatorial Problems},
   pages =        {871--878},
-  doi =          "10.1145/2576768.2598282"
+  doi =          "10.1145/2576768.2598282",
+  keywords =     "CEGO, Bayesian optimization",
+  annote =       "Proposed CEGO algorithm"
 }
 
 @InProceedings{Zar2005,
@@ -23483,7 +23621,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   note =         {Version visited last on July 2017},
   year =         2017
 }
-
 @Article{vanZyl04,
   author =       vanZyl # and # Savic # and # Walters,
   title =        {Operational Optimization of Water Distribution
