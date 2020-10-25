@@ -10,17 +10,16 @@
 %% 1. Keep each one of Series, Publishers, Institutes and Proceedings sorted.
 %% 2. Check that what you are adding has not been added already with a
 %%    different name.
-%% 3. Publishers should have a -pub and -ad form, for the publisher field
-%%    and the address field. 
-%%    If the publisher has several addresses, add them as -ad-city.
-%% 4. The address of proceedings refers to the location of the proceedings. 
+%% 3. Publishers names should not contain the address. There is a different address field.
+%% 4. The address field should use one of the add- strings.
+%% 5. The address of proceedings refers to the location of the proceedings. 
 %%    Only in that case, the publisher field should be constructed by joining 
-%%    the -pub and -ad forms like: publisher = ams-pub # ", " # ams-ad,
-%% 5. If you want to use months, the correct way is using the following 
+%%    the -pub and add- forms like: publisher = ams-pub # ", " # add-ny,
+%% 6. If you want to use months, the correct way is using the following 
 %%    abbrevations, which are directly supported by BibTeX:
 %%    jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
-%% 6. Always use quotes "" instead of braces {} for the string definition.
-%% 7. Add a string for booktitles of proceedings. Add the short form to
+%% 7. Always use quotes "" instead of braces {} for the string definition.
+%% 8. Add a string for booktitles of proceedings. Add the short form to
 %%    abbrevshort.bib.
 %% Z. Some of the entries do not follow the above rules.
 %%    Please help us to update them little by little.
@@ -48,6 +47,7 @@
 @string{lnai	= "Lecture Notes in Artificial Intelligence"}
 @string{lncs	= "Lecture Notes in Computer Science"}
 @string{lnems   = "Lecture Notes in Economics and Mathematical Systems"}
+@string{lnpam	= "Lecture Notes in Pure and Applied Mathematics"}
 @String{natcompser = "Natural Computing Series"}
 @string{nato	= "NATO ASI Series"}
 @String{nc-opt  = "Nonconvex optimization and its applications"}
@@ -57,41 +57,47 @@
 %%%%%%%%%%%%%%%%%%
 %%% Addresses
 %%%%%%%%%%%%%%%%%%
-@string{add-ny = "New York, NY"}
+@string{add-amsterdam = "Amsterdam, The Netherlands"}
+@string{add-berlin = " Berlin, Germany "}
+@string{add-berlin-heidelberg = " Berlin, Heidelberg "}
+@string{add-boca-raton = " Boca Raton, FL"}
+@string{add-boston = " Boston, MA" }
+@string{add-cambridge = "Cambridge, MA"}
+@string{add-cham = " Cham, Switzerland "}
+@string{add-chichester = " Chichester, UK"}
+@string{add-london = " London, UK "}
+@string{add-menlo = " Menlo Park, CA "}
+@string{add-ny = " New York, NY "}
+@string{add-paris = " Paris, FR "}
+@string{add-providence = " Providence, RI "}
+@string{add-reading = " Reading, MA "}
+@string{add-sanfran = " San Francisco, CA"}
 
 %%%%%%%%%%%%%%%%%%
 %%% Publishers
 %%%%%%%%%%%%%%%%%%
-@string{aaaimit	= "{AAAI} Press\slash {MIT} Press, Menlo Park, CA"}
-@string{aaaip	= "AAAI Press, Menlo Park, CA"}
+@string{aaaimit	= "{AAAI} Press\slash {MIT} Press" # "," # add-menlo}
 @string{aaaip-pub = "{AAAI} Press"}
-@string{acm-ad = "New York, NY"}
 @string{acm-pub = "ACM Press"}
-@string{acm = "ACM Press" # add-ny }
-@string{ams-ad = "Providence, RI"}
 @string{ams-pub = "American Mathematical Society"}
-@string{ap-n    = "Academic Press, New York, NY"},
+@string{apress    = "Academic Press"},
 @string{asme    = "ASME Press"}
 @string{athena  = "Athena Scientific, Belmont, MA"}
-@string{aw-boston-pub     = "Addison-Wesley, Boston, MA"} 
 @string{aw-pub      = "Addison-Wesley"} 
-@string{aw-reading-pub     = "Addison-Wesley, Reading, MA"} 
 @string{blsp    = "Blackwell Scientific Publications, Oxford, UK"}
 @string{bsp = "Baltzer Science Publishers"}
 @string{ccp = "Civil-Comp Press, Stirling, Scotland"}
 @string{chapman = "Chapman \& Hall\slash CRC"}
-@string{chapman-ad = "Boca Raton, FL"}
+@string{chapman-ad = add-boca-raton}
 @string{crc-press = "CRC Press"}
 @string{cup-pub =  "Cambridge University Press"}
-@string{cup-ny-ad =  "New York, NY"}
 @string{curas = "Curran Associates, Red Hook, NY"}
 @string{cws = "Centre for Water Systems, Exeter, UK"}
 @string{ellipses = "Editions Ellipses"}
-@string{ellipses-ad = "Paris, FR"}
+@string{ellipses-ad = add-paris}
 @string{elsevier = "Elsevier"}
-@string{elsevier-a = "Elsevier, Amsterdam, The Netherlands"}
 @string{freeman = "Freeman \& Co, San Francisco, CA"}
-@string{hup = "Harvard University Press, Cambridge, MA"}
+@string{hup = "Harvard University Press, " # add-cambridge }
 @string{iasted = "IASTED\slash ACTA Press, Anaheim, CA"}
 @string{ieee-csp = "IEEE Computer Society Press"}
 @string{ieee-csp-ad = "Los Alamitos, CA"}
@@ -100,13 +106,9 @@
 @string{iop = "IOP Publishing"}
 @string{iop-ad = "Bristol, UK"}
 @string{ios = "IOS Press, Amsterdam, The Netherlands"}
-@string{ios-ad = "Amsterdam, The Netherlands"}
+@string{ios-ad = add-amsterdam}
 @string{ios-pub = "IOS Press"}
 @string{jws	= "John Wiley \& Sons"}
-@string{jws-c	= "John Wiley \& Sons, Chichester, UK"}
-@string{jws-c-ad = "Chichester, UK"}
-@string{jws-ny	= "John Wiley \& Sons, New York, NY"}
-@string{jws-ny-ad = "New York, NY"}
 @string{kap	= "Kluwer Academic Publishers"}
 @string{kap-ma	= "Kluwer Academic Publishers, Boston, MA"}
 @string{kap-nl	= "Kluwer Academic Publishers, Dordrecht, The Netherlands"}
@@ -117,11 +119,10 @@
 @string{mgh-b	= "McGraw Hill, Boston, MA"}
 @string{mgh-l	= "McGraw Hill, London, UK"}
 @string{mgh-ny	= "McGraw Hill, New York, NY"}
-@string{mit	= "MIT Press, Cambridge, MA"}
-@string{mit-ad	= "Cambridge, MA"}
+@string{mit-ad	= add-cambridge}
 @string{mit-pub	= "MIT Press"}
+@string{mit	= mit-pub # add-cambridge}
 @string{mk	= "Morgan Kaufmann Publishers"}
-@string{mk-ad-san	= "San Francisco, CA"}
 @string{mk-p	= "Morgan Kaufmann Publishers, Palo Alto, CA"}
 @string{mk-s	= "Morgan Kaufmann Publishers, San Francisco, CA"}
 @string{mk-sm	= "Morgan Kaufmann Publishers, San Mateo, CA"}
@@ -134,18 +135,15 @@
 @string{ph	= "Prentice Hall, Englewood Cliffs, NJ"}
 @string{pm = "Palgrave Macmillan Ltd., Basingstoke, UK"}
 @string{pp	= "Pitman Publishing, London, UK"}
-@string{pub-IEEE     = "IEEE Computer Society Press"}
 @string{pup	= "Princeton University Press, Princeton, NJ"}
 @string{rsp = " Research Studies Press Ltd. "}
 @string{siam    = "Society for Industrial and Applied Mathematics, Philadelphia, PA, USA"}
 @string{springer = "Springer"}
 @string{springer-aisc = "Springer, Berlin\slash Heidelberg"}
-@string{springer-aisc-ad = "Berlin, Heidelberg"}
 @string{springer-aisc1 = "Springer International Publishing"}
 @string{springer-aisc2 = "Springer International Publishing, Switzerland"}
 @string{springer-berl = "Springer, Berlin, Germany"}
 @string{springer-berlin = "Springer, Berlin"}
-@string{springer-berlin-ad = "Berlin, Germany"}
 @string{springer-cham = "Springer, Cham"}
 @string{springer-int-pub = "Springer International Publishing"}
 @string{springer-isorms = "Springer, US"}
@@ -157,7 +155,6 @@
 @string{springer-lon = "Springer, London, UK"}
 @string{springer-nl = "Springer, Netherlands"}
 @string{springer-ny = "Springer, New York, NY"}
-@string{springer-ny-ad = "New York, NY"}
 @string{springer-sing = "Springer Verlag, Singapore"}
 @string{springer-verlag = "Springer Verlag"}
 @string{springer-verlag-ny = "Springer Verlag New York"}
@@ -169,12 +166,6 @@
 @string{vik = "Viking, New York, NY"}
 @string{worldscientific = "World Scientific Publishing Co., Singapore"}
 %%%%%%%% End of PUBLISHERS
-
-%%% address: Typically for Springer, which has many.
-@string{add-berlin-heidelberg = "Berlin, Heidelberg"}
-@string{add-boston = "Boston, MA"}
-@string{add-cham = "Cham, Switzerland"}
-@string{add-london = "London, UK"}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
