@@ -583,6 +583,31 @@ Assignment with Controllable Processing Times},
   doi =          {10.1007/978-3-540-76931-6_21},
 }
 
+@article{AnsBriGou2002qap,
+  author =       {Kurt Anstreicher and Nathan Brixius and Jean-Pierre Goux and
+                  Jeff Linderoth},
+  title =        {Solving large quadratic assignment problems on computational
+                  grids},
+  doi =          {10.1007/s101070100255},
+  year =         2002,
+  month =        feb,
+  volume =       91,
+  number =       3,
+  pages =        {563--588},
+  journal =      mpb,
+  abstract =     "The quadratic assignment problem (QAP) is among the hardest
+                  combinatorial optimization problems. Some instances of size
+                  $n = 30$ have remained unsolved for decades. The solution of
+                  these problems requires both improvements in mathematical
+                  programming algorithms and the utilization of powerful
+                  computational platforms. In this article we describe a novel
+                  approach to solve QAPs using a state-of-the-art
+                  branch-and-bound algorithm running on a federation of
+                  geographically distributed resources known as a computational
+                  grid. Solution of QAPs of unprecedented complexity, including
+                  the nug30, kra30b, and tho30 instances, is reported."
+}
+        
 @inproceedings{AnsKamVeeRag2014open,
   author    =  {J. Ansel and S. Kamil and K. Veeramachaneni and J. Ragan-Kelley and J. Bosboom and U. M. O'Reilly and S. Amarasinghe},
   title     =  {{OpenTuner}: An extensible framework for program autotuning},
@@ -751,7 +776,7 @@ Assignment with Controllable Processing Times},
 @article{Arr04,
   title =        "A partial enumeration heuristic for multi-objective
                   flowshop scheduling problems",
-  author =       Arroyo #and# Armentano,
+  author =       Arroyo_JEC #and# Armentano,
   journal =      jors,
   volume =       55,
   number =       9,
@@ -760,7 +785,7 @@ Assignment with Controllable Processing Times},
 }
 
 @article{ArrArm05,
-  author =       Arroyo #and# Armentano,
+  author =       Arroyo_JEC #and# Armentano,
   title =        "Genetic local search for multi-objective flowshop
                   scheduling problems",
   journal =      ejor,
@@ -772,12 +797,23 @@ Assignment with Controllable Processing Times},
 }
 
 @Article{ArrLeu2017,
-  author = 	 {Arroyo, J.E.C. and Leung, J.Y.-T.},
+  author = 	 Arroyo_JEC #and# Leung_JYT,
   title = 	 {An Effective Iterated Greedy Algorithm for Scheduling Unrelated Parallel Batch Machines with Non-identical Capacities and Unequal Ready Times},
   journal = 	 cie,
   year = 	 2017,
   volume = 	 105,
   pages = 	 {84--100}
+}
+
+
+@InCollection{ArzCebPer2019qap,
+  author =       {Etor Arza} #and# Ceberio #and# {Aritz P{\'{e}}rez}
+                  #and# Irurozki_E,
+  title =        {Approaching the quadratic assignment problem with kernels of
+                  mallows models under the hamming distance},
+  doi =          {10.1145/3319619.3321976},
+  crossref =     "GECCO2019c",
+  keywords =     "QAP, EDA, Mallows"
 }
 
 
@@ -3137,6 +3173,15 @@ Los Angeles, CA},
   pages =        "99--132"
 }
 
+@article{Borda1781,
+  author =       {Jean-Charles de Borda},
+  journal =      {Histoire de l'Acad{\'e}mie Royal des Sciences},
+  title =        {M{\'e}moire sur les {\'E}lections au Scrutin},
+  year =         1781,
+  keywords =     "ranking"
+}
+
+
 @Article{BotBon98,
   author =       {Hozefa M. Botee and Eric Bonabeau},
   title =        {Evolving Ant Colony Optimization},
@@ -4095,6 +4140,47 @@ Los Angeles, CA},
   pages =        {257--267}
 }
 
+@article{CebIruMen2014eda,
+  author =       Ceberio #and# Irurozki_E #and# Mendiburu_A #and# Lozano_JA,
+  title =        {A distance-based ranking model estimation of distribution
+                  algorithm for the flowshop scheduling problem},
+  abstract =     {The aim of this paper is two-fold. First, we introduce a
+                  novel general estimation of distribution algorithm to deal
+                  with permutation-based optimization problems. The algorithm
+                  is based on the use of a probabilistic model for permutations
+                  called the generalized Mallows model. In order to prove the
+                  potential of the proposed algorithm, our second aim is to
+                  solve the permutation flowshop scheduling problem. A hybrid
+                  approach consisting of the new estimation of distribution
+                  algorithm and a variable neighborhood search is
+                  proposed. Conducted experiments demonstrate that the proposed
+                  algorithm is able to outperform the state-of-the-art
+                  approaches. Moreover, from the 220 benchmark instances
+                  tested, the proposed hybrid approach obtains new best known
+                  results in 152 cases. An in-depth study of the results
+                  suggests that the successful performance of the introduced
+                  approach is due to the ability of the generalized Mallows
+                  estimation of distribution algorithm to discover promising
+                  regions in the search space.},
+  doi =          {10.1109/TEVC.2013.2260548},
+  journal =      tec,
+  keywords =     {Estimation of distribution algorithms,Generalized Mallows
+                  model,Permutation flowshop scheduling
+                  problem,Permutations-based optimization problems},
+  number =       2,
+  pages =        {286--300},
+  volume =       18,
+  year =         2014
+}
+
+@inCollection{CebMenLoz2015mallows,
+  title =        {Kernels of {M}allows Models for Solving Permutation-based
+                  Problems},
+  author =       Ceberio #and# Mendiburu_A #and# Lozano_JA,
+  crossref =     "GECCO2015",
+  pages =        {505--512},
+}
+
 @Book{Cela:QAP,
   author =       Cela,
   title =        "The Quadratic Assignment Problem: Theory and
@@ -5046,12 +5132,23 @@ Los Angeles, CA},
 }
 
 @book{Crawley2012rbook,
-  Author =       {M. J. {Crawley}},
+  Author =       {M. J. Crawley},
   Title =        {The \proglang{R} Book},
   Publisher =    {Wiley},
   Year =         2012,
   Edition =      Second
 }
+
+@article{CriFliVer1996rankings,
+  author =       {Critchlow, Douglas Edward and Fligner, Michael A. and
+                  Verducci, Joseph S.},
+  journal =      jmatpsy,
+  pages =        {294--318},
+  title =        {Probability Models on Rankings},
+  volume =       35,
+  year =         1991
+}
+
 
 @Article{Cro1958,
   author =       {G. A. Croes},
@@ -6107,6 +6204,33 @@ doi =           {10.1007/978-3-642-38516-2_16},
   keywords =     {irace},
 }
 
+@article{DoiPekReg2004rank,
+  author =       {Jean-Paul Doignon and Aleksandar Peke{\v{c}} and Michel
+                  Regenwetter},
+  title =        {The repeated insertion model for rankings: Missing link
+                  between two subset choice models},
+  doi =          {10.1007/bf02295838},
+  year =         2004,
+  month =        mar,
+  volume =       69,
+  number =       1,
+  pages =        {33--54},
+  journal =      {Psychometrika},
+  abstract =     "Several probabilistic models for subset choice have been
+                  proposed in the literature, for example, to explain approval
+                  voting data. We show that Marley et al.'s latent scale model
+                  is subsumed by Falmagne and Regenwetter's size-independent
+                  model, in the sense that every choice probability
+                  distribution generated by the former can also be explained by
+                  the latter. Our proof relies on the construction of a
+                  probabilistic ranking model which we label the ``repeated
+                  insertion model''. This model is a special case of Marden's
+                  orthogonal contrast model class and, in turn, includes the
+                  classical Mallows $\varphi$-model as a special case. We
+                  explore its basic properties as well as its relationship to
+                  Fligner and Verducci's multistage ranking model."
+}
+
 @article{DolMor2002benchmarking,
   author =       {Dolan, Elizabeth D. and Mor{\'e}, Jorge J.},
   journal =      mp,
@@ -6422,7 +6546,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Article{DuLeu90,
-  author =       Du_J #and# Leung,
+  author =       Du_J #and# Leung_JYT,
   title =        "Minimizing Total Tardiness on One Machine is
                   {NP}-Hard",
   journal =      mor,
@@ -11098,6 +11222,29 @@ Traveling Salesman Heuristic},
                   $\tau$,Learning,Mallows,Permutation,R,Ranking,Sampling,Ulam},
   volume =       71,
   year =         2019
+}
+
+@article{IruCalLoz2016mallows,
+  author =       Irurozki_E #and# {Borja Calvo} #and# Lozano_JA,
+  title =        {Sampling and Learning {M}allows and Generalized {M}allows
+                  Models Under the {C}ayley Distance},
+  doi =          {10.1007/s11009-016-9506-7},
+  year =         2016,
+  month =        jun,
+  volume =       20,
+  number =       1,
+  pages =        {1--35},
+  journal =      mcap,
+}
+
+@article{IruLobPer2020arxiv,
+  title =        {Rank aggregation for non-stationary data streams},
+  author =       Irurozki_E #and# {Lobo, Jesus and Perez, Aritz and Del Ser,
+                  Javier},
+  keywords =     {uborda},
+  journal =      arxiv,
+  note =         "Submitted",
+  year =         2020
 }
 
 @article{Ish1998,
@@ -19879,7 +20026,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   title =        {A tutorial on {G}aussian process regression: {M}odelling,
                   exploring, and exploiting functions},
   volume =       85,
-  journal =      jmp,
+  journal =      jmatpsy,
   doi =          {10.1016/j.jmp.2018.03.001}
 }
 
@@ -23526,6 +23673,18 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
                   Through Better Initialization},
   pages =        {815--822},
   crossref =     "GECCO2015",
+}
+
+@article{FliVer1986,
+  title =        {Distance Based Ranking Models},
+  author =       {Fligner, Michael A. and Verducci, Joseph S.},
+  journal =      rssb,
+  number =       3,
+  volume =       48,
+  pages =        {359--369},
+  year =         1986,
+  keywords =     "Mallows model, ranking, probabilistic models",
+  doi =          {10.1111/j.2517-6161.1986.tb01420.x},
 }
 
 @Article{mlrMBO,
