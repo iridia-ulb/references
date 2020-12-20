@@ -3,17 +3,25 @@ IRIDIA BibTeX Repository
 
 [![Build Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references)
 
-PDF file of all references:
+This is a collection of BibTeX files organized in a way that tries to avoid redundancy, minimise mistakes and facilitate customization.
+
+You only need to fork (or link) the git repository in your papers and sync with the main copy to send/receive updates.
+
+Most customisations (such as shorter journal or conference names) do not
+  require changing the existing `.bib` files.  You should not need to edit the
+  entries directly unless you find mistakes. See the README file linked above
+  for more details.
+  
+PDF file listing all references:
 [testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf) 
-[testshortbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testshortbib.pdf)
 
+PDF with abbreviated references: [testshortbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testshortbib.pdf)
 
+HTML page listing all references: 
 [IRIDIA BibTeX Repository Webpage](https://iridia-ulb.github.io/references/)
 
-Before modifying any file, please read and follow the instructions at
-the top of each file.
-
-
+*Before modifying any file, please read and follow the instructions at
+the top of the file.**
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
