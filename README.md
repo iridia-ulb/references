@@ -5,12 +5,11 @@ IRIDIA BibTeX Repository
 
 This is a collection of BibTeX files organized in a way that tries to avoid redundancy, minimise mistakes and facilitate customization.
 
-You only need to fork (or link) the git repository in your papers and sync with the main copy to send/receive updates.
-
 Most customisations (such as shorter journal or conference names) do not
-  require changing the existing `.bib` files.  You should not need to edit the
-  entries directly unless you find mistakes. See the README file linked above
-  for more details.
+require changing the existing `.bib` files.  You should not need to edit the
+entries directly unless you find mistakes. You only need to fork (or link) the
+git repository in your papers and sync with the main copy to send/receive
+updates.
   
 PDF file listing all references:
 [testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf) 
