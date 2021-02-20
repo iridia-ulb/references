@@ -5,7 +5,7 @@ IRIDIA BibTeX Repository
 
 This is a collection of BibTeX files organized in a way that tries to avoid redundancy, minimise mistakes and facilitate customization.
 
-Most customisations (such as shorter journal or conference names) do not
+Most customizations (such as shorter journal or conference names) do not
 require changing the existing `.bib` files.  You should not need to edit the
 entries directly unless you find mistakes. You only need to fork (or link) the
 git repository in your papers and sync with the main copy to send/receive
@@ -19,8 +19,8 @@ PDF with abbreviated references: [testshortbib.pdf](https://github.com/iridia-ul
 HTML page listing all references: 
 [IRIDIA BibTeX Repository Webpage](https://iridia-ulb.github.io/references/)
 
-*Before modifying any file, please read and follow the instructions at
-the top of the file.**
+*NOTE: Before modifying a .bib file, please read and follow the instructions at
+the top of the file.*
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
