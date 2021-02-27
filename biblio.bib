@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%-*- mode: bibtex; bibtex-maintain-sorted-entries: plain; -*-
+%%%%%%%%%%%%%%%%%%%-*- mode: bibtex; bibtex-maintain-sorted-entries: plain; bibtex-string-files: ("abbrev.bib" "journals.bib" "authors.bib") -*-
 %% biblio.bib
 %%
 %% To the extent that the contents of bib files may be subject to
@@ -2112,6 +2112,17 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages =        {245--262}
 }
 
+@article{BerWan1987binpack,
+  title =        {Two-dimensional finite bin-packing algorithms},
+  author =       {Berkey, Judith O. and Wang, Pearl Y.},
+  journal =      jors,
+  volume =       38,
+  number =       5,
+  pages =        {423--429},
+  year =         1987,
+  doi =          {10.2307/2582731}
+}
+
 @InProceedings{BesStuDor00:ppsn,
   author =       denBesten #and# Stuetzle #and# Dorigo,
   title =        "Ant Colony Optimization for the Total Weighted
@@ -4219,7 +4230,7 @@ Los Angeles, CA},
 }
 
 @Article{CatAbsFeiVig2014:cor,
-  author =       {Diego Cattaruzza and Nabil Absi and Dominique Feillet and Daniele Vigo},
+  author =       {Diego Cattaruzza and Nabil Absi and Dominique Feillet} #and# Vigo_D,
   title =        {An Iterated Local Search for the Multi-commodity Multi-trip Vehicle Routing Problem with Time Windows},
   journal =      cor,
   year =         2014,
@@ -9196,6 +9207,19 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        "1--35",
 }
 
+@article{GloLuHao2010diversif,
+  title =        {Diversification-driven tabu search for unconstrained binary
+                  quadratic problems},
+  author =       Glover_F #and# {L{\"u}, Zhipeng} #and# Hao,
+  journal =      j4or,
+  volume =       8,
+  number =       3,
+  pages =        {239--253},
+  year =         2010,
+  doi =          {10.1007/s10288-009-0115-y}
+}
+
+
 @article{GoeScho2014recovery,
   title =        {Recovery-to-optimality: A new two-stage approach to
                   robustness with an application to aperiodic timetabling},
@@ -13326,14 +13350,14 @@ Traveling Salesman Heuristic},
 }
 
 @Article{LabVio2013:npp,
-  author    = {Martine Labb{\'e} and Alessia Violin},
-  title     = {Bilevel programming and price setting problems},
-  journal   = {4OR},
-  year      = 2013,
-  volume    = 11,
-  number    = 1,
-  pages     = {1--30},
-  doi       = {10.1007/s10288-012-0213-0}
+  author =       {Martine Labb{\'e} and Alessia Violin},
+  title =        {Bilevel programming and price setting problems},
+  journal =      j4or,
+  year =         2013,
+  volume =       11,
+  number =       1,
+  pages =        {1--30},
+  doi =          {10.1007/s10288-012-0213-0}
 }
 
 @InCollection{LacMolHer2013cec,
@@ -14194,7 +14218,7 @@ Optimization},
 @article{LodMarVig1999binpack,
   title =        {Heuristic and metaheuristic approaches for a class of
                   two-dimensional bin packing problems},
-  author =       Lodi #and# Martello_S #and# {Vigo, Daniele},
+  author =       Lodi #and# Martello_S #and# Vigo_D,
   journal =      informs,
   volume =       11,
   number =       4,
@@ -14207,7 +14231,7 @@ Optimization},
 @article{LodMarVig2004tspack,
   title =        {{TSpack}: a unified tabu search code for multi-dimensional bin
                   packing problems},
-  author =       Lodi #and# Martello_S #and# {Vigo, Daniele},
+  author =       Lodi #and# Martello_S #and# Vigo_D,
   journal =      aor,
   volume =       131,
   number =       {1-4},
@@ -14225,7 +14249,7 @@ Optimization},
 }
 
 @Misc{LodiEtAl2004sup,
-  author =       Lodi #and# Martello_S #and# {Vigo, Daniele},
+  author =       Lodi #and# Martello_S #and# Vigo_D,
   title =        {Two- and Three-Dimensional Bin Packing -- Source Code of
                   {TSpack}},
   howpublished =
@@ -15668,6 +15692,19 @@ algorithm configuration techniques to multi-objective algorithms.}
   address =      add-chichester,
   year =         1990,
   keywords =     {bin packing}
+}
+
+@article{MarVig1998exact,
+  title =        {Exact solution of the two-dimensional finite bin packing
+                  problem},
+  author =       Martello_S #and# Vigo_D,
+  journal =      ms,
+  volume =       44,
+  number =       3,
+  pages =        {388--399},
+  year =         1998,
+  publisher =    {INFORMS},
+  doi =          {10.1287/mnsc.44.3.388}
 }
 
 @MastersThesis{Maron1994hoeffding,
@@ -17888,6 +17925,20 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =       2,
   pages =        {454--464}
 }
+
+@article{Palubeckis2006,
+  title =        {Iterated tabu search for the unconstrained binary quadratic
+                  optimization problem},
+  author =       {Palubeckis, Gintaras},
+  journal =      inf,
+  volume =       17,
+  number =       2,
+  pages =        {279--296},
+  year =         2006,
+  publisher =    {Institute of Mathematics and Informatics},
+  doi =          {10.15388/Informatica.2006.138}
+}
+
 
 @Article{PanRui2012ejor,
   title =        {Local Search Methods for the Flowshop Scheduling Problem with Flowtime Minimization},
@@ -21138,6 +21189,22 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 
+@Misc{SouRitLop2021cap-supp,
+  author =       DeSouza #and# Ritt #and# Lopez-Ibanez,
+  title =        {Capping Methods for the Automatic Configuration of
+                  Optimization Algorithms -- Supplementary Material},
+  howpublished = {\url{https://github.com/souzamarcelo/supp-cor-capopt}},
+  year =         2021,
+}
+
+
+@Misc{SouRitLop2020capopt,
+	author = DeSouza #and# Ritt #and# Lopez-Ibanez,
+	title = {{CAPOPT}: Capping Methods for the Automatic Configuration of Optimization Algorithms},
+	howpublished = {\url{https://github.com/souzamarcelo/capopt}},
+	year = 2020
+}
+
 @Article{Souilah1995,
   title =         {Simulated annealing for manufacturing systems layout design},
   author =        {Souilah, Abdelghani},
@@ -21581,7 +21648,7 @@ algorithm configuration techniques to multi-objective algorithms.}
                   Paradigms for Optimization},
   publisher =    kap-nl,
   year =         1999,
-  editor =       Voss_S #and# {S. Martello} #and# Osman #and# {C. Roucairol},
+  editor =       Voss_S #and# Martello_S #and# Osman #and# {C. Roucairol},
   pages =        {137--154}
 }
 
@@ -22401,6 +22468,13 @@ Twin-Screw Extrusion Configuration Problem},
   alias =        {Trianni:2011wl}
 }
 
+@Misc{Trick2018sup,
+	author = Trick_M,
+	title = {Graph Coloring Instances},
+	howpublished = {\url{https://mat.gsia.cmu.edu/COLOR/instances.html}},
+	year = 2018
+}
+
 @article{TseLin09,
   author =       Tseng_LY #and# Lin_YT,
   title =        "A hybrid genetic local search algorithm for the permutation
@@ -22909,7 +22983,6 @@ Twin-Screw Extrusion Configuration Problem},
   number =       3,
   pages =        {658--673}
 }
-
 @PhdThesis{Violin2014PhD,
   author =       {Alessia Violin},
   title =        {Mathematical Programming Approaches to Pricing Problems},
@@ -22920,7 +22993,7 @@ Twin-Screw Extrusion Configuration Problem},
 
 @InCollection{VosHanIgel2010gecco,
   title =        "Improved Step Size Adaptation for the {MO-CMA-ES}",
-  author =       Voss_T #and# Hansen_N #and# {Igel, Christian},
+  author =       Voss_T #and# Hansen_N #and# Igel_C,
   crossref =     {GECCO2010},
   pages =        {487--494},
 }
@@ -24254,6 +24327,3 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   year =         2001
 }
 
-@Comment Local Variables:
-@Comment bibtex-string-files: ("abbrev.bib" "journals.bib" "authors.bib")
-@Comment End:
