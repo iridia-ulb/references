@@ -18,6 +18,17 @@ if [ $? -eq 0 ]; then
     exit 1
 fi
 
+# These look similar but they are different.
+BADCHARS="⁄∕−―—–´"
+grep --quiet "[$BADCHARS]" ../*.bib
+if [ $? -eq 0 ]; then
+    travis_fold_end latexmk.1
+    echo "Error: Please do not use these UTF8 characters:"
+    grep "[$BADCHARS]" ../*.bib
+    exit 1
+fi
+
+
 TEXMAIN="testbib.tex"
 travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
 texliveonfly $TEXMAIN
