@@ -3644,7 +3644,7 @@ Los Angeles, CA},
 
 
 @Article{BranJin2005tec,
-  author =       {Yaochu Jin} #and# Branke,
+  author =       Jin_Yaochu #and# Branke,
   title =        {Evolutionary Optimization in Uncertain Environments---A
                   Survey},
   journal =      tec,
@@ -4799,6 +4799,16 @@ Los Angeles, CA},
                   evolutionary algorithms},
   school =       {University of Jyväskylä},
   year =         2017,
+}
+
+
+@InProceedings{Chugh2020scalar,
+  author =       Chugh_Tinkle,
+  crossref =     "CEC2020",
+  title =        {Scalarizing Functions in Bayesian Multiobjective
+                  Optimization},
+  pages =        {1--8},
+  doi =          {10.1109/CEC48606.2020.9185706},
 }
 
 @inproceedings{CirJohMcGZha2001,
@@ -7453,6 +7463,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {121--135},
 }
 
+@ARTICLE{EmmGiaNau2006,
+  author =       Emmerich #and# {K. C. Giannakoglou} #and# Naujoks,
+  journal =      tec,
+  title =        {Single- and multiobjective evolutionary optimization assisted
+                  by {G}aussian random field metamodels},
+  year =         2006,
+  volume =       10,
+  number =       4,
+  pages =        {421--439},
+  doi =          {10.1109/TEVC.2005.859463}
+}
+
 @article{EngWie2007twod,
   title =        {{2D} decision-making for multicriteria design optimization},
   author =       {Engau, Alexander} #and# Wiecek_M,
@@ -8070,6 +8092,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Multi-objective Metaheuristics",
   pages =        {519--533},
   crossref =     "EMO2003",
+}
+
+@Book{Fletcher1987,
+  author =       {Fletcher, R.},
+  publisher =    jws,
+  title =        {Practical methods of optimization},
+  year =         1987,
+  address =      add-ny,
+  annote =       "BFGS"
 }
 
 @article{Fli2007effects,
@@ -10038,11 +10069,12 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {1--17},
 }
 
-@InCollection{Han1997,
-  title =       {Tabu search for multiobjective optimization: {MOTS}},
-  author =      Hansen_MP,
-  pages =       {574--586},
-  crossref =     "MCDM1997"
+@InCollection{Han1997mots,
+  title =        {Tabu search for multiobjective optimization: {MOTS}},
+  author =       Hansen_MP,
+  pages =        {574--586},
+  crossref =     "MCDM1997",
+  alias =        "Han1997"
 }
 
 @TECHREPORT{HanAugFin2009bbob_setup,
@@ -11970,6 +12002,21 @@ Traveling Salesman Heuristic},
   pdf =          {Jin05 - Fitness approximation in EA.pdf}
 }
 
+@Article{JinWanChu2019data,
+  author =       Jin_Yaochu #and# {Handing Wang} #and# Chugh_Tinkle #and# {Dan
+                  Guo} #and# Miettinen,
+  journal =      tec,
+  title =        {Data-Driven Evolutionary Optimization: An Overview and Case
+                  Studies},
+  year =         2019,
+  month =        jun,
+  number =       3,
+  pages =        {442--458},
+  volume =       23,
+  doi =          {10.1109/tevc.2018.2869001},
+}
+
+
 @Misc{JoH2015:policy,
   key =          {{Journal of Heuristics}},
   title =        {{Journal of Heuristics. Policies on Heuristic Search Research}},
@@ -12821,6 +12868,33 @@ Traveling Salesman Heuristic},
   address =      {Santiago de Compostela, Spain},
 }
 
+@article{KimCouYou2021set,
+  title =        "Bayesian Optimization with Approximate Set Kernels",
+  author =       {Jungtaek Kim and Michael McCourt and Tackgeun You and Saehoon
+                  Kim and Seungjin Choi},
+  abstract =     {We propose a practical Bayesian optimization method over
+                  sets, to minimize a black-box function that takes a set as a
+                  single input. Because set inputs are permutation-invariant,
+                  traditional Gaussian process-based Bayesian optimization
+                  strategies which assume vector inputs can fall short. To
+                  address this, we develop a Bayesian optimization method with
+                  \emph{set kernel} that is used to build surrogate
+                  functions. This kernel accumulates similarity over set
+                  elements to enforce permutation-invariance, but this comes at
+                  a greater computational cost. To reduce this burden, we
+                  propose two key components: (i) a more efficient approximate
+                  set kernel which is still positive-definite and is an
+                  unbiased estimator of the true set kernel with upper-bounded
+                  variance in terms of the number of subsamples, (ii) a
+                  constrained acquisition function optimization over sets,
+                  which uses symmetry of the feasible region that defines a set
+                  input. Finally, we present several numerical experiments
+                  which demonstrate that our method outperforms other methods.},
+  journal =      ml,
+  year =         2021,
+  doi = {10.1007/s10994-021-05949-0},
+}
+    
 @Article{KimParLee2017,
   author =       {Kim, J.-S. and Park, J.-H. and Lee, D.-H.},
   title =        {Iterated Greedy Algorithms to Minimize the Total Family Flow
@@ -12906,7 +12980,6 @@ Traveling Salesman Heuristic},
   pages =        {50--66},
   keywords =     {ParEGO, online, metamodel},
 }
-
 
 @article{Kno2009closed,
   author =       Knowles,
@@ -13546,6 +13619,49 @@ Traveling Salesman Heuristic},
   pages =        {161--172},
 }
 
+@Article{Kushner1964,
+  author =       {Kushner, H. J.},
+  journal =      jbe,
+  title =        {A New Method of Locating the Maximum Point of an Arbitrary
+                  Multipeak Curve in the Presence of Noise},
+  year =         1964,
+  issn =         {0021-9223},
+  month =        mar,
+  number =       1,
+  pages =        {97--106},
+  volume =       86,
+  abstract =     {A versatile and practical method of searching a parameter
+                  space is presented. Theoretical and experimental results
+                  illustrate the usefulness of the method for such problems as
+                  the experimental optimization of the performance of a system
+                  with a very general multipeak performance function when the
+                  only available information is noise-distributed samples of
+                  the function. At present, its usefulness is restricted to
+                  optimization with respect to one system parameter. The
+                  observations are taken sequentially; but, as opposed to the
+                  gradient method, the observation may be located anywhere on
+                  the parameter interval. A sequence of estimates of the
+                  location of the curve maximum is generated. The location of
+                  the next observation may be interpreted as the location of
+                  the most likely competitor (with the current best estimate)
+                  for the location of the curve maximum. A Brownian motion
+                  stochastic process is selected as a model for the unknown
+                  function, and the observations are interpreted with respect
+                  to the model. The model gives the results a simple intuitive
+                  interpretation and allows the use of simple but efficient
+                  sampling procedures. The resulting process possesses some
+                  powerful convergence properties in the presence of noise; it
+                  is nonparametric and, despite its generality, is efficient in
+                  the use of observations. The approach seems quite promising
+                  as a solution to many of the problems of experimental system
+                  optimization.},
+  doi =          {10.1115/1.3653121},
+  aurl =
+                  {https://asmedigitalcollection.asme.org/fluidsengineering/article-pdf/86/1/97/5763745/97\_1.pdf},
+}
+
+
+
 @article{Kwa2017ems,
   title =        {The Exploratory Modeling Workbench: An open source toolkit
                   for exploratory modeling, scenario discovery, and
@@ -13710,6 +13826,19 @@ Traveling Salesman Heuristic},
   number = 	 4,
   pages = 	 {408--416}
 }
+
+@INPROCEEDINGS{LarLap2014kriging,
+  author =       {Lark, R. M. and Lapworth, D. J.},
+  title =        "A new statistic to express the uncertainty of kriging
+                  predictions for purposes of survey planning",
+  booktitle =    {EGU General Assembly Conference Abstracts},
+  year =         2014,
+  month =        may,
+  eid =          2183,
+  url =         {https://ui.adsabs.harvard.edu/abs/2014EGUGA..16.2183L},
+}
+
+
 
 @Book{LarLoz2002eda,
   author =       {Larra{\~n}aga, Pedro} #and# Lozano_JA,
@@ -16353,6 +16482,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2008
 }
 
+
 @inCollection{MenCoe2015gd,
   author =       {Menchaca-Mendez, Adriana} #and# Coello,
   title =        "{GD-MOEA}: A New Multi-Objective Evolutionary Algorithm Based
@@ -16860,11 +16990,27 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 
 @article{MocTieZil1978,
-  author =       {Mockus, Jonas and Tiesis, Vytautas and Zilinskas, Antanas},
+  author =       Mockus_J  #and# {Tiesis, Vytautas and Zilinskas, Antanas},
   title =        "The application of bayesian methods for seeking the extremum",
   journal =      "Towards global optimization",
   pages =        "117--129",
   year =         1978,
+  annote =       "Proposed Bayesian optimization"
+}
+
+@InCollection{Mockus1975,
+  author =       Mockus_J,
+  booktitle =    {Optimization Techniques IFIP Technical Conference
+                  Novosibirsk, July 1--7, 1974},
+  title =        {On Bayesian Methods for Seeking the Extremum},
+  year =         1975,
+  address =      add-berlin-heidelberg,
+  editor =       {Marchuk, G. I.},
+  pages =        {400--404},
+  publisher =    springer-lncs,
+  series =       lncs,
+  volume =       27,
+  doi =          "10.1007/3-540-07165-2_55",
   annote =       "Proposed Bayesian optimization"
 }
 
@@ -19444,6 +19590,14 @@ algorithm configuration techniques to multi-objective algorithms.}
   Volume                   = 37
 }
 
+@InProceedings{RahEveFie2017infill,
+  author =       {Rahat, Alma A. M.} #and# Everson_R #and# Fieldsend,
+  crossref =     "GECCO2017",
+  title =        {Alternative infill strategies for expensive multi-objective
+                  optimisation},
+  pages =        {873--880},
+}
+
 @article{Raj93,
   title =        "Heuristic algorithm for scheduling in a flowshop to
                   minimize total flowtime",
@@ -19561,7 +19715,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   author =       {Rasmussen, Carl Edward} #and# {Williams, Christopher K. I.},
   year =         2006,
   keywords =     {Gaussian processes, data processing},
-  language =     {eng},
+  language =     {English},
   publisher =    mit-pub,
   address =      mit-ad,
   alias =        "Rasmussen2006",
@@ -21023,6 +21177,19 @@ algorithm configuration techniques to multi-objective algorithms.}
                   of South African sugarcane industry is utilised to study and
                   examine the proposed model. The results prove the economic
                   profitability and sustainability of the project."
+}
+
+@Article{ShaSweWan2016taking,
+  author =       {Shahriari, B. and Swersky, K. and Wang, Z. and Adams, R. P.}
+                  #and# DeFreitas_N,
+  journal =      prcieee,
+  title =        {Taking the human out of the loop: A review of {B}ayesian
+                  optimization},
+  year =         2016,
+  number =       1,
+  pages =        {148--175},
+  volume =       104,
+  publisher =    {IEEE},
 }
 
 @Article{ShaSweWanAdaFre2016,
@@ -24083,6 +24250,22 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 
+@Article{YanEmmDeu2019bayesian,
+  author =       {Kaifeng Yang} #and# Emmerich #and# Deutz_AH #and#
+                  Baeck_Thomas,
+  journal =      swec,
+  title =        {Multi-Objective {B}ayesian Global Optimization using Expected
+                  Hypervolume Improvement Gradient},
+  year =         2019,
+  month =        feb,
+  pages =        {945--956},
+  volume =       44,
+  doi =          {10.1016/j.swevo.2018.10.007},
+  keywords =     {Bayesian Optimisation with preferences},
+  publisher =    {Elsevier {BV}},
+}
+
+
 @Article{YanKrePin00:js,
   author =       {Y. Yang and S. Kreipl and M. L. Pinedo},
   title =        {Heuristics for Minimizing Total Weighted Tardiness in Flexible Flow Shops},
@@ -24126,6 +24309,42 @@ Twin-Screw Extrusion Configuration Problem},
   doi =         {10.1109/EALS.2014.7009510},
   keywords =    {irace},
 }
+
+@InCollection{YasAraMei2019comparison,
+  author =       {Yasojima, Carlos and Ara{\'u}jo, Tiago and Meiguins, Bianchi
+                  and Neto, Nelson and Morais, Jefferson},
+  booktitle =    {Progress in Artificial Intelligence},
+  title =        {A Comparison of Genetic Algorithms and Particle Swarm
+                  Optimization to Estimate Cluster-Based Kriging Parameters},
+  year =         2019,
+  address =      add-cham,
+  editor =       {Moura Oliveira, Paulo and Novais, Paulo and Reis, Lu{\'i}s
+                  Paulo },
+  pages =        {750--761},
+  publisher =    springer-int-pub,
+  abstract =     {Kriging is one of the most used spatial estimation methods in
+                  real-world applications. Some kriging parameters must be
+                  estimated in order to reach a good accuracy in the
+                  interpolation process, however, this task remains a
+                  challenge. Various optimization methods have been tested to
+                  find good parameters of the kriging process. In recent years,
+                  many authors are using bio-inspired techniques and achieving
+                  good results in estimating these parameters in comparison
+                  with traditional techniques. This paper presents a comparison
+                  between well known bio-inspired techniques such as Genetic
+                  Algorithms and Particle Swarm Optimization in the estimation
+                  of the essential kriging parameters: nugget, sill, range,
+                  angle, and factor. In order to perform the tests, we proposed
+                  a methodology based on the cluster-based kriging
+                  method. Considering the Friedman test, the results showed no
+                  statistical difference between the evaluated algorithms in
+                  optimizing kriging parameters. On the other hand, the
+                  Particle Swarm Optimization approach presented a faster
+                  convergence, which is important in this high-cost
+                  computational problem.},
+  isbn =         {978-3-030-30241-2},
+}
+
 
 @InCollection{YavAydStu2016,
   author = 	 Yavuz #and# Dogan #and# Stuetzle,
@@ -24737,4 +24956,5 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
                   Exeter, UK},
   year =         2001
 }
+
 
