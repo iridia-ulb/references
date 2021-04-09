@@ -7387,6 +7387,16 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {461--471},
 }
 
+@InProceedings{EmmDeuKli2011ehvi,
+  author =       Emmerich #and# Deutz_AH #and# "J. W. Klinkenberg",
+  title =        "Hypervolume-based expected improvement: Monotonicity
+                  properties and exact computation",
+  crossref =     "CEC2011",
+  pages =        "2147--2154",
+  doi =          "10.1109/CEC.2011.5949880",
+  annote =       "Proposed Expected Hypervolume Improvement (EHVI)"
+}
+
 @incollection{EmmFon2011emo,
   title =        {Computing Hypervolume Contributions in Low
                   Dimensions: Asymptotically Optimal Algorithm and
@@ -12627,7 +12637,7 @@ Traveling Salesman Heuristic},
 
 @inCollection{KerWanPre2016ppsn,
   author =       Kerschke_P #and# {Hao Wang} #and# Preuss_M #and# {Christian
-                  Grimme and Andr{\'{e}} H. Deutz} #and# Trautmann #and#
+                  Grimme}  #and# Deutz_AH #and# Trautmann #and#
                   Emmerich,
   title =        {Towards Analyzing Multimodality of Continuous Multiobjective
                   Landscapes},
@@ -12645,7 +12655,7 @@ Traveling Salesman Heuristic},
   number =       4,
   pages =        {577--609},
   author =       Kerschke_P #and# {Hao Wang} #and# Preuss_M #and# {Christian
-                  Grimme and Andr{\'{e}} H. Deutz} #and# Trautmann #and#
+                  Grimme} #and# Deutz_AH #and# Trautmann #and#
                   Emmerich,
   title =        {Search Dynamics on Multimodal Multiobjective Problems},
   journal =      ec,
@@ -17514,11 +17524,12 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @inCollection{NebLopBarGar2019gecco,
   title =        "Automatic Configuration of {NSGA-II} with {jMetal} and irace",
-  author =      Nebro #and# Lopez-Ibanez #and# Barba-Gonzalez #and#
+  author =       Nebro #and# Lopez-Ibanez #and# Barba-Gonzalez #and#
                   Garcia-Nieto,
   crossref =     "GECCO2019c",
   doi =          {10.1145/3319619.3326832},
-  pdf =          "NebLopBarGar2019gecco.pdf"
+  pdf =          "NebLopBarGar2019gecco.pdf",
+  pages =        "1374-–1381"
 }
 
 @Book{NemWol88,
@@ -20244,7 +20255,33 @@ algorithm configuration techniques to multi-objective algorithms.}
                   Features of Optimization Problems",
   crossref =     "GECCO2019c",
   doi =          {10.1145/3319619.3326890},
-  pdf =          "SaiLopMie2019gecco.pdf"
+  pdf =          "SaiLopMie2019gecco.pdf",
+  pages =        "1765–-1772",
+  abstract =     "A typical scenario when solving industrial single or
+                  multiobjective optimization problems is that no explicit
+                  formulation of the problem is available. Instead, a dataset
+                  containing vectors of decision variables together with their
+                  objective function value(s) is given and a surrogate model
+                  (or metamodel) is build from the data and used for
+                  optimization and decision-making. This data-driven
+                  optimization process strongly depends on the ability of the
+                  surrogate model to predict the objective value of decision
+                  variables not present in the original dataset. Therefore, the
+                  choice of surrogate modelling technique is crucial. While
+                  many surrogate modelling techniques have been discussed in
+                  the literature, there is no standard procedure that will
+                  select the best technique for a given problem. In this work,
+                  we propose the automatic selection of a surrogate modelling
+                  technique based on exploratory landscape features of the
+                  optimization problem that underlies the given dataset. The
+                  overall idea is to learn offline from a large pool of
+                  benchmark problems, on which we can evaluate a large number
+                  of surrogate modelling techniques. When given a new dataset,
+                  features are used to select the most appropriate surrogate
+                  modelling technique. The preliminary experiments reported
+                  here suggest that the proposed automatic selector is able to
+                  identify high-accuracy surrogate models as long as an
+                  appropriate classifier is used for selection."
 }
 
 @inCollection{SakTakKaw2010,
@@ -24432,7 +24469,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        "117--132",
   alias =        {perfassess},
   doi =          "10.1109/TEVC.2003.810758",
-  annote =       "Proposed the combination of quality indicators"
+  annote =       "Proposed the combination of quality indicators and epsilon-indicator"
 }
 
 
