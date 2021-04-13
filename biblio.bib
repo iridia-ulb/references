@@ -27,18 +27,21 @@
 %%    the opposite cannot be done, then titles should preferably be in
 %%    title-case like "Data Structures and Algorithms". If a word or a letter
 %%    should always be in upper (or lower) case, then surround them with
-%%    braces, like in "The {ACO} Book", or "The {P}areto Front".
-%%12. The fields 'pdf' and 'supplement' can be used to point out to a preferred
+%%    braces, like in "The {ACO} Book", or "The {Pareto} Front".
+%%12. Braces can prevent kerning between letters, so it is in general
+%%    preferable to enclose entire words and not just single letters in braces
+%%    to protect them.
+%%13. The fields 'pdf' and 'supplement' can be used to point out to a preferred
 %%    PDF filename and a url containing supplementary material respectively.
 %%    These fields will be ignored by most BibTeX styles (.bst files), but
 %%    they can be used with custom styles to, for example, generate an HTML
 %%    bibliography, a list of publications. See testbib.tex for an example.
-%%13. If you wish to add an entry for supplementary material to another
+%%14. If you wish to add an entry for supplementary material to another
 %%    publication, please use a Misc entry with the same label as for the main
 %%    publication adding -supp at the end. Example: the supplementary material
 %%    entry for BezLopStu2012:ants would be BezLopStu2012:ants-supp.
 %%    This keeps the entries together, making easier to keep them in sync.
-%%14. Use the following abbreviations for months: jan, feb, mar, apr, may, jun,
+%%15. Use the following abbreviations for months: jan, feb, mar, apr, may, jun,
 %%    jul, aug, sep, oct, nov, dec. Some bibstyles will abbreviate the months,
 %%    others may use numeric values and others will use the full name. Using
 %%    the abbreviations allows this customization to be consistent.
@@ -2857,7 +2860,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BisLanKot2016mlr,
-  title =        {{\Rpackage{mlr}}: Machine Learning in \proglang{R}},
+  title =        {{\rpackage{mlr}}: Machine Learning in \proglang{R}},
   author =       Bischl_B #and# {Michel Lang} #and# Kotthoff_L #and# {Julia
                   Schiffner and Jakob Richter and Erich Studerus and Giuseppe
                   Casalicchio and Zachary M. Jones},
@@ -4159,7 +4162,7 @@ Los Angeles, CA},
 }
 
 @article{CamBatAra2020jss,
-	title   = {The {\Rpackage{MOEADr}} Package: A Component-Based Framework for Multiobjective Evolutionary Algorithms Based on Decomposition},
+	title   = "The \rpackage{MOEADr} Package: A Component-Based Framework for Multiobjective Evolutionary Algorithms Based on Decomposition",
 	author  = Campelo #and# Batista #and# Aranha,
 	year    = 2020,
 	volume  = 92,
@@ -5492,7 +5495,7 @@ Los Angeles, CA},
 
 @InCollection{DanPerCauStu2017:gecco,
   author =       DangThiThanh #and# Perez_L #and# DeCausmaecker #and# Stuetzle,
-  title =        {Configuring {\Rpackage{irace}} Using Surrogate Configuration Benchmarks},
+  title =        {Configuring {\rpackage{irace}} Using Surrogate Configuration Benchmarks},
   crossref =     {GECCO2017},
   pages =        {243--250},
   keywords =     "irace",
@@ -6160,8 +6163,8 @@ Los Angeles, CA},
 
 @Misc{DesRitLop2020acviz,
   author =       DeSouza #and# Ritt #and# Lopez-Ibanez #and# Perez_L,
-  title =        {{\SoftwarePackage{ACVIZ}}: A Tool for the Visual Analysis of
-                  the Configuration of Algorithms with {\Rpackage{irace}} --
+  title =        {{\softwarepackage{ACVIZ}}: A Tool for the Visual Analysis of
+                  the Configuration of Algorithms with {\rpackage{irace}} --
                   Source Code},
   howpublished = {\url{https://github.com/souzamarcelo/acviz}},
   year =         2020
@@ -6169,12 +6172,31 @@ Los Angeles, CA},
 
 @Misc{DesRitLopPer2020zenodo,
   author =       DeSouza #and# Ritt #and# Lopez-Ibanez #and# Perez_L,
-  title =        {{\SoftwarePackage{ACVIZ}}: Algorithm Configuration
-                  Visualizations for {\Rpackage{irace}}},
+  title =        {{\softwarepackage{ACVIZ}}: Algorithm Configuration
+                  Visualizations for {\rpackage{irace}}: Supplementary material},
   month =        sep,
   year =         2020,
   publisher =    {Zenodo},
-  doi =          {10.5281/zenodo.4028906}
+  howpublished = {\url{http://doi.org/10.5281/zenodo.4028906}}
+}
+
+@Article{DesRitLopPer2021acviz,
+  author =       DeSouza #and# Ritt #and# Lopez-Ibanez #and# Perez_L,
+  title =        {{\softwarepackage{ACVIZ}}: A Tool for the Visual Analysis of
+                  the Configuration of Algorithms with {\rpackage{irace}}},
+  journal =      orp,
+  year =         2021,
+  supplement =   {http://doi.org/10.5281/zenodo.4028906},
+  abstract =     "This paper introduces acviz, a tool that helps to analyze the
+                  automatic configuration of algorithms with irace. It provides
+                  a visual representation of the configuration process,
+                  allowing users to extract useful information, e.g. how the
+                  configurations evolve over time. When test data is available,
+                  acviz also shows the performance of each configuration on the
+                  test instances. Using this visualization, users can analyze
+                  and compare the quality of the resulting configurations and
+                  observe the performance differences on training and test
+                  instances."
 }
 
 @Article{DetPapZab2017omega,
@@ -9213,6 +9235,14 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher={Elsevier}
 }
 
+@inproceedings{GenHooProWal99,
+  author =       Gent_IP #and# Hoos #and# "P. Prosser" #and# "T. Walsh",
+  title =        "Morphing: Combining Structure and Randomness",
+  booktitle =    aaai99,
+  pages =        "654--660",
+  year =         1999
+}
+
 @Article{GenMit2014,
   title =        {Multiobjective evolutionary algorithm for manufacturing scheduling problems: state-of-the-art survey},
   author =       {Gen, Mitsuo and Lin, Lin},
@@ -11087,7 +11117,7 @@ Traveling Salesman Heuristic},
 
 @article{HutHooLeyStu2009jair,
   author =       Hutter #and# Hoos #and# Leyton-Brown #and# Stuetzle,
-  title =        "{\SoftwarePackage{ParamILS}:} An Automatic Algorithm Configuration Framework",
+  title =        "{\softwarepackage{ParamILS}:} An Automatic Algorithm Configuration Framework",
   journal =      jair,
   year =         2009,
   volume =       36,
@@ -11177,7 +11207,7 @@ Traveling Salesman Heuristic},
 
 @TechReport{IRIDIA-2003-037,
   author =       Birattari,
-  title =        "The {\Rpackage{race}} Package for~\proglang{R}: {R}acing
+  title =        "The {\rpackage{race}} Package for~\proglang{R}: {Racing}
                   Methods for the Selection of the Best",
   institution =  iridia,
   year =         2003,
@@ -11689,7 +11719,7 @@ Traveling Salesman Heuristic},
 }
 
 @article{IruCalLoz2016permallows,
-  title =        {{\Rpackage{PerMallows}}: An \proglang{R} Package for Mallows
+  title =        {{\rpackage{PerMallows}}: An {\proglang{R}} Package for Mallows
                   and Generalized Mallows Models},
   author =       Irurozki_E #and# {Calvo, Borja} #and# Lozano_JA,
   abstract =     {In this paper we present the R package PerMallows, which is a
@@ -11809,7 +11839,7 @@ Traveling Salesman Heuristic},
 }
 
 @Article{Jac2011jss,
-  title =        "Multi-State Models for Panel Data: The {\Rpackage{msm}} Package for \proglang{R}",
+  title =        "Multi-State Models for Panel Data: The {\rpackage{msm}} Package for \proglang{R}",
   author =       {Christopher H. Jackson},
   journal =      jss,
   year =         2011,
@@ -13552,7 +13582,7 @@ Traveling Salesman Heuristic},
 
 @article{Kuhn2008:jss,
   author =       {Kuhn, Max},
-  title =        {Building Predictive Models in \proglang{R} Using the {\Rpackage{caret}} Package},
+  title =        {Building Predictive Models in \proglang{R} Using the {\rpackage{caret}} Package},
   journal =      jss,
   volume =       28,
   number =       5,
@@ -14782,7 +14812,7 @@ Optimization},
 @Article{LopDubPerStuBir2016irace,
   author =       Lopez-Ibanez #and# Dubois-Lacoste #and# Perez_L #and# Stuetzle
                   #and# Birattari,
-  title =        "The {\Rpackage{irace}} Package: Iterated Racing for Automatic
+  title =        "The {\rpackage{irace}} Package: Iterated Racing for Automatic
                   Algorithm Configuration",
   journal =      orp,
   year =         2016,
@@ -14795,7 +14825,7 @@ Optimization},
 @Misc{LopDubPerStuBir2016irace-supp,
   author =       Lopez-Ibanez #and# Dubois-Lacoste #and# Perez_L #and# Stuetzle
                   #and# Birattari,
-  title =        "The {\Rpackage{irace}} Package: Iterated Racing for Automatic Algorithm
+  title =        "The {\rpackage{irace}} Package: Iterated Racing for Automatic Algorithm
                   Configuration (Supplementary Material)",
   howpublished = {\url{http://iridia.ulb.ac.be/supp/IridiaSupp2016-003}},
   year =         2016
@@ -14805,7 +14835,7 @@ Optimization},
 @TechReport{LopDubStu2011irace,
   author =       Lopez-Ibanez #and# Dubois-Lacoste #and# Stuetzle #and#
                   Birattari,
-  title =        "The {\Rpackage{irace}} package, Iterated Race for Automatic
+  title =        "The {\rpackage{irace}} package, Iterated Race for Automatic
                   Algorithm Configuration",
   institution =  iridia,
   year =         2011,
@@ -15028,7 +15058,7 @@ Optimization},
 @TechReport{LopPerDubStuBir2016iraceguide,
   author =       Lopez-Ibanez #and# Perez_L #and# Dubois-Lacoste #and# Stuetzle
                   #and# Birattari,
-  title =        "The {\Rpackage{irace}} package: User Guide",
+  title =        "The {\rpackage{irace}} package: User Guide",
   institution =  iridia,
   year =         2016,
   number =       {TR/IRIDIA/2016-004},
@@ -17675,7 +17705,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @Article{NasVar2011optimx,
   Title =        {Unifying Optimization Algorithms to Aid Software System
-                  Users: \Rpackage{optimx} for \proglang{R}},
+                  Users: \rpackage{optimx} for \proglang{R}},
   Author =       {Nash, John and Varadhan, Ravi},
   Journal =      jss,
   Year =         2011,
@@ -18970,7 +19000,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @InCollection{PerLopHooStu2017:lion,
   author =       Perez_L #and# Lopez-Ibanez #and# Hoos #and# Stuetzle,
-  title =        "An Experimental Study of Adaptive Capping in {\Rpackage{irace}}",
+  title =        "An Experimental Study of Adaptive Capping in {\rpackage{irace}}",
   crossref =     "LION2017",
   pages = {235--250},
   pdf =          {PerLopHooStu2017lion.pdf},
@@ -19023,7 +19053,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @InCollection{PerPagFraStu2017gcc,
   author =       Perez_L #and# Pagnozzi #and# Franzin #and# Stuetzle,
-  title =        "Automatic Configuration of {GCC} Using {\Rpackage{irace}}",
+  title =        "Automatic Configuration of {GCC} Using {\rpackage{irace}}",
   crossref =     "EA2017",
   pages =        "202--216",
   abstract =     "Automatic algorithm configuration techniques have proved to
@@ -19501,7 +19531,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:ParamHelpers,
-  Title =        "{\Rpackage{ParamHelpers}} : Helpers for Parameters in
+  Title =        "{\rpackage{ParamHelpers}} : Helpers for Parameters in
                   Black-Box Optimization, Tuning and Machine Learning",
   Author =       Bischl_B #and# {Michel Lang and Jakob Bossek and Daniel Horn
                   and Karin Schork and Jakob Richter} #and# Kerschke_P,
@@ -19512,7 +19542,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:Rmpi,
-  title =        "{\Rpackage{Rmpi}}: Interface (Wrapper) to MPI (Message-Passing
+  title =        "{\rpackage{Rmpi}}: Interface (Wrapper) to MPI (Message-Passing
                   Interface)",
   author =       {Hao Yu},
   year =         2010,
@@ -19521,7 +19551,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:SPOT,
-  title =        "{\Rpackage{SPOT}}: Sequential Parameter
+  title =        "{\rpackage{SPOT}}: Sequential Parameter
                   Optimization",
   author =       Bartz-Beielstein #and# "J. Ziegenhirt and W. Konen
                   and O. Flasch and P. Koch and M. Zaefferer",
@@ -19531,7 +19561,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:cmaes,
-  title =        "{\Rpackage{cmaes}}: Covariance Matrix Adapting Evolutionary Strategy",
+  title =        "{\rpackage{cmaes}}: Covariance Matrix Adapting Evolutionary Strategy",
   author =       Trautmann #and# Mersmann_O #and# Arnu_D,
   note =         {\proglang{R} package},
   url = {http://cran.r-project.org/package=cmaes},
@@ -19539,7 +19569,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:lhs,
-  Title =        {{\Rpackage{lhs}}: Latin Hypercube Samples},
+  Title =        {{\rpackage{lhs}}: Latin Hypercube Samples},
   Author =       {Carnell, Rob},
   Note =         {\proglang{R} package version 0.14},
   url =          {http://r-forge.r-project.org/projects/lhs/},
@@ -19548,7 +19578,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:mco,
-    title = {{\Rpackage{mco}}: Multiple Criteria Optimization Algorithms and Related Functions},
+    title = {{\rpackage{mco}}: Multiple Criteria Optimization Algorithms and Related Functions},
     author = Mersmann_O,
     year = 2014,
     note = {\proglang{R} package version 1.0-15.1},
@@ -19556,7 +19586,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:mlr,
-  title =        "{\Rpackage{mlr}}: Machine Learning in \proglang{R}",
+  title =        "{\rpackage{mlr}}: Machine Learning in \proglang{R}",
   author =       Bischl_B #and# {Michel Lang and Jakob Bossek and Leonard Judt and Jakob Richter and Tobias Kuehn and Erich Studerus},
   year =         2013,
   note =         {\proglang{R} package},
@@ -19564,7 +19594,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:multicore,
-  title =        "{\Rpackage{multicore}}: Parallel Processing of \proglang{R} Code on Machines
+  title =        "{\rpackage{multicore}}: Parallel Processing of \proglang{R} Code on Machines
                   with Multiple Cores or CPUs",
   author =       {Simon Urbanek},
   year =         2010,
@@ -19573,7 +19603,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Manual{R:smoof,
-    title = {{\Rpackage{smoof}}: Single and Multi-Objective Optimization Test Functions},
+    title = {{\rpackage{smoof}}: Single and Multi-Objective Optimization Test Functions},
     author = {Jakob Bossek},
     year = 2016,
     note = {\proglang{R} package version 1.2},
@@ -22114,7 +22144,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @misc{Stu2002,
   author =       Stuetzle,
-  title =        "{\SoftwarePackage{ACOTSP}}: A Software Package of Various Ant Colony
+  title =        "{\softwarepackage{ACOTSP}}: A Software Package of Various Ant Colony
                   Optimization Algorithms Applied to the Symmetric
                   Traveling Salesman Problem",
   url =          {http://www.aco-metaheuristic.org/aco-code},
@@ -24868,7 +24898,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
 
 @Article{ranger2017:jss,
   author =       {Marvin N. Wright and Andreas Ziegler},
-  title =        {{\Rpackage{ranger}}: A Fast Implementation of Random Forests for High
+  title =        {{\rpackage{ranger}}: A Fast Implementation of Random Forests for High
                   Dimensional Data in {\proglang{C++}} and {\proglang{R}}},
   journal =      jss,
   year =         2017,
