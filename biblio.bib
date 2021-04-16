@@ -4323,6 +4323,36 @@ Los Angeles, CA},
   pages =        {257--267}
 }
 
+@InCollection{IruLop2021gecco,
+  author =       Irurozki_E #and# Lopez-Ibanez,
+  title =        "Unbalanced Mallows Models for Optimizing Expensive Black-Box
+                  Permutation Problems",
+  doi =          "10.1145/3449639.3459366",
+  crossref =     "GECCO2021",
+  supplement =   "https://zenodo.org/record/4500974",
+  abstract =     "Expensive black-box combinatorial optimization problems arise
+                  in practice when the objective function is evaluated by means
+                  of a simulator or a real-world experiment. Since each fitness
+                  evaluation is expensive in terms of time or resources, only a
+                  limited number of evaluations is possible, typically several
+                  orders of magnitude smaller than in non-expensive
+                  problems. In this scenario, classical optimization methods
+                  such as mixed-integer programming and local search are not
+                  useful.  In the continuous case, Bayesian optimization, in
+                  particular using Gaussian processes, has proven very
+                  effective under these conditions. Much less research is
+                  available in the combinatorial case. In this paper, we
+                  propose and analyze UMM, an estimation-of-distribution (EDA)
+                  algorithm based on a Mallows probabilistic model and
+                  unbalanced rank aggregation (uBorda). Experimental results on
+                  black-box versions of LOP and PFSP show that UMM is able to
+                  match, and sometimes surpass, the solutions obtained by CEGO,
+                  a Bayesian optimization algorithm for combinatorial
+                  optimization. Moreover, the computational complexity of UMM
+                  increases linearly with both the number of function
+                  evaluations and the permutation size."
+}
+
 @article{CebIruMen2014eda,
   author =       Ceberio #and# Irurozki_E #and# Mendiburu_A #and# Lozano_JA,
   title =        {A distance-based ranking model estimation of distribution
@@ -21149,6 +21179,15 @@ algorithm configuration techniques to multi-objective algorithms.}
   volume  = 94,
   pages   = {89--105},
   year    = 2018,
+}
+
+@InCollection{ShaLopKno2021gecco,
+  title =        "Realistic Utility Functions Prove Difficult for
+                  State-of-the-ArtInteractive Multiobjective Optimization
+                  Algorithms",
+  author =       Shavarani_Mahdi #and# Lopez-Ibanez #and# Knowles,
+  doi =          "10.1145/3449639.3459373",
+  crossref =     "GECCO2021",
 }
 
 @article{ShaSte2019deep,
