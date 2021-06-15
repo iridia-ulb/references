@@ -58,6 +58,25 @@
   month =        aug,
 }
 
+@misc{IJCAI2021checklist,
+  author =       "Zhiyuan Liu and Jian Tang",
+  title =        "IJCAI 2021 Reproducibility Guidelines, 35th International
+                  Joint Conference on Artificial Intelligence",
+  year =         2021,
+  howpublished =
+                  "\url{https://ijcai-21.org/wp-content/uploads/2020/12/20201226-IJCAI-Reproducibility.pdf}"
+}
+
+@misc{AAAI2021checklist,
+  author =       "{AAAI}",
+  title =        "35th AAAI Conference on Artificial Intelligence:
+                  Reproducibility Checklist",
+  howpublished =
+                  "\url{https://aaai.org/Conferences/AAAI-21/reproducibility-checklist/}",
+  year =         2021,
+  note =         "Last accessed: June 6th, 2021"
+}
+
 @InCollection{AarKorMic2005,
   title =        {Simulated Annealing},
   author =       Aarts #and# Korst_JHM #and# Michiels_W,
@@ -1508,7 +1527,9 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   author =       Bartz-Beielstein,
   title =        {How to Create Generalizable Results},
   pages =        {1127--1142},
-  crossref =     "HandbookCI2015"
+  crossref =     "HandbookCI2015",
+  keywords =     "Mixed-effects models, random-effects model, problem instance
+                  generation"
 }
 
 @Article{BarBatSenSil2015ijem,
@@ -1630,6 +1651,16 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 	doi =          {10.1073/pnas.1510507113},
 	journal =      pnas
 }
+
+@InCollection{BarPre2014experimental,
+  author =       Bartz-Beielstein #and# Preuss_M,
+  title =        "Experimental Analysis of Optimization Algorithms: Tuning and
+                  Beyond",
+  crossref =     "BorMor2014theory",
+  doi =          "10.1007/978-3-642-33206-7_10",
+  pages =        "205--245"
+}
+
 
 @InProceedings{BarPre2005em,
   author =       Bartz-Beielstein #and# Preuss_M,
@@ -3285,6 +3316,42 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       11,
   pages =        {3620--3635},
   alias = {BluYabBle08},
+}
+
+@article{BocFawVal2018performance,
+  author =       {Bocchese, Andrea F.} #and# Fawcett #and# {Vallati, Mauro}
+                  #and# {Gerevini, Alfonso E.} #and# Hoos,
+  title =        {Performance robustness of {AI} planners in the 2014
+                  International Planning Competition},
+  volume =       31,
+  doi =          {10.3233/AIC-170537},
+  abstract =     {Solver competitions have been used in many areas of AI to
+                  assess the current state of the art and guide future research
+                  and development. AI planning is no exception, and the
+                  International Planning Competition (IPC) has been frequently
+                  run for nearly two decades. Due to the organisational and
+                  computational burden involved in running these competitions,
+                  solvers are generally compared using a single homogeneous
+                  hardware and software environment for all competitors. To
+                  what extent does the specific choice of hardware and software
+                  environment have an effect on solver performance, and is that
+                  effect distributed equally across the competing solvers? In
+                  this work, we use the competing planners and benchmark
+                  instance sets from the 2014 IPC to investigate these two
+                  questions. We recreate the 2014 IPC Optimal and Agile tracks
+                  on two distinct hardware environments and eight distinct
+                  software environments. We show that solver performance varies
+                  significantly based on the hardware and software environment,
+                  and that this variation is not equal for all
+                  planners. Furthermore, the observed variation is sufficient
+                  to change the competition rankings, including the top-ranked
+                  planners for some tracks.},
+  number =       6,
+  journal =      aicomm,
+  publisher =    {IOS Press},
+  year =         2018,
+  month =        dec,
+  pages =        {445--463}
 }
 
 @Article{BoeKahMud1994,
@@ -7674,6 +7741,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    {Springer}
 }
 
+@inproceedings{EibJel2002critical,
+  author =       Eiben #and# {M. Jelasity},
+  title =        {A critical note on experimental research methodology in {EC}},
+  crossref =     "CEC2002",
+  annote =       "Discusses reproducibility, generalizability and separation
+                  between training (for tuning and experimentation) and testing
+                  instances (for comparisons).",
+  doi =          {10.1109/cec.2002.1006991},
+  pages =        "582--587"
+}
+        
 @InCollection{EibMichSChSmi07,
   author =       Eiben #and# Michalewicz #and# Schoenauer #and# {James E. Smith},
   title =        {Parameter Control in Evolutionary Algorithms},
@@ -11569,13 +11647,14 @@ Traveling Salesman Heuristic},
   alias =        {HutHooStu07}
 }
 
-@Article{HutLinBal++2017:aij,
+@Article{HutLinBal2017aij,
   author = 	 Hutter #and# Lindauer_M #and# {Adrian Balint and Sam Bayless} #and# Hoos #and# Leyton-Brown,
   title = 	 {The Configurable {SAT} Solver Challenge {(CSSC)}},
   journal = 	 aij,
   year = 	 2017,
   volume = 	 243,
-  number = 	 {1--25}
+  number = 	 {1--25},
+  alias = "HutLinBal++2017:aij"
 }
 
 @Article{HutLinBalBayHosLey17corr,
@@ -20035,6 +20114,15 @@ algorithm configuration techniques to multi-objective algorithms.}
                   {MAX-SAT} instances derived from static problems.  },
 }
 
+
+@misc{PinSin2020checklist,
+  author =       "Joelle Pineau and Koustuv Sinha",
+  title =        "The Machine Learning Reproducibility Checklist (v2.0)",
+  howpublished =
+                  "\url{https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist-v2.0.pdf}",
+  year =         2020,
+  annote =       "Used in NeurIPS 2020"
+}
 
 @Article{PinVinSin2020improving,
   title =        {Improving Reproducibility in Machine Learning Research (A
