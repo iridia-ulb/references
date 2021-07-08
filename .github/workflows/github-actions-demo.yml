@@ -18,10 +18,9 @@ jobs:
           ls ${{ github.workspace }}
 
       - name: Maybe skip before install (.travis/travis_maybe_skip.sh)
-        env:
-          INCLUDE_ONLY: "\.bib\|\.tex\|travis\|optbib2html\|deploy"
         run: |
           set -u
+          INCLUDE_ONLY="\.bib\|\.tex\|travis\|optbib2html\|deploy"
           git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/* 
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
              echo "This is a pull request build" 
