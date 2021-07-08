@@ -619,7 +619,7 @@ A: Because it prevents the bibtex style to change the case of the
 
    use
 
-    title = "This Is a Title that {M}anuel Likes"
+    title = "This Is a Title that {Manuel} Likes"
 
 
 #### Q: I want to keep an eye on someone else altering my references by mistake. ####
