@@ -1,9 +1,9 @@
-name: GitHub Actions Demo
+name: ci
 
 on: ['push', 'pull_request']
 
 jobs:
-  Explore-GitHub-Actions:
+  ci:
     runs-on: ubuntu-20.04
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -49,6 +49,9 @@ jobs:
         run: .travis/texlive/texlive_install.sh
 
       - name: Run test
-        run: cd test && ./travis_test.sh && cd .. && ./scripts/optbib2html.sh
+        run: cd test && ./travis_test.sh
+
+      - name: optbib2html
+        run: ./scripts/optbib2html.sh
         
       - run: echo "🍏 This job's status is ${{ job.status }}."
