@@ -11,22 +11,29 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+        
       - name: Maybe skip before install (.travis/travis_maybe_skip.sh)
+        env:
+          COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
         run: |
           set -u
           INCLUDE_ONLY="\.bib\|\.tex\|travis\|optbib2html\|deploy"
           git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/* 
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
-             echo "This is a pull request build" 
-             base_sha=$(git show --pretty=raw | grep '^parent' | cut -f2 -d' ' | sed -n '1p') 
-             head_sha=$(git show --pretty=raw | grep '^parent' | cut -f2 -d' ' | sed -n '2p') 
-             export TRAVIS_COMMIT_RANGE=${base_sha}...${head_sha} 
+             export TRAVIS_COMMIT_RANGE=${COMMIT_RANGE}
           else 
              echo "This is a branch build" 
              git fetch --depth=50 origin ${{ github.ref }} 
