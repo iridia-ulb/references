@@ -20,11 +20,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
 
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-        
       - name: Maybe skip before install (.travis/travis_maybe_skip.sh)
         env:
           PR_COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
@@ -42,22 +37,24 @@ jobs:
           git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
           # Use -m so that merge commits are also considered
           echo git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE}
-          git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} --quiet
-          if [ $? -ne 0 ]; then
-            exit 1
-          fi
+          FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
+          echo FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
           set +u
                   
       - name: Install packages
+        if: ${{ env.NON_DOCS_FILES_CHANGED != 0 }}
         run: sudo apt -y install bibtex2html tidy
 
       - name: Install texlive
+        if: ${{ env.NON_DOCS_FILES_CHANGED != 0 }}
         run: .travis/texlive/texlive_install.sh
 
       - name: Run test
+        if: ${{ env.NON_DOCS_FILES_CHANGED != 0 }}
         run: cd test && ./travis_test.sh
 
       - name: optbib2html
+        if: ${{ env.NON_DOCS_FILES_CHANGED != 0 }}
         run: ./scripts/optbib2html.sh
         
       - run: echo "🍏 This job's status is ${{ job.status }}."
