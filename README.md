@@ -1,6 +1,8 @@
 IRIDIA BibTeX Repository
 ========================
 
+[![Build Status](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml)
+
 [![Build Status](https://travis-ci.com/iridia-ulb/references.svg?branch=master)](https://travis-ci.com/iridia-ulb/references)
 
 This is a collection of BibTeX files organized in a way that tries to avoid redundancy, minimise mistakes and facilitate customization.
