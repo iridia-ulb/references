@@ -4,11 +4,11 @@ set -o pipefail
 PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 
 travis_fold_start() {
-  echo -e "travis_fold:start:$1\033[33;1m$2\033[0m"
+  echo -e "::group::$1\033[33;1m$2\033[0m"
 }
 
 travis_fold_end() {
-  echo -e "\ntravis_fold:end:$1\r"
+  echo -e "\n::endgroupd::\n"
 }
 
 grep --quiet -e "doi[[:space:]]*=.\+http" ../*.bib
