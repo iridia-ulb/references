@@ -27,17 +27,16 @@ jobs:
         
       - name: Maybe skip before install (.travis/travis_maybe_skip.sh)
         env:
-          COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
+          PR_COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
+          PUSH_COMMIT_RANGE: ${{ github.event.before }}..${{ github.event.after }}
         run: |
           set -u
           INCLUDE_ONLY="\.bib\|\.tex\|travis\|optbib2html\|deploy"
-          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/* 
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
-             export TRAVIS_COMMIT_RANGE=${COMMIT_RANGE}
+             export TRAVIS_COMMIT_RANGE=${PR_COMMIT_RANGE}
           else 
              echo "This is a branch build" 
-             git fetch --depth=50 origin ${{ github.ref }} 
-             export TRAVIS_COMMIT_RANGE=$(git log --format="%H" | tail -n1)...${{ github.ref }} 
+             export TRAVIS_COMMIT_RANGE=${PUSH_COMMIT_RANGE}
           fi 
           echo "Emulated TRAVIS_COMMIT_RANGE: ${TRAVIS_COMMIT_RANGE}" 
           git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
