@@ -7,7 +7,7 @@
 *.log
 *.out
 *.rel
-*.synctex.gz
+*.synctex*
 *.tmp
 *~
 /.auctex-auto
