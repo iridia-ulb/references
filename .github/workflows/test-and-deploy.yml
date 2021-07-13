@@ -1,4 +1,4 @@
-name: ci
+name: CI
 
 on: ['push', 'pull_request']
 
@@ -36,7 +36,6 @@ jobs:
           echo "Emulated TRAVIS_COMMIT_RANGE: ${TRAVIS_COMMIT_RANGE}" 
           git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
           # Use -m so that merge commits are also considered
-          echo git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE}
           FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
           echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
           set +u
