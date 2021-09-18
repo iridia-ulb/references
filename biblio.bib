@@ -217,6 +217,42 @@
   keyword =      "Calibra",
 }
 
+@article{AfsMieRui2021survey,
+  author =       {Afsar, Bekir} #and# Miettinen #and# Ruiz_Francisco,
+  title =        {Assessing the Performance of Interactive Multiobjective
+                  Optimization Methods: A Survey},
+  year =         2021,
+  volume =       54,
+  number =       4,
+  doi =          {10.1145/3448301},
+  abstract =     {Interactive methods are useful decision-making tools for
+                  multiobjective optimization problems, because they allow a
+                  decision-maker to provide her/his preference information
+                  iteratively in a comfortable way at the same time as (s)he
+                  learns about all different aspects of the problem. A wide
+                  variety of interactive methods is nowadays available, and
+                  they differ from each other in both technical aspects and
+                  type of preference information employed. Therefore, assessing
+                  the performance of interactive methods can help users to
+                  choose the most appropriate one for a given problem. This is
+                  a challenging task, which has been tackled from different
+                  perspectives in the published literature. We present a
+                  bibliographic survey of papers where interactive
+                  multiobjective optimization methods have been assessed
+                  (either individually or compared to other methods). Besides
+                  other features, we collect information about the type of
+                  decision-maker involved (utility or value functions,
+                  artificial or human decision-maker), the type of preference
+                  information provided, and aspects of interactive methods that
+                  were somehow measured. Based on the survey and on our own
+                  experiences, we identify a series of desirable properties of
+                  interactive methods that we believe should be assessed.},
+  journal =      acm-cs,
+  numpages =     27,
+  keywords =     {decision-makers, Interactive methods, performance assessment,
+                  preference information, multiobjective optimization problems}
+}
+
 @article{AguTan2007ejor,
   title =        "Working principles, behavior, and performance of {MOEAs} on
                   {MNK}-landscapes",
@@ -13989,14 +14025,38 @@ Traveling Salesman Heuristic},
 }
 
 @article{KorPagFal2001,
-  title =        {On the "dimensionality curse" and the "self-similarity
-                  blessing"},
-  author =       {Korn, Flip and Pagel, B-U and Faloutsos, Christos},
+  title =        {On the ``dimensionality curse'' and the ``self-similarity
+                  blessing''},
+  author =       {Korn, Flip and Pagel, B.-U. and Faloutsos, Christos},
   journal =      tkde,
   volume =       13,
   number =       1,
   pages =        {96--111},
   year =         2001,
+  doi =          "10.1109/69.908983",
+  abstract =     {Spatial queries in high-dimensional spaces have been studied
+                  extensively. Among them, nearest neighbor queries are
+                  important in many settings, including spatial databases (Find
+                  the k closest cities) and multimedia databases (Find the k
+                  most similar images). Previous analyses have concluded that
+                  nearest-neighbor search is hopeless in high dimensions due to
+                  the notorious "curse of dimensionality". We show that this
+                  may be overpessimistic. We show that what determines the
+                  search performance (at least for R-tree-like structures) is
+                  the intrinsic dimensionality of the data set and not the
+                  dimensionality of the address space (referred to as the
+                  embedding dimensionality). The typical (and often implicit)
+                  assumption in many previous studies is that the data is
+                  uniformly distributed, with independence between
+                  attributes. However, real data sets overwhelmingly disobey
+                  these assumptions; rather, they typically are skewed and
+                  exhibit intrinsic ("fractal") dimensionalities that are much
+                  lower than their embedding dimension, e.g. due to subtle
+                  dependencies between attributes. We show how the Hausdorff
+                  and Correlation fractal dimensions of a data set can yield
+                  extremely accurate formulas that can predict the I/O
+                  performance to within one standard deviation on multiple real
+                  and synthetic data sets.}
 }
 
 
@@ -19037,6 +19097,40 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {21-41},
   year =         2015,
   doi =          {10.1016/j.tcs.2015.01.002}
+}
+
+@article{Ols1992review,
+  author =       {Olson, David L.},
+  title =        {Review of Empirical Studies in Multiobjective Mathematical
+                  Programming: Subject Reflection of Nonlinear Utility and
+                  Learning},
+  journal =      ds,
+  volume =       23,
+  number =       1,
+  pages =        {1--20},
+  year =         1992,
+  keywords =     {Decision Analysis, Human Information Processing, Linear
+                  Programming},
+  doi =          {10.1111/j.1540-5915.1992.tb00374.x},
+  abstract =     {Multiple objective programming provides a means of
+                  aiding decision makers facing complex decisions where
+                  trade-offs among conflicting objectives must be
+                  reconciled. Interactive multiobjective programming provides a
+                  means for decision makers to learn what these trade-offs
+                  involve, while the mathematical program generates solutions
+                  that seek improvement of the implied utility of the decision
+                  maker. A variety of multiobjective programming techniques
+                  have been presented in the multicriteria decision-making
+                  literature. This study reviews published studies with human
+                  subjects where some of these techniques were applied. While
+                  all of the techniques have the ability to support decision
+                  makers under conditions of multiple objectives, a number of
+                  features in applying these systems have been tested by these
+                  studies. A general evolution of techniques is traced,
+                  starting with methods relying upon linear combinations of
+                  value, to more recent methods capable of reflecting nonlinear
+                  trade-offs of value. Support of nonlinear utility and
+                  enhancing decision-maker learning are considered.},
 }
 
 @incollection{OlsBarUrb2016gecco,
