@@ -9,7 +9,7 @@ tmpbib=$(mktemp --tmpdir tmpXXXXXXXXXX.bib)
 tmpcitefile=$(mktemp --tmpdir citefileXXXXXXXXXX)
 TIDYCONF=$(realpath scripts/tidy.conf)
 
-bib2bib --warn-error --expand --expand-xrefs $BIBFILES -ob $tmpbib -oc $tmpcitefile
+bib2bib --warn-error --expand --expand-xrefs $BIBFILES --remove pdf -ob $tmpbib -oc $tmpcitefile
 
 cd web
 bibtex2html -noeprint --nodoc --html-entities -linebreak -css bibtex.css --named-field url http --named-field springerlink Springer --named-field supplement "supplementary material" --note annote -dl --named-field eprint eprint -u -s ../bibstyles/plainweb -macros-from ../macros.tex -o index -citefile $tmpcitefile $tmpbib
