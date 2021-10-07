@@ -16,6 +16,7 @@ metafont mfware
 # texliveonfly does not detect the following packages automatically
 amsfonts
 amsmath
+biber
 biblatex
 bigintcalc
 bitset
