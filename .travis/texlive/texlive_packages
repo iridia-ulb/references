@@ -16,10 +16,12 @@ metafont mfware
 # texliveonfly does not detect the following packages automatically
 amsfonts
 amsmath
+biblatex
 bigintcalc
 bitset
 bookmark
 caption
+csquotes
 enumitem
 epstopdf-pkg
 etexcmds
