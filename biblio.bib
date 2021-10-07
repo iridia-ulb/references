@@ -45,6 +45,8 @@
 %%    jul, aug, sep, oct, nov, dec. Some bibstyles will abbreviate the months,
 %%    others may use numeric values and others will use the full name. Using
 %%    the abbreviations allows this customization to be consistent.
+%%16. biblatex warns if 'month' field contains more than one month.
+%%    Use the 'date' field in that case.
 %% Z. Some of the entries do not follow the above rules.
 %%    Please help us to update them little by little.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,7 +188,7 @@
 }
 
 @Article{Ade92,
-  author =       {B. Adenso-D{\'\i}az},
+  author =       {B. Adenso-D{\'i}az},
   title =        {Restricted Neighborhood in the Tabu Search for the
                   Flowshop Problem},
   journal =      ejor,
@@ -197,7 +199,7 @@
 }
 
 @Article{AdeLag06tuning,
-  author =       {B. Adenso-D{\'\i}az} #and# Laguna,
+  author =       {B. Adenso-D{\'i}az} #and# Laguna,
   title =        {Fine-Tuning of Algorithms Using Fractional
                   Experimental Design and Local Search},
   journal =      or,
@@ -688,7 +690,8 @@ Assignment with Controllable Processing Times},
   year =         2003,
   volume =       97,
   number =       {1--2},
-  pages =        {91--153}
+  pages =        {91--153},
+  doi = "10.1007/s10107-003-0440-4"
 }
 
 @TechReport{AppBixChvCoo95:tr,
@@ -2243,7 +2246,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 @article{BerEmmTav2017managing,
   title =        {Managing catastrophic climate risks under model uncertainty
                   aversion},
-  author =       {Berger, Lo{\"\i}c and Emmerling, Johannes and Tavoni,
+  author =       {Berger, Lo{\"i}c and Emmerling, Johannes and Tavoni,
                   Massimo},
   journal =      ms,
   volume =       63,
@@ -3050,7 +3053,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   title =        {A new graphical visualization of n-dimensional {Pareto} front
                   for decision-making in multiobjective optimization},
   author =       {Blasco, Xavier and Herrero, Juan M. and Sanchis, Javier and
-                  Mart{\'\i}nez, Manuel},
+                  Mart{\'i}nez, Manuel},
   journal =      is,
   volume =       178,
   number =       20,
@@ -4615,7 +4618,7 @@ Los Angeles, CA},
 }
 
 @Article{Cer85,
-  author =       "Vladim{\'\i}r \v{C}ern\'y",
+  author =       "Vladim{\'i}r \v{C}ern\'y",
   title =        "A Thermodynamical Approach to the Traveling Salesman Problem: An Efficient Simulation Algorithm",
   journal =      jota,
   year =         1985,
@@ -6450,7 +6453,7 @@ Los Angeles, CA},
 @inCollection{DenCosEsp2013igd,
   title =        {Many-objective optimization using differential evolution with
                   variable-wise mutation restriction},
-  author =       {Denysiuk, Roman and Costa, Lino and Esp{\'\i}rito Santo,
+  author =       {Denysiuk, Roman and Costa, Lino and Esp{\'i}rito Santo,
                   Isabel},
   crossref =     {GECCO2013},
   pages =        {591--598}
@@ -6471,7 +6474,7 @@ Los Angeles, CA},
   title =        {A practical tutorial on the use of nonparametric statistical
                   tests as a methodology for comparing evolutionary and swarm
                   intelligence algorithms},
-  author =       {Derrac, Joaqu{\'\i}n and Garc{\'\i}a, Salvador} #and# Molina_D #and# Herrera_F,
+  author =       {Derrac, Joaqu{\'i}n and Garc{\'i}a, Salvador} #and# Molina_D #and# Herrera_F,
   journal =      swec,
   volume =       1,
   number =       1,
@@ -6698,7 +6701,7 @@ Los Angeles, CA},
 
 
 @InCollection{DieValAreRodSua2014ants,
-  author =       {Diego D{\'\i}az and Pablo Valledor and Paula Areces and Jorge Rodil and Montserrat Su{\'a}rez},
+  author =       {Diego D{\'i}az and Pablo Valledor and Paula Areces and Jorge Rodil and Montserrat Su{\'a}rez},
   title =        {An {ACO} Algorithm to Solve an Extended Cutting Stock Problem for Scrap Minimization in a Bar Mill},
   crossref =     {ANTS2014},
   pages =        {13--24},
@@ -7998,7 +8001,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Scalable Global Optimization via Local {Bayesian}
                   Optimization},
   author =       {Eriksson, David and Pearce, Michael and Gardner, Jacob and
-                  Turner, Ryan D and Poloczek, Matthias},
+                  Turner, Ryan D. and Poloczek, Matthias},
   crossref =     "NIPS2019",
   pages =        {5496--5507},
   eprint =
@@ -9520,7 +9523,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 
 @article{GarFer2015saferl,
   title =        {A comprehensive survey on safe reinforcement learning},
-  author =       {Garc{\'\i}a, Javier and Fern{\'a}ndez, Fernando},
+  author =       {Garc{\'i}a, Javier and Fern{\'a}ndez, Fernando},
   journal =      jmlr,
   volume =       16,
   number =       1,
@@ -9533,8 +9536,8 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Advanced nonparametric tests for multiple comparisons in the
                   design of experiments in computational intelligence and data
                   mining: Experimental analysis of power},
-  author =       {Garc{\'\i}a, Salvador and Fern{\'a}ndez, Alberto and Luengo,
-                  Juli{\'a}n and Herrera, Francisco},
+  author =       {Garc{\'i}a, Salvador and Fern{\'a}ndez, Alberto and Luengo,
+                  Juli{\'a}n} #and# Herrera_F,
   journal =      is,
   volume =       180,
   number =       10,
@@ -9570,7 +9573,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @article{GarMolLoz2009joh,
-  author =       {Garc{\'\i}a, Salvador} #and# Molina_D #and# Lozano_M #and#
+  author =       {Garc{\'i}a, Salvador} #and# Molina_D #and# Lozano_M #and#
                   Herrera_F,
   journal =      joh,
   number =       617,
@@ -9844,10 +9847,10 @@ doi =           {10.1007/978-3-642-38516-2_16},
   author =       {Ghemawat, Sanjay and Gobioff, Howard and Leung, Shun-Tak},
   title =        {The {Google} {File} {System}},
   journal =      {SIGOPS Oper. Syst. Rev.},
-  issue_date =   {December 2003},
   volume =       37,
   number =       5,
   year =         2003,
+  month =        dec,
   pages =        {29--43},
   publisher =    acm-pub,
   address =      add-ny,
@@ -11287,7 +11290,7 @@ Traveling Salesman Heuristic},
                   Remedies},
   booktitle =    {Proceedings of the Fourteenth Conference on Uncertainty in
                   Artificial Intelligence},
-  editor =       {Gregory F. Cooper and Seraf{\'\i}n Moral},
+  editor =       {Gregory F. Cooper and Seraf{\'i}n Moral},
   year =         1998,
   publisher =    mk-s,
   pages =        {238--245}
@@ -11474,7 +11477,7 @@ Traveling Salesman Heuristic},
 }
 
 @Article{HueRioRui2017,
-  author = 	 {D. L. Huerta-Mu{\~n}oz and R. Z. R{\'\i}os-Mercado} #and# Ruiz_Ruben,
+  author = 	 {D. L. Huerta-Mu{\~n}oz and R. Z. R{\'i}os-Mercado} #and# Ruiz_Ruben,
   title = 	 {An Iterated Greedy Heuristic for a Market Segmentation Problem with Multiple Attributes},
   journal = 	 ejor,
   year = 	 2017,
@@ -14187,7 +14190,7 @@ Traveling Salesman Heuristic},
 }
 
 @incollection{KovSkr08,
-  author =       {O. Kov\'{a}\v{r}\'{\i}k and M. Skrbek},
+  author =       {O. Kov\'{a}\v{r}{\'i}k and M. Skrbek},
   title =        {Ant Colony Optimization with Castes},
   pages =        {435--442},
   crossref =     {ICANN2008i},
@@ -14512,7 +14515,7 @@ Traveling Salesman Heuristic},
 }
 
 @Article{LaTMuePen11:soco,
-  author = {LaTorre, Antonio and Muelas, Santiago and Pe{\~n}a, Jos{\'e}-Mar{\'\i}a},
+  author = {LaTorre, Antonio and Muelas, Santiago and Pe{\~n}a, Jos{\'e}-Mar{\'i}a},
   title = {A {MOS}-based dynamic memetic differential evolution algorithm for
         continuous optimization: a scalability test},
   journal = soco,
@@ -14659,10 +14662,11 @@ Traveling Salesman Heuristic},
   author =       Lansey # and # Awumah,
   title =        "Optimal Pump Operations Considering Pump Switches",
   journal =      jwrpm,
-  year =         1994,
   volume =       120,
   number =       1,
   pages =        {17--35},
+  date =         "1994-01/1994-02",
+  year =         1994,
   month =        jan #" / "# feb,
 }
 
@@ -14717,7 +14721,7 @@ Traveling Salesman Heuristic},
 }
 
 @Article{LauHao2009:cie,
-  author =       {Beno{\^{\i}}t Laurent} #and# Hao,
+  author =       {Beno{\^i}t Laurent} #and# Hao,
   title =        {Iterated Local Search for the Multiple Depot Vehicle Scheduling Problem},
   journal =      cie,
   year =         2009,
@@ -14835,7 +14839,7 @@ Traveling Salesman Heuristic},
 }
 
 @Article{LeaTavMouMac2016:itor,
-  author =       {Vin{\'\i}cius {Leal do Forte} and Fl{\'a}vio Marcelo {Tavares
+  author =       {Vin{\'i}cius {Leal do Forte} and Fl{\'a}vio Marcelo {Tavares
                   Montenegro} and Jos{\'e} Andr{\'e} {de Moura Brito} and
                   Nelson Maculan},
   title =        {Iterated Local Search Algorithms for the {Euclidean}
@@ -16586,7 +16590,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   title =        {Revisiting the {Arcade} {Learning} {Environment}: Evaluation
                   Protocols and Open Problems for General Agents},
   year =         2018,
-  issue_date =   {January 2018},
   publisher =    {AI Access Foundation},
   address =      {El Segundo, CA, USA},
   volume =       61,
@@ -16709,15 +16712,16 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Article{MaieSimp03:ACODesignWDN,
-  author =       Maier #and# Simpson #and# Zecchin #and# Foong_WK
-                  #and# Phang_KY #and# Seah_HY #and# Tan_CL,
-  title =        {Ant Colony Optimization for Design of Water
-                  Distribution Systems},
+  author =       Maier #and# Simpson #and# Zecchin #and# Foong_WK #and#
+                  Phang_KY #and# Seah_HY #and# Tan_CL,
+  title =        {Ant Colony Optimization for Design of Water Distribution
+                  Systems},
   journal =      jwrpm,
-  year =         2003,
   volume =       129,
   number =       3,
   pages =        {200--209},
+  date =         {2003-05/2003-06},
+  year =         2003,
   month =        may #" / "#jun,
 }
 
@@ -18709,7 +18713,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   author =       {Newell, Allen and Simon, Herbert A.},
   title =        {Computer Science as Empirical Inquiry: Symbols and Search},
   year =         1976,
-  issue_date =   {March 1976},
   volume =       19,
   number =       3,
   issn =         {0001-0782},
@@ -18817,10 +18820,11 @@ algorithm configuration techniques to multi-objective algorithms.}
   author =       Nitivattananon # and # Sadowski # and # Quimpo,
   title =        {Optimization of Water Supply System Operation},
   journal =      jwrpm,
-  year =         1996,
   volume =       122,
   number =       5,
   pages =        {374--384},
+  date =         {1996-09/1996-10},
+  year =         1996,
   month =        sep # " / " # oct,
 }
 
@@ -19238,10 +19242,11 @@ algorithm configuration techniques to multi-objective algorithms.}
   author =       Ormsbee # and # Reddy,
   title =        {Nonlinear Heuristic for Pump Operations},
   journal =      jwrpm,
-  year =         1995,
   volume =       121,
   number =       4,
   pages =        {302--309},
+  date =         "1995-07/1995-08",
+  year =         1995,
   month =        jul # " / " # aug,
 }
 
@@ -19928,7 +19933,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @article{PedNesCan2011:asc,
-  author    = {Mart{\'{\i}}n Pedemonte and Sergio Nesmachnow and H{\'{e}}ctor Cancela},
+  author    = {Mart{\'i}n Pedemonte and Sergio Nesmachnow and H{\'e}ctor Cancela},
   title     = {A survey on parallel ant colony optimization},
   journal   = asoco,
   volume    = 11,
@@ -20186,13 +20191,14 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @Article{Pezeshk96,
   author =       Pezeshk # and # Helweg,
-  title =        {Adaptative Search Optimisation in reducing pump
-                  operation costs},
+  title =        {Adaptative Search Optimisation in reducing pump operation
+                  costs},
   journal =      jwrpm,
-  year =         1996,
   volume =       122,
   number =       1,
   pages =        {57--63},
+  date =         "1996-01/1996-02",
+  year =         1996,
   month =        jan # " / " # feb,
 }
 
@@ -20403,7 +20409,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Article{PorParDoa++2013,
-  author =       {Juan Porta and Jorge Parapar and Ram\'on Doallo and Vasco Barbosa and In\'es Sant\'e and Rafael Crecente and Carlos D{\'\i}az},
+  author =       {Juan Porta and Jorge Parapar and Ram{\'o}n Doallo and Vasco Barbosa and In{\'e}s Sant{\'e} and Rafael Crecente and Carlos D{\'i}az},
   title =        {A Population-based Iterated Greedy Algorithm for the Delimitation and Zoning of Rural Settlements},
   journal =      {Computers, Environment and Urban Systems},
   year =         2013,
@@ -21298,7 +21304,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 @inCollection{RodCoe2012new,
   title =        {A new multi-objective evolutionary algorithm based on a
                   performance assessment indicator},
-  author =       {Rodr{\'\i}guez Villalobos, Cynthia A.} #and# Coello,
+  author =       {Rodr{\'i}guez Villalobos, Cynthia A.} #and# Coello,
   crossref =     {GECCO2012},
   pages =        {505--512},
 }
@@ -21446,7 +21452,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @article{RudSchGri2016coa,
   author =       Rudolph_G #and# Schutze_O#and#{Christian
-                  Grimme}#and#{Christian Dom{\'\i}nguez-Medina}#and#
+                  Grimme}#and#{Christian Dom{\'i}nguez-Medina}#and#
                   Trautmann,
   title =        "Optimal averaged {Hausdorff} archives for bi-objective
                   problems: theoretical and numerical results",
@@ -21540,7 +21546,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 
 @incollection{RuiValFer2009,
   title     =  {Scheduling in flowshops with no-idle machines},
-  author    =  Ruiz_Ruben #and# Vallada #and# {Fern{\'a}ndez-Mart{\'\i}nez, Carlos},
+  author    =  Ruiz_Ruben #and# Vallada #and# {Fern{\'a}ndez-Mart{\'i}nez, Carlos},
   booktitle =  {Computational intelligence in flow shop and job shop scheduling},
   pages     =  {21--51},
   year      =  2009,
@@ -21704,10 +21710,11 @@ algorithm configuration techniques to multi-objective algorithms.}
   title =        "Optimal Operation of Water Distribution Pumps Considering
                   Water Quality",
   journal =      jwrpm,
-  year =         2000,
   volume =       126,
   number =       4,
   pages =        {210--220},
+  date =         "2000-07/2000-08",
+  year =         2000,
   month =        jul # " / " # aug,
 }
 
@@ -22961,7 +22968,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Article{SolMarMic2008,
-  author =       {D. Soler and E. Mart{\'\i}nez and J. C. Mic\'o},
+  author =       {D. Soler and E. Mart{\'i}nez and J. C. Mic\'o},
   title =        {A Transformation for the Mixed General Routing Problem with Turn Penalties},
   journal =      jors,
   year =         2008,
@@ -23034,7 +23041,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   title =        {Algoritmos Evolutivos Multiobjetivo Combinados para la
                   Optimizaci{\'o}n de la Programaci{\'o}n de Bombeo en Sistemas
                   de Suministro de Agua},
-  booktitle =    "Congreso Internacional de Tecnolog{\'\i}as y Aplicaciones
+  booktitle =    "Congreso Internacional de Tecnolog{\'i}as y Aplicaciones
                   Inform\'aticas, JIT-CITA 2001, Asunci\'on, Paraguay",
   note =         {(In Spanish)}
 }
@@ -23210,7 +23217,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   booktitle =    {Complex Systems and Binary Networks},
   year =         1995,
   editor =       {R. L{\'o}pez-Pe{\~n}a and R. Capovilla and
-                  R. Garc{\'\i}a-Pelayo and H. Waelbroeck and F. Zertruche},
+                  R. Garc{\'i}a-Pelayo and H. Waelbroeck and F. Zertruche},
   pages =        {77--163},
   publisher =    {Springer},
 }
@@ -26284,13 +26291,14 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
 
 @Article{powel03:demand,
   author =       McCormick #and# Powell,
-  title =        {Optimal Pump Scheduling in Water Supply Systems with
-                  Maximum Demand Charges},
+  title =        {Optimal Pump Scheduling in Water Supply Systems with Maximum
+                  Demand Charges},
   journal =      jwrpm,
-  year =         2003,
   volume =       129,
   number =       5,
   pages =        {372--379},
+  date =         "2003-09/2003-10",
+  year =         2003,
   month =        sep #" / "#oct,
 }
 

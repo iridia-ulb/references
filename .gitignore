@@ -1,5 +1,6 @@
 *.aux
 *.bbl
+*.bcf
 *.blg
 *.dvi
 *.fdb_latexmk
@@ -7,6 +8,7 @@
 *.log
 *.out
 *.rel
+*.run.xml
 *.synctex*
 *.tmp
 *~
@@ -24,3 +26,4 @@
 /web/index.html
 /web/index_bib.html
 TAGS
+testbiblatex.pdf

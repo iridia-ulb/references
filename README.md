@@ -469,12 +469,15 @@ There is advice at the top of each .bib file about the contents within that
 file. The following is general advice on how to format bib entries.
 
  * Do not use non-ASCII characters unless you use UTF-8. It may be better to
-   just use LaTeX instead, that is, instead of "í" use `{\'\i}`.  In
+   just use LaTeX instead, that is, instead of "í" use `{\'i}`.  In
    [Emacs](https://www.gnu.org/software/emacs/), one can use `'(occur
    "[^[:ascii:]]"))'` to find all non-ASCII characters.
 
+ * Do not use `\i` to create accented letters. `biblatex` does not like it and
+   it will complain. Using `{\'i}` should produce the correct results.
+ 
  * `'doi'` field is just the DOI, without the http://dx.doi.org/
-
+ 
 
 Frequently Asked Questions
 --------------------------
