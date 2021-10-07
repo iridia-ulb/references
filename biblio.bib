@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%-*- mode: bibtex; bibtex-maintain-sorted-entries: plain; bibtex-string-files: ("abbrev.bib" "journals.bib" "authors.bib") -*-
-%% biblio.bib
+%% biblio.bib : https://iridia-ulb.github.io/references/
 %%
 %% To the extent that the contents of bib files may be subject to
 %% copyright, the contents of the IRIDIA BibTeX Repository are placed
@@ -49,24 +49,6 @@
 %%    Please help us to update them little by little.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-@misc{ACM2020badging_v1_1,
-  author =       {{ACM}},
-  title =        "Artifact Review and Badging Version 1.1",
-  howpublished =
-                  "\url{https://www.acm.org/publications/policies/artifact-review-and-badging-current}",
-  year =         2020,
-  month =        aug,
-}
-
-@misc{IJCAI2021checklist,
-  author =       "Zhiyuan Liu and Jian Tang",
-  title =        "IJCAI 2021 Reproducibility Guidelines, 35th International
-                  Joint Conference on Artificial Intelligence",
-  year =         2021,
-  howpublished =
-                  "\url{https://ijcai-21.org/wp-content/uploads/2020/12/20201226-IJCAI-Reproducibility.pdf}"
-}
-
 @misc{AAAI2021checklist,
   author =       "{AAAI}",
   title =        "35th AAAI Conference on Artificial Intelligence:
@@ -75,6 +57,15 @@
                   "\url{https://aaai.org/Conferences/AAAI-21/reproducibility-checklist/}",
   year =         2021,
   note =         "Last accessed: June 6th, 2021"
+}
+
+@misc{ACM2020badging_v1_1,
+  author =       {{ACM}},
+  title =        "Artifact Review and Badging Version 1.1",
+  howpublished =
+                  "\url{https://www.acm.org/publications/policies/artifact-review-and-badging-current}",
+  year =         2020,
+  month =        aug,
 }
 
 @InCollection{AarKorMic2005,
@@ -145,7 +136,6 @@
   keywords =     {memory-based ACO}
 }
 
-
 @Article{Ach2009mpc,
   author =       {Tobias Achterberg},
   title =        "{SCIP}: {Solving} constraint integer programs",
@@ -157,6 +147,7 @@
   pages =        {1--41},
   annote =       {\url{http://mpc.zib.de/archive/2009/1/Achterberg2009_Article_SCIPSolvingConstraintIntegerPr.pdf}}
 }
+
 
 @article{AchBer2007,
   title =        {Improving the feasibility pump},
@@ -333,7 +324,6 @@
   pages =     {182--191},
 }
 
-
 @Article{AinKumCha2009asc,
   author =       Aine_S #and# Kumar_Rajeev #and# Chakrabarti_PP,
   title =        {Adaptive parameter control of evolutionary
@@ -346,6 +336,7 @@
   doi =          {10.1016/j.asoc.2008.07.001},
   keywords =     {anytime},
 }
+
 
 @InCollection {AisRoy2010:isorms,
   author =       Aissi #and# Roy,
@@ -525,6 +516,7 @@ Assignment with Controllable Processing Times},
   eprint =
                   {http://papers.nips.cc/paper/9124-linear-stochastic-bandits-under-safety-constraints.pdf}
 }
+
 @Article{AmiBadFar2007:cis,
   author =       {Amir, C. and Badr, A. and Farag, I},
   title =        {A Fuzzy Logic Controller for Ant Algorithms},
@@ -534,7 +526,6 @@ Assignment with Controllable Processing Times},
   number =       2,
   pages =        {26--34}
 }
-
 @Article{AndDefDouJor2003,
   title =        {An Introduction to {MCMC} for Machine Learning},
   author =       Andrieu_C #and# DeFreitas_N #and# Doucet_A #and# Jordan_MI,
@@ -660,7 +651,7 @@ Assignment with Controllable Processing Times},
   pages     =  {303--315}, 
   doi       =  {10.1145/2628071.2628092}
 }
-        
+
 @InCollection{AnsMalSamSelTie2015:ijcai,
   author =       Ansotegui #and# {Yuri Malitsky and Horst Samulowitz}
                   #and# Sellmann #and# Tierney,
@@ -670,7 +661,7 @@ Assignment with Controllable Processing Times},
   keywords = "GGA++",
   doi = 	 {10.5555/2832249.2832351}
 }
-
+        
 @inproceedings{AnsMalSel2014isacpp,
   title =        {{MaxSAT} by Improved Instance-Specific Algorithm
                   Configuration},
@@ -878,7 +869,6 @@ Assignment with Controllable Processing Times},
   keywords =     "QAP, EDA, Mallows"
 }
 
-
 @InCollection{AsaIwaMiy96,
   author =       {Y. Asahiro and K. Iwama and E. Miyano},
   title =        {Random Generation of Test Instances with Controlled
@@ -898,6 +888,7 @@ Assignment with Controllable Processing Times},
   pages =        {475--506}
 }
 
+
 @PhdThesis{Asch95PhD,
   author =       Ascheuer,
   title =        {Hamiltonian Path Problems in the On-line
@@ -905,17 +896,6 @@ Assignment with Controllable Processing Times},
   school =       tub,
   year =         1995,
   address =      {Berlin, Germany}
-}
-
-@Article{VasShaPar2017transformer,
-  title =        {Attention Is All You Need},
-  author =       {Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob
-                  Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz
-                  Kaiser and Illia Polosukhin},
-  journal =      arxiv # {1706.03762},
-  year =         2017,
-  url =          {http://arxiv.org/abs/1706.03762},
-  abstract = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.}
 }
 
 @Article{Ata2003mik,
@@ -1018,7 +998,6 @@ Assignment with Controllable Processing Times},
   year =         2002,
 }
 
-
 @InCollection{AugBadBroZit2009gecco,
   author =       Auger_A #and# Bader_J #and# Brockhoff #and# Zitzler,
   title =        "Articulating User Preferences in Many-Objective
@@ -1034,6 +1013,7 @@ Assignment with Controllable Processing Times},
   crossref =     "GECCO2009",
   pages =        {563--570}
 }
+
 
 @InCollection{AugBadBroZit2009hv,
   title =        {Theory of the hypervolume indicator: optimal
@@ -1054,7 +1034,6 @@ Assignment with Controllable Processing Times},
   doi =          "10.1016/j.tcs.2011.03.012",
 }
 
-
 @InCollection{AugBroLop2012dagstuhl,
   author =       Auger_A #and# Brockhoff #and# Lopez-Ibanez #and# Miettinen
                   #and# Naujoks #and# Rudolph_G,
@@ -1073,6 +1052,7 @@ Assignment with Controllable Processing Times},
   publisher =    worldscientific,
   year =         2011
 }
+
 
 @InCollection{AugHan2005cec,
   author =       Auger_A #and# Hansen_N,
@@ -1702,6 +1682,14 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 	journal =      pnas
 }
 
+@InProceedings{BarPre2005em,
+  author =       Bartz-Beielstein #and# Preuss_M,
+  title =        "Considerations of budget allocation for sequential parameter
+                  optimization ({SPO})",
+  pages =        {35--40},
+  crossref =     {EMAA2006}
+}
+
 @InCollection{BarPre2014experimental,
   author =       Bartz-Beielstein #and# Preuss_M,
   title =        "Experimental Analysis of Optimization Algorithms: Tuning and
@@ -1709,15 +1697,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   crossref =     "BorMor2014theory",
   doi =          "10.1007/978-3-642-33206-7_10",
   pages =        "205--245"
-}
-
-
-@InProceedings{BarPre2005em,
-  author =       Bartz-Beielstein #and# Preuss_M,
-  title =        "Considerations of budget allocation for sequential parameter
-                  optimization ({SPO})",
-  pages =        {35--40},
-  crossref =     {EMAA2006}
 }
 
 @InProceedings{BarSch03,
@@ -1730,6 +1709,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2003,
   address =      {Insbruck, Austria}
 }
+
 
 @Article{BasFra1990,
   author =       {Basu, Atanu and Frazer, L. Neil},
@@ -1810,7 +1790,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       252,
   number =       2,
   pages =        {239--254}
-} 
+}
 
 @Article{BatTec1994:cma,
   title =        {Simulated annealing and Tabu search in the long run: A
@@ -1851,7 +1831,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   Search in Combinatorial Optimization Problems},
   note =         {Manuscript},
   year =         1986
-}
+} 
 
 @InProceedings{Bau1986b,
   author =       {E. B. Baum},
@@ -1982,7 +1962,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   \url{http://people.brunel.ac.uk/~mastjjb/jeb/info.html}},
 }
 
-
 @TechReport{Beasley1998,
   title =        {Heuristic algorithms for the unconstrained binary quadratic
                   programming problem},
@@ -2017,6 +1996,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   crossref =     "GECCO2017c",
   pages =        {1471--1478}
 }
+
 
 @Article{BehFat2011,
   author = 	 {J. Behnamian and S.M.T. {Fatemi Ghomi}},
@@ -2084,7 +2064,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages =        {91--99}
 }
 
-
 @Article{Ben92,
   author =       {J. L. Bentley},
   title =        {Fast Algorithms for Geometric Traveling Salesman
@@ -2129,6 +2108,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages =        82,
   year =         2014,
 }
+
 
 @InCollection{BenRit2015:icaps,
   author =           {Alexander Javier Benavides} #and# Ritt,
@@ -2327,14 +2307,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages =        {245--262}
 }
 
-@InProceedings{BerYasCox2013,
-  title =        {Making a science of model search: Hyperparameter optimization
-                  in hundreds of dimensions for vision architectures},
-  author =       Bergstra #and# {Yasmin, Daniel and Cox, David},
-  crossref =     "ICML2013",
-  pages =        {115-123}
-}
-
 @article{BerWan1987binpack,
   title =        {Two-dimensional finite bin-packing algorithms},
   author =       {Berkey, Judith O. and Wang, Pearl Y.},
@@ -2344,6 +2316,14 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages =        {423--429},
   year =         1987,
   doi =          {10.2307/2582731}
+}
+
+@InProceedings{BerYasCox2013,
+  title =        {Making a science of model search: Hyperparameter optimization
+                  in hundreds of dimensions for vision architectures},
+  author =       Bergstra #and# {Yasmin, Daniel and Cox, David},
+  crossref =     "ICML2013",
+  pages =        {115-123}
 }
 
 @InProceedings{BesStuDor00:ppsn,
@@ -2872,6 +2852,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       4,
   pages =        {644--658}
 }
+
 @InCollection{BirChiSaeStu2011,
   author =       Birattari #and# Chiarandini #and# Saerens #and# Stuetzle,
   title =        "Learning Graphical Models for Algorithm Configuration",
@@ -2892,7 +2873,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   publisher =    {O'Reilly Media, Inc.}
 }
 
-
 @Article{BirPelDor2007:tec,
   author =       Birattari #and# Pellegrini #and# Dorigo,
   title =        {On the invariance of ant colony optimization},
@@ -2905,7 +2885,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   alias =        {BirPelDor2007ieee-tevc},
   pdf =          {BirPelDor2007ieee-tevc.pdf},
 }
-
 @InCollection{BirStuPaqVar02:gecco,
   author =       Birattari #and# Stuetzle #and# Paquete #and# Varrentrapp,
   title =        {A Racing Algorithm for Configuring Metaheuristics},
@@ -2956,6 +2935,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   address =      add-berlin-heidelberg,
   alias =        {Bir09:book},
 }
+
 
 @PhdThesis{Birattari2004PhD,
   author =       Birattari,
@@ -3124,7 +3104,6 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   doi =          {10.1145/3071178.3071323},
 }
 
-
 @InCollection{BloLopKesJou2018ppsn,
   author =       Blot #and# Lopez-Ibanez #and# MarmionK #and# Jourdan,
   title =        "New Initialisation Techniques for Multi-Objective Local
@@ -3166,6 +3145,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   doi =          {10.1287/ijoc.1080.0271},
   alias =        {Blu08:ijoc},
 }
+
 
 @Incollection{BluBauPer06:ants,
   author =       Blum #and# Bautista #and# Pereira_J,
@@ -3533,7 +3513,6 @@ Los Angeles, CA},
   annote = "Proposed SVM"
 }
 
-
 @Article{BotBon98,
   author =       {Hozefa M. Botee and Eric Bonabeau},
   title =        {Evolving Ant Colony Optimization},
@@ -3542,7 +3521,6 @@ Los Angeles, CA},
   volume =       1,
   pages =        {149--159},
 }
-
 
 @article{BotSch2019dominance,
   title =        {Dominance for multi-objective robust optimization concepts},
@@ -3566,6 +3544,7 @@ Los Angeles, CA},
   pages =        {1632--1639}
 }
 
+
 @Article{BouForGliPir2010:ejor,
   author =       Bous #and# Fortemps #and# Glineur #and# Pirlot,
   title =        "{ACUTA}: {A} novel method for eliciting additive value functions on the basis of holistic preference statements",
@@ -3575,6 +3554,7 @@ Los Angeles, CA},
   number =       2,
   pages =        "435--444",
 }
+
 
 @article{BouLec2003ejor,
   author =       {Bouleimen, K. and Lecocq, H.},
@@ -3860,7 +3840,6 @@ Los Angeles, CA},
   number =       1
 }
 
-
 @Article{BranJin2005tec,
   author =       Jin_Yaochu #and# Branke,
   title =        {Evolutionary Optimization in Uncertain Environments---A
@@ -3900,6 +3879,7 @@ Los Angeles, CA},
   doi =         {10.1023/A:1010933404324},
 }
 
+
 @incollection{BriFri2009emo,
   author =       Bringmann_K #and# Friedrich_T,
   title =        {Approximating the Least Hypervolume Contributor:
@@ -3914,8 +3894,7 @@ Los Angeles, CA},
                   Approximation},
   crossref =     "GECCO2010",
   pages =        {511--518},
-} 
-
+}
 
 @incollection{BriFri2011gecco,
   title =        {Convergence of Hypervolume-Based Archiving Algorithms~{I}:
@@ -3952,7 +3931,8 @@ Los Angeles, CA},
                   Optimization},
   crossref =     "IJCAI2011",
   pages =        {1198--1203}
-}
+} 
+
 
 @InCollection{Bro2015emo,
   title =        "A Bug in the Multiobjective Optimizer {IBEA}: Salutary
@@ -4071,7 +4051,6 @@ Los Angeles, CA},
   pages =        {611--627}
 }
 
-
 @Inproceedings{BruRit2018cec,
   author =       Brum #and# Ritt,
   title =        {Automatic Design of Heuristics for Minimizing the Makespan in
@@ -4089,6 +4068,7 @@ Los Angeles, CA},
   pages =        {85--100},
   doi = 	 {10.1007/978-3-319-77449-7_6},
 }
+
 
 @article{Buc1994jors,
   title =        "An experimental evaluation of interactive {MCDM}
@@ -4237,7 +4217,7 @@ Los Angeles, CA},
   pages =        {391--403},
   year =         1997,
   publisher =    springer
-} 
+}
 
 @Article{BurRen1984,
   author =       Burkard #and# Rendl_F,
@@ -4257,7 +4237,7 @@ Los Angeles, CA},
   title =        "The quadratic assignment problem",
   pages =        "241--338",
   crossref =     "HandbookCO1998",
-}
+} 
 
 @Article{BusRobTot2014,
   author =       {Erika Buson and Roberto Roberti} #and# Toth_P,
@@ -4475,7 +4455,6 @@ Los Angeles, CA},
   pages =	 {42--47}
 }
 
-
 @Article{CarBar96tabusearch_tsptw,
   author =       Carlton_William #and# Barnes_JW,
   title =        "Solving the traveling-salesman problem with time
@@ -4495,6 +4474,7 @@ Los Angeles, CA},
   year =         2003,
   address =      {Seville, Spain},
 }
+
 
 @incollection{CarPinOli2017recipe,
   author =       {de S{\'{a}}, Alex Guimar{\~{a}}es Cardoso  and Pinto, Walter
@@ -4839,7 +4819,6 @@ Los Angeles, CA},
   year =         2014
 }
 
-
 @inproceedings{CheKanTay1991ijcai,
   author =       {Cheeseman, Peter C.} #and# {Kanefsky, Bob} #and# {Taylor, William M.},
   title =        {Where the Really Hard Problems Are},
@@ -4858,6 +4837,7 @@ Los Angeles, CA},
   year =         1999,
   doi =          {10.1080/03052159908941390},
 }
+
 
 @Article{CheSia2000ejor,
   title   = {Tabu search applied to global optimization},
@@ -4918,7 +4898,6 @@ Los Angeles, CA},
   pages =        {15--24}
 }
 
-
 @incollection{ChiGoe2010,
   title =        {Mixed Models for the Analysis of Optimization Algorithms},
   author =       Chiarandini #and# {Yuri Goegebeur},
@@ -4940,6 +4919,7 @@ Los Angeles, CA},
   doi =          {10.1134/S0005117916030097},
   keywords =     {irace},
 }
+
 
 @PhdThesis{ChiarandiniPhD,
   author =       Chiarandini,
@@ -4970,7 +4950,6 @@ Los Angeles, CA},
   pages =        {698--705},
   doi =          {10.1016/j.aml.2011.09.053},
 }
-
 
 @Misc{Chieng2014,
   author =       {Tsung-Che Chiang},
@@ -5011,6 +4990,7 @@ Los Angeles, CA},
   number =       {7-05-2018}
 }
 
+
 @techreport{Christofides1976,
   title =        {Worst-case analysis of a new heuristic for the travelling salesman problem},
   author =       Christofides,
@@ -5038,7 +5018,6 @@ Los Angeles, CA},
   pages =        {1729--1736},
   crossref =     "GECCO2006",
 }
-
 
 @Article{ChuSinHak2019surv,
   author =       Chugh_Tinkle #and# {Sindhya, Karthik} #and# "Hakanen, Jussi"
@@ -5084,6 +5063,7 @@ Los Angeles, CA},
   school =       {University of Jyväskylä},
   year =         2017,
 }
+
 
 @InProceedings{Chugh2020scalar,
   author =       Chugh_Tinkle,
@@ -5146,7 +5126,6 @@ Los Angeles, CA},
   editor =       {Adam L. Buchsbaum and Jack Snoeyink},
 }
 
-
 @InProceedings{ClaKar1992electronic,
   author =       {Jon Claerbout and Martin Karrenbach},
   year =         1992,
@@ -5171,6 +5150,7 @@ Los Angeles, CA},
   pages =        {423--428},
   note =         notreadyet,
 }
+
 
 @Misc{CleKen2011spso,
   author =       {M. Clerc} #and# Kennedy_J,
@@ -5291,7 +5271,6 @@ Los Angeles, CA},
   year =         2006,
 }
 
-
 @InCollection{Coello2017results,
   author = 	 Coello,
   title = 	 {Recent Results and Open Problems in Evolutionary Multiobjective Optimization},
@@ -5308,6 +5287,7 @@ Los Angeles, CA},
   number =   3,
   pages =    {779--802}
 }
+
 
 @Book{Cohen1995ai,
   author =       {Paul R. Cohen},
@@ -5524,7 +5504,7 @@ Los Angeles, CA},
   number =       1,
   pages =        {168--196},
   doi =          {10.1111/itor.12631}
-} 
+}
 
 @incollection{CorKno2001pesa2,
   author =       Corne #and# {Jerram, Nick R.} #and# Knowles #and# {Oates,
@@ -5543,7 +5523,7 @@ Los Angeles, CA},
   title =        {Some Multiobjective Optimizers are Better than Others},
   pages =        {2506--2512},
   crossref =     "CEC2003",
-}
+} 
 
 @InCollection{CorKno2003nfl,
   author =       Corne #and# Knowles,
@@ -5553,7 +5533,6 @@ Los Angeles, CA},
   pages =        {327--341},
   doi =          {10.1007/3-540-36970-8_23},
 }
-
 
 @InCollection{CorKnoOat2000ppsn,
   author =       Corne #and# Knowles #and# "M. J. Oates",
@@ -5572,6 +5551,7 @@ Los Angeles, CA},
   number =       3,
   pages =        {287--310}
 }
+
 
 @Article{CorLapMer2001,
   author  = {Jean{-}Fran{\c{c}}ois Cordeau} #and# Laporte #and# {A. Mercier},
@@ -5702,7 +5682,6 @@ Los Angeles, CA},
   type =         {ONR Research Memorandum}
 }
 
-
 @Article{CruGonPel2011,
   author = 	 {Carlos Cruz and Juan Ram{\'{o}}n Gonz{\'{a}}lez and David A. Pelta},
   title = 	 {Optimization in Dynamic Environments: A Survey on Problems, Methods
@@ -5712,8 +5691,7 @@ Los Angeles, CA},
   volume = 	 15,
   number = 	 7,
   pages = 	 {1427--1448}
-} 
-
+}
 
 @Article{CruSubBruOir2017:cor,
   author = 	 {F{\'a}bio Cruz} #and# Subramanian #and# {Bruno P. Bruck} #and# Iori,
@@ -5736,7 +5714,8 @@ Los Angeles, CA},
   pages =        {109--127},
   doi =          {10.1162/evco.1998.6.2.109},
   keywords =     {NFL}
-}
+} 
+
 
 @TechReport{Cul92,
   author =       Culberson_JC,
@@ -5747,6 +5726,7 @@ Los Angeles, CA},
   year =         1992,
   number =       {92-07},
 }
+
 
 @InProceedings{CulBeaPap95,
   author =       Culberson_JC #and# {A. Beacham and D. Papp},
@@ -5767,7 +5747,6 @@ Los Angeles, CA},
   alias =        "CulLuo96",
 }
 
-
 @Book{Cumming2012,
   author=        {Jeff Cumming},
   title =        {Understanding the New Statistics -- Effect Sizes, Confidence Intervals, and Meta-analysis},
@@ -5786,6 +5765,7 @@ Los Angeles, CA},
   pages =        {34--47},
   year =         1998
 }
+
 
 @Article{DamHickRago2010,
   Title =        {On Energy, Discrepancy and Group Invariant Measures on
@@ -6099,7 +6079,6 @@ Los Angeles, CA},
   
 }
 
-
 @Book{Deb:MOEA,
   author =       Deb,
   title =        {Multi-Objective Optimization Using Evolutionary
@@ -6117,6 +6096,7 @@ Los Angeles, CA},
   pages =        "235--243",
   keywords =     "polynomial mutation"
 }
+
 
 @article{DebAgr1995sbx,
   author =       Deb #and# Agrawal_RB,
@@ -6212,7 +6192,6 @@ Los Angeles, CA},
   doi =          "10.1145/1143997.1144112"
 }
 
-
 @incollection{DebTewDixDut2007finding,
   title =        {Finding trade-off solutions close to {KKT} points using
                   evolutionary multi-objective optimization},
@@ -6231,6 +6210,7 @@ Los Angeles, CA},
   keywords =     {DTLZ benchmark},
   note = {Do not cite this TR! It is incorrect and it is superseeded by~\cite{DebThiLau2005dtlz}}
 }
+
 
 @incollection{DebThiLau2005dtlz,
   author =       Deb #and# Thiele #and# Laumanns #and# Zitzler,
@@ -6308,7 +6288,6 @@ Los Angeles, CA},
   pages =        {187--198}
 }
 
-
 @Article{DecSor2016water,
   author =       {Annelies De Corte} #and# Sorensen,
   title =        {An Iterated Local Search Algorithm for multi-period water
@@ -6329,6 +6308,7 @@ Los Angeles, CA},
   year = 	 1982,
   pages = 	 {432--439}
 }
+
 
 @article{Dek1981:cad,
   author =       Dekhtyarenko,
@@ -6363,7 +6343,6 @@ Los Angeles, CA},
   pages =        {1213--1217}
 }
 
-
 @article{DelIorMar2016binpack,
   title =        {Bin packing and cutting stock problems: Mathematical models
                   and exact algorithms},
@@ -6386,6 +6365,7 @@ Los Angeles, CA},
   number = 	 3,
   pages = 	 {333--344}
 }
+
 
 @article{DelIorMarc2018bpplib,
   title =        {{BPPLIB}: a library for bin packing and cutting stock problems},
@@ -6420,10 +6400,6 @@ Los Angeles, CA},
   year =         1990,
 }
 
-
-
-
-
 @Article{DelTru1993,
   author =       {Mauro Dell'Amico and Marco Trubian},
   title =        {Applying Tabu Search to the Job Shop Scheduling Problem},
@@ -6444,6 +6420,10 @@ Los Angeles, CA},
   year =         2015,
   publisher =    {Springer}
 }
+
+
+
+
 
 @Article{DenAroGosPas1990,
   author =       Deneubourg #and# "S. Aron and S. Goss and
@@ -6695,7 +6675,6 @@ Los Angeles, CA},
   pages =        "332--348 ",
 }
 
-
 @Article{DicDor1998:jair,
   author =       DiCaro #and# Dorigo,
   title =        "Ant{Net}: Distributed Stigmergetic Control for Communications
@@ -6716,6 +6695,7 @@ Los Angeles, CA},
   number =       5,
   pages =        {443--455}
 }
+
 
 @InCollection{DieValAreRodSua2014ants,
   author =       {Diego D{\'\i}az and Pablo Valledor and Paula Areces and Jorge Rodil and Montserrat Su{\'a}rez},
@@ -6864,15 +6844,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year      =    2003,
 }
 
-@article{DoeKotLenWin2013,
-  title =        {Black-box complexities of combinatorial problems},
-  author =       Doerr_B #and# Kotzing_T #and# {Lengler, Johannes and Winzen, Carola},
-  journal =      tcs,
-  volume =       471,
-  pages =        {84--106},
-  year =         2013
-}
-
 @article{DoeJohWin2012,
   title =        {Multiplicative drift analysis},
   author =       Doerr_B #and# {Johannsen, Daniel and Winzen, Carola},
@@ -6881,6 +6852,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       4,
   pages =        {673--697},
   year =         2012
+}
+
+@article{DoeKotLenWin2013,
+  title =        {Black-box complexities of combinatorial problems},
+  author =       Doerr_B #and# Kotzing_T #and# {Lengler, Johannes and Winzen, Carola},
+  journal =      tcs,
+  volume =       471,
+  pages =        {84--106},
+  year =         2013
 }
 
 @Article{DoeMerStu2009:swarm,
@@ -6913,7 +6893,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          "10.1016/j.asoc.2015.03.051",
   keywords =     {irace},
 }
-
 
 @article{DoiPekReg2004rank,
   author =       {Jean-Paul Doignon and Aleksandar Peke{\v{c}} and Michel
@@ -6952,6 +6931,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2002,
   keywords =     "performance profiles; convergence"
 }
+
 
 @inCollection{DomHul2000,
   author =       {Domingos, Pedro and Hulten, Geoff},
@@ -7045,7 +7025,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {243--278},
 }
 
-
 @InCollection{DorDic99:nio,
   author =       Dorigo #and# DiCaro,
   title =        "The {Ant} {Colony} {Optimization} Meta-Heuristic",
@@ -7064,6 +7043,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        "137--172",
   year =         1999,
 }
+
 
 @TechReport{DorGam1996:iridia,
   author =       Dorigo #and# Gambardella,
@@ -7232,7 +7212,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "ANTS2002",
 }
 
-
 @article{DreSia2004,
   author =       Dreo_J #and# {P. Siarry},
   title =        {Continuous interacting ant colony algorithm based on dense
@@ -7251,6 +7230,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "FOGA2002",
   pages =        {253--270}
 }
+
 
 @article{DroJanWeg2006,
   title =        {Upper and lower bounds for randomized search heuristics in black-box optimization},
@@ -7653,7 +7633,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2000,
 }
 
-
 @Manual{EPANET94,
   title =        "{EPANET} User's Guide",
   author =       Rossman,
@@ -7675,6 +7654,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    {ASCE},
   anote =        {CD-ROM},
 }
+
 
 @InProceedings{EbeKen1995:pso,
   author =       Eberhart #and# Kennedy_J,
@@ -7727,7 +7707,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    {Springer}
 }
 
-
 @Article{EhrGan04,
   author =       Ehrgott #and# Gandibleux,
   title =        "Approximative Solution Methods for Combinatorial
@@ -7766,6 +7745,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "BluBleRol2008hybrid",
   pages =        {221--259}
 }
+
 
 @Book{Ehrgott00:multicriteria,
   author =       Ehrgott,
@@ -7819,7 +7799,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          {10.1109/cec.2002.1006991},
   pages =        "582--587"
 }
-        
+
 @InCollection{EibMichSChSmi07,
   author =       Eiben #and# Michalewicz #and# Schoenauer #and# {James E. Smith},
   title =        {Parameter Control in Evolutionary Algorithms},
@@ -7836,7 +7816,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {3--9},
   year =         1999
 }
-
+        
 @Book{EibSmi2003,
   Title =        {Introduction to Evolutionary Computing},
   Author =       Eiben #and# Smith_JE,
@@ -8051,7 +8031,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   note =         notreadyet,
 }
 
-
 @inproceedings{EshSch1992,
   author =       Eshelman #and# Schaffer,
   title =        {Real-Coded Genetic Algorithms and Interval-Schemata},
@@ -8066,6 +8045,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref = "ICGA1989",
   pages =        {86--91},
 }
+
 
 @Article{EssMatDau2008,
   author =       {Imen Essafi and Yazid Mati} #and# Dauzere,
@@ -8086,7 +8066,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "ANTS2002",
 }
 
-
 @inCollection{FalLinHut2015spysmac,
   title =        {{SpySMAC}: Automated configuration and performance analysis
                   of {SAT} solvers},
@@ -8095,7 +8074,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          "10.1007/978-3-319-24318-4_16",
   pages =        {215--222},
 }
-
 
 @article{FanBif2013,
   title =        {Mining big data: current status, and forecast to the future},
@@ -8107,6 +8085,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2013,
   publisher =    {ACM}
 }
+
 
 @article{Fanelli2012,
   author =       {Fanelli, Daniele},
@@ -8143,6 +8122,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   which results are produced and published is decreasing.",
 }
 
+
 @InProceedings{FarAma2002nafips,
   author =       {M. Farina and P. Amato},
   title =        "On the Optimal Solution Definition for Many-criteria
@@ -8150,9 +8130,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {233--238},
   crossref =     "NAFIPS2002",
 }
-
-
-
 
 @article{FarBinResFal2005tps,
   author =       Faria_H #and# "S. Binato" #and# Resende #and# Falcao_DJ,
@@ -8164,7 +8141,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       1,
   pages =        {43--49}
 }
-
 
 @Article{FarWalSav2006hydroinf,
   author =       {R. Farmani} #and# Walters #and# Savic,
@@ -8178,6 +8154,9 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {165--179},
 }
 
+
+
+
 @Article{FavMorPel06tsptw,
   author =       Favaretto #and# Moretti #and# Pellegrini,
   title =        {Ant colony system approach for variants of the
@@ -8189,6 +8168,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {35--54},
   pdf =          {pellegrini-tsptw.pdf}
 }
+
 
 @Article{FavMorPel07,
   author =       Favaretto #and# Moretti #and# Pellegrini,
@@ -8275,7 +8255,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {146--157}
 }
 
-
 @InCollection{FerAlvMalValDia2015gecco,
   author =       Fernandez_Silvino #and# Alvarez_Segundo #and#
                   {Malatsetxebarria, Eneko and Valledor, Pablo} #and#
@@ -8293,6 +8272,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "GECCO2007",
   pages =        "789--796",
 }
+
 
 @Article{FerFra2014,
   title =        {On Insertion Tie-breaking Rules in Heuristics for the Permutation Flowshop Scheduling Problem},
@@ -8322,7 +8302,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages = 	 {58--69}
 }
 
-
 @article{FerGarAl2016mpe,
   author =       Ferrer_J #and# Garcia-Nieto #and# Alba_E #and# Chicano_F,
   doi =          {10.1155/2016/3871046},
@@ -8343,6 +8322,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   volume = 	 44,
   pages = 	 {177--186}
 }
+
 
 @Article{FerLopAlb2019asoc,
   author =       Ferrer_J #and# Lopez-Ibanez #and# Alba_E,
@@ -8589,7 +8569,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   volume =       60,
   number =       4,
   pages =        {954--964}}
-  
+
 @article{FisSal2009,
   title =        {Feasibility pump 2.0},
   author =       Fischetti #and# {Salvagnin, Domenico},
@@ -8600,7 +8580,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2009,
   publisher =    springer
 }
-  
+
 @article{FleGlo99,
   title =        {Improved constructive multistart strategies for the
                   quadratic assignment problem using adaptive memory},
@@ -8611,7 +8591,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {198--204},
   year =         1999,
 }
-
+  
 @inCollection{FlePurLyg2005,
   title =        {Many-objective optimization: An engineering design
                   perspective},
@@ -8619,7 +8599,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     {EMO2005},
   pages =        {14--32},
 }
-
+  
 @InCollection{Fleischer2003emo,
   author =       {M. Fleischer},
   title =        "The Measure of {Pareto} Optima. Applications to
@@ -9042,7 +9022,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages = 	 {1341--1347},
 }
 
-
 @InProceedings{FraStu2017:EA,
   author =    Franzin #and# Stuetzle,
   title =     {Comparison of Acceptance Criteria in Randomized Local Searches},
@@ -9056,6 +9035,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   howpublished = {\url{http://iridia.ulb.ac.be/supp/IridiaSupp2018-001}},
   year =         2018
 }
+
 
 @article{FraStu2019:cor,
   author  = Franzin #and# Stuetzle,
@@ -9100,8 +9080,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    {Elsevier}
 }
 
-
-
 @InProceedings{FreMer1996icec,
   author =       {B. Freisleben and P. Merz},
   title =        {A Genetic Local Search Algorithm for Solving
@@ -9121,6 +9099,8 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       2,
   pages =        {257--275},
 }
+
+
 
 @InCollection{FriGobQuiWag2018ppsn,
   author =       Friedrich_T #and# {G{\"o}bel, Andreas and Quinzan, Francesco}
@@ -9204,7 +9184,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         1937,
 }
 
-
 @InProceedings{Friendly1991stat,
   title =        {Statistical graphics for multivariate data},
   author =       {Friendly, Michael},
@@ -9223,6 +9202,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
  pages   = {663--673},
  year    = 2008
 }
+
 
 @book{FudTir83,
   author =       {Fudenberg, D. and Tirole, J.},
@@ -9376,7 +9356,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {895--906}
 }
 
-
 @article{GalHao1999heacol,
   title =        {Hybrid evolutionary algorithms for graph coloring},
   author =       {Galinier, Philippe} #and# Hao,
@@ -9400,6 +9379,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2000,
   anote =        "IJ.26",
 }
+
 
 @InCollection{GamDor95:ml,
   author =       Gambardella#and#Dorigo,
@@ -9815,7 +9795,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {330--335}
 }
 
-
 @article{GerHorTen2015comp,
   author =       {Gershman, Samuel J. and Horvitz, Eric J. and Tenenbaum,
                   Joshua B.},
@@ -9858,7 +9837,8 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     {LION2014},
   pages =        {41--46},
   doi =          {10.1007/978-3-319-09584-4_5}
-} 
+}
+
 
 @article{GheGobLeu2003gfs,
   author =       {Ghemawat, Sanjay and Gobioff, Howard and Leung, Shun-Tak},
@@ -9882,7 +9862,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       4,
   year =         2010,
   pages =        {1237--1246}
-}
+} 
 
 @InProceedings{Gibbs05:cal,
   author =       Gibbs #and# Dandy #and# Maier #and# Nixon_John,
@@ -10035,7 +10015,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {99--110}
 }
 
-
 @article{Gold1990pm,
   title =        {Probability matching, the magnitude of reinforcement, and
                   classifier system bidding},
@@ -10055,6 +10034,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   address =      "Boston, MA, USA",
   year =         1989,
 }
+
 
 @InProceedings{GoldmanMays,
   author =       Goldman # and # Mays,
@@ -10111,7 +10091,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {246--257},
 }
 
-
 @Article{GouOrbToi03,
   author =       {N. I. M. Gould and D. Orban and P. L. Toint},
   title =        {{CUTEr and SifDec}: A constrained and unconstrained testing environment, revisited},
@@ -10130,6 +10109,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       1,
   pages =        {69--77}
 }
+
 
 @inproceedings{GraMohHin2013speech,
   title =        {Speech recognition with deep recurrent neural networks},
@@ -10356,7 +10336,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =    "ANTS2002",
   pages =        {111--122},
 }
-        
+
 @Article{GunNgPoh2012,
   title =        {A Hybridized {Lagrangian} Relaxation and Simulated Annealing
                   Method for the Course Timetabling Problem},
@@ -10377,7 +10357,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year    =    1986,
   pages   =    {206 - 219}
 }
-
+        
 @Misc{Gurobi,
   author = 	 {Gurobi},
   title = 	 {Gurobi Optimizer},
@@ -11063,7 +11043,6 @@ Traveling Salesman Heuristic},
   year =         2005,
   address =      mit-ad}
 
-
 @InProceedings{HenMich07synthesis,
   author =       Hentenryck #and# Michel_L,
   title =        {Synthesis of constraint-based local search
@@ -11085,7 +11064,8 @@ Traveling Salesman Heuristic},
   pages =        {1--5},
   journal =      toms,
 }
-        
+
+
 @article{HerBlu2009:si,
   author =       {H. Hern{\'a}ndez} #and# Blum,
   title =        {Ant colony optimization for multicasting in static
@@ -11107,7 +11087,7 @@ Traveling Salesman Heuristic},
   howpublished = {\url{http://sci2s.ugr.es/eamhco/}},
   keywords =       {SOCO benchmark},
 }
-
+        
 @Article{HerLozSan03:real-coded-crossover,
   author =       Herrera_F #and# Lozano_M #and# Sanchez_AM,
   title =        "A taxonomy for the crossover operator for real-coded genetic algorithms: An experimental study",
@@ -11177,7 +11157,6 @@ Traveling Salesman Heuristic},
   publisher =    {Courier Corporation}
 }
 
-
 @article{Hic2006,
   author =       {Christian Hicks},
   title =        {A Genetic Algorithm tool for optimising cellular or
@@ -11199,6 +11178,7 @@ Traveling Salesman Heuristic},
   pages =        {504--507},
   year =         2006,
 }
+
 
 @article{Hoeffding1963,
   title =        {Probability inequalities for sums of bounded random
@@ -11299,7 +11279,7 @@ Traveling Salesman Heuristic},
   address =      add-sanfran,
   year =         2005,
   alias =        {HooStu04:book}
-} 
+}
 
 @InProceedings{HooStu1998uai,
   author =       Hoos #and# Stuetzle,
@@ -11322,7 +11302,7 @@ Traveling Salesman Heuristic},
   volume =       238,
   number =       1,
   pages =        {87--94}
-}
+} 
 
 @Article{HooStu2015:ol,
   author =       Hoos #and# Stuetzle,
@@ -11550,7 +11530,6 @@ Traveling Salesman Heuristic},
   Doi =          {10.1198/TECH.2009.07097}
 }
 
-
 @InProceedings{HunLop2019turing,
   author =       {Maura Hunt} #and# Lopez-Ibanez,
   title =        {Modeling a Decision-Maker in Goal Programming by means of
@@ -11581,6 +11560,7 @@ Traveling Salesman Heuristic},
   pages =        {857--860}
 }
 
+
 @article{Hurlbert1984,
   Author =       {S. H. Hurlbert},
   Title =        {Pseudoreplication and the Design of Ecological Field
@@ -11591,7 +11571,6 @@ Traveling Salesman Heuristic},
   Pages =        {187--211},
   Year =         1984,
 }
-
 
 @inCollection{HusStu2009hm,
   author =       {Mohamed Saifullah Hussin} #and# Stuetzle,
@@ -11632,6 +11611,7 @@ Traveling Salesman Heuristic},
   doi =          {10.1145/1569901.1569940},
 }
 
+
 @InCollection{HutHooLey2010:cpaior,
   author =       Hutter #and# Hoos #and# Leyton-Brown,
   title =        {Automated Configuration of Mixed Integer Programming Solvers},
@@ -11651,7 +11631,6 @@ Traveling Salesman Heuristic},
   number =       {1--2},
   pages =        {65--89}
 }
-        
 
 @InCollection{HutHooLey2011lion,
   author =       Hutter #and# Hoos #and# Leyton-Brown,
@@ -11669,6 +11648,7 @@ Traveling Salesman Heuristic},
   author =       Hutter #and# Hoos #and# Leyton-Brown,
   pages =        {55--70},
 }
+        
 
 @article{HutHooLey2013arxiv,
   author    = Hutter #and# Hoos #and# Leyton-Brown,
@@ -11765,7 +11745,6 @@ Traveling Salesman Heuristic},
   year =         2007
 }
 
-
 @PhdThesis{HutterPhD,
   author =       Hutter,
   title =        {Automated Configuration of Algorithms for Solving
@@ -11776,6 +11755,16 @@ Traveling Salesman Heuristic},
   year =         2009,
   month =        oct,
 }
+
+@misc{IJCAI2021checklist,
+  author =       "Zhiyuan Liu and Jian Tang",
+  title =        "IJCAI 2021 Reproducibility Guidelines, 35th International
+                  Joint Conference on Artificial Intelligence",
+  year =         2021,
+  howpublished =
+                  "\url{https://ijcai-21.org/wp-content/uploads/2020/12/20201226-IJCAI-Reproducibility.pdf}"
+}
+
 
 @techreport{INRIA-RR-7871,
   author =       Humeau #and# Liefooghe #and# Talbi #and# Verel,
@@ -11892,8 +11881,6 @@ Traveling Salesman Heuristic},
   number =       {TR/IRIDIA/2010-020}
 }
 
-
-
 @TechReport{IRIDIA-2010-022,
   author =       Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
   title =        "Improving the Anytime Behavior of Two-Phase Local
@@ -11904,6 +11891,8 @@ Traveling Salesman Heuristic},
   url =          {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2010-022r001.pdf},
   note =         "Published in Annals of Mathematics and Artificial Intelligence~\cite{DubLopStu2011amai}"
 }
+
+
 
 @TechReport{IRIDIA-2011-001,
   author =       Lopez-Ibanez #and# Knowles #and# Laumanns,
@@ -11999,7 +11988,6 @@ Traveling Salesman Heuristic},
   number =       {TR/IRIDIA/2013-015},
 }
 
-
 @TechReport{IRIDIA-2014-009,
   author =       Lopez-Ibanez #and# Liefooghe #and# Verel,
   title =        {Local Optimal Sets and Bounded Archiving on
@@ -12022,6 +12010,7 @@ Traveling Salesman Heuristic},
                   {http://iridia.ulb.ac.be/IridiaTrSeries/link/IridiaTr2014-014.pdf}
 }
 
+
 @TechReport{IRIDIA-2017-005,
   author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
   title =        {A Large-Scale Experimental Evaluation of High-Performing
@@ -12031,7 +12020,7 @@ Traveling Salesman Heuristic},
   number =       {TR/IRIDIA/2017-005},
   month =        nov,
 }
-  
+
 @TechReport{IRIDIA-2017-006,
   author =       Franzin #and# Perez_L #and# Stuetzle,
   title =        "Effect of Transformations of Numerical Parameters
@@ -12042,7 +12031,7 @@ Traveling Salesman Heuristic},
   month =        mar,
   url =          {http://iridia.ulb.ac.be/IridiaTrSeries/link/IridiaTr2017-006.pdf}
 }
-
+  
 @techreport{IRIDIA-2017-011,
   author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
   title =        {Automatic Configuration of Multi-objective Optimizers and
@@ -12057,8 +12046,6 @@ Traveling Salesman Heuristic},
   note =         "Published as \cite{BezLopStu2020chapter}"
 }
 
-
-
 @techreport{IRIDIA-2017-012,
   author =       Lopez-Ibanez #and# MarmionKs #and# Stuetzle,
   title =        {Automatic Design of Hybrid Metaheuristics from Algorithmic
@@ -12070,6 +12057,8 @@ Traveling Salesman Heuristic},
   url =
                   {http://iridia.ulb.ac.be/IridiaTrSeries/link/IridiaTr2017-012.pdf}
 }
+
+
 
 @techreport{IRIDIA-2018-001,
   author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
@@ -12092,7 +12081,6 @@ Traveling Salesman Heuristic},
   url =          {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2018-010.pdf}
 }
 
-
 @TechReport{IRIDIA-2021-002,
   author =       Camacho_C #and# Stuetzle #and# Dorigo,
   title =        "{PSO-X}: A Component-Based Framework for the Automatic Design
@@ -12102,6 +12090,7 @@ Traveling Salesman Heuristic},
   number =       "TR/IRIDIA/2021-002",
   url =          {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2021-002.pdf}
 }
+
 
 @TechReport{IRIDIA-2021-005,
   author =       Franzin #and# Stuetzle,
@@ -12627,7 +12616,6 @@ Traveling Salesman Heuristic},
                   {http://www.cs.ubc.ca/labs/beta/Projects/SMAC/v2.10.03/manual.pdf}
 }
 
-
 @article{Jen03,
   title =        "Reducing the run-time complexity of multiobjective
                   {EA}s: The {NSGA-II} and other algorithms",
@@ -12638,6 +12626,7 @@ Traveling Salesman Heuristic},
   pages =        {503--515},
   year =         2003
 }
+
 
 @InCollection{JerSin1996,
   title =        {The {Markov} chain {Monte} {Carlo} method: an approach
@@ -12667,6 +12656,14 @@ Traveling Salesman Heuristic},
   pages =        {347--359},
   year =         1992,
   publisher =    jws
+}
+
+@inCollection{JesLieDerPaq2020gecco,
+  author =       {Jesus, Alexandre D.} #and# Liefooghe #and# Derbel_B #and#
+                  Paquete,
+  crossref =     "GECCO2020",
+  pages =        {850---858},
+  title =        {Algorithm Selection of Anytime Algorithms},
 }
 
 @Article{JiaOngZhaFen2014metrics,
@@ -13759,17 +13756,6 @@ Traveling Salesman Heuristic},
   doi =         {10.1162/106365600568167},
 }
 
-@Article{KnoVanGro2011,
-  author =       {Knol, Mirjam J. and VanderWeele, Tyler J. and Groenwold, Rolf H. H.
-                  and Klungel, Olaf H. and Rovers, Maroeska M. and Grobbee, Diederick E.},
-  title =        {Estimating measures of interaction on an additive scale for preventive exposures},
-  journal =      eje,
-  year =         2011,
-  volume =       26,
-  number =       6,
-  pages =        {433--438}
-}
-
 @inCollection{KnoCor1999cec,
   author =       Knowles #and# Corne,
   pages =        {98--105},
@@ -13862,6 +13848,17 @@ Traveling Salesman Heuristic},
   eprint =
                   {https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/23822/2/KTZ2006a.pdf},
   pdf =          {KnoThiZit06- Tutorial Performance Assessment-revised.pdf}
+}
+
+@Article{KnoVanGro2011,
+  author =       {Knol, Mirjam J. and VanderWeele, Tyler J. and Groenwold, Rolf H. H.
+                  and Klungel, Olaf H. and Rovers, Maroeska M. and Grobbee, Diederick E.},
+  title =        {Estimating measures of interaction on an additive scale for preventive exposures},
+  journal =      eje,
+  year =         2011,
+  volume =       26,
+  number =       6,
+  pages =        {433--438}
 }
 
 @InCollection{KnoWatCor2001reducing,
@@ -15341,14 +15338,6 @@ Optimization},
                   problems}
 }
 
-@inCollection{JesLieDerPaq2020gecco,
-  author =       {Jesus, Alexandre D.} #and# Liefooghe #and# Derbel_B #and#
-                  Paquete,
-  crossref =     "GECCO2020",
-  pages =        {850---858},
-  title =        {Algorithm Selection of Anytime Algorithms},
-}
-
 @article{LikKoc2007predictive,
   title =        {Predictive control of a gas--liquid separation plant based on
                   a {Gaussian} process model},
@@ -15482,7 +15471,6 @@ Optimization},
   number =       3,
 }
 
-
 @article{LiuRee2001,
   author =       {Jiyin Liu} #and# Reeves_CR,
   title =        {Constructive and Composite Heuristic Solutions to the
@@ -15494,6 +15482,7 @@ Optimization},
   year =         2001,
   doi =          "10.1016/S0377-2217(00)00137-5",
 }
+
 
 @Misc{LocalSolver,
   author =       {{Innovation 24}},
@@ -15702,7 +15691,6 @@ Optimization},
   year =         2016
 }
 
-
 @TechReport{LopDubStu2011irace,
   author =       Lopez-Ibanez #and# Dubois-Lacoste #and# Stuetzle #and#
                   Birattari,
@@ -15714,6 +15702,7 @@ Optimization},
   url =          {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2011-004.pdf},
   note =         "Published in " # orp # "~\cite{LopDubPerStuBir2016irace}"
 }
+
 
 @Article{LopKesStu2017:cim,
   author = 	 Lopez-Ibanez #and# MarmionKs #and# Stuetzle,
@@ -16280,7 +16269,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   supplement =   {http://iridia.ulb.ac.be/aco-tsp-qap/}
 }
 
-
 @article{LopTerRos2014esa,
   author =       {Eunice López-Camacho and Hugo Terashima-Marin and Peter Ross}
                   #and# Ochoa,
@@ -16293,6 +16281,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2014,
   doi =          "10.1016/j.eswa.2014.04.043",
 }
+
 
 @PhdThesis{LopezDiploma,
   author =       Lopez-Ibanez,
@@ -16498,8 +16487,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         1986,
 }
 
-
-
 @article{LusTeg2009tpls,
   author =       Lust #and# Teghem,
   title =        "Two-phase {Pareto} local search for the biobjective traveling
@@ -16527,6 +16514,8 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2010,
   alias =        "Lust09",
 }
+
+
 
 @Incollection{LusTeg2010,
   author =        Lust #and# Teghem,
@@ -16557,7 +16546,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.1111/j.1475-3995.2011.00840.x},
 }
 
-
 @Article{LustJasz09btsp,
   author =       Lust #and# Jaszkiewicz,
   title =        "Speed-up techniques for solving large-scale biobjective
@@ -16571,6 +16559,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   keywords =     "Multiobjective combinatorial optimization, Hybrid
                   metaheuristics, TSP, Local search, Speed-up techniques"
 }
+
 
 @article{LuvBarBri2014,
   title =        {A survey on multi-objective evolutionary algorithms
@@ -16629,8 +16618,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   numpages =     40
 }
 
-
-
 @InProceedings{Mackle95,
   author =       Mackle # and # Savic # and # Walters,
   title =        {Application of Genetic Algorithms to Pump Scheduling
@@ -16654,6 +16641,8 @@ algorithm configuration techniques to multi-objective algorithms.}
                   results",
   http = {http://intl.ieeexplore.ieee.org/xpl/freeabs_all.jsp?tp=&arnumber=501705&isnumber=10616},
 }
+
+
 
 @InProceedings{Mad2002pdea,
   title =        {Multiobjective optimization using a {Pareto} differential
@@ -16780,7 +16769,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   crossref =     "ANTS2004",
 }
 
-
 @Article{ManCar2000:fgcs,
   author =       Maniezzo #and# Carbonaro,
   title =        "An {ANTS} Heuristic for the Frequency Assignment Problem",
@@ -16791,6 +16779,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        "927--935",
   alias =        {ManCar00}
 }
+
 
 @Article{ManCol99,
   author =       Maniezzo #and# Colorni,
@@ -16811,7 +16800,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   crossref =     "ANTS2002",
 }
 
-
 @inproceedings{ManSurBauFinBetMcC2014,
   title =        {The {Stanford} {CoreNLP} Natural Language Processing Toolkit},
   author =       {Manning, Christopher D. and Surdeanu, Mihai and Bauer, John
@@ -16823,6 +16811,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2014,
   annote =       "\url{http://www.aclweb.org/anthology/P/P14/P14-5010}"
 }
+
 
 @Article{Mar84,
   title =        "On a multicritera shortest path problem",
@@ -17230,7 +17219,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   crossref =     "AWSM03",
 }
 
-
 @Article{McCormick04,
   author =       McCormick #and# Powell,
   title =        "Derivation of near-optimal pump schedules for water
@@ -17272,6 +17260,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.1007/s42979-020-0063-3},
 }
 
+
 @article{McG1992vrt,
   author =       McGeoch_CC,
   title =        {Analyzing Algorithms by Simulation: Variance Reduction
@@ -17306,7 +17295,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {195--212},
 }
 
-
 @Article{McG1998joc,
   author =       McGeoch_CC,
   title =        {Toward an Experimental Method for Algorithm Simulation},
@@ -17317,6 +17305,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {1--15},
   doi =          {10.1287/ijoc.8.1.1},
 }
+
 
 @Book{McG2012guide,
   author =       McGeoch_CC,
@@ -17399,12 +17388,12 @@ algorithm configuration techniques to multi-objective algorithms.}
   url =          {http://arxiv.org/abs/1707.05589},
 }
 
-
 @InCollection{MelPerCos2009:ea,
   title =        "{MC-ANT}: a Multi-colony Ant Algorithm",
   author =       {Melo, L. and Pereira, F. and Costa, E.},
   crossref =     "EA2009",
 }
+
 
 @article{Men2008,
   author =       "Ole J. Mengshoel",
@@ -17417,7 +17406,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2008
 }
 
-
 @inCollection{MenCoe2015gd,
   author =       {Menchaca-Mendez, Adriana} #and# Coello,
   title =        "{GD-MOEA}: A New Multi-Objective Evolutionary Algorithm Based
@@ -17425,6 +17413,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   crossref =     {EMO2015_1},
   pages =        "156--170",
 }
+
 
 @inProceedings{MenCoe2015gde,
   author =       {Menchaca-Mendez, Adriana} #and# Coello,
@@ -17547,7 +17536,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   crossref = "GECCO2000",
 }
 
-
 @Article{MerMidSch02:tec,
   author =       Merkle #and# Middendorf #and# Schmeck,
   title =        {Ant Colony Optimization for Resource-Constrained
@@ -17558,6 +17546,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =       4,
   pages =        {333--346}
 }
+
 
 @InProceedings{MerTraNau2010cec,
   author =        Mersmann_O #and# Trautmann #and# Naujoks #and# Weihs_C,
@@ -17579,7 +17568,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {197--213},
 }
 
-
 @article{MesSilMelMir20152esa,
   author =       "Rafael G. Mesquita and Ricardo M. A. Silva and Carlos A. B. Mello and P\'{e}ricles B. C. Miranda",
   title =        "Parameter tuning for document image binarization using a racing algorithm",
@@ -17591,6 +17579,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.1016/j.eswa.2014.10.039},
   keywords =     {irace},
 }
+
 
 @Article{MetRosRosTel53,
   author =       {N. Metropolis and A. W. Rosenbluth and M. N. Rosenbluth and A. Teller and E. Teller},
@@ -17611,7 +17600,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2002,
 }
 
-
 @InProceedings{Mey2004:gecco,
   author =       Meyer_Bernd,
   title =        {Convergence control in {ACO}},
@@ -17621,6 +17609,7 @@ algorithm configuration techniques to multi-objective algorithms.}
                   (GECCO)},
   address =      {Seattle, WA},
 }
+
 
 @incollection{MeyErn04:ants,
   author =       Meyer_Bernd #and# Ernst_Andreas,
@@ -17680,7 +17669,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   edition =      Second,
 }
 
-
 @inproceedings{MicHen2004,
   author =       Michel_L #and# Hentenryck,
   title =        {Iterative Relaxations for Iterative Flattening in Cumulative
@@ -17688,6 +17676,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {200--208},
   crossref =     "ICAPS2004"
 }
+
 
 @InCollection{MicMid98,
   author =       "R. Michel and M. Middendorf",
@@ -17868,7 +17857,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {261--268}
 }
 
-
 @InProceedings{Misevicius2003:gecco,
   author =       Misevicius_A,
   title =        {Ruin and Recreate Principle Based Approach for the Quadratic
@@ -17876,6 +17864,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {598--609},
   crossref =     "GECCO2003_1"
 }
+
 
 @Article{Misevicius2003:inf,
   title =        {A modified simulated annealing algorithm for the quadratic assignment problem},
@@ -17915,7 +17904,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {499--516}
 }
 
-
 @Article{MlaHan1997:cor,
   author =       Mladenovic #and# Hansen_P,
   title =        {Variable Neighborhood Search},
@@ -17925,6 +17913,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =       11,
   pages =        {1097--1100}
 }
+
 
 @article{MniKavSil2015human,
   title =        {Human-level control through deep reinforcement learning},
@@ -17948,7 +17937,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {672--679},
 }
 
-
 @article{MocTieZil1978,
   author =       Mockus_J  #and# {Tiesis, Vytautas and Zilinskas, Antanas},
   title =        "The application of bayesian methods for seeking the extremum",
@@ -17957,6 +17945,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         1978,
   annote =       "Proposed Bayesian optimization"
 }
+
 
 @InCollection{Mockus1975,
   author =       Mockus_J,
@@ -18179,7 +18168,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {65--76},
 }
 
-
 @article{Mor80,
   title =        {Reducing the size of the nondominated set: Pruning
                   by clustering},
@@ -18190,6 +18178,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {55--66},
   year =         1980,
 }
+
 
 @article{MorGagGra09:ejor,
   author =       {Sara Morin} #and# Gagne_C #and# {Marc Gravel},
@@ -18641,7 +18630,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   alias =        "Nash2011"
 }
 
-
 @Article{NawEnsHam83,
   author =       Nawaz #and# Enscore #and# Ham_I,
   title =        "A Heuristic Algorithm for the $m$-Machine, $n$-Job
@@ -18653,6 +18641,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {91--95},
   keyword =      {NEH heuristic},
 }
+
 
 @inCollection{NebDurVer2015jmetal,
   author =       {Nebro, Antonio J. and Durillo, Juan J. and Vergne, Matthieu},
@@ -18694,7 +18683,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.1016/j.swevo.2011.11.003},
 }
 
-
 @Article{NeuSudWit2009:swarm,
   author =       Neumann_F #and# Sudholt #and# Witt,
   title =        "Analysis of different {MMAS} {ACO} algorithms on
@@ -18705,6 +18693,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =       1,
   pages =        {35--68}
 }
+
 
 @Article{NeuWit2006:eccc,
   author =       Neumann_F #and# Witt,
@@ -19452,7 +19441,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.15388/Informatica.2006.138}
 }
 
-
 @Article{PanRui2012ejor,
   title =        {Local Search Methods for the Flowshop Scheduling Problem with Flowtime Minimization},
   author =       "Pan, Quan-Ke" #and# Ruiz_Ruben,
@@ -19462,6 +19450,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        "31--43",
   year =         2012
 }
+
 
 @Article{PanRui2013cor,
   title =        {A Comprehensive Review and Evaluation of Permutation
@@ -19518,7 +19507,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2009
 }
 
-
 @Book{PapSte1982:ph,
   author =       Papadimitriou #and# {Steiglitz, K.},
   title =        {Combinatorial Optimization -- Algorithms and
@@ -19526,6 +19514,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   publisher =    ph,
   year =         1982
 }
+
 
 @InProceedings{PapYan2000focs,
   author =       Papadimitriou #and# Yannakakis,
@@ -19767,7 +19756,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   PDF =          {PaqStuLop05mic.pdf}
 }
 
-
 @InCollection{PaqStuLop07metaheuristics,
   author =       Paquete #and# Stuetzle #and# Lopez-Ibanez,
   title =        {Using experimental design to analyze stochastic local search
@@ -19796,6 +19784,7 @@ algorithm configuration techniques to multi-objective algorithms.}
                   and various instance features, such as the structure of the
                   input data and the correlation between the objectives.},
 }
+
 
 @Article{ParDoeHar2009,
   author =       {Parragh, S. N.} #and# Doerner #and# Hartl #and# Gandibleux,
@@ -19830,7 +19819,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year     = 1998,
   doi      = {10.1016/S0305-0548(97)00054-3}
 }
-  
+
 @Article{ParLopFre2002:ieee-tec,
   author =   {R. S. Parpinelli and H. S. Lopes and A. A. Freitas},
   title =    {Data Mining with an Ant Colony Optimization Algorithm},
@@ -19840,7 +19829,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =   4,
   pages =    {321--332}
 }
-
+  
 @Article{ParVas2007:ejor,
         author =      Parreiras #and# Vascocelos,
         title =       "A multiplicative version of {PROMETHEE II} applied to
@@ -20284,7 +20273,6 @@ algorithm configuration techniques to multi-objective algorithms.}
                   {MAX-SAT} instances derived from static problems.  },
 }
 
-
 @misc{PinSin2020checklist,
   author =       "Joelle Pineau and Koustuv Sinha",
   title =        "The Machine Learning Reproducibility Checklist (v2.0)",
@@ -20293,6 +20281,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2020,
   annote =       "Used in NeurIPS 2020"
 }
+
 
 @Article{PinVinSin2020improving,
   title =        {Improving Reproducibility in Machine Learning Research (A
@@ -20315,13 +20304,13 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {2403--2435}
 }
 
-
 @incollection{PisRop2010:handbook,
   crossref =     {Handbook2010},
   title =        {Large Neighborhood Search},
   author =       Pisinger #and# Ropke,
   pages =        {399--419}
 }
+
 
 @Article{PitAlmDoe06,
   author =       "Rapeepan Pitakaso" #and# Almeder #and# Doerner
@@ -20474,7 +20463,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {996--1003}
 }
 
-
 @inProceedings{PraYao2006taa,
   title =        {A new multi-objective evolutionary optimisation algorithm:
                   the two-archive algorithm},
@@ -20486,6 +20474,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2006,
   organization = {IEEE}
 }
+
 
 @InProceedings{Prasad03,
   author =       Prasad # and # Walters,
@@ -20525,7 +20514,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         1957
 }
 
-
 @article{ProBisBou2018tuna,
   title =        {Tunability: Importance of Hyperparameters of Machine Learning
                   Algorithms},
@@ -20536,6 +20524,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   url =        {https://arxiv.org/abs/1802.09596},
   keywords =     {parameter importance},
 }
+
 
 @Article{ProBisBou2019tuna,
   author =       "Probst, Philipp" #and# Bischl_B #and# "Boulesteix,
@@ -20578,17 +20567,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   volume =       61,
   pages =        {143--164}}
 
-
-@inCollection{PulCoe2003emo,
-  author =       Toscano_Pulido #and# Coello,
-  title =        {The Micro Genetic Algorithm 2: Towards Online
-                  Adaptation in Evolutionary Multiobjective
-                  Optimization},
-  crossref =     "EMO2003",
-  pages =        {252--266},
-  doi =          {10.1007/3-540-36970-8_18},
-}
-
 @article{PukHei2006,
   title =        {Optimizing heuristic search in forest planning},
   author =       {Pukkala, Timo and Heinonen, Tero},
@@ -20598,6 +20576,17 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2006,
   pages =        {1284--1297},
   publisher =    elsevier
+}
+
+
+@inCollection{PulCoe2003emo,
+  author =       Toscano_Pulido #and# Coello,
+  title =        {The Micro Genetic Algorithm 2: Towards Online
+                  Adaptation in Evolutionary Multiobjective
+                  Optimization},
+  crossref =     "EMO2003",
+  pages =        {252--266},
+  doi =          {10.1007/3-540-36970-8_18},
 }
 
 @article{PulTac2009aqme,
@@ -20653,7 +20642,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   annote =       "Best paper award at PPSN2018"
 }
 
-
 @InCollection{PusHoo2020golden,
   author =       {Yasha Pushak} #and# Hoos,
   title =        "Golden parameter search: exploiting structure to quickly
@@ -20674,6 +20662,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2017,
   publisher =    {Elsevier}
 }
+
 
 @Manual{R:ParamHelpers,
   Title =        "{\rpackage{ParamHelpers}} : Helpers for Parameters in
@@ -21125,7 +21114,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   alias =        "Reynolds1987",
 }
 
-
 @Article{RezHej2005,
   Title                    = {Flowshop-scheduling Problems with Makespan Criterion: A Review},
   Author                   = {S. Reza Hejazi and S. Saghafian},
@@ -21143,6 +21131,7 @@ algorithm configuration techniques to multi-objective algorithms.}
    crossref =     "ADT2009",
    pages =        "168--179",
 }
+
 
 @article{RibComTor2011:omega,
   title =        "An iterated greedy algorithm for the flowshop
@@ -21314,7 +21303,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {505--512},
 }
 
-
 @article{RomKraArn2012protein,
   author =       {P. A. Romero and A. Krause and F. H. Arnold},
   title =        {Navigating the Protein Fitness Landscape with {Gaussian}
@@ -21328,6 +21316,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   journal =      pnas,
   keywords =     "Combinatorial Black-box Expensive"
 }
+
 
 @Article{RomSan1991,
   title =        {A Theoretical Framework for Simulated Annealing},
@@ -21606,7 +21595,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   organization = {ThinkMind}
 }
 
-
 @Article{SabAyoKen2013tec, 
   author = {N. R. {Sabar} and M. {Ayob}} #and# Kendall_G #and# {R. {Qu}}, 
   journal= tec, 
@@ -21616,6 +21604,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number = 6, 
   pages  = {840--861} 
 }
+
 
 @Article{SabAyoKen2015tcyb, 
   author  = {N. R. {Sabar} and M. {Ayob}} #and# Kendall_G #and# {R. {Qu}}, 
@@ -21627,7 +21616,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages   = {217--228}
 }
 
-
 @Article{SabAyoKen2015tec, 
   author  = {N. R. Sabar and M. Ayob} #and# Kendall_G #and# {R. Qu}, 
   journal = tec, 
@@ -21637,6 +21625,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number  = 3, 
   pages   = {309--325}
 }
+
 
 @article{SacDuvMai2018ego-ls-svm,
   title =        {A classification approach to efficient global optimization in
@@ -21977,13 +21966,13 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi = {10.1016/j.cor.2008.08.015}
 }
 
-
 @inCollection{SchEsqLarCoe2010hausdorff,
   author =       Schutze_O #and# {X. Esquivel and A. Lara} #and# Coello,
   title = {Some Comments on {GD} and {IGD} and Relations to the {Hausdorff} Distance},
   crossref = {GECCO2010},
   pages = {1971--1974}
 }
+
 
 @Article{SchEsqLarCoe2012tec,
   author =       Schutze_O #and#  {X. Esquivel and A. Lara} #and# Coello,
@@ -21996,7 +21985,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {504--522},
 }
 
-
 @Article{SchHan79,
   author    =    {Josef Schmee and Gerald J. Hahn},
   title     =    {A Simple Method for Regression Analysis with Censored Data},
@@ -22008,6 +21996,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   publisher =    taylorfrancis,
   doi       =    {10.2307/1268280}
 }
+
 
 @article{SchHarSka2017safe,
   title =        {Safe active learning and safe {Bayesian} optimization for
@@ -22023,7 +22012,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   publisher =    {Elsevier}
 }
 
-
 @InCollection{SchHoo2012quanti,
   title =        "Quantifying Homogeneity of Instance Sets for
                   Algorithm Configuration",
@@ -22034,6 +22022,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {190--204},
   doi =          {10.1007/978-3-642-34413-8_14},
 }
+
 
 @inproceedings{SchKalPhi2015facenet,
   title =        {Facenet: A unified embedding for face recognition and
@@ -22054,7 +22043,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   title =        {Pseudoreplication is a pseudoproblem},
   journal =      {Journal of Comparative Psychology}
 }
-
 
 @Article{SchLarCoe2011tec,
   author =       Schutze_O #and# {A. Lara} #and# Coello,
@@ -22093,6 +22081,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2010,
 }
 
+
 @Article{SchMar1999,
   author =       {G. R. Schreiber} #and# Martin_O,
   title =        {Cut Size Statistics of Graph Bisection Heuristics},
@@ -22129,7 +22118,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   organization = {Link{\"o}ping University Electronic Press}
 }
 
-
 @article{SchSchStaDue2000,
   title =        "Record Breaking Optimization Results Using the Ruin
                   and Recreate Principle",
@@ -22141,6 +22129,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   author =       "Gerhard Schrimpf and Schneider, Johannes and Hermann
                   Stamm-Wilbrandt and Gunter Dueck"
 }
+
 
 @article{SchSchoTho2019min,
   title =        {Min-ordering and max-ordering scalarization methods for
@@ -22154,7 +22143,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   publisher =    {Elsevier}
 }
 
-
 @article{SchSpeKra2018gptut,
   author =       {Schulz, Eric and Speekenbrink, Maarten and Krause, Andreas},
   year =         2018,
@@ -22166,6 +22154,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   journal =      jmatpsy,
   doi =          {10.1016/j.jmp.2018.03.001}
 }
+
 
 @Article{SchStu2004:jmma,
   author = 	 Schiavinotto #and# Stuetzle,
@@ -22187,7 +22176,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =       10,
   pages =        {3143--3153}}
 
-
 @Article{SchTacWuiSamStu2013,
   author = 	 {Tom Schrijvers and Guido Tack and Pieter Wuille and Horst Samulowitz and Peter J. Stuckey},
   title = 	 {Search Combinators},
@@ -22197,6 +22185,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number = 	 2,
   pages = 	 {269--305}
 }
+
 
 @Article {SchWelJon1998,
   author =       {Matthias Schonlau and William J. Welch and Donald R. Jones},
@@ -22211,7 +22200,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.2307/4356058}
 }
 
-
 @InCollection{Schaerf97,
   author =       Schaerf,
   title =        {Combining Local Search and Look-Ahead for Scheduling
@@ -22220,6 +22208,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {1254--1259},
   volume =       2,
 }
+
 
 @book{Scheffe1959anova,
   title =        {The Analysis of Variance},
@@ -22281,7 +22270,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {3364--3370}
 }
 
-
 @InProceedings{Ser1992,
   title =        {Simulated annealing for multiple objective
                   optimization problems},
@@ -22290,6 +22278,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {87--96},
   crossref =     "MCDM1991"
 }
+
 
 @InCollection {Serafini86,
   author =       {P. Serafini},
@@ -22870,7 +22859,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages = 	 {266--280}
 }
 
-
 @Article{Smith-Miles2008,
   author = 	 Smith-Miles_K,
   title = 	 {Cross-disciplinary Perspectives on Meta-learning for Algorithm Selection},
@@ -22880,6 +22868,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number = 	 1,
   pages = 	 {1--25}
 }
+
 
 @inproceedings{Smith-Miles2008ijcnn,
   author = 	     Smith-Miles_K,
@@ -22897,13 +22886,13 @@ algorithm configuration techniques to multi-objective algorithms.}
   address =      {Ames, IA, USA}
 }
 
-
 @InCollection{SnoLarAda2012nips,
   author = 	  Snoek_J #and# {Hugo Larochelle}  #and# Adams_RP,
   title = 	 {Practical {Bayesian} Optimization of Machine Learning Algorithms},
   crossref =     "NIPS2012",
   pages = 	 {2960--2968},
 }
+
 
 @InProceedings{SnoSweZemAda2014icml,
   author =       Snoek_J #and# Swersky_K #and# Zemel_R #and# Adams_RP,
@@ -23050,7 +23039,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   note =         {(In Spanish)}
 }
 
-
 @InProceedings{Sotelo02,
   author =       Sotelo # and # vonLucken # and # Baran,
   title =        "Multiobjective Evolutionary Algorithms in Pump
@@ -23090,6 +23078,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 	year = 2020
 }
 
+
 @Misc{SouRitLop2021cap-supp,
   author =       DeSouza #and# Ritt #and# Lopez-Ibanez,
   title =        {Capping Methods for the Automatic Configuration of
@@ -23109,13 +23098,13 @@ algorithm configuration techniques to multi-objective algorithms.}
   publisher =     elsevier
 }
 
-
 @misc{Spark,
   author =       {{Apache Software Foundation}},
   title =        {Spark},
   url =          {https://spark.apache.org},
   year =         2012
 }
+
 
 @Article{Spearman1904,
   title     = {The proof and measurement of association between two things},
@@ -23293,7 +23282,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   Keywords =     {Multicriteria decision analysis},
 }
 
-
 @InCollection{SteGar1991computational,
   author =       Steuer #and# "Gardiner, Lorraine",
   editor =       "Fandel, G{\"u}nter and Gehring, Hermann",
@@ -23309,6 +23297,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   annote =       "Proposed difference between ad hoc and non-ad hoc interactive
                   multi-objective optimization methods"
 }
+
 
 @Article{SteHeiHah2020,
   author =       {Stegherr, Helena and Heider, Michael and H\"ahner, J\"org},
@@ -23337,7 +23326,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   annote =       "Introduces computational reproducibility, empirical
                   reproducibility and statistical reproducibility"
 }
-
 
 @article{StoAlb2014,
   author =       {Stolfi, Daniel H.} #and# Alba_E,
@@ -23372,6 +23360,7 @@ algorithm configuration techniques to multi-objective algorithms.}
                   total of 60 scenarios tested, with up to 19\% shorter travel
                   times."
 }
+
 
 @article{StoMcNutBai2016enhancing,
   doi =          {10.1126/science.aah6168},
@@ -23624,7 +23613,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   crossref =     "EORMS2011",
 }
 
-
 @InCollection{StuLopPel2011autsea,
   author =       Stuetzle #and# Lopez-Ibanez #and# Pellegrini #and#
                   Maur #and# MontesDeOca #and# Birattari #and# Dorigo,
@@ -23634,6 +23622,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {191--215}
 }
 
+
 @InCollection{StuRui2017ig,
   author =       Stuetzle #and# Ruiz_Ruben,
   title =        "Iterated Greedy",
@@ -23642,7 +23631,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        "1--31",
 }
 
-
 @InCollection{StuRui2017ils,
   author =       Stuetzle #and# Ruiz_Ruben,
   title =        "Iterated Local Search",
@@ -23650,6 +23638,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          "10.1007/978-3-319-07153-4_8-1",
   pages =        "1--27",
 }
+
 
 @PhdThesis{StuetzlePhD,
   author =       Stuetzle,
@@ -23693,8 +23682,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {2729--2742}
 }
 
-
-
 @TECHREPORT{SugHanLia2005cec,
   author =       Suganthan #and# Hansen_N #and# {J. J. Liang}
                   #and# Deb #and# {Y. P. Chen} #and# Auger_A #and# {S. Tiwari},
@@ -23707,6 +23694,8 @@ algorithm configuration techniques to multi-objective algorithms.}
   annote =       {Also known as KanGAL Report Number 2005005 (Kanpur Genetic Algorithms
                   Laboratory, IIT Kanpur)},
 }
+
+
 
 @InProceedings{SuiGotBur2015icml,
   title =        {Safe Exploration for Optimization with {Gaussian} Processes},
@@ -23737,8 +23726,6 @@ algorithm configuration techniques to multi-objective algorithms.}
                   recommendation, and therapeutic spinal cord stimulation.},
   keywords =     "SafeOpt"
 }
-
-
 
 @article{SuiZhuBur2018arxiv,
   title =        {Stagewise Safe {Bayesian} Optimization with {Gaussian}
@@ -23774,6 +23761,8 @@ algorithm configuration techniques to multi-objective algorithms.}
   keywords =     {StageOpt},
   annote =       "Published as \cite{SuiZhuBur2018stageopt}"
 }
+
+
 
 @inproceedings{SuiZhuBur2018stageopt,
   author =       {Sui, Yanan and Zhuang, Vincent and Burdick, Joel W. and Yue,
@@ -24203,19 +24192,20 @@ Twin-Screw Extrusion Configuration Problem},
   url = {http://www.computerworld.com/s/article/359630/Machine_Based_Decision_Making_Is_Coming},
   note =      {Last accessed: 15 January 2014},
 }
+
 @incollection{Thie2007adaptive,
   title =        {Adaptive strategies for operator allocation},
   author =       Thierens,
   crossref =     "LobLimMic07:book",
   pages =        {77--90},
 }
-
 @inCollection{Thie2009adaptive,
   title =        {Adaptive operator selection for iterated local search},
   author =       Thierens,
   crossref =     "SLS2009",
   pages =        {140--144},
 }
+
 @InCollection{Thierens2004:gecco,
   author =       Thierens,
   title =        {Population-based Iterated Local Search: Restricting the Neighborhood
@@ -24223,7 +24213,6 @@ Twin-Screw Extrusion Configuration Problem},
   crossref =  {GECCO2004_2},
   pages =        {234--245},
 }
-
 @InCollection{Thierens2005:gecco,
   author =       Thierens,
   title =        {An Adaptive Pursuit Strategy for Allocating Operator Probabilities},
@@ -24337,8 +24326,6 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {2183--2188}
 }
 
-
-
 @article{TraMeh2009eo,
   author =       Trautmann #and# {J\"{o}rn Mehnen},
   title =        "Preference-based {Pareto} optimization in certain and
@@ -24350,6 +24337,8 @@ Twin-Screw Extrusion Configuration Problem},
   month =        jan,
   year =         2009
 }
+
+
 
 @inproceedings{TreWag2019msr,
   author =       {Treude, Christoph} #and# Wagner_M,
@@ -24368,6 +24357,7 @@ Twin-Screw Extrusion Configuration Problem},
   address =      {Piscataway, NJ, USA},
   keywords =     {algorithm portfolio, corpus features, topic modelling},
 }
+
 @Article{TriLop2015plos,
   author =       Trianni_V #and# Lopez-Ibanez,
   title =        "Advantages of Task-Specific Multi-Objective Optimisation in
@@ -24406,7 +24396,6 @@ Twin-Screw Extrusion Configuration Problem},
                   in a swarm robotics context, and a strictly collaborative
                   task in collective robotics.",
 }
-
 @article{TriNol2011al,
   author =       Trianni_V #and# {Nolfi, S.},
   title =        {Engineering the evolution of self-organizing
@@ -24425,6 +24414,7 @@ Twin-Screw Extrusion Configuration Problem},
 	howpublished = {\url{https://mat.gsia.cmu.edu/COLOR/instances.html}},
 	year = 2018
 }
+
 @article{TseLin09,
   author =       Tseng_LY #and# Lin_YT,
   title =        "A hybrid genetic local search algorithm for the permutation
@@ -24435,7 +24425,6 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        "84--92",
   year =         2009,
 }
-
 @InCollection{Tsu06,
   title =        {An Enhanced Aggregation Pheromone System for Real-Parameter
                   Optimization in the {ACO} Metaphor},
@@ -24539,7 +24528,6 @@ Twin-Screw Extrusion Configuration Problem},
                   search},
 }
 
-
 @book{TuringWay2019,
   key =          "TW2019",
   author =       {{The Turing Way Community} and Becky Arnold and Louise Bowler
@@ -24557,6 +24545,7 @@ Twin-Screw Extrusion Configuration Problem},
   version =      {v0.0.4},
   doi =          {10.5281/zenodo.3233986},
 }
+
 
 @InProceedings{TusFil2007,
   author =       Tusar #and# Filipic,
@@ -24651,7 +24640,6 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        "341--367"
 }
 
-
 @Article{TwoStuDorManBir2010is,
   author     =   {Colin Twomey} #and# Stuetzle #and# Dorigo #and# {Max Manfrin} #and#  Birattari,
   title      =   "An Analysis of Communication Policies for Homogeneous Multi-colony {ACO} Algorithms",
@@ -24663,6 +24651,7 @@ Twin-Screw Extrusion Configuration Problem},
   doi =          {10.1016/j.ins.2010.02.017},
 }
 
+
 @InCollection{UldAarBan1991,
   author =       {N. L. J. Ulder} #and# Aarts #and# {H.-J. Bandelt} #and#
                   VanLaarhoven_PJM #and# Pesch,
@@ -24671,7 +24660,6 @@ Twin-Screw Extrusion Configuration Problem},
   crossref =     {PPSN1991},
   pages =        {109--116},
 }
-
 
 @Article{UluTeg1995,
   author =       Ulungu #and# Teghem,
@@ -24684,6 +24672,7 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {149--165},
   year =         1995
 }
+
 
 @article{UluTegFor1999,
    author =      Ulungu #and# Teghem #and# { Fortemps, P. H. and Tuyttens, D.},
@@ -24838,6 +24827,17 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        "772--795",
   year =         2005,
   alias = {Varadharajan05}
+}
+
+@Article{VasShaPar2017transformer,
+  title =        {Attention Is All You Need},
+  author =       {Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob
+                  Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz
+                  Kaiser and Illia Polosukhin},
+  journal =      arxiv # {1706.03762},
+  year =         2017,
+  url =          {http://arxiv.org/abs/1706.03762},
+  abstract = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.}
 }
 
 @Article{VasSim2010jwrpm,
@@ -25523,13 +25523,6 @@ Twin-Screw Extrusion Configuration Problem},
   crossref =     "MCDMTA1980",
 }
 
-@book{WilShm2011,
-  title =        {The design of approximation algorithms},
-  author =       {Williamson, David P. and Shmoys, David B.},
-  year =         2011,
-  publisher =    cup-pub
-}
-
 @article{Wil92,
   author =       "R. J. Williams",
   title =        "Simple Statistical Gradient-Following Algorithms for
@@ -25539,6 +25532,13 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        "229--256",
   volume =       8,
   number =       3
+}
+
+@book{WilShm2011,
+  title =        {The design of approximation algorithms},
+  author =       {Williamson, David P. and Shmoys, David B.},
+  year =         2011,
+  publisher =    cup-pub
 }
 
 @Article{Witt2012,
