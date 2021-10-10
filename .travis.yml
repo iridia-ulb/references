@@ -20,13 +20,11 @@ cache:
   - "$HOME/.texlive"
 
 script:
-  - cd test && ./travis_test.sh && cd .. && ./scripts/optbib2html.sh
+  - cd test && ./travis_test.sh && cd ..
+  - mv --force -t web/ test/testbib.pdf test/testshortbib.pdf
+  - ./scripts/optbib2html.sh
 
 deploy:
-  - provider: script
-    script:
-      - .travis/travis_deploy.sh
-    skip_cleanup: true
   - provider: pages
     skip_cleanup: true
     name: $GIT_NAME
