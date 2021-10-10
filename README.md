@@ -45,6 +45,7 @@ the top of the file.*
     - [Q: There is a separate entry for each cross-reference, and individual references cite it. I think it is ugly, how to prevent this?](#q-there-is-a-separate-entry-for-each-cross-reference-and-individual-references-cite-it-i-think-it-is-ugly-how-to-prevent-this)
     - [Q: Why I should not use `{{Title}}` in title? If not, should I use  title case or sentence case?](#q-why-i-should-not-use-title-in-title-if-not-should-i-use--title-case-or-sentence-case)
     - [Q: I want to keep an eye on someone else altering my references by mistake.](#q-i-want-to-keep-an-eye-on-someone-else-altering-my-references-by-mistake)
+    - [Q: I want to highlight the name of some authors.](#q-i-want-to-highlight-the-name-of-some-authors)
 - [Copyright](#copyright)
 
 <!-- markdown-toc end -->
@@ -630,6 +631,74 @@ A: Because it prevents the bibtex style to change the case of the
 A: You can click on the "Watch" and "Star" buttons on top of the [GitHub
    page](https://github.com/iridia-ulb/references). You can also fork the
    repository and only merge changes into your fork that you have reviewed.
+
+#### Q: I want to highlight the name of some authors. ####
+
+A: There are at least two ways to accomplish this.
+
+* **Method 1: Edit the `.bst`file**
+
+You need to edit the `.bst` file. For example, for `plain.bst`, you would add:
+```latex
+FUNCTION {cv.author}
+{ "L{\'o}pez-Ib{\'a}{\~n}ez, M." } 
+
+FUNCTION {highlight}
+{ duplicate$ empty$
+      { pop$ "" }
+      { "\textcolor{red}{" swap$ * "}" * }
+   if$
+}
+
+FUNCTION {highlight.if.cv.author}
+{ duplicate$ purify$ cv.author purify$ =
+    { highlight }
+    'skip$
+  if$
+}
+FUNCTION {format.author.names}
+{ 's :=
+  #1 'nameptr :=
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+    { namesleft #0 > }
+    { s nameptr "{vv~}{ll}{, jj}{, f{.}.}" format.name$ highlight.if.cv.author
+      't :=
+      nameptr #1 >
+	{ namesleft #1 >
+	    { ", " * t * }
+	    { numnames #2 >
+		{ "," * }
+		'skip$
+	      if$
+	      t "others" =
+		{ " et~al." * }
+		{ " and " * t * }
+	      if$
+	    }
+	  if$
+	}
+	't
+      if$
+      nameptr #1 + 'nameptr :=
+      namesleft #1 - 'namesleft :=
+    }
+  while$
+}
+```
+
+* **Method 2: Rewrite names with an extra `.bib` file.
+
+For this method to work, the names have to be encoded in `authors.bib`. Then,
+we can create a file `highlight.bib`:
+```bibtex
+@String{Lopez-Ibanez = " \textcolor{red}{Manuel} \textcolor{red}{L{\'o}pez-Ib{\'a}{\~n}ez} "}
+```
+
+And include it just after `authors.bib`:
+```latex
+\bibliography{references/abbrev,references/journals,references/authors,highlight.bib,references/biblio,references/crossref}
+```
 
 
 Copyright
