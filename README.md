@@ -636,10 +636,10 @@ A: You can click on the "Watch" and "Star" buttons on top of the [GitHub
 
 A: There are at least two ways to accomplish this.
 
-* **Method 1: Edit the `.bst`file**
+* **Method 1: Edit the `.bst` file**
 
 You need to edit the `.bst` file. For example, for `plain.bst`, you would add:
-```latex
+```bst
 FUNCTION {cv.author}
 { "L{\'o}pez-Ib{\'a}{\~n}ez, M." } 
 
@@ -687,7 +687,7 @@ FUNCTION {format.author.names}
 }
 ```
 
-* **Method 2: Rewrite names with an extra `.bib` file.
+* **Method 2: Rewrite names with an extra `.bib` file.**
 
 For this method to work, the names have to be encoded in `authors.bib`. Then,
 we can create a file `highlight.bib`:
