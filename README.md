@@ -12,9 +12,9 @@ git repository in your papers and sync with the main copy to send/receive
 updates.
   
 PDF file listing all references:
-[testbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testbib.pdf) 
+[testbib.pdf](https://iridia-ulb.github.io/references/testbib.pdf) 
 
-PDF with abbreviated references: [testshortbib.pdf](https://github.com/iridia-ulb/references/raw/master/test/testshortbib.pdf)
+PDF with abbreviated references: [testshortbib.pdf](https://iridia-ulb.github.io/references/testshortbib.pdf)
 
 HTML page listing all references: 
 [IRIDIA BibTeX Repository Webpage](https://iridia-ulb.github.io/references/)

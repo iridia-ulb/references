@@ -1,5 +1,6 @@
 *.aux
 *.bbl
+v1t4brevis
 *.bcf
 *.blg
 *.dvi
@@ -27,3 +28,5 @@
 /web/index_bib.html
 TAGS
 testbiblatex.pdf
+test/testbib.pdf
+test/testshortbib.pdf
