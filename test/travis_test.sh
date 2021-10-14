@@ -4,7 +4,7 @@ set -o pipefail
 PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 
 travis_fold_start() {
-    if [ test $TRAVIS ]; then
+    if [ ! -z ${TRAVIS:-} ]; then
         echo -e "travis_fold:start:$1\033[33;1m$2\033[0m"
     else
         echo -e "::group::$1\033[33;1m$2\033[0m"
@@ -12,7 +12,7 @@ travis_fold_start() {
 }
 
 travis_fold_end() {
-    if [ test $TRAVIS ]; then
+    if [ ! -z ${TRAVIS:-} ]; then
         echo -e "\ntravis_fold:end:$1\r"
     else
         echo -e "\n::endgroup::\n"
