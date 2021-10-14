@@ -1,0 +1,61 @@
+name: CI
+
+on: ['push', 'pull_request']
+
+jobs:
+  ci:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+      - name: Maybe skip before install (.travis/travis_maybe_skip.sh)
+        env:
+          PR_COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
+          PUSH_COMMIT_RANGE: ${{ github.event.before }}..${{ github.event.after }}
+        run: |
+          set -u
+          INCLUDE_ONLY="\.bib\|\.tex\|travis\|optbib2html\|deploy\|actions"
+          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
+             export TRAVIS_COMMIT_RANGE=${PR_COMMIT_RANGE}
+          else 
+             echo "This is a branch build" 
+             export TRAVIS_COMMIT_RANGE=${PUSH_COMMIT_RANGE}
+          fi 
+          echo "Emulated TRAVIS_COMMIT_RANGE: ${TRAVIS_COMMIT_RANGE}" 
+          git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
+          # Use -m so that merge commits are also considered
+          FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
+          echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
+          set +u
+                  
+      - name: Install packages
+        if: ${{ env.FILES_CHANGED != 0 }}
+        run: sudo apt -y install bibtex2html tidy
+
+      - name: Install texlive
+        if: ${{ env.FILES_CHANGED != 0 }}
+        run: .travis/texlive/texlive_install.sh
+
+      - name: Run test
+        if: ${{ env.FILES_CHANGED != 0 }}
+        run: cd test && ./travis_test.sh && mv --force -t ../web/ testbib.pdf testshortbib.pdf
+
+      - name: optbib2html
+        if: ${{ env.FILES_CHANGED != 0 }}
+        run: ./scripts/optbib2html.sh
+
+      - run: echo "Deploy (TODO, FIXME)"
+        
+      - run: echo "🍏 This job's status is ${{ job.status }}."
