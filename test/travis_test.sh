@@ -15,7 +15,7 @@ travis_fold_end() {
     if [ test $TRAVIS ]; then
         echo -e "\ntravis_fold:end:$1\r"
     else
-        echo -e "\n::endgroupd::\n"
+        echo -e "\n::endgroup::\n"
     fi
 }
 
