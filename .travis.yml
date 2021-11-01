@@ -19,10 +19,10 @@ cache:
   - "/tmp/texlive"
   - "$HOME/.texlive"
 
-script:
-  - cd test && ./travis_test.sh && cd ..
-  - mv --force -t web/ test/testbib.pdf test/testshortbib.pdf
-  - ./scripts/optbib2html.sh
+script: |
+  cd test && ./travis_test.sh && cd .. &&
+  mv --force -t web/ test/testbib.pdf test/testshortbib.pdf &&
+  ./scripts/optbib2html.sh
 
 deploy:
   - provider: pages
