@@ -23170,6 +23170,43 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 
+@article{SouRitLop2021cap,
+  author =       DeSouza #and# Ritt #and# Lopez-Ibanez,
+  title =        {Capping Methods for the Automatic Configuration of
+                  Optimization Algorithms},
+  journal =      cor,
+  doi =          "10.1016/j.cor.2021.105615",
+  year =         2021,
+  supplement =   "https://github.com/souzamarcelo/supp-cor-capopt",
+  abstract =     "Automatic configuration techniques are widely and
+                  successfully used to find good parameter settings for
+                  optimization algorithms. Configuration is costly, because it
+                  is necessary to evaluate many configurations on different
+                  instances. For decision problems, when the objective is to
+                  minimize the running time of the algorithm, many
+                  configurators implement capping methods to discard poor
+                  configurations early. Such methods are not directly
+                  applicable to optimization problems, when the objective is to
+                  optimize the cost of the best solution found, given a
+                  predefined running time limit. We propose new capping methods
+                  for the automatic configuration of optimization
+                  algorithms. They use the previous executions to determine a
+                  performance envelope, which is used to evaluate new
+                  executions and cap those that do not satisfy the envelope
+                  conditions. We integrate the capping methods into the irace
+                  configurator and evaluate them on different optimization
+                  scenarios. Our results show that the proposed methods can
+                  save from about 5\% to 78\% of the configuration effort,
+                  while finding configurations of the same quality. Based on
+                  the computational analysis, we identify two conservative and
+                  two aggressive methods, that save an average of about 20\%
+                  and 45\% of the configuration effort, respectively. We also
+                  provide evidence that capping can help to better use the
+                  available budget in scenarios with a configuration time
+                  limit."
+}
+
+
 @Misc{SouRitLop2021cap-supp,
   author =       DeSouza #and# Ritt #and# Lopez-Ibanez,
   title =        {Capping Methods for the Automatic Configuration of
