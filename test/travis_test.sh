@@ -39,8 +39,13 @@ fi
 
 latexmake() {
     TEXMAIN=$1
-    travis_fold_start latexmk.1 "latexmk $TEXMAIN"
+    BST=$2
+    travis_fold_start latexmk.1 "latexmk $TEXMAIN $BST"
 
+    if [ $bst != "" ]; then
+        sed -i "s/bibliographystyle.[^}]\+/bibliographystyle{$BST/" $TEXMAIN
+    fi
+    
     latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
     if [ $? -ne 0 ]; then
         travis_fold_end latexmk.1
@@ -55,6 +60,7 @@ latexmake() {
         grep "Warning--" .bibtex-warnings
         exit 1
     fi
+    
     grep --quiet "WARN" .bibtex-warnings
     if [ $? -eq 0 ]; then
         travis_fold_end latexmk.1
@@ -70,8 +76,12 @@ travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
 texliveonfly $TEXMAIN
 travis_fold_end texliveonfly.1
 
-latexmake "testbib.tex"
-latexmake "testshortbib.tex"
-latexmake "testbiblatex.tex"
+for main in "testbib.tex testshortbib.tex "; do
+    for bst in "../bibstyles/ACM-Reference-Format testbib"; do
+        latexmake "$main" "$bst"
+    done
+done
+latexmake "testbiblatex.tex" ""
+
 echo "No bibtex warnings! Good job!"
 exit 0
