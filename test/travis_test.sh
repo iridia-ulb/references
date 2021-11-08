@@ -76,8 +76,8 @@ travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
 texliveonfly $TEXMAIN
 travis_fold_end texliveonfly.1
 
-for main in "testbib.tex testshortbib.tex "; do
-    for bst in "../bibstyles/ACM-Reference-Format testbib"; do
+for main in "testbib.tex" "testshortbib.tex"; do
+    for bst in "../bibstyles/ACM-Reference-Format" "testbib"; do
         latexmake "$main" "$bst"
     done
 done
