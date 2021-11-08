@@ -43,7 +43,7 @@ latexmake() {
     travis_fold_start latexmk.1 "latexmk $TEXMAIN $BST"
 
     if [ $bst != "" ]; then
-        sed -i "s/bibliographystyle.[^}]\+/bibliographystyle{$BST/" $TEXMAIN
+        sed -i "s#bibliographystyle.[^}]\+#bibliographystyle{$BST#" $TEXMAIN
     fi
     
     latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
