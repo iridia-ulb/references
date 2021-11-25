@@ -5,15 +5,15 @@ PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 
 travis_fold_start() {
     if [ ! -z ${TRAVIS:-} ]; then
-        echo -e "travis_fold:start:$1\033[33;1m$2\033[0m"
+        echo -e "travis_fold:start: $1\033[33;1m$2\033[0m"
     else
-        echo -e "::group::$1\033[33;1m$2\033[0m"
+        echo -e "::group:: $1 \033[33;1m$2\033[0m"
     fi
 }
 
 travis_fold_end() {
     if [ ! -z ${TRAVIS:-} ]; then
-        echo -e "\ntravis_fold:end:$1\r"
+        echo -e "\ntravis_fold:end: $1\r"
     else
         echo -e "\n::endgroup::\n"
     fi
