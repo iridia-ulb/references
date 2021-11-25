@@ -19,23 +19,36 @@ travis_fold_end() {
     fi
 }
 
-grep --quiet -e "doi[[:space:]]*=.\+http" ../*.bib
-if [ $? -eq 0 ]; then
-    echo "Error: the doi field should not be an URL"
-    grep -n -e "doi[[:space:]]*=.\+http" ../*.bib
-    exit 1
-fi
+check_bad_thing() {
+    WHAT=$1
+    MSG=$2
+    grep --quiet -e $WHAT ../*.bib
+    if [ $? -eq 0 ]; then
+        echo "Error: $MSG"
+        grep -n -e $WHAT ../*.bib
+        exit 1
+    fi
+}
+
+check_bad_thing "doi[[:space:]]*=.\+http" "the doi field should not be an URL"
+# grep --quiet -e "doi[[:space:]]*=.\+http" ../*.bib
+# if [ $? -eq 0 ]; then
+#     echo "Error: the doi field should not be an URL"
+#     grep -n -e "doi[[:space:]]*=.\+http" ../*.bib
+#     exit 1
+# fi
 
 # These look similar but they are different.
 BADCHARS="⁄∕−―—–´"
-grep --quiet "[$BADCHARS]" ../*.bib
-if [ $? -eq 0 ]; then
-    travis_fold_end latexmk.1
-    echo "Error: Please do not use these UTF8 characters:"
-    grep "[$BADCHARS]" ../*.bib
-    exit 1
-fi
-
+check_bad_thing "[$BADCHARS]"  "Please do not use these UTF8 characters:"
+# grep --quiet "[$BADCHARS]" ../*.bib
+# if [ $? -eq 0 ]; then
+#     travis_fold_end latexmk.1
+#     echo "Error: Please do not use these UTF8 characters:"
+#     grep "[$BADCHARS]" ../*.bib
+#     exit 1
+# fi
+check_bad_thing "\'\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
 
 latexmake() {
     TEXMAIN=$1
