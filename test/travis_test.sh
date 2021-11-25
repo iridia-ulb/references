@@ -48,7 +48,7 @@ check_bad_thing "[$BADCHARS]"  "Please do not use these UTF8 characters:"
 #     grep "[$BADCHARS]" ../*.bib
 #     exit 1
 # fi
-check_bad_thing "\'\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
+check_bad_thing "\\\'\\\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
 
 latexmake() {
     TEXMAIN=$1
