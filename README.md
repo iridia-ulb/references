@@ -56,23 +56,17 @@ Rationale
 
 The main motivation for having a single repository is to incrementally
 fine-tune and perfect the references by sharing bibtex entries that have been
-curated over time by as many people as possible and that are used directly
-as-is, that is, without further alteration. Significantly, while errors tend to
-persist if they were present when the entry was added, they are almost never
-introduced at a later phase since entries are almost never adjusted and any
-customization happens via overriding `@String` definitions. Thus, the quality of
-the references monotonically increases with time.
+curated over time by as many people as possible and that are used without
+further alteration. Significantly, while errors tend to persist if they were
+present when the entry was added, they are almost never introduced at a later
+phase since entries are almost never adjusted and any customization happens via
+overriding `@String` definitions. Thus, the quality of the references
+monotonically increases with time.
 
 By contrast, manually copying and customizing a subset of entries often fails
 to backport any improvements, tends to introduce errors when entries are
 incorrectly modified for the sake of consistency and leads to repeated work and
 mistakes.
-
-Since the goal is to share high-quality entries rather than a comprehensive
-repository, it is better to not add entries if one is unsure about correctness
-and short of time to double-check and fix them. In that case, it is better to
-keep those entries in a separate personal bib file until one has time to fix
-them.
 
 The motivation for the current separation between authors, journals, abbrev,
 biblio and crossref files is to avoid spurious divergences of common strings.
@@ -87,12 +81,18 @@ of `crossref.bib` makes easier to keep consistency in the data for related
 publications (conference proceedings, book series, different editions).
 
 Finally, the separation makes trivial to apply various "tricks", such as
-switching to a much abbreviated format for conference and journal names. The
-idea is to override the desired `@String` definitions rather than editing the
-`.bib` files.
+switching to abbreviated conference and journal names by overriding the desired
+`@String` definitions rather than editing the `.bib` files. Typical
+abbreviations are already provided by `abbrevshor.bib`.
 
-Although some software tools (Mendeley, Zotero, etc) aim to achieve similar
-goals, they tend to introduce spurious fields, many of them fail to achieve
+Since the goal is to share high-quality entries rather than a comprehensive
+repository, it is better to not add entries if one is unsure about correctness
+and short of time to double-check and fix them. In that case, it is better to
+keep those entries in a separate personal bib file until one has time to fix
+them.
+
+Some software tools (Mendeley, Zotero, etc) aim to achieve similar goals,
+however, they tend to introduce spurious fields, many of them fail to achieve
 consistency, they do not export correct bibtex entries in corner cases, and not
 everyone wishes to use the same software. The current system is software
 agnostic and can be used with any editor (although Emacs is certainly
