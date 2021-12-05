@@ -83,7 +83,7 @@ publications (conference proceedings, book series, different editions).
 Finally, the separation makes trivial to apply various "tricks", such as
 switching to abbreviated conference and journal names by overriding the desired
 `@String` definitions rather than editing the `.bib` files. Typical
-abbreviations are already provided by `abbrevshor.bib`.
+abbreviations are provided by `abbrevshort.bib`.
 
 Since the goal is to share high-quality entries rather than a comprehensive
 repository, it is better to not add entries if one is unsure about correctness
