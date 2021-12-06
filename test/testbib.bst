@@ -52,6 +52,7 @@ ENTRY
     chapter
     doi
     supplement
+    keyword
     keywords
     eid
     edition
@@ -314,8 +315,14 @@ FUNCTION {format.supplement}
 }
 
 FUNCTION {format.keywords}
-{ keywords empty$
-    { "" }
+{
+  keywords empty$
+    { keyword empty$
+        { "" }
+        { "please do not use 'keyword', use 'keywords' instead in " cite$ * warning$
+          ""}
+      if$
+    }
     { new.block "\newline{\footnotesize\emph{Keywords:} " keywords * "}" * }
   if$
 }
