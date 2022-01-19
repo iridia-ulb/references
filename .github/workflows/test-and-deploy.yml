@@ -43,7 +43,9 @@ jobs:
                   
       - name: Install packages
         if: ${{ env.FILES_CHANGED != 0 }}
-        run: sudo apt -y install bibtex2html tidy
+        run: |
+          sudo apt -y update
+          sudo apt -y install bibtex2html tidy
 
       - name: Install texlive
         if: ${{ env.FILES_CHANGED != 0 }}
