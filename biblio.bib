@@ -150,8 +150,6 @@
   annote =       {\url{http://mpc.zib.de/archive/2009/1/Achterberg2009_Article_SCIPSolvingConstraintIntegerPr.pdf}}
 }
 
-
-
 @article{AchBer2007,
   title =        {Improving the feasibility pump},
   author =       {Achterberg, Tobias and Berthold, Timo},
@@ -7345,6 +7343,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "GECCO2019c",
   pages =        {1419--1420}
 }
+
+@InCollection{DreLieVer2021paradiseo,
+  title =        {Paradiseo: from a modular framework for evolutionary
+                  computation to the automated design of metaheuristics},
+  doi =          {10.1145/3449726.3463276},
+  crossref =     "GECCO2021c",
+  author =       Dreo_J #and# Liefooghe #and# Verel #and#
+                  Schoenauer #and# Merelo_JJ #and# {Quemy, Alexandre} #and#
+                  {Bouvier, Benjamin} #and# {Gmys, Jan}
+}
+   
 
 @Incollection{DreSia02:ants,
   author =   Dreo_J #and# {P. Siarry},
@@ -16840,6 +16849,18 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          "10.3389/fphy.2014.00005"
 }
 
+
+@InCollection{LunLee2017shap,
+  author =       {Lundberg, Scott M. and Lee, Su{-}In},
+  title =        {A unified approach to interpreting model predictions},
+  booktitle =    "Advances in Neural Information Processing Systems",
+  crossref =     "NIPS2017",
+  keywords =     "SHAP, interpretable AI",
+  pages =        "4765--4774",
+  eprint = "https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html"
+}
+
+
 @Article{LundyMees1986,
   title =        {Convergence of an Annealing Algorithm},
   author =       Lundy_M #and# Mees_A,
@@ -18132,6 +18153,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =       1,
   pages =        {3--37},
   year =         2014,
+  doi =          "10.1007/s00291-012-0297-0"
 }
 
 @book{Mie99,
@@ -18390,6 +18412,16 @@ algorithm configuration techniques to multi-objective algorithms.}
   publisher = 	 kap,
   year = 	 1989
   }
+
+@misc{ModCMA,
+  author =       {Sander van Rijn},
+  title =        {Modular {CMA-ES} framework
+                  from~\cite{van_rijn_evolving_2016}, v0.3.0},
+  year =         2018,
+  howpublished = {\url{https://github.com/sjvrijn/ModEA}},
+  note =         "Available also as {\SoftwarePackage{pypi}} package at
+                  \url{https://pypi.org/project/ModEA/0.3.0/}"
+}
 
 @incollection{MogAteYalAmo11:lorenz,
   title =        "{Lorenz} versus {Pareto} Dominance in a Single Machine
@@ -21681,12 +21713,14 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @inProceedings{RijWanLeeBac2016ssci,
-  title =        {Evolving the structure of evolution strategies},
+  title =        {Evolving the structure of {Evolution} {Strategies}},
   author =       {van Rijn, Sander} #and# {Wang, Hao} #and# {van Leeuwen,
                   Matthijs} #and# Baeck_Thomas,
   crossref =     "SSCI2016",
   pages =        {1--8},
-  keywords =     "automated design, automatic configuration, cma-es"
+  doi =          {10.1109/SSCI.2016.7850138},
+  keywords =     "automated design, automatic configuration, cma-es,Gaussian
+                  distribution"
 }
 
 @Article{RivAfrPri2015:coa,
@@ -23563,7 +23597,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages = 	 {2960--2968},
 }
 
-
 @InProceedings{SnoSweZemAda2014icml,
   author =       Snoek_J #and# Swersky_K #and# Zemel_R #and# Adams_RP,
   title =        "Input Warping for {Bayesian} Optimization of Non-Stationary Functions",
@@ -24018,6 +24051,15 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          "10.1007/s11047-020-09824-0"
 }
 
+
+@incollection{SteSmiJan2019autostat,
+  title =        {The Automatic Statistician},
+  author =       {Christian Steinruecken and Emma Smith and David Janz and
+                  James Lloyd and Zoubin Ghahramani},
+  doi =          {10.1007/978-3-030-05318-5_9},
+  pages =        {161--173},
+  crossref =     "HutKotVan2019automl",
+}
 
 @Book{Steuer1986,
   author =       Steuer,
@@ -27035,6 +27077,16 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   howpublished = {\url{https://GitHub.com/FacebookResearch/Nevergrad}},
 }
 
+@inCollection{NobVerWan2021gecco,
+  author =       {Jacob de Nobel} #and# Vermetten_D #and# {Hao Wang} #and#
+                  Doerr_C #and# Baeck_Thomas,
+  crossref =     "GECCO2021c",
+  title =        {Tuning as a means of assessing the benefits of new ideas in
+                  interplay with existing algorithmic modules},
+  pages =        {1375--1384},
+  doi =          {10.1145/3449726.3463167},
+}
+
 @Misc{oscar,
   author =       "{OscaR Team}",
   title =        "{OscaR}: {Scala} in {OR}",
@@ -27191,4 +27243,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
                   Exeter, UK},
   year =         2001
 }
+
+
 
