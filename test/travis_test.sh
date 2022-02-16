@@ -58,10 +58,9 @@ latexmake() {
     if [ -e tmp.bst ]; then
         rm -f tmp.bst
     fi
-    ln -s ${BST}.bst tmp.bst
-    # if [ $bst != "" ]; then
-    #     sed -i "s#bibliographystyle.[^}]\+#bibliographystyle{$BST#" $TEXMAIN
-    # fi
+    if [ $bst != "" ]; then
+        ln -s ${BST}.bst tmp.bst
+    fi
     
     latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
     if [ $? -ne 0 ]; then
