@@ -4124,6 +4124,34 @@ Los Angeles, CA},
   doi =          "10.1007/978-3-540-72964-8_18",
 }
 
+@InProceedings{BroZit2006allobjectives,
+  author =       Brockhoff #and# Zitzler,
+  title =        "Are All Objectives Necessary? On Dimensionality Reduction in
+                  Evolutionary Multiobjective Optimization",
+  crossref =     "PPSN2006",
+  pages =        "533--542",
+  abstract =     "Most of the available multiobjective evolutionary algorithms
+                  (MOEA) for approximating the Pareto set have been designed
+                  for and tested on low dimensional problems ($\leq$3
+                  objectives). However, it is known that problems with a high
+                  number of objectives cause additional difficulties in terms
+                  of the quality of the Pareto set approximation and running
+                  time. Furthermore, the decision making process becomes the
+                  harder the more objectives are involved. In this context, the
+                  question arises whether all objectives are necessary to
+                  preserve the problem characteristics. One may also ask under
+                  which conditions such an objective reduction is feasible, and
+                  how a minimum set of objectives can be computed. In this
+                  paper, we propose a general mathematical framework, suited to
+                  answer these three questions, and corresponding algorithms,
+                  exact and heuristic ones. The heuristic variants are geared
+                  towards direct integration into the evolutionary search
+                  process. Moreover, extensive experiments for four well-known
+                  test problems show that substantial dimensionality reductions
+                  are possible on the basis of the proposed methodology.",
+}
+
+
 @InCollection{BroZit2006dimensionality,
   author =       Brockhoff #and# Zitzler,
   editor =       "Waldmann, Karl-Heinz and Stocker, Ulrike M.",
@@ -4167,6 +4195,38 @@ Los Angeles, CA},
   pages =        {2086--2093},
   doi =          {10.1109/CEC.2007.4424730},
   keywords = "objective reduction"
+}
+
+@article{BroZit2009ec,
+  author =       Brockhoff #and# Zitzler,
+  title =        "Objective Reduction in Evolutionary Multiobjective
+                  Optimization: Theory and Applications",
+  journal =      ec,
+  volume =       17,
+  number =       2,
+  pages =        {135--166},
+  year =         2009,
+  abstract =     "Many-objective problems represent a major challenge in the
+                  field of evolutionary multiobjective optimization, in terms of
+                  search efficiency, computational cost, decision making,
+                  visualization, and so on. This leads to various research
+                  questions, in particular whether certain objectives can be
+                  omitted in order to overcome or at least diminish the
+                  difficulties that arise when many, that is, more than three,
+                  objective functions are involved. This study addresses this
+                  question from different perspectives.First, we investigate
+                  how adding or omitting objectives affects the problem
+                  characteristics and propose a general notion of conflict
+                  between objective sets as a theoretical foundation for
+                  objective reduction. Second, we present both exact and
+                  heuristic algorithms to systematically reduce the number of
+                  objectives, while preserving as much as possible of the
+                  dominance structure of the underlying optimization
+                  problem. Third, we demonstrate the usefulness of the proposed
+                  objective reduction method in the context of both decision
+                  making and search for a radar waveform application as well as
+                  for well-known test functions.",
+  doi =          {10.1162/evco.2009.17.2.135},
 }
 
 @Article{BruHurWer1996,
@@ -10523,6 +10583,44 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "ANTS2004",
 }
 
+
+@article{Gui2011objred,
+  author =       {Gonzalo Guill{\'e}n-Gos{\'a}lbez},
+  title =        {A novel {MILP}-based objective reduction method for
+                  multi-objective optimization: Application to environmental
+                  problems},
+  journal =      compchemeng,
+  volume =       35,
+  number =       8,
+  pages =        {1469--1477},
+  year =         2011,
+  issn =         {0098-1354},
+  doi =          {10.1016/j.compchemeng.2011.02.001},
+  keywords =     {Environmental engineering, Life cycle assessment,
+                  Multi-objective optimization, Objective reduction},
+  abstract =     {Multi-objective optimization has recently emerged as a useful
+                  technique in sustainability analysis, as it can assist in the
+                  study of optimal trade-off solutions that balance several
+                  criteria. The main limitation of multi-objective optimization
+                  is that its computational burden grows in size with the
+                  number of objectives. This computational barrier is critical
+                  in environmental applications in which decision-makers seek
+                  to minimize simultaneously several environmental indicators
+                  of concern. With the aim to overcome this limitation, this
+                  paper introduces a systematic method for reducing the number
+                  of objectives in multi-objective optimization with emphasis
+                  on environmental problems. The approach presented relies on a
+                  novel mixed-integer linear programming formulation that
+                  minimizes the error of omitting objectives. We test the
+                  capabilities of this technique through two environmental
+                  problems of different nature in which we attempt to minimize
+                  a set of life cycle assessment impacts. Numerical examples
+                  demonstrate that certain environmental metrics tend to behave
+                  in a non-conflicting manner, which makes it possible to
+                  reduce the dimension of the problem without losing
+                  information.}
+}
+
 @InProceedings{GunBra2003:evoworkshops,
   author =       Guntsch #and# Branke,
   title =        {New Ideas for Applying Ant Colony Optimization to the Probabilistic TSP},
@@ -12840,10 +12938,32 @@ Traveling Salesman Heuristic},
 
 @inCollection{JaiCoeCha2008,
   title =        {Objective reduction using a feature selection technique},
-  author =       {L{\'o}pez Jaimes, Antonio}  #and# Coello #and#
-                  {Chakraborty, Debrup},
+  author =       Lopez_Jaimes #and# Coello #and# {Chakraborty, Debrup},
   crossref =     {GECCO2008},
   pages =        {673--680},
+}
+
+@InProceedings{JaiCoeUri2009onlinered,
+  title =        "Online Objective Reduction to Deal with Many-Objective
+                  Problems",
+  author =       Lopez_Jaimes  #and# Coello #and#
+                  "Ur{\'i}as Barrientos, Jes{\'u}s E.",
+  crossref =     "EMO2009",
+  pages =        "423--437",
+  abstract =     "In this paper, we propose and analyze two schemes to
+                  integrate an objective reduction technique into a
+                  multi-objective evolutionary algorithm (moea) in order to
+                  cope with many-objective problems. One scheme reduces
+                  periodically the number objectives during the search until
+                  the required objective subset size has been reached and,
+                  towards the end of the search, the original objective set is
+                  used again. The second approach is a more conservative scheme
+                  that alternately uses the reduced and the entire set of
+                  objectives to carry out the search. Besides improving
+                  computational efficiency by removing some objectives, the
+                  experimental results showed that both objective reduction
+                  schemes also considerably improve the convergence of a moea
+                  in many-objective problems.",
 }
 
 @Article{JajMinHarPro1992,
@@ -14122,6 +14242,38 @@ Traveling Salesman Heuristic},
   pages =        {313--352},
   crossref =     "HarSmiKra2005memetic",
   doi =          {10.1007/3-540-32363-5_14},
+}
+
+@InCollection{KnoCor2007emo,
+  author =       Knowles #and# Corne,
+  title =        "Quantifying the Effects of Objective Space Dimension in
+                  Evolutionary Multiobjective Optimization",
+  pages =        "757--771",
+  crossref =     "EMO2007",
+  abstract =     "The scalability of EMO algorithms is an issue of significant
+                  concern for both algorithm developers and users. A key aspect
+                  of the issue is scalability to objective space dimension,
+                  other things being equal. Here, we make some observations
+                  about the efficiency of search in discrete spaces as a
+                  function of the number of objectives, considering both
+                  uncorrelated and correlated objective values. Efficiency is
+                  expressed in terms of a cardinality-based
+                  (scaling-independent) performance indicator. Considering
+                  random sampling of the search space, we measure, empirically,
+                  the fraction of the true PF covered after p iterations, as
+                  the number of objectives grows, and for different
+                  correlations. A general analytical expression for the
+                  expected performance of random search is derived, and is
+                  shown to agree with the empirical results. We postulate that
+                  for even moderately large numbers of objectives, random
+                  search will be competitive with an EMO algorithm and show
+                  that this is the case empirically: on a function where each
+                  objective is relatively easy for an EA to optimize (an
+                  NK-landscape with K=2), random search compares favourably to
+                  a well-known EMO algorithm when objective space dimension is
+                  ten, for a range of inter-objective correlation values. The
+                  analytical methods presented here may be useful for
+                  benchmarking of other EMO algorithms.",
 }
 
 @incollection{KnoCorDeb2008,
@@ -18338,6 +18490,17 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {497--514},
   year =         2003,
   publisher =    ios
+}
+
+@Article{MitMurPal2002unsupervised,
+  author =       {P. Mitra and C. A. Murthy and S. K. Pal},
+  journal =      tpami,
+  title =        {Unsupervised feature selection using feature similarity},
+  year =         2002,
+  volume =       24,
+  number =       3,
+  pages =        {301--312},
+  doi =          {10.1109/34.990133}
 }
 
 @InProceedings{MitRomSan1985,
