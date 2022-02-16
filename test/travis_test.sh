@@ -55,9 +55,13 @@ latexmake() {
     BST=$2
     travis_fold_start latexmk.1 "latexmk $TEXMAIN $BST"
 
-    if [ $bst != "" ]; then
-        sed -i "s#bibliographystyle.[^}]\+#bibliographystyle{$BST#" $TEXMAIN
+    if [ -e tmp.bst ]; then
+        rm -f tmp.bst
     fi
+    ln -s ${BST}.bst tmp.bst
+    # if [ $bst != "" ]; then
+    #     sed -i "s#bibliographystyle.[^}]\+#bibliographystyle{$BST#" $TEXMAIN
+    # fi
     
     latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
     if [ $? -ne 0 ]; then
@@ -89,11 +93,11 @@ travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
 texliveonfly $TEXMAIN
 travis_fold_end texliveonfly.1
 
-for main in "testbib.tex" "testshortbib.tex"; do
+for main in "testbib" "testshortbib"; do
     # FIXME: It doesn't compile cleanly.
     #for bst in "../bibstyles/ACM-Reference-Format" "testbib"; do
-    for bst in "../bibstyles/splncs04abbrev" "testbib"; do
-        latexmake "$main" "$bst"
+    for bst in "../bibstyles/splncs04abbrev" "../bibstyles/abbrvnatamp" "$main"; do
+        latexmake "${main}.tex" "$bst"
     done
 done
 latexmake "testbiblatex.tex" ""
