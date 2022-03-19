@@ -2111,7 +2111,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @InProceedings{Ben90,
-  author =       {J. L. Bentley},
+  author =       Bentley,
   title =        {Experiments on Traveling Salesman Heuristics},
   booktitle =    {Proceedings of the First Annual ACM-SIAM Symposium
                   on Discrete Algorithms},
@@ -2122,7 +2122,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{Ben92,
-  author =       {J. L. Bentley},
+  author =       Bentley,
   title =        {Fast Algorithms for Geometric Traveling Salesman
                   Problems},
   journal =      orsa,
@@ -2212,6 +2212,32 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume = 	 4,
   number = 	 3,
   pages = 	 {238--252}
+}
+
+@Article{Bentley1980,
+  author =       Bentley,
+  title =        {Multidimensional Divide-and-conquer},
+  journal =      cacm,
+  year =         1980,
+  volume =       23,
+  number =       4,
+  doi =          "10.1145/358841.358850",
+  pages =        {214--229},
+  abstract =     "Most results in the field of algorithm design are single
+                  algorithms that solve single problems. In this paper we
+                  discuss multidimensional divide-and-conquer, an algorithmic
+                  paradigm that can be instantiated in many different ways to
+                  yield a number of algorithms and data structures for
+                  multidimensional problems. We use this paradigm to give
+                  best-known solutions to such problems as the ECDF, maxima,
+                  range searching, closest pair, and all nearest neighbor
+                  problems. The contributions of the paper are on two
+                  levels. On the first level are the particular algorithms and
+                  data structures given by applying the paradigm.  On the
+                  second level is the more novel contribution of this paper: a
+                  detailed study of an algorithmic paradigm that is specific
+                  enough to be described precisely yet general enough to solve
+                  a wide variety of problems."
 }
 
 @Book{Ber95,
@@ -9075,6 +9101,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "EMO2011",
   doi =          {10.1007/978-3-642-19893-9_8},
   pages =        {106--120},
+  abstract =     "The attainment function provides a description of the
+                  location of the distribution of a random non-dominated point
+                  set. This function can be estimated from experimental data
+                  via its empirical counterpart, the empirical attainment
+                  function (EAF). However, computation of the EAF in more than
+                  two dimensions is a non-trivial task. In this article, the
+                  problem of computing the empirical attainment function is
+                  formalised, and upper and lower bounds on the corresponding
+                  number of output points are presented. In addition, efficient
+                  algorithms for the two and three-dimensional cases are
+                  proposed, and their time complexities are related to lower
+                  bounds derived for each case.",
   pdf =          "FonGueLopPaq2011emo.pdf"
 }
 
@@ -10573,7 +10611,21 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          "10.1007/3-540-44719-9_15",
   annote =       "Proposed looking at anytime behavior as a multi-objective
                   problem",
-  keywords =     "EAF"
+  keywords =     "EAF",
+    abstract   = {The performance of stochastic optimisers can be assessed experimentally on given problems by performing multiple optimisation runs, and analysing the results. Since an optimiser may be viewed as an estimator for the (Pareto) minimum of a (vector) function, stochastic optimiser performance is discussed in the light of the criteria applicable to more usual statistical estimators. Multiobjective optimisers are shown to deviate considerably from standard point estimators, and to require special statistical methodology. The attainment function is formulated, and related results from random closed-set theory are presented, which cast the attainment function as a mean-like measure for the outcomes of multiobjective optimisers. Finally, a covariance-measure is defined, which should bring additional insight into the stochastic behaviour of multiobjective optimisers. Computational issues and directions for further work are discussed at the end of the paper.},
+
+}
+
+@article{GueManFig2021exacthv,
+  author =       Guerreiro_A #and# {Vasco Manquinho} #and# Figueira,
+  title =        {Exact hypervolume subset selection through incremental
+                  computations},
+  doi =          {10.1016/j.cor.2021.105471},
+  year =         2021,
+  month =        dec,
+  volume =       136,
+  pages =        {105--471},
+  journal =      cor,
 }
 
 @Incollection{GueMonSli04:ants2004,
@@ -14149,6 +14201,8 @@ Traveling Salesman Heuristic},
   supplement =   {http://dbkgroup.org/knowles/plot_attainments/},
   doi =          {10.1109/ISDA.2005.15},
   eprint =       {http://dbkgroup.org/knowles/ISDA05_Knowles_J.pdf},
+    abstract   = {When evaluating the performance of a stochastic optimizer it is sometimes desirable to express performance in terms of the quality attained in a certain fraction of sample runs. For example, the sample median quality is the best estimator of what one would expect to achieve in 50\% of runs, and similarly for other quantiles. In multiobjective optimization, the notion still applies but the outcome of a run is measured not as a scalar (i.e. the cost of the best solution), but as an attainment surface in $k$-dimensional space (where $k$ is the number of objectives). In this paper we report an algorithm that can be conveniently used to plot summary attainment surfaces in any number of dimensions (though it is particularly suited for three). A summary attainment surface is defined as the union of all tightest goals that have been attained (independently) in precisely $s$ of the runs of a sample of $n$ runs, for any $s \in 1\ldots n$, and for any $k$. We also discuss the computational complexity of the algorithm and give some examples of its use. C code for the algorithm is available from the author.},
+
 }
 
 @Article{Kno2005tec,
