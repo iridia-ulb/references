@@ -2440,6 +2440,45 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   journal =      arxiv # {1602.04450},
 }
 
+@article{BerKraSch2021bayesian,
+  title =        {Bayesian optimization with safety constraints: safe and
+                  automatic parameter tuning in robotics},
+  doi =          {10.1007/s10994-021-06019-1},
+  abstract =     {Selecting the right tuning parameters for algorithms is a
+                  pravelent problem in machine learning that can significantly
+                  affect the performance of algorithms. Data-efficient
+                  optimization algorithms, such as Bayesian optimization, have
+                  been used to automate this process. During experiments on
+                  real-world systems such as robotic platforms these methods
+                  can evaluate unsafe parameters that lead to safety-critical
+                  system failures and can destroy the system. Recently, a safe
+                  Bayesian optimization algorithm, called SafeOpt, has been
+                  developed, which guarantees that the performance of the
+                  system never falls below a critical value; that is, safety is
+                  defined based on the performance function. However, coupling
+                  performance and safety is often not desirable in practice,
+                  since they are often opposing objectives. In this paper, we
+                  present a generalized algorithm that allows for multiple
+                  safety constraints separate from the objective. Given an
+                  initial set of safe parameters, the algorithm maximizes
+                  performance but only evaluates parameters that satisfy safety
+                  for all constraints with high probability. To this end, it
+                  carefully explores the parameter space by exploiting
+                  regularity assumptions in terms of a Gaussian process
+                  prior. Moreover, we show how context variables can be used to
+                  safely transfer knowledge to new situations and tasks. We
+                  provide a theoretical analysis and demonstrate that the
+                  proposed algorithm enables fast, automatic, and safe
+                  optimization of tuning parameters in experiments on a
+                  quadrotor vehicle.},
+  journal =      ml,
+  author =       {Berkenkamp, Felix and Krause, Andreas and Schoellig, Angela
+                  P.},
+  month =        jun,
+  year =         2021,
+  annote =       "Preprint: \url{http://arxiv.org/abs/1602.04450}",
+}
+
 @inproceedings{BerSchKra2016safe,
   title =        {Safe controller optimization for quadrotors with {Gaussian
 }                  processes},
@@ -27794,6 +27833,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   note =         {Version visited last on July 2017},
   year =         2017
 }
+
 @Article{vanZyl04,
   author =       vanZyl # and # Savic # and # Walters,
   title =        {Operational Optimization of Water Distribution
