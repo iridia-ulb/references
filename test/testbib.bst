@@ -57,6 +57,7 @@ ENTRY
     eid
     edition
     editor
+    epub
     howpublished
     institution
     isbn
@@ -296,7 +297,14 @@ FUNCTION {format.issn}
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { new.block "URL \url{" url * "}" * }
+    { new.block "\url{" url * "}" * }
+  if$
+}
+
+FUNCTION {format.epub}
+{ epub empty$
+    { "" }
+    { new.block "e-pub: \url{" epub * "}" * }
   if$
 }
 
@@ -760,6 +768,7 @@ FUNCTION {article}
   format.doi output
   format.supplement output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -800,6 +809,7 @@ FUNCTION {book}
   format.doi output
   format.supplement output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -821,6 +831,7 @@ FUNCTION {booklet}
   format.doi output
   format.supplement output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -871,6 +882,7 @@ FUNCTION {inbook}
   format.doi output
   format.supplement output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -913,6 +925,7 @@ FUNCTION {incollection}
   format.doi output
   format.supplement output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -956,6 +969,7 @@ FUNCTION {inproceedings}
   format.doi output
   format.supplement output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -977,6 +991,7 @@ FUNCTION {manual}
   format.edition output
   format.date output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -996,6 +1011,7 @@ FUNCTION {mastersthesis}
   address output
   format.date "year" output.check
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -1014,6 +1030,7 @@ FUNCTION {misc}
   format.date output
   format.issn output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -1034,6 +1051,7 @@ FUNCTION {phdthesis}
   address output
   format.date "year" output.check
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -1058,6 +1076,7 @@ FUNCTION {proceedings}
   format.doi output
   format.supplement output
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -1077,6 +1096,7 @@ FUNCTION {techreport}
   address output
   format.date "year" output.check
   format.url output
+  format.epub output
   new.block
   format.keywords output
   note output
@@ -1094,6 +1114,7 @@ FUNCTION {unpublished}
   note "note" output.check
   format.date output
   format.url output
+  format.epub output
   fin.entry
 }
 
