@@ -59,8 +59,9 @@ latexmake() {
     TEXMAIN=$1
     BST=$2
     travis_fold_start latexmk.1 "latexmk $TEXMAIN $BST"
+    rm -f *.bbl *.aux *.log *.out *.bcf *.blg
 
-    if [ -e tmp.bst ]; then
+    if [ -h tmp.bst ]; then
         rm -f tmp.bst
     fi
     if [ $bst != "" ]; then
