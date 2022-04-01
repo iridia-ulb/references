@@ -26,7 +26,7 @@ jobs:
           PR_COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
           PUSH_COMMIT_RANGE: ${{ github.event.before }}..${{ github.event.after }}
         run: |
-          set -u
+          set +e
           INCLUDE_ONLY="\.bib\|\.tex\|travis\|optbib2html\|deploy\|actions"
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
              export TRAVIS_COMMIT_RANGE=${PR_COMMIT_RANGE}
@@ -34,13 +34,16 @@ jobs:
              echo "This is a branch build" 
              export TRAVIS_COMMIT_RANGE=${PUSH_COMMIT_RANGE}
           fi 
-          echo "Emulated TRAVIS_COMMIT_RANGE: ${TRAVIS_COMMIT_RANGE}" 
-          git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
+          echo "Emulated TRAVIS_COMMIT_RANGE: ${TRAVIS_COMMIT_RANGE}"
           # Use -m so that merge commits are also considered
-          FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
+          git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
+          if [ $? -eq 0 ]; then
+            FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
+          else
+            FILES_CHANGED="1"
+          fi
           echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
-          set +u
-                  
+                            
       - name: Install packages
         if: ${{ env.FILES_CHANGED != 0 }}
         run: |
