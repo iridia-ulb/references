@@ -3,6 +3,11 @@ set -u
 set -o pipefail
 PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 
+if [ ! -r ../biblio.bib ]; then
+    echo "Error ../biblio.bib not found. This script must be run in test/"
+    exit 1
+fi
+ 
 travis_fold_start() {
     if [ ! -z ${TRAVIS:-} ]; then
         echo -e "travis_fold:start: $1\033[33;1m$2\033[0m"
