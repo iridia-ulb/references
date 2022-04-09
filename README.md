@@ -98,6 +98,13 @@ everyone wishes to use the same software. The current system is software
 agnostic and can be used with any editor (although Emacs is certainly
 recommended).
 
+In addition to the above reasons, this repository offers additional benefits:
+automatic generation of HTML and PDF output, which makes easier to search for
+entries, copy them to non-LaTeX documents and inspect them for errors;
+automatic testing with various BibTeX/BibLaTeX styles (`.bst` files) and checks
+for common errors in encoding entries; and the use of git branches allows users
+to have personal copies for specific papers, while making very easy to sync
+with the main branch.
 
 Format of keys
 --------------
