@@ -56,7 +56,7 @@ jobs:
 
       - name: Run test
         if: ${{ env.FILES_CHANGED != 0 }}
-        run: cd test && ./travis_test.sh && mv --force -t ../web/ testbib.pdf testshortbib.pdf
+        run: cd test && ./test.sh && mv --force -t ../web/ testbib.pdf testshortbib.pdf
 
       - name: optbib2html
         if: ${{ env.FILES_CHANGED != 0 }}

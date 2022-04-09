@@ -23,7 +23,7 @@ HTML page listing all references:
 *NOTE: Before modifying a .bib file, please read and follow the instructions at
 the top of the file.*
 
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 - [Rationale](#rationale)
 - [Format of keys](#format-of-keys)
@@ -41,15 +41,17 @@ the top of the file.*
     - [Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those?](#q-do-we-need-to-mention-that-the-proceedings-are-published-by-lncs-why-not-use-proceedings-for-those)
     - [Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything?](#q-a-journal-insists-on-using-springer-verlag-instead-of-springer-how-to-change-everything)
     - [Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files?](#q-i-want-to-save-space-and-abbreviate-journal-names-and-titles-of-books-should-i-just-edit-the-journalbib-and-abbrevbib-files)
-    - [Q: I want to save space and reduce the number of editors (say et   al. for any editor after the first one), or remove all DOIs, URLs,   publisher address or other such fields. Can I edit the .bib files?](#q-i-want-to-save-space-and-reduce-the-number-of-editors-say-et---al-for-any-editor-after-the-first-one-or-remove-all-dois-urls---publisher-address-or-other-such-fields-can-i-edit-the-bib-files)
+    - [Q: I want to save space and reduce the number of editors (say et al. for any editor after the first one), or remove all DOIs, URLs, publisher address or other such fields. Can I edit the .bib files?](#q-i-want-to-save-space-and-reduce-the-number-of-editors-say-et-al-for-any-editor-after-the-first-one-or-remove-all-dois-urls-publisher-address-or-other-such-fields-can-i-edit-the-bib-files)
     - [Q: I made a mistake in the commit message. Can this be fixed?](#q-i-made-a-mistake-in-the-commit-message-can-this-be-fixed)
     - [Q: There is a separate entry for each cross-reference, and individual references cite it. I think it is ugly, how to prevent this?](#q-there-is-a-separate-entry-for-each-cross-reference-and-individual-references-cite-it-i-think-it-is-ugly-how-to-prevent-this)
     - [Q: Why I should not use `{{Title}}` in title? If not, should I use  title case or sentence case?](#q-why-i-should-not-use-title-in-title-if-not-should-i-use--title-case-or-sentence-case)
     - [Q: I want to keep an eye on someone else altering my references by mistake.](#q-i-want-to-keep-an-eye-on-someone-else-altering-my-references-by-mistake)
     - [Q: I want to highlight the name of some authors.](#q-i-want-to-highlight-the-name-of-some-authors)
+    - [Q: Should I only use entries from the repository? What should I do if I'm in a hurry or unsure about the correctness of an entry?](#q-should-i-only-use-entries-from-the-repository-what-should-i-do-if-im-in-a-hurry-or-unsure-about-the-correctness-of-an-entry)
 - [Copyright](#copyright)
 
 <!-- markdown-toc end -->
+
 
 Rationale
 ---------
@@ -85,12 +87,6 @@ switching to abbreviated conference and journal names by overriding the desired
 `@String` definitions rather than editing the `.bib` files. Typical
 abbreviations are provided by `abbrevshort.bib`.
 
-Since the goal is to share high-quality entries rather than a comprehensive
-repository, it is better to not add entries if one is unsure about correctness
-and short of time to double-check and fix them. In that case, it is better to
-keep those entries in a separate personal bib file until one has time to fix
-them.
-
 Some software tools (Mendeley, Zotero, etc) aim to achieve similar goals,
 however, they tend to introduce spurious fields, many of them fail to achieve
 consistency, they do not export correct bibtex entries in corner cases, and not
@@ -98,13 +94,7 @@ everyone wishes to use the same software. The current system is software
 agnostic and can be used with any editor (although Emacs is certainly
 recommended).
 
-In addition to the above reasons, this repository offers additional benefits:
-automatic generation of HTML and PDF output, which makes easier to search for
-entries, copy them to non-LaTeX documents and inspect them for errors;
-automatic testing with various BibTeX/BibLaTeX styles (`.bst` files) and checks
-for common errors in encoding entries; and the use of git branches allows users
-to have personal copies for specific papers, while making very easy to sync
-with the main branch.
+In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](https://github.com/iridia-ulb/references/tree/master/bibstyles) (`.bst` files) and [checks for common errors](https://github.com/iridia-ulb/references/blob/master/test/test.sh) in encoding entries; and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
 
 Format of keys
 --------------
@@ -119,7 +109,7 @@ these rules:
    to four authors, first letter capitalized), the full year of
    publication (if this is not known, make a good guess because this
    should not be changed afterwards and it is confusing that the year
-   in the key does not matches the year of publication),
+   in the key does not match the year of publication),
    and the acronym of the conference, journal, or publisher. Examples:
 ```bibtex
       @Article{NouGhiBirDor2005ki,
@@ -161,9 +151,9 @@ local copy of the IRIDIA BibTex repository.
 The instructions below work for Linux/Mac, but can of course be adapted
 for Windows too.
 
-* **Method A: Symbolic links**
+#### Method A: Symbolic links ####
 
-This method is suggested especially when working on your paper offline,
+This method is suggested when working on your paper offline,
 whether you are using a versioning system for your paper or not. In case
 you use a versioning system to work on your paper with other collaborators,
 make sure everyone in the team uses the IRIDIA BibTex repository and
@@ -195,7 +185,7 @@ follows the same instructions.
    ["Before Submitting a paper"](#before-submitting-a-paper).
 
 
-* **Method B: fake submodule**
+#### Method B: fake submodule ####
 
 This method is suggested in case you work on your paper (alone or with your
 collaborators) on web-based systems such as Overleaf.
@@ -223,7 +213,7 @@ collaborators) on web-based systems such as Overleaf.
    ["Before Submitting a paper"](#before-submitting-a-paper).   
 
 
-* **Method C: worktrees**
+#### Method C: Branches and Worktrees ####
 
 This method is suggested if you have write access to the iridia-ulb
 repository and you want to update the master repository frequently.
@@ -259,7 +249,7 @@ repository and you want to update the master repository frequently.
     git branch --no-merged master
 ```
 
-* **Other methods**
+#### Other methods ####
 
   You might prefer alternative ways of setting up the local copy of this
   repository. However, be aware that this might come with additional burden
@@ -583,7 +573,7 @@ A: You could do that, but you cannot commit the changes. So it would
     \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
 ```
 
-#### Q: I want to save space and reduce the number of editors (say et   al. for any editor after the first one), or remove all DOIs, URLs,   publisher address or other such fields. Can I edit the .bib files? ####
+#### Q: I want to save space and reduce the number of editors (say et al. for any editor after the first one), or remove all DOIs, URLs, publisher address or other such fields. Can I edit the .bib files? ####
 
 A: You could do that, but you cannot commit the changes since the
    additional information could be useful for others.  It would be
@@ -707,6 +697,14 @@ And include it just after `authors.bib`:
 ```latex
 \bibliography{references/abbrev,references/journals,references/authors,highlight.bib,references/biblio,references/crossref}
 ```
+
+#### Q: Should I only use entries from the repository? What should I do if I'm in a hurry or unsure about the correctness of an entry? ####
+
+A: Since the goal is to share high-quality entries rather than a comprehensive
+repository, it is better to not add entries if one is unsure about correctness
+and short of time to double-check and fix them. In that case, it is better to
+keep those entries in a separate personal `.bib` file until one has time to fix
+them and submitted to the main repository.
 
 
 Copyright
