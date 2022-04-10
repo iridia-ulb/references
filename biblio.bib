@@ -475,11 +475,83 @@ Assignment with Controllable Processing Times},
   epub =       "https://www.scitepress.org/papers/2011/36730/36730.pdf"
 }
 
+@inCollection{AllKno2011policy,
+  title =        {Policy Learning in Resource-Constrained Optimization},
+  crossref =     "GECCO2011",
+  author =       Allmendinger #and# Knowles,
+  pages =        {1971--1979},
+  doi =          {10.1145/2001576.2001841},
+  abstract =     {We consider an optimization scenario in which resources are
+                  required in the evaluation process of candidate
+                  solutions. The challenge we are focussing on is that certain
+                  resources have to be committed to for some period of time
+                  whenever they are used by an optimizer. This has the effect
+                  that certain solutions may be temporarily non-evaluable
+                  during the optimization. Previous analysis revealed that
+                  evolutionary algorithms (EAs) can be effective against this
+                  resourcing issue when augmented with static strategies for
+                  dealing with non-evaluable solutions, such as repairing,
+                  waiting, or penalty methods. Moreover, it is possible to
+                  select a suitable strategy for resource-constrained problems
+                  offline if the resourcing issue is known in advance. In this
+                  paper we demonstrate that an EA that uses a reinforcement
+                  learning (RL) agent, here Sarsa({$\lambda$}), to learn
+                  offline when to switch between static strategies, can be more
+                  effective than any of the static strategies themselves. We
+                  also show that learning the same task as the RL agent but
+                  online using an adaptive strategy selection method, here
+                  D-MAB, is not as effective; nevertheless, online learning is
+                  an alternative to static strategies.},
+  isbn =         {978-1-4503-0557-0},
+  langid =       {english}
+}
+
+@article{AllKno2013ephemeral,
+  title =        {On Handling Ephemeral Resource Constraints in Evolutionary
+                  Search},
+  author =       Allmendinger #and# Knowles,
+  year =         2013,
+  month =        sep,
+  journal =      ec,
+  volume =       21,
+  number =       3,
+  pages =        {497--531},
+  issn =         {1063-6560, 1530-9304},
+  doi =          {10.1162/EVCO_a_00097},
+  abstract =     {We consider optimization problems where the set of solutions
+                  available for evaluation at any given time t during
+                  optimization is some subset of the feasible space. This model
+                  is appropriate to describe many closed-loop optimization
+                  settings (i.e. where physical processes or experiments are
+                  used to evaluate solutions) where, due to resource
+                  limitations, it may be impossible to evaluate particular
+                  solutions at particular times (despite the solutions being
+                  part of the feasible space). We call the constraints
+                  determining which solutions are non-evaluable ephemeral
+                  resource constraints (ERCs). In this paper, we investigate
+                  two specific types of ERC: one encodes periodic resource
+                  availabilities, the other models `commitment' constraints
+                  that make the evaluable part of the space a function of
+                  earlier evaluations conducted. In an experimental study, both
+                  types of constraint are seen to impact the performance of an
+                  evolutionary algorithm significantly. To deal with the
+                  effects of the ERCs, we propose and test five different
+                  constrainthandling policies (adapted from those used to
+                  handle `standard' constraints), using a number of different
+                  test functions including a fitness landscape from a real
+                  closed-loop problem. We show that knowing information about
+                  the type of resource constraint in advance may be sufficient
+                  to select an effective policy for dealing with it, even when
+                  advance knowledge of the fitness landscape is limited.},
+  langid =       {english}
+}
+
 @phdthesis{Allmendinger2012phd,
-  title =        {Tuning evolutionary search for closed-loop optimization},
+  title = {Tuning Evolutionary Search for Closed-Loop Optimization},
   author =       Allmendinger,
   year =         2012,
-  school =       {The University of Manchester, UK}
+  month =        jan,
+  school =       umanchester,
 }
 
 @article{Alm10,
@@ -3858,6 +3930,20 @@ Los Angeles, CA},
   volume =       20,
   number =       1,
   pages =        {110--124},
+}
+
+@article{BraSch2005faster,
+  title =        {Faster Convergence by Means of Fitness Estimation},
+  author =       Branke #and# {Schmidt, C.},
+  year =         2005,
+  month =        jan,
+  journal =      soco,
+  volume =       9,
+  number =       1,
+  pages =        {13--20},
+  issn =         {1432-7643, 1433-7479},
+  doi =          {10.1007/s00500-003-0329-4},
+  langid =       {english}
 }
 
 @InCollection{BraSchSch2001gecco,
@@ -13205,6 +13291,40 @@ Traveling Salesman Heuristic},
   pdf =          {Jin05 - Fitness approximation in EA.pdf}
 }
 
+@article{Jin2011surrogate,
+  author =       Jin_Yaochu,
+  title =        {Surrogate-Assisted Evolutionary Computation: Recent
+                  Advances and Future Challenges},
+  shorttitle =   {Surrogate-Assisted Evolutionary Computation},
+  year =         2011,
+  month =        jun,
+  journal =      swec,
+  volume =       1,
+  number =       2,
+  pages =        {61--70},
+  issn =         {2210-6502},
+  doi =          {10.1016/j.swevo.2011.05.001},
+  abstract =     {Surrogate-assisted, or meta-model based evolutionary
+                  computation uses efficient computational models, often known
+                  as surrogates or meta-models, for approximating the fitness
+                  function in evolutionary algorithms. Research on
+                  surrogate-assisted evolutionary computation began over a
+                  decade ago and has received considerably increasing interest
+                  in recent years. Very interestingly, surrogate-assisted
+                  evolutionary computation has found successful applications
+                  not only in solving computationally expensive single- or
+                  multi-objective optimization problems, but also in addressing
+                  dynamic optimization problems, constrained optimization
+                  problems and multi-modal optimization problems. This paper
+                  provides a concise overview of the history and recent
+                  developments in surrogate-assisted evolutionary computation
+                  and suggests a few future trends in this research area.},
+  langid =       {english},
+  keywords =     {Evolutionary computation,Expensive optimization
+                  problems,Machine learning,Meta-models,Model
+                  management,Surrogates}
+}
+
 @Article{JinWanChu2019data,
   author =       Jin_Yaochu #and# {Handing Wang} #and# Chugh_Tinkle #and# {Dan
                   Guo} #and# Miettinen,
@@ -13362,6 +13482,14 @@ Traveling Salesman Heuristic},
   publisher =    mit-pub,
   address =      mit-ad,
   year =         2006
+}
+
+@inCollection{JonFor1995fdc,
+  author =       {Jones, Terry} #and# Forrest,
+  title =        {Fitness Distance Correlation as a Measure of Problem
+                  Difficulty for Genetic Algorithms},
+  crossref =     "ICGA1995",
+  pages =        {184--192},
 }
 
 @book{JonPev2004,
@@ -14264,7 +14392,9 @@ Traveling Salesman Heuristic},
   issue =        3,
   pages =        "77--91",
   doi =          "10.1109/MCI.2009.933095",
-  year =         2009
+  year =         2009,
+    abstract = {Artificial evolution has been used for more than 50 years as a method of optimization in engineering, operations research and computational intelligence. In closed-loop evolution (a term used by the statistician, George Box) or, equivalently, evolutionary experimentation (Ingo Rechenberg's terminology), the ``phenotypes'' are evaluated in the real world by conducting a physical experiment, whilst selection and breeding is simulated. Well-known early work on artificial evolution\textemdash design engineering problems in fluid dynamics, and chemical plant process optimization\textemdash was carried out in this experimental mode. More recently, the closed-loop approach has been successfully used in much evolvable hardware and evolutionary robotics research, and in some microbiology and biochemistry applications. In this article, several further new targets for closed-loop evolutionary and multiobjective optimization are considered. Four case studies from my own collaborative work are described: (i) instrument optimization in analytical biochemistry; (ii) finding effective drug combinations in vitro; (iii) onchip synthetic biomolecule design; and (iv) improving chocolate production processes. Accurate simulation in these applications is not possible due to complexity or a lack of adequate analytical models. In these and other applications discussed, optimizing experimentally brings with it several challenges: noise; nuisance factors; ephemeral resource constraints; expensive evaluations, and evaluations that must be done in (large) batches. Evolutionary algorithms (EAs) are largely equal to these vagaries, whilst modern multiobjective EAs also enable tradeoffs among conflicting optimization goals to be explored. Nevertheless, principles from other disciplines, such as statistics, Design of Experiments, machine learning and global optimization are also relevant to aspects of the closed-loop problem, and may inspire futher development of multiobjective EAs.},
+  langid = {english}
 }
 
 @article{KnoCor00paes,
@@ -21792,6 +21922,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   isbn =         {026218253X},
 }
 
+
 @TechReport{Ray2011gart,
   author =       {Rayner, N.},
   title =        {Maverick Research: Judgment Day, or Why We Should Let Machines Automate Decision Making},
@@ -25315,6 +25446,58 @@ Twin-Screw Extrusion Configuration Problem},
  pages     = {635--642}
 }
 
+@article{TerSumTam2021auto,
+  title =        {Black-Box Optimization for Automated Discovery},
+  author =       {Terayama, Kei and Sumita, Masato and Tamura, Ryo and Tsuda,
+                  Koji},
+  year =         2021,
+  month =        mar,
+  journal =      achemres,
+  volume =       54,
+  number =       6,
+  pages =        {1334--1346},
+  publisher =    {American Chemical Society},
+  doi =          {10.1021/acs.accounts.0c00713},
+  abstract =     {In chemistry and materials science, researchers and engineers
+                  discover, design, and optimize chemical compounds or
+                  materials with their professional knowledge and
+                  techniques. At the highest level of abstraction, this process
+                  is formulated as black-box optimization. For instance, the
+                  trial-and-error process of synthesizing various molecules for
+                  better material properties can be regarded as optimizing a
+                  black-box function describing the relation between a chemical
+                  formula and its properties. Various black-box optimization
+                  algorithms have been developed in the machine learning and
+                  statistics communities. Recently, a number of researchers
+                  have reported successful applications of such algorithms to
+                  chemistry. They include the design of photofunctional
+                  molecules and medical drugs, optimization of thermal emission
+                  materials and high Li-ion conductive solid electrolytes, and
+                  discovery of a new phase in inorganic thin films for solar
+                  cells.There are a wide variety of algorithms available for
+                  black-box optimization, such as Bayesian optimization,
+                  reinforcement learning, and active learning. Practitioners
+                  need to select an appropriate algorithm or, in some cases,
+                  develop novel algorithms to meet their demands. It is also
+                  necessary to determine how to best combine machine learning
+                  techniques with quantum mechanics- and molecular
+                  mechanics-based simulations, and experiments. In this
+                  Account, we give an overview of recent studies regarding
+                  automated discovery, design, and optimization based on
+                  black-box optimization. The Account covers the following
+                  algorithms: Bayesian optimization to optimize the chemical or
+                  physical properties, an optimization method using a quantum
+                  annealer, best-arm identification, gray-box optimization, and
+                  reinforcement learning. In addition, we introduce active
+                  learning and boundless objective-free exploration, which may
+                  not fall into the category of black-box optimization.Data
+                  quality and quantity are key for the success of these
+                  automated discovery techniques. As laboratory automation and
+                  robotics are put forward, automated discovery algorithms
+                  would be able to match human performance at least in some
+                  domains in the near future.}
+}
+
 @Article{Thi2011cw,
   author =       {Patrick Thibodeau},
   title =        {Machine-based decision-making is coming},
@@ -27262,7 +27445,8 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   epub =
                   {http://www.aaai.org/ojs/index.php/aimagazine/article/viewArticle/1232},
   keywords =     "performance profiles",
-  doi = 	 {10.1609/aimag.v17i3.1232 },
+  doi = 	 {10.1609/aimag.v17i3.1232},
+  abstract = {Anytime algorithms give intelligent systems the capability to trade deliberation time for quality of results. This capability is essential for successful operation in domains such as signal interpretation, real-time diagnosis and repair, and mobile robot control. What characterizes these domains is that it is not feasible (computationally) or desirable (economically) to compute the optimal answer. This article surveys the main control problems that arise when a system is composed of several anytime algorithms. These problems relate to optimal management of uncertainty and precision. After a brief introduction to anytime computation, I outline a wide range of existing solutions to the metalevel control problem and describe current work that is aimed at increasing the applicability of anytime computation.},
 }
 
 @article{ZioWal1983interactive,
