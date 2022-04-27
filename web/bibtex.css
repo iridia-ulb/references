@@ -18,6 +18,7 @@
     text-decoration: none; color : white
 }
 
+a:link {text-decoration: none; color : #326fa3}
 a:visited {text-decoration: none;  color : #326fa3}
 a:active {text-decoration: none; color: #666666}
 a:hover {text-decoration: underline} 
@@ -32,6 +33,7 @@ a:hover {text-decoration: underline}
     border-color: #000;
 }
 a.button,
+a:link.button,
 a:visited.button,
 a:hover.button,
 a:active.button {
@@ -92,10 +94,6 @@ h3 { color: #326fa3; font: 14px   'Lucida Grande', Geneva, Verdana, Arial, sans-
 .authors dd { margin-left: 8em; }
 
 
-a:link {text-decoration: none; color : #326fa3}
-a:visited {text-decoration: none;  color : #326fa3}
-a:active {text-decoration: none; color: #666666}
-a:hover {text-decoration: underline} 
 
 div#navlist  { background-color: #f5f5f5; border: 1px solid #C9D1D7; padding: 1ex; padding-top: 0px; margin: 1em; margin-top: 2em; width: 20em; }
 
