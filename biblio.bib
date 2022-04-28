@@ -85,6 +85,17 @@
   pages =        {831--836},
 }
 
+@INPROCEEDINGS{LimPoz2017automopso,
+  author =       {de Lima, Ricardo Henrique Remes and Pozo, Aurora Trinidad
+                  Ramirez},
+  title =        {A study on auto-configuration of Multi-Objective Particle
+                  Swarm Optimization Algorithm},
+  crossref =     "CEC2017",
+  pages =        {718--725},
+  doi =          {10.1109/CEC.2017.7969381}
+}
+
+
 @InProceedings{AbbSarNew2001pde,
   title =        {{PDE}: a {Pareto}-frontier differential evolution approach
                   for multi-objective optimization problems},
@@ -4758,6 +4769,15 @@ Los Angeles, CA},
   doi =          {10.1109/MIS.2013.30}
 }
 
+@article{CamStuDor2021psox,
+  author =       Camacho_C #and# Stuetzle #and# Dorigo,
+  title =        "{PSO-X}: A Component-Based Framework for the Automatic Design
+                  of Particle Swarm Optimization Algorithms",
+  year =         2021,
+  journal =      tec,
+  doi =          {10.1109/TEVC.2021.3102863},
+}
+
 @Unpublished{CamTriLop2017pseudo,
   author =       Campelo #and# {\'Athila R. Trindade} #and# Lopez-Ibanez,
   title =        {Pseudoreplication in Racing Methods for Tuning Metaheuristics},
@@ -7989,11 +8009,24 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    {Taylor \& Francis Group}
 }
 
+@article{DurNeb2011jmetal,
+  title =        "{jMetal}: A {Java} framework for multi-objective
+                  optimization",
+  journal =      aes,
+  volume =       42,
+  number =       10,
+  pages =        "760--771",
+  year =         2011,
+  issn =         "0965-9978",
+  doi =          "10.1016/j.advengsoft.2011.05.014",
+  author =       Durillo_JJ #and# Nebro,
+}
+
 @inCollection{DurNebLunAlb2009,
   crossref =     {EMO2009},
   title =        {On the Effect of the Steady-State Selection Scheme in
                   Multi-Objective Genetic Algorithms},
-  author =       {Durillo, Juan J.} #and# Nebro #and# {Luna, Francisco} #and#
+  author =       Durillo_JJ #and# Nebro #and# {Luna, Francisco} #and#
                   Alba_E,
   pages =        {183--197}
 }
@@ -12672,7 +12705,6 @@ Traveling Salesman Heuristic},
   url =          {http://iridia.ulb.ac.be/IridiaTrSeries/IridiaTr2018-001.pdf},
   note =         "Published as \cite{BezLopStu2019ec}"
 }
-
 
 
 @TechReport{IRIDIA-2018-010,
@@ -19593,15 +19625,39 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 
+@INPROCEEDINGS{NebDurCoe2013cec,
+  author =       Nebro #and# Durillo_JJ #and# Coello,
+  crossref =     "CEC2013",
+  title =        {Analysis of leader selection strategies in a multi-objective
+                  {Particle} {Swarm} {Optimizer}},
+  pages =        {3153--3160},
+  doi =          {10.1109/CEC.2013.6557955}
+}
+
+@inproceedings{NebDurGar2009smpso,
+  author =       Nebro #and# Durillo_JJ #and# Garcia-Nieto #and#
+                  Coello #and# {F. Luna} #and# Alba_E,
+  doi =          {10.1109/MCDM.2009.4938830},
+  isbn =         9781424427642,
+  booktitle =    {2009 IEEE Symposium on Computational Intelligence in
+                  Multi-Criteria Decision-Making, MCDM 2009 - Proceedings},
+  pages =        {66--73},
+  title =        {{SMPSO}: A new {PSO}-based metaheuristic for multi-objective
+                  optimization},
+  year =         2009,
+}
+
+
+
 @inCollection{NebDurVer2015jmetal,
-  author =       Nebro #and# {Durillo, Juan J. and Vergne, Matthieu},
+  author =       Nebro #and# Durillo_JJ #and# {Vergne, Matthieu},
   title =        {Redesigning the {jMetal} Multi-Objective Optimization
                   Framework},
   crossref =     "GECCO2015c",
+  keywords =     {JMetal, Multi-objective metaheuristics, Open source,
+                  Optimization framework},
   pages =        {1093--1100},
   numpages =     8,
-  keywords =     {jmetal, multi-objective metaheu- ristics, open source,
-                  optimization framework},
 }
 
 @inCollection{NebLopBarGar2019gecco,
@@ -19612,6 +19668,18 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.1145/3319619.3326832},
   pdf =          "NebLopBarGar2019gecco.pdf",
   pages =        "1374--1381"
+}
+
+@Article{NebLunAlb2008abyss,
+  author =       Nebro #and# {F. Luna}#and# Alba_E #and# {B. Dorronsoro}#and#
+                  Durillo_JJ #and# {A. Beham},
+  title =        "{AbYSS}: Adapting Scatter Search to Multiobjective
+                  Optimization",
+  journal =      tec,
+  volume =       12,
+  number =       4,
+  month =        aug,
+  year =         2008,
 }
 
 @Book{NemWol88,
@@ -22171,6 +22239,15 @@ algorithm configuration techniques to multi-objective algorithms.}
   volume =       2,
   number =       3,
   pages =        {287--308}
+}
+
+@InCollection{ReyCoe2005omopso,
+  author =       "Reyes Sierra, Margarita" #and# Coello,
+  crossref =     "EMO2005",
+  title =        "Improving {PSO}-Based Multi-objective Optimization Using
+                  Crowding, Mutation and $\epsilon$-Dominance",
+  pages =        "505--519",
+  keywords =     "OMOPSO"
 }
 
 @article{Reynolds1987,
@@ -24907,11 +24984,12 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @InCollection{StuLop2019hb,
-  author =       Stuetzle#and#Lopez-Ibanez,
+  author =       Stuetzle #and# Lopez-Ibanez,
   title =        {Automated Design of Metaheuristic Algorithms},
   crossref =     "Handbook2019",
   pages =        {541--579},
-  doi =          {10.1007/978-3-319-91086-4_17}
+  doi =          {10.1007/978-3-319-91086-4_17},
+  keywords = "automatic design, automatic configuration"
 }
 
 @InCollection{StuLopDor2011eorms,
@@ -24966,8 +25044,6 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages     = {551--558},
   doi        = {10.1145/2463372.2463438},
 }
-
-
 
 @InCollection{StyHooMul2012:lion,
   author = 	 {James Styles} #and# Hoos #and# {Martin M{\"{u}}ller},
@@ -25169,7 +25245,7 @@ algorithm configuration techniques to multi-objective algorithms.}
   author =       Swan_J #and# {others},
   anauthor =     Swan_J #and# {Steven Adriaensen and Mohamed Bishr}#and#
                   Burke_E #and# {John A. Clark} #and# DeCausmaecker #and#
-                  {Juanjo Durillo and Kevin Hammond and Emma Hart and Colin
+                  Durillo_JJ #and# {Kevin Hammond and Emma Hart and Colin
                   G. Johnson and Zoltan A. Kocsis and Ben Kovitz} #and#
                   Krawiec_K #and# {Simon Martin and J. J. Merelo and Leandro
                   L. Minku} #and# Ozcan_E #and# Pappa_G #and# {Erwin
