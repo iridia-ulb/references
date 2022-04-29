@@ -216,7 +216,8 @@ collaborators) on web-based systems such as Overleaf.
 #### Method C: Branches and Worktrees ####
 
 This method is suggested if you have write access to the iridia-ulb
-repository and you want to update the master repository frequently.
+repository and you want to update the master repository frequently. The script
+`setup_worktree.sh` will do all these steps for you.
 
 1. Get a copy of the master repository in some folder, e.g., `/path/to/references-master`:
 
