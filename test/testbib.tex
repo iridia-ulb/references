@@ -4,8 +4,11 @@
 \usepackage[T1]{fontenc}
 \usepackage[none]{hyphenat}% Disabling hyphenation makes easier to copy-paste content from the PDF
 \usepackage{doc} % for \BibTeX
+\usepackage{hypdoc} % Loaded to avoid an error in recent TeXLive. 
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\def\bibfont{\small}
 \usepackage{url}
-\usepackage[colorlinks]{hyperref}
 \usepackage{amsmath,amssymb}
 \newcommand{\SoftwarePackage}{\texttt}
 \usepackage{ifpdf}
@@ -14,10 +17,9 @@
 \else
  \newcommand{\URL}[1]{\protect\nolinkurl{#1}}
 \fi
+\usepackage{hyperref}
+\hypersetup{colorlinks}
 
-\usepackage[numbers]{natbib}
-\def\bibfont{\small}
-\usepackage{fancyhdr}
  
 \pagestyle{fancy}
 \fancyhf{}

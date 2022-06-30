@@ -33,6 +33,7 @@ fvextra
 gettitlestring
 graphics
 hycolor
+hypdoc
 hyperref
 hyphenat
 infwarerr
