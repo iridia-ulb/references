@@ -34,12 +34,25 @@ check_bad_thing() {
         exit 1
     fi
 }
+# FIXE: avoid this duplication
+check_bad_thing_E() {
+    WHAT=$1
+    MSG=$2
+    grep --quiet -E $WHAT ../*.bib
+    if [ $? -eq 0 ]; then
+        echo "Error: $MSG"
+        grep -n -E $WHAT ../*.bib
+        exit 1
+    fi
+}
 
 check_bad_thing "doi[[:space:]]*=.\+http" "the doi field should not be an URL"
 # These look similar but they are different.
 BADCHARS="⁄∕−―—–´"
 check_bad_thing "[$BADCHARS]"  "Please do not use these UTF8 characters: $BADCHARS"
 check_bad_thing "\\\'\\\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
+
+check_bad_thing_E "\\\'{\\\i}" "Please do not use \'{\i} because it does not work in biber. Use \'i instead"
 
 latexmake() {
     TEXMAIN=$1
