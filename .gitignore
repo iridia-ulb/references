@@ -12,6 +12,7 @@ v1t4brevis
 *.run.xml
 *.synctex*
 *.tmp
+*.hd
 *~
 /.auctex-auto
 /.svnignore
