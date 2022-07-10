@@ -3154,6 +3154,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   publisher =    springer,
   address =      add-berlin-heidelberg,
   alias =        {Bir09:book},
+  annote = "Based on the PhD thesis~\cite{Birattari2004PhD}"
 }
 
 
@@ -14382,6 +14383,45 @@ Traveling Salesman Heuristic},
                   algorithms are connected and suggestions for future
                   research."
 }
+
+@inCollection{KimAllLop2022easafe,
+  author =       Kim_Youngmin #and# Allmendinger #and# Lopez-Ibanez,
+  title =        {Are Evolutionary Algorithms Safe Optimizers?},
+  crossref =     "GECCO2022",
+  doi =          {10.1145/3512290.3528818},
+  abstract =     {We consider a type of constrained optimization problem, where
+                  the violation of a constraint leads to an irrevocable loss,
+                  such as breakage of a valuable experimental resource/platform
+                  or loss of human life. Such problems are referred to as safe
+                  optimization problems (SafeOPs). While SafeOPs have received
+                  attention in the machine learning community in recent years,
+                  there was little interest in the evolutionary computation
+                  (EC) community despite some early attempts between 2009 and
+                  2011. Moreover, there is a lack of acceptable guidelines on
+                  how to benchmark different algorithms for SafeOPs, an area
+                  where the EC community has significant experience in. Driven
+                  by the need for more eficient algorithms and benchmark
+                  guidelines for SafeOPs, the objective of this paper is to
+                  reignite the interest of the EC community in this problem
+                  class. To achieve this we (i) provide a formal definition of
+                  SafeOPs and contrast it to other types of optimization
+                  problems that the EC community is familiar with, (ii)
+                  investigate the impact of key SafeOP parameters on the
+                  performance of selected safe optimization algorithms, (iii)
+                  benchmark EC against state-of-the-art safe optimization
+                  algorithms from the machine learning community, and (iv)
+                  provide an open-source Python framework to replicate and
+                  extend our work.},
+  booktitle =    {Proceedings of the Genetic and Evolutionary Computation
+                  Conference},
+  pages =        {814–-822},
+  numpages =     9,
+  keywords =     {Bayesian optimization, constrained optimization,
+                  benchmarking, safety constraints, safe optimization},
+}
+
+  
+
 
 @article{KimCouYou2021set,
   title =        "Bayesian Optimization with Approximate Set Kernels",
@@ -26482,6 +26522,42 @@ Twin-Screw Extrusion Configuration Problem},
                   {CMA-ES} Variants},
   crossref =     "GECCO2020",
   doi =          {10.1145/3377930.3389831}
+}
+
+@incollection{VerWanLopDoe2022undersampling,
+  author =       Vermetten_D #and# {Hao Wang} #and# Lopez-Ibanez #and# Doerr_C #and# Baeck_Thomas,
+  title =        {Analyzing the Impact of Undersampling on the Benchmarking and
+                  Configuration of Evolutionary Algorithms},
+  crossref =     "GECCO2022",
+  doi =          {10.1145/3512290.3528799},
+  abstract =     {The stochastic nature of iterative optimization heuristics
+                  leads to inherently noisy performance measurements. Since
+                  these measurements are often gathered once and then used
+                  repeatedly, the number of collected samples will have a
+                  significant impact on the reliability of algorithm
+                  comparisons. We show that care should be taken when making
+                  decisions based on limited data. Particularly, we show that
+                  the number of runs used in many benchmarking studies, e.g.,
+                  the default value of 15 suggested by the COCO environment,
+                  can be insufficient to reliably rank algorithms on well-known
+                  numerical optimization benchmarks.Additionally, methods for
+                  automated algorithm configuration are sensitive to
+                  insufficient sample sizes. This may result in the
+                  configurator choosing a "lucky" but poor-performing
+                  configuration despite exploring better ones. We show that
+                  relying on mean performance values, as many configurators do,
+                  can require a large number of runs to provide accurate
+                  comparisons between the considered configurations. Common
+                  statistical tests can greatly improve the situation in most
+                  cases but not always. We show examples of performance losses
+                  of more than 20\%, even when using statistical races to
+                  dynamically adjust the number of runs, as done by irace. Our
+                  results underline the importance of appropriately considering
+                  the statistical distribution of performance values.},
+  pages =        {867–-875},
+  numpages =     9,
+  keywords =     {parameter tuning, evolution strategies, algorithm
+                  configuration, performance measures},
 }
 
 @article{ViaFalPu2006pref,
