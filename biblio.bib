@@ -1246,6 +1246,42 @@ Assignment with Controllable Processing Times},
   pages = 	 {1--38}
 }
 
+@inCollection{AyoAllLop2022gecco,
+  author =       Ayodele_M #and# Allmendinger #and# Lopez-Ibanez #and# Parizy,
+  title =        {Multi-Objective {QUBO} Solver: Bi-Objective Quadratic
+                  Assignment Problem},
+  doi =          {10.1145/3512290.3528698},
+  abstract =     {Quantum and quantum-inspired optimisation algorithms are
+                  designed to solve problems represented in binary, quadratic
+                  and unconstrained form. Combinatorial optimisation problems
+                  are therefore often formulated as Quadratic Unconstrained
+                  Binary Optimisation Problems (QUBO) to solve them with these
+                  algorithms. Moreover, these QUBO solvers are often
+                  implemented using specialised hardware to achieve enormous
+                  speedups, e.g. Fujitsu's Digital Annealer (DA) and D-Wave's
+                  Quantum Annealer. However, these are single-objective
+                  solvers, while many real-world problems feature multiple
+                  conflicting objectives. Thus, a common practice when using
+                  these QUBO solvers is to scalarise such multi-objective
+                  problems into a sequence of single-objective problems. Due to
+                  design trade-offs of these solvers, formulating each
+                  scalarisation may require more time than finding a local
+                  optimum. We present the first attempt to extend the algorithm
+                  supporting a commercial QUBO solver as a multi-objective
+                  solver that is not based on scalarisation. The proposed
+                  multi-objective DA algorithm is validated on the bi-objective
+                  Quadratic Assignment Problem. We observe that algorithm
+                  performance significantly depends on the archiving strategy
+                  adopted, and that combining DA with non-scalarisation methods
+                  to optimise multiple objectives outperforms the current
+                  scalarised version of the DA in terms of final solution
+                  quality.},
+  pages =        {467--475},
+  numpages =     9,
+  keywords =     {digital annealer, multi-objective, bi-objective QAP, QUBO},
+  crossref =     "GECCO2022",
+}
+  
 @InCollection{Ayodele2022penalty,
   title =        "Penalty Weights in {QUBO} Formulations: Permutation Problems",
   author =       Ayodele_M,
@@ -21683,6 +21719,43 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         1988,
   edition =      Second,
   alias =        "preparata:computational",
+}
+
+@inCollection{PriAllLop2022gecco,
+  author =       Pricopie #and# Allmendinger #and# Lopez-Ibanez #and# "Fare,
+                  Clyde" #and# "Benatan, Matt" #and# Knowles,
+  title =        {Expensive Optimization with Production-Graph Resource
+                  Constraints: A First Look at a New Problem Class},
+  doi =          {10.1145/3512290.3528741},
+  abstract =     {We consider a new class of expensive, resource-constrained
+                  optimization problems (here arising from molecular discovery)
+                  where costs are associated with the experiments (or
+                  evaluations) to be carried out during the optimization
+                  process. In the molecular discovery problem, candidate
+                  compounds to be optimized must be synthesized in an iterative
+                  process that starts from a set of purchasable items and
+                  builds up to larger molecules. To produce target molecules,
+                  their required resources are either used from
+                  already-synthesized items in storage or produced themselves
+                  on-demand at an additional cost. Any remaining resources from
+                  the production process are stored for reuse for the next
+                  evaluations. We model these resource dependencies with a
+                  directed acyclic production graph describing the development
+                  process from granular purchasable items to evaluable target
+                  compounds. Moreover, we develop several resource-eficient
+                  algorithms to address this problem. In particular, we develop
+                  resource-aware variants of Random Search heuristics and of
+                  Bayesian Optimization and analyze their performance in terms
+                  of anytime behavior. The experimental results were obtained
+                  from a real-world molecular optimization problem. Our results
+                  suggest that algorithms that encourage exploitation by
+                  reusing existing resources achieve satisfactory results while
+                  using fewer resources overall.},
+  pages =        {840--848},
+  numpages =     9,
+  keywords =     {molecular discovery, resource constraints, expensive
+                  optimization, production costs},
+  crossref =     "GECCO2022",
 }
 
 @Book{PriStoLam2005:book,
