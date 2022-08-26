@@ -7,7 +7,9 @@ if [ ! -r ../biblio.bib ]; then
     echo "Error ../biblio.bib not found. This script must be run in test/"
     exit 1
 fi
- 
+
+./fast_check.sh ../*.bib || exit 1
+
 travis_fold_start() {
     if [ ! -z ${TRAVIS:-} ]; then
         echo -e "travis_fold:start: $1\033[33;1m$2\033[0m"
@@ -23,36 +25,6 @@ travis_fold_end() {
         echo -e "\n::endgroup::\n"
     fi
 }
-
-check_bad_thing() {
-    WHAT=$1
-    MSG=$2
-    grep --quiet -e $WHAT ../*.bib
-    if [ $? -eq 0 ]; then
-        echo "Error: $MSG"
-        grep -n -e $WHAT ../*.bib
-        exit 1
-    fi
-}
-# FIXE: avoid this duplication
-check_bad_thing_E() {
-    WHAT=$1
-    MSG=$2
-    grep --quiet -E $WHAT ../*.bib
-    if [ $? -eq 0 ]; then
-        echo "Error: $MSG"
-        grep -n -E $WHAT ../*.bib
-        exit 1
-    fi
-}
-
-check_bad_thing "doi[[:space:]]*=.\+http" "the doi field should not be an URL"
-# These look similar but they are different.
-BADCHARS="⁄∕−―—–´"
-check_bad_thing "[$BADCHARS]"  "Please do not use these UTF8 characters: $BADCHARS"
-check_bad_thing "\\\'\\\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
-
-check_bad_thing_E "\\\'{\\\i}" "Please do not use \'{\i} because it does not work in biber. Use \'i instead"
 
 latexmake() {
     TEXMAIN=$1
