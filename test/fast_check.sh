@@ -16,7 +16,7 @@ check_bad_thing() {
 }
 
 check_bad_thing_E() {
-    check_bad_thing $1 $2 "-E"
+    check_bad_thing "$1" "$2" "-E"
 }
 
 check_bad_thing "doi[[:space:]]*=.\+http" "the doi field should not be an URL"
