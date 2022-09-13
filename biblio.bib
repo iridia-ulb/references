@@ -1187,7 +1187,6 @@ Assignment with Controllable Processing Times},
   pages =        {563--570}
 }
 
-
 @InCollection{AugBadBroZit2009hv,
   title =        {Theory of the hypervolume indicator: optimal
                   $\mu$-distributions and the choice of the reference point},
@@ -6714,6 +6713,21 @@ Los Angeles, CA},
   doi =          {10.1109/TEVC.2010.2070371},
 }
 
+@Article{DebMohMis2005epsilon,
+  Title =        {Evaluating the {$\epsilon$}-domination based multi-objective
+                  evolutionary algorithm for a quick computation of
+                  {Pareto}-optimal solutions},
+  Author =       Deb #and# {Mohan, Manikanth} #and# {Mishra, Shikhar},
+  Journal =      ec,
+  Year =         2005,
+  Month =        dec,
+  Number =       4,
+  Pages =        {501--525},
+  Volume =       13,
+  doi =          {10.1162/106365605774666895},
+  keywords =     "$\epsilon$-dominance, $\epsilon$-MOEA"
+}
+
 @inCollection{DebMyb2016gecco,
   title =        {Breaking the billion-variable barrier in real-world
                   optimization using a customized evolutionary algorithm},
@@ -11022,6 +11036,16 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   of multiobjective optimisers. Computational issues and
                   directions for further work are discussed at the end of the
                   paper.},
+}
+
+@Article{GueFonPaq2021hv,
+  Title                    = {The Hypervolume Indicator: Computational Problems and Algorithms},
+  Author                   = Guerreiro_A #and# Fonseca #and# Paquete,
+  Journal                  = acm-cs,
+  Year                     = 2021,
+  Number                   = 6,
+  Pages                    = {1--42},
+  Volume                   = 54,
 }
 
 @article{GueManFig2021exacthv,
@@ -15632,8 +15656,6 @@ Traveling Salesman Heuristic},
   year =         2017,
 }
 
-
-
 @Article{LTDZ2002b,
   author =       Laumanns #and# Thiele #and# Deb #and# Zitzler,
   title =        {Combining Convergence and Diversity in Evolutionary
@@ -15644,7 +15666,9 @@ Traveling Salesman Heuristic},
   number =       3,
   pages =        "263--282",
   doi =          "10.1162/106365602760234108",
-  keywords =     "archiving"
+  keywords =     "archiving, $\epsilon$-dominance, $\epsilon$-approximation,
+                  $\epsilon$-Pareto",
+  annote =       "Proposed $\epsilon$-approx and $\epsilon$-Pareto archivers"
 }
 
 @Article{LaTMuePen11:soco,
@@ -16136,7 +16160,17 @@ Traveling Salesman Heuristic},
   year =         2008,
 }
 
-@article{Li2016,
+@article{LiShaBah2016traffic,
+  author =       {Li, Zhiyi and Shahidehpour, Mohammad and Bahramirad, Shay and
+                  Khodaei, Amin},
+  doi =          {10.1109/TSG.2016.2526032},
+  alias =        "Li2016",
+  journal =      ieeetsg,
+  number =       4,
+  pages =        {1--1},
+  title =        {Optimizing Traffic Signal Settings in Smart Cities},
+  volume =       3053,
+  year =         2016,
   abstract =     {Traffic signals play a critical role in smart cities for
                   mitigating traffic congestions and reducing the emission in
                   metropolitan areas. This paper proposes a bi-level
@@ -16155,15 +16189,6 @@ Traveling Salesman Heuristic},
                   methods. Additional strategies are provided for the extension
                   of the proposed model and the acceleration solution process
                   in large-area traffic network applications.},
-  author =       {Li, Zhiyi and Shahidehpour, Mohammad and Bahramirad, Shay and
-                  Khodaei, Amin},
-  doi =          {10.1109/TSG.2016.2526032},
-  journal =      ieeetsg,
-  number =       4,
-  pages =        {1--1},
-  title =        {Optimizing Traffic Signal Settings in Smart Cities},
-  volume =       3053,
-  year =         2016
 }
 
 @article{LiChenXuGupta2015,
@@ -28041,15 +28066,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages = 	 {2274--2281},
 }
 
-@InProceedings{ZLT2002a,
-  author =       Zitzler #and# Laumanns #and# Thiele,
-  title =        "{SPEA2}: Improving the Strength {Pareto} Evolutionary
-                  Algorithm for Multiobjective Optimization",
-  crossref =     "EUROGEN2001",
-  pages =        {95--100},
-  annote =       "Proposed SPEA2."
-}
-
 @InCollection{ZaeStoBar2014:ppsn,
   author =       Zaefferer #and# Stork #and# Bartz-Beielstein,
   crossref =     {PPSN2014},
@@ -28256,6 +28272,16 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   year =         2001,
   number =       103,
   annote =       "Published as \cite{ZLT2002a}"
+}
+
+@InProceedings{ZitLauThie2002spea2,
+  author =       Zitzler #and# Laumanns #and# Thiele,
+  title =        "{SPEA2}: Improving the Strength {Pareto} Evolutionary
+                  Algorithm for Multiobjective Optimization",
+  crossref =     "EUROGEN2001",
+  pages =        {95--100},
+  annote =       "Proposed SPEA2.",
+  alias =        "ZLT2002a"
 }
 
 @InProceedings{ZitThi1998ppsn,
