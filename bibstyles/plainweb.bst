@@ -404,8 +404,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-	{ "pages" pages n.dashify tie.or.space.connect }
-	{ "page" pages tie.or.space.connect }
+	{ "pp.~" pages n.dashify tie.or.space.connect }
+	{ "p.~" pages tie.or.space.connect }
       if$
     }
   if$
