@@ -175,7 +175,7 @@
 @Article{AcoMes2014jbi,
   author =       {H{\'e}ctor-Gabriel Acosta-Mesa and Fernando Rechy-Ram{\'i}rez}
                   #and# Mezura-Montes #and# {Nicandro Cruz-Ram{\'i}rez and
-                  Rodolfo Hern{\'a}ndez Jim{\'e}nez},
+                  Hern{\'a}ndez Jim{\'e}nez, Rodolfo},
   title =       {Application of time series discretization using evolutionary programming for classification of precancerous cervical lesions},
   journal =     jbi,
   volume =      49,
@@ -4235,14 +4235,38 @@ Los Angeles, CA},
 }
 
 
+
+@article{BriFri2012tcs,
+  author =       Bringmann_K #and# Friedrich_T,
+  title =        {Approximating the Least Hypervolume Contributor: {NP}-Hard in
+                  General, But Fast in Practice},
+  pages =        {104--116},
+  year =         2012,
+  volume =       425,
+  journal =      tcs,
+  doi =          "10.1016/j.tcs.2010.09.026"
+}
+
 @incollection{BriFri2009emo,
   author =       Bringmann_K #and# Friedrich_T,
   title =        {Approximating the Least Hypervolume Contributor:
                   {NP}-Hard in General, But Fast in Practice},
   pages =        {6--20},
   crossref =     "EMO2009",
+  annote = "Extended version published in \cite{BriFri2012approx}"
 }
 
+
+@article{BriFri2010eff,
+  author =       Bringmann_K #and# Friedrich_T,
+  title =        "An efficient algorithm for computing hypervolume
+                  contributions",
+  journal =      ec,
+  volume =       18,
+  number =       3,
+  pages =        "383--402",
+  year =         2010,
+}
 
 @incollection{BriFri2010gecco,
   author =       Bringmann_K #and# Friedrich_T,
@@ -4267,7 +4291,8 @@ Los Angeles, CA},
   Pages =        {745--752},
   doi =          {10.1145/2001576.2001678},
   crossref =     "GECCO2011",
-  epub =       {http://docs.theinf.uni-jena.de/paper/2011GECCO.pdf},
+  epub =         {http://docs.theinf.uni-jena.de/paper/2011GECCO.pdf},
+  annote =       "Extended version published as \cite{BriFri2014convergence}"
 }
 
 @incollection{BriFri2012gecco,
@@ -4276,8 +4301,9 @@ Los Angeles, CA},
   Author =       Bringmann_K #and# Friedrich_T,
   Pages =        {457--464},
   doi =          {10.1145/2330163.2330229},
-  epub =       {http://docs.theinf.uni-jena.de/paper/2012GECCO_Hyp.pdf},
+  epub =         {http://docs.theinf.uni-jena.de/paper/2012GECCO_Hyp.pdf},
   crossref =     {GECCO2012},
+  annote =       "Extended version published as \cite{BriFri2014convergence}"
 } 
 
 @Article{BriFri2014convergence,
@@ -4288,9 +4314,18 @@ Los Angeles, CA},
   Number =       5,
   Pages =        {643--657},
   Volume =       18,
-  Publisher =    {IEEE}
+  Publisher =    {IEEE},
+  keywords =     "competitive ratio",
+  annote = "Proof that all $(\mu + \lambda)$ archiving algorithms with $\lambda < \mu$ are ineffective." 
 }
 
+@incollection{BriFriKli2014subset,
+  title =        {Two-dimensional subset selection for hypervolume and
+                  epsilon-indicator},
+  author =       Bringmann_K #and# Friedrich_T #and# {Patrick Klitzke},
+  doi =          {10.1145/2576768.2598276},
+  crossref =     "GECCO2014",
+}
 
 @inproceedings{BrigFri2009foga,
   author =       Bringmann_K #and# Friedrich_T,
@@ -4298,6 +4333,7 @@ Los Angeles, CA},
   pages =        {103--112},
   crossref =     {FOGA2009},
   alias =        {bringmann2009don},
+  annote = "Extended version published in \cite{BriFri2010eff}"
 }
 
 @inCollection{BrinFriNeuWag2011,
@@ -4433,6 +4469,18 @@ Los Angeles, CA},
   pages =        {465--472},
   annote =       "Proof that R2 is weakly Pareto compliant."
 }
+
+@Article{BroWagTrau2015r2,
+  Title =        {{R2} indicator-based multiobjective search},
+  author =       Brockhoff #and# "Wagner, T." #and# Trautmann,
+  Journal =      ec,
+  Year =         2015,
+  Number =       3,
+  Pages =        {369--395},
+  Volume =       23,
+}
+
+
 
 @InProceedings{BroZit2006allobjectives,
   author =       Brockhoff #and# Zitzler,
@@ -7246,6 +7294,17 @@ Los Angeles, CA},
   pages =        "332--348 ",
 }
 
+@Article{DiaYan2009small,
+  Title =        {Small approximate {Pareto} sets for biobjective shortest
+                  paths and other problems},
+  Author =       {Diakonikolas, Ilias} #and# Yannakakis,
+  Journal =      siamc,
+  Year =         2009,
+  Number =       4,
+  Pages =        {1340--1371},
+  Volume =       39,
+}
+
 @Article{DicDor1998:jair,
   author =       DiCaro #and# Dorigo,
   title =        "Ant{Net}: Distributed Stigmergetic Control for Communications
@@ -7998,7 +8057,8 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          {10.1016/j.ejor.2014.10.062},
   pdf =          "DubLopStu2015ejor.pdf",
   supplement =   {http://iridia.ulb.ac.be/supp/IridiaSupp2013-003/},
-  alias =        {DubLopStu2013cor}
+  alias =        {DubLopStu2013cor},
+  keywords =     "Pareto local search",
 }
 
 @Misc{DubLopStu2015ejor-supp,
@@ -8531,7 +8591,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   bounded-size archiving procedures. This paper
                   presents new results on the (time) complexity of
                   computing all hypervolume contributions. It is
-                  proved that for d = 2,3 the problem has time
+                  proved that for $d = 2$ and 3 the problem has time
                   complexity $\Theta(n logn)$, and, for $d > 3$,
                   the time complexity is bounded below by $\Omega(n
                   logn)$. Moreover, complexity bounds are derived for
@@ -8541,7 +8601,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   complexity $\mathcal{O}(n)$ is
                   proposed for computing all hypervolume contributions
                   in three dimensions. It improves the complexity of
-                  the best known algorithm for d = 3 by a factor of
+                  the best known algorithm for $d = 3$ by a factor of
                   $\sqrt{n}$ . Theoretical results
                   are complemented by performance tests on randomly
                   generated test-problems.},
@@ -10637,6 +10697,16 @@ doi =           {10.1007/978-3-642-38516-2_16},
   number =       4,
   doi =          {10.1371/journal.pone.0153010}
 }
+
+@InCollection{Gla2017fast,
+  Title =        {A fast incremental {BSP} tree archive for non-dominated
+                  points},
+  Author =       Glasmachers,
+  crossref =     "EMO2017",
+  Pages =        {252--266},
+  keywords =     "archiving"
+}
+
 
 @Article{Glo1977,
   author =       Glover_F,
@@ -13460,6 +13530,19 @@ Traveling Salesman Heuristic},
   year =         1995,
 }
 
+@Article{IshSetMas2017shape,
+  Title =        {Performance of decomposition-based many-objective algorithms
+                  strongly depends on {Pareto} front shapes},
+  Author =       Ishibuchi #and# {Setoguchi, Yu and Masuda, Hiroyuki and
+                  Nojima, Yusuke},
+  Journal =      tec,
+  Year =         2017,
+  Number =       2,
+  Pages =        {169--190},
+  Volume =       21,
+  Publisher =    {IEEE}
+}
+
 @Inproceedings{IshTsuNoj08,
   author =       Ishibuchi #and# {Tsukamoto, N. and Nojima, Y.},
   crossref =     {CEC2008},
@@ -13625,6 +13708,19 @@ Traveling Salesman Heuristic},
   pages =        {201--217},
   crossref =     {Neri2011}
 }
+
+@Article{JasLus2018ndtree,
+  Title =        {{ND}-tree-based update: a fast algorithm for the dynamic
+                  nondominance problem},
+  author =       Jaszkiewicz #and# Lust,
+  Journal =      tec,
+  Year =         2018,
+  Number =       5,
+  Pages =        {778--791},
+  Volume =       22,
+  Publisher =    {IEEE}
+}
+
 
 @Article{Jasz02mogls,
   author =       Jaszkiewicz,
@@ -15119,6 +15215,17 @@ Traveling Salesman Heuristic},
   pages =        {23--37},
 }
 
+@Article{KolPap2007approx,
+  Title =        {Approximately dominating representatives},
+  Author =       {Koltun, Vladlen} #and# Papadimitriou,
+  Journal =      tcs,
+  Year =         2007,
+  Number =       3,
+  Pages =        {148--154},
+  Volume =       371,
+  Publisher =    {Elsevier}
+}
+
 @Article{KolPes1994,
   author =       {A. Kolen} #and# Pesch,
   title =        {Genetic Local Search in Combinatorial Optimization},
@@ -15575,12 +15682,13 @@ Traveling Salesman Heuristic},
   alias =        {kung:maxima},
 }
 
-@inproceedings{Kur1990variant,
+@inCollection{Kur1990variant,
   title =        {A variant of evolution strategies for vector optimization},
   author =       {Kursawe, Frank},
   crossref =     "PPSN1991",
   pages =        {193--197},
   doi =          {10.1007/BFb0029752},
+  annote =       "Proposed KUR benchmark"
 }
 
 @article{KurDav1982ms,
@@ -16171,6 +16279,18 @@ Traveling Salesman Heuristic},
   year =         2008,
 }
 
+@Article{Li2021telo,
+  Title =        {Is Our Archiving Reliable? Multiobjective Archiving Methods
+                  on ``Simple'' Artificial Input Sequences},
+  Author =       Li_Miqing,
+  Journal =      telo,
+  Year =         2021,
+  Number =       3,
+  Pages =        {1--19},
+  Volume =       1,
+  doi =          "10.1145/3465335",
+}
+
 @article{LiShaBah2016traffic,
   author =       {Li, Zhiyi and Shahidehpour, Mohammad and Bahramirad, Shay and
                   Khodaei, Amin},
@@ -16251,13 +16371,13 @@ Traveling Salesman Heuristic},
 }
 
 @Article{LiLiTanYao2015many,
- author = {Li, Bingdong and Li, Jinlong and Tang, Ke} #and# Yao_Xin,
- title = {Many-Objective Evolutionary Algorithms: A Survey},
- journal = acm-cs,
- volume = 48,
- number = 1,
- year = 2015,
- pages = {1--35},
+  author =       {Li, Bingdong and Li, Jinlong and Tang, Ke} #and# Yao_Xin,
+  title =        {Many-Objective Evolutionary Algorithms: A Survey},
+  journal =      acm-cs,
+  volume =       48,
+  number =       1,
+  year =         2015,
+  pages =        {1--35},
 }
 
 @inproceedings{LiWanYuZhaLi08,
@@ -16277,7 +16397,7 @@ Traveling Salesman Heuristic},
   crossref =     {EMO2013},
   title =        {A Comparative Study on Evolutionary Algorithms for
                   Many-Objective Optimization},
-  author =       {Li, Miqing and Yang, Shengxiang and Liu, Xiaohui and Shen,
+  author =       Li_Miqing #and# {Yang, Shengxiang and Liu, Xiaohui and Shen,
                   Ruimin},
   pages =        {261--275}
 }
@@ -23154,9 +23274,8 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @article{RudSchGri2016coa,
-  author =       Rudolph_G #and# Schutze_O#and#{Christian
-                  Grimme}#and#{Christian Dom{\'i}nguez-Medina}#and#
-                  Trautmann,
+  author =       Rudolph_G #and# Schutze_O #and# {Christian Grimme} #and#
+                  {Christian Dom{\'i}nguez-Medina} #and# Trautmann,
   title =        "Optimal averaged {Hausdorff} archives for bi-objective
                   problems: theoretical and numerical results",
   journal =      coa,
@@ -23802,6 +23921,28 @@ algorithm configuration techniques to multi-objective algorithms.}
                   anti-viral drug for HIV"
 }
 
+@Book{SchHer2021archiving,
+  Title =        {Archiving Strategies for Evolutionary Multi-objective
+                  Optimization Algorithms},
+  Author =       Schutze_O #and# Hernandez_C,
+  Publisher =    {Springer},
+  Year =         2021,
+}
+
+
+@Article{SchHerTal2019archiver,
+  Title =        {Archivers for the representation of the set of approximate
+                  solutions for {MOPs}},
+  Author =       Schutze_O #and# Hernandez_C #and# Talbi #and# {Sun, Jian-Qiao
+                  and Naranjani, Yousef and Xiong, F-R},
+  Journal =      joh,
+  Year =         2019,
+  Pages =        {71--105},
+  Volume =       25,
+  doi =          "10.1007/s10732-018-9383-z",
+  keywords =     "archiving, epsilon-dominance, epsilon-approximation, hausdorff convergence",
+  
+}
 
 @InCollection{SchHoo2012quanti,
   title =        "Quantifying Homogeneity of Instance Sets for
@@ -24597,8 +24738,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @article{SinSaxDeb2013asc,
-  author =       {Ankur Sinha} #and# Saxena_DK #and# Deb #and# {Ashutosh
-                  Tiwari},
+  author =       {Ankur Sinha} #and# Saxena_DK #and# Deb #and# Tiwari_A,
   title =        {Using objective reduction and interactive procedure to handle
                   many-objective optimization problems},
   journal =      asoco,
@@ -26906,6 +27046,17 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {279--287},
 }
 
+@Article{VasYan2005effic,
+  Title =        {Efficiently computing succinct trade-off curves},
+  Author =       {Vassilvitskii, Sergei} #and# Yannakakis,
+  Journal =      tcs,
+  Year =         2005,
+  Number =       {2-3},
+  Pages =        {334--356},
+  Volume =       348,
+  Publisher =    {Elsevier}
+}
+
 @Article{VazOch2010,
   title = "On the Automatic Discovery of Variants of the {NEH} Procedure
            for Flow Shop Scheduling Using Genetic Programming",
@@ -27180,7 +27331,6 @@ Twin-Screw Extrusion Configuration Problem},
   pages     = {742--756}
 }
 
-
 @Inproceedings{WagFriLin2017vertex,
   author =       Wagner_M #and# Friedrich_T #and# Lindauer_M,
   crossref =     "CEC2017",
@@ -27195,7 +27345,6 @@ Twin-Screw Extrusion Configuration Problem},
                   algorithms;Optimization;Benchmark testing,smac,paramils},
   doi =          {10.1109/CEC.2017.7969507},
 }
-
 
 @inCollection{WagNeu2013,
   title =        {A Fast Approximation-guided Evolutionary Multi-objective
@@ -27928,14 +28077,15 @@ Twin-Screw Extrusion Configuration Problem},
 
 
 @Article{YanLiLiuZhe2013,
-  author =       {S. Yang and M. Li and X. Liu and J. Zheng},
+  author =       {S. Yang} #and# Li_Miqing #and# {X. Liu and J. Zheng},
   journal =      tec,
   title =        {A Grid-Based Evolutionary Algorithm for Many-Objective
                   Optimization},
   year =         2013,
   volume =       17,
   number =       5,
-  pages =        {721--736}
+  pages =        {721--736},
+  doi =          "10.1109/TEVC.2012.2227145"
 }
 
 @Book{Yao1999ecbook,
@@ -28182,6 +28332,20 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        {945--958},
   year =         2009,
   doi =          "10.1109/TEVC.2009.2014613"
+}
+
+@TechReport{ZhaZhoZha2009cec,
+  author =       Zhang_Qingfu #and# {A. Zhou and S. Zhao} #and# Suganthan #and#
+                  {W. Liu and S. Tiwari},
+  title =        {Multiobjective Optimization Test Instances for the {CEC} 2009
+                  Special Session and Competition},
+  institution =  {School of Computer Science and Electronic Engieering,
+                  University of Essex},
+  type =         {Working Report},
+  year =         2009,
+  number =       "CES-487",
+  month =        apr,
+  annote =       "Proposed UF benchmark"
 }
 
 @Misc{Zhang09moeacomp,
