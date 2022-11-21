@@ -26457,6 +26457,39 @@ Twin-Screw Extrusion Configuration Problem},
   url = {http://www.computerworld.com/s/article/359630/Machine_Based_Decision_Making_Is_Coming},
   note =      {Last accessed: 15 January 2014},
 }
+
+@article{ThiMieKorMol2009ec,
+  author =       Thiele#and# Miettinen #and# {Korhonen, Pekka J.} #and#
+                  {Molina, Julian},
+  title =        {A Preference-Based Evolutionary Algorithm for Multi-Objective
+                  Optimization},
+  journal =      ec,
+  volume =       17,
+  number =       3,
+  pages =        {411--436},
+  year =         2009,
+  doi =          {10.1162/evco.2009.17.3.411},
+  abstract =     { Abstract In this paper, we discuss the idea of incorporating
+                  preference information into evolutionary multi-objective
+                  optimization and propose a preference-based evolutionary
+                  approach that can be used as an integral part of an
+                  interactive algorithm. One algorithm is proposed in the
+                  paper. At each iteration, the decision maker is asked to give
+                  preference information in terms of his or her reference point
+                  consisting of desirable aspiration levels for objective
+                  functions. The information is used in an evolutionary
+                  algorithm to generate a new population by combining the
+                  fitness function and an achievement scalarizing function. In
+                  multi-objective optimization, achievement scalarizing
+                  functions are widely used to project a given reference point
+                  into the Pareto optimal set. In our approach, the next
+                  population is thus more concentrated in the area where more
+                  preferred alternatives are assumed to lie and the whole
+                  Pareto optimal set does not have to be generated with equal
+                  accuracy. The approach is demonstrated by numerical
+                  examples. }
+}
+
 @incollection{Thie2007adaptive,
   title =        {Adaptive strategies for operator allocation},
   author =       Thierens,
@@ -26561,6 +26594,124 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 
+@article{TomKad2019emosor,
+  author =       Tomczyk #and# Kadzinski,
+  title =        {{EMOSOR}: Evolutionary multiple objective optimization guided
+                  by interactive stochastic ordinal regression},
+  journal =      cor,
+  volume =       108,
+  pages =        {134--154},
+  year =         2019,
+  doi =          {10.1016/j.cor.2019.04.008},
+  keywords =     {Multiple objective optimization, Interactive evolutionary
+                  hybrids, Stochastic ordinal regression, Preference
+                  disaggregation, Pairwise comparisons, Active learning},
+  abstract =     {We propose a family of algorithms, called EMOSOR, combining
+                  Evolutionary Multiple Objective Optimization with Stochastic
+                  Ordinal Regression. The proposed methods ask the Decision
+                  Maker (DM) to holistically compare, at regular intervals, a
+                  pair of solutions, and use the Monte Carlo simulation to
+                  construct a set of preference model instances compatible with
+                  such indirect and incomplete information. The specific
+                  variants of EMOSOR are distinguished by the following three
+                  aspects. Firstly, they make use of two different preference
+                  models, i.e., either an additive value function or a
+                  Chebyshev function. Secondly, they aggregate the
+                  acceptability indices derived from the stochastic analysis in
+                  various ways, and use thus constructed indicators or
+                  relations to sort the solutions obtained in each
+                  generation. Thirdly, they incorporate different active
+                  learning strategies for selecting pairs of solutions to be
+                  critically judged by the DM. The extensive computational
+                  experiments performed on a set of benchmark optimization
+                  problems reveal that EMOSOR is able to bias an evolutionary
+                  search towards a part of the Pareto front being the most
+                  relevant to the DM, outperforming in this regard the
+                  state-of-the-art interactive evolutionary hybrids. Moreover,
+                  we demonstrate that the performance of EMOSOR improves in
+                  case the forms of a preference model used by the method and
+                  the DM’s value system align. Furthermore, we discuss how
+                  vastly incorporation of different indicators based on the
+                  stochastic acceptability indices influences the quality of
+                  both the best constructed solution and an entire
+                  population. Finally, we demonstrate that our novel
+                  questioning strategies allow to reduce a number of
+                  interactions with the DM until a high-quality solution is
+                  constructed or, alternatively, to discover a better solution
+                  after the same number of interactions.}
+}
+
+@inCollection{TomKad2019iemoi,
+  author =       Tomczyk #and# Kadzinski,
+  title =        {Robust Indicator-Based Algorithm for Interactive Evolutionary
+                  Multiple Objective Optimization},
+  doi =          {10.1145/3321707.3321742},
+  abstract =     {We propose a novel robust indicator-based algorithm, called
+                  IEMO/I, for interactive evolutionary multiple objective
+                  optimization. During the optimization run, IEMO/I selects at
+                  regular intervals a pair of solutions from the current
+                  population to be compared by the Decision Maker. The
+                  successively provided holistic judgements are employed to
+                  divide the population into fronts of potential
+                  optimality. These fronts are, in turn, used to bias the
+                  evolutionary search toward a subset of Pareto-optimal
+                  solutions being most relevant to the Decision Maker. To
+                  ensure a fine approximation of such a subset, IEMO/I employs
+                  a hypervolume metric within a steady-state indicator-based
+                  evolutionary framework. The extensive experimental evaluation
+                  involving a number of benchmark problems confirms that IEMO/I
+                  is able to construct solutions being highly preferred by the
+                  Decision Maker after a reasonable number of interactions. We
+                  also compare IEMO/I with some selected state-of-the-art
+                  interactive evolutionary hybrids incorporating preference
+                  information in form of pairwise comparisons, proving its
+                  competitiveness.},
+  crossref =     "GECCO2019",
+  pages =        {629--637},
+  numpages =     9,
+  keywords =     {preference learning, indicator-based algorithms, interactive
+                  algorithms, multiple objective optimization, pairwise
+                  comparisons, evolutionary algorithms},
+}
+
+@article{TomKad2021ciemod,
+  author =       Tomczyk #and# Kadzinski,
+  title =        {Decomposition-based co-evolutionary algorithm for interactive
+                  multiple objective optimization},
+  journal =      is,
+  volume =       549,
+  pages =        {178--199},
+  year =         2021,
+  doi =          {10.1016/j.ins.2020.11.030},
+  keywords =     {Evolutionary multiple objective optimization, Co-evolution,
+                  Decomposition, Indirect preference information, Preference
+                  learning},
+  abstract =     {We propose a novel co-evolutionary algorithm for interactive
+                  multiple objective optimization, named CIEMO/D. It aims at
+                  finding a region in the Pareto front that is highly relevant
+                  to the Decision Maker (DM). For this reason, CIEMO/D asks the
+                  DM, at regular intervals, to compare pairs of solutions from
+                  the current population and uses such preference information
+                  to bias the evolutionary search. Unlike the existing
+                  interactive evolutionary algorithms dealing with just a
+                  single population, CIEMO/D co-evolves a pool of
+                  subpopulations in a steady-state decomposition-based
+                  evolutionary framework. The evolution of each subpopulation
+                  is driven by the use of a different preference model. In this
+                  way, the algorithm explores various regions in the objective
+                  space, thus increasing the chances of finding DM’s most
+                  preferred solution. To improve the pace of the evolutionary
+                  search, CIEMO/D allows for the migration of solutions between
+                  different subpopulations. It also dynamically alters the
+                  subpopulations’ size based on compatibility between the
+                  incorporated preference models and the decision examples
+                  supplied by the DM. The extensive experimental evaluation
+                  reveals that CIEMO/D can successfully adjust to different
+                  DM’s decision policies. We also compare CIEMO/D with selected
+                  state-of-the-art interactive evolutionary hybrids that make
+                  use of the DM’s pairwise comparisons, demonstrating its high
+                  competitiveness.}
+}
 
 @article{TorRosKefetal2010:si,
   Author =       {C. E. Torres and L. F. Rossi and J. Keffer and K. Li and
@@ -28884,7 +29035,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        {160--170},
   month =        mar,
 }
-
 @PhdThesis{vanZyl:PhD,
   author =       vanZyl,
   title =        "A Methodology for Improved Operational Optimization of Water
