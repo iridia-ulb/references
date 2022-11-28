@@ -699,7 +699,7 @@ we can create a file `highlight.bib`:
 
 And include it just after `authors.bib`:
 ```latex
-\bibliography{references/abbrev,references/journals,references/authors,highlight.bib,references/biblio,references/crossref}
+\bibliography{references/abbrev,references/journals,references/authors,highlight,references/biblio,references/crossref}
 ```
 
 #### Q: Should I only use entries from the repository? What should I do if I'm in a hurry or unsure about the correctness of an entry? ####
@@ -710,7 +710,7 @@ and short of time to double-check and fix them. In that case, it is better to
 keep those entries in a separate personal `.bib` file, e.g., `personal.bib` until one has time to fix
 them and submitted to the main repository. This file can still make use of `@string` entries from other `.bib` files and cross-references from `crossref.bib` if the order of inclusion is:
 ```latex
-\bibliography{references/abbrev,references/journals,references/authors,highlight.bib,references/biblio,personal,references/crossref}
+\bibliography{references/abbrev,references/journals,references/authors,references/biblio,personal,references/crossref}
 ```
 
 
