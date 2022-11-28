@@ -707,8 +707,12 @@ And include it just after `authors.bib`:
 A: Since the goal is to share high-quality entries rather than a comprehensive
 repository, it is better to not add entries if one is unsure about correctness
 and short of time to double-check and fix them. In that case, it is better to
-keep those entries in a separate personal `.bib` file until one has time to fix
-them and submitted to the main repository.
+keep those entries in a separate personal `.bib` file, e.g., `personal.bib` until one has time to fix
+them and submitted to the main repository. This file can still make use of `@string` entries from other `.bib` files and cross-references from `crossref.bib` if the order of inclusion is:
+```latex
+\bibliography{references/abbrev,references/journals,references/authors,highlight.bib,references/biblio,personal,references/crossref}
+```
+
 
 
 Copyright
