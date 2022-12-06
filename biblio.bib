@@ -2278,7 +2278,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 
 @InCollection{BelBraEsk2088moointevo,
   author =       {Belton, Valerie} #and# Branke #and# "Eskelinen,
-                  Petri" #and# Greco #and# "Molina, Juli\'{a}n" #and#
+                  Petri" #and# Greco #and# Molina_J #and#
                   Ruiz_Francisco #and# Slowinski,
   title =        {Interactive Multiobjective Optimization from a
                   Learning Perspective},
@@ -4873,7 +4873,7 @@ Los Angeles, CA},
 }
 
 @Article{CabLuqMol2002promoin,
-  author =       "Caballero, R." #and# Luque_M #and# "Molina, J." #and# Ruiz_Francisco,
+  author =       "Caballero, R." #and# Luque_M #and# Molina_J #and# Ruiz_Francisco,
   title =        "{PROMOIN}: An Interactive System for Multiobjective
                   Programming",
   journal =      itdm,
@@ -5437,6 +5437,17 @@ Los Angeles, CA},
   year    = 2000
 }
 
+
+@INPROCEEDINGS{CheXinChe2017vdmlibrary,
+  author =       {Chen, Lu and Xin, Bin and Chen, Jie and Juan Li},
+  crossref =     "CEC2017",
+  title =        {A virtual-decision-maker library considering personalities
+                  and dynamically changing preference structures for
+                  interactive multiobjective optimization},
+  pages =        {636--641},
+  doi =          {10.1109/CEC.2017.7969370},
+  keywords =     "machine DM, interactive EMOA"
+}
 
 @inproceedings{CheXuChe04,
   author =       {L. Chen and X. H. Xu and Y. X. Chen},
@@ -9672,6 +9683,35 @@ doi =           {10.1007/978-3-642-38516-2_16},
   edition = 	 Second
 }
 
+@article{FowGel2010ejor,
+  title =        {Interactive evolutionary multi-objective optimization for
+                  quasi-concave preference functions},
+  journal =      ejor,
+  volume =       206,
+  number =       2,
+  pages =        {417--425},
+  year =         2010,
+  doi =          {10.1016/j.ejor.2010.02.027},
+  author =       {John W. Fowler} #and# {Esma S. Gel} #and# Koksalan #and#
+                  {Pekka Korhonen} #and# {Jon L. Marquis} #and# Wallenius_J,
+  keywords =     {Interactive optimization, Multi-objective optimization,
+                  Evolutionary optimization, Knapsack problem},
+  abstract =     {We present a new hybrid approach to interactive evolutionary
+                  multi-objective optimization that uses a partial preference
+                  order to act as the fitness function in a customized genetic
+                  algorithm. We periodically send solutions to the decision
+                  maker (DM) for her evaluation and use the resulting
+                  preference information to form preference cones consisting of
+                  inferior solutions. The cones allow us to implicitly rank
+                  solutions that the DM has not considered. This technique
+                  avoids assuming an exact form for the preference function,
+                  but does assume that the preference function is
+                  quasi-concave. This paper describes the genetic algorithm and
+                  demonstrates its performance on the multi-objective knapsack
+                  problem.}
+}
+
+
 @inproceedings{Fox1992uniting,
   author =       Fox_BL,
   title =        {Uniting probabilistic methods for optimization},
@@ -10948,6 +10988,53 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "GECCO2010",
   pages =        {409--416},
   doi =          "10.1145/1830483.1830559"
+}
+
+@article{GonZhaChi2018kbs,
+  title =        {The optimization ordering model for intuitionistic fuzzy
+                  preference relations with utility functions},
+  journal =      kbs,
+  volume =       162,
+  pages =        {174--184},
+  year =         2018,
+  annote =       {Special Issue on intelligent decision-making and consensus
+                  under uncertainty in inconsistent and dynamic environments},
+  issn =         {0950-7051},
+  doi =          {10.1016/j.knosys.2018.07.012},
+  author =       {Zaiwu Gong and Ning Zhang and Francisco Chiclana},
+  keywords =     {Intuitionistic fuzzy preference relation, Utility function,
+                  Ranking, Multiplicative consistency, Non-archimedean
+                  infinitesimal},
+  abstract =     {Intuitionistic fuzzy sets describe information from the three
+                  aspects of membership degree, non-membership degree and
+                  hesitation degree, which has more practical significance when
+                  uncertainty pervades qualitative decision problems. In this
+                  paper, we investigate the problem of ranking intuitionistic
+                  fuzzy preference relations (IFPRs) based on various
+                  non-linear utility functions. First, we transform IFPRs into
+                  their isomorphic interval-value fuzzy preference relations
+                  (IVFPRs), and utilise non-linear utility functions, such as
+                  parabolic, S-shaped, and hyperbolic absolute risk aversion,
+                  to fit the true value of a decision-maker’s
+                  judgement. Ultimately, the optimization ordering models for
+                  the membership and non-membership of IVFPRs based on utility
+                  function are constructed, with objective function aiming at
+                  minimizing the distance deviation between the multiplicative
+                  consistency ideal judgment and the actual judgment,
+                  represented by utility function, subject to the
+                  decision-maker’s utility constraints. The proposed models
+                  ensure that more factual and optimal ranking of alternative
+                  is acquired, avoiding information distortion caused by the
+                  operations of intervals. Second, by introducing a
+                  non-Archimedean infinitesimal, we establish the optimization
+                  ordering model for IFPRs with the priority of utility or
+                  deviation, which realises the goal of prioritising solutions
+                  under multi-objective programming. Subsequently, we verify
+                  that a close connection exists between the ranking for
+                  membership and non-membership degree IVFPRs. Comparison
+                  analyses with existing approaches are summarized to
+                  demonstrate that the proposed models have advantage in
+                  dealing with group decision making problems with IFPRs.}
 }
 
 @InProceedings{Gor1997,
@@ -13669,7 +13756,7 @@ Traveling Salesman Heuristic},
   Publisher =    {IEEE}
 }
 
-@Inproceedings{IshTsuNoj08,
+@Inproceedings{IshTsuNoj2008,
   author =       Ishibuchi #and# {Tsukamoto, N. and Nojima, Y.},
   crossref =     {CEC2008},
   title =        {Evolutionary many-objective optimization: {A} short review},
@@ -19646,7 +19733,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @article{MolSanHer2009gdominance,
-  author =       {Juli\'{a}n Molina and Luis V. Santana and Alfredo
+  author =       Molina_J #and# {Luis V. Santana and Alfredo
                   G. Hern\'{a}ndez-D{\'i}az} #and# Coello #and# {Rafael Caballero},
   title =        {{g}-Dominance: Reference point based dominance for
                   Multiobjective Metaheuristics},
@@ -20288,6 +20375,20 @@ algorithm configuration techniques to multi-objective algorithms.}
   crossref =  {IJCAI2007},
   pages =        {975--980},
   keywords =     {REVAC},
+}
+
+@article{NarSetTan2016sc,
+  Author =       {Narukawa, Kaname and Setoguchi, Yu and Tanigaki, Yuki and
+                  Olhofer, Markus and Sendhoff, Bernhard} #and# Ishibuchi,
+  Title =        {Preference representation using {Gaussian} functions on a
+                  hyperplane in evolutionary multi-objective optimization},
+  Journal =      soco,
+  Year =         2016,
+  Volume =       20,
+  Number =       7,
+  Pages =        {2733--2757},
+  Month =        jul,
+  doi =          {10.1007/s00500-015-1674-9},
 }
 
 @InCollection{NasMesUgo2012,
@@ -21700,7 +21801,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @inCollection{PedTak2013emco,
-  author =       {Pedro, Luciana R. and Takahashi, Ricardo H. C.},
+  author =       {Pedro, Luciana R.} #and# Takahashi_RHC,
   title =        {Decision-Maker Preference Modeling in Interactive
                   Multiobjective Optimization},
   crossref =     {EMO2013},
@@ -26601,8 +26702,8 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 @article{ThiMieKorMol2009ec,
-  author =       Thiele#and# Miettinen #and# {Korhonen, Pekka J.} #and#
-                  {Molina, Julian},
+  author =       Thiele #and# Miettinen #and# {Korhonen, Pekka J.} #and#
+                  Molina_J,
   title =        {A Preference-Based Evolutionary Algorithm for Multi-Objective
                   Optimization},
   journal =      ec,
@@ -27735,7 +27836,7 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 @InCollection{WagBeuNau2007:many,
-  author    = {Tobias Wagner and Nicola Beume and Boris Naujoks},
+  author    = {Tobias Wagner and Nicola Beume} #and# Naujoks,
   title     = {{Pareto}-, Aggregation-, and Indicator-Based Methods in Many-Objective
                Optimization},
   crossref = {EMO2007},
@@ -27775,9 +27876,8 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 @article{Wal1975ms,
-  title =        {Comparative Evaluation of Some Interactive
-                  Approaches to Multicriterion Optimization},
-  author =       {Wallenius, Jyrki},
+  title =        {Comparative Evaluation of Some Interactive Approaches to Multicriterion Optimization},
+  author =       Wallenius_J,
   journal =      ms,
   volume =       21,
   number =       12,
@@ -27787,8 +27887,7 @@ Twin-Screw Extrusion Configuration Problem},
 
 @InProceedings{Wal97,
   author =       {J. P. Walser},
-  title =        {Solving Linear Pseudo-Boolean Constraint Problems
-                  with Local Search},
+  title =        {Solving Linear Pseudo-Boolean Constraint Problems with Local Search},
   crossref =     {AAAI1997},
   pages =        {269--274},
 }
@@ -28843,7 +28942,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
 @article{ZioWal1983interactive,
   title =        {An interactive multiple objective linear programming method
                   for a class of underlying nonlinear utility functions},
-  author =       {Zionts, Stanley and Wallenius, Jyrki},
+  author =       {Zionts, Stanley} #and# Wallenius_J,
   journal =      ms,
   volume =       29,
   number =       5,
