@@ -1,11 +1,20 @@
 name: CI
 
-on: ['push', 'pull_request']
+on:
+  push:
+    branches:
+      - "main"
+      - "master"
+  pull_request:
+    branches:
+      - "main"
+      - "master"
 
 jobs:
   ci:
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
-    runs-on: ubuntu-20.04
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -62,6 +71,11 @@ jobs:
         if: ${{ env.FILES_CHANGED != 0 }}
         run: ./scripts/optbib2html.sh
 
-      - run: echo "Deploy (TODO, FIXME)"
-        
+      - name: Deploy 🚀
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: web # The folder the action should deploy.
+          clean: false
+          
       - run: echo "🍏 This job's status is ${{ job.status }}."
