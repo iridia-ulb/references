@@ -25,7 +25,6 @@ jobs:
           fetch-depth: 0
           
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
@@ -60,19 +59,18 @@ jobs:
           sudo apt -y install bibtex2html tidy
 
       - name: Install texlive
-        if: ${{ env.FILES_CHANGED != 0 }}
         run: .github/texlive/texlive_install.sh
 
       - name: Run test
-        if: ${{ env.FILES_CHANGED != 0 }}
+        if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: cd test && ./test.sh && mv --force -t ../web/ testbib.pdf testshortbib.pdf
 
       - name: optbib2html
-        if: ${{ env.FILES_CHANGED != 0 }}
+        if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: ./scripts/optbib2html.sh
 
       - name: Deploy 🚀
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        if: ${{ success() && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')  }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: web # The folder the action should deploy.
