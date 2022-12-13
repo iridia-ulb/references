@@ -1,7 +1,6 @@
 IRIDIA BibTeX Repository
 ========================
 
-[![Build Status](https://app.travis-ci.com/iridia-ulb/references.svg?branch=master)](https://app.travis-ci.com/github/iridia-ulb/references)
 [![Build Status](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml)
 
 This is a collection of BibTeX files organized in a way that tries to avoid redundancy, minimise mistakes and facilitate customization.
@@ -363,7 +362,7 @@ Finally, push the commits to the repository with
 uses UTF8 encoding. Otherwise, ***DO NOT USE*** non-ASCII characters.
 
 ***IMPORTANT:*** If you have modified a `tex` or `bib` file (as it is often the
-case), the push will trigger a compilation using the Travis continuous
+case), the push will trigger a compilation using the continuous
 integration system (which should take at most a couple of minutes).  If the
 compilation fails, you will receive an email; in this case, fix the error and
 retry.  If the build is successful, the resulting file `test/testbib.pdf` will

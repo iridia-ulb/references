@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 # Originally from https://github.com/latex3/latex3/blob/master/support/texlive.sh
-texlive_profile=./.travis/texlive/texlive.profile
+texlive_root=./.github/texlive
+texlive_profile="${texlive_root}/texlive.profile"
 
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 if ! command -v pdflatex > /dev/null; then
@@ -24,8 +25,8 @@ tlmgr option -- autobackup 0
 echo "Updating tlmgr itself"
 tlmgr update --self
 
-echo "Install .travis/texlive/texlive_packages"
-tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' .travis/texlive/texlive_packages)
+echo "Install ${texlive_root}/texlive_packages"
+tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' ${texlive_root}/texlive_packages)
 
 echo "Update the TL install but add nothing new"
 tlmgr update --self --all --no-auto-install
