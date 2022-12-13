@@ -1,0 +1,32 @@
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{amsmath,amssymb}
+\newcommand{\SoftwarePackage}{\texttt}
+\usepackage{ifpdf}
+\ifpdf
+ \newcommand{\URL}[1]{\protect\url{#1}}
+\else
+ \newcommand{\URL}[1]{\protect\nolinkurl{#1}}
+\fi
+\usepackage{hyperref}
+\hypersetup{colorlinks}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\doctitle}
+\rhead{\today}
+\rfoot{Page \thepage}
+\lfoot{\url{https://github.com/iridia-ulb/references}}
+\fancypagestyle{firstpage}{%
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{}
+  \rfoot{Page \thepage}
+  \lfoot{\url{https://github.com/iridia-ulb/references}}
+}
+
+\renewcommand{\refname}{\doctitle{} (\today)}
+\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{\normalfont\texttt{doi:\nolinkurl{#1}}}}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "testbib"
+%%% End:

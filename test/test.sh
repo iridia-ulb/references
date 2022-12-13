@@ -30,7 +30,7 @@ latexmake() {
     TEXMAIN=$1
     BST=$2
     travis_fold_start latexmk.1 "latexmk $TEXMAIN $BST"
-    rm -f *.bbl *.aux *.log *.out *.bcf *.blg
+    rm -f *.bbl *.aux *.log *.out *.bcf *.blg *.fls *.hd *.fdb_latexmk *.run.xml *.syctex.gz
 
     if [ -h tmp.bst ]; then
         rm -f tmp.bst
