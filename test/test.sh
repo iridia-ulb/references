@@ -39,7 +39,7 @@ latexmake() {
         ln -s ${BST}.bst tmp.bst
     fi
     
-    latexmk -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
+    latexmk -silent -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
     if [ $? -ne 0 ]; then
         travis_fold_end latexmk.1
         echo "Error: latexmk failed"
