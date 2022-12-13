@@ -47,6 +47,7 @@ jobs:
           git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
           if [ $? -eq 0 ]; then
             FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
+            echo "Files changed: $FILES_CHANGED"
           else
             FILES_CHANGED="1"
           fi
