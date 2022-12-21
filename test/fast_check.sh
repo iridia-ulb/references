@@ -2,45 +2,45 @@
 set -u
 set -o pipefail
 
-FILES=$@
-
-check_types()
-{
-    if [[ "$FILES" == *"biblio.bib"* ]]; then
-        grep --quiet --ignore-case "@article" biblio.bib
-        if [ $? -eq 0 ]; then
-            echo "Error: biblio.bib should not contain @article entries (put them in articles.bib)"
-            grep -H -n --ignore-case "@article" biblio.bib
-            exit 1
-        fi
-    fi
-    if [[ "$FILES" == *"articles.bib"* ]]; then
-        grep --ignore-case -e "^@[a-z]\+" articles.bib | grep --quiet -v --ignore-case "@article"
-        if [ $? -eq 0 ]; then
-            echo "Error: articles.bib should only contain @article entries (put them in biblio.bib)"
-            grep -H -n --ignore-case -e "^@[a-z]\+" articles.bib | grep -v --ignore-case "@article"
-            exit 1
-        fi
-    fi
-    if [[ "$FILES" == *"crossref.bib"* ]]; then
-        grep --ignore-case -e "^@[a-z]\+" crossref.bib | grep --quiet -v --ignore-case -e "@proceedings\|@book"
-        if [ $? -eq 0 ]; then
-            echo "Error: crossref.bib should only contain @proceedings or @book entries"
-            grep -H -n --ignore-case -e "^@[a-z]\+" crossref.bib | grep -v --ignore-case -e "@proceedings\|@book"
-            exit 1
-        fi
-    fi
-    for file in abbrev.bib journals.bib authors.bib abbrevshort.bib; do
-        if [[ "$FILES" == *"$file"* ]]; then
-            grep --ignore-case -e "^@[a-z]\+" "$file"  | grep --quiet --ignore-case -v -e "@string\|@preamble"
+for filename in "$@"; do
+    case "$filename" in
+        *"biblio.bib"*)
+            grep --quiet --ignore-case "@article" "$filename"
             if [ $? -eq 0 ]; then
-                echo "Error: $file should only contain @string or @preamble entries"
-                grep -H -n --ignore-case -e "^@[a-z]\+" "$file"  | grep --ignore-case -v -e "@string\|@preamble"
+                echo "Error: biblio.bib should not contain @article entries (put them in articles.bib)"
+                grep -H -n --ignore-case "@article" "$filename"
                 exit 1
             fi
-        fi
-    done
-}
+            ;;
+        *"articles.bib"*)
+            grep --ignore-case -e "^@[a-z]\+" "$filename" | grep --quiet -v --ignore-case "@article"
+            if [ $? -eq 0 ]; then
+                echo "Error: articles.bib should only contain @article entries (put them in biblio.bib)"
+                grep -H -n --ignore-case -e "^@[a-z]\+" "$filename" | grep -v --ignore-case "@article"
+                exit 1
+            fi
+            ;;
+        *"crossref.bib"*)
+            grep --ignore-case -e "^@[a-z]\+" "$filename" | grep --quiet -v --ignore-case -e "@proceedings\|@book"
+            if [ $? -eq 0 ]; then
+                echo "Error: crossref.bib should only contain @proceedings or @book entries"
+                grep -H -n --ignore-case -e "^@[a-z]\+" "$filename" | grep -v --ignore-case -e "@proceedings\|@book"
+                exit 1
+            fi
+            ;;
+        *"abbrev.bib"*|*"journals.bib"*|*"authors.bib"*|*"abbrevshort.bib"*)
+            grep --ignore-case -e "^@[a-z]\+" "$filename"  | grep --quiet --ignore-case -v -e "@string\|@preamble"
+            if [ $? -eq 0 ]; then
+                echo "Error: $filename should only contain @string or @preamble entries"
+                grep -H -n --ignore-case -e "^@[a-z]\+" "$filename"  | grep --ignore-case -v -e "@string\|@preamble"
+                exit 1
+            fi
+            ;;
+    esac
+done
+
+# FIXME: This may not work with spaces in directories.
+FILES=$@
 
 check_bad_thing() {
     WHAT=$1
@@ -65,6 +65,3 @@ check_bad_thing "[$BADCHARS]"  "Please do not use these UTF8 characters: $BADCHA
 check_bad_thing "\\\'\\\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
 
 check_bad_thing_E "\\\'{\\\i}" "Please do not use \'{\i} because it does not work in biber. Use \'i instead"
-
-check_types
-
