@@ -3,7 +3,7 @@ if [ ! -e biblio.bib ]; then
     echo "$0: error: cannot find biblio.bib !"
     exit 1
 fi
-BIBFILES="authors.bib abbrev.bib journals.bib biblio.bib crossref.bib"
+BIBFILES="authors.bib abbrev.bib journals.bib articles.bib biblio.bib crossref.bib"
 
 tmpbib=$(mktemp --tmpdir tmpXXXXXXXXXX.bib)
 tmpcitefile=$(mktemp --tmpdir citefileXXXXXXXXXX)

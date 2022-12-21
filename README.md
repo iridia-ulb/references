@@ -69,8 +69,8 @@ to backport any improvements, tends to introduce errors when entries are
 incorrectly modified for the sake of consistency and leads to repeated work and
 mistakes.
 
-The motivation for the current separation between authors, journals, abbrev,
-biblio and crossref files is to avoid spurious divergences of common strings.
+The motivation for the current separation between `authors.bib`, `journals.bib`, `abbrev.bib`,
+`articles.bib`, `biblio.bib` and `crossref.bib` files is to avoid spurious divergences of common strings.
 In particular, keeping author names consistent is problematic given non-ascii
 characters, the not-so-obvious grouping rules for names with more than two
 words and differences between full names and abbreviated names. With the
@@ -85,6 +85,10 @@ Finally, the separation makes trivial to apply various "tricks", such as
 switching to abbreviated conference and journal names by overriding the desired
 `@String` definitions rather than editing the `.bib` files. Typical
 abbreviations are provided by `abbrevshort.bib`.
+
+The separation between `articles.bib` (only `@articles`) and `biblio.bib` (rest
+of types) is necessary due to the limited of Overleaf and other software tools
+for `.bib` files larger than 1MB.
 
 Some software tools (Mendeley, Zotero, etc) aim to achieve similar goals,
 however, they tend to introduce spurious fields, many of them fail to achieve
@@ -168,7 +172,7 @@ follows the same instructions.
    of the repository.
    ```
    cd /path/to/paper/
-   ln -s /path/to/work/references references
+   ln -s /path/to/work/references bib
    ```
    If you use a versioning system to work on the paper with other coauthors,
    do not add the link to the paper repository; instead, ask your
@@ -176,7 +180,7 @@ follows the same instructions.
 
 3. In the main `tex` file of your paper, include the BibTex files with
    ```latex
-    \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
+    \bibliography{bib/abbrev,bib/journals,bib/authors,bib/articles,bib/articles,bib/biblio,bib/crossref}
    ```   
 
 4. See the sections ["Updating"](#updating-your-working-copy),
@@ -192,19 +196,19 @@ collaborators) on web-based systems such as Overleaf.
 1. Within your existing local repository, create a *fake submodule*. The trailing "slash (`/`) is important!
 
 ```
-    git clone https://github.com/iridia-ulb/references.git references
-    git add references/
+    git clone https://github.com/iridia-ulb/references.git bib
+    git add bib/
 ```
 
 2. Now `git` commands at the top directory operate in your own git
-   repository, but `git` commands within the directory `references` operate in
-   the `iridia-ulb` repository. The `references` directory will be available to
+   repository, but `git` commands within the directory `bib` operate in
+   the `iridia-ulb` repository. The `bib` directory will be available to
    all users of the repository, however, only the users who perform the above
    command can perform operations in the `iridia-ulb` repository.
 
 3. In the main `tex` file of your paper, include the BibTex files with
    ```latex
-    \bibliography{references/abbrev,references/journals,references/authors,references/biblio,references/crossref}
+    \bibliography{bib/abbrev,bib/journals,bib/authors,bib/biblio,bib/crossref}
    ```
 
 4. See the sections ["Updating"](#updating-your-working-copy),
@@ -229,12 +233,12 @@ repository and you want to update the master repository frequently. The script
    
 ```
     cd /path/to/references-master
-    git worktree add -b mypaper /path/to/mypaper/references
+    git worktree add -b mypaper /path/to/mypaper/bib
 ```
    
 3. If you wish to import changes from the master branch, you do:
 ```
-    cd /path/to/mypaper/references
+    cd /path/to/mypaper/bib
     git rebase -i master
 ```
 
@@ -554,7 +558,7 @@ A: You could generate the `*.bbl` file once and edit it, but if you need
 ```
   ... and so on, and then include it *after* `abbrev.bib`:
 ```latex
-    \bibliography{abbrev,authors,journals,dummy,biblio,crossref}
+    \bibliography{abbrev,authors,journals,dummy,articles,biblio,crossref}
 ```
 
 #### Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files? ####
@@ -568,12 +572,12 @@ A: You could do that, but you cannot commit the changes. So it would
    The best way is to add the shorter variants to `abbrevshort.bib`, and
    then include it *after* both `abbrev.bib` and `journals.bib`:
 ```latex
-    \bibliography{abbrev,authors,journals,abbrevshort,biblio,crossref}
+    \bibliography{abbrev,authors,journals,abbrevshort,articles,biblio,crossref}
 ```
    Moreover, if you want to abbreviate titles of books but not journal
    names, then use:
 ```latex
-    \bibliography{abbrev,authors,abbrevshort,journals,biblio,crossref}
+    \bibliography{abbrev,authors,abbrevshort,journals,articles,biblio,crossref}
 ```
 
 #### Q: I want to save space and reduce the number of editors (say et al. for any editor after the first one), or remove all DOIs, URLs, publisher address or other such fields. Can I edit the .bib files? ####
@@ -698,7 +702,7 @@ we can create a file `highlight.bib`:
 
 And include it just after `authors.bib`:
 ```latex
-\bibliography{references/abbrev,references/journals,references/authors,highlight,references/biblio,references/crossref}
+\bibliography{bib/abbrev,bib/journals,bib/authors,highlight,bib/articles,bib/biblio,bib/crossref}
 ```
 
 #### Q: Should I only use entries from the repository? What should I do if I'm in a hurry or unsure about the correctness of an entry? ####
@@ -709,7 +713,7 @@ and short of time to double-check and fix them. In that case, it is better to
 keep those entries in a separate personal `.bib` file, e.g., `personal.bib` until one has time to fix
 them and submitted to the main repository. This file can still make use of `@string` entries from other `.bib` files and cross-references from `crossref.bib` if the order of inclusion is:
 ```latex
-\bibliography{references/abbrev,references/journals,references/authors,references/biblio,personal,references/crossref}
+\bibliography{bib/abbrev,bib/journals,bib/authors,bib/articles,bib/biblio,personal,bib/crossref}
 ```
 
 
