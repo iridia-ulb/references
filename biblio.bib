@@ -84,7 +84,7 @@
   pages =        {831--836},
 }
 
-@INPROCEEDINGS{LimPoz2017automopso,
+@Inproceedings{LimPoz2017automopso,
   author =       {de Lima, Ricardo Henrique Remes and Pozo, Aurora Trinidad
                   Ramirez},
   title =        {A study on auto-configuration of Multi-Objective Particle
@@ -2237,7 +2237,6 @@ Los Angeles, CA},
   address =      {Seville, Spain},
 }
 
-
 @incollection{CarPinOli2017recipe,
   author =       {de S{\'{a}}, Alex Guimar{\~{a}}es Cardoso  and Pinto, Walter
                   Jos{\'{e}} G. S.} #and# {Oliveira, Luiz Ot{\'{a}}vio Vilas Boas}
@@ -2566,12 +2565,34 @@ Los Angeles, CA},
 }
 
 @Misc{CleKen2011spso,
-  author =       {M. Clerc} #and# Kennedy_J,
+  author =       Clerc_M #and# Kennedy_J,
   title =        {Standard {PSO} 2011},
   howpublished = {Particle Swarm Central},
   year =         2011,
   url =          {http://www.particleswarm.info/},
   alias =        "pso:central"
+}
+
+@unpublished{Clerc2012spso,
+  title =        {Standard {Particle} {Swarm} {Optimisation}},
+  author =       Clerc_M,
+  url =          {https://hal.archives-ouvertes.fr/hal-00764996},
+  numpages =     15,
+  year =         2012,
+  month =        sep,
+  HAL_ID =       {hal-00764996},
+  HAL_VERSION =  {v1},
+  keywords =     {particle swarm optimisation},
+  abstract =     "Since 2006, three successive standard PSO versions have been
+                  put on line on the Particle Swarm Central
+                  (\url{http://particleswarm.info}), namely SPSO 2006, 2007,
+                  and 2011. The basic principles of all three versions can be
+                  informally described the same way, and in general, this
+                  statement holds for almost all PSO variants. However, the
+                  exact formulae are slightly different, because they took
+                  advantage of latest theoretical analysis available at the
+                  time they were designed.",
+  note =       "hal-00764996",
 }
 
 @incollection{Coe2015multi,
@@ -2592,6 +2613,8 @@ Los Angeles, CA},
  year =         2007,
  publisher =    springer,
  address = add-ny, 
+edition =      Second,
+doi = "10.1007/978-0-387-36797-2"
 }
 
 @InCollection{CoeSie2004igd,
@@ -7996,8 +8019,8 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @inproceedings{MasNesDor2020,
-  author=        {Massobrio, Renzo and Nesmachnow, Sergio and Dorronsoro, Bernab{\'e}},
-  title =        {Virtual Savant: learning for optimization},
+  author=        {Massobrio, Renzo and Nesmachnow, Sergio} #and# Dorronsoro,
+  title =        {Virtual {Savant}: learning for optimization},
   crossref =     "LMCA2020",
   pages =        {1--5}
 }
@@ -8693,6 +8716,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Optimization framework},
   pages =        {1093--1100},
   numpages =     8,
+  doi = "10.1145/2739482.2768462"
 }
 
 @inCollection{NebLopBarGar2019gecco,
@@ -12308,6 +12332,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   {MOEA} Competition",
   howpublished = {\url{http://dces.essex.ac.uk/staff/qzhang/moeacompetition09.htm}},
   year =         2009,
+}
+
+@InProceedings{ZilIshMos2016mut,
+  author =       {Zille, Heiner} #and# Ishibuchi #and# Mostaghim_S #and#
+                  {Nojima, Yusuke},
+  crossref =     "SSCI2016",
+  title =        {Mutation operators based on variable grouping for
+                  multi-objective large-scale optimization},
+  pages =        {1--8},
+  doi =          {10.1109/SSCI.2016.7850214},
+  annote =       "linked polynomial mutation",
 }
 
 @InCollection{ZitBroThi2007emo,
