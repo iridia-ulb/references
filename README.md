@@ -198,7 +198,7 @@ follows the same instructions.
 
 3. In the main `tex` file of your paper, include the BibTex files with
    ```latex
-    \bibliography{bib/abbrev,bib/journals,bib/authors,bib/articles,bib/articles,bib/biblio,bib/crossref}
+    \bibliography{bib/abbrev,bib/journals,bib/authors,bib/articles,bib/biblio,bib/crossref}
    ```   
 
 4. See the sections ["Updating"](#updating-your-working-copy),
