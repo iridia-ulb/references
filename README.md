@@ -25,7 +25,7 @@ the top of the file.*
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 - [Rationale](#rationale)
-- [Format of keys](#format-of-keys)
+- [Rules for new entries](#rules-for-new-entries)
 - [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
 - [Updating your working copy](#updating-your-working-copy)
 - [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
@@ -99,10 +99,24 @@ recommended).
 
 In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](https://github.com/iridia-ulb/references/tree/master/bibstyles) (`.bst` files) and [checks for common errors](https://github.com/iridia-ulb/references/blob/master/test/test.sh) in encoding entries; and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
 
-Format of keys
---------------
+Rules for new entries
+---------------------
 
-When any bib entry is added, the key should be constructed following
+Each `.bib` file has a comment at the top with rules specific to that file. The following are general rules.
+
+### Where to put what
+
+ * `articles.bib`: Only `@Article` entries.
+ * `crossref.bib`: `@Book` or `@Proceedings` that will be cross-referenced from entries in `biblio.bib`.
+ * `biblio.bib`: All types of entries except `@Article`, `@Proceedings` and `@String`.
+ * `authors.bib`: Author names that appear many times or have complicated spellings.
+ * `journals.bib`: Names of journals.
+ * `abbrev.bib`: Common strings, such as name of conferences, book series, institutions, etc.
+ * `abbrevshort.bib`: Shorter versions of strings that already appear in `journals.bib` or `abbrev.bib`.
+
+### Format of keys
+
+When a new entry is added, its key should be constructed following
 these rules:
 
 1. Only use alphanumeric characters plus `:`, `-`. Never use accents
