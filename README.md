@@ -114,6 +114,10 @@ Each `.bib` file has a comment at the top with rules specific to that file. The 
  * `abbrev.bib`: Common strings, such as name of conferences, book series, institutions, etc.
  * `abbrevshort.bib`: Shorter versions of strings that already appear in `journals.bib` or `abbrev.bib`.
 
+### Valid fields
+
+The following fields are not useful and only waste space, so they should be removed: `biburl`, `timestamp`, `article-number`, `copyright`
+
 ### Format of keys
 
 When a new entry is added, its key should be constructed following
