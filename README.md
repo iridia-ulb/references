@@ -642,11 +642,11 @@ agencies, LNCS count almost as much as journal publications.
    to use title case in bib files without adding braces around the
    whole title. That is, instead of:
 
-    title = {{This is a title that Manuel likes}}
+    title = {{This is a title that Manuel does NOT like}}
 
    use
 
-    title = "This Is a Title that {Manuel} Likes"
+    title = "This Is a Title that {Manuel} {DOES} Like"
 
 
 #### Q: I want to keep an eye on someone else altering my references by mistake. ####
