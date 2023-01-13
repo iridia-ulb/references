@@ -2,6 +2,9 @@ IRIDIA BibTeX Repository
 ========================
 
 [![Build Status](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml)
+[[ PDF file listing all references ](https://iridia-ulb.github.io/references/testbib.pdf)] 
+[[ PDF with abbreviated references ](https://iridia-ulb.github.io/references/testshortbib.pdf)]
+[[ IRIDIA BibTeX Repository Webpage ](https://iridia-ulb.github.io/references/)]
 
 This is a collection of BibTeX files organized in a way that tries to avoid redundancy, minimise mistakes and facilitate customization.
 
@@ -11,14 +14,6 @@ entries directly unless you find mistakes. You only need to fork (or link) the
 git repository in your papers and sync with the main copy to send/receive
 updates.
   
-PDF file listing all references:
-[testbib.pdf](https://iridia-ulb.github.io/references/testbib.pdf) 
-
-PDF with abbreviated references: [testshortbib.pdf](https://iridia-ulb.github.io/references/testshortbib.pdf)
-
-HTML page listing all references: 
-[IRIDIA BibTeX Repository Webpage](https://iridia-ulb.github.io/references/)
-
 *NOTE: Before modifying a .bib file, please read and follow the instructions at
 the top of the file.*
 
@@ -77,7 +72,7 @@ words and differences between full names and abbreviated names. With the
 current system, there is a single definition of an author's name in `authors.bib`
 and any mistake will result in a warning for an undefined string when compiling
 with bibtex. Moreover, the `@Strings` labels tend to be shorter than what they
-expand to and they make searching / grepping much easier. In addition, the use
+expand to and they make searching much easier. In addition, the use
 of `crossref.bib` makes easier to keep consistency in the data for related
 publications (conference proceedings, book series, different editions).
 
@@ -87,8 +82,7 @@ switching to abbreviated conference and journal names by overriding the desired
 abbreviations are provided by `abbrevshort.bib`.
 
 The separation between `articles.bib` (only `@articles`) and `biblio.bib` (rest
-of types) is necessary due to the limited of Overleaf and other software tools
-for `.bib` files larger than 1MB.
+of types) is necessary due to the limitations of Overleaf and other software tools that cannot handle `.bib` files larger than 1MB.
 
 Some software tools (Mendeley, Zotero, etc) aim to achieve similar goals,
 however, they tend to introduce spurious fields, many of them fail to achieve
@@ -98,6 +92,7 @@ agnostic and can be used with any editor (although Emacs is certainly
 recommended).
 
 In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](https://github.com/iridia-ulb/references/tree/master/bibstyles) (`.bst` files) and [checks for common errors](https://github.com/iridia-ulb/references/blob/master/test/test.sh) in encoding entries; and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
+
 
 Rules for new entries
 ---------------------
@@ -156,10 +151,10 @@ these rules:
 Using the IRIDIA BibTeX Repository
 ----------------------------------
 
-The IRIDIA BibTex repository is essentially a collection of `bib` files,
-so all you need to do is to include these files in your paper.
+The IRIDIA BibTex repository is essentially a collection of `.bib` files,
+so all you need to do is include these files in your paper.
 
-The `bib` files define some commands, for example `\MaxMinAntSystem`. You
+The `.bib` files define some commands, for example `\MaxMinAntSystem`. You
 can override any command by just defining it with `\newcommand` or
 `\providecommand` before the bibliography line. This trick also works for other
 commands defined by BibTeX styles (`.bst`). For example, disabling doi
@@ -238,7 +233,7 @@ collaborators) on web-based systems such as Overleaf.
 
 This method is suggested if you have write access to the iridia-ulb
 repository and you want to update the master repository frequently. The script
-`setup_worktree.sh` will do all these steps for you.
+[`setup_worktree.sh`](/setup_worktree.sh) will do all these steps for you.
 
 1. Get a copy of the master repository in some folder, e.g., `/path/to/references-master`:
 
@@ -616,14 +611,14 @@ agencies, LNCS count almost as much as journal publications.
 #### Q: I made a mistake in the commit message. Can this be fixed? ####
 
 **A:** Yes, using: `git commit --amend`. More information
-   [here](https://help.github.com/en/articles/changing-a-commit-message**.
+   [here](https://help.github.com/en/articles/changing-a-commit-message).
 
 
 #### Q: There is a separate entry for each cross-reference, and individual references cite it. I think it is ugly, how to prevent this? ####
 
 **A:** Unhelpfully, bibtex generates by default separated entries for
    cross references. To avoid this, use `bibtex -min-crossrefs=9000`.
-   Or use the bibtex wrapper included in the repository.
+   Or use the [bibtex wrapper](/scripts/bibtex) included in the repository.
    If you use Overleaf, you can add a file [`.latexmkrc`](/test/.latexmkrc) with the following
    line:
 
