@@ -6,7 +6,7 @@
 texliveonfly latexmk
 
 # Collections
-collection-langeuropean
+# collection-langeuropean
 collection-fontsrecommended
 
 # Assuming a 'basic' font set up, metafont is required to avoid
