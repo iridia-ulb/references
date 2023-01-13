@@ -2,6 +2,7 @@ IRIDIA BibTeX Repository
 ========================
 
 [![Build Status](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml)
+
 [[ PDF file listing all references ](https://iridia-ulb.github.io/references/testbib.pdf)] 
 [[ PDF with abbreviated references ](https://iridia-ulb.github.io/references/testshortbib.pdf)]
 [[ IRIDIA BibTeX Repository Webpage ](https://iridia-ulb.github.io/references/)]
@@ -26,7 +27,6 @@ the top of the file.*
 - [Contributing to the IRIDIA BibTeX Repository](#contributing-to-the-iridia-bibtex-repository)
 - [Before submitting a paper](#before-submitting-a-paper)
 - [List of most often used git commands](#list-of-most-often-used-git-commands)
-- [BibTeX Advice](#bibtex-advice)
 - [Frequently Asked Questions](#frequently-asked-questions)
     - [Q: Why are there so many rules?](#q-why-are-there-so-many-rules)
     - [Q: Why not take the entries directly from Google Scholar, DBLP, Elsevier,...?](#q-why-not-take-the-entries-directly-from-google-scholar-dblp-elsevier)
@@ -108,6 +108,18 @@ Each `.bib` file has a comment at the top with rules specific to that file. The 
  * `journals.bib`: Names of journals.
  * `abbrev.bib`: Common strings, such as name of conferences, book series, institutions, etc.
  * `abbrevshort.bib`: Shorter versions of strings that already appear in `journals.bib` or `abbrev.bib`.
+
+### General rules
+
+ * Do not use non-ASCII characters unless you use UTF-8. It may be better to
+   just use [LaTeX syntax instead](https://arxiv.org/edit-user/tex-accents.php), that is, instead of "í" use `{\'i}`.  In
+   [Emacs](https://www.gnu.org/software/emacs/), one can use `'(occur
+   "[^[:ascii:]]"))'` to find all non-ASCII characters.
+
+ * Do not use `\i` to create accented letters. `biblatex` does not like it and
+   it will complain. Using `{\'i}` should produce the correct results.
+ 
+ * `'doi'` field is just the DOI, without the http://dx.doi.org/
 
 ### Valid fields
 
@@ -432,7 +444,7 @@ in general, or
 
         git help COMMAND
 
-to get the various option of the specific command COMMAND.
+to get the various options of the specific command COMMAND.
 
 * Checkout a copy of the files to some directory:
 
@@ -477,22 +489,6 @@ to get the various option of the specific command COMMAND.
         git push
 
 
-
-BibTeX Advice
--------------
-
-There is advice at the top of each .bib file about the contents within that
-file. The following is general advice on how to format bib entries.
-
- * Do not use non-ASCII characters unless you use UTF-8. It may be better to
-   just use [LaTeX syntax instead](https://arxiv.org/edit-user/tex-accents.php), that is, instead of "í" use `{\'i}`.  In
-   [Emacs](https://www.gnu.org/software/emacs/), one can use `'(occur
-   "[^[:ascii:]]"))'` to find all non-ASCII characters.
-
- * Do not use `\i` to create accented letters. `biblatex` does not like it and
-   it will complain. Using `{\'i}` should produce the correct results.
- 
- * `'doi'` field is just the DOI, without the http://dx.doi.org/
  
 
 Frequently Asked Questions
