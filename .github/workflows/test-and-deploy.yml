@@ -72,7 +72,7 @@ jobs:
         run: ./scripts/optbib2html.sh
 
       - name: Deploy 🚀
-        if: ${{ success() env.FILES_CHANGED != 0 && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')  }}
+        if: ${{ success() && env.FILES_CHANGED != 0 && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')  }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: web # The folder the action should deploy.
