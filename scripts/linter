@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# If any command fails, exit immediately with that command's exit status
+set -eo pipefail
+
+TYPES="string Article Misc InCollection InProceedings InBook Book TechReport PhDThesis MastersThesis Unpublished Manual COMMENT PREAMBLE"
+
+for filename in "$@"; do
+    case "$filename" in
+        *".bib")
+            for pattern in $TYPES; do
+                sed -i "s/^\s*@${pattern}/@${pattern}/gi" $filename
+            done
+            sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $filename
+            ;;
+    esac
+done
+
+echo "Linter finished!"
+
