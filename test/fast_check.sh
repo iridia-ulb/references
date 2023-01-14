@@ -4,7 +4,7 @@ set -o pipefail
 
 for filename in "$@"; do
     case "$filename" in
-        *"biblio.bib"*)
+        *"biblio.bib")
             grep --quiet --ignore-case "@article" "$filename"
             if [ $? -eq 0 ]; then
                 echo "Error: biblio.bib should not contain @article entries (put them in articles.bib)"
@@ -12,7 +12,7 @@ for filename in "$@"; do
                 exit 1
             fi
             ;;
-        *"articles.bib"*)
+        *"articles.bib")
             grep --ignore-case -e "^@[a-z]\+" "$filename" | grep --quiet -v --ignore-case "@article"
             if [ $? -eq 0 ]; then
                 echo "Error: articles.bib should only contain @article entries (put them in biblio.bib)"
@@ -20,7 +20,7 @@ for filename in "$@"; do
                 exit 1
             fi
             ;;
-        *"crossref.bib"*)
+        *"crossref.bib")
             grep --ignore-case -e "^@[a-z]\+" "$filename" | grep --quiet -v --ignore-case -e "@proceedings\|@book"
             if [ $? -eq 0 ]; then
                 echo "Error: crossref.bib should only contain @proceedings or @book entries"
@@ -28,7 +28,7 @@ for filename in "$@"; do
                 exit 1
             fi
             ;;
-        *"abbrev.bib"*|*"journals.bib"*|*"authors.bib"*|*"abbrevshort.bib"*)
+        *"abbrev.bib"|*"journals.bib"|*"authors.bib"|*"abbrevshort.bib")
             grep --ignore-case -e "^@[a-z]\+" "$filename"  | grep --quiet --ignore-case -v -e "@string\|@preamble"
             if [ $? -eq 0 ]; then
                 echo "Error: $filename should only contain @string or @preamble entries"
