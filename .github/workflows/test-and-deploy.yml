@@ -83,8 +83,8 @@ jobs:
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: |
           ./scripts/linter *.bib
-          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config --global user.email "username@users.noreply.github.com"
+          git config --local user.name "${GITHUB_ACTOR}"
+          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add *.bib
           (git commit -m "Linter '.bib' files  [skip ci]" && git pull --rebase && git push origin) || echo "No changes to commit"
                     
