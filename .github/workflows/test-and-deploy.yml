@@ -53,14 +53,23 @@ jobs:
           fi
           echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
                             
+      - name: Cache TeX Live
+        if: ${{ env.FILES_CHANGED != 0 }}
+        id: cache-texlive
+        uses: actions/cache@v3
+        with:
+          path: /tmp/texlive
+          key: ${{ env.cache-version }}-${{ runner.os }}-texlive-essential
+          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-texlive-essential
+          
       - name: Install packages
         if: ${{ env.FILES_CHANGED != 0 }}
         run: |
           sudo apt -y update
           sudo apt -y install bibtex2html tidy
 
-      - name: Install texlive
-        if: ${{ env.FILES_CHANGED != 0 }}
+      - name: Install Tex Live
+        if: ${{ env.FILES_CHANGED != 0 && steps.cache-texlive.outputs.cache-hit != 'true'}}
         run: .github/texlive/texlive_install.sh
 
       - name: Run test
@@ -74,9 +83,13 @@ jobs:
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add *.bib
-          git commit -m "Linter '.bib' files  [skip ci]" || echo "No changes to commit"
-          git pull --ff-only
-          git push origin
+          git commit -m "Linter '.bib' files  [skip ci]"
+          if [ $? -eq 0 ]; then
+             git pull --ff-only
+             git push origin
+          else
+             echo "No changes to commit"
+          fi
           
       - name: optbib2html
         if: ${{ success() && env.FILES_CHANGED != 0 }}
