@@ -10,6 +10,9 @@ on:
       - "main"
       - "master"
 
+env:
+  cache-version: v1
+  
 jobs:
   ci:
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
@@ -49,7 +52,7 @@ jobs:
             FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
             echo "Files changed: $FILES_CHANGED"
           else
-            FILES_CHANGED="1"
+            FILES_CHANGED=0
           fi
           echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
                             
@@ -83,14 +86,8 @@ jobs:
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add *.bib
-          git commit -m "Linter '.bib' files  [skip ci]"
-          if [ $? -eq 0 ]; then
-             git pull --ff-only
-             git push origin
-          else
-             echo "No changes to commit"
-          fi
-          
+          (git commit -m "Linter '.bib' files  [skip ci]" && git pull --ff-only && git push origin) || echo "No changes to commit"
+                    
       - name: optbib2html
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: ./scripts/optbib2html.sh
