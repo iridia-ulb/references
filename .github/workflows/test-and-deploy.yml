@@ -35,7 +35,7 @@ jobs:
           PUSH_COMMIT_RANGE: ${{ github.event.before }}..${{ github.event.after }}
         run: |
           set +e
-          INCLUDE_ONLY="\.bib\|\.tex\|travis\|optbib2html\|deploy\|actions"
+          INCLUDE_ONLY="\.bib\|\.tex\|optbib2html\|deploy\|actions"
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
              export TRAVIS_COMMIT_RANGE=${PR_COMMIT_RANGE}
           else 
@@ -67,6 +67,17 @@ jobs:
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: cd test && ./test.sh && mv --force -t ../web/ testbib.pdf testshortbib.pdf
 
+      - name: Linter
+        if: ${{ success() && env.FILES_CHANGED != 0 }}
+        run: |
+          ./scripts/linter *.bib
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add *.bib
+          git commit -m "Linter '.bib' files  [skip ci]" || echo "No changes to commit"
+          git pull --ff-only
+          git push origin
+          
       - name: optbib2html
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: ./scripts/optbib2html.sh
