@@ -5,10 +5,13 @@ on:
     branches:
       - "main"
       - "master"
+    paths-ignore: [ 'README.md' 'bibpool/**' '**precommit' 'setup_worktree.sh' 'mklog' '**.latexmkrc' '.gitignore']
+      
   pull_request:
     branches:
       - "main"
       - "master"
+    paths-ignore: [ 'README.md' 'bibpool/**' '**precommit' 'setup_worktree.sh' 'mklog' '**.latexmkrc' '.gitignore']
 
 env:
   cache-version: v1
@@ -79,7 +82,7 @@ jobs:
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: cd test && ./test.sh && mv --force -t ../web/ testbib.pdf testshortbib.pdf
 
-      - name: Linter
+      - name: Linter 🧹
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: |
           ./scripts/linter *.bib
