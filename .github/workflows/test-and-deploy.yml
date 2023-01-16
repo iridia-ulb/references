@@ -5,13 +5,13 @@ on:
     branches:
       - "main"
       - "master"
-    paths-ignore: [ 'README.md' 'bibpool/**' '**precommit' 'setup_worktree.sh' 'mklog' '**.latexmkrc' '.gitignore']
+    paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
       
   pull_request:
     branches:
       - "main"
       - "master"
-    paths-ignore: [ 'README.md' 'bibpool/**' '**precommit' 'setup_worktree.sh' 'mklog' '**.latexmkrc' '.gitignore']
+    paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
 
 env:
   cache-version: v1
