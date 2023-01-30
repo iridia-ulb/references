@@ -4,16 +4,21 @@ set -eo pipefail
 
 TYPES="string Article Misc InCollection InProceedings InBook Book TechReport PhDThesis MastersThesis Unpublished Manual COMMENT PREAMBLE"
 
+CHANGED=0
+tmpfile="$(mktemp)"
 for filename in "$@"; do
     case "$filename" in
         *".bib")
+            cp $filename $tmpfile
             for pattern in $TYPES; do
                 sed -i "s/^\s*@${pattern}/@${pattern}/gi" $filename
             done
             sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $filename
+            if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
+                CHANGED=1
+            fi
             ;;
     esac
 done
-
-echo "Linter finished!"
-
+rm -f "$tmpfile"
+exit $CHANGED

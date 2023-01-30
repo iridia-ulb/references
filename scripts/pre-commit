@@ -14,6 +14,16 @@ get_pattern_files() {
 BIB_FILES=$(get_pattern_files .bib)
 
 if [[ -n "$BIB_FILES" ]]; then
-    ./test/fast_check.sh $BIB_FILES
-    echo "Pre-commit check passed!"
+    echo -n "Pre-commit check ........ "
+    if ! ./test/fast_check.sh $BIB_FILES; then
+        echo "FAILED!"
+        exit 1
+    fi
+    echo "passed!"
+    echo -n "Linter .................. "
+    if ! ./scripts/linter $BIB_FILES; then
+        echo "FAILED!"
+        exit 1
+    fi
+    echo "passed!"
 fi
