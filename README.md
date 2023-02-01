@@ -33,6 +33,8 @@ the top of the file.*
     - [Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list](#q-some-entries-dont-have-doi-this-is-inconsistent-or-i-dont-like-the-dois-in-the-references-list)
     - [Q: Some entries are Proceedings published by LNCS but the entry does not mention the word "Proceedings" or "Conference"](#q-some-entries-are-proceedings-published-by-lncs-but-the-entry-does-not-mention-the-word-proceedings-or-conference)
     - [Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those?](#q-do-we-need-to-mention-that-the-proceedings-are-published-by-lncs-why-not-use-proceedings-for-those)
+    - [Q: A publisher asked me to move the `.bib` files into the `.tex` file](#q-a-publisher-asked-me-to-move-the-bib-files-into-the-tex-file)
+    - [Q: I don't want to submit so many `.bib` files when submitting the sources of my paper](#q-i-dont-want-to-submit-so-many-bib-files-when-submitting-the-sources-of-my-paper)
     - [Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything?](#q-a-journal-insists-on-using-springer-verlag-instead-of-springer-how-to-change-everything)
     - [Q: I want to save space and abbreviate journal names and titles of books. Should I just edit the journal.bib and abbrev.bib files?](#q-i-want-to-save-space-and-abbreviate-journal-names-and-titles-of-books-should-i-just-edit-the-journalbib-and-abbrevbib-files)
     - [Q: I want to save space and reduce the number of editors (say et al. for any editor after the first one), or remove all DOIs, URLs, publisher address or other such fields. Can I edit the .bib files?](#q-i-want-to-save-space-and-reduce-the-number-of-editors-say-et-al-for-any-editor-after-the-first-one-or-remove-all-dois-urls-publisher-address-or-other-such-fields-can-i-edit-the-bib-files)
@@ -554,6 +556,24 @@ article-length papers/chapters. That is different from conference proceedings
 not be available in book form, may not be peer-reviewed and may contain only
 abstracts. Citations from/to LNCS are counted by JCR. For some funding
 agencies, LNCS count almost as much as journal publications.
+
+#### Q: A publisher asked me to move the `.bib` files into the `.tex` file ####
+
+**A:** Probably the publisher is asking you to [embed the `.bbl` file produced after compilation](https://www.overleaf.com/learn/latex/Questions/The_journal_says_%22don%27t_use_BibTeX%3B_paste_the_contents_of_the_.bbl_file_into_the_.tex_file%22._How_do_I_do_this_on_Overleaf%3F).
+
+
+#### Q: I don't want to submit so many `.bib` files when submitting the sources of my paper ####
+
+**A:** You probably should not! Two solutions are:
+
+ 1. [Embed the `.bbl` file produced after compilation into your `main.tex` file](https://www.overleaf.com/learn/latex/Questions/The_journal_says_%22don%27t_use_BibTeX%3B_paste_the_contents_of_the_.bbl_file_into_the_.tex_file%22._How_do_I_do_this_on_Overleaf%3F). In this way, you do not need to submit any `.bib` files at all. However, any changes to the `.bib` files will not have an effect unless you undo the changes to `main.tex` and repeat the steps.
+ 
+ 2. Use the program [`aux2bib`](https://ctan.org/pkg/bibtools?lang=en) to
+generate a single `.bib` file with only the entries that you are using. If you
+find a mistake on the generated file or want to add new entries, you should
+modify the original `.bib` files, and then run `aux2bib` again to regenerate
+the file.
+
 
 #### Q: A journal insists on using "Springer-Verlag" instead of "Springer", how to change everything? ####
 
