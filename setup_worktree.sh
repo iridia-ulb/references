@@ -1,7 +1,13 @@
 #!/bin/bash
-if [ "$#" -ne 2 ] || ! [ -d "$2" ]; then
+if [ "$#" -ne 2 ]; then
   echo "Usage: $0 BRANCH_NAME DIRECTORY" >&2
   exit 1
+fi
+
+if [ ! -d "$2" ]; then
+    echo "Directory $2 does not exist" >&2
+    echo "Usage: $0 BRANCH_NAME DIRECTORY" >&2
+    exit 1
 fi
 if [ ! -r "./biblio.bib" ]; then
   echo "This command must be run from the root of https://github.com/iridia-ulb/references" >&2
