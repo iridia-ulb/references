@@ -19,7 +19,10 @@ BRANCH="$1"
 DIR="$2"
 git worktree add -B "$BRANCH" "$DIR/bib"
 pushd "$DIR"
-echo "bib/" >> .gitignore
+cat <<'EOF' >> .gitignore
+bib/*
+!bib/*.bib
+EOF
 cp bib/test/.latexmkrc .
 git add -f .gitignore .latexmkrc bib/README.md bib/*.bib
 git ci -a -m "Setup https://github.com/iridia-ulb/references"
