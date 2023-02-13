@@ -22,6 +22,7 @@ pushd "$DIR"
 cat <<'EOF' >> .gitignore
 bib/*
 !bib/*.bib
+!bib/README.md
 EOF
 cp bib/test/.latexmkrc .
 git add -f .gitignore .latexmkrc bib/README.md bib/*.bib
