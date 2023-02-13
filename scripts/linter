@@ -9,13 +9,14 @@ tmpfile="$(mktemp)"
 for filename in "$@"; do
     case "$filename" in
         *".bib")
-            cp $filename $tmpfile
+            cat --squeeze-blank $filename > $tmpfile
             for pattern in $TYPES; do
-                sed -i "s/^\s*@${pattern}/@${pattern}/gi" $filename
+                sed -i "s/^\s*@${pattern}/@${pattern}/gi" $tmpfile
             done
-            sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $filename
+            sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $tmpfile
             if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
                 CHANGED=1
+                cp $tmpfile $filename
             fi
             ;;
     esac
