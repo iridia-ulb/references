@@ -27,7 +27,7 @@ mv tmp.html index.html
 # Add clickable anchors
 sed -i 's/<a name="\([^"]\+\)">/<a href="#\1" id="\1">/g' index.html
 # Use id= instead of name= (shorter and more modern).
-sed -i 's/<a name=/<a id=>/g' index_bib.html
+sed -i 's/<a name=/<a id=/g' index_bib.html
 #tidy -config $TIDYCONF -m index.html
 
 cat header.htm index_bib.html footer.htm > tmp.html
