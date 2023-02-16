@@ -2,6 +2,7 @@ IRIDIA BibTeX Repository
 ========================
 
 [![Build Status](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/iridia-ulb/references/actions/workflows/test-and-deploy.yml)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](#copyright)
 
 [[ PDF file listing all references ](https://iridia-ulb.github.io/references/testbib.pdf)] 
 [[ PDF with abbreviated references ](https://iridia-ulb.github.io/references/testshortbib.pdf)]
