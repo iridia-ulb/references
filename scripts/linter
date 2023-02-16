@@ -10,10 +10,14 @@ for filename in "$@"; do
     case "$filename" in
         *".bib")
             cat --squeeze-blank $filename > $tmpfile
+            # Remove trailing whitespace.
+            sed -i 's/[[:space:]]\+$//' $tmpfile
             for pattern in $TYPES; do
                 sed -i "s/^\s*@${pattern}/@${pattern}/gi" $tmpfile
             done
+            # Lowercase field names.
             sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $tmpfile
+            
             if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
                 CHANGED=1
                 cp $tmpfile $filename
