@@ -133,11 +133,11 @@ The following fields are not useful and only waste space, so they should be remo
 When a new entry is added, its key should be constructed following
 these rules:
 
-1. Only use alphanumeric characters plus `:`, `-`. Never use accents
-   or non-ASCII characters.
+1. Only use alphanumeric characters plus `-`. Never use accents or non-ASCII
+   characters.
 
 2. Use the first three letters of the first surname of each author (up
-   to four authors, first letter capitalized), the full year of
+   to four authors, first letter capitalized, do not use "etal"), the full year of
    publication (if this is not known, make a good guess because this
    should not be changed afterwards and it is confusing that the year
    in the key does not match the year of publication),
