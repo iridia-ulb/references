@@ -5,10 +5,10 @@ set -o pipefail
 for filename in "$@"; do
     case "$filename" in
         *"biblio.bib")
-            grep --quiet --ignore-case "@article" "$filename"
+            grep --quiet --ignore-case -F "@article" "$filename"
             if [ $? -eq 0 ]; then
                 echo "Error: biblio.bib should not contain @article entries (put them in articles.bib)"
-                grep -H -n --ignore-case "@article" "$filename"
+                grep -H -n --ignore-case -F "@article" "$filename"
                 exit 1
             fi
             ;;
