@@ -1,29 +1,46 @@
 #!/bin/bash
 set -u
-set -o pipefail
+#set -o pipefail
 # TODO:
-# * Whitelist of invalid urls to not check
-# * Check DOI
-
+# * Make check_url more robust
+# * Parallelize: check 100 urls at a time.
+#  xargs -n1 -P 10 curl -o /dev/null --silent --head --write-out '%{url_effective};%{http_code};%{time_total};%{time_namelookup};%{time_connect};%{size_download};%{speed_download}\n' < url.lst | tee results.csv
 check_url() {
-    if curl -L --head --silent --no-styled-output --fail $1 &> /dev/null; then
-        return 0
-    else
-        echo "$1 does not exist."
+    http_code=$(curl --max-time 5 --max-redirs 5 \
+                     --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0' \
+                     --compressed -L --insecure --silent --no-styled-output --fail "$1" --write-out '%{http_code}' --output /dev/null 2> /dev/null)
+    if [ $? -ne 0 ]; then
+        echo "$1: $http_code"
         return 1
     fi
+    return 0
 }
+
+bad_urls="$1"
+shift 1
 
 for filename in "$@"; do
     if [[ $filename == *.bib ]]; then
         grep -v '^%' "$filename" | grep --no-filename -o '[{"]https\?://[^"}]\+[}"]' | while read -r line ; do
             # Remove first and last characters
             url=${line:1:-1}
-            if ! check_url $url; then
-                grep -H -n $url "$filename"
+            if grep --quiet -F $url "$bad_urls"; then
+                where=$(grep -H -n -F $url "$filename")
+                echo "KNOWNBAD: $where"
+            elif ! check_url $url; then
+                where=$(grep -H -n -F "$url" "$filename")
+                echo "NOTFOUND: $where"
+            fi
+        done
+        grep -v '^%' "$filename" | grep -E 'doi\s+=\s+[{=][^}"]+[}"]' | sed -E 's/^.+[{"](.+)[}"].*$/\1/' | while read -r doi ; do
+            url="https://doi.org/$doi"
+            if grep --quiet -F $doi "$bad_urls"; then
+                where=$(grep -H -n -F "$doi" "$filename")
+                echo "KNOWNBAD: $where"
+            elif ! check_url $url; then
+                where=$(grep -H -n -F "$doi" "$filename")
+                echo "NOTFOUND: $url: $where"
             fi
         done
     fi
 done
-
-
