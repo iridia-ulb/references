@@ -1,10 +1,11 @@
-
 #!/bin/bash
 set -u
 #set -o pipefail
 # TODO:
 # * Make check_url more robust
 #   We get 403 for many sites because they block curl.
+#   ACM Digital even blocks the IP address, so not great.
+
 
 # File of known broken URLs or URLs that we cannot verify because curl is blocked (403)
 bad_urls="$1"
@@ -28,7 +29,7 @@ for filename in "$@"; do
         tail -n 300 "$tmpfile" \
             | xargs \
                   curl --connect-timeout 5 --max-redirs 5 --retry 2 --retry-delay 5 \
-                  --parallel --parallel-max 10 --limit-rate 50K \
+                  --parallel --parallel-max 5 --limit-rate 10K \
                   --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' \
                   -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' -H 'Accept-Language: en-GB,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'DNT: 1' \
                   -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: none' -H 'Sec-Fetch-User: ?1' -H 'Sec-GPC: 1' \
