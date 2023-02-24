@@ -3,44 +3,46 @@ set -u
 #set -o pipefail
 # TODO:
 # * Make check_url more robust
-# * Parallelize: check 100 urls at a time.
-#  xargs -n1 -P 10 curl -o /dev/null --silent --head --write-out '%{url_effective};%{http_code};%{time_total};%{time_namelookup};%{time_connect};%{size_download};%{speed_download}\n' < url.lst | tee results.csv
-check_url() {
-    http_code=$(curl --max-time 5 --max-redirs 5 \
-                     --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0' \
-                     --compressed -L --insecure --silent --no-styled-output --fail "$1" --write-out '%{http_code}' --output /dev/null 2> /dev/null)
-    if [ $? -ne 0 ]; then
-        echo "$1: $http_code"
-        return 1
-    fi
-    return 0
-}
+#   We get 403 for many sites because they block curl.
 
+# File of known broken URLs or URLs that we cannot verify because curl is blocked (403)
 bad_urls="$1"
 shift 1
-
+tmpfile="$(mktemp)"
+#echo "tmpfile: $tmpfile"
+status_file="$(mktemp)"
+#echo "status_file: $status_file"
+ANYBROKEN=0
 for filename in "$@"; do
     if [[ $filename == *.bib ]]; then
-        grep -v '^%' "$filename" | grep --no-filename -o '[{"]https\?://[^"}]\+[}"]' | while read -r line ; do
-            # Remove first and last characters
-            url=${line:1:-1}
-            if grep --quiet -F $url "$bad_urls"; then
-                where=$(grep -H -n -F $url "$filename")
-                echo "KNOWNBAD: $where"
-            elif ! check_url $url; then
-                where=$(grep -H -n -F "$url" "$filename")
-                echo "NOTFOUND: $where"
+        grep --no-filename -v '^%' "$filename" \
+            | grep -o '[{"]https\?://[^"}]\+[}"]' \
+            | grep -v -F -f "$bad_urls" \
+            | sed -E 's/[{"](.+)[}"]/\1/' | sort -u  > $tmpfile
+        grep --no-filename -v '^%' "$filename" \
+            | grep -E -o 'doi\s+=\s+[{=][^}"]+[}"]' \
+            | grep -v -F -f "$bad_urls" \
+            | sed -E 's#^.+[{"](.+)[}"]#https://doi.org/\1#' | sort -u >> $tmpfile
+
+        head -n 200 "$tmpfile" \
+            | xargs \
+                  curl --connect-timeout 5 --max-redirs 5 --retry 2 --parallel \
+                  --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36' \
+                  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' -H 'Accept-Language: en-GB,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'DNT: 1' \
+                  -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: none' -H 'Sec-Fetch-User: ?1' -H 'Sec-GPC: 1' \
+                  -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' \
+                  --head --insecure --referer ';auto' --location --globoff \
+                  --write-out '===HTTP_STATUS_CODE:%{url}|%{http_code}\n' --no-styled-output --silent --output /dev/null \
+            | grep -F '===HTTP_STATUS_CODE' | cut -d: -f2- > $status_file
+        while IFS='|' read -r url code; do
+            if [[ $code != 200 ]]; then
+               url=${url#https://doi.org/}
+               where=$(grep -H -n -F "$url" "$filename")
+               echo "NOTFOUND:$code: $where"
+               ANYBROKEN=1
             fi
-        done
-        grep -v '^%' "$filename" | grep -E 'doi\s+=\s+[{=][^}"]+[}"]' | sed -E 's/^.+[{"](.+)[}"].*$/\1/' | while read -r doi ; do
-            url="https://doi.org/$doi"
-            if grep --quiet -F $doi "$bad_urls"; then
-                where=$(grep -H -n -F "$doi" "$filename")
-                echo "KNOWNBAD: $where"
-            elif ! check_url $url; then
-                where=$(grep -H -n -F "$doi" "$filename")
-                echo "NOTFOUND: $url: $where"
-            fi
-        done
+        done < "$status_file"
     fi
 done
+rm -f "$tmpfile" "$status_file"
+exit $ANYBROKEN
