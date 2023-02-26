@@ -300,6 +300,38 @@
   doi =          {10.1145/2996355}
 }
 
+@Article{AlfRuiPagStu2020hybrid,
+  title =        {Automatic Algorithm Design for Hybrid Flowshop Scheduling
+                  Problems},
+  author =       Alfaro-Fernandez #and# Ruiz_Ruben #and# Pagnozzi #and#
+                  Stuetzle,
+  journal =      ejor,
+  volume =       282,
+  number =       3,
+  pages =        {835--845},
+  year =         2020,
+  doi =          {10.1016/j.ejor.2019.10.004},
+  keywords =     {Scheduling, Hybrid flowshop, Automatic algorithm
+                  configuration, Automatic Algorithm Design},
+  abstract =     {Industrial production scheduling problems are challenges that
+                  researchers have been trying to solve for decades. Many
+                  practical scheduling problems such as the hybrid flowshop are
+                  NP-hard. As a result, researchers resort to metaheuristics to
+                  obtain effective and efficient solutions. The traditional
+                  design process of metaheuristics is mainly manual, often
+                  metaphor-based, biased by previous experience and prone to
+                  producing overly tailored methods that only work well on the
+                  tested problems and objectives. In this paper, we use an
+                  Automatic Algorithm Design (AAD) methodology to eliminate
+                  these limitations. AAD is capable of composing algorithms
+                  from components with minimal human intervention. We test the
+                  proposed AAD for three different optimization objectives in
+                  the hybrid flowshop. Comprehensive computational and
+                  statistical testing demonstrates that automatically designed
+                  algorithms outperform specifically tailored state-of-the-art
+                  methods for the tested objectives in most cases.}
+}
+
 @Article{AliMei2011kemeny,
   annote =       {Computational Foundations of Social Choice},
   year =         2012,
@@ -712,7 +744,9 @@
   year =         2006,
   volume =       17,
   number =       3,
-  pages =        {642--664}
+  pages =        {642--664},
+  keywords =     "mesh adaptive direct search; pattern search",
+  doi =          "10.1137/0406208"
 }
 
 @Article{Aue2002using,
@@ -1936,7 +1970,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   journal =      aij,
   year =         2016,
   volume =       237,
-  pages =        {41--58}
+  pages =        {41--58},
 }
 
 @Article{BisLanKot2016mlr,
@@ -2085,7 +2119,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       68,
   pages =        "75--88",
   doi =          "10.1016/j.cor.2015.10.014",
-  keywords =     {irace},
+  keywords =     {irace, CMSA},
 }
 
 @Article{BluPucRaiRol11:asc,
@@ -2703,14 +2737,29 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BurHydKen2010tec,
-  author   = Burke_E #and# Hyde_M #and# Kendall_G #and# Woodward_J,
-  journal  = tec,
-  title    ={A Genetic Programming Hyper-Heuristic Approach for Evolving 2-D Strip Packing Heuristics},
-  year     =2010,
-  volume   =14,
-  number   =6,
-  pages    ={942--958},
-  doi      ={10.1109/TEVC.2010.2041061},
+  author =       Burke_E #and# Hyde_M #and# Kendall_G #and# Woodward_J,
+  journal =      tec,
+  title =        {A Genetic Programming Hyper-Heuristic Approach for Evolving
+                  {2-D} Strip Packing Heuristics},
+  year =         2010,
+  volume =       14,
+  number =       6,
+  pages =        {942--958},
+  doi =          {10.1109/TEVC.2010.2041061},
+}
+
+@Article{BurHydKen2012ec,
+  title =        {Automating the Packing Heuristic Design Process with Genetic
+                  Programming},
+  author =       Burke_E #and# Hyde_M #and# Kendall_G #and# Woodward_J,
+  doi =          {10.1162/evco_a_00044},
+  year =         2012,
+  volume =       20,
+  number =       1,
+  pages =        {63--89},
+  journal =      ec,
+  keywords =     "one-, two-, or three-dimensional knapsack and bin packing
+                  problems"
 }
 
 @Article{BurHydKen2012tec,
@@ -4433,6 +4482,18 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2003
 }
 
+@Article{DilKhaNem2017comments,
+  title =        {Comments on: On learning and branching: a survey},
+  author =       {Dilkina, Bistra and Khalil, Elias B. and Nemhauser, George
+                  L.},
+  journal =      {TOP},
+  volume =       25,
+  pages =        {242--246},
+  year =         2017,
+  publisher =    {Springer},
+  annote =       "Comments on \cite{LodZar2017learning}."
+}
+
 @Article{DinDonHeLi2019twoarch,
   title =        {A novel two-archive strategy for evolutionary many-objective
                   optimization algorithm based on reference points},
@@ -5964,7 +6025,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   solution for a particular {SAT} instance. We show
                   that the heuristics discovered by {CLASS} are also
                   competitive with these previous, direct evolutionary
-                  approaches for {SAT.} We also analyze the local
+                  approaches for {SAT}. We also analyze the local
                   search behavior of the learned heuristics using the
                   depth, mobility, and coverage metrics proposed by
                   Schuurmans and Southey.},
@@ -7569,6 +7630,16 @@ Traveling Salesman Heuristic},
   doi =          {10.1145/2076450.2076469},
 }
 
+@Article{HotTanTie2020deep,
+  author =       {Hottung, Andr{\'e} and Tanaka, Shunji} #and# Tierney,
+  journal =      cor,
+  pages =        104781,
+  title =        {Deep learning assisted heuristic tree search for the
+                  container pre-marshalling problem},
+  volume =       113,
+  year =         2020
+}
+
 @Article{HozDjuHoz2005,
   title =        {Estimating the mean and variance from the median, range, and
                   the size of a sample},
@@ -8407,6 +8478,16 @@ Traveling Salesman Heuristic},
   volume =       37,
   number =       1,
   pages =        {79--100}
+}
+
+@Article{JonKriMicSch2023generalized,
+  title =        {Generalized Relax-and-Fix Heuristic},
+  author =       {Joncour, C. and Kritter, J. and Michel, S. and Schepler, X.},
+  journal =      cor,
+  volume =       149,
+  pages =        106038,
+  year =         2023,
+  publisher =    {Elsevier}
 }
 
 @Article{JonSchWel98ego,
@@ -10332,6 +10413,16 @@ Optimization},
   doi = 	 {10.1023/B:ANOR.0000039519.03572.08}
 }
 
+@Article{LodZar2017learning,
+  title =        {On Learning and Branching: A Survey},
+  author =       Lodi #and# {Zarpellon, Giulia},
+  journal =      {TOP},
+  volume =       25,
+  pages =        {207--236},
+  year =         2017,
+  publisher =    {Springer}
+}
+
 @Article{LohHorLin2008antennas,
   author =       {Lohn, Jason D. and Hornby, Gregory S. and Linden, Derek S.},
   title =        {Human-competitive Evolved Antennas},
@@ -10700,8 +10791,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Article{LopTerRos2014esa,
-  author =       {Eunice López-Camacho and Hugo Terashima-Marin and Peter Ross}
-                  #and# Ochoa,
+  author =       {Eunice López-Camacho and Hugo Terashima-Marin} #and# Ross_P #and# Ochoa,
   title =        {A unified hyper-heuristic framework for solving bin packing
                   problems},
   journal =      eswa,
@@ -11634,6 +11724,21 @@ algorithm configuration techniques to multi-objective algorithms.}
   keywords =     "Nevergrad, NGOpt"
 }
 
+@Article{MeuRakWon2022ngopt,
+  author =       {Laurent Meunier and Herilalaina Rakotoarison and Pak{-}Kan
+                  Wong and Baptiste Rozi{\`{e}}re and J{\'{e}}r{\'{e}}my Rapin}
+                  #and# Teytaud_O #and# {Antoine Moreau} #and# Doerr_C,
+  title =        {Black-Box Optimization Revisited: Improving Algorithm
+                  Selection Wizards Through Massive Benchmarking},
+  journal =      tec,
+  volume =       26,
+  number =       3,
+  pages =        {490--500},
+  year =         2022,
+  doi =          {10.1109/TEVC.2021.3108185},
+  keywords =     "nevergrad, NGOpt"
+}
+
 @Article{Mhallah2014,
   author =       {R. {M'Hallah}},
   title =        {An iterated local search variable neighborhood descent hybrid heuristic for the total earliness tardiness permutation flow shop},
@@ -11954,6 +12059,19 @@ algorithm configuration techniques to multi-objective algorithms.}
   number =       {1-2},
   pages =        {55--66},
   year =         1980,
+}
+
+@Article{MorDesLod2021machine,
+  title =        {Machine-learning--based column selection for column
+                  generation},
+  author =       {Morabit, Mouad} #and# {Desaulniers, Guy} #and# Lodi,
+  journal =      ts,
+  volume =       55,
+  number =       4,
+  pages =        {815--831},
+  year =         2021,
+  publisher =    {INFORMS},
+  keywords =     "graph neural networks"
 }
 
 @Article{MorGagGra09:ejor,
@@ -12755,7 +12873,8 @@ algorithm configuration techniques to multi-objective algorithms.}
   volume    = 276,
   issue     = 2,
   pages     = {409--421},
-  doi       = {10.1016/j.ejor.2019.01.018}
+  doi       = {10.1016/j.ejor.2019.01.018},
+  keywords = "EMILI"
 }
 
 @Article{PagStu2020:itor,
@@ -13161,6 +13280,17 @@ algorithm configuration techniques to multi-objective algorithms.}
                   Boeing~777~GE"
 }
 
+@Article{PetZil2006parallel,
+  author =       {Petrik, Marek} #and# Zilberstein,
+  journal =      amai,
+  number =       1,
+  pages =        {85--106},
+  title =        {Learning parallel portfolios of algorithms},
+  volume =       48,
+  year =         2006,
+  keywords =     "algorithm selection"
+}
+
 @Article{Pezeshk96,
   author =       Pezeshk # and # Helweg,
   title =        {Adaptative Search Optimisation in reducing pump operation
@@ -13205,6 +13335,16 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2020,
   journal =      arxiv # {2003.12206 [cs.LG]},
   url =          {https://arxiv.org/abs/2003.12206}
+}
+
+@Article{Pis2005where,
+  author =       Pisinger,
+  journal =      cor,
+  number =       9,
+  pages =        {2271--2284},
+  title =        {Where are the hard knapsack problems?},
+  volume =       32,
+  year =         2005
 }
 
 @Article{PisRop2007:cor,
@@ -15074,6 +15214,16 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages = 	 {102--113}
 }
 
+@Article{SmiChrMun2021where,
+  author = 	 Smith-Miles_K #and# {Jeffrey Christiansen} #and# Munoz_MA,
+  journal =      cor,
+  pages =        105184,
+  title =        {Revisiting where are the hard knapsack problems? via Instance
+                  Space Analysis},
+  volume =       128,
+  year =         2021
+}
+
 @Article{SmiLop2012:cor,
   author =       Smith-Miles_K #and# {Lopes, Leo},
   title =        {Measuring instance difficulty for combinatorial optimization
@@ -16624,6 +16774,21 @@ Twin-Screw Extrusion Configuration Problem},
   pages =        {658--673}
 }
 
+@Article{VilSanMer2021optimal,
+  title =        {Optimal decision trees for the algorithm selection problem:
+                  integer programming based approaches},
+  author =       {Vilas Boas, Matheus Guedes} #and# {Santos, Haroldo Gambini}
+                  #and# {Merschmann, Luiz Henrique de Campos} #and#
+                  VandenBerghe,
+  journal =      itor,
+  volume =       28,
+  number =       5,
+  pages =        {2759--2781},
+  year =         2021,
+  doi =          "10.1111/itor.12724",
+  publisher =    {Wiley Online Library},
+}
+
 @Article{VouTsa99:ejor,
   author =       Voudouris #and# Tsang_E,
   title =        {Guided Local Search and its Application to the
@@ -16930,7 +17095,8 @@ Twin-Screw Extrusion Configuration Problem},
   year =         1997,
   volume =       1,
   number =       1,
-  pages =        {67--82}
+  pages =        {67--82},
+  doi =          {10.1109/4235.585893}
 }
 
 @Article{WooReeSim2013many,
