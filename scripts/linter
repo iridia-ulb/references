@@ -17,10 +17,16 @@ for filename in "$@"; do
             done
             # Lowercase field names.
             sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $tmpfile
-            
+
             if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
                 CHANGED=1
                 cp $tmpfile $filename
+            fi
+            if [[ $filename == *authors.bib ]]; then
+                (head -n 150 $tmpfile | grep '^%'; grep ^@ $tmpfile | env LC_COLLATE=C sort -u --ignore-case; tail -n 150 $tmpfile | grep '^%')> $filename
+            fi
+            if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
+                CHANGED=1
             fi
             ;;
     esac
