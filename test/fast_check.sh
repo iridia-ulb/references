@@ -66,5 +66,6 @@ check_bad_thing "^\s*@[a-zA-Z]\+[([]" "Invalid character found after the type, y
 BADCHARS="⁄∕−―—–´"
 check_bad_thing "[$BADCHARS]"  "Please do not use these UTF8 characters: $BADCHARS"
 check_bad_thing "\\\'\\\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
-
 check_bad_thing_E "\\\'{\\\i}" "Please do not use \'{\i} because it does not work in biber. Use \'i instead"
+check_bad_thing '\\[`^"]\\\i' 'Please do not use \`\i or \"\i or \^\i because it does not work in biber. Use \`i or \"i or \^i instead'
+check_bad_thing_E '\\[`^"]{\\\i}' 'Please do not use \`{\i} or \"{\i} or \^{\i} because it does not work in biber. Use \`i or \"i or \^i instead'
