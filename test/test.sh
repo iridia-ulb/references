@@ -65,9 +65,10 @@ latexmake() {
 }
 
 TEXMAIN="testbib.tex"
-travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
-texliveonfly $TEXMAIN
-travis_fold_end texliveonfly.1
+# FIXME: This doesn't seem to do anything useful.
+# travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
+# texliveonfly $TEXMAIN
+# travis_fold_end texliveonfly.1
 
 for main in "testbib" "testshortbib"; do
     # FIXME: It doesn't compile cleanly.

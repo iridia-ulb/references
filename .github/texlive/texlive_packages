@@ -3,7 +3,8 @@
 # or use tlmgr info some-package
 
 # Base tools to compile
-texliveonfly latexmk
+# texliveonfly
+latexmk
 
 # Collections
 # collection-langeuropean
