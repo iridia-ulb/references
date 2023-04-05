@@ -71,8 +71,8 @@ TEXMAIN="testbib.tex"
 # travis_fold_end texliveonfly.1
 
 for main in "testbib" "testshortbib"; do
-    # FIXME: It doesn't compile cleanly.
-    #for bst in "../bibstyles/ACM-Reference-Format" "testbib"; do
+    # FIXME: Too many warnings
+    # "../bibstyles/ACM-Reference-Format" 
     for bst in "../bibstyles/splncs04abbrev" "../bibstyles/abbrvnatamp" "$main"; do
         latexmake "${main}.tex" "$bst"
     done
