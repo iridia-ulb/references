@@ -39,6 +39,29 @@ for filename in "$@"; do
     esac
 done
 
+checkdups=0
+for filename in "$@"; do
+    case "$filename" in
+        *"authors.bib"|*"journals.bib"|*"abbrev.bib")
+            checkdups=1
+            break
+            ;;
+    esac
+done
+
+if [ $checkdups -ne 0 ]; then
+    bibpath=$(dirname "$1")
+    dups=$(cat "${bibpath}/authors.bib" "${bibpath}/journals.bib" "${bibpath}/abbrev.bib" \
+        | grep '^\s*@string' \
+        | sed -E 's/^\s*@string\{([^[:space:]=]+).*$/\1/' | sort --ignore-case | uniq -d -i)
+    echo "Error: duplicated strings found!"
+    for line in ${dups}; do
+        grep -H -n --ignore-case '^\s*@string.*'"${line}" $@
+    done
+    # TODO: Check that strings in abbrevshort.bib also appear in either journals.bib or abbrev.bib.
+fi
+
+
 # FIXME: This may not work with spaces in directories.
 FILES=$@
 
