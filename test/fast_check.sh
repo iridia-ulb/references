@@ -61,6 +61,7 @@ check_bad_thing_E() {
 check_bad_thing "^\s*\(biburl\|timestamp\|article-number\|copyright\)" "Please remove these fields" "--ignore-case -e"
 check_bad_thing "doi[[:space:]]*=.\+http" "the doi field should not be an URL"
 check_bad_thing "^\s*@[a-zA-Z]\+[([]" "Invalid character found after the type, you should use '{', e.g., @Book{"
+check_bad_thing "^\s*pages\s\+=.\+[0-9]\+-[0-9]\+" "Use double dash \"--\" for pages"
 
 # These look similar but they are different.
 BADCHARS="⁄∕−―—–´"
