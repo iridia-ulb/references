@@ -94,7 +94,7 @@ everyone wishes to use the same software. The current system is software
 agnostic and can be used with any editor (although Emacs is certainly
 recommended).
 
-In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](https://github.com/iridia-ulb/references/tree/master/bibstyles) (`.bst` files) and [checks for common errors](https://github.com/iridia-ulb/references/blob/master/test/test.sh) in encoding entries; and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
+In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](./bibstyles) (`.bst` files) and [checks for common errors](./test/test.sh) in encoding entries; and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
 
 
 Rules for new entries
@@ -104,13 +104,13 @@ Each `.bib` file has a comment at the top with rules specific to that file. The 
 
 ### Where to put what
 
- * `articles.bib`: Only `@Article` entries.
- * `crossref.bib`: `@Book` or `@Proceedings` that will be cross-referenced from entries in `biblio.bib`.
- * `biblio.bib`: All types of entries except `@Article`, `@Proceedings` and `@String`.
- * `authors.bib`: Author names that appear many times or have complicated spellings.
- * `journals.bib`: Names of journals.
- * `abbrev.bib`: Common strings, such as name of conferences, book series, institutions, etc.
- * `abbrevshort.bib`: Shorter versions of strings that already appear in `journals.bib` or `abbrev.bib`.
+ * [`articles.bib`](articles.bib): Only `@Article` entries.
+ * [`crossref.bib`](crossref.bib): `@Book` or `@Proceedings` that will be cross-referenced from entries in `biblio.bib`.
+ * [`biblio.bib`](biblio.bib): All types of entries except `@Article`, `@Proceedings` and `@String`.
+ * [`authors.bib`](authors.bib): Author names that appear many times or have complicated spellings.
+ * [`journals.bib`](journals.bib): Names of journals.
+ * [`abbrev.bib`](abbrev.bib): Common strings, such as name of conferences, book series, institutions, etc.
+ * [`abbrevshort.bib`](abbrevshort.bib): Shorter versions of strings that already appear in `journals.bib` or `abbrev.bib`.
 
 ### General rules
 
@@ -122,7 +122,7 @@ Each `.bib` file has a comment at the top with rules specific to that file. The 
  * Do not use `\i` to create accented letters. `biblatex` does not like it and
    it will complain. Using `{\'i}` should produce the correct results.
  
- * `'doi'` field is just the DOI, without the http://dx.doi.org/
+ * `'doi'` field is just the DOI, without the `http://dx.doi.org/`
 
 ### Valid fields
 
