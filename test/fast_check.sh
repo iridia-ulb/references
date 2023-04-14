@@ -54,10 +54,13 @@ if [ $checkdups -ne 0 ]; then
     dups=$(cat "${bibpath}/authors.bib" "${bibpath}/journals.bib" "${bibpath}/abbrev.bib" \
         | grep '^\s*@string' \
         | sed -E 's/^\s*@string\{([^[:space:]=]+).*$/\1/' | sort --ignore-case | uniq -d -i)
-    echo "Error: duplicated strings found!"
-    for line in ${dups}; do
-        grep -H -n --ignore-case '^\s*@string.*'"${line}" $@
-    done
+    if [ ! -z "$dups" ]; then
+        echo "Error: duplicated strings found!"
+        for line in ${dups}; do
+            grep -H -n --ignore-case '^\s*@string.*'"${line}" $@
+        done
+        exit 1
+    fi
     # TODO: Check that strings in abbrevshort.bib also appear in either journals.bib or abbrev.bib.
 fi
 
