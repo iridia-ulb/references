@@ -22,7 +22,7 @@ if [[ -n "$BIB_FILES" ]]; then
     echo "passed!"
     echo -n "Linter .................. "
     if ! ./scripts/linter $BIB_FILES; then
-        echo "FAILED!"
+        echo "FAILED! The linter made some changes. Revise them and try again."
         exit 1
     fi
     echo "passed!"
