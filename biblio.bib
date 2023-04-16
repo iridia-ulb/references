@@ -5281,6 +5281,39 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {61--86}
 }
 
+@InCollection{HanOst1996cma,
+  author       = Hansen_N #and# {Ostermeier, Andreas},
+  title        = {Adapting Arbitrary Normal Mutation Distributions in Evolution
+                  Strategies: The Covariance Matrix Adaptation},
+  pages        = {312--317},
+  annote       = {Proposed CMA-ES},
+  shorttitle   = {Adapting Arbitrary Normal Mutation Distributions in Evolution
+                  Strategies},
+  doi          = {10.1109/ICEC.1996.542381},
+  abstract     = {A new formulation for coordinate system independent
+                  adaptation of arbitrary normal mutation distributions with
+                  zero mean is presented. This enables the evolution strategy
+                  (ES) to adapt the correct scaling of a given problem and also
+                  ensures invariance with respect to any rotation of the
+                  fitness function (or the coordinate system). Especially
+                  rotation invariance, here resulting directly from the
+                  coordinate system independent adaptation of the mutation
+                  distribution, is an essential feature of the ES with regard
+                  to its general applicability to complex fitness
+                  functions. Compared to previous work on this subject, the
+                  introduced formulation facilitates an interpretation of the
+                  resulting mutation distribution, making sensible manipulation
+                  by the user possible (if desired). Furthermore it enables a
+                  more effective control of the overall mutation variance
+                  (expected step length)},
+  crossref     = {ICEC1996},
+  keywords     = {Evolution strategies, Evolutionary algorithms,
+                  self-adaptation, stochastic processes, Covariance matrix,
+                  matrix algebra, derandomised adaptation, mutation
+                  distribution, rotation invariance, electronic switching
+                  systems}
+}
+
 @InCollection{Hanne2001emo,
   title =        {Global Multiobjective Optimization with Evolutionary
                   Algorithms: Selection Mechanisms and Mutation Control},
@@ -10013,42 +10046,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   url =          {http://cran.r-project.org/package=SPOT},
 }
 
-@InCollection{HanOst1996cma,
-  author =       Hansen_N #and# {Ostermeier, Andreas},
-  title =        {Adapting arbitrary normal mutation distributions in evolution
-                  strategies: the covariance matrix adaptation},
-  shorttitle =   {Adapting arbitrary normal mutation distributions in evolution
-                  strategies},
-  doi =          {10.1109/ICEC.1996.542381},
-  abstract =     {A new formulation for coordinate system independent
-                  adaptation of arbitrary normal mutation distributions with
-                  zero mean is presented. This enables the evolution strategy
-                  (ES) to adapt the correct scaling of a given problem and also
-                  ensures invariance with respect to any rotation of the
-                  fitness function (or the coordinate system). Especially
-                  rotation invariance, here resulting directly from the
-                  coordinate system independent adaptation of the mutation
-                  distribution, is an essential feature of the ES with regard
-                  to its general applicability to complex fitness
-                  functions. Compared to previous work on this subject, the
-                  introduced formulation facilitates an interpretation of the
-                  resulting mutation distribution, making sensible manipulation
-                  by the user possible (if desired). Furthermore it enables a
-                  more effective control of the overall mutation variance
-                  (expected step length)},
-  crossref =     "ICEC1996",
-  keywords =     {Evolution strategies, Evolutionary algorithms, Genetic
-                  algorithms, Genetic mutations, self-adaptation, stochastic
-                  processes, Covariance matrix, matrix algebra, arbitrary
-                  normal mutation distributions, complex fitness functions,
-                  covariance matrix adaptation, derandomised adaptation,
-                  mutation distribution, mutation distributions, rotation
-                  invariance, strategy parameters, Electronic switching
-                  systems},
-  pages =        {312--317},
-  annote =       "Proposed CMA-ES"
-}
-
 @Manual{R:cmaes,
   title =        "{\rpackage{cmaes}}: Covariance Matrix Adapting Evolutionary Strategy",
   author =       Trautmann #and# Mersmann_O #and# Arnu_D,
@@ -11988,6 +11985,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   address =      {Wright-Patterson AFB, Ohio},
 }
 
+@InCollection{VerCarSte2022bias,
+  author       = Vermetten_D #and# {Caraffini, Fabio and van Stein, Bas}#and#
+                  Kononova_A,
+  title        = {Using Structural Bias to Analyse the Behaviour of Modular
+                  {CMA-ES}},
+  pages        = {1674--1682},
+  crossref     = {GECCO2022c},
+  doi          = {10.1145/3520304.3534035},
+  location     = {Boston, Massachusetts}
+}
+
 @InCollection{VerLieDha2011gecco,
   author =       Verel #and# Liefooghe #and# Dhaenens,
   title =        {Set-based Multiobjective Fitness Landscapes: A Preliminary
@@ -12883,6 +12891,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   note =         {Version visited last on July 2017},
   year =         2017
 }
+
 @PhDThesis{vanZyl:PhD,
   author =       vanZyl,
   title =        "A Methodology for Improved Operational Optimization of Water
@@ -12891,3 +12900,4 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Exeter, UK},
   year =         2001
 }
+
