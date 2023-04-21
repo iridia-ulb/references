@@ -17,7 +17,7 @@ fi
 set -e
 BRANCH="$1"
 DIR="$2"
-git worktree add -B "$BRANCH" "$DIR/bib"
+git worktree add --track -B "$BRANCH" "$DIR/bib"
 pushd "$DIR"
 cat <<'EOF' >> .gitignore
 bib/*
