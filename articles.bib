@@ -11786,6 +11786,53 @@ algorithm configuration techniques to multi-objective algorithms.}
   pages =        {33--42}
 }
 
+@Article{MazLopChuMie2023tgp,
+  author       = Mazumdar_A #and# Lopez-Ibanez #and# Chugh_Tinkle #and#
+                  Miettinen,
+  title        = {Treed {Gaussian} Process Regression for Solving Offline
+                  Data-Driven Continuous Multiobjective Optimization Problems},
+  journal      = ec,
+  year         = 2023,
+  doi          = {10.1162/evco_a_00329},
+  abstract     = {For offline data-driven multiobjective optimization problems
+                  (MOPs), no new data is available during the optimization
+                  process. Approximation models (or surrogates) are first built
+                  using the provided offline data and an optimizer, e.g. a
+                  multiobjective evolutionary algorithm, can then be utilized
+                  to find Pareto optimal solutions to the problem with
+                  surrogates as objective functions. In contrast to online
+                  data-driven MOPs, these surrogates cannot be updated with new
+                  data and, hence, the approximation accuracy cannot be
+                  improved by considering new data during the optimization
+                  process. Gaussian process regression (GPR) models are widely
+                  used as surrogates because of their ability to provide
+                  uncertainty information. However, building GPRs becomes
+                  computationally expensive when the size of the dataset is
+                  large. Using sparse GPRs reduces the computational cost of
+                  building the surrogates. However, sparse GPRs are not
+                  tailored to solve offline data-driven MOPs, where good
+                  accuracy of the surrogates is needed near Pareto optimal
+                  solutions. Treed GPR (TGPR-MO) surrogates for offline
+                  data-driven MOPs with continuous decision variables are
+                  proposed in this paper. The proposed surrogates first split
+                  the decision space into subregions using regression trees and
+                  build GPRs sequentially in regions close to Pareto optimal
+                  solutions in the decision space to accurately approximate
+                  tradeoffs between the objective functions. TGPR-MO surrogates
+                  are computationally inexpensive because GPRs are built only
+                  in a smaller region of the decision space utilizing a subset
+                  of the data. The TGPR-MO surrogates were tested on
+                  distance-based visualizable problems with various data sizes,
+                  sampling strategies, numbers of objective functions, and
+                  decision variables. Experimental results showed that the
+                  TGPR-MO surrogates are computationally cheaper and can handle
+                  datasets of large size. Furthermore, TGPR-MO surrogates
+                  produced solutions closer to Pareto optimal solutions
+                  compared to full GPRs and sparse GPRs.},
+  keywords     = {Gaussian processes, Kriging, Regression trees, Metamodelling,
+                  Surrogate, Pareto optimality}
+}
+
 @Article{McConMehNah2011certifying,
   title =        "Certifying algorithms",
   journal =      csrev,
