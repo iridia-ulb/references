@@ -10,15 +10,16 @@ for filename in "$@"; do
     BEFORE_SIZE=$(stat -c%s "$filename")
     gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite $GS_OPTIONS -sOutputFile="$filename-tmp" "$filename"
     echo After gs: $(du -h "$filename-tmp")
-    qpdf $QPDF_OPTIONS "$filename" "$filename-tmp"
-    echo After qpdf: $(du -h "$filename-tmp")
-    AFTER_SIZE=$(stat -c%s "$filename-tmp")
+    qpdf $QPDF_OPTIONS "$filename-tmp" "$filename-tmp2"
+    echo After qpdf: $(du -h "$filename-tmp2")
+    AFTER_SIZE=$(stat -c%s "$filename-tmp2")
     if (( BEFORE_SIZE > AFTER_SIZE)); then
-        mv "$filename-tmp" "$filename"
+        mv "$filename-tmp2" "$filename"
         if [ $? -ne 0 ]; then
             echo "$0: cannot overwrite $filename"
             exit 1
         fi
         echo "$0: Success !"
     fi
+    rm -f "$filename-tmp" "$filename-tmp2"
 done
