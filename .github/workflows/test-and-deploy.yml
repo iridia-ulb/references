@@ -71,7 +71,7 @@ jobs:
         if: ${{ env.FILES_CHANGED != 0 }}
         run: |
           sudo apt -y update
-          sudo apt -y install bibtex2html tidy
+          sudo apt -y install bibtex2html tidy ghostscript qpdf
 
       - name: Install Tex Live
         if: ${{ env.FILES_CHANGED != 0 && steps.cache-texlive.outputs.cache-hit != 'true'}}
@@ -79,7 +79,7 @@ jobs:
 
       - name: Run test
         if: ${{ success() && env.FILES_CHANGED != 0 }}
-        run: cd test && ./test.sh && mv --force -t ../web/ testbib.pdf testshortbib.pdf
+        run: cd test && ./test.sh && ./compress.sh testbib.pdf testshortbib.pdf && mv --force -t ../web/ testbib.pdf testshortbib.pdf
 
       - name: Linter 🧹
         if: ${{ success() && env.FILES_CHANGED != 0 && github.event_name == 'push' }}
