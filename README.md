@@ -20,7 +20,8 @@ updates.
 the top of the file.*
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
+### Table of Content
+
 - [Rationale](#rationale)
 - [Rules for new entries](#rules-for-new-entries)
 - [Using the IRIDIA BibTeX Repository](#using-the-iridia-bibtex-repository)
@@ -96,6 +97,7 @@ recommended).
 
 In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](./bibstyles) (`.bst` files) and [checks for common errors](./test/test.sh) in encoding entries; and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
 
+[&laquo; Back to ToC](#table-of-contents)
 
 Rules for new entries
 ---------------------
@@ -162,6 +164,7 @@ these rules:
    * Theses (PhD, etc): after the year, add the type of thesis.
      Example: Birattari2004PhD.
 
+[&laquo; Back to ToC](#table-of-contents)
 
 Using the IRIDIA BibTeX Repository
 ----------------------------------
@@ -294,6 +297,7 @@ repository and you want to update the master repository frequently. The script
   responsibility to keep your local copy updated, in particular when you
   submit your changes (see Section ["Contributing"](#contributing-to-the-iridia-bibtex-repository)).
 
+[&laquo; Back to ToC](#table-of-contents)
 
 Updating your working copy
 --------------------------
@@ -331,6 +335,7 @@ If you are making many *dirty* commits locally before syncing with the server,
 it is better to create a branch/fork and merge it with `master` once you are
 ready.
 
+[&laquo; Back to ToC](#table-of-contents)
 
 Contributing to the IRIDIA BibTeX Repository
 --------------------------------------------
@@ -405,6 +410,7 @@ a new commit, so make sure you do another
 
 to sync your local repo before modifying again the files.
 
+[&laquo; Back to ToC](#table-of-contents)
 
 Before submitting a paper
 -------------------------
@@ -432,6 +438,7 @@ and replace it with:
         {f.~}{vv~}{ll}{, jj}" format.name$
 
 
+[&laquo; Back to ToC](#table-of-contents)
 
 List of most often used git commands
 ------------------------------------
@@ -492,6 +499,7 @@ to get the various options of the specific command COMMAND.
         git push
 
 
+[&laquo; Back to ToC](#table-of-contents)
  
 
 Frequently Asked Questions
@@ -746,6 +754,7 @@ them and submitted to the main repository. This file can still make use of `@str
 \bibliography{bib/abbrev,bib/journals,bib/authors,bib/articles,bib/biblio,personal,bib/crossref}
 ```
 
+[&laquo; Back to ToC](#table-of-contents)
 
 
 Copyright
