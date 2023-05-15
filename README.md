@@ -20,7 +20,7 @@ updates.
 the top of the file.*
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-### Table of Content
+### Table of Contents
 
 - [Rationale](#rationale)
 - [Rules for new entries](#rules-for-new-entries)
