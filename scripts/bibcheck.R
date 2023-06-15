@@ -7,7 +7,7 @@ bibs <- sapply(bibs, function(x) {
 
 check_type <- function(x, cr_type, cr_typel, target, targetl) {
   if (cr_typel == targetl) return(NULL)
-  paste0("Entry '", x$key, "' has type '", x$bibtype, "' but its crossref '", x$crossref, "' has type '", cr_type, "' instead of @", target, "!")
+  paste0("Entry '", x$key, "' has type '", x$bibtype, "' but its crossref '", x$crossref, "' has type '", cr_type, "' instead of @", target, "!\n")
 }
 
 text <- readLines("biblio.bib")
@@ -33,6 +33,6 @@ for (x in bibs) {
       text <- sub(paste0("@InCollection{", x$key, ","), paste0("@InProceedings{", x$key, ","), text, fixed=TRUE)
   } 
 }
-cat(paste0(collapse="\n", errors))
+cat(paste0(collapse="", errors))
 writeLines(text, "biblio.bib")
-
+quit(status = length(errors) > 0)

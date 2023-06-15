@@ -20,6 +20,12 @@ if [[ -n "$BIB_FILES" ]]; then
         exit 1
     fi
     echo "passed!"
+    echo -n "bibcheck.R .............. "
+    if ! Rscript ./scripts/bibcheck.R; then
+        echo "FAILED!"
+        exit 1
+    fi
+    echo "passed!"
     echo -n "Linter .................. "
     if ! ./scripts/linter $BIB_FILES; then
         echo "FAILED! The linter made some changes. Revise them and try again."
