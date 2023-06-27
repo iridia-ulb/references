@@ -32,6 +32,7 @@ the top of the file.*
 - [Frequently Asked Questions](#frequently-asked-questions)
     - [Q: Why are there so many rules?](#q-why-are-there-so-many-rules)
     - [Q: Why not take the entries directly from Google Scholar, DBLP, Elsevier,...?](#q-why-not-take-the-entries-directly-from-google-scholar-dblp-elsevier)
+    - [Q: Why not use Zotero, Mendeley, ...?](#q-why-not-use-zotero-mendeley)
     - [Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list](#q-some-entries-dont-have-doi-this-is-inconsistent-or-i-dont-like-the-dois-in-the-references-list)
     - [Q: Some entries are Proceedings published by LNCS but the entry does not mention the word "Proceedings" or "Conference"](#q-some-entries-are-proceedings-published-by-lncs-but-the-entry-does-not-mention-the-word-proceedings-or-conference)
     - [Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those?](#q-do-we-need-to-mention-that-the-proceedings-are-published-by-lncs-why-not-use-proceedings-for-those)
@@ -541,6 +542,16 @@ often wrong and contradict their own suggested way of citing a work. It is
 often better to look at how they suggest to cite it and write a BibTeX entry
 that recreates it.
 
+#### Q: Why not use Zotero, Mendeley, ...? ####
+
+**A:** Such software tools help organise research papers, however, exporting to
+BibTeX often requires an extra step and sometimes they export incorrect BibTeX entries.  Moreover, these tools often introduce spurious
+fields; do not offer any support for consistent author names, [abbreviated
+journal and conference names](#q-i-want-to-save-space-and-abbreviate-journal-names-and-titles-of-books-should-i-just-edit-the-journalbib-and-abbrevbib-files) and other common strings; offer only minimal checking of entries; do not support tricks like [highlighting the name of a specific author](#q-i-want-to-highlight-the-name-of-some-authors); etc. 
+
+Even if the tool supports sharing entries between various researchers, tracking, revising and reverting changes is not as convenient as with GitHub.
+
+
 #### Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list ####
 
 **A:** Ideally, we would have the DOI of everything, since it helps to find the
@@ -558,8 +569,8 @@ bibtex style. Thus, one should ALWAYS add a DOI if possible.
     
 #### Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those? ####
    
-**A:** There is an important difference in terms of publication importance. LNCS
-are books (`@Book`) published by Springer and they contain peer-reviewed
+**A:** There is an important difference in terms of publication importance.
+LNCS are books (`@Book`) published by Springer and they contain peer-reviewed
 article-length papers/chapters. That is different from conference proceedings
 (`@Proceedings`) published by the conference organisation themselves that may
 not be available in book form, may not be peer-reviewed and may contain only
