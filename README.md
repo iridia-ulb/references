@@ -32,7 +32,7 @@ the top of the file.*
 - [Frequently Asked Questions](#frequently-asked-questions)
     - [Q: Why are there so many rules?](#q-why-are-there-so-many-rules)
     - [Q: Why not take the entries directly from Google Scholar, DBLP, Elsevier,...?](#q-why-not-take-the-entries-directly-from-google-scholar-dblp-elsevier)
-    - [Q: Why not use Zotero, Mendeley, ...?](#q-why-not-use-zotero-mendeley)
+    - [Q: Why not use Zotero, Mendeley,...?](#q-why-not-use-zotero-mendeley)
     - [Q: Some entries don't have DOI. This is inconsistent. Or I don't like the DOIs in the references list](#q-some-entries-dont-have-doi-this-is-inconsistent-or-i-dont-like-the-dois-in-the-references-list)
     - [Q: Some entries are Proceedings published by LNCS but the entry does not mention the word "Proceedings" or "Conference"](#q-some-entries-are-proceedings-published-by-lncs-but-the-entry-does-not-mention-the-word-proceedings-or-conference)
     - [Q: Do we need to mention that the Proceedings are published by LNCS? Why not use `@Proceedings` for those?](#q-do-we-need-to-mention-that-the-proceedings-are-published-by-lncs-why-not-use-proceedings-for-those)
@@ -542,7 +542,7 @@ often wrong and contradict their own suggested way of citing a work. It is
 often better to look at how they suggest to cite it and write a BibTeX entry
 that recreates it.
 
-#### Q: Why not use Zotero, Mendeley, ...? ####
+#### Q: Why not use Zotero, Mendeley,...? ####
 
 **A:** Such software tools help organise research papers, however, exporting to
 BibTeX often requires an extra step and sometimes they export incorrect BibTeX entries.  Moreover, these tools often introduce spurious
