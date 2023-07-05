@@ -15446,7 +15446,57 @@ algorithm configuration techniques to multi-objective algorithms.}
                   Multi-Objective Optimization},
   journal      = tec,
   year         = 2023,
-  doi          = {10.1109/TEVC.2023.3269348}
+  doi          = {10.1109/TEVC.2023.3269348},
+  abstract     = {Evolutionary multi-objective optimization algorithms (EMOAs)
+                  typically assume that all objectives that are relevant to the
+                  decision-maker (DM) are optimized by the EMOA. In some
+                  scenarios, however, there are irrelevant objectives that are
+                  optimized by the EMOA but ignored by the DM, as well as,
+                  hidden objectives that the DM considers when judging the
+                  utility of solutions but are not optimized. This discrepancy
+                  between the EMOA and the DM’s preferences may impede the
+                  search for the most-preferred solution and waste resources
+                  evaluating irrelevant objectives. Research on objective
+                  reduction has focused so far on the structure of the problem
+                  and correlations between objectives and neglected the role of
+                  the DM. We formally define here the concepts of irrelevant
+                  and hidden objectives and propose methods for detecting them,
+                  based on uni-variate feature selection and recursive feature
+                  elimination, that use the preferences already elicited when a
+                  DM interacts with a ranking-based interactive EMOA
+                  (iEMOA). We incorporate the detection methods into an iEMOA
+                  capable of dynamically switching the objectives being
+                  optimized. Our experiments show that this approach can
+                  efficiently identify which objectives are relevant to the DM
+                  and reduce the number of objectives being optimized, while
+                  keeping and often improving the utility, according to the DM,
+                  of the best solution found.}
+}
+
+@Article{ShaLopKno2023bench,
+  author       = Shavarani_Mahdi #and# Lopez-Ibanez #and# Knowles,
+  title        = {On Benchmarking Interactive Evolutionary Multi-Objective
+                  Algorithms},
+  journal      = tec,
+  year         = 2023,
+  doi          = {10.1109/TEVC.2023.3289872},
+  abstract     = {We carry out a detailed performance assessment of two
+                  interactive evolutionary multi-objective algorithms (EMOAs)
+                  using a machine decision maker that enables us to repeat
+                  experiments and study specific behaviours modeled after human
+                  decision makers (DMs). Using the same set of benchmark test
+                  problems as in the original papers on these interactive EMOAs
+                  (in up to 10 objectives), we bring to light interesting
+                  effects when we use a machine DM based on sigmoidal utility
+                  functions that have support from the psychology literature
+                  (replacing the simpler utility functions used in the original
+                  papers). Our machine DM enables us to go further and simulate
+                  human biases and inconsistencies as well. Our results from
+                  this study, which is the most comprehensive assessment of
+                  multiple interactive EMOAs so far conducted, suggest that
+                  current well-known algorithms have shortcomings that need
+                  addressing. These results further demonstrate the value of
+                  improving the benchmarking of interactive EMOAs}
 }
 
 @Article{ShaLopMie2021visual,
