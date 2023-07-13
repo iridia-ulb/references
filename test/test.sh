@@ -43,6 +43,8 @@ latexmake() {
     if [ $? -ne 0 ]; then
         travis_fold_end latexmk.1
         echo "Error: latexmk failed"
+        LOGFILE=${TEXMAIN%.*}.log
+        cat "$LOGFILE"
         exit 1
     fi
 
