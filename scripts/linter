@@ -2,7 +2,7 @@
 # If any command fails, exit immediately with that command's exit status
 set -eo pipefail
 
-TYPES="string Article Misc InCollection InProceedings InBook Book TechReport PhDThesis MastersThesis Unpublished Manual COMMENT PREAMBLE"
+TYPES="string Article Misc InCollection InProceedings InBook Book Proceedings TechReport PhDThesis MastersThesis Unpublished Manual COMMENT PREAMBLE"
 
 CHANGED=0
 tmpfile="$(mktemp)"
