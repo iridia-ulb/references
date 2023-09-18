@@ -79,8 +79,12 @@ jobs:
 
       - name: Run test
         if: ${{ success() && env.FILES_CHANGED != 0 }}
-        run: cd test && ./test.sh && ./compress.sh testbib.pdf testshortbib.pdf && mv --force -t ../web/ testbib.pdf testshortbib.pdf
+        run: cd test && ./test.sh
 
+      - name: Compress PDFs
+        if: ${{ success() && env.FILES_CHANGED != 0 }}
+        run: cd test && ./compress.sh testbib.pdf testshortbib.pdf && mv --force -t ../web/ testbib.pdf testshortbib.pdf
+        
       - name: Linter 🧹
         if: ${{ success() && env.FILES_CHANGED != 0 && github.event_name == 'push' }}
         run: |
