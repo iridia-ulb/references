@@ -4,7 +4,7 @@
 
 # Base tools to compile
 # texliveonfly
-latexmk
+# latexmk
 
 # Collections
 # collection-langeuropean
@@ -12,51 +12,53 @@ collection-fontsrecommended
 
 # Assuming a 'basic' font set up, metafont is required to avoid
 # warnings with some packages and errors with others
-metafont mfware
+# metafont mfware
 
 # texliveonfly does not detect the following packages automatically
-amsfonts
-amsmath
+# amsfonts
+# amsmath
+babel-english
 biber
 biblatex
-bigintcalc
-bitset
+# bigintcalc
+# bitset
 bookmark
 caption
 csquotes
 enumitem
-epstopdf-pkg
-etexcmds
-fancyvrb
+# epstopdf-pkg
+# etexcmds
+fancyhdr
+# fancyvrb
 fandol
-framed
+# framed
 fvextra
-gettitlestring
-graphics
-hycolor
+# gettitlestring
+# graphics
+# hycolor
 hypdoc
-hyperref
+# hyperref
 hyphenat
-infwarerr
-intcalc
-kvdefinekeys
-kvoptions
-kvsetkeys
-letltxmacro
+# infwarerr
+# intcalc
+# kvdefinekeys
+# kvoptions
+# kvsetkeys
+# letltxmacro
 lineno
 listings
-ltxcmds
+# ltxcmds
 minted
 oberdiek
-pdfescape
-pdftexcmds
-psnfss
+# pdfescape
+# pdftexcmds
+# pnfss
 ragged2e
-refcount
-rerunfilecheck
-tools
-uniquecounter
+# refcount
+# rerunfilecheck
+# tools
+# uniquecounter
 upquote
-xcolor
-xkeyval
+# xcolor
+# xkeyval
 xstring

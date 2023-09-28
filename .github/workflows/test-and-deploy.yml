@@ -2,15 +2,9 @@ name: CI
 
 on:
   push:
-    branches:
-      - "main"
-      - "master"
     paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
       
   pull_request:
-    branches:
-      - "main"
-      - "master"
     paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
 
 env:
@@ -58,14 +52,14 @@ jobs:
           fi
           echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
                             
-      - name: Cache TeX Live
+      - name: Cache TinyTeX
         if: ${{ env.FILES_CHANGED != 0 }}
-        id: cache-texlive
+        id: cache-tinytex
         uses: actions/cache@v3
         with:
-          path: /tmp/texlive
-          key: ${{ env.cache-version }}-${{ runner.os }}-texlive-essential
-          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-texlive-essential
+          path: ~/.TinyTeX
+          key: ${{ env.cache-version }}-${{ runner.os }}-tinytex
+          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-tinytex
           
       - name: Install packages
         if: ${{ env.FILES_CHANGED != 0 }}
@@ -73,10 +67,25 @@ jobs:
           sudo apt -y update
           sudo apt -y install bibtex2html tidy ghostscript qpdf
 
-      - name: Install Tex Live
-        if: ${{ env.FILES_CHANGED != 0 && steps.cache-texlive.outputs.cache-hit != 'true'}}
-        run: .github/texlive/texlive_install.sh
-
+      - uses: r-lib/actions/setup-tinytex@v2-branch
+        if: ${{ env.FILES_CHANGED != 0 && steps.cache-tinytex.outputs.cache-hit != 'true'}}
+        env:
+          TINYTEX_INSTALLER: TinyTeX-1
+          TINYTEX_VERSION: 2023.09
+          
+      - name: Install additional LaTeX packages
+        if: ${{ env.FILES_CHANGED != 0 && steps.cache-tinytex.outputs.cache-hit != 'true'}}
+        run: |
+          texlive_packages=./.github/texlive_packages
+          echo "Updating TexLive"
+          # Keep no backups (not required, simply makes cache bigger)
+          tlmgr option -- autobackup 0
+          echo "Updating tlmgr itself"
+          tlmgr update --self
+          echo "Install ${texlive_packages}"
+          tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' "${texlive_packages}")
+          tlmgr path add
+          
       - name: Run test
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: cd test && ./test.sh
