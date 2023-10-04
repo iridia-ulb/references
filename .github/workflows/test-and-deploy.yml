@@ -52,14 +52,14 @@ jobs:
           fi
           echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
                             
-      - name: Cache TinyTeX
-        if: ${{ env.FILES_CHANGED != 0 }}
-        id: cache-tinytex
-        uses: actions/cache@v3
-        with:
-          path: ~/.TinyTeX
-          key: ${{ env.cache-version }}-${{ runner.os }}-tinytex
-          restore-keys: ${{ env.cache-version }}-${{ runner.os }}-tinytex
+      # - name: Cache TinyTeX
+      #   if: ${{ env.FILES_CHANGED != 0 }}
+      #   id: cache-tinytex
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.TinyTeX
+      #     key: ${{ env.cache-version }}-${{ runner.os }}-tinytex
+      #     restore-keys: ${{ env.cache-version }}-${{ runner.os }}-tinytex
           
       - name: Install packages
         if: ${{ env.FILES_CHANGED != 0 }}
@@ -68,13 +68,13 @@ jobs:
           sudo apt -y install bibtex2html tidy ghostscript qpdf
 
       - uses: r-lib/actions/setup-tinytex@v2-branch
-        if: ${{ env.FILES_CHANGED != 0 && steps.cache-tinytex.outputs.cache-hit != 'true'}}
+        if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
         env:
           TINYTEX_INSTALLER: TinyTeX-1
           TINYTEX_VERSION: 2023.09
           
       - name: Install additional LaTeX packages
-        if: ${{ env.FILES_CHANGED != 0 && steps.cache-tinytex.outputs.cache-hit != 'true'}}
+        if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
         run: |
           texlive_packages=./.github/texlive_packages
           echo "Updating TexLive"
