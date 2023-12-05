@@ -90,7 +90,7 @@ check_bad_thing "^\s*@[a-zA-Z]\+[([]" "Invalid character found after the type, y
 check_bad_thing "^\s*pages\s\+=.\+[0-9]\+-[0-9]\+" "Use double dash \"--\" for pages"
 
 # These look similar but they are different.
-BADCHARS="⁄∕−―—–´"
+BADCHARS="⁄∕−―—–´’"
 check_bad_thing "[$BADCHARS]"  "Please do not use these UTF8 characters: $BADCHARS"
 check_bad_thing "\\\'\\\i" "Please do not use \'\i because it does not work in biber. Use \'i instead"
 check_bad_thing_E "\\\'{\\\i}" "Please do not use \'{\i} because it does not work in biber. Use \'i instead"
