@@ -1554,6 +1554,35 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2014,
 }
 
+@Article{BenLodPro2021ml,
+  author       = Bengio_Y #and# Lodi #and# {Antoine Prouvost},
+  title        = {Machine learning for combinatorial optimization: A
+                  methodological tour d'horizon},
+  journal      = ejor,
+  year         = 2021,
+  volume       = 290,
+  number       = 2,
+  pages        = {405--421},
+  doi          = {10.1016/j.ejor.2020.07.063},
+  keywords     = {Combinatorial optimization, Machine learning, Branch and
+                  bound, Mixed-integer programming solvers},
+  abstract     = {This paper surveys the recent attempts, both from the machine
+                  learning and operations research communities, at leveraging
+                  machine learning to solve combinatorial optimization
+                  problems. Given the hard nature of these problems,
+                  state-of-the-art algorithms rely on handcrafted heuristics
+                  for making decisions that are otherwise too expensive to
+                  compute or mathematically not well defined. Thus, machine
+                  learning looks like a natural candidate to make such
+                  decisions in a more principled and optimized way. We advocate
+                  for pushing further the integration of machine learning and
+                  combinatorial optimization and detail a methodology to do
+                  so. A main point of the paper is seeing generic optimization
+                  problems as data points and inquiring what is the relevant
+                  distribution of problems to use for learning on a given
+                  task.}
+}
+
 @Article{BenRit2016:cor,
   author =       {Alexander Javier Benavides} #and# Ritt,
   title =        {Two Simple and Effective Heuristics for Minimizing the
@@ -6347,7 +6376,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   problem such as satisfiability testing ({SAT)} is a
                   challenging task. We investigate an evolutionary
                   approach to automating the discovery of new local
-                  search heuristics for {SAT.} We show that several
+                  search heuristics for {SAT}. We show that several
                   well-known {SAT} local search algorithms such as
                   Walksat and Novelty are composite heuristics that
                   are derived from novel combinations of a set of
@@ -8072,13 +8101,25 @@ Traveling Salesman Heuristic},
 }
 
 @Article{HotTanTie2020deep,
-  author =       {Hottung, Andr{\'e} and Tanaka, Shunji} #and# Tierney,
-  journal =      cor,
-  pages =        104781,
-  title =        {Deep learning assisted heuristic tree search for the
+  author       = {Hottung, Andr{\'e} and Tanaka, Shunji} #and# Tierney,
+  title        = {Deep learning assisted heuristic tree search for the
                   container pre-marshalling problem},
-  volume =       113,
-  year =         2020
+  journal      = cor,
+  year         = 2020,
+  volume       = 113,
+  pages        = 104781,
+  doi          = {10.1016/j.cor.2019.104781}
+}
+
+@Article{HotTie2022nlns,
+  author       = {Hottung, Andr{\'e}} #and# Tierney,
+  title        = {Neural large neighborhood search for routing problems},
+  journal      = aij,
+  year         = 2022,
+  volume       = 313,
+  pages        = 103786,
+  month        = dec,
+  doi          = {10.1016/j.artint.2022.103786}
 }
 
 @Article{HozDjuHoz2005,
@@ -8458,14 +8499,14 @@ Traveling Salesman Heuristic},
 }
 
 @Article{ImaYagNag2009:ejor,
-  author =       {Takashi Imamichi} #and# Yagiura #and# {Hiroshi Nagamochi},
-  title =        {An Iterated Local Search Algorithm Based on Nonlinear Programming
-               for the Irregular Strip Packing Problem},
-  journal =      do,
-  year =         2009,
-  volume =       6,
-  number =       4,
-  pages =        {345--361}
+  author       = {Takashi Imamichi} #and# Yagiura #and# {Hiroshi Nagamochi},
+  title        = {An Iterated Local Search Algorithm Based on Nonlinear
+                  Programming for the Irregular Strip Packing Problem},
+  journal      = do,
+  year         = 2009,
+  volume       = 6,
+  number       = 4,
+  pages        = {345--361}
 }
 
 @Article{Inselberg1985pc,
@@ -9140,24 +9181,42 @@ Traveling Salesman Heuristic},
   year =         2003,
 }
 
+@Article{KalHasHemSor2023deeprl,
+  author       = {Kallestad, Jakob and Hasibi, Ramin and Hemmati, Ahmad} #and#
+                  Sorensen,
+  title        = {A general deep reinforcement learning hyperheuristic
+                  framework for solving combinatorial optimization problems},
+  journal      = ejor,
+  year         = 2023,
+  volume       = 309,
+  number       = 1,
+  pages        = {446--468},
+  month        = aug,
+  doi          = {10.1016/j.ejor.2023.01.017},
+  keywords     = {Deep RL, hyper-heuristic, ALNS}
+}
+
 @Article{KanHeWei2013,
-  author =       {Qinma Kang and Hong He and Jun Wei},
-  title =        {An Effective Iterated Greedy Algorithm for Reliability-oriented Task Allocation in Distributed Computing Systems},
-  journal =      jpdc,
-  year =         2013,
-  volume =       73,
-  number =       8,
-  pages =        {1106--1115}
+  author       = {Qinma Kang and Hong He and Jun Wei},
+  title        = {An Effective Iterated Greedy Algorithm for
+                  Reliability-oriented Task Allocation in Distributed Computing
+                  Systems},
+  journal      = jpdc,
+  year         = 2013,
+  volume       = 73,
+  number       = 8,
+  pages        = {1106--1115}
 }
 
 @Article{Kar2016,
-  author = {Korhan Karabulut},
-  title = "A hybrid iterated greedy algorithm for total tardiness minimization in permutation flowshops",
-  journal = cie,
-  volume = 98,
-  number = "Supplement C",
-  pages = {300 -- 307},
-  year = 2016
+  author       = {Korhan Karabulut},
+  title        = {A hybrid iterated greedy algorithm for total tardiness
+                  minimization in permutation flowshops},
+  journal      = cie,
+  year         = 2016,
+  volume       = 98,
+  number       = {Supplement C},
+  pages        = {300 -- 307}
 }
 
 @Article{KarAka2009:airev,
@@ -9191,6 +9250,46 @@ Traveling Salesman Heuristic},
   year =         2010,
   keywords =     "TDEA",
   doi =          {10.1109/TEVC.2009.2033586}
+}
+
+@Article{KarMohMey2022ml,
+  author       = {Maryam Karimi-Mamaghan and Mehrdad Mohammadi and Patrick
+                  Meyer and Amir Mohammad Karimi-Mamaghan} #and# Talbi,
+  title        = {Machine learning at the service of meta-heuristics for
+                  solving combinatorial optimization problems: A
+                  state-of-the-art},
+  journal      = ejor,
+  year         = 2022,
+  volume       = 296,
+  number       = 2,
+  pages        = {393--422},
+  doi          = {10.1016/j.ejor.2021.04.032},
+  keywords     = {Meta-heuristics, Machine learning, Combinatorial optimization
+                  problems, State-of-the-art},
+  abstract     = {In recent years, there has been a growing research interest
+                  in integrating machine learning techniques into
+                  meta-heuristics for solving combinatorial optimization
+                  problems. This integration aims to lead meta-heuristics
+                  toward an efficient, effective, and robust search and improve
+                  their performance in terms of solution quality, convergence
+                  rate, and robustness. Since various integration methods with
+                  different purposes have been developed, there is a need to
+                  review the recent advances in using machine learning
+                  techniques to improve meta-heuristics. To the best of our
+                  knowledge, the literature is deprived of having a
+                  comprehensive yet technical review. To fill this gap, this
+                  paper provides such a review on the use of machine learning
+                  techniques in the design of different elements of
+                  meta-heuristics for different purposes including algorithm
+                  selection, fitness evaluation, initialization, evolution,
+                  parameter setting, and cooperation. First, we describe the
+                  key concepts and preliminaries of each of these ways of
+                  integration. Then, the recent advances in each way of
+                  integration are reviewed and classified based on a proposed
+                  unified taxonomy. Finally, we provide a technical discussion
+                  on the advantages, limitations, requirements, and challenges
+                  of implementing each of these integration ways, followed by
+                  promising future research directions.}
 }
 
 @Article{KarShiDai05:medicine,
@@ -11919,6 +12018,18 @@ algorithm configuration techniques to multi-objective algorithms.}
   annote = "Discusses a priori (scalarized) methods."
 }
 
+@Article{MarCavHer2023repr,
+  author       = Martin-Santamaria_R #and# {Cavero, Sergio and Herrán, Alberto}
+                  #and# Duarte_A #and# Colmenar_JM,
+  title        = {A Practical Methodology for Reproducible Experimentation: An
+                  Application to the Double-Row Facility Layout Problem},
+  journal      = ec,
+  year         = 2023,
+  doi          = {10.1162/evco_a_00317},
+  publisher    = {MIT Press},
+  keywords     = "irace"
+}
+
 @Article{MarDeBHaeVanSnoBae07,
   author =       {D. Martens and M. De Backer and R. Haesen and
                   J. Vanthienen and M. Snoeck and B. Baesens},
@@ -13329,6 +13440,42 @@ algorithm configuration techniques to multi-objective algorithms.}
   year = 	 2017,
   volume = 	 251,
   pages = 	 {35--61}
+}
+
+@Article{NinYou2019optunc,
+  author       = {Chao Ning and Fengqi You},
+  title        = {Optimization under uncertainty in the era of big data and
+                  deep learning: When machine learning meets mathematical
+                  programming},
+  journal      = compchemeng,
+  year         = 2019,
+  volume       = 125,
+  pages        = {434--448},
+  doi          = {10.1016/j.compchemeng.2019.03.034},
+  keywords     = {Data-driven optimization, Decision making under uncertainty,
+                  Big data, Machine learning, Deep learning},
+  abstract     = {This paper reviews recent advances in the field of
+                  optimization under uncertainty via a modern data lens,
+                  highlights key research challenges and promise of data-driven
+                  optimization that organically integrates machine learning and
+                  mathematical programming for decision-making under
+                  uncertainty, and identifies potential research
+                  opportunities. A brief review of classical mathematical
+                  programming techniques for hedging against uncertainty is
+                  first presented, along with their wide spectrum of
+                  applications in Process Systems Engineering. A comprehensive
+                  review and classification of the relevant publications on
+                  data-driven distributionally robust optimization, data-driven
+                  chance constrained program, data-driven robust optimization,
+                  and data-driven scenario-based optimization is then
+                  presented. This paper also identifies fertile avenues for
+                  future research that focuses on a closed-loop data-driven
+                  optimization framework, which allows the feedback from
+                  mathematical programming to machine learning, as well as
+                  scenario-based optimization leveraging the power of deep
+                  learning techniques. Perspectives on online learning-based
+                  data-driven multistage optimization with a
+                  learning-while-optimizing scheme are presented.}
 }
 
 @Article{NisTanSugMiy2019item,
