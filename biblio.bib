@@ -1435,10 +1435,13 @@ Assignment with Controllable Processing Times},
 }
 
 @InCollection{BieMarLinHut2018lion,
-  title        = {Cave: Configuration assessment, visualization and evaluation},
-  author       = Biedenkapp #and# {Marben, Joshua} #and# Lindauer_M  #and# Hutter,
+  author       = Biedenkapp #and# {Marben, Joshua} #and# Lindauer_M #and#
+                  Hutter,
+  title        = {{CAVE}: Configuration assessment, visualization and
+                  evaluation},
   pages        = {115--130},
-  crossref     = "LION2018"
+  crossref     = {LION2018},
+  doi          = {10.1007/978-3-030-05348-2_10}
 }
 
 @InCollection{BilPar1995:aisb,
@@ -5059,6 +5062,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        "1--35",
 }
 
+@InCollection{GolSolMoi2017gvizier,
+  author       = {Daniel Golovin and Benjamin Solnik and Subhodeep Moitra and
+                  Greg Kochanski and John Karro and D. Sculley},
+  title        = {{Google} {Vizier}: {A} Service for Black-Box Optimization},
+  pages        = {1487--1495},
+  crossref     = {SIGKDD2017},
+  doi          = {10.1145/3097983.3098043}
+}
+
 @InCollection{GolSouGol2006:pso,
   title =        {Particle Swarm for the Traveling Salesman Problem},
   author =       Goldbarg_EFG #and# {Souza, Givanaldo R.} #and# Goldbarg_MC,
@@ -5690,6 +5702,38 @@ doi =           {10.1007/978-3-642-38516-2_16},
   note =         {Second edition (1999)},
 }
 
+@InCollection{Hoo2004discover,
+  author       = {Hooker, Giles},
+  title        = {Discovering Additive Structure in Black Box Functions},
+  pages        = {575--580},
+  crossref     = {SIGKDD2004},
+  doi          = {10.1145/1014052.1014122},
+  abstract     = {Many automated learning procedures lack interpretability,
+                  operating effectively as a black box: providing a prediction
+                  tool but no explanation of the underlying dynamics that drive
+                  it. A common approach to interpretation is to plot the
+                  dependence of a learned function on one or two predictors. We
+                  present a method that seeks not to display the behavior of a
+                  function, but to evaluate the importance of non-additive
+                  interactions within any set of variables. Should the function
+                  be close to a sum of low dimensional components, these
+                  components can be viewed and even modeled
+                  parametrically. Alternatively, the work here provides an
+                  indication of where intrinsically high-dimensional behavior
+                  takes place.The calculations used in this paper correspond
+                  closely with the functional ANOVA decomposition; a
+                  well-developed construction in Statistics. In particular, the
+                  proposed score of interaction importance measures the loss
+                  associated with the projection of the prediction function
+                  onto a space of additive models. The algorithm runs in linear
+                  time and we present displays of the output as a graphical
+                  model of the function for interpretation purposes.},
+  numpages     = 6,
+  keywords     = {diagnostics, functional ANOVA, feature selection,
+                  interpretation, visualization, additive models, draphical
+                  models},
+}
+
 @InCollection{HooHutLey2021acsat,
   author       = Hoos #and# Hutter #and# Leyton-Brown,
   title        = {Automated Configuration and Selection of {SAT} Solvers},
@@ -5891,13 +5935,38 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{HutHooLey2013lion,
-  author =       Hutter #and# Hoos #and# Leyton-Brown,
-  title =        {Identifying Key Algorithm Parameters and Instance Features
+  author       = Hutter #and# Hoos #and# Leyton-Brown,
+  title        = {Identifying Key Algorithm Parameters and Instance Features
                   using Forward Selection},
-  crossref =     "LION2013",
-  pages =        {364--381},
-  doi =          {10.1007/978-3-642-44973-4_40},
-  keywords =     "parameter importance"
+  pages        = {364--381},
+  crossref     = {LION2013},
+  doi          = {10.1007/978-3-642-44973-4_40},
+  abstract     = {Most state-of-the-art algorithms for large-scale optimization
+                  problems expose free parameters, giving rise to combinatorial
+                  spaces of possible configurations. Typically, these spaces
+                  are hard for humans to understand. In this work, we study a
+                  model-based approach for identifying a small set of both
+                  algorithm parameters and instance features that suffices for
+                  predicting empirical algorithm performance well. Our
+                  empirical analyses on a wide variety of hard combinatorial
+                  problem benchmarks spanning SAT, MIP, and TSP show that--for
+                  parameter configurations sampled uniformly at random--very
+                  good performance predictions can typically be obtained based
+                  on just two key parameters, and that similarly, few instance
+                  features and algorithm parameters suffice to predict the most
+                  salient algorithm performance characteristics in the combined
+                  configuration/feature space. We also use these models to
+                  identify settings of these key parameters that are predicted
+                  to achieve the best overall performance, both on average
+                  across instances and in an instance-specific way. This serves
+                  as a further way of evaluating model quality and also
+                  provides a tool for further understanding the parameter
+                  space. We provide software for carrying out this analysis on
+                  arbitrary problem domains and hope that it will help
+                  algorithm developers gain insights into the key parameters of
+                  their algorithms, the key features of their instances, and
+                  their interactions.},
+  keywords     = {parameter importance}
 }
 
 @InProceedings{HutHooLey2014icml,
@@ -6812,21 +6881,21 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Misc{Keras,
-  author =       "Keras development team",
-  title =        {Keras},
-  year =         2017,
-  howpublished = {\url{https://keras.io}}
+  author       = {Chollet, Fran\c{c}ois and others},
+  title        = {Keras},
+  howpublished = {\url{https://keras.io}},
+  year         = 2015,
 }
 
 @InCollection{Kerrisk05:POSIX-threads,
-  author =       {M. Kerrisk},
-  booktitle =        {Linux Programmer's Manual},
-  title =      {pthreads - {POSIX} Threads},
-  year =         2021,
-  type =         {{Section}},
-  note =         "(Last accessed Feb 22 2023)",
-  chapter = 7,
-  publisher = "\url{https://man7.org/linux/man-pages/man7/pthreads.7.html}"
+  author       = {M. Kerrisk},
+  title        = {pthreads - {POSIX} Threads},
+  booktitle    = {Linux Programmer's Manual},
+  publisher    = {\url{https://man7.org/linux/man-pages/man7/pthreads.7.html}},
+  year         = 2021,
+  type         = {{Section}},
+  chapter      = 7,
+  note         = {(Last accessed Feb 22 2023)}
 }
 
 @InCollection{KhaYaoDeb2003,
@@ -6933,6 +7002,12 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   {https://papers.nips.cc/paper_files/paper/2021/hash/564127c03caab942e503ee6f810f54fd-Abstract.html},
   keywords     = {Deep RL, TSP, prize collecting, PCTSP, CVRP, routing,
                   attention model}
+}
+
+@InProceedings{KinBa2015adam,
+  author       = {Diederik P. Kingma and Jimmy Ba},
+  title        = {Adam: {A} Method for Stochastic Optimization},
+  crossref     = {ICLR2015}
 }
 
 @InProceedings{Kno2005:isda,
@@ -12311,6 +12386,39 @@ doi =           {10.1007/978-3-642-38516-2_16},
   volume =       37,
   year =         1987,
   publisher =    springer
+}
+
+@InCollection{VanHut2018hyper,
+  author       = VanRijn_J #and# Hutter,
+  title        = {Hyperparameter Importance Across Datasets},
+  pages        = {2367--2376},
+  crossref     = {SIGKDD2018},
+  doi          = {10.1145/3219819.3220058},
+  abstract     = {With the advent of automated machine learning, automated
+                  hyperparameter optimization methods are by now routinely used
+                  in data mining. However, this progress is not yet matched by
+                  equal progress on automatic analyses that yield information
+                  beyond performance-optimizing hyperparameter settings. In
+                  this work, we aim to answer the following two questions:
+                  Given an algorithm, what are generally its most important
+                  hyperparameters, and what are typically good values for
+                  these? We present methodology and a framework to answer these
+                  questions based on meta-learning across many datasets. We
+                  apply this methodology using the experimental meta-data
+                  available on OpenML to determine the most important
+                  hyperparameters of support vector machines, random forests
+                  and Adaboost, and to infer priors for all their
+                  hyperparameters. The results, obtained fully automatically,
+                  provide a quantitative basis to focus efforts in both manual
+                  algorithm design and in automated hyperparameter
+                  optimization. The conducted experiments confirm that the
+                  hyperparameters selected by the proposed method are indeed
+                  the most important ones and that the obtained priors also
+                  lead to statistically significant improvements in
+                  hyperparameter optimization.},
+  numpages     = 10,
+  keywords     = {hyperparameter optimization, meta-learning, hyperparameter
+                  importance}
 }
 
 @InCollection{VanKorBlo2018,

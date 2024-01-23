@@ -709,11 +709,13 @@
 }
 
 @Article{ArnSanSorVid2019,
-  author =       Arnold_F #and# {Santana, \'{I}talo} #and# Sorensen #and# Vidal_T,
-  title =        "{PILS}: Exploring high-order neighborhoods by pattern mining and injection",
-  journal =      arxiv # {1912.11462},
-  year =         2019,
-  url =          {http://arxiv.org/abs/1912.11462}
+  author       = Arnold_F #and# {Santana, \'{I}talo} #and# Sorensen #and#
+                  Vidal_T,
+  title        = {{PILS}: Exploring high-order neighborhoods by pattern mining
+                  and injection},
+  journal      = arxiv # {1912.11462 [cs.AI]},
+  year         = 2019,
+  doi          = {10.48550/arXiv.1912.11462}
 }
 
 @Article{ArnSor2019knowledge,
@@ -2836,6 +2838,28 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   making and search for a radar waveform application as well as
                   for well-known test functions.",
   doi =          {10.1162/evco.2009.17.2.135},
+}
+
+@Article{Broyden1970bfgs,
+  author       = {Broyden, C. G.},
+  title        = {The Convergence of a Class of Double-rank Minimization
+                  Algorithms 1. General Considerations},
+  journal      = imajam,
+  year         = 1970,
+  volume       = 6,
+  number       = 1,
+  pages        = {76--90},
+  month        = mar,
+  keywords     = {Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm},
+  abstract     = {This paper presents a more detailed analysis of a class of
+                  minimization algorithms, which includes as a special case the
+                  DFP (Davidon-Fletcher-Powell) method, than has previously
+                  appeared. Only quadratic functions are considered but
+                  particular attention is paid to the magnitude of successive
+                  errors and their dependence upon the initial matrix. On the
+                  basis of this a possible explanation of some of the observed
+                  characteristics of the class is tentatively suggested.},
+  doi          = {10.1093/imamat/6.1.76}
 }
 
 @Article{BruHurWer1996,
@@ -8325,12 +8349,42 @@ Traveling Salesman Heuristic},
 }
 
 @Article{HutXuHooLey2014,
-  title =        {Algorithm runtime prediction: Methods \& evaluation},
-  author =       Hutter #and# Xu_Lin #and# Hoos #and# Leyton-Brown,
-  journal =      aij,
-  volume =       206,
-  pages =        {79--111},
-  year =         2014,
+  author       = Hutter #and# Xu_Lin #and# Hoos #and# Leyton-Brown,
+  title        = {Algorithm Runtime Prediction: Methods \& evaluation},
+  journal      = aij,
+  year         = 2014,
+  volume       = 206,
+  pages        = {79--111},
+  doi          = {10.1016/j.artint.2013.10.003},
+  abstract     = {Perhaps surprisingly, it is possible to predict how long an
+                  algorithm will take to run on a previously unseen input,
+                  using machine learning techniques to build a model of the
+                  algorithm's runtime as a function of problem-specific
+                  instance features. Such models have important applications to
+                  algorithm analysis, portfolio-based algorithm selection, and
+                  the automatic configuration of parameterized algorithms. Over
+                  the past decade, a wide variety of techniques have been
+                  studied for building such models. Here, we describe
+                  extensions and improvements of existing models, new families
+                  of models, and---perhaps most importantly---a much more thorough
+                  treatment of algorithm parameters as model inputs. We also
+                  comprehensively describe new and existing features for
+                  predicting algorithm runtime for propositional satisfiability
+                  (SAT), travelling salesperson (TSP) and mixed integer
+                  programming (MIP) problems. We evaluate these innovations
+                  through the largest empirical analysis of its kind, comparing
+                  to a wide range of runtime modelling techniques from the
+                  literature. Our experiments consider 11 algorithms and 35
+                  instance distributions; they also span a very wide range of
+                  SAT, MIP, and TSP instances, with the least structured having
+                  been generated uniformly at random and the most structured
+                  having emerged from real industrial applications. Overall, we
+                  demonstrate that our new models yield substantially better
+                  runtime predictions than previous approaches in terms of
+                  their generalization to new problem instances, to new
+                  algorithms from a parameterized space, and to both
+                  simultaneously.},
+  keywords     = {Empirical performance models; Mixed integer programming; SAT}
 }
 
 @Article{IOHanalyzer,
@@ -9586,6 +9640,19 @@ Traveling Salesman Heuristic},
   pages =        {1719--1732}
 }
 
+@Article{LewKurJoe2009gen,
+  title = {Generating Random Correlation Matrices Based on Vines and Extended Onion Method},
+  author = {Lewandowski, Daniel and Kurowicka, Dorota and Joe, Harry},
+  year = {2009},
+  journaltitle = jmva,
+  volume = {100},
+  number = {9},
+  pages = {1989--2001},
+  doi = {10.1016/j.jmva.2009.04.008},
+  abstract = {We extend and improve two existing methods of generating random correlation matrices, the onion method of Ghosh and Henderson [S. Ghosh, S.G. Henderson, Behavior of the norta method for correlated random vector generation as the dimension increases, ACM Transactions on Modeling and Computer Simulation (TOMACS) 13 (3) (2003) 276-294] and the recently proposed method of Joe [H. Joe, Generating random correlation matrices based on partial correlations, Journal of Multivariate Analysis 97 (2006) 2177-2189] based on partial correlations. The latter is based on the so-called D-vine. We extend the methodology to any regular vine and study the relationship between the multiple correlation and partial correlations on a regular vine. We explain the onion method in terms of elliptical distributions and extend it to allow generating random correlation matrices from the same joint distribution as the vine method. The methods are compared in terms of time necessary to generate 5000 random correlation matrices of given dimensions.},
+  keywords = {Correlation matrix; Dependence vines; Onion method; Partial correlation; LKJ}
+}
+
 @Article{KinBa2014adam,
   title =        {Adam: A method for stochastic optimization},
   author =       {Kingma, Diederik P. and Ba, Jimmy},
@@ -9593,7 +9660,7 @@ Traveling Salesman Heuristic},
   year =         2014,
   url =          {https://arxiv.org/abs/1412.6980},
   annote =       "Published as a conference paper at the 3rd International
-                  Conference for Learning Representations, San Diego, 2015"
+                  Conference for Learning Representations, San Diego, 2015~\cite{KinBa2015adam}"
 }
 
 @Article{KirTou1985,
@@ -13174,6 +13241,19 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2015,
 }
 
+@Article{MunVilBaaSmi2018ismlc,
+  author       = Munoz_MA #and# {Villanova, Laura and Baatar, Davaatseren}
+                  #and# Smith-Miles_K,
+  title        = {Instance Spaces for Machine Learning Classification},
+  journal      = ml,
+  year         = 2018,
+  volume       = 107,
+  number       = 1,
+  pages        = {109--147},
+  shortjournal = {Mach Learn},
+  doi          = {10.1007/s10994-017-5629-5}
+}
+
 @Article{NagKob2013,
   author =       {Yuichi Nagata and Shigenobu Kobayashi},
   title =        {A Powerful Genetic Algorithm Using Edge Assembly Crossover
@@ -15543,6 +15623,16 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.1115/1.2912596}
 }
 
+@Article{SasBerBie2022deepcave,
+  author       = {Sass, René} #and# {Bergman, Eddie} #and# Biedenkapp #and#
+                  Hutter #and# Lindauer_M,
+  title        = {{DeepCAVE}: An Interactive Analysis Tool for Automated
+                  Machine Learning},
+  journal      = arxiv # {2206.03493 [cs.LG]},
+  year         = 2022,
+  doi          = {10.48550/arXiv.2206.03493}
+}
+
 @Article{Savelsbergh85tw,
   title =        {Local search in routing problems with time windows},
   volume =       4,
@@ -16409,23 +16499,84 @@ algorithm configuration techniques to multi-objective algorithms.}
   publisher =    {Nature Publishing Group}
 }
 
+@Article{SmiBaaWreLew2014isa,
+  author       = Smith-Miles_K #and# {Baatar, Davaatseren and Wreford, Brendan}
+                  #and# Lewis_R,
+  title        = {Towards Objective Measures of Algorithm Performance across
+                  Instance Space},
+  journal      = cor,
+  year         = 2014,
+  volume       = 45,
+  pages        = {12--24},
+  doi          = {10.1016/j.cor.2013.11.015},
+  abstract     = {This paper tackles the difficult but important task of
+                  objective algorithm performance assessment for
+                  optimization. Rather than reporting average performance of
+                  algorithms across a set of chosen instances, which may bias
+                  conclusions, we propose a methodology to enable the strengths
+                  and weaknesses of different optimization algorithms to be
+                  compared across a broader instance space. The results
+                  reported in a recent Computers and Operations Research paper
+                  comparing the performance of graph coloring heuristics are
+                  revisited with this new methodology to demonstrate (i) how
+                  pockets of the instance space can be found where algorithm
+                  performance varies significantly from the average performance
+                  of an algorithm; (ii) how the properties of the instances can
+                  be used to predict algorithm performance on previously unseen
+                  instances with high accuracy; and (iii) how the relative
+                  strengths and weaknesses of each algorithm can be visualized
+                  and measured objectively.},
+  keywords     = {Algorithm selection; Instance Space Analysis; Graph coloring;
+                  Heuristics; Performance prediction}
+}
+
 @Article{SmiBow2015:cor,
-  author = 	 Smith-Miles_K #and# {Simon Bowly},
-  title = 	 {Generating New Test Instances by Evolving in Instance Space},
-  journal = 	 cor,
-  year = 	 2015,
-  volume = 	 63,
-  pages = 	 {102--113}
+  author       = Smith-Miles_K #and# {Simon Bowly},
+  title        = {Generating New Test Instances by Evolving in Instance Space},
+  journal      = cor,
+  year         = 2015,
+  volume       = 63,
+  pages        = {102--113},
+  doi          = {10.1016/j.cor.2015.04.022},
+  abstract     = {Our confidence in the future performance of any algorithm,
+                  including optimization algorithms, depends on how carefully
+                  we select test instances so that the generalization of
+                  algorithm performance on future instances can be inferred. In
+                  recent work, we have established a methodology to generate a
+                  2-d representation of the instance space, comprising a set of
+                  known test instances. This instance space shows the
+                  similarities and differences between the instances using
+                  measurable features or properties, and enables the
+                  performance of algorithms to be viewed across the instance
+                  space, where generalizations can be inferred. The power of
+                  this methodology is the insights that can be generated into
+                  algorithm strengths and weaknesses by examining the regions
+                  in instance space where strong performance can be
+                  expected. The representation of the instance space is
+                  dependent on the choice of test instances however. In this
+                  paper we present a methodology for generating new test
+                  instances with controllable properties, by filling observed
+                  gaps in the instance space. This enables the generation of
+                  rich new sets of test instances to support better the
+                  understanding of algorithm strengths and weaknesses. The
+                  methodology is demonstrated on graph colouring as a case
+                  study.},
+  keywords     = {Benchmarking; Evolving instances; Graph colouring; Instance
+                  space; Test instances}
 }
 
 @Article{SmiChrMun2021where,
-  author = 	 Smith-Miles_K #and# {Jeffrey Christiansen} #and# Munoz_MA,
-  journal =      cor,
-  pages =        105184,
-  title =        {Revisiting where are the hard knapsack problems? via Instance
-                  Space Analysis},
-  volume =       128,
-  year =         2021
+  author       = Smith-Miles_K #and# {Jeffrey Christiansen} #and# Munoz_MA,
+  title        = {Revisiting Where Are the Hard Knapsack Problems? Via
+                  {Instance} {Space} {Analysis}},
+  journal      = cor,
+  year         = 2021,
+  volume       = 128,
+  pages        = 105184,
+  doi          = {10.1016/j.cor.2020.105184},
+  keywords     = {0-1 Knapsack problem; Algorithm portfolios; Algorithm
+                  selection; Instance difficulty; Instance generation; Instance
+                  Space Analysis; Performance evaluation}
 }
 
 @Article{SmiLop2012:cor,
@@ -16436,6 +16587,46 @@ algorithm configuration techniques to multi-objective algorithms.}
   year =         2012,
   volume =       39,
   pages =        {875--889}
+}
+
+@Article{SmiMun2023isa,
+  author       = Smith-Miles_K #and# Munoz_MA,
+  title        = {Instance Space Analysis for Algorithm Testing: Methodology
+                  and Software Tools},
+  journal      = acm-cs,
+  year         = 2023,
+  volume       = 55,
+  number       = 12,
+  month        = mar,
+  issue_date   = {December 2023},
+  doi          = {10.1145/3572895},
+  abstract     = {Instance Space Analysis (ISA) is a recently developed
+                  methodology to (a) support objective testing of algorithms
+                  and (b) assess the diversity of test instances. Representing
+                  test instances as feature vectors, the ISA methodology
+                  extends Rice's 1976 Algorithm Selection Problem framework to
+                  enable visualization of the entire space of possible test
+                  instances, and gain insights into how algorithm performance
+                  is affected by instance properties. Rather than reporting
+                  algorithm performance on average across a chosen set of test
+                  problems, as is standard practice, the ISA methodology offers
+                  a more nuanced understanding of the unique strengths and
+                  weaknesses of algorithms across different regions of the
+                  instance space that may otherwise be hidden on average. It
+                  also facilitates objective assessment of any bias in the
+                  chosen test instances and provides guidance about the
+                  adequacy of benchmark test suites. This article is a
+                  comprehensive tutorial on the ISA methodology that has been
+                  evolving over several years, and includes details of all
+                  algorithms and software tools that are enabling its worldwide
+                  adoption in many disciplines. A case study comparing
+                  algorithms for university timetabling is presented to
+                  illustrate the methodology and tools.},
+  articleno    = 255,
+  numpages     = 31,
+  keywords     = {test instance diversity, benchmarking, timetabling, Algorithm
+                  footprints, MATLAB, software as a service, meta-heuristics,
+                  algorithm selection, meta-learning}
 }
 
 @Article{Smith-Miles2008,
