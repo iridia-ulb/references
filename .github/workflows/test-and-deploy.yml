@@ -112,6 +112,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: web # The folder the action should deploy.
-          clean: false
+          clean: true
+          single-commit: true
           
       - run: echo "🍏 This job's status is ${{ job.status }}."
