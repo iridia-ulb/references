@@ -639,15 +639,15 @@
 }
 
 @Article{AppBlaNew1961,
-  author =       {Appleby, J. S. and Blake, D. V. and Newman, E. A.},
-  title =        {Techniques for producing school timetables on a computer and
+  author       = {Appleby, J. S. and Blake, D. V. and Newman, E. A.},
+  title        = {Techniques for producing school timetables on a computer and
                   their application to other scheduling problems},
-  journal =      {The Computer Journal},
-  volume =       3,
-  number =       4,
-  pages =        {237--245},
-  year =         1961,
-  doi =          {10.1093/comjnl/3.4.237}
+  journal      = comjnl,
+  year         = 1961,
+  volume       = 3,
+  number       = 4,
+  pages        = {237--245},
+  doi          = {10.1093/comjnl/3.4.237}
 }
 
 @Article{AppCoo91,
@@ -2742,6 +2742,23 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   doi =          "10.1109/TEVC.2014.2341711",
   annote =       "Proof that all nondecreasing $(\mu + \lambda)$ archiving algorithms with
                   $\lambda < \mu$ are ineffective."
+}
+
+@Article{Bro1970bfgs,
+  author       = {Broyden, Charles G.},
+  title        = {The Convergence of a Class of Double-rank Minimization
+                  Algorithms: 2. The New Algorithm},
+  journal      = imajam,
+  year         = 1970,
+  volume       = 6,
+  number       = 3,
+  pages        = {222--231},
+  month        = sep,
+  annote       = {One of the four papers that proposed BFGS.},
+  doi          = {10.1093/imamat/6.3.222},
+  eprint       =
+                  {https://academic.oup.com/imamat/article-pdf/6/3/222/1848059/6-3-222.pdf},
+  keywords     = {BFGS}
 }
 
 @Article{BroBadThiZit2013directed,
@@ -6023,6 +6040,22 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   publisher =    springer
 }
 
+@Article{Fle1970bfgs,
+  author       = {Fletcher, Roger},
+  title        = {A new approach to variable metric algorithms},
+  journal      = comjnl,
+  year         = 1970,
+  volume       = 13,
+  number       = 3,
+  pages        = {317--322},
+  month        = sep,
+  annote       = {One of the four papers that proposed BFGS.},
+  doi          = {10.1093/comjnl/13.3.317},
+  eprint       =
+                  {https://academic.oup.com/comjnl/article-pdf/13/3/317/988678/130317.pdf},
+  keywords     = {BFGS}
+}
+
 @Article{FleGlo99,
   title =        {Improved constructive multistart strategies for the
                   quadratic assignment problem using adaptive memory},
@@ -6959,6 +6992,20 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   publisher =    {Elsevier}
 }
 
+@Article{Gol1970bfgs,
+  author       = {Donald Goldfarb},
+  title        = {A Family of Variable-Metric Methods Derived by Variational
+                  Means},
+  journal      = mathcom,
+  year         = 1970,
+  volume       = 24,
+  number       = 109,
+  pages        = {23--26},
+  annote       = {One of the four papers that proposed BFGS.},
+  publisher    = ams-pub,
+  eprint       = {http://www.jstor.org/stable/2004873},
+  keywords     = {BFGS}
+}
 @Article{Gold1990pm,
   title =        {Probability matching, the magnitude of reinforcement, and
                   classifier system bidding},
@@ -7184,16 +7231,16 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{GruFon2002spl,
-  author =       Grunert_da_Fonseca #and# Fonseca,
-  title =        {A link between the multivariate cumulative distribution
+  author       = Grunert_da_Fonseca #and# Fonseca,
+  title        = {A link between the multivariate cumulative distribution
                   function and the hitting function for random closed sets},
-  journal =      spl,
-  year =         2002,
-  volume =       57,
-  number =       2,
-  alias =        {Fonseca02a},
-  pages =        {179--182},
-  doi =          "10.1016/S0167-7152(02)00046-9"
+  journal      = spl,
+  year         = 2002,
+  volume       = 57,
+  number       = 2,
+  pages        = {179--182},
+  alias        = {Fonseca02a},
+  doi          = {10.1016/S0167-7152(02)00046-9}
 }
 
 @Article{GueFonPaq2021hv,
@@ -11287,6 +11334,17 @@ Optimization},
   volume =       23,
 }
 
+@Article{LocSch1999mlsl,
+  author       = {Locatelli, Marco and Schoen, Fabio},
+  title        = {Random Linkage: a family of acceptance/rejection algorithms
+                  for global optimisation.},
+  journal      = mp,
+  year         = 1999,
+  volume       = 85,
+  number       = 2,
+  keywords     = {Multi-Level Single-Linkage (MLSL)}
+}
+
 @Article{LodMarMon2002,
   title =        {Two-dimensional packing problems: A survey},
   author =       Lodi #and# Martello_S #and# Monaci_M,
@@ -12432,7 +12490,7 @@ algorithm configuration techniques to multi-objective algorithms.}
 @Article{McCorPow03demand,
   title =        {Optimal Pump Scheduling in Water Supply Systems with
                   Maximum Demand Charges},
-  author =       McCormick # and # Powell,
+  author =       McCormick # and # Powell_RS,
   publisher =    {ASCE},
   year =         2003,
   journal =      jwrpm,
@@ -12446,31 +12504,29 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Article{McCormick04,
-  author =       McCormick #and# Powell,
-  title =        "Derivation of near-optimal pump schedules for water
-                  distribution by simulated annealing",
-  journal =      jors,
-  year =         2004,
-  volume =       55,
-  number =       7,
-  pages =        {728--736},
-  doi = {10.1057/palgrave.jors.2601718},
-  month =        jul,
-  abstract =     "The scheduling of pumps for clean water distribution
-                  is a partially discrete non-linear problem with many
-                  variables. The scheduling method described in this
-                  paper typically produces costs within 1\% of a
-                  linear program-based solution, and can incorporate
-                  realistic non-linear costs that may be hard to
-                  incorporate in linear programming
-                  formulations. These costs include pump switching and
-                  maximum demand charges. A simplified model is
-                  derived from a standard hydraulic simulator. An
-                  initial schedule is produced by a descent
-                  method. Two-stage simulated annealing then produces
-                  solutions in a few minutes. Iterative recalibration
-                  ensures that the solution agrees closely with the
-                  results from a full hydraulic simulation.",
+  author       = McCormick #and# Powell_RS,
+  title        = {Derivation of near-optimal pump schedules for water
+                  distribution by simulated annealing},
+  journal      = jors,
+  year         = 2004,
+  volume       = 55,
+  number       = 7,
+  pages        = {728--736},
+  month        = jul,
+  doi          = {10.1057/palgrave.jors.2601718},
+  abstract     = {The scheduling of pumps for clean water distribution is a
+                  partially discrete non-linear problem with many
+                  variables. The scheduling method described in this paper
+                  typically produces costs within 1\% of a linear program-based
+                  solution, and can incorporate realistic non-linear costs that
+                  may be hard to incorporate in linear programming
+                  formulations. These costs include pump switching and maximum
+                  demand charges. A simplified model is derived from a standard
+                  hydraulic simulator. An initial schedule is produced by a
+                  descent method. Two-stage simulated annealing then produces
+                  solutions in a few minutes. Iterative recalibration ensures
+                  that the solution agrees closely with the results from a full
+                  hydraulic simulation.}
 }
 
 @Article{McDermott2020nfl,
@@ -16055,6 +16111,22 @@ algorithm configuration techniques to multi-objective algorithms.}
   doi =          {10.1038/s41592-019-0686-2},
 }
 
+@Article{Sha1970bfgs,
+  author       = {David F. Shanno},
+  title        = {Conditioning of Quasi-Newton Methods for Function
+                  Minimization},
+  journal      = mathcom,
+  year         = 1970,
+  volume       = 24,
+  number       = 111,
+  pages        = {647--656},
+  annote       = {One of the four papers that proposed BFGS.},
+  publisher    = ams-pub,
+  issn         = {00255718, 10886842},
+  eprint       = {http://www.jstor.org/stable/2004840},
+  keywords     = {BFGS}
+}
+
 @Article{ShaLopAlm2023hidden,
   author       = Shavarani_Mahdi #and# Lopez-Ibanez #and# Allmendinger,
   title        = {Detecting Hidden and Irrelevant Objectives in Interactive
@@ -17093,16 +17165,16 @@ algorithm configuration techniques to multi-objective algorithms.}
 }
 
 @Article{StoPri1997:de,
-  year =         1997,
-  journal =      jgo,
-  volume =       11,
-  number =       4,
-  title =        {Differential Evolution -- A Simple and Efficient Heuristic
+  author       = {Storn, Rainer and Price, Kenneth},
+  title        = {Differential Evolution -- A Simple and Efficient Heuristic
                   for Global Optimization over Continuous Spaces},
-  author =       {Storn, Rainer and Price, Kenneth},
-  pages =        {341--359},
-  doi =          "10.1023/A:1008202821328",
-  annote =       "Proposed differential evolution"
+  journal      = jgo,
+  year         = 1997,
+  volume       = 11,
+  number       = 4,
+  pages        = {341--359},
+  annote       = {Proposed differential evolution},
+  doi          = {10.1023/A:1008202821328}
 }
 
 @Article{StoSeiZha2018pnas,
@@ -18994,6 +19066,18 @@ Twin-Screw Extrusion Configuration Problem},
   annote =       "epsilon-grid"
 }
 
+@Article{YeDoeWang2022ac,
+  author       = {Furong Ye} #and# Doerr_C #and# {Hao Wang} #and# Baeck_Thomas,
+  title        = {Automated Configuration of Genetic Algorithms by Tuning for
+                  Anytime Performance},
+  journal      = tec,
+  year         = 2022,
+  volume       = 26,
+  number       = 6,
+  pages        = {1526--1538},
+  doi          = {10.1109/TEVC.2022.3159087}
+}
+
 @Article{YuLin2015,
   author =       {Vincent F. Yu and Shih-Wei Lin},
   title =        {Iterated Greedy Heuristic for the Time-dependent
@@ -19005,7 +19089,7 @@ Twin-Screw Extrusion Configuration Problem},
 }
 
 @Article{YuPowSte94,
-  author =       Yu_G #and# Powell #and# Sterling_MJH,
+  author =       Yu_G #and# Powell_RS #and# Sterling_MJH,
   title =        {Optimized Pump Scheduling in Water Distribution
                   Systems},
   journal =      jota,
@@ -19228,7 +19312,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
 }
 
 @Article{powel03:demand,
-  author =       McCormick #and# Powell,
+  author =       McCormick #and# Powell_RS,
   title =        {Optimal Pump Scheduling in Water Supply Systems with Maximum
                   Demand Charges},
   journal =      jwrpm,
