@@ -20,7 +20,7 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: 💡 Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
           
@@ -61,24 +61,21 @@ jobs:
       #     key: ${{ env.cache-version }}-${{ runner.os }}-tinytex
       #     restore-keys: ${{ env.cache-version }}-${{ runner.os }}-tinytex
           
-      - name: Install packages
-        if: ${{ env.FILES_CHANGED != 0 }}
-        run: |
-          sudo apt -y update
-          sudo apt -y install bibtex2html tidy ghostscript qpdf
-
       - uses: r-lib/actions/setup-tinytex@v2-branch
         if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
         env:
           TINYTEX_INSTALLER: TinyTeX-1
-          TINYTEX_VERSION: 2023.09
+          TINYTEX_VERSION: 2023.12
           
       - name: Install additional LaTeX packages
         if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
         run: |
           texlive_packages=./.github/texlive_packages
+          which tlmgr
+          tlmgr --version
           echo "Updating TexLive"
           # Keep no backups (not required, simply makes cache bigger)
+          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
           tlmgr option -- autobackup 0
           echo "Updating tlmgr itself"
           tlmgr update --self
@@ -90,6 +87,12 @@ jobs:
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: cd test && ./test.sh
 
+      - name: Install packages
+        if: ${{ env.FILES_CHANGED != 0 }}
+        run: |
+          sudo apt -y update
+          sudo apt -y install bibtex2html tidy ghostscript qpdf
+        
       - name: Compress PDFs
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: cd test && ./compress.sh testbib.pdf testshortbib.pdf && mv --force -t ../web/ testbib.pdf testshortbib.pdf
