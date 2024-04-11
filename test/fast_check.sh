@@ -1,6 +1,5 @@
 #!/bin/bash
 set -u
-set -o pipefail
 
 for filename in "$@"; do
     case "$filename" in

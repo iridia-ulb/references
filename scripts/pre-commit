@@ -12,26 +12,29 @@ get_pattern_files() {
 }
 # Get all changed bib files
 BIB_FILES=$(get_pattern_files .bib)
+failed() {
+    echo -e '\033[41m FAILED\033[0m !'
+    echo "$1"
+    exit 1
+}
 
 if [[ -n "$BIB_FILES" ]]; then
     echo -n "Pre-commit check ........ "
-    if ! ./test/fast_check.sh $BIB_FILES; then
-        echo "FAILED!"
-        exit 1
+    if ERROR=$(./test/fast_check.sh $BIB_FILES); then
+        echo "passed!"
+    else
+        failed "$ERROR"
     fi
-    echo "passed!"
     echo -n "Linter .................. "
     if ! ./scripts/linter $BIB_FILES; then
-        echo "FAILED! The linter made some changes. Revise them and try again."
-        exit 1
+        failed "The linter made some changes. Revise them and try again."
     fi
     echo "passed!"
     case "$BIB_FILES" in
         *"crossref.bib"*|*"biblio.bib"*)
             echo -n "bibcheck.R .............. "
             if ! Rscript ./scripts/bibcheck.R; then
-                echo "FAILED!"
-                exit 1
+                failed
             fi
             echo "passed!"
     esac
