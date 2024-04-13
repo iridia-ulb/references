@@ -3396,22 +3396,23 @@ doi = "10.1007/978-0-387-36797-2"
 }
 
 @Misc{DesRitLop2020acviz,
-  author =       DeSouza #and# Ritt #and# Lopez-Ibanez #and# Perez_L,
-  title =        {{\softwarepackage{ACVIZ}}: A Tool for the Visual Analysis of
+  author       = DeSouza #and# Ritt #and# Lopez-Ibanez #and# Perez_L,
+  title        = {{\softwarepackage{ACVIZ}}: A Tool for the Visual Analysis of
                   the Configuration of Algorithms with {\rpackage{irace}} --
                   Source Code},
   howpublished = {\url{https://github.com/souzamarcelo/acviz}},
-  year =         2020
+  year         = 2020
 }
 
 @Misc{DesRitLopPer2020zenodo,
-  author =       DeSouza #and# Ritt #and# Lopez-Ibanez #and# Perez_L,
-  title =        {{\softwarepackage{ACVIZ}}: Algorithm Configuration
-                  Visualizations for {\rpackage{irace}}: Supplementary material},
-  month =        sep,
-  year =         2020,
-  publisher =    {Zenodo},
-  howpublished = {\url{http://doi.org/10.5281/zenodo.4714582}}
+  author       = DeSouza #and# Ritt #and# Lopez-Ibanez #and# Perez_L,
+  title        = {{\softwarepackage{ACVIZ}}: Algorithm Configuration
+                  Visualizations for {\rpackage{irace}}: Supplementary
+                  material},
+  howpublished = {\url{http://doi.org/10.5281/zenodo.4714582}},
+  month        = sep,
+  year         = 2020,
+  publisher    = {Zenodo}
 }
 
 @PhDThesis{Dewez2004PhD,
@@ -4271,6 +4272,13 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   in Industry},
   crossref =     "GECCO2016c",
   pages =        {937--940},
+}
+
+@InCollection{FeuHut2019hpo,
+  author       = Feurer_M #and# Hutter,
+  title        = {Hyperparameter Optimization},
+  pages        = {3--33},
+  crossref     = {HutKotVan2019automl}
 }
 
 @InProceedings{FeuKleEggSprBluHut2015autosklearn,
@@ -6468,14 +6476,14 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{IruLop2021gecco,
-  author =       Irurozki_E #and# Lopez-Ibanez,
-  title =        "Unbalanced Mallows Models for Optimizing Expensive Black-Box
-                  Permutation Problems",
-  doi =          "10.1145/3449639.3459366",
-  crossref =     "GECCO2021",
-  pages =        "225--233",
-  supplement =   "https://zenodo.org/record/4500974",
-  abstract =     "Expensive black-box combinatorial optimization problems arise
+  author       = Irurozki_E #and# Lopez-Ibanez,
+  title        = {Unbalanced Mallows Models for Optimizing Expensive Black-Box
+                  Permutation Problems},
+  pages        = {225--233},
+  doi          = {10.1145/3449639.3459366},
+  crossref     = {GECCO2021},
+  supplement   = {https://doi.org/10.5281/zenodo.4500974},
+  abstract     = {Expensive black-box combinatorial optimization problems arise
                   in practice when the objective function is evaluated by means
                   of a simulator or a real-world experiment. Since each fitness
                   evaluation is expensive in terms of time or resources, only a
@@ -6495,8 +6503,8 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   a Bayesian optimization algorithm for combinatorial
                   optimization. Moreover, the computational complexity of UMM
                   increases linearly with both the number of function
-                  evaluations and the permutation size.",
-  keywords =     "UMM, Permutation, Expensive, Black-box"
+                  evaluations and the permutation size.},
+  keywords     = {UMM, Permutation, Expensive, Black-box}
 }
 
 @InCollection{IshMasNoj2015gecco,
@@ -7555,13 +7563,13 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Book{Lewis2016,
-  title =        {A Guide to Graph Colouring: Algorithms and Applications},
-  author =       Lewis_R,
-  year =         2016,
-  doi =          {10.1007/978-3-319-25730-3},
-  publisher =    springer,
- address = add-cham,
-   annote =       "Supplementary material available at \cite{Lewis2016sup}",
+  author       = Lewis_R,
+  title        = {A Guide to Graph Colouring: Algorithms and Applications},
+  year         = 2016,
+  publisher    = springer,
+  address      = add-cham,
+  annote       = {Supplementary material available at \cite{Lewis2016sup}},
+  doi          = {10.1007/978-3-319-25730-3}
 }
 
 @Misc{Lewis2016sup,
@@ -8340,12 +8348,12 @@ doi =           {10.1007/978-3-642-38516-2_16},
 
 @InCollection{LopStuDor2017aco,
   author       = Lopez-Ibanez #and# Stuetzle #and# Dorigo,
-  title        = "Ant Colony Optimization: A Component-Wise Overview",
-  crossref     = "Heuristics2017",
-  doi          = "10.1007/978-3-319-07124-4_21",
-  pages        = "371--407",
-  supplement   = {http://iridia.ulb.ac.be/aco-tsp-qap/},
-  annote       = "Proposed ACOTSPQAP software"
+  title        = {Ant Colony Optimization: A Component-Wise Overview},
+  pages        = {371--407},
+  annote       = {Proposed ACOTSPQAP software},
+  crossref     = {Heuristics2017},
+  doi          = {10.1007/978-3-319-07124-4_21},
+  supplement   = {http://iridia.ulb.ac.be/aco-tsp-qap/}
 }
 
 @PhDThesis{LopezDiploma,
@@ -9705,6 +9713,16 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2020,
   organization = {IEEE},
   pages =        {1087--1094}
+}
+
+@Misc{PanVerLopBac2024transfer-supp,
+  author       = {Shuaiqun Pan and Diederick Vermetten and Manuel López-Ibáñez
+                  and Thomas Bäck and Hao Wang},
+  title        = {Transfer Learning of Surrogate Models via Domain Affine
+                  Transformation: Supplementary Material},
+  howpublished = {\url{https://doi.org/10.5281/zenodo.10608095}},
+  year         = 2024,
+  publisher    = {Zenodo}
 }
 
 @Book{PapSte1982:ph,
@@ -11547,12 +11565,34 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InProceedings{SnoSweZemAda2014icml,
-  author =       Snoek_J #and# Swersky_K #and# Zemel_R #and# Adams_RP,
-  title =        "Input Warping for {Bayesian} Optimization of Non-Stationary Functions",
-  crossref =     "ICML2014",
-  pages =        {1674--1682}
+  author       = Snoek_J #and# Swersky_K #and# Zemel_R #and# Adams_RP,
+  title        = {Input Warping for {Bayesian} Optimization of Non-Stationary
+                  Functions},
+  pages        = {1674--1682},
+  crossref     = {ICML2014},
+  abstract     = {Bayesian optimization has proven to be a highly effective
+                  methodology for the global optimization of unknown, expensive
+                  and multimodal functions.  The ability to accurately model
+                  distributions over functions is critical to the effectiveness
+                  of Bayesian optimization.  Although Gaussian processes
+                  provide a flexible prior over functions, there are various
+                  classes of functions that remain difficult to model.  One of
+                  the most frequently occurring of these is the class of
+                  non-stationary functions.  The optimization of the
+                  hyperparameters of machine learning algorithms is a problem
+                  domain in which parameters are often manually transformed a
+                  priori, for example by optimizing in "log-space", to mitigate
+                  the effects of spatially-varying length scale.  We develop a
+                  methodology for automatically learning a wide family of
+                  bijective transformations or warpings of the input space
+                  using the Beta cumulative distribution function.  We further
+                  extend the warping framework to multi-task Bayesian
+                  optimization so that multiple tasks can be warped into a
+                  jointly stationary space. On a set of challenging benchmark
+                  optimization tasks, we observe that the inclusion of warping
+                  greatly improves on the state-of-the-art, producing better
+                  results faster and more reliably.}
 }
-
 @InCollection{SocKnoSam02:ants,
   author =       Socha #and# Knowles #and# Sampels_M,
   title =        {A {\MaxMinAntSystem} for the University Course Timetabling Problem},
