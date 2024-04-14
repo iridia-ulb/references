@@ -1,6 +1,23 @@
 #!/bin/bash
 set -u
 
+check_bad_thing() {
+    WHAT=$1
+    MSG=$2
+    TYPE=${3:-"-e"}
+    WHERE=${4:-$FILES}
+    grep --quiet $TYPE $WHAT $WHERE
+    if [ $? -eq 0 ]; then
+        echo "Error: $MSG"
+        grep -H -n $TYPE $WHAT $WHERE
+        exit 1
+    fi
+}
+
+check_bad_thing_E() {
+    check_bad_thing "$1" "$2" "-E"
+}
+
 for filename in "$@"; do
     case "$filename" in
         *"biblio.bib")
@@ -41,10 +58,15 @@ done
 checkdups=0
 for filename in "$@"; do
     case "$filename" in
-        *"authors.bib"|*"journals.bib"|*"abbrev.bib")
+        *"journals.bib"|*"abbrev.bib")
             checkdups=1
             break
             ;;
+        *"authors.bib")
+            checkdups=1
+            check_bad_thing "^@string.\+=.*[[:space:]\"][[:space:]]*[A-Z]\.\([A-Z]\.\)\+" "Initials must be separated by a space" "-e" "$filename"
+            ;;
+
     esac
 done
 
@@ -67,22 +89,8 @@ fi
 # FIXME: This may not work with spaces in directories.
 FILES=$@
 
-check_bad_thing() {
-    WHAT=$1
-    MSG=$2
-    TYPE=${3:-"-e"}
-    grep --quiet $TYPE $WHAT $FILES
-    if [ $? -eq 0 ]; then
-        echo "Error: $MSG"
-        grep -H -n $TYPE $WHAT $FILES
-        exit 1
-    fi
-}
 
-check_bad_thing_E() {
-    check_bad_thing "$1" "$2" "-E"
-}
-
+check_bad_thing "^\s*\(author\|editor\)\s\+=.*[[:space:]\"{][[:space:]]*[A-Z]\.\([A-Z]\.\)\+" "Author or editor initials must be separated by a space"
 check_bad_thing "^\s*\(biburl\|timestamp\|article-number\|copyright\)" "Please remove these fields" "--ignore-case -e"
 check_bad_thing "^\s*journaltitle" "'journaltitle' should be just 'journal'" "--ignore-case -e"
 check_bad_thing "doi[[:space:]]*=.\+http" "the doi field should not be an URL"
