@@ -14,7 +14,7 @@ for filename in "$@"; do
             sed -i 's/[[:space:]]\+$//' $tmpfile
             # Canonical entry types
             for pattern in $TYPES; do
-                sed -i "s/^\s*@${pattern}/@${pattern}/gi" $tmpfile
+                sed -i "s/^\s*@${pattern}\s*/@${pattern}/gi" $tmpfile
             done
             # Lowercase field names.
             sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $tmpfile
