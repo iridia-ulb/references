@@ -20,6 +20,10 @@ for filename in "$@"; do
             sed -i -E 's/^(\s*[a-zA-Z]+\s*=)/\L\1/g' $tmpfile
             # "# and #" -> #and#
             sed -i -E 's/#\s*and\s*#/#and#/g' $tmpfile
+            # '# " and others "' -> '# and_others
+            sed -i -E 's/#\s*["{]\s*and others\s*["}]/# and_others/g' $tmpfile
+            sed -i -E 's/#\s*and\s*#\s*["{]\s*others\s*["}]/# and_others/g' $tmpfile
+            sed -i -E 's/#\s*and_others/# and_others/g' $tmpfile
 
             if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
                 CHANGED=1
