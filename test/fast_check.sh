@@ -91,6 +91,7 @@ FILES=$@
 
 
 check_bad_thing "^\s*\(author\|editor\)\s\+=.*[[:space:]\"{][[:space:]]*[A-Z]\.\([A-Z]\.\)\+" "Author or editor initials must be separated by a space"
+check_bad_thing "^\s*month\s*=\s*[{\"]\?[0-9]" "Please do not use numbers for 'month', use jan, feb, mar, ..., nov, dec." "-e"
 check_bad_thing "^\s*\(biburl\|timestamp\|article-number\|copyright\)" "Please remove these fields" "--ignore-case -e"
 check_bad_thing "^\s*journaltitle" "'journaltitle' should be just 'journal'" "--ignore-case -e"
 check_bad_thing "doi[[:space:]]*=.\+http" "the doi field should not be an URL"
