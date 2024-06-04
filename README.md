@@ -639,9 +639,9 @@ the file.
    The best way is to edit the BibTeX style file (`.bst`) to not emit these
    fields. Unfortunately, editing `.bst` files is sometimes not trivial,
    but often one can find examples in Internet. If you edit a popular
-   bst file to make it shorter, commit the new version to optbib so
-   others can use it. Currently, there is an abbreviated version of
-   Springer's LNCS bst file.
+   bst file to make it shorter, please [contribute the new version to the repository](#contributing-to-the-iridia-bibtex-repository) so that
+   others can use it. Currently, there is an [abbreviated version of
+   Springer's LNCS `.bst` file](/bibstyles/splncs04abbrev.bst) and an [abbreviated version of ACM `.bst` file](/bibstyles/ACM-Reference-Format-abbrv.bst).
 
 
 #### Q: I made a mistake in the commit message. Can this be fixed? ####
@@ -652,7 +652,7 @@ the file.
 
 #### Q: There is a separate entry for each cross-reference, and individual references cite it. I think it is ugly, how to prevent this? ####
 
-**A:** Unhelpfully, bibtex generates by default separated entries for
+**A:** Unhelpfully, bibtex generates by default separate entries for
    cross references. To avoid this, use `bibtex -min-crossrefs=9000`.
    Or use the [bibtex wrapper](/scripts/bibtex) included in the repository.
    If you use Overleaf, you can add a file [`.latexmkrc`](/test/.latexmkrc) with the following
@@ -663,14 +663,14 @@ the file.
 
 #### Q: Why I should not use `{{Title}}` in title? If not, should I use  title case or sentence case? ####
 
-**A:** Because it prevents the bibtex style to change the case of the
-   title to the style used by the journal, it breaks consistency: Some
+**A:** Because it prevents the bibtex style from changing the case of the
+   title to the style used by the journal and it breaks consistency: Some
    titles will be in a case style different from others. In fact,
    most journals use sentence case for journal papers. Sentence case
    is like "This is a title". However, some journals use title case:
    "This Is a Title". Since a bibtex style can convert from title case
    to sentence case, but not the other way around, it is always better
-   to use title case in bib files without adding braces around the
+   to use title case in `.bib` files without adding braces around the
    whole title. That is, instead of:
 
     title = {{This is a title that Manuel does NOT like}}
