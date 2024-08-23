@@ -29,7 +29,6 @@ cp bib/test/.latexmkrc .
 mv bib/.git bib/_git
 git add -f .gitignore .latexmkrc bib/README.md bib/*.bib
 git ci -a -m "Setup https://github.com/iridia-ulb/references"
-git push
 mv bib/_git bib/.git
 popd
 echo "$0: Please add \bibliography{bib/abbrev,bib/journals,bib/authors,bib/articles,bib/biblio,bib/crossref} to the main.tex file"
