@@ -29,7 +29,8 @@
 @PREAMBLE{ "\providecommand{\MaxMinAntSystem}{{$\cal MAX$--$\cal MIN$} {Ant} {System}} "
              # "\providecommand{\rpackage}[1]{{#1}} "
              # "\providecommand{\softwarepackage}[1]{{#1}} "
-             # "\providecommand{\proglang}[1]{{#1}} " }
+             # "\providecommand{\proglang}[1]{{#1}} "
+             # "\providecommand{\BIBdepartment}[1]{{#1}, } "}
 
 @string{and = " and "}
 @string{and_others = " and others"}
@@ -73,6 +74,7 @@
 @string{add-boston = " Boston, MA" }
 @string{add-cambridge = "Cambridge, MA"}
 @string{add-cham = " Cham, Switzerland"}
+@string{add-dordrecht = " Dordrecht, The Netherlands"}
 @string{add-chichester = " Chichester, UK"}
 @string{add-heidelberg = " Heidelberg, Germany"}
 @string{add-london = " London, UK "}
@@ -126,7 +128,7 @@
 @string{jws	= "John Wiley \& Sons"}
 @string{kap	= "Kluwer Academic Publishers"}
 @string{kap-ma	= "Kluwer Academic Publishers, Boston, MA"}
-@string{kap-nl	= "Kluwer Academic Publishers, Dordrecht, The Netherlands"}
+@string{kap-nl	= "Kluwer Academic Publishers" # "," # add-dordrecht }
 @string{kap-no	= "Kluwer Academic Publishers, Norwell, MA"}
 @string{lea	= "Lawrence Erlbaum Associates"}
 @string{masson	= "Masson, Milano, Italy"}
@@ -175,6 +177,10 @@
 %%%%%%%% End of PUBLISHERS
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Departments. To hide them.
+%%% \renewcommand{\bibdepartment}[1]{}
+@string{LERISS = "\BIBdepartment{LERISS - Laboratoire d'{\'e}tude et de recherche en instrumentation, signaux et syst{\'e}mes}"}
 
 %%% INSTITUTIONS/SCHOOLS %%%
 @string{COIN = "Computational Optimization and Innovation (COIN) Laboratory, University of Michigan, USA"}
