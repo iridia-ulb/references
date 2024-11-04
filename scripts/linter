@@ -29,8 +29,8 @@ for filename in "$@"; do
                 CHANGED=1
                 cp $tmpfile $filename
             fi
-            # Sort authors.bib
-            if [[ $filename == *authors.bib ]]; then
+            # Sort authors.bib and journals.bib
+            if [[ $filename == *authors.bib || $filename == *journals.bib ]]; then
                 (head -n 150 $tmpfile | grep '^%'; grep ^@ $tmpfile | env LC_COLLATE=C sort -u --ignore-case; tail -n 150 $tmpfile | grep '^%')> $filename
                 if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
                     CHANGED=1
