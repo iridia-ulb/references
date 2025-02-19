@@ -23,6 +23,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            bibcheck: [ 'crossref.bib', 'biblio.bib', './scripts/bibcheck.R' ]
           
       - name: "💡 List files in the repository."
         run: |
@@ -105,7 +111,18 @@ jobs:
           git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add *.bib
           (git commit -m "Linter '.bib' files  [skip ci]" && git pull --rebase && git push origin) || echo "No changes to commit"
-                    
+
+      - uses: r-lib/actions/setup-r@v2
+        if: steps.filter.outputs.bibcheck == 'true'
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        if: steps.filter.outputs.bibcheck == 'true'
+        with:
+          extra-packages: cran::rbibutils
+          
+      - run: Rscript ./scripts/bibcheck.R
+        if: steps.filter.outputs.bibcheck == 'true'
+
       - name: optbib2html
         if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: ./scripts/optbib2html.sh
@@ -119,3 +136,4 @@ jobs:
           single-commit: true
           
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
