@@ -118,7 +118,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         if: steps.filter.outputs.bibcheck == 'true'
         with:
-          extra-packages: cran::rbibutils
+          packages: cran::rbibutils
           
       - run: Rscript ./scripts/bibcheck.R
         if: steps.filter.outputs.bibcheck == 'true'
