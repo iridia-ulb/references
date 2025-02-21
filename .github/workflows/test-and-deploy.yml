@@ -119,6 +119,7 @@ jobs:
         if: steps.filter.outputs.bibcheck == 'true'
         with:
           packages: cran::rbibutils
+          dependencies: '"hard"'
           
       - run: Rscript ./scripts/bibcheck.R
         if: steps.filter.outputs.bibcheck == 'true'
