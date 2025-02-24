@@ -24,7 +24,14 @@ for filename in "$@"; do
             sed -i -E 's/#\s*["{]\s*and others\s*["}]/# and_others/g' $tmpfile
             sed -i -E 's/#\s*and\s*#\s*["{]\s*others\s*["}]/# and_others/g' $tmpfile
             sed -i -E 's/#\s*and_others/# and_others/g' $tmpfile
+            # Remove langid = {english}. This should be the default langid.
+            sed -i -E 's/^\s*langid\s*=\s*["{]english["{].*$//gi' $tmpfile
 
+            # Remove extra newlines.
+            sed -z -i 's/[}]\n\n\n\+/}\n\n/g' $tmpfile
+            sed -z -i 's/,\n\n\+/,\n/g' $tmpfile
+            sed -z -i 's/\n\n\+[}]/\n}/g' $tmpfile
+            
             if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
                 CHANGED=1
                 cp $tmpfile $filename
