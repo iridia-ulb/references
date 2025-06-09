@@ -1,5 +1,10 @@
+options(warn=2)
 library(rbibutils)
+# Try to read it with `readBib` to sanity check.
+bibs <- readBib("articles.bib", direct=TRUE, macros=c("abbrev.bib", "authors.bib", "journals.bib"))
+
 bibs <- readBib("biblio.bib", direct=TRUE, macros=c("abbrev.bib", "authors.bib", "crossref.bib"))
+
 bibs <- sapply(bibs, function(x) {
   x <- unclass(x)[[1L]]
   list(key = attr(x, "key"), bibtype = attr(x, "bibtype"), crossref=x$crossref)
