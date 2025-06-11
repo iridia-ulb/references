@@ -27,6 +27,10 @@ for filename in "$@"; do
             # Remove langid = {english}. This should be the default langid.
             sed -i -E 's/^\s*(langid|language)\s*=\s*["{]en(glish)?["}].*$//gi' $tmpfile
 
+            # Fix field names:
+            sed -i -E 's/^(\s*)anote\s*=/\1annote =/g' $tmpfile
+            sed -i -E 's/^(\s*)keyword\s*=/\1keywords =/g' $tmpfile
+            
             # Remove extra newlines.
             sed -z -i 's/[}]\n\n\n\+/}\n\n/g' $tmpfile
             sed -z -i 's/,\n\n\+/,\n/g' $tmpfile
