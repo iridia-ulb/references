@@ -1202,6 +1202,24 @@
   pages =        {115--123}
 }
 
+@InCollection{BerHuaPar2025rl4co,
+  author       = {Berto, Federico and Hua, Chuanbo and Park, Junyoung and
+                  Luttmann, Laurin and Ma, Yining and Bu, Fanchen and Wang,
+                  Jiarui and Ye, Haoran and Kim, Minsu and Choi, Sanghyeok and
+                  Zepeda, Nayeli Gast and Hottung, André and Zhou, Jianan and
+                  Bi, Jieyi and Hu, Yu and Liu, Fei and Kim, Hyeonah and Son,
+                  Jiwoo and Kim, Haeyeon and Angioni, Davide and Kool, Wouter
+                  and Cao, Zhiguang and Zhang, Qingfu and Kim, Joungho and
+                  Zhang, Jie and Shin, Kijung and Wu, Cathy and Ahn, Sungsoo
+                  and Song, Guojie and Kwon, Changhyun and Tierney, Kevin and
+                  Xie, Lin and Park, Jinkyoo},
+  title        = {{RL4CO}: An Extensive Reinforcement Learning for Combinatorial
+                  Optimization Benchmark},
+                  crossref = "SIGKDD2025",
+  pages        = {5278--5289},
+  doi          = {10.1145/3711896.3737433},
+}
+
 @InCollection{BesStuDor00:ppsn,
   author =       denBesten #and# Stuetzle #and# Dorigo,
   title =        "Ant Colony Optimization for the Total Weighted
@@ -4456,19 +4474,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{FlePurLyg2005,
-  title =        {Many-objective optimization: An engineering design
+  author       = Fleming #and# Purshouse_R #and# {Lygoe, Robert J.},
+  title        = {Many-objective optimization: An engineering design
                   perspective},
-  author =       Fleming #and# Purshouse_R #and# {Lygoe, Robert J.},
-  crossref =     {EMO2005},
-  pages =        {14--32},
+  pages        = {14--32},
+  crossref     = {EMO2005}
 }
 
-@InCollection{PurJalFle2011pref,
-  title =        {Preference-Driven Co-Evolutionary Algorithms Show Promise for
-                  Many-Objective optimisation},
-  author =       Purshouse_R #and# {Jalb{\u{a}}, Cezar} #and# Fleming,
-  crossref =     "EMO2011",
-  pages =        {136--150},
+@InCollection{FocLabLod2002,
+  author       = Focacci #and# {Fran{\c{c}}ois Laburthe} #and# Lodi,
+  title        = {Local Search and Constraint Programming},
+  pages        = {369--403},
+  crossref     = {Handbook2002}
 }
 
 @InCollection{Fleischer2003emo,
@@ -4495,13 +4512,6 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "ANIMATS1994",
   annote =       {LIS-CONF-1994-003},
   pages =        {421--430},
-}
-
-@InCollection{FocLabLod2002,
-  author =       Focacci #and# {Fran{\c{c}}ois Laburthe} #and# Lodi,
-  title =        {Local Search and Constraint Programming},
-  crossref =  {Handbook2002},
-  pages =        {369--403},
 }
 
 @Book{FogOweWal1966,
@@ -8751,6 +8761,14 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages =        {191--202},
 }
 
+@InCollection{MarLopCol2025eca,
+  author       = Martin-Santamaria_R #and# Lopez-Ibanez #and# Colmenar_JM,
+  title        = {Empirical Complexity Analysis of Optimization Algorithms},
+  pages        = {135--138},
+  doi          = {10.1145/3712255.3726767},
+  crossref     = {GECCO2025c}
+}
+
 @InCollection{MarMasLop2013hm,
   author =       Marmion #and# Mascia_F #and# Lopez-Ibanez #and#
                   Stuetzle,
@@ -10731,42 +10749,50 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   \cite{FarAma2002nafips} already did)."
 }
 
+@InCollection{PurJalFle2011pref,
+  author       = Purshouse_R #and# {Jalb{\u{a}}, Cezar} #and# Fleming,
+  title        = {Preference-Driven Co-Evolutionary Algorithms Show Promise for
+                  Many-Objective optimisation},
+  pages        = {136--150},
+  crossref     = {EMO2011}
+}
+
 @InCollection{PusFraVor2011spiral,
-  author = {Markus P\"{u}schel and Franz Franchetti and Yevgen Voronenko},
-  title  = {Spiral},
-  crossref = "EOP2011",
-  pages    = {1920--1933}
+  author       = {Markus P\"{u}schel and Franz Franchetti and Yevgen Voronenko},
+  title        = {Spiral},
+  pages        = {1920--1933},
+  crossref     = {EOP2011}
 }
 
 @InCollection{PusHoo2018ppsn,
-  author =       Pushak_Y #and# Hoos,
-  title =        {Algorithm Configuration Landscapes: More Benign Than
+  author       = Pushak_Y #and# Hoos,
+  title        = {Algorithm Configuration Landscapes: More Benign Than
                   Expected?},
-  pages =        {271--283},
-  crossref =     {PPSN2018},
-  doi =          {10.1007/978-3-319-99259-4_22},
-  supplement =   "http://www.cs.ubc.ca/labs/beta/Projects/ACLandscapes/",
-  annote =       "Best paper award at PPSN2018"
+  pages        = {271--283},
+  annote       = {Best paper award at PPSN2018},
+  crossref     = {PPSN2018},
+  doi          = {10.1007/978-3-319-99259-4_22},
+  supplement   = {http://www.cs.ubc.ca/labs/beta/Projects/ACLandscapes/}
 }
 
 @InCollection{PusHoo2020golden,
-  author =       Pushak_Y #and# Hoos,
-  title =        "Golden parameter search: exploiting structure to quickly
-                  configure parameters in parallel",
-  pages =        "245--253",
-  crossref =     "GECCO2020",
-  keywords =     "algorithm configuration"
+  author       = Pushak_Y #and# Hoos,
+  title        = {Golden parameter search: exploiting structure to quickly
+                  configure parameters in parallel},
+  pages        = {245--253},
+  crossref     = {GECCO2020},
+  keywords     = {algorithm configuration}
 }
 
 @Manual{R:ParamHelpers,
-  title =        "{\rpackage{ParamHelpers}} : Helpers for Parameters in
-                  Black-Box Optimization, Tuning and Machine Learning",
-  author =       Bischl_B #and# {Michel Lang} #and# Bossek_J #and# {Daniel Horn
+  title        = {{\rpackage{ParamHelpers}} : Helpers for Parameters in
+                  Black-Box Optimization, Tuning and Machine Learning},
+  author       = Bischl_B #and# {Michel Lang} #and# Bossek_J #and# {Daniel Horn
                   and Karin Schork and Jakob Richter} #and# Kerschke_P,
-  note =         {\proglang{R} package version 1.10},
-  url =          {https://cran.r-project.org/package=ParamHelpers},
-  year =         2017,
-  alias =        "Bischl2017",
+  year         = 2017,
+  note         = {\proglang{R} package version 1.10},
+  url          = {https://cran.r-project.org/package=ParamHelpers},
+  alias        = {Bischl2017}
 }
 
 @Manual{R:Rmpi,
