@@ -68,7 +68,7 @@ latexmake() {
 
 TEXMAIN="testbib.tex"
 # Support single test mode
-if [ "$1" = "-single" ]; then
+if [ "${1:-}" = "-single" ]; then
     TEXMAIN="$2"
     BST="$3"
     latexmake "$TEXMAIN" "$BST"
