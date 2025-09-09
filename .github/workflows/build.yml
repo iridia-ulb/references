@@ -1,0 +1,82 @@
+name: Build
+
+on:
+  workflow_run:
+    workflows: ["Test"]
+    types: [completed]
+    branches: [main, master]
+  workflow_dispatch:
+
+env:
+  cache-version: v2
+
+jobs:
+  build:
+    name: Generate PDFs
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 📋 Cache TinyTeX
+        id: cache-tinytex
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: ${{ env.cache-version }}-${{ runner.os }}-tinytex-${{ hashFiles('.github/texlive_packages') }}
+          restore-keys: |
+            ${{ env.cache-version }}-${{ runner.os }}-tinytex-
+
+      - name: 🔧 Setup TinyTeX
+        if: steps.cache-tinytex.outputs.cache-hit != 'true'
+        uses: r-lib/actions/setup-tinytex@v2
+        env:
+          TINYTEX_INSTALLER: TinyTeX-1
+          TINYTEX_VERSION: 2023.12
+
+      - name: 📦 Install LaTeX packages
+        if: steps.cache-tinytex.outputs.cache-hit != 'true'
+        run: |
+          texlive_packages=./.github/texlive_packages
+          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
+          tlmgr option -- autobackup 0
+          tlmgr update --self
+          tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' "${texlive_packages}")
+          tlmgr path add
+
+      - name: 🏗️ Build test PDFs
+        run: |
+          cd test
+          ./test.sh
+
+      - name: 📦 Install system packages
+        run: |
+          sudo apt -y update
+          sudo apt -y install bibtex2html tidy ghostscript qpdf
+
+      - name: 🗜️ Compress PDFs
+        run: |
+          cd test
+          ./compress.sh testbib.pdf testshortbib.pdf
+          mv testbib.pdf testshortbib.pdf ../web/
+
+      - name: 🌐 Generate HTML
+        run: |
+          ./scripts/optbib2html.sh
+
+      - name: 📤 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: bibliography-pdfs
+          path: |
+            web/testbib.pdf
+            web/testshortbib.pdf
+            web/*.html
+          retention-days: 30
+
+    outputs:
+      status: ${{ job.status }}

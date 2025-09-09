@@ -1,140 +1,104 @@
-name: CI
+name: CI (Legacy)
 
 on:
-  push:
-    paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
-      
   pull_request:
     paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
 
 env:
-  cache-version: v1
-  
+  cache-version: v2
+
 jobs:
-  ci:
+  # Quick validation for PRs
+  validate-pr:
+    name: PR Validation
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: 💡 Check out repository code
+      - name: 📥 Check out repository code
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - uses: dorny/paths-filter@v3
+      - name: 🔍 Detect file changes
+        uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
             bibcheck: [ 'crossref.bib', 'biblio.bib', './scripts/bibcheck.R' ]
-          
-      - name: "💡 List files in the repository."
-        run: |
-          ls -R ${{ github.workspace }}
+            bibfiles: [ '**.bib' ]
 
-      - name: Maybe skip before install
-        env:
-          PR_COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
-          PUSH_COMMIT_RANGE: ${{ github.event.before }}..${{ github.event.after }}
+      - name: ⚡ Quick syntax check
+        if: steps.filter.outputs.bibfiles == 'true'
         run: |
-          set +e
-          INCLUDE_ONLY="\.bib\|\.tex\|optbib2html\|deploy\|actions"
-          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
-             export TRAVIS_COMMIT_RANGE=${PR_COMMIT_RANGE}
-          else 
-             echo "This is a branch build" 
-             export TRAVIS_COMMIT_RANGE=${PUSH_COMMIT_RANGE}
-          fi 
-          echo "Emulated TRAVIS_COMMIT_RANGE: ${TRAVIS_COMMIT_RANGE}"
-          # Use -m so that merge commits are also considered
-          git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
-          if [ $? -eq 0 ]; then
-            FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
-            echo "Files changed: $FILES_CHANGED"
-          else
-            FILES_CHANGED=0
-          fi
-          echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
-                            
-      # - name: Cache TinyTeX
-      #   if: ${{ env.FILES_CHANGED != 0 }}
-      #   id: cache-tinytex
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ~/.TinyTeX
-      #     key: ${{ env.cache-version }}-${{ runner.os }}-tinytex
-      #     restore-keys: ${{ env.cache-version }}-${{ runner.os }}-tinytex
-          
-      - uses: r-lib/actions/setup-tinytex@v2-branch
-        if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
-        env:
-          TINYTEX_INSTALLER: TinyTeX-1
-          TINYTEX_VERSION: 2023.12
-          
-      - name: Install additional LaTeX packages
-        if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
-        run: |
-          texlive_packages=./.github/texlive_packages
-          which tlmgr
-          tlmgr --version
-          echo "Updating TexLive"
-          # Keep no backups (not required, simply makes cache bigger)
-          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
-          tlmgr option -- autobackup 0
-          echo "Updating tlmgr itself"
-          tlmgr update --self
-          echo "Install ${texlive_packages}"
-          tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' "${texlive_packages}")
-          tlmgr path add
-          
-      - name: Run test
-        if: ${{ success() && env.FILES_CHANGED != 0 }}
-        run: cd test && ./test.sh
+          echo "Running quick syntax validation..."
+          ./test/fast_check.sh *.bib
 
-      - name: Install packages
-        if: ${{ env.FILES_CHANGED != 0 }}
-        run: |
-          sudo apt -y update
-          sudo apt -y install bibtex2html tidy ghostscript qpdf
-        
-      - name: Compress PDFs
-        if: ${{ success() && env.FILES_CHANGED != 0 }}
-        run: cd test && ./compress.sh testbib.pdf testshortbib.pdf && mv --force -t ../web/ testbib.pdf testshortbib.pdf
-        
-      - name: Linter 🧹
-        if: ${{ success() && env.FILES_CHANGED != 0 && github.event_name == 'push' }}
-        run: |
-          ./scripts/linter *.bib && exit 0
-          git config --local user.name "${GITHUB_ACTOR}"
-          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add *.bib
-          (git commit -m "Linter '.bib' files  [skip ci]" && git pull --rebase && git push origin) || echo "No changes to commit"
-
-      - uses: r-lib/actions/setup-r@v2
+      # R-based validation
+      - name: 🔧 Setup R
         if: steps.filter.outputs.bibcheck == 'true'
+        uses: r-lib/actions/setup-r@v2
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
+      - name: 📦 Install R dependencies
         if: steps.filter.outputs.bibcheck == 'true'
+        uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: cran::rbibutils
           dependencies: '"hard"'
-          
-      - run: Rscript ./scripts/bibcheck.R
-        if: steps.filter.outputs.bibcheck == 'true'
 
-      - name: optbib2html
-        if: ${{ success() && env.FILES_CHANGED != 0 }}
+      - name: ✅ Run bibliography checks
+        if: steps.filter.outputs.bibcheck == 'true'
+        run: Rscript ./scripts/bibcheck.R
+
+  # Full testing for significant changes
+  full-test:
+    name: Full Testing Suite
+    needs: validate-pr
+    if: github.event.pull_request.changed_files > 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 📋 Cache TinyTeX
+        id: cache-tinytex
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: ${{ env.cache-version }}-${{ runner.os }}-tinytex-${{ hashFiles('.github/texlive_packages') }}
+          restore-keys: |
+            ${{ env.cache-version }}-${{ runner.os }}-tinytex-
+
+      - name: 🔧 Setup TinyTeX
+        if: steps.cache-tinytex.outputs.cache-hit != 'true'
+        uses: r-lib/actions/setup-tinytex@v2
+        env:
+          TINYTEX_INSTALLER: TinyTeX-1
+          TINYTEX_VERSION: 2023.12
+
+      - name: 📦 Install LaTeX packages
+        if: steps.cache-tinytex.outputs.cache-hit != 'true'
+        run: |
+          texlive_packages=./.github/texlive_packages
+          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
+          tlmgr option -- autobackup 0
+          tlmgr update --self
+          tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' "${texlive_packages}")
+          tlmgr path add
+
+      - name: 🧪 Run comprehensive tests
+        run: cd test && ./test.sh
+
+      - name: 📦 Install system packages
+        run: |
+          sudo apt -y update
+          sudo apt -y install bibtex2html tidy ghostscript qpdf
+
+      - name: 🗜️ Test PDF compression
+        run: cd test && ./compress.sh testbib.pdf testshortbib.pdf && mv --force -t ../web/ testbib.pdf testshortbib.pdf
+
+      - name: 🌐 Test HTML generation
         run: ./scripts/optbib2html.sh
 
-      - name: Deploy 🚀
-        if: ${{ success() && env.FILES_CHANGED != 0 && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')  }}
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: web # The folder the action should deploy.
-          clean: true
-          single-commit: true
-          
-      - run: echo "🍏 This job's status is ${{ job.status }}."
 

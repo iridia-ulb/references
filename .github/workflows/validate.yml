@@ -1,0 +1,47 @@
+name: Validate
+
+on:
+  push:
+    paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
+  pull_request:
+    paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
+  workflow_dispatch:
+
+env:
+  cache-version: v2
+
+jobs:
+  validate:
+    name: Quick Validation
+    if: "! contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 🔍 Check file changes
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            bibfiles: ['**.bib', 'scripts/bibcheck.R', 'scripts/linter', 'test/**']
+            workflows: ['.github/workflows/**']
+
+      - name: 🚀 Quick syntax check
+        if: steps.changes.outputs.bibfiles == 'true'
+        run: |
+          echo "Checking BibTeX syntax..."
+          ./test/fast_check.sh *.bib
+
+      - name: 📊 Set outputs
+        id: validation-results
+        run: |
+          echo "bibfiles_changed=${{ steps.changes.outputs.bibfiles }}" >> $GITHUB_OUTPUT
+          echo "workflows_changed=${{ steps.changes.outputs.workflows }}" >> $GITHUB_OUTPUT
+
+    outputs:
+      bibfiles_changed: ${{ steps.validation-results.outputs.bibfiles_changed }}
+      workflows_changed: ${{ steps.validation-results.outputs.workflows_changed }}

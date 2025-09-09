@@ -35,7 +35,7 @@ latexmake() {
     if [ -h tmp.bst ]; then
         rm -f tmp.bst
     fi
-    if [ $bst != "" ]; then
+    if [ "$BST" != "" ]; then
         ln -s ${BST}.bst tmp.bst
     fi
     
@@ -67,19 +67,22 @@ latexmake() {
 }
 
 TEXMAIN="testbib.tex"
-# FIXME: This doesn't seem to do anything useful.
-# travis_fold_start texliveonfly.1 "texliveonfly $TEXMAIN"
-# texliveonfly $TEXMAIN
-# travis_fold_end texliveonfly.1
-
-for main in "testbib" "testshortbib"; do
-    # FIXME: Too many warnings
-    # "../bibstyles/ACM-Reference-Format" 
-    for bst in "../bibstyles/splncs04abbrev" "../bibstyles/abbrvnatamp" "$main"; do
-        latexmake "${main}.tex" "$bst"
+# Support single test mode
+if [ "$1" = "-single" ]; then
+    TEXMAIN="$2"
+    BST="$3"
+    latexmake "$TEXMAIN" "$BST"
+else
+    # Default: run all tests
+    for main in "testbib" "testshortbib"; do
+        # FIXME: Too many warnings
+        # "../bibstyles/ACM-Reference-Format" 
+        for bst in "../bibstyles/splncs04abbrev" "../bibstyles/abbrvnatamp" "$main"; do
+            latexmake "${main}.tex" "$bst"
+        done
     done
-done
-latexmake "testbiblatex.tex" ""
+    latexmake "testbiblatex.tex" ""
+fi
 
 echo "No bibtex warnings! Good job!"
 exit 0

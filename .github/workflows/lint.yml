@@ -1,0 +1,57 @@
+name: Lint
+
+on:
+  push:
+    branches: [main, master]
+    paths: ['**.bib']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  lint:
+    name: Auto-format BibTeX files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔍 Check for BibTeX changes
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            # Check if any .bib files were modified
+            if git diff --name-only HEAD~1..HEAD | grep -q '\.bib$'; then
+              echo "changed=true" >> $GITHUB_OUTPUT
+            else
+              echo "changed=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: 🧹 Run linter
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          echo "Running linter on BibTeX files..."
+          ./scripts/linter *.bib || echo "Linter completed with changes"
+
+      - name: 💾 Commit linting changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "$(git status --porcelain)" ]; then
+            git add *.bib
+            git commit -m "Auto-format BibTeX files [skip ci]"
+            git push
+            echo "✅ Linting changes committed and pushed"
+          else
+            echo "ℹ️ No linting changes needed"
+          fi

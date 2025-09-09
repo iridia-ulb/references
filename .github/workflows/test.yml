@@ -1,0 +1,75 @@
+name: Test
+
+on:
+  workflow_run:
+    workflows: ["Validate"]
+    types: [completed]
+    branches: [main, master]
+  workflow_dispatch:
+
+env:
+  cache-version: v2
+
+jobs:
+  test:
+    name: BibTeX Testing
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        test-target:
+          - name: "testbib"
+            styles: ["../bibstyles/splncs04abbrev", "../bibstyles/abbrvnatamp", "testbib"]
+          - name: "testshortbib"
+            styles: ["../bibstyles/splncs04abbrev", "../bibstyles/abbrvnatamp", "testshortbib"]
+          - name: "testbiblatex"
+            styles: [""]
+
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 📋 Cache TinyTeX
+        id: cache-tinytex
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: ${{ env.cache-version }}-${{ runner.os }}-tinytex-${{ hashFiles('.github/texlive_packages') }}
+          restore-keys: |
+            ${{ env.cache-version }}-${{ runner.os }}-tinytex-
+
+      - name: 🔧 Setup TinyTeX
+        if: steps.cache-tinytex.outputs.cache-hit != 'true'
+        uses: r-lib/actions/setup-tinytex@v2
+        env:
+          TINYTEX_INSTALLER: TinyTeX-1
+          TINYTEX_VERSION: 2023.12
+
+      - name: 📦 Install LaTeX packages
+        if: steps.cache-tinytex.outputs.cache-hit != 'true'
+        run: |
+          texlive_packages=./.github/texlive_packages
+          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
+          tlmgr option -- autobackup 0
+          tlmgr update --self
+          tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' "${texlive_packages}")
+          tlmgr path add
+
+      - name: 🧪 Run LaTeX tests
+        run: |
+          cd test
+          if [ "${{ matrix.test-target.name }}" = "testbiblatex" ]; then
+            ./test.sh -single testbiblatex.tex ""
+          else
+            for style in ${{ join(matrix.test-target.styles, ' ') }}; do
+              echo "Testing ${{ matrix.test-target.name }} with style: $style"
+              ./test.sh -single ${{ matrix.test-target.name }}.tex "$style"
+            done
+          fi
+
+    outputs:
+      status: ${{ job.status }}
