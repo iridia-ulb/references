@@ -10,6 +10,10 @@ fi
 
 ./fast_check.sh ../*.bib || exit 1
 
+# Run DOI validation on files that contain DOI entries
+echo "Running DOI validation..."
+../scripts/doi_check.sh ../articles.bib ../biblio.bib ../crossref.bib || exit 1
+
 travis_fold_start() {
     if [ ! -z ${TRAVIS:-} ]; then
         echo -e "travis_fold:start: $1\033[33;1m$2\033[0m"
