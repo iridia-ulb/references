@@ -1,0 +1,27 @@
+ci:
+  autofix_prs: true
+  autofix_commit_msg: |
+        [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+        for more information, see https://pre-commit.ci
+
+repos:
+  - repo: local
+    hooks:
+      - id: pre-commit-local
+        name: pre-commit-local
+        entry: scripts/pre-commit
+        language: script
+        files: '.+\.bib$'
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-merge-conflict
+        args: [ --assume-in-merge ]
+      - id: check-added-large-files
+        name: check-added-large-files (>200kb)
+        args: ['--maxkb=200']
+      - id: end-of-file-fixer
