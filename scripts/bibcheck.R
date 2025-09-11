@@ -36,7 +36,7 @@ for (x in bibs) {
     errors <- c(errors, check_type(x, cr_type, cr_typel, "Book", "book"))
     if (cr_typel == "proceedings")
       text <- sub(paste0("@InCollection{", x$key, ","), paste0("@InProceedings{", x$key, ","), text, fixed=TRUE)
-  } 
+  }
 }
 cat(paste0(collapse="", errors))
 writeLines(text, "biblio.bib")

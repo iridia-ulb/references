@@ -30,12 +30,12 @@ for filename in "$@"; do
             # Fix field names:
             sed -i -E 's/^(\s*)anote\s*=/\1annote =/g' $tmpfile
             sed -i -E 's/^(\s*)keyword\s*=/\1keywords =/g' $tmpfile
-            
+
             # Remove extra newlines.
             sed -z -i 's/[}]\n\n\n\+/}\n\n/g' $tmpfile
             sed -z -i 's/,\n\n\+/,\n/g' $tmpfile
             sed -z -i 's/\n\n\+[}]/\n}/g' $tmpfile
-            
+
             if ! diff -q "$filename" "$tmpfile" &> /dev/null; then
                 CHANGED=1
                 cp $tmpfile $filename

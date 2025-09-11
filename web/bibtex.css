@@ -9,7 +9,7 @@
     text-decoration: none;
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}    
+}
 
 .button-hover,
 .button:hover,
@@ -21,7 +21,7 @@
 a:link {text-decoration: none; color : #326fa3}
 a:visited {text-decoration: none;  color : #326fa3}
 a:active {text-decoration: none; color: #666666}
-a:hover {text-decoration: underline} 
+a:hover {text-decoration: underline}
 
 }
 .button:focus {
@@ -65,8 +65,8 @@ a:active.button {
     display: inline;
     vertical-align: middle;
     border: 0;
-    width: 1em; 
-    height: auto; 
+    width: 1em;
+    height: auto;
 }
 dt
 {
@@ -85,7 +85,7 @@ dd
 
 h1 { color: #326fa3; font: 30px  'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;}
 
-h2 { color: #326fa3; font: 20px   'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;} 
+h2 { color: #326fa3; font: 20px   'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;}
 
 h3 { color: #326fa3; font: 14px   'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;}
 
@@ -102,19 +102,19 @@ div#navlist  { background-color: #f5f5f5; border: 1px solid #C9D1D7; padding: 1e
 
 blockquote { font-size: smaller; }
 
-ol.publications { 
+ol.publications {
     margin-left: 3em;
     padding: 0;
     counter-reset: publication;
 }
 
-ol.publications li{ 
-    margin: 0; 
-    padding: .5em 0em .5em 0em; 
+ol.publications li{
+    margin: 0;
+    padding: .5em 0em .5em 0em;
     display: block;
 }
 
-ol.publications > li:before { 
+ol.publications > li:before {
     display: inline-block;
     min-width: 4ex;
     padding-right: 1.5ex;
@@ -134,7 +134,7 @@ ul.publinks {
     margin: 0;
     padding: 0;
     border: none;
-display:inline-block; 
+display:inline-block;
 vertical-align: middle;
 }
 

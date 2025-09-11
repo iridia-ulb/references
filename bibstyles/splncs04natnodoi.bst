@@ -7,7 +7,7 @@
 %% merlin.mbs  (with options: `ay,nat,vonx,nm-rvvc,ed-rev,nmfted,yr-par,aymth,jttl-rm,vol-bf,volp-com,num-xser,numser,ser-vol,jnm-x,btit-rm,bt-rm,isbn,issn,doi,edparxc,blk-tit,au-col,in-col,fin-bare,pp,ed,abr,mth-bare,xedn,jabr,and-com,and-com-ed,xand,url,url-blk,em-x,nfss,')
 %% ----------------------------------------
 %% *** natbib-compatible splncs04 ***
-%% 
+%%
 %% Copyright 1994-2011 Patrick W Daly
  % ===============================================================
  % IMPORTANT NOTICE:

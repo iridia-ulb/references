@@ -1,5 +1,5 @@
 %% File: `abbrvnat.bst'
-%% A modification of `abbrv.bst' for use with natbib package 
+%% A modification of `abbrv.bst' for use with natbib package
 %%
 %% Copyright 1993-2007 Patrick W Daly
 %% Max-Planck-Institut f\"ur Sonnensystemforschung
@@ -942,7 +942,7 @@ FUNCTION {inproceedings}
   new.block
 
   % crossref missing$
-  %   { 
+  %   {
       format.in.ed.booktitle "booktitle" output.check
       format.bvolume output
       format.number.series output

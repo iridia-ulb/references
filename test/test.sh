@@ -30,7 +30,7 @@ latexmake() {
     if [ "$BST" != "" ]; then
         ln -s ${BST}.bst tmp.bst
     fi
-    
+
     latexmk -silent -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
     if [ $? -ne 0 ]; then
         fold_end latexmk.1
@@ -47,7 +47,7 @@ latexmake() {
         grep "Warning--" .bibtex-warnings
         exit 1
     fi
-    
+
     grep --quiet "WARN" .bibtex-warnings
     if [ $? -eq 0 ]; then
         fold_end latexmk.1
@@ -72,7 +72,7 @@ if [ "${1:-}" = "-single" ]; then
 else
     for main in "testbib" "testshortbib"; do
         # FIXME: Too many warnings
-        # "../bibstyles/ACM-Reference-Format" 
+        # "../bibstyles/ACM-Reference-Format"
         for bst in "../bibstyles/splncs04abbrev" "../bibstyles/abbrvnatamp" "$main"; do
             latexmake "${main}.tex" "$bst"
         done

@@ -50,7 +50,7 @@ FUNCTION {init.state.consts}
 }
 
 FUNCTION {cv.author}
-{ "L{\'o}pez-Ib{\'a}{\~n}ez, M." } 
+{ "L{\'o}pez-Ib{\'a}{\~n}ez, M." }
 
 FUNCTION {highlight}
 { duplicate$ empty$
@@ -205,7 +205,7 @@ FUNCTION {field.or.null}
 FUNCTION {href}
 { duplicate$ empty$
   { pop$ "" }
-  { 
+  {
      doi empty$
        {
          url empty$
@@ -225,7 +225,7 @@ FUNCTION {parens}
     { "(" swap$ * ")" * }
   if$
 }
-  
+
 FUNCTION {boldface}
 { duplicate$ empty$
     { pop$ "" }
@@ -356,7 +356,7 @@ FUNCTION {n.dashify}
 }
 
 FUNCTION {format.date}
-{ 
+{
   year empty$
     { month empty$
 	{ "" }
