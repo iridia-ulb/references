@@ -2,14 +2,14 @@ name: CI
 
 on:
   push:
-    paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
-      
+    paths-ignore: ['README.md','bibpool/**','**precommit*','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
+
   pull_request:
-    paths-ignore: ['README.md','bibpool/**','**precommit','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
+    paths-ignore: ['README.md','bibpool/**','**precommit*','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
 
 env:
-  cache-version: v1
-  
+  cache-version: v2
+
 jobs:
   ci:
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
@@ -19,62 +19,91 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: 💡 Check out repository code
+      - name: 📥 Check out repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            bibcheck: [ 'crossref.bib', 'biblio.bib', './scripts/bibcheck.R' ]
-          
-      - name: "💡 List files in the repository."
+      - name: 💡 List files in the repository
         run: |
           ls -R ${{ github.workspace }}
 
-      - name: Maybe skip before install
-        env:
-          PR_COMMIT_RANGE: ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
-          PUSH_COMMIT_RANGE: ${{ github.event.before }}..${{ github.event.after }}
+      - name: 🔍 Analyse changes
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            bibcheck: [ 'crossref.bib', 'biblio.bib', './scripts/bibcheck.R', './github/**.yml' ]
+            linter: [ './*.bib', './scripts/linter', './github/**.yml' ]
+
+      - name: 🧹 Linter
+        if: ${{ steps.filter.outputs.linter == 'true' && github.event_name == 'push' }}
         run: |
-          set +e
-          INCLUDE_ONLY="\.bib\|\.tex\|optbib2html\|deploy\|actions"
-          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then 
-             export TRAVIS_COMMIT_RANGE=${PR_COMMIT_RANGE}
-          else 
-             echo "This is a branch build" 
-             export TRAVIS_COMMIT_RANGE=${PUSH_COMMIT_RANGE}
-          fi 
-          echo "Emulated TRAVIS_COMMIT_RANGE: ${TRAVIS_COMMIT_RANGE}"
-          # Use -m so that merge commits are also considered
-          git log --oneline --graph ${TRAVIS_COMMIT_RANGE} 
+          ./scripts/linter *.bib && exit 0
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.bib
+          (git commit -m "Linter '.bib' files  [skip ci]" && git pull --rebase && git push origin) || echo "No changes to commit"
+
+      - uses: r-lib/actions/setup-r@v2
+        if: steps.filter.outputs.bibcheck == 'true'
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        if: steps.filter.outputs.bibcheck == 'true'
+        with:
+          packages: cran::rbibutils
+          dependencies: '"hard"'
+
+      - run: Rscript ./scripts/bibcheck.R
+        if: steps.filter.outputs.bibcheck == 'true'
+
+      - name: 📊 Report results
+        if: always() && steps.filter.outputs.bibcheck == 'true'
+        run: |
           if [ $? -eq 0 ]; then
-            FILES_CHANGED=$(git diff --raw -c --no-commit-id --name-only ${TRAVIS_COMMIT_RANGE} | grep -e ${INCLUDE_ONLY} || true)
-            echo "Files changed: $FILES_CHANGED"
+            echo "✅ All bibliography checks passed!"
           else
-            FILES_CHANGED=0
+            echo "❌ Bibliography validation failed - see above for details"
+            exit 1
           fi
-          echo "FILES_CHANGED=${#FILES_CHANGED}" >> $GITHUB_ENV  # get the char len of diff output (used later)
-                            
-      # - name: Cache TinyTeX
-      #   if: ${{ env.FILES_CHANGED != 0 }}
+
+  test:
+    name: BibTeX Testing ${{ matrix.main }}.tex ${{ matrix.style }}.bst
+    needs: ci
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        main: ["testbib", "testshortbib"]
+        style: ["../bibstyles/splncs04abbrev", "../bibstyles/abbrvnatamp"]
+        include:
+          - main: "testbiblatex"
+            style: ""
+          - main: "testbib"
+            style: "testbib"
+          - main: "testshortbib"
+            style: "testshortbib"
+
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+
+      # - name: 📋 Cache TinyTeX
       #   id: cache-tinytex
-      #   uses: actions/cache@v3
+      #   uses: actions/cache@v4
       #   with:
       #     path: ~/.TinyTeX
-      #     key: ${{ env.cache-version }}-${{ runner.os }}-tinytex
-      #     restore-keys: ${{ env.cache-version }}-${{ runner.os }}-tinytex
-          
-      - uses: r-lib/actions/setup-tinytex@v2-branch
-        if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
+      #     key: ${{ env.cache-version }}-${{ runner.os }}-tinytex-${{ hashFiles('.github/texlive_packages') }}
+      #     restore-keys: |
+      #       ${{ env.cache-version }}-${{ runner.os }}-tinytex-
+
+      - name: 🔧 Setup TinyTeX
+        uses: r-lib/actions/setup-tinytex@v2-branch
+        #if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
         env:
           TINYTEX_INSTALLER: TinyTeX-1
           TINYTEX_VERSION: 2023.12
-          
-      - name: Install additional LaTeX packages
-        if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
+
+      - name: 📦 Install LaTeX packages
+        #if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
         run: |
           texlive_packages=./.github/texlive_packages
           which tlmgr
@@ -88,53 +117,57 @@ jobs:
           echo "Install ${texlive_packages}"
           tlmgr install $(sed 's/\s*#.*//;/^\s*$/d' "${texlive_packages}")
           tlmgr path add
-          
-      - name: Run test
-        if: ${{ success() && env.FILES_CHANGED != 0 }}
-        run: cd test && ./test.sh
 
-      - name: Install packages
-        if: ${{ env.FILES_CHANGED != 0 }}
+      - name: 🧪 Run LaTeX tests
         run: |
-          sudo apt -y update
-          sudo apt -y install bibtex2html tidy ghostscript qpdf
-        
-      - name: Compress PDFs
-        if: ${{ success() && env.FILES_CHANGED != 0 }}
-        run: cd test && ./compress.sh testbib.pdf testshortbib.pdf && mv --force -t ../web/ testbib.pdf testshortbib.pdf
-        
-      - name: Linter 🧹
-        if: ${{ success() && env.FILES_CHANGED != 0 && github.event_name == 'push' }}
+          cd test && ./test.sh -single ${{ matrix.main }} ${{ matrix.style }}
+
+      - name: 📦 Install system packages
+        if: ${{ success() && (matrix.main == matrix.style) }}
         run: |
-          ./scripts/linter *.bib && exit 0
-          git config --local user.name "${GITHUB_ACTOR}"
-          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add *.bib
-          (git commit -m "Linter '.bib' files  [skip ci]" && git pull --rebase && git push origin) || echo "No changes to commit"
+          sudo apt -y install ghostscript qpdf
 
-      - uses: r-lib/actions/setup-r@v2
-        if: steps.filter.outputs.bibcheck == 'true'
+      - name: 🗜️ Compress PDFs
+        if: ${{ success() && (matrix.main == matrix.style) }}
+        run: cd test && ./compress.sh ${{ matrix.main }}.pdf && mv --force -t ../web/ ${{ matrix.main }}.pdf
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        if: steps.filter.outputs.bibcheck == 'true'
+      - name: 📤 Upload build artifacts
+        if: ${{ success() && (matrix.main == matrix.style) }}
+        uses: actions/upload-artifact@v4
         with:
-          packages: cran::rbibutils
-          dependencies: '"hard"'
-          
-      - run: Rscript ./scripts/bibcheck.R
-        if: steps.filter.outputs.bibcheck == 'true'
+          name: ${{ matrix.main }}
+          path: ./web/${{ matrix.main }}.pdf
+          retention-days: 30
+
+  deploy:
+    name: Deploy to github pages
+    needs: test
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+
+      - name: 📥 Download build artifacts
+        uses: actions/download-artifact@v5
+        with:
+          pattern: test*bib*
+          path: web
+          merge-multiple: true
+
+      - name: 📦 Install system packages
+        run: |
+          sudo apt -y install bibtex2html tidy
 
       - name: optbib2html
-        if: ${{ success() && env.FILES_CHANGED != 0 }}
         run: ./scripts/optbib2html.sh
 
-      - name: Deploy 🚀
-        if: ${{ success() && env.FILES_CHANGED != 0 && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')  }}
+      - name: 🚀 Deploy
+        if: ${{ success() && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')  }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: web # The folder the action should deploy.
           clean: true
           single-commit: true
-          
-      - run: echo "🍏 This job's status is ${{ job.status }}."
 
+      - run: echo "🍏 This job's status is ${{ job.status }}."
