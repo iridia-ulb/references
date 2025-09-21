@@ -293,8 +293,17 @@ validate_doi_entry <- function(bib_entry, bib_key) {
 }
 
 # Function to process a single BibTeX file
-process_bib_file <- function(filename, macro_files = NULL, changed_entries = NULL) {
+process_bib_file <- function(filename, changed_entries = NULL) {
   cat("Processing file:", filename, "\n")
+  # Define macro files for parsing
+  if (endsWith(filename, "crossref.bib"))
+    macro_files <- c("abbrev.bib", "authors.bib")
+  else if (endsWith(filename, "articles.bib"))
+    macro_files <- c("abbrev.bib", "authors.bib", "journals.bib")
+  else if (endsWith(filename, "biblio.bib"))
+    macro_files <- c("abbrev.bib", "authors.bib", "crossref.bib")
+  else
+    macro_files <- NULL
 
   tryCatch({
     # Read bibliography with macro files
@@ -352,10 +361,7 @@ main <- function() {
       cat("No files specified, checking default files with DOI entries\n\n")
     }
   }
-  
-  # Define macro files for parsing
-  macro_files <- c("abbrev.bib", "authors.bib", "journals.bib")
-  
+
   cat("DOI Validation Script for IRIDIA BibTeX Repository\n")
   cat("=================================================\n\n")
   
@@ -375,7 +381,7 @@ main <- function() {
   
   for (filename in args) {
     if (file.exists(filename)) {
-      process_bib_file(filename, macro_files, changed_entries)
+      process_bib_file(filename, changed_entries)
     } else {
       cat("Warning: File not found:", filename, "\n")
     }
