@@ -294,16 +294,19 @@ validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
   checked_count <<- checked_count + 1
-  cat("Checking entry", bib_key, ":", doi, "\n")
+  # Only print checking message if there are problems (will be shown by individual checks)
 
-  # Clean DOI - remove URL prefixes
-  cleaned_doi <- gsub("https?://doi\\.org/", "", doi)
-  cleaned_doi <- gsub("https?://dx\\.doi\\.org/", "", cleaned_doi)
-
-  # Check DOI format
-  format_ok <- TRUE
-  if (!validate_doi_format(cleaned_doi)) {
-    format_ok <- check_doi_issues(cleaned_doi, bib_key)
+  # Check if DOI has URL prefixes - this should be an error
+  cleaned_doi <- doi
+  if (grepl("^https?://", doi)) {
+    cat("DOI format error in entry '", bib_key, "': DOI should not include URL prefix: ", doi, "\n", sep="")
+    format_errors <<- format_errors + 1
+    format_ok <- FALSE
+  } else {
+    # Only validate format if no URL prefix error
+    if (!validate_doi_format(cleaned_doi)) {
+      format_ok <- check_doi_issues(cleaned_doi, bib_key)
+    }
   }
 
   # Determine if DOI is explicit or inherited from crossref

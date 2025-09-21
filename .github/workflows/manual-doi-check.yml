@@ -1,0 +1,54 @@
+name: Manual DOI Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      files:
+        description: 'BibTeX files to check (space-separated, e.g., "articles.bib crossref.bib") or leave empty for all'
+        required: false
+        default: ''
+        type: string
+
+env:
+  cache-version: v2
+
+jobs:
+  manual-doi-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+
+      - name: 💡 List files in the repository
+        run: |
+          ls -la *.bib
+
+      - uses: r-lib/actions/setup-r@v2
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            cran::rbibutils
+            cran::jsonlite
+            cran::httr
+          dependencies: '"hard"'
+
+      - name: 🧪 Run DOI validation
+        run: |
+          if [ -n "${{ github.event.inputs.files }}" ]; then
+            echo "Running DOI check on specified files: ${{ github.event.inputs.files }}"
+            Rscript ./scripts/doi_check.R ${{ github.event.inputs.files }}
+          else
+            echo "Running DOI check on all default files"
+            Rscript ./scripts/doi_check.R
+          fi
+
+      - name: 📊 Report results
+        if: always()
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "✅ All DOI checks passed!"
+          else
+            echo "❌ DOI validation failed - see above for details"
+            exit 1
+          fi
