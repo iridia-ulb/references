@@ -48,11 +48,13 @@ doi_entries <- list()
 # Check if CrossRef API is available
 api_available <- FALSE
 tryCatch({
-  test_response <- GET("https://api.crossref.org/works/10.1000/182",
+  # Use a more reliable test - just check if we can connect to the API endpoint
+  test_response <- GET("https://api.crossref.org/works",
                        add_headers("User-Agent" = USER_AGENT),
                        timeout(10))
-  api_available <- (status_code(test_response) == 200)
+  api_available <- (status_code(test_response) %in% c(200, 404))  # 404 is also ok, means API is reachable
 }, error = function(e) {
+  # API not available due to network issues
   api_available <<- FALSE
 })
 
@@ -102,6 +104,12 @@ check_doi_issues <- function(doi, entry_key) {
 check_duplicate_doi <- function(doi, entry_key, entry_crossref = NULL, has_explicit_doi = TRUE) {
   if (!is.null(doi_entries[[doi]])) {
     existing_entry <- doi_entries[[doi]]
+    
+    # Check if this is the same entry (avoid self-duplication)
+    if (existing_entry$entry_key == entry_key) {
+      # Same entry, just return true (no duplicate)
+      return(TRUE)
+    }
 
     # Check if this is a legitimate inheritance via crossref
     if (!has_explicit_doi && !is.null(entry_crossref) &&
@@ -298,6 +306,8 @@ validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
 
   # Check if DOI has URL prefixes - this should be an error
   cleaned_doi <- doi
+  format_ok <- TRUE  # Initialize format_ok
+  
   if (grepl("^https?://", doi)) {
     cat("DOI format error in entry '", bib_key, "': DOI should not include URL prefix: ", doi, "\n", sep="")
     format_errors <<- format_errors + 1
