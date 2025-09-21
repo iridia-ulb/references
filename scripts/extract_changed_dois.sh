@@ -27,11 +27,11 @@ changed_entries=""
 for file in articles.bib biblio.bib crossref.bib; do
   if git diff --name-only $base_ref HEAD | grep -q "^$file$"; then
     echo "Processing changes in $file" >&2
-    
+
     # Get all entries that have DOI changes (added or modified DOI lines)
     # This creates a temp file with the diff and processes it
     git diff $base_ref HEAD -- "$file" > /tmp/diff_$file
-    
+
     # Find entries where DOI field was added or modified
     grep -n "^[+-].*doi\s*=" /tmp/diff_$file | while IFS=: read linenum line; do
       # Get the entry key by looking backwards from the DOI line for the entry start
@@ -45,7 +45,7 @@ for file in articles.bib biblio.bib crossref.bib; do
         fi
       fi
     done
-    
+
     rm -f /tmp/diff_$file
   fi
 done

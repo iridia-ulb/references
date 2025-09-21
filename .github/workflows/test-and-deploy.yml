@@ -53,11 +53,11 @@ jobs:
           else
             base_ref="HEAD~1"
           fi
-          
+
           changed_entries=$(./scripts/extract_changed_dois.sh "$base_ref")
           echo "changed_entries=$changed_entries" >> $GITHUB_OUTPUT
           echo "Final changed DOI entries: $changed_entries"
-          
+
           # Set doicheck to false if no changed entries found
           if [ -z "$changed_entries" ]; then
             echo "No changed DOI entries found, skipping DOI validation"

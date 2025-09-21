@@ -102,9 +102,9 @@ check_doi_issues <- function(doi, entry_key) {
 check_duplicate_doi <- function(doi, entry_key, entry_crossref = NULL, has_explicit_doi = TRUE) {
   if (!is.null(doi_entries[[doi]])) {
     existing_entry <- doi_entries[[doi]]
-    
+
     # Check if this is a legitimate inheritance via crossref
-    if (!has_explicit_doi && !is.null(entry_crossref) && 
+    if (!has_explicit_doi && !is.null(entry_crossref) &&
         existing_entry$entry_key == entry_crossref && existing_entry$explicit) {
       # This entry inherits DOI from crossref - not a duplicate
       cat("Entry", entry_key, "inherits DOI", doi, "from crossref", entry_crossref, "\n")
@@ -114,7 +114,7 @@ check_duplicate_doi <- function(doi, entry_key, entry_crossref = NULL, has_expli
       doi_entries[[doi]] <<- list(entry_key = entry_key, crossref = entry_crossref, explicit = has_explicit_doi)
       cat("Updating DOI", doi, "record: entry", entry_key, "is the source for inherited entry", existing_entry$entry_key, "\n")
       return(TRUE)
-    } else if (!has_explicit_doi && !existing_entry$explicit && 
+    } else if (!has_explicit_doi && !existing_entry$explicit &&
                !is.null(entry_crossref) && !is.null(existing_entry$crossref) &&
                entry_crossref == existing_entry$crossref) {
       # Both entries inherit from the same crossref - not a duplicate
@@ -312,13 +312,13 @@ validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
   # Determine if DOI is explicit or inherited from crossref
   entry_crossref <- bib_entry$crossref
   has_explicit_doi <- TRUE
-  
+
   if (!is.null(entry_crossref) && !is.null(raw_bib_content)) {
     # Check if the raw entry explicitly defines DOI
     # Extract the entry from raw content
     entry_pattern <- paste0("@[^{]*\\{", bib_key, ",")
     entry_start <- grep(entry_pattern, raw_bib_content, ignore.case = TRUE)
-    
+
     if (length(entry_start) > 0) {
       # Find the end of the entry (next @ or end of file)
       entry_end <- length(raw_bib_content)
@@ -326,10 +326,10 @@ validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
       if (length(next_entry) > 0) {
         entry_end <- entry_start[1] + next_entry[1] - 1
       }
-      
+
       # Get the entry content
       entry_lines <- raw_bib_content[entry_start[1]:entry_end]
-      
+
       # Check if DOI is explicitly defined in this entry
       has_doi_line <- any(grepl("^\\s*doi\\s*=", entry_lines, ignore.case = TRUE))
       has_explicit_doi <- has_doi_line
@@ -367,7 +367,7 @@ process_bib_file <- function(filename, changed_entries = NULL) {
   tryCatch({
     # Read raw file content for explicit DOI detection
     raw_bib_content <- readLines(filename, warn = FALSE)
-    
+
     # Read bibliography with macro files
     bibs <- readBib(filename, direct=TRUE, macros=macro_files)
 
