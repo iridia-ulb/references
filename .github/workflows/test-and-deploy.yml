@@ -32,6 +32,7 @@ jobs:
         with:
           filters: |
             bibcheck: [ 'crossref.bib', 'biblio.bib', './scripts/bibcheck.R', './github/**.yml' ]
+            doicheck: [ 'articles.bib', 'biblio.bib', 'crossref.bib', './scripts/doi_check.R', './github/**.yml' ]
             linter: [ './*.bib', './scripts/linter', './github/**.yml' ]
 
       - name: 🧹 Linter
@@ -44,7 +45,7 @@ jobs:
           (git commit -m "Linter '.bib' files  [skip ci]" && git pull --rebase && git push origin) || echo "No changes to commit"
 
       - uses: r-lib/actions/setup-r@v2
-        if: steps.filter.outputs.bibcheck == 'true'
+        if: steps.filter.outputs.bibcheck == 'true' || steps.filter.outputs.doicheck == 'true'
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         if: steps.filter.outputs.bibcheck == 'true'
@@ -52,16 +53,28 @@ jobs:
           packages: cran::rbibutils
           dependencies: '"hard"'
 
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        if: steps.filter.outputs.doicheck == 'true'
+        with:
+          packages: |
+            cran::rbibutils
+            cran::jsonlite
+            cran::httr
+          dependencies: '"hard"'
+
       - run: Rscript ./scripts/bibcheck.R
         if: steps.filter.outputs.bibcheck == 'true'
 
+      - run: Rscript ./scripts/doi_check.R
+        if: steps.filter.outputs.doicheck == 'true'
+
       - name: 📊 Report results
-        if: always() && steps.filter.outputs.bibcheck == 'true'
+        if: always() && (steps.filter.outputs.bibcheck == 'true' || steps.filter.outputs.doicheck == 'true')
         run: |
           if [ $? -eq 0 ]; then
-            echo "✅ All bibliography checks passed!"
+            echo "✅ All bibliography and DOI checks passed!"
           else
-            echo "❌ Bibliography validation failed - see above for details"
+            echo "❌ Bibliography or DOI validation failed - see above for details"
             exit 1
           fi
 
