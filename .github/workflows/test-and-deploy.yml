@@ -65,7 +65,62 @@ jobs:
       - run: Rscript ./scripts/bibcheck.R
         if: steps.filter.outputs.bibcheck == 'true'
 
-      - run: Rscript ./scripts/doi_check.R
+      - name: 🔍 Extract changed DOI entries
+        if: steps.filter.outputs.doicheck == 'true'
+        id: extract-dois
+        run: |
+          # Get the changed entries from modified bib files
+          changed_entries=""
+          
+          # Check for pull request vs push
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base_ref="${{ github.event.pull_request.base.sha }}"
+          else
+            base_ref="HEAD~1"
+          fi
+          
+          echo "Comparing against base ref: $base_ref"
+          
+          # Extract DOI entries from changed lines in bib files
+          for file in articles.bib biblio.bib crossref.bib; do
+            if git diff --name-only $base_ref HEAD | grep -q "^$file$"; then
+              echo "Processing changes in $file"
+              
+              # Get all entries that have DOI changes (added or modified DOI lines)
+              # This creates a temp file with the diff and processes it
+              git diff $base_ref HEAD -- "$file" > /tmp/diff_$file
+              
+              # Find entries where DOI field was added or modified
+              grep -n "^[+-].*doi\s*=" /tmp/diff_$file | while IFS=: read linenum line; do
+                # Get the entry key by looking backwards from the DOI line for the entry start
+                entry_start=$(head -n $linenum /tmp/diff_$file | grep -n "^[+-]@[A-Za-z]*{" | tail -1)
+                if [ -n "$entry_start" ]; then
+                  entry_line=$(echo "$entry_start" | cut -d: -f2)
+                  entry_key=$(echo "$entry_line" | sed 's/^[+-]@[A-Za-z]*{\([^,}]*\).*/\1/')
+                  if [ -n "$entry_key" ]; then
+                    echo "Found changed DOI in entry: $entry_key"
+                    changed_entries="$changed_entries $entry_key"
+                  fi
+                fi
+              done
+              
+              rm -f /tmp/diff_$file
+            fi
+          done
+          
+          # Remove duplicates and clean up
+          changed_entries=$(echo "$changed_entries" | tr ' ' '\n' | sort -u | tr '\n' ' ' | xargs)
+          echo "changed_entries=$changed_entries" >> $GITHUB_OUTPUT
+          echo "Final changed DOI entries: $changed_entries"
+
+      - run: |
+          if [ -n "${{ steps.extract-dois.outputs.changed_entries }}" ]; then
+            echo "Running DOI check for changed entries: ${{ steps.extract-dois.outputs.changed_entries }}"
+            Rscript ./scripts/doi_check.R --changed-entries "${{ steps.extract-dois.outputs.changed_entries }}"
+          else
+            echo "No changed DOI entries detected, running full DOI check"
+            Rscript ./scripts/doi_check.R
+          fi
         if: steps.filter.outputs.doicheck == 'true'
 
       - name: 📊 Report results

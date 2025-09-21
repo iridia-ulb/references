@@ -293,7 +293,7 @@ validate_doi_entry <- function(bib_entry, bib_key) {
 }
 
 # Function to process a single BibTeX file
-process_bib_file <- function(filename, macro_files = NULL) {
+process_bib_file <- function(filename, macro_files = NULL, changed_entries = NULL) {
   cat("Processing file:", filename, "\n")
 
   tryCatch({
@@ -301,17 +301,28 @@ process_bib_file <- function(filename, macro_files = NULL) {
     bibs <- readBib(filename, direct=TRUE, macros=macro_files)
 
     entries_with_doi <- 0
+    entries_checked <- 0
+    
     for (i in 1:length(bibs)) {
       entry <- unclass(bibs[[i]])[[1L]]
       key <- attr(entry, "key")
 
       if (!is.null(entry$doi)) {
         entries_with_doi <- entries_with_doi + 1
-        validate_doi_entry(entry, key)
+        
+        # If changed_entries is specified, only check those entries
+        if (is.null(changed_entries) || key %in% changed_entries) {
+          validate_doi_entry(entry, key)
+          entries_checked <- entries_checked + 1
+        }
       }
     }
 
-    cat("Found", entries_with_doi, "entries with DOI in", filename, "\n\n")
+    if (!is.null(changed_entries) && length(changed_entries) > 0) {
+      cat("Found", entries_with_doi, "entries with DOI in", filename, ", checked", entries_checked, "changed entries\n\n")
+    } else {
+      cat("Found", entries_with_doi, "entries with DOI in", filename, "\n\n")
+    }
 
   }, error = function(e) {
     cat("Error processing", filename, ":", e$message, "\n\n")
@@ -322,34 +333,54 @@ process_bib_file <- function(filename, macro_files = NULL) {
 # Main execution
 main <- function() {
   args <- commandArgs(trailingOnly = TRUE)
-
+  
+  # Parse arguments for changed entries
+  changed_entries <- NULL
+  changed_entries_flag <- which(args == "--changed-entries")
+  if (length(changed_entries_flag) > 0 && length(args) > changed_entries_flag) {
+    changed_entries_str <- args[changed_entries_flag + 1]
+    changed_entries <- trimws(strsplit(changed_entries_str, " ")[[1]])
+    changed_entries <- changed_entries[changed_entries != ""]
+    # Remove the flag and entries from args
+    args <- args[-c(changed_entries_flag, changed_entries_flag + 1)]
+  }
+  
   # Default files if none specified
   if (length(args) == 0) {
     args <- c("articles.bib", "biblio.bib", "crossref.bib")
-    cat("No files specified, checking default files with DOI entries\n\n")
+    if (is.null(changed_entries)) {
+      cat("No files specified, checking default files with DOI entries\n\n")
+    }
   }
-
+  
   # Define macro files for parsing
   macro_files <- c("abbrev.bib", "authors.bib", "journals.bib")
-
+  
   cat("DOI Validation Script for IRIDIA BibTeX Repository\n")
   cat("=================================================\n\n")
-
+  
   # Report API availability
   if (api_available) {
     cat("CrossRef API is available - full validation enabled\n\n")
   } else {
     cat("CrossRef API not available - format and duplicate validation only\n\n")
   }
-
+  
+  # Report mode
+  if (!is.null(changed_entries) && length(changed_entries) > 0) {
+    cat("Running incremental DOI check for changed entries:", paste(changed_entries, collapse=", "), "\n\n")
+  } else {
+    cat("Running full DOI check for all entries\n\n")
+  }
+  
   for (filename in args) {
     if (file.exists(filename)) {
-      process_bib_file(filename, macro_files)
+      process_bib_file(filename, macro_files, changed_entries)
     } else {
       cat("Warning: File not found:", filename, "\n")
     }
   }
-
+  
   # Summary
   cat("DOI Validation Summary\n")
   cat("=====================\n")
@@ -360,9 +391,9 @@ main <- function() {
     cat("API errors:", api_error_count, "\n")
     cat("Mismatches found:", mismatch_count, "\n")
   }
-
+  
   total_errors <- format_errors + duplicate_count + api_error_count + mismatch_count
-
+  
   if (total_errors > 0) {
     cat("\nSome DOI validation issues were found. Please review the entries above.\n")
     quit(status = 1)
