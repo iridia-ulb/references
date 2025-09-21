@@ -4,26 +4,26 @@ This directory contains a script to validate DOI fields in BibTeX entries.
 
 ## Scripts
 
-### `doi_check.sh`
+### `doi_check.R`
 
-A comprehensive script that validates DOI fields in BibTeX files by checking:
+A comprehensive R script that validates DOI fields in BibTeX files by checking:
 
 1. **DOI Format Validation**: Ensures DOIs follow the standard format (10.xxxx/yyyy)
 2. **Duplicate Detection**: Identifies duplicate DOIs across entries
 3. **Format Issues**: Detects common problems like URL prefixes, invalid patterns, etc.
-4. **API Validation**: When network access is available, validates against CrossRef API
+4. **API Validation**: When network access is available, validates against CrossRef API and compares metadata
 
 #### Usage
 
 ```bash
 # Check default files (articles.bib, biblio.bib, crossref.bib)
-./scripts/doi_check.sh
+./scripts/doi_check.R
 
 # Check specific files
-./scripts/doi_check.sh articles.bib biblio.bib
+./scripts/doi_check.R articles.bib biblio.bib
 
 # Check a single file
-./scripts/doi_check.sh crossref.bib
+./scripts/doi_check.R crossref.bib
 ```
 
 #### Features
@@ -32,8 +32,10 @@ A comprehensive script that validates DOI fields in BibTeX files by checking:
 - **Duplicate Detection**: Prevents multiple entries using the same DOI
 - **URL Cleaning**: Automatically removes http(s)://doi.org/ prefixes
 - **Network-Aware**: Automatically detects if CrossRef API is available
+- **Metadata Comparison**: When API is available, compares titles, authors, and years
 - **Comprehensive Reporting**: Clear summary of validation results
 - **Exit Codes**: Proper exit codes for integration with CI/CD
+- **Automatic Package Installation**: Installs required R packages if not available
 
 #### Output Example
 
@@ -59,10 +61,7 @@ All DOI entries passed validation. Good job!
 
 #### Requirements
 
-- `bash` (version 4.0+)
-- `awk` 
-- `curl` (for API validation when available)
-- `jq` (optional, for API validation when available)
+- `R` with packages: `rbibutils`, `jsonlite`, `httr` (auto-installed if missing)
 
 #### Integration
 

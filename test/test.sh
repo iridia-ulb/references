@@ -12,7 +12,7 @@ fi
 
 # Run DOI validation on files that contain DOI entries
 echo "Running DOI validation..."
-../scripts/doi_check.sh ../articles.bib ../biblio.bib ../crossref.bib || exit 1
+../scripts/doi_check.R ../articles.bib ../biblio.bib ../crossref.bib || exit 1
 
 fold_start() {
     echo -e "::group:: $1 \033[33;1m$2\033[0m"

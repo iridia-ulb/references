@@ -2,8 +2,11 @@
 #
 # DOI Validation Script for IRIDIA BibTeX Repository
 # 
-# This script checks that DOI fields in BibTeX entries match the correct papers
-# by querying the CrossRef API and comparing metadata.
+# This script provides comprehensive DOI validation including:
+# 1. DOI format validation
+# 2. Duplicate DOI detection across entries
+# 3. CrossRef API validation and metadata comparison (when network available)
+# 4. Missing or malformed DOI field detection
 #
 # Usage: Rscript doi_check.R [bibfile1] [bibfile2] ...
 #        If no files specified, checks all main bib files with DOI entries
@@ -33,8 +36,80 @@ MAX_RETRIES <- 3
 
 # Initialize counters
 checked_count <- 0
-error_count <- 0
+format_errors <- 0
+duplicate_count <- 0
+api_error_count <- 0
 mismatch_count <- 0
+
+# Global list to track DOI duplicates
+doi_entries <- list()
+
+# Check if CrossRef API is available
+api_available <- FALSE
+tryCatch({
+  test_response <- GET("https://api.crossref.org/works/10.1000/182", 
+                       add_headers("User-Agent" = USER_AGENT),
+                       timeout(10))
+  api_available <- (status_code(test_response) == 200)
+}, error = function(e) {
+  api_available <<- FALSE
+})
+
+# Function to validate DOI format
+validate_doi_format <- function(doi) {
+  # DOI should match pattern: 10.xxxx/yyyy where xxxx is registrant code and yyyy is suffix
+  return(grepl("^10\\.[0-9]+/.+", doi))
+}
+
+# Function to check for common DOI format issues
+check_doi_issues <- function(doi, entry_key) {
+  issues <- c()
+  
+  # Check for URL prefixes that should be removed
+  if (grepl("^https?://", doi)) {
+    issues <- c(issues, "Contains URL prefix (should be DOI only)")
+  }
+  
+  # Check for proper 10.xxxx prefix
+  if (!grepl("^10\\.", doi)) {
+    issues <- c(issues, "Does not start with '10.'")
+  }
+  
+  # Check for missing registrant/suffix separator
+  if (!grepl("/", doi)) {
+    issues <- c(issues, "Missing '/' separator")
+  }
+  
+  # Check for suspicious patterns
+  if (grepl("[[:space:]]", doi)) {
+    issues <- c(issues, "Contains whitespace")
+  }
+  
+  if (length(issues) > 0) {
+    cat("DOI format issues in entry '", entry_key, "': ", doi, "\n", sep="")
+    for (issue in issues) {
+      cat("  - ", issue, "\n", sep="")
+    }
+    format_errors <<- format_errors + 1
+    return(FALSE)
+  }
+  
+  return(TRUE)
+}
+
+# Function to track and check for duplicate DOIs
+check_duplicate_doi <- function(doi, entry_key) {
+  if (!is.null(doi_entries[[doi]])) {
+    cat("DUPLICATE DOI found: ", doi, "\n", sep="")
+    cat("  First entry: ", doi_entries[[doi]], "\n", sep="")
+    cat("  Duplicate entry: ", entry_key, "\n", sep="")
+    duplicate_count <<- duplicate_count + 1
+    return(FALSE)
+  } else {
+    doi_entries[[doi]] <<- entry_key
+    return(TRUE)
+  }
+}
 
 # Function to clean and normalize text for comparison
 normalize_text <- function(text) {
@@ -87,7 +162,7 @@ compare_names <- function(bib_authors, crossref_authors) {
 
 # Function to query CrossRef API for DOI metadata
 get_crossref_metadata <- function(doi) {
-  if (is.null(doi) || is.na(doi) || doi == "") return(NULL)
+  if (is.null(doi) || is.na(doi) || doi == "" || !api_available) return(NULL)
   
   # Clean DOI
   doi <- gsub("https?://doi.org/", "", doi)
@@ -132,13 +207,10 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
   doi <- bib_entry$doi
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
   
-  cat("Checking DOI for entry", bib_key, ":", doi, "\n")
-  
   crossref_data <- get_crossref_metadata(doi)
-  checked_count <<- checked_count + 1
   
   if (is.null(crossref_data)) {
-    error_count <<- error_count + 1
+    api_error_count <<- api_error_count + 1
     return(FALSE)
   }
   
@@ -187,6 +259,39 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
   return(is_match)
 }
 
+# Function to validate a single DOI entry
+validate_doi_entry <- function(bib_entry, bib_key) {
+  doi <- bib_entry$doi
+  if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
+  
+  checked_count <<- checked_count + 1
+  cat("Checking entry", bib_key, ":", doi, "\n")
+  
+  # Clean DOI - remove URL prefixes
+  cleaned_doi <- gsub("https?://doi\\.org/", "", doi)
+  cleaned_doi <- gsub("https?://dx\\.doi\\.org/", "", cleaned_doi)
+  
+  # Check DOI format
+  format_ok <- TRUE
+  if (!validate_doi_format(cleaned_doi)) {
+    format_ok <- check_doi_issues(cleaned_doi, bib_key)
+  }
+  
+  # Check for duplicates
+  duplicate_ok <- check_duplicate_doi(cleaned_doi, bib_key)
+  
+  # If API validation is available and format is OK, try to validate against CrossRef
+  api_ok <- TRUE
+  if (api_available && format_ok) {
+    # Update the entry with cleaned DOI for API validation
+    bib_entry$doi <- cleaned_doi
+    api_ok <- compare_entry_with_crossref(bib_entry, bib_key)
+  }
+  
+  # Return status based on validations
+  return(format_ok && duplicate_ok && api_ok)
+}
+
 # Function to process a single BibTeX file
 process_bib_file <- function(filename, macro_files = NULL) {
   cat("Processing file:", filename, "\n")
@@ -202,7 +307,7 @@ process_bib_file <- function(filename, macro_files = NULL) {
       
       if (!is.null(entry$doi)) {
         entries_with_doi <- entries_with_doi + 1
-        compare_entry_with_crossref(entry, key)
+        validate_doi_entry(entry, key)
       }
     }
     
@@ -210,7 +315,7 @@ process_bib_file <- function(filename, macro_files = NULL) {
     
   }, error = function(e) {
     cat("Error processing", filename, ":", e$message, "\n\n")
-    error_count <<- error_count + 1
+    api_error_count <<- api_error_count + 1
   })
 }
 
@@ -230,6 +335,13 @@ main <- function() {
   cat("DOI Validation Script for IRIDIA BibTeX Repository\n")
   cat("=================================================\n\n")
   
+  # Report API availability
+  if (api_available) {
+    cat("CrossRef API is available - full validation enabled\n\n")
+  } else {
+    cat("CrossRef API not available - format and duplicate validation only\n\n")
+  }
+  
   for (filename in args) {
     if (file.exists(filename)) {
       process_bib_file(filename, macro_files)
@@ -242,14 +354,20 @@ main <- function() {
   cat("DOI Validation Summary\n")
   cat("=====================\n")
   cat("Total DOI entries checked:", checked_count, "\n")
-  cat("API errors:", error_count, "\n")
-  cat("Mismatches found:", mismatch_count, "\n")
+  cat("Format errors:", format_errors, "\n")
+  cat("Duplicate DOIs:", duplicate_count, "\n")
+  if (api_available) {
+    cat("API errors:", api_error_count, "\n")
+    cat("Mismatches found:", mismatch_count, "\n")
+  }
   
-  if (mismatch_count > 0) {
-    cat("\nSome DOI mismatches were found. Please review the entries above.\n")
+  total_errors <- format_errors + duplicate_count + api_error_count + mismatch_count
+  
+  if (total_errors > 0) {
+    cat("\nSome DOI validation issues were found. Please review the entries above.\n")
     quit(status = 1)
   } else {
-    cat("\nAll DOI entries appear to match their metadata. Good job!\n")
+    cat("\nAll DOI entries passed validation. Good job!\n")
     quit(status = 0)
   }
 }
