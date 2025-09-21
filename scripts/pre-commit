@@ -20,7 +20,7 @@ failed() {
 
 if [[ -n "$BIB_FILES" ]]; then
     echo -n "Pre-commit check ........ "
-    if ERROR=$(./test/fast_check.sh $BIB_FILES); then
+    if ERROR=$(./scripts/fast_check.sh $BIB_FILES); then
         echo "passed!"
     else
         failed "$ERROR"

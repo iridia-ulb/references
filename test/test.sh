@@ -8,8 +8,6 @@ if [ ! -r ../biblio.bib ]; then
     exit 1
 fi
 
-./fast_check.sh ../*.bib || exit 1
-
 fold_start() {
     echo -e "::group:: $1 \033[33;1m$2\033[0m"
 }
@@ -19,8 +17,8 @@ fold_end() {
 }
 
 latexmake() {
-    TEXMAIN=$1
-    BST=$2
+    local TEXMAIN=$1
+    local BST=$2
     fold_start latexmk.1 "latexmk $TEXMAIN $BST"
     rm -f *.bbl *.aux *.log *.out *.bcf *.blg *.fls *.hd *.fdb_latexmk *.run.xml *.syctex.gz
 

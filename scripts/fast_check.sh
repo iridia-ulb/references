@@ -2,10 +2,10 @@
 set -u
 
 check_bad_thing() {
-    WHAT=$1
-    MSG=$2
-    TYPE=${3:-"-e"}
-    WHERE=${4:-$FILES}
+    local WHAT=$1
+    local MSG=$2
+    local TYPE=${3:-"-e"}
+    local WHERE=${4:-$FILES}
     grep --quiet $TYPE $WHAT $WHERE
     if [ $? -eq 0 ]; then
         echo "Error: $MSG"
