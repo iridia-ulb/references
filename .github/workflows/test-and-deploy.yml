@@ -33,6 +33,11 @@ jobs:
           filters: |
             bibcheck: [ 'crossref.bib', 'biblio.bib', './scripts/bibcheck.R', './github/**.yml' ]
             linter: [ './*.bib', './scripts/linter', './github/**.yml' ]
+            fastcheck:  [ './*.bib', './scripts/fast_check.sh', './github/**.yml' ]
+
+      - name: 🧹 Fast check
+        if: ${{ steps.filter.outputs.fastcheck == 'true' }}
+        run: ./scripts/fast_check.sh *.bib
 
       - name: 🧹 Linter
         if: ${{ steps.filter.outputs.linter == 'true' && github.event_name == 'push' }}
