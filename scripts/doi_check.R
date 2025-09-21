@@ -42,6 +42,7 @@ api_error_count <- 0
 mismatch_count <- 0
 
 # Global list to track DOI duplicates
+# Structure: doi_entries[[doi]] = list(entry_key = "key", crossref = "crossref_key_or_null", explicit = TRUE/FALSE)
 doi_entries <- list()
 
 # Check if CrossRef API is available
@@ -98,15 +99,43 @@ check_doi_issues <- function(doi, entry_key) {
 }
 
 # Function to track and check for duplicate DOIs
-check_duplicate_doi <- function(doi, entry_key) {
+check_duplicate_doi <- function(doi, entry_key, entry_crossref = NULL, has_explicit_doi = TRUE) {
   if (!is.null(doi_entries[[doi]])) {
-    cat("DUPLICATE DOI found: ", doi, "\n", sep="")
-    cat("  First entry: ", doi_entries[[doi]], "\n", sep="")
-    cat("  Duplicate entry: ", entry_key, "\n", sep="")
-    duplicate_count <<- duplicate_count + 1
-    return(FALSE)
+    existing_entry <- doi_entries[[doi]]
+    
+    # Check if this is a legitimate inheritance via crossref
+    if (!has_explicit_doi && !is.null(entry_crossref) && 
+        existing_entry$entry_key == entry_crossref && existing_entry$explicit) {
+      # This entry inherits DOI from crossref - not a duplicate
+      cat("Entry", entry_key, "inherits DOI", doi, "from crossref", entry_crossref, "\n")
+      return(TRUE)
+    } else if (!existing_entry$explicit && existing_entry$crossref == entry_key && has_explicit_doi) {
+      # The existing entry inherited from this one - update the record
+      doi_entries[[doi]] <<- list(entry_key = entry_key, crossref = entry_crossref, explicit = has_explicit_doi)
+      cat("Updating DOI", doi, "record: entry", entry_key, "is the source for inherited entry", existing_entry$entry_key, "\n")
+      return(TRUE)
+    } else if (!has_explicit_doi && !existing_entry$explicit && 
+               !is.null(entry_crossref) && !is.null(existing_entry$crossref) &&
+               entry_crossref == existing_entry$crossref) {
+      # Both entries inherit from the same crossref - not a duplicate
+      cat("Entries", existing_entry$entry_key, "and", entry_key, "both inherit DOI", doi, "from", entry_crossref, "\n")
+      return(TRUE)
+    } else {
+      # This is a real duplicate
+      cat("DUPLICATE DOI found: ", doi, "\n", sep="")
+      cat("  First entry: ", existing_entry$entry_key, " (explicit: ", existing_entry$explicit, ")\n", sep="")
+      cat("  Duplicate entry: ", entry_key, " (explicit: ", has_explicit_doi, ")\n", sep="")
+      if (!is.null(entry_crossref)) {
+        cat("  Current entry crossref: ", entry_crossref, "\n", sep="")
+      }
+      if (!is.null(existing_entry$crossref)) {
+        cat("  First entry crossref: ", existing_entry$crossref, "\n", sep="")
+      }
+      duplicate_count <<- duplicate_count + 1
+      return(FALSE)
+    }
   } else {
-    doi_entries[[doi]] <<- entry_key
+    doi_entries[[doi]] <<- list(entry_key = entry_key, crossref = entry_crossref, explicit = has_explicit_doi)
     return(TRUE)
   }
 }
@@ -260,13 +289,12 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
 }
 
 # Function to validate a single DOI entry
-validate_doi_entry <- function(bib_entry, bib_key, verbose = FALSE) {
+validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
   doi <- bib_entry$doi
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
   checked_count <<- checked_count + 1
-  if (verbose)
-    cat("Checking entry", bib_key, ":", doi, "\n")
+  cat("Checking entry", bib_key, ":", doi, "\n")
 
   # Clean DOI - remove URL prefixes
   cleaned_doi <- gsub("https?://doi\\.org/", "", doi)
@@ -278,8 +306,35 @@ validate_doi_entry <- function(bib_entry, bib_key, verbose = FALSE) {
     format_ok <- check_doi_issues(cleaned_doi, bib_key)
   }
 
-  # Check for duplicates
-  duplicate_ok <- check_duplicate_doi(cleaned_doi, bib_key)
+  # Determine if DOI is explicit or inherited from crossref
+  entry_crossref <- bib_entry$crossref
+  has_explicit_doi <- TRUE
+  
+  if (!is.null(entry_crossref) && !is.null(raw_bib_content)) {
+    # Check if the raw entry explicitly defines DOI
+    # Extract the entry from raw content
+    entry_pattern <- paste0("@[^{]*\\{", bib_key, ",")
+    entry_start <- grep(entry_pattern, raw_bib_content, ignore.case = TRUE)
+    
+    if (length(entry_start) > 0) {
+      # Find the end of the entry (next @ or end of file)
+      entry_end <- length(raw_bib_content)
+      next_entry <- grep("^@", raw_bib_content[(entry_start[1] + 1):length(raw_bib_content)])
+      if (length(next_entry) > 0) {
+        entry_end <- entry_start[1] + next_entry[1] - 1
+      }
+      
+      # Get the entry content
+      entry_lines <- raw_bib_content[entry_start[1]:entry_end]
+      
+      # Check if DOI is explicitly defined in this entry
+      has_doi_line <- any(grepl("^\\s*doi\\s*=", entry_lines, ignore.case = TRUE))
+      has_explicit_doi <- has_doi_line
+    }
+  }
+
+  # Check for duplicates with crossref awareness
+  duplicate_ok <- check_duplicate_doi(cleaned_doi, bib_key, entry_crossref, has_explicit_doi)
 
   # If API validation is available and format is OK, try to validate against CrossRef
   api_ok <- TRUE
@@ -307,6 +362,9 @@ process_bib_file <- function(filename, changed_entries = NULL) {
     macro_files <- NULL
 
   tryCatch({
+    # Read raw file content for explicit DOI detection
+    raw_bib_content <- readLines(filename, warn = FALSE)
+    
     # Read bibliography with macro files
     bibs <- readBib(filename, direct=TRUE, macros=macro_files)
 
@@ -322,7 +380,7 @@ process_bib_file <- function(filename, changed_entries = NULL) {
 
         # If changed_entries is specified, only check those entries
         if (is.null(changed_entries) || key %in% changed_entries) {
-          validate_doi_entry(entry, key)
+          validate_doi_entry(entry, key, raw_bib_content)
           entries_checked <- entries_checked + 1
         }
       }
