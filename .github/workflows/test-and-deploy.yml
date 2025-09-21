@@ -61,7 +61,7 @@ jobs:
           # Set doicheck to false if no changed entries found
           if [ -z "$changed_entries" ]; then
             echo "No changed DOI entries found, skipping DOI validation"
-            echo "doicheck_needed=false" >> $GITHUB_OUTPUT
+            echo "doicheck_needed=true" >> $GITHUB_OUTPUT
           else
             echo "doicheck_needed=true" >> $GITHUB_OUTPUT
           fi
@@ -93,6 +93,7 @@ jobs:
             Rscript ./scripts/doi_check.R --changed-entries "${{ steps.extract-dois.outputs.changed_entries }}"
           else
             echo "No changed DOI entries detected, skipping DOI check"
+            Rscript ./scripts/doi_check.R
           fi
         if: steps.extract-dois.outputs.doicheck_needed == 'true'
 
