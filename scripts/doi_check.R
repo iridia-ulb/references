@@ -260,12 +260,13 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
 }
 
 # Function to validate a single DOI entry
-validate_doi_entry <- function(bib_entry, bib_key) {
+validate_doi_entry <- function(bib_entry, bib_key, verbose = FALSE) {
   doi <- bib_entry$doi
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
   checked_count <<- checked_count + 1
-  cat("Checking entry", bib_key, ":", doi, "\n")
+  if (verbose)
+    cat("Checking entry", bib_key, ":", doi, "\n")
 
   # Clean DOI - remove URL prefixes
   cleaned_doi <- gsub("https?://doi\\.org/", "", doi)
