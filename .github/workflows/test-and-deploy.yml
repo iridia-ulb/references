@@ -117,9 +117,6 @@ jobs:
           if [ -n "${{ steps.extract-dois.outputs.changed_entries }}" ]; then
             echo "Running DOI check for changed entries: ${{ steps.extract-dois.outputs.changed_entries }}"
             Rscript ./scripts/doi_check.R --changed-entries "${{ steps.extract-dois.outputs.changed_entries }}"
-          else
-            echo "No changed DOI entries detected, running full DOI check"
-            Rscript ./scripts/doi_check.R
           fi
         if: steps.filter.outputs.doicheck == 'true'
 
