@@ -2,6 +2,9 @@ name: CI
 
 on:
   push:
+    branches:
+      - master
+      - main
     paths-ignore: ['README.md','bibpool/**','**precommit*','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
 
   pull_request:
@@ -15,12 +18,17 @@ jobs:
     if: "! contains(github.event.head_commit.message, '[skip ci]')"
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
+    # Set job outputs to values from filter step
+    outputs:
+      dotest: ${{ steps.filter.outputs.dotest }}
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: 📥 Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
 
       - name: 💡 List files in the repository
         run: |
@@ -32,8 +40,10 @@ jobs:
         with:
           filters: |
             bibcheck: [ 'crossref.bib', 'biblio.bib', './scripts/bibcheck.R', './github/**.yml' ]
+            doicheck: [ 'articles.bib', 'biblio.bib', 'crossref.bib', './scripts/doi_check.R', './github/**.yml' ]
             linter: [ './*.bib', './scripts/linter', './github/**.yml' ]
             fastcheck:  [ './*.bib', './scripts/fast_check.sh', './github/**.yml' ]
+            dotest: [ './*.bib', './test/test.sh', './test/*.bst', './test/*.tex', './github/**.yml']
 
       - name: 🧹 Fast check
         if: ${{ steps.filter.outputs.fastcheck == 'true' }}
@@ -48,8 +58,30 @@ jobs:
           git add *.bib
           (git commit -m "Linter '.bib' files  [skip ci]" && git pull --rebase && git push origin) || echo "No changes to commit"
 
+      - name: 🔍 Extract changed DOI entries
+        id: extract-dois
+        run: |
+          # Check for pull request vs push
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base_ref="${{ github.event.pull_request.base.sha }}"
+          else
+            base_ref="HEAD~1"
+          fi
+
+          changed_entries=$(./scripts/extract_changed_dois.sh "$base_ref")
+          echo "changed_entries=$changed_entries" >> $GITHUB_OUTPUT
+          echo "Final changed DOI entries: $changed_entries"
+
+          # Set doicheck to false if no changed entries found
+          if [ -z "$changed_entries" ]; then
+            echo "No changed DOI entries found, skipping DOI validation"
+            echo "doicheck_needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "doicheck_needed=true" >> $GITHUB_OUTPUT
+          fi
+
       - uses: r-lib/actions/setup-r@v2
-        if: steps.filter.outputs.bibcheck == 'true'
+        if: (steps.filter.outputs.bibcheck == 'true' || steps.extract-dois.outputs.doicheck_needed == 'true')
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         if: steps.filter.outputs.bibcheck == 'true'
@@ -57,22 +89,38 @@ jobs:
           packages: cran::rbibutils
           dependencies: '"hard"'
 
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        if: steps.extract-dois.outputs.doicheck_needed == 'true'
+        with:
+          packages: |
+            cran::rbibutils
+            cran::jsonlite
+            cran::httr2
+          dependencies: '"hard"'
+
       - run: Rscript ./scripts/bibcheck.R
         if: steps.filter.outputs.bibcheck == 'true'
 
-      - name: 📊 Report results
-        if: always() && steps.filter.outputs.bibcheck == 'true'
+      - name: "Running DOI check for changed entries: ${{ steps.extract-dois.outputs.changed_entries }}"
+        if: steps.extract-dois.outputs.doicheck_needed == 'true'
         run: |
-          if [ $? -eq 0 ]; then
-            echo "✅ All bibliography checks passed!"
-          else
-            echo "❌ Bibliography validation failed - see above for details"
-            exit 1
-          fi
+          Rscript ./scripts/doi_check.R --changed-entries "${{ steps.extract-dois.outputs.changed_entries }}"
+
+      - name: 📊 Report results
+        if: failure() && (steps.filter.outputs.bibcheck == 'true' || steps.extract-dois.outputs.doicheck_needed == 'true')
+        run: |
+          echo "❌ Bibliography or DOI validation failed - see above for details"
+          exit 1
+
+      - name: 📊 Report results
+        if: success() && (steps.filter.outputs.bibcheck == 'true' || steps.extract-dois.outputs.doicheck_needed == 'true')
+        run: |
+          echo "✅ All bibliography and DOI checks passed!"
 
   test:
     name: BibTeX Testing ${{ matrix.main }}.tex ${{ matrix.style }}.bst
     needs: ci
+    if: ${{ needs.ci.outputs.dotest == 'true' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
