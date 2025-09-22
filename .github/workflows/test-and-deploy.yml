@@ -2,6 +2,9 @@ name: CI
 
 on:
   push:
+    branches:
+      - master
+      - main
     paths-ignore: ['README.md','bibpool/**','**precommit*','setup_worktree.sh','mklog','**.latexmkrc','.gitignore']
 
   pull_request:
