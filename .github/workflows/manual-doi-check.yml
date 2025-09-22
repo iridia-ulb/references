@@ -30,7 +30,7 @@ jobs:
           packages: |
             cran::rbibutils
             cran::jsonlite
-            cran::httr
+            cran::httr2
           dependencies: '"hard"'
 
       - name: 🧪 Run DOI validation

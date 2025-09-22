@@ -84,7 +84,7 @@ jobs:
           packages: |
             cran::rbibutils
             cran::jsonlite
-            cran::httr
+            cran::httr2
           dependencies: '"hard"'
 
       - run: Rscript ./scripts/bibcheck.R

@@ -13,9 +13,24 @@
 #
 
 options(warn=2)  # Turn warnings into errors
+
+# Function to install packages if not available
+install_if_missing <- function(package) {
+  if (!require(package, character.only = TRUE, quietly = TRUE)) {
+    cat("Installing required package:", package, "\n")
+    install.packages(package, repos = "https://cran.r-project.org/")
+    library(package, character.only = TRUE)
+  }
+}
+
+# Install required packages if not available
+install_if_missing("rbibutils")
+install_if_missing("jsonlite")
+install_if_missing("httr2")
+
 library(rbibutils)
 library(jsonlite)
-library(httr)
+library(httr2)
 
 # Configuration
 CROSSREF_API_BASE <- "https://api.crossref.org/works/"
@@ -39,13 +54,26 @@ doi_entries <- list()
 api_available <- FALSE
 tryCatch({
   # Use a more reliable test - just check if we can connect to the API endpoint
-  test_response <- GET("https://api.crossref.org/works",
-                       add_headers("User-Agent" = USER_AGENT),
-                       timeout(10))
-  api_available <- (status_code(test_response) %in% c(200, 404))  # 404 is also ok, means API is reachable
+  test_request <- request("https://api.crossref.org/works") |>
+    req_headers("User-Agent" = USER_AGENT) |>
+    req_timeout(10)
+  test_response <- req_perform(test_request)
+  api_available <- (resp_status(test_response) %in% c(200, 404))  # 404 is also ok, means API is reachable
 }, error = function(e) {
   # API not available due to network issues
   api_available <<- FALSE
+})
+
+# Check if doi.org is available
+doi_org_available <- FALSE
+tryCatch({
+  test_request <- request("https://doi.org/api/test") |>
+    req_timeout(10)
+  test_response <- req_perform(test_request)
+  doi_org_available <- TRUE
+}, error = function(e) {
+  cat("Warning: doi.org is not reachable. DOI resolution checks will be skipped.\n")
+  doi_org_available <<- FALSE
 })
 
 # Function to check for common DOI format issues
@@ -93,10 +121,32 @@ normalize_text <- function(text) {
   if (is.null(text) || is.na(text) || length(text) == 0) return("")
   # Convert to lowercase, remove extra whitespace, punctuation variations
   text <- tolower(as.character(text))
-  text <- gsub("[{}]", "", text)  # Remove LaTeX braces
-  text <- gsub("[[:punct:]]", " ", text)  # Replace punctuation with spaces
-  text <- gsub("\\s+", " ", text)  # Collapse multiple spaces
+  
+  # Remove LaTeX math expressions (everything between dollar signs)
+  text <- gsub("\\$[^$]*\\$", "", text)
+  
+  # Remove LaTeX commands with various argument patterns
+  # \command{arg}
+  text <- gsub("\\\\[a-zA-Z]+\\{[^}]*\\}", "", text)
+  # \command[arg]
+  text <- gsub("\\\\[a-zA-Z]+\\[[^]]*\\]", "", text)
+  # \command[arg]{arg1}
+  text <- gsub("\\\\[a-zA-Z]+\\[[^]]*\\]\\{[^}]*\\}", "", text)
+  # Simple \command without arguments
+  text <- gsub("\\\\[a-zA-Z]+", "", text)
+  
+  # Remove LaTeX braces
+  text <- gsub("[{}]", "", text)
+  
+  # Replace punctuation with spaces
+  text <- gsub("[[:punct:]]", " ", text)
+  
+  # Collapse multiple spaces
+  text <- gsub("\\s+", " ", text)
+  
+  # Trim whitespace
   text <- trimws(text)
+  
   return(text)
 }
 
@@ -138,7 +188,7 @@ compare_names <- function(bib_authors, crossref_authors) {
 }
 
 # Function to query CrossRef API for DOI metadata
-get_crossref_metadata <- function(doi) {
+get_crossref_metadata <- function(doi, bib_key = "unknown") {
   if (is.null(doi) || is.na(doi) || doi == "" || !api_available) return(NULL)
 
   url <- paste0(CROSSREF_API_BASE, doi)
@@ -147,17 +197,21 @@ get_crossref_metadata <- function(doi) {
     tryCatch({
       # Add delay for rate limiting
       Sys.sleep(RATE_LIMIT_DELAY)
-      response <- GET(url, add_headers("User-Agent" = USER_AGENT), timeout(30))
+      
+      req <- request(url) |>
+        req_headers("User-Agent" = USER_AGENT) |>
+        req_timeout(30)
+      response <- req_perform(req)
 
-      if (status_code(response) == 200) {
-        content <- content(response, "text", encoding = "UTF-8")
+      if (resp_status(response) == 200) {
+        content <- resp_body_string(response)
         data <- fromJSON(content, simplifyVector = FALSE)
         return(data$message)
-      } else if (status_code(response) == 404) {
-        cat("Warning: DOI  in '", bib_key, "' not found in CrossRef:", doi, "\n")
+      } else if (resp_status(response) == 404) {
+        cat("Warning: DOI in '", bib_key, "' not found in CrossRef:", doi, "\n")
         return(NULL)
       } else {
-        cat("HTTP", status_code(response), "for DOI:", doi, "\n")
+        cat("HTTP", resp_status(response), "for DOI:", doi, "\n")
         if (attempt == MAX_RETRIES) return(NULL)
       }
     }, error = function(e) {
@@ -171,24 +225,39 @@ get_crossref_metadata <- function(doi) {
   return(NULL)
 }
 
-# Function to check if DOI resolves via doi.org
+# Function to check if DOI resolves via doi.org REST API
 check_doi_resolution <- function(doi) {
-  if (is.null(doi) || is.na(doi) || doi == "") return(FALSE)
+  if (is.null(doi) || is.na(doi) || doi == "" || !doi_org_available) return(FALSE)
 
-  url <- paste0("https://doi.org/", doi)
-
-  tryCatch({
-    response <- GET(url, timeout(30))
-    ok <- status_code(response) %in% c(200, 302, 301)  # Accept redirects as success
-    if (ok)
-      return(TRUE)
-    doi_org_error_count <<- doi_org_error_count + 1L
-    return(FALSE)
-  }, error = function(e) {
-    cat("ERROR: resolving DOI via doi.org:", doi, ":", e$message, "\n")
-    doi_org_error_count <<- doi_org_error_count + 1L
-    return(FALSE)
-  })
+  # Try certified query first, then normal query
+  for (query_type in c("certified", "normal")) {
+    tryCatch({
+      # Use doi.org REST API
+      base_url <- if (query_type == "certified") {
+        "https://doi.org/ra/"
+      } else {
+        "https://doi.org/api/handles/"
+      }
+      
+      url <- paste0(base_url, doi)
+      
+      req <- request(url) |>
+        req_headers("Accept" = "application/json") |>
+        req_timeout(30)
+      response <- req_perform(req)
+      
+      if (resp_status(response) == 200) {
+        # Successfully resolved
+        return(TRUE)
+      }
+    }, error = function(e) {
+      # Continue to next query type or return FALSE
+    })
+  }
+  
+  # If both certified and normal queries fail, record error
+  doi_org_error_count <<- doi_org_error_count + 1L
+  return(FALSE)
 }
 
 # Function to handle ArXiv DOIs using ArXiv API
@@ -226,7 +295,7 @@ compare_entry_with_crossref_api <- function(bib_entry, bib_key) {
   doi <- bib_entry$doi
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
-  crossref_data <- get_crossref_metadata(doi)
+  crossref_data <- get_crossref_metadata(doi, bib_key)
   if (is.null(crossref_data)) {
     api_error_count <<- api_error_count + 1L
     return(FALSE)
