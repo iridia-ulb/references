@@ -104,7 +104,7 @@ check_doi_issues <- function(doi, entry_key) {
 check_duplicate_doi <- function(doi, entry_key, entry_crossref = NULL, has_explicit_doi = TRUE) {
   if (!is.null(doi_entries[[doi]])) {
     existing_entry <- doi_entries[[doi]]
-    
+
     # Check if this is the same entry (avoid self-duplication)
     if (existing_entry$entry_key == entry_key) {
       # Same entry, just return true (no duplicate)
@@ -238,9 +238,9 @@ get_crossref_metadata <- function(doi) {
 # Function to check if DOI resolves via doi.org
 check_doi_resolution <- function(doi) {
   if (is.null(doi) || is.na(doi) || doi == "") return(FALSE)
-  
+
   url <- paste0("https://doi.org/", doi)
-  
+
   tryCatch({
     response <- GET(url, timeout(30))
     return(status_code(response) %in% c(200, 302, 301))  # Accept redirects as success
@@ -254,13 +254,13 @@ check_doi_resolution <- function(doi) {
 validate_arxiv_doi <- function(doi, bib_entry, bib_key) {
   # Extract arXiv ID from DOI (format: 10.48550/arXiv.XXXX.XXXXX)
   arxiv_id <- gsub("^10\\.48550/arXiv\\.", "", doi)
-  
+
   # Check if DOI resolves
   if (!check_doi_resolution(doi)) {
     cat("ERROR: ArXiv DOI does not resolve:", doi, "\n")
     return(FALSE)
   }
-  
+
   # Could implement ArXiv API validation here in the future
   cat("ArXiv DOI validated:", doi, "\n")
   return(TRUE)
@@ -273,7 +273,7 @@ validate_dagstuhl_doi <- function(doi, bib_entry, bib_key) {
     cat("ERROR: Dagstuhl DOI does not resolve:", doi, "\n")
     return(FALSE)
   }
-  
+
   cat("Dagstuhl DOI validated:", doi, "\n")
   return(TRUE)
 }
@@ -285,7 +285,7 @@ validate_zenodo_doi <- function(doi, bib_entry, bib_key) {
     cat("ERROR: Zenodo DOI does not resolve:", doi, "\n")
     return(FALSE)
   }
-  
+
   cat("Zenodo DOI validated:", doi, "\n")
   return(TRUE)
 }
@@ -323,7 +323,7 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
   # Compare year - prefer published-print over published
   bib_year <- as.character(bib_entry$year)
   crossref_year <- ""
-  
+
   # First try published-print, then published
   if (!is.null(crossref_data$`published-print`) && !is.null(crossref_data$`published-print`$`date-parts`)) {
     crossref_year <- as.character(crossref_data$`published-print`$`date-parts`[[1]][1])
@@ -346,7 +346,7 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
       cat("    BibTeX:", substr(bib_title, 1, 80), "\n")
       cat("    CrossRef:", substr(crossref_title, 1, 80), "\n")
     }
-    
+
     # Only print authors when they don't match
     cat("  Author match:", author_match, "\n")
     if (!author_match) {
@@ -371,7 +371,7 @@ validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
   # Check if DOI has URL prefixes - this should be an error
   cleaned_doi <- doi
   format_ok <- TRUE  # Initialize format_ok
-  
+
   if (grepl("^https?://", doi)) {
     cat("DOI format error in entry '", bib_key, "': DOI should not include URL prefix: ", doi, "\n", sep="")
     format_errors <<- format_errors + 1
