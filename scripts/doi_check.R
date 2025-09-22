@@ -230,7 +230,8 @@ get_crossref_metadata <- function(doi, bib_key = "unknown") {
 
 # Function to check if DOI resolves via doi.org REST API
 check_doi_resolution <- function(doi) {
-  if (is.null(doi) || is.na(doi) || doi == "" || !doi_org_available) return(FALSE)
+  if (is.null(doi) || is.na(doi) || doi == "") return(FALSE)
+  if (!doi_org_available) return(TRUE)
 
   # Try certified query first, then normal query
   for (query_type in c("certified", "normal")) {
@@ -363,7 +364,7 @@ compare_entry_with_crossref_api <- function(bib_entry, bib_key) {
 }
 
 # Function to validate a single DOI entry
-validate_doi_entry <- function(bib_entry, bib_key) {
+validate_doi_entry <- function(bib_entry, bib_key, bibs) {
   doi <- bib_entry$doi
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
@@ -436,7 +437,7 @@ process_bib_file <- function(filename, changed_entries = NULL) {
         key <- attr(entry, "key")
         if (!is.null(entry$doi)) {
           entries_with_doi <- entries_with_doi + 1L
-          validate_doi_entry(entry, key)
+          validate_doi_entry(entry, key, bibs)
           entries_checked <- entries_checked + 1L
         }
       }
@@ -446,7 +447,7 @@ process_bib_file <- function(filename, changed_entries = NULL) {
         entry <- unclass(bibs[[key]])[[1L]]
         if (!is.null(entry$doi)) {
           entries_with_doi <- entries_with_doi + 1L
-          validate_doi_entry(entry, key)
+          validate_doi_entry(entry, key, bibs)
           entries_checked <- entries_checked + 1L
         }
       }
@@ -513,13 +514,15 @@ main <- function() {
   cat("Total DOI entries checked:", checked_count, "\n")
   cat("Format errors:", format_errors, "\n")
   cat("Duplicate DOIs:", duplicate_count, "\n")
-  cat("Resolutions errors:", doi_org_error_count, "\n")
+  if (doi_org_available) {
+    cat("DOI resolution errors:", doi_org_error_count, "\n")
+  }
   if (api_available) {
     cat("API errors:", api_error_count, "\n")
     cat("Mismatches found:", mismatch_count, "\n")
   }
 
-  total_errors <- format_errors + duplicate_count + api_error_count + mismatch_count + doi_org_error
+  total_errors <- format_errors + duplicate_count + api_error_count + mismatch_count + doi_org_error_count
 
   if (total_errors > 0) {
     cat("\nSome DOI validation issues were found. Please review the entries above.\n")
