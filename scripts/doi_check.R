@@ -121,10 +121,10 @@ normalize_text <- function(text) {
   if (is.null(text) || is.na(text) || length(text) == 0) return("")
   # Convert to lowercase, remove extra whitespace, punctuation variations
   text <- tolower(as.character(text))
-  
+
   # Remove LaTeX math expressions (everything between dollar signs)
   text <- gsub("\\$[^$]*\\$", "", text)
-  
+
   # Remove LaTeX commands with various argument patterns
   # \command{arg}
   text <- gsub("\\\\[a-zA-Z]+\\{[^}]*\\}", "", text)
@@ -134,19 +134,19 @@ normalize_text <- function(text) {
   text <- gsub("\\\\[a-zA-Z]+\\[[^]]*\\]\\{[^}]*\\}", "", text)
   # Simple \command without arguments
   text <- gsub("\\\\[a-zA-Z]+", "", text)
-  
+
   # Remove LaTeX braces
   text <- gsub("[{}]", "", text)
-  
+
   # Replace punctuation with spaces
   text <- gsub("[[:punct:]]", " ", text)
-  
+
   # Collapse multiple spaces
   text <- gsub("\\s+", " ", text)
-  
+
   # Trim whitespace
   text <- trimws(text)
-  
+
   return(text)
 }
 
@@ -160,12 +160,15 @@ compare_names <- function(bib_authors, crossref_authors) {
     # Simple string parsing for BibTeX authors
     author_parts <- strsplit(bib_authors, " and ")[[1]]
     for (author in author_parts) {
+      author <- trimws(author)
       # Try to extract family name (last part after last comma or space)
       if (grepl(",", author)) {
-        family <- trimws(strsplit(author, ",")[[1]][1])
-      } else {
-        parts <- strsplit(trimws(author), " ")[[1]]
+        family <- strsplit(author, ",")[[1]][1]
+      } else if (grepl(" ", author)) {
+        parts <- strsplit(author, " ")[[1]]
         family <- parts[length(parts)]
+      } else {
+        family <- author
       }
       bib_names <- c(bib_names, normalize_text(family))
     }
@@ -197,7 +200,7 @@ get_crossref_metadata <- function(doi, bib_key = "unknown") {
     tryCatch({
       # Add delay for rate limiting
       Sys.sleep(RATE_LIMIT_DELAY)
-      
+
       req <- request(url) |>
         req_headers("User-Agent" = USER_AGENT) |>
         req_timeout(30)
@@ -238,14 +241,14 @@ check_doi_resolution <- function(doi) {
       } else {
         "https://doi.org/api/handles/"
       }
-      
+
       url <- paste0(base_url, doi)
-      
+
       req <- request(url) |>
         req_headers("Accept" = "application/json") |>
         req_timeout(30)
       response <- req_perform(req)
-      
+
       if (resp_status(response) == 200) {
         # Successfully resolved
         return(TRUE)
@@ -254,7 +257,7 @@ check_doi_resolution <- function(doi) {
       # Continue to next query type or return FALSE
     })
   }
-  
+
   # If both certified and normal queries fail, record error
   doi_org_error_count <<- doi_org_error_count + 1L
   return(FALSE)
