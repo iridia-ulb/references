@@ -222,7 +222,7 @@ validate_zenodo_doi <- function(doi, bib_key) {
 }
 
 # Function to compare BibTeX entry with CrossRef metadata
-compare_entry_with_crossref <- function(bib_entry, bib_key) {
+compare_entry_with_crossref_api <- function(bib_entry, bib_key) {
   doi <- bib_entry$doi
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
