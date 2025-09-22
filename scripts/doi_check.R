@@ -13,20 +13,9 @@
 #
 
 options(warn=2)  # Turn warnings into errors
-
-# Function to install packages if not available
-install_if_missing <- function(package) {
-  if (!require(package, character.only = TRUE, quietly = TRUE)) {
-    cat("Installing required package:", package, "\n")
-    install.packages(package, repos = "https://cran.r-project.org/")
-    library(package, character.only = TRUE)
-  }
-}
-
-# Install required packages if not available
-install_if_missing("rbibutils")
-install_if_missing("jsonlite")
-install_if_missing("httr")
+library(rbibutils)
+library(jsonlite)
+library(httr)
 
 # Configuration
 CROSSREF_API_BASE <- "https://api.crossref.org/works/"
@@ -35,14 +24,15 @@ RATE_LIMIT_DELAY <- 1  # seconds between API calls
 MAX_RETRIES <- 3
 
 # Initialize counters
-checked_count <- 0
-format_errors <- 0
-duplicate_count <- 0
-api_error_count <- 0
-mismatch_count <- 0
+checked_count <- 0L
+format_errors <- 0L
+duplicate_count <- 0L
+doi_org_error_count <- 0L
+api_error_count <- 0L
+mismatch_count <- 0L
 
 # Global list to track DOI duplicates
-# Structure: doi_entries[[doi]] = list(entry_key = "key", crossref = "crossref_key_or_null", explicit = TRUE/FALSE)
+# Structure: doi_entries[[doi]] = list(entry_key = "key")
 doi_entries <- list()
 
 # Check if CrossRef API is available
@@ -58,94 +48,44 @@ tryCatch({
   api_available <<- FALSE
 })
 
-# Function to validate DOI format
-validate_doi_format <- function(doi) {
-  # DOI should match pattern: 10.xxxx/yyyy where xxxx is registrant code and yyyy is suffix
-  return(grepl("^10\\.[0-9]+/.+", doi))
-}
-
 # Function to check for common DOI format issues
 check_doi_issues <- function(doi, entry_key) {
-  issues <- c()
-
-  # Check for URL prefixes that should be removed
+  issue <- NULL
   if (grepl("^https?://", doi)) {
-    issues <- c(issues, "Contains URL prefix (should be DOI only)")
+    issue <- "Contains URL prefix (should be DOI only)"
+  } else if (!grepl("^10\\.[0-9]+/.+", doi)) {
+    issue <- "DOI should match pattern: 10.xxxx/yyyy where xxxx is registrant code and yyyy is suffix"
+  } else if (grepl("[[:space:]]", doi)) {
+    issue <- "Contains whitespace"
   }
 
-  # Check for proper 10.xxxx prefix
-  if (!grepl("^10\\.", doi)) {
-    issues <- c(issues, "Does not start with '10.'")
-  }
-
-  # Check for missing registrant/suffix separator
-  if (!grepl("/", doi)) {
-    issues <- c(issues, "Missing '/' separator")
-  }
-
-  # Check for suspicious patterns
-  if (grepl("[[:space:]]", doi)) {
-    issues <- c(issues, "Contains whitespace")
-  }
-
-  if (length(issues) > 0) {
-    cat("DOI format issues in entry '", entry_key, "': ", doi, "\n", sep="")
-    for (issue in issues) {
-      cat("  - ", issue, "\n", sep="")
-    }
-    format_errors <<- format_errors + 1
+  if (!is.null(issue)) {
+    cat("ERROR: Invalid DOI in '", entry_key, "': ", doi, "\n",
+      issue, "\n", sep="")
+    format_errors <<- format_errors + 1L
     return(FALSE)
   }
-
   return(TRUE)
 }
 
 # Function to track and check for duplicate DOIs
-check_duplicate_doi <- function(doi, entry_key, entry_crossref = NULL, has_explicit_doi = TRUE) {
-  if (!is.null(doi_entries[[doi]])) {
-    existing_entry <- doi_entries[[doi]]
-
-    # Check if this is the same entry (avoid self-duplication)
-    if (existing_entry$entry_key == entry_key) {
-      # Same entry, just return true (no duplicate)
-      return(TRUE)
-    }
-
-    # Check if this is a legitimate inheritance via crossref
-    if (!has_explicit_doi && !is.null(entry_crossref) &&
-        existing_entry$entry_key == entry_crossref && existing_entry$explicit) {
-      # This entry inherits DOI from crossref - not a duplicate
-      cat("Entry", entry_key, "inherits DOI", doi, "from crossref", entry_crossref, "\n")
-      return(TRUE)
-    } else if (!existing_entry$explicit && existing_entry$crossref == entry_key && has_explicit_doi) {
-      # The existing entry inherited from this one - update the record
-      doi_entries[[doi]] <<- list(entry_key = entry_key, crossref = entry_crossref, explicit = has_explicit_doi)
-      cat("Updating DOI", doi, "record: entry", entry_key, "is the source for inherited entry", existing_entry$entry_key, "\n")
-      return(TRUE)
-    } else if (!has_explicit_doi && !existing_entry$explicit &&
-               !is.null(entry_crossref) && !is.null(existing_entry$crossref) &&
-               entry_crossref == existing_entry$crossref) {
-      # Both entries inherit from the same crossref - not a duplicate
-      cat("Entries", existing_entry$entry_key, "and", entry_key, "both inherit DOI", doi, "from", entry_crossref, "\n")
-      return(TRUE)
-    } else {
-      # This is a real duplicate
-      cat("DUPLICATE DOI found: ", doi, "\n", sep="")
-      cat("  First entry: ", existing_entry$entry_key, " (explicit: ", existing_entry$explicit, ")\n", sep="")
-      cat("  Duplicate entry: ", entry_key, " (explicit: ", has_explicit_doi, ")\n", sep="")
-      if (!is.null(entry_crossref)) {
-        cat("  Current entry crossref: ", entry_crossref, "\n", sep="")
-      }
-      if (!is.null(existing_entry$crossref)) {
-        cat("  First entry crossref: ", existing_entry$crossref, "\n", sep="")
-      }
-      duplicate_count <<- duplicate_count + 1
-      return(FALSE)
-    }
-  } else {
-    doi_entries[[doi]] <<- list(entry_key = entry_key, crossref = entry_crossref, explicit = has_explicit_doi)
+check_duplicate_doi <- function(doi, entry_key) {
+  existing_entry <- doi_entries[[doi]]
+  if (is.null(existing_entry)) {
+    doi_entries[[doi]] <<- list(entry_key = entry_key)
     return(TRUE)
   }
+  # Check if this is the same entry (avoid self-duplication)
+  if (existing_entry$entry_key == entry_key) {
+    # Same entry, just return true (no duplicate)
+    return(TRUE)
+  }
+
+  # This is a real duplicate
+  cat("DUPLICATE DOI found: ", doi, "\n", sep="")
+  cat("  First entry: ", existing_entry$entry_key, "\n", sep="")
+  cat("  Duplicate entry: ", entry_key, "\n", sep="")
+  return(FALSE)
 }
 
 # Function to clean and normalize text for comparison
@@ -206,32 +146,28 @@ get_crossref_metadata <- function(doi) {
   for (attempt in 1:MAX_RETRIES) {
     tryCatch({
       # Add delay for rate limiting
-      if (checked_count > 0) Sys.sleep(RATE_LIMIT_DELAY)
-
-      response <- GET(url,
-                      add_headers("User-Agent" = USER_AGENT),
-                      timeout(30))
+      Sys.sleep(RATE_LIMIT_DELAY)
+      response <- GET(url, add_headers("User-Agent" = USER_AGENT), timeout(30))
 
       if (status_code(response) == 200) {
         content <- content(response, "text", encoding = "UTF-8")
         data <- fromJSON(content, simplifyVector = FALSE)
         return(data$message)
       } else if (status_code(response) == 404) {
-        cat("DOI not found in CrossRef:", doi, "\n")
+        cat("Warning: DOI  in '", bib_key, "' not found in CrossRef:", doi, "\n")
         return(NULL)
       } else {
         cat("HTTP", status_code(response), "for DOI:", doi, "\n")
         if (attempt == MAX_RETRIES) return(NULL)
       }
     }, error = function(e) {
-      cat("Error querying DOI", doi, ":", e$message, "\n")
+      cat("ERROR: querying DOI in '", bib_key, "' :", doi, ":", e$message, "\n")
       if (attempt == MAX_RETRIES) return(NULL)
     })
 
     # Exponential backoff for retries
     if (attempt < MAX_RETRIES) Sys.sleep(2^attempt)
   }
-
   return(NULL)
 }
 
@@ -243,50 +179,45 @@ check_doi_resolution <- function(doi) {
 
   tryCatch({
     response <- GET(url, timeout(30))
-    return(status_code(response) %in% c(200, 302, 301))  # Accept redirects as success
+    ok <- status_code(response) %in% c(200, 302, 301)  # Accept redirects as success
+    if (ok)
+      return(TRUE)
+    doi_org_error_count <<- doi_org_error_count + 1L
+    return(FALSE)
   }, error = function(e) {
-    cat("Error resolving DOI via doi.org:", doi, ":", e$message, "\n")
+    cat("ERROR: resolving DOI via doi.org:", doi, ":", e$message, "\n")
+    doi_org_error_count <<- doi_org_error_count + 1L
     return(FALSE)
   })
 }
 
 # Function to handle ArXiv DOIs using ArXiv API
-validate_arxiv_doi <- function(doi, bib_entry, bib_key) {
-  # Extract arXiv ID from DOI (format: 10.48550/arXiv.XXXX.XXXXX)
-  arxiv_id <- gsub("^10\\.48550/arXiv\\.", "", doi)
-
+validate_arxiv_doi <- function(doi, bib_key) {
   # Check if DOI resolves
   if (!check_doi_resolution(doi)) {
-    cat("ERROR: ArXiv DOI does not resolve:", doi, "\n")
+    cat("ERROR: ArXiv DOI in '", bib_key, "' does not resolve:", doi, "\n")
     return(FALSE)
   }
-
-  # Could implement ArXiv API validation here in the future
-  cat("ArXiv DOI validated:", doi, "\n")
   return(TRUE)
 }
 
 # Function to handle Dagstuhl DOIs
-validate_dagstuhl_doi <- function(doi, bib_entry, bib_key) {
+validate_dagstuhl_doi <- function(doi, bib_key) {
   # Check if DOI resolves to Dagstuhl
   if (!check_doi_resolution(doi)) {
-    cat("ERROR: Dagstuhl DOI does not resolve:", doi, "\n")
+    cat("ERROR: Dagstuhl DOI in '", bib_key, "' does not resolve:", doi, "\n")
     return(FALSE)
   }
-
-  cat("Dagstuhl DOI validated:", doi, "\n")
   return(TRUE)
 }
 
 # Function to handle Zenodo DOIs
-validate_zenodo_doi <- function(doi, bib_entry, bib_key) {
+validate_zenodo_doi <- function(doi, bib_key) {
   # Check if DOI resolves to Zenodo
   if (!check_doi_resolution(doi)) {
-    cat("ERROR: Zenodo DOI does not resolve:", doi, "\n")
+    cat("ERROR: Zenodo DOI in '", bib_key, "' does not resolve:", doi, "\n")
     return(FALSE)
   }
-
-  cat("Zenodo DOI validated:", doi, "\n")
   return(TRUE)
 }
 
@@ -296,9 +227,8 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
   crossref_data <- get_crossref_metadata(doi)
-
   if (is.null(crossref_data)) {
-    api_error_count <<- api_error_count + 1
+    api_error_count <<- api_error_count + 1L
     return(FALSE)
   }
 
@@ -333,11 +263,11 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
   year_match <- (bib_year == crossref_year)
 
   # Overall match assessment
-  matches <- sum(c(title_match, author_match, year_match))
+  matches <- sum(title_match, author_match, year_match)
   is_match <- matches >= 2  # At least 2 out of 3 should match
 
   if (!is_match) {
-    mismatch_count <<- mismatch_count + 1
+    mismatch_count <<- mismatch_count + 1L
     cat("MISMATCH found for entry", bib_key, ":\n")
     cat("  DOI:", doi, "\n")
     # Only print titles when they don't match
@@ -361,135 +291,99 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
 }
 
 # Function to validate a single DOI entry
-validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
+validate_doi_entry <- function(bib_entry, bib_key) {
   doi <- bib_entry$doi
   if (is.null(doi) || is.na(doi) || doi == "") return(TRUE)
 
-  checked_count <<- checked_count + 1
+  checked_count <<- checked_count + 1L
   # Only print checking message if there are problems (will be shown by individual checks)
+  if (!check_doi_issues(doi, bib_key))
+    return(FALSE)
 
-  # Check if DOI has URL prefixes - this should be an error
-  cleaned_doi <- doi
-  format_ok <- TRUE  # Initialize format_ok
-
-  if (grepl("^https?://", doi)) {
-    cat("DOI format error in entry '", bib_key, "': DOI should not include URL prefix: ", doi, "\n", sep="")
-    format_errors <<- format_errors + 1
-    format_ok <- FALSE
-  } else {
-    # Only validate format if no URL prefix error
-    if (!validate_doi_format(cleaned_doi)) {
-      format_ok <- check_doi_issues(cleaned_doi, bib_key)
-    }
-  }
-
-  # Determine if DOI is explicit or inherited from crossref
-  entry_crossref <- bib_entry$crossref
-  has_explicit_doi <- TRUE
-
-  if (!is.null(entry_crossref) && !is.null(raw_bib_content)) {
-    # Check if the raw entry explicitly defines DOI
-    # Extract the entry from raw content
-    entry_pattern <- paste0("@[^{]*\\{", bib_key, ",")
-    entry_start <- grep(entry_pattern, raw_bib_content, ignore.case = TRUE)
-
-    if (length(entry_start) > 0) {
-      # Find the end of the entry (next @ or end of file)
-      entry_end <- length(raw_bib_content)
-      next_entry <- grep("^@", raw_bib_content[(entry_start[1] + 1):length(raw_bib_content)])
-      if (length(next_entry) > 0) {
-        entry_end <- entry_start[1] + next_entry[1] - 1
-      }
-
-      # Get the entry content
-      entry_lines <- raw_bib_content[entry_start[1]:entry_end]
-
-      # Check if DOI is explicitly defined in this entry
-      has_doi_line <- any(grepl("^\\s*doi\\s*=", entry_lines, ignore.case = TRUE))
-      has_explicit_doi <- has_doi_line
-    }
+  crossref_key <- bib_entry$crossref
+  if (!is.null(crossref_key) && crossref_key %in% names(bibs)) {
+    crossref_entry <- unclass(bibs[[crossref_key]])[[1L]]
+    if (!is.null(crossref_entry$doi) && doi == crossref_entry$doi)
+      return(TRUE)
   }
 
   # Check for duplicates with crossref awareness
-  duplicate_ok <- check_duplicate_doi(cleaned_doi, bib_key, entry_crossref, has_explicit_doi)
+  if (!check_duplicate_doi(doi, bib_key))
+    return(FALSE)
 
   # Handle different types of DOIs
   api_ok <- TRUE
-  if (format_ok) {
-    # Determine DOI type and handle accordingly
-    if (grepl("^10\\.48550/arXiv", cleaned_doi)) {
-      # ArXiv DOI - use ArXiv API or just check resolution
-      api_ok <- validate_arxiv_doi(cleaned_doi, bib_entry, bib_key)
-    } else if (grepl("^10\\.4230/DagRep", cleaned_doi)) {
-      # Dagstuhl DOI - check resolution to Dagstuhl
-      api_ok <- validate_dagstuhl_doi(cleaned_doi, bib_entry, bib_key)
-    } else if (grepl("^10\\.5281/zenodo", cleaned_doi)) {
-      # Zenodo DOI - check resolution to Zenodo
-      api_ok <- validate_zenodo_doi(cleaned_doi, bib_entry, bib_key)
-    } else if (api_available) {
+  # Determine DOI type and handle accordingly
+  if (grepl("^10\\.48550/arXiv", doi, ignore.case = TRUE)) {
+    # ArXiv DOI - use ArXiv API or just check resolution
+    api_ok <- validate_arxiv_doi(doi, bib_key)
+  } else if (grepl("^10\\.4230/DagRep", doi, ignore.case = TRUE)) {
+    # Dagstuhl DOI - check resolution to Dagstuhl
+    api_ok <- validate_dagstuhl_doi(doi, bib_key)
+  } else if (grepl("^10\\.5281/zenodo", doi, ignore.case = TRUE)) {
+    # Zenodo DOI - check resolution to Zenodo
+    api_ok <- validate_zenodo_doi(doi, bib_key)
+  } else {
+    # Check if DOI resolves
+    if (!check_doi_resolution(doi)) {
+      cat("ERROR: DOI in '", bib_key, "' does not resolve via doi.org:", doi, "\n")
+      return(FALSE)
+    }
+    if (api_available) {
       # Regular DOI - try CrossRef API validation
-      bib_entry$doi <- cleaned_doi
-      api_ok <- compare_entry_with_crossref(bib_entry, bib_key)
-    } else {
-      # API not available, just check if DOI resolves
-      if (!check_doi_resolution(cleaned_doi)) {
-        cat("ERROR: DOI does not resolve via doi.org:", cleaned_doi, "\n")
-        api_ok <- FALSE
-      }
+      api_ok <- compare_entry_with_crossref_api(bib_entry, bib_key)
     }
   }
-
   # Return status based on validations
-  return(format_ok && duplicate_ok && api_ok)
+  return(api_ok)
 }
 
 # Function to process a single BibTeX file
 process_bib_file <- function(filename, changed_entries = NULL) {
   cat("Processing file:", filename, "\n")
   # Define macro files for parsing
-  if (endsWith(filename, "crossref.bib"))
+  if (endsWith(filename, "biblio.bib"))
+    macro_files <- c("abbrev.bib", "authors.bib", "crossref.bib")
+  else if (endsWith(filename, "crossref.bib"))
     macro_files <- c("abbrev.bib", "authors.bib")
   else if (endsWith(filename, "articles.bib"))
     macro_files <- c("abbrev.bib", "authors.bib", "journals.bib")
-  else if (endsWith(filename, "biblio.bib"))
-    macro_files <- c("abbrev.bib", "authors.bib", "crossref.bib")
   else
     macro_files <- NULL
 
   tryCatch({
-    # Read raw file content for explicit DOI detection
-    raw_bib_content <- readLines(filename, warn = FALSE)
-
     # Read bibliography with macro files
     bibs <- readBib(filename, direct=TRUE, macros=macro_files)
 
     entries_with_doi <- 0
     entries_checked <- 0
 
-    for (i in 1:length(bibs)) {
-      entry <- unclass(bibs[[i]])[[1L]]
-      key <- attr(entry, "key")
-
-      if (!is.null(entry$doi)) {
-        entries_with_doi <- entries_with_doi + 1
-
-        # If changed_entries is specified, only check those entries
-        if (is.null(changed_entries) || key %in% changed_entries) {
-          validate_doi_entry(entry, key, raw_bib_content)
-          entries_checked <- entries_checked + 1
+    if (is.null(changed_entries)) {
+      for (i in seq_along(bibs)) {
+        entry <- unclass(bibs[[i]])[[1L]]
+        key <- attr(entry, "key")
+        if (!is.null(entry$doi)) {
+          entries_with_doi <- entries_with_doi + 1L
+          validate_doi_entry(entry, key)
+          entries_checked <- entries_checked + 1L
+        }
+      }
+    } else {
+      changed_entries_in_bib <- intersect(changed_entries, names(bibs))
+      for (key in changed_entries_in_bib) {
+        entry <- unclass(bibs[[key]])[[1L]]
+        if (!is.null(entry$doi)) {
+          entries_with_doi <- entries_with_doi + 1L
+          validate_doi_entry(entry, key)
+          entries_checked <- entries_checked + 1L
         }
       }
     }
-
-    if (!is.null(changed_entries) && length(changed_entries) > 0) {
-      cat("Found", entries_with_doi, "entries with DOI in", filename, ", checked", entries_checked, "changed entries\n\n")
-    } else {
-      cat("Found", entries_with_doi, "entries with DOI in", filename, "\n\n")
-    }
+    cat("Checked", entries_checked, "entries with DOI in", filename, "\n\n")
 
   }, error = function(e) {
     cat("Error processing", filename, ":", e$message, "\n\n")
-    api_error_count <<- api_error_count + 1
+    api_error_count <<- api_error_count + 1L
   })
 }
 
@@ -501,15 +395,15 @@ main <- function() {
   changed_entries <- NULL
   changed_entries_flag <- which(args == "--changed-entries")
   if (length(changed_entries_flag) > 0 && length(args) > changed_entries_flag) {
-    changed_entries_str <- args[changed_entries_flag + 1]
-    changed_entries <- trimws(strsplit(changed_entries_str, " ")[[1]])
+    changed_entries_str <- args[changed_entries_flag + 1L]
+    changed_entries <- trimws(strsplit(changed_entries_str, " ")[[1L]])
     changed_entries <- changed_entries[changed_entries != ""]
     # Remove the flag and entries from args
-    args <- args[-c(changed_entries_flag, changed_entries_flag + 1)]
+    args <- args[-c(changed_entries_flag, changed_entries_flag + 1L)]
   }
 
   # Default files if none specified
-  if (length(args) == 0) {
+  if (length(args) == 0L) {
     args <- c("articles.bib", "biblio.bib", "crossref.bib")
     if (is.null(changed_entries)) {
       cat("No files specified, checking default files with DOI entries\n\n")
@@ -547,12 +441,13 @@ main <- function() {
   cat("Total DOI entries checked:", checked_count, "\n")
   cat("Format errors:", format_errors, "\n")
   cat("Duplicate DOIs:", duplicate_count, "\n")
+  cat("Resolutions errors:", doi_org_error_count, "\n")
   if (api_available) {
     cat("API errors:", api_error_count, "\n")
     cat("Mismatches found:", mismatch_count, "\n")
   }
 
-  total_errors <- format_errors + duplicate_count + api_error_count + mismatch_count
+  total_errors <- format_errors + duplicate_count + api_error_count + mismatch_count + doi_org_error
 
   if (total_errors > 0) {
     cat("\nSome DOI validation issues were found. Please review the entries above.\n")
