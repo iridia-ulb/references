@@ -280,7 +280,7 @@ compare_entry_with_crossref_api <- function(bib_entry, bib_key) {
     # Only print authors when they don't match
     cat("  Author match:", author_match, "\n")
     if (!author_match) {
-      cat("    BibTeX:", past0(bib_entry$author, collapse=", "), "\n")
+      cat("    BibTeX:", paste0(bib_entry$author, collapse=", "), "\n")
       cat("    CrossRef:", paste(sapply(crossref_data$author, function(x) paste(x$given, x$family)), collapse=", "), "\n")
     }
     cat("  Year match:", year_match, "(", bib_year, "vs", crossref_year, ")\n")
