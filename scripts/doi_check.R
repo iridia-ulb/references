@@ -201,10 +201,6 @@ compare_names <- function(bib_authors, crossref_authors) {
 get_crossref_metadata <- function(doi) {
   if (is.null(doi) || is.na(doi) || doi == "" || !api_available) return(NULL)
 
-  # Clean DOI
-  doi <- gsub("https?://doi.org/", "", doi)
-  doi <- gsub("https?://dx.doi.org/", "", doi)
-
   url <- paste0(CROSSREF_API_BASE, doi)
 
   for (attempt in 1:MAX_RETRIES) {
@@ -221,10 +217,10 @@ get_crossref_metadata <- function(doi) {
         data <- fromJSON(content, simplifyVector = FALSE)
         return(data$message)
       } else if (status_code(response) == 404) {
-        cat("Warning: DOI not found:", doi, "\n")
+        cat("DOI not found in CrossRef:", doi, "\n")
         return(NULL)
       } else {
-        cat("Warning: HTTP", status_code(response), "for DOI:", doi, "\n")
+        cat("HTTP", status_code(response), "for DOI:", doi, "\n")
         if (attempt == MAX_RETRIES) return(NULL)
       }
     }, error = function(e) {
@@ -237,6 +233,61 @@ get_crossref_metadata <- function(doi) {
   }
 
   return(NULL)
+}
+
+# Function to check if DOI resolves via doi.org
+check_doi_resolution <- function(doi) {
+  if (is.null(doi) || is.na(doi) || doi == "") return(FALSE)
+  
+  url <- paste0("https://doi.org/", doi)
+  
+  tryCatch({
+    response <- GET(url, timeout(30))
+    return(status_code(response) %in% c(200, 302, 301))  # Accept redirects as success
+  }, error = function(e) {
+    cat("Error resolving DOI via doi.org:", doi, ":", e$message, "\n")
+    return(FALSE)
+  })
+}
+
+# Function to handle ArXiv DOIs using ArXiv API
+validate_arxiv_doi <- function(doi, bib_entry, bib_key) {
+  # Extract arXiv ID from DOI (format: 10.48550/arXiv.XXXX.XXXXX)
+  arxiv_id <- gsub("^10\\.48550/arXiv\\.", "", doi)
+  
+  # Check if DOI resolves
+  if (!check_doi_resolution(doi)) {
+    cat("ERROR: ArXiv DOI does not resolve:", doi, "\n")
+    return(FALSE)
+  }
+  
+  # Could implement ArXiv API validation here in the future
+  cat("ArXiv DOI validated:", doi, "\n")
+  return(TRUE)
+}
+
+# Function to handle Dagstuhl DOIs
+validate_dagstuhl_doi <- function(doi, bib_entry, bib_key) {
+  # Check if DOI resolves to Dagstuhl
+  if (!check_doi_resolution(doi)) {
+    cat("ERROR: Dagstuhl DOI does not resolve:", doi, "\n")
+    return(FALSE)
+  }
+  
+  cat("Dagstuhl DOI validated:", doi, "\n")
+  return(TRUE)
+}
+
+# Function to handle Zenodo DOIs
+validate_zenodo_doi <- function(doi, bib_entry, bib_key) {
+  # Check if DOI resolves to Zenodo
+  if (!check_doi_resolution(doi)) {
+    cat("ERROR: Zenodo DOI does not resolve:", doi, "\n")
+    return(FALSE)
+  }
+  
+  cat("Zenodo DOI validated:", doi, "\n")
+  return(TRUE)
 }
 
 # Function to compare BibTeX entry with CrossRef metadata
@@ -269,10 +320,14 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
   # Compare authors
   author_match <- compare_names(bib_entry$author, crossref_data$author)
 
-  # Compare year
+  # Compare year - prefer published-print over published
   bib_year <- as.character(bib_entry$year)
   crossref_year <- ""
-  if (!is.null(crossref_data$published) && !is.null(crossref_data$published$`date-parts`)) {
+  
+  # First try published-print, then published
+  if (!is.null(crossref_data$`published-print`) && !is.null(crossref_data$`published-print`$`date-parts`)) {
+    crossref_year <- as.character(crossref_data$`published-print`$`date-parts`[[1]][1])
+  } else if (!is.null(crossref_data$published) && !is.null(crossref_data$published$`date-parts`)) {
     crossref_year <- as.character(crossref_data$published$`date-parts`[[1]][1])
   }
   year_match <- (bib_year == crossref_year)
@@ -285,10 +340,21 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
     mismatch_count <<- mismatch_count + 1
     cat("MISMATCH found for entry", bib_key, ":\n")
     cat("  DOI:", doi, "\n")
-    cat("  Title match:", title_match, "\n")
-    cat("    BibTeX:", substr(bib_title, 1, 80), "\n")
-    cat("    CrossRef:", substr(crossref_title, 1, 80), "\n")
-    cat("  Author match:", author_match, "\n")
+    
+    # Only print titles when they don't match
+    if (!title_match) {
+      cat("  Title match:", title_match, "\n")
+      cat("    BibTeX:", substr(bib_title, 1, 80), "\n")
+      cat("    CrossRef:", substr(crossref_title, 1, 80), "\n")
+    }
+    
+    # Only print authors when they don't match
+    if (!author_match) {
+      cat("  Author match:", author_match, "\n")
+      cat("    BibTeX:", bib_entry$author, "\n")
+      cat("    CrossRef:", paste(sapply(crossref_data$author, function(x) paste(x$given, x$family)), collapse=", "), "\n")
+    }
+    
     cat("  Year match:", year_match, "(", bib_year, "vs", crossref_year, ")\n")
     cat("\n")
   }
@@ -349,12 +415,30 @@ validate_doi_entry <- function(bib_entry, bib_key, raw_bib_content = NULL) {
   # Check for duplicates with crossref awareness
   duplicate_ok <- check_duplicate_doi(cleaned_doi, bib_key, entry_crossref, has_explicit_doi)
 
-  # If API validation is available and format is OK, try to validate against CrossRef
+  # Handle different types of DOIs
   api_ok <- TRUE
-  if (api_available && format_ok) {
-    # Update the entry with cleaned DOI for API validation
-    bib_entry$doi <- cleaned_doi
-    api_ok <- compare_entry_with_crossref(bib_entry, bib_key)
+  if (format_ok) {
+    # Determine DOI type and handle accordingly
+    if (grepl("^10\\.48550/arXiv", cleaned_doi)) {
+      # ArXiv DOI - use ArXiv API or just check resolution
+      api_ok <- validate_arxiv_doi(cleaned_doi, bib_entry, bib_key)
+    } else if (grepl("^10\\.4230/DagRep", cleaned_doi)) {
+      # Dagstuhl DOI - check resolution to Dagstuhl
+      api_ok <- validate_dagstuhl_doi(cleaned_doi, bib_entry, bib_key)
+    } else if (grepl("^10\\.5281/zenodo", cleaned_doi)) {
+      # Zenodo DOI - check resolution to Zenodo
+      api_ok <- validate_zenodo_doi(cleaned_doi, bib_entry, bib_key)
+    } else if (api_available) {
+      # Regular DOI - try CrossRef API validation
+      bib_entry$doi <- cleaned_doi
+      api_ok <- compare_entry_with_crossref(bib_entry, bib_key)
+    } else {
+      # API not available, just check if DOI resolves
+      if (!check_doi_resolution(cleaned_doi)) {
+        cat("ERROR: DOI does not resolve via doi.org:", cleaned_doi, "\n")
+        api_ok <- FALSE
+      }
+    }
   }
 
   # Return status based on validations
