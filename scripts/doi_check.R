@@ -340,21 +340,19 @@ compare_entry_with_crossref <- function(bib_entry, bib_key) {
     mismatch_count <<- mismatch_count + 1
     cat("MISMATCH found for entry", bib_key, ":\n")
     cat("  DOI:", doi, "\n")
-    
     # Only print titles when they don't match
+    cat("  Title match:", title_match, "\n")
     if (!title_match) {
-      cat("  Title match:", title_match, "\n")
       cat("    BibTeX:", substr(bib_title, 1, 80), "\n")
       cat("    CrossRef:", substr(crossref_title, 1, 80), "\n")
     }
     
     # Only print authors when they don't match
+    cat("  Author match:", author_match, "\n")
     if (!author_match) {
-      cat("  Author match:", author_match, "\n")
-      cat("    BibTeX:", bib_entry$author, "\n")
+      cat("    BibTeX:", past0(bib_entry$author, collapse=", "), "\n")
       cat("    CrossRef:", paste(sapply(crossref_data$author, function(x) paste(x$given, x$family)), collapse=", "), "\n")
     }
-    
     cat("  Year match:", year_match, "(", bib_year, "vs", crossref_year, ")\n")
     cat("\n")
   }
