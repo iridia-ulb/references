@@ -18,14 +18,14 @@ library(rbibutils)
 library(jsonlite)
 library(httr2)
 
-crossref_whitelist <- '
+crossref_whitelist <- scan(what=character(), quiet=TRUE, text='
 10.1109/CERMA.2007.60
 10.1609/aimag.v17i3.1232
 10.2420/AF09.2014.59
 10.4230/LIPIcs.CP.2022.35
 10.1002/9781118557563
-'
-crossref_whitelist <- scan(text=crossref_whitelist, what=character(), quiet=TRUE)
+10.2420/AF08.2014.21
+')
 
 # Configuration
 CROSSREF_API_BASE <- "https://api.crossref.org/works/"
@@ -204,7 +204,7 @@ get_crossref_metadata <- function(doi, bib_key = "unknown") {
         if (attempt == MAX_RETRIES) return(NULL)
       }
     }, error = function(e) {
-      cat("ERROR: querying DOI in '", bib_key, "' from CrossRef:", doi, ":", e$message, "\n")
+      cli_alert_danger("ERROR: querying DOI {doi} in '{bib_key}' from CrossRef (attempt {attempt}): {e$message}")
       if (attempt == MAX_RETRIES) return(NULL)
     })
 
@@ -492,6 +492,10 @@ main <- function() {
     args <- args[-c(changed_entries_flag, changed_entries_flag + 1L)]
   }
 
+  cat(sep="\n",
+    "DOI Validation Script for IRIDIA BibTeX Repository",
+    "==================================================\n")
+
   # Default files if none specified
   if (length(args) == 0L) {
     args <- c("articles.bib", "biblio.bib", "crossref.bib")
@@ -499,10 +503,6 @@ main <- function() {
       cat("No files specified, checking default files with DOI entries\n\n")
     }
   }
-
-  cat(sep="\n",
-    "DOI Validation Script for IRIDIA BibTeX Repository",
-    "==================================================\n\n")
 
   # Report API availability
   if (api_available) {
