@@ -15,9 +15,10 @@
 %% 4. 'publishers', 'series' and 'institution' should be taken from abbrev.bib.
 %% 5. 'InProceedings', 'InCollection' and 'InBook' should take cross-references
 %%    from crossref.bib
-%% 6. The 'alias' field is used when a repeated entry is found.
-%%    Delete one and add its key as the alias field of the other.
+%% 6. The 'ids' field (biblatex) is used when a repeated entry is found.
+%%    Delete one and add its key to the 'ids' field of the other.
 %%    This helps to locate entries that have been renamed or deleted.
+%%    If the key is changed, add the old key to 'ids'.
 %% 7. Papers in proceedings published as books (e.g., LNCS) should use
 %%    InCollection type.
 %% 8. InBook should be used ONLY for books where chapters do not have titles.
@@ -418,7 +419,7 @@
   pages        = {142--157},
   doi          = {10.1007/978-3-642-04244-7_14},
   crossref     = {CP2009},
-  alias        = {Ansotegui2009},
+  ids        = {Ansotegui2009},
   keywords     = {GGA}
 }
 
@@ -707,7 +708,7 @@
   author =       Loshchilov #and# Glasmachers,
   year =         2017,
   url =          {https://bbcomp.ini.rub.de/},
-  alias =        "Loshchilov2017"
+  ids =        "Loshchilov2017"
 }
 
 @Misc{BBOB2016bi,
@@ -863,7 +864,7 @@
   year =         2010,
   address =      {Karlsruhe},
   publisher =    {KIT Scientific Publishing},
-  alias =        "Bartz-Beielstein2010",
+  ids =        "Bartz-Beielstein2010",
   pages =        {264--273}
 }
 
@@ -1008,7 +1009,7 @@
   year =         2002,
   organization = {AIAA paper 2002-1274},
   publisher =    {American Institute of Aeronautics and Astronautics},
-  alias =        "Beachkofski2002",
+  ids =        "Beachkofski2002",
 }
 
 @TechReport{Beasley1998,
@@ -1127,7 +1128,7 @@
   title =        {Two-level {ACO} for Haplotype Inference under Pure Parsimony},
   crossref =     "ANTS2008",
   pages =        {179--190},
-  alias =        "ants2008-benedigaroli"
+  ids =        "ants2008-benedigaroli"
 }
 
 @Book{Ber95,
@@ -1388,7 +1389,7 @@
                   material",
   howpublished = {\url{https://github.com/iridia-ulb/automoea-ecj-2020}},
   year =         2019,
-  alias = "BezLopStu2017tec-supp"
+  ids = "BezLopStu2017tec-supp"
 }
 
 @InProceedings{WanSunJin2019multi,
@@ -1488,7 +1489,7 @@
   pages =        {25--39},
   doi =          {10.1007/3-540-60469-3_22},
   crossref =     "AISB1995",
-  alias =        {BilPar1995}
+  ids =        {BilPar1995}
 }
 
 @InCollection{BirBalDor06,
@@ -1542,7 +1543,7 @@
                   Stuetzle,
   title =        {Parameter Adaptation in Ant Colony Optimization},
   crossref =     {MIC2009},
-  alias =        {adaptive_techreport},
+  ids =        {adaptive_techreport},
 }
 
 @Book{Birattari09tuning,
@@ -1555,7 +1556,7 @@
   series =       {Studies in Computational Intelligence},
   publisher =    springer,
   address =      add-berlin-heidelberg,
-  alias =        {Bir09:book},
+  ids =        {Bir09:book},
   annote = "Based on the PhD thesis~\cite{Birattari2004PhD}"
 }
 
@@ -1769,7 +1770,7 @@ Los Angeles, CA},
                   University of Denmark},
   number =       {IMM-REP-1998-8},
   address =      {Lyngby, Denmark},
-  alias =        "borges1998",
+  ids =        "borges1998",
 }
 
 @Book{BorEly1998online,
@@ -2107,7 +2108,7 @@ Los Angeles, CA},
   title =        {Don't be greedy when calculating hypervolume contributions},
   pages =        {103--112},
   crossref =     {FOGA2009},
-  alias =        {bringmann2009don},
+  ids =        {bringmann2009don},
   annote = "Extended version published in \cite{BriFri2010eff}"
 }
 
@@ -2827,7 +2828,7 @@ Los Angeles, CA},
   howpublished = {Particle Swarm Central},
   year =         2011,
   url =          {http://www.particleswarm.info/},
-  alias =        "pso:central"
+  ids =        "pso:central"
 }
 
 @Unpublished{Clerc2012spso,
@@ -2890,7 +2891,7 @@ doi = "10.1007/978-0-387-36797-2"
                   Optimization: A Survey},
   pages =        {30--37},
   crossref =     "CEC2000",
-  alias = "Coe2000cec"
+  ids = "Coe2000cec"
 }
 
 @InCollection{Coello2017results,
@@ -2906,7 +2907,7 @@ doi = "10.1007/978-0-387-36797-2"
   publisher =    mit-pub,
   address =     add-cambridge,
   year =         1995,
-  alias =        "Coh95"
+  ids =        "Coh95"
 }
 
 @InCollection{Cohen82,
@@ -3110,7 +3111,7 @@ doi = "10.1007/978-0-387-36797-2"
   title =        {Exploring the $k$-colorable Landscape with Iterated Greedy},
   crossref =     "JohTri1996",
   pages =        {245--284},
-  alias =        "CulLuo96",
+  ids =        "CulLuo96",
 }
 
 @Book{Cumming2012,
@@ -3348,7 +3349,7 @@ doi = "10.1007/978-0-387-36797-2"
   author =       Deb #and# {Sinha, Ankur},
   crossref =     "EMO2009",
   pages =        {110--124},
-  alias =        "Deb2009"
+  ids =        "Deb2009"
 }
 
 @InCollection{DebSun2006gecco,
@@ -3598,18 +3599,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   address      = mit-ad,
   annote       = {305 p},
   pagination   = 305,
-  alias        = {DorStu04:AcoBook},
-  alias        = {DorStu04:book}
+  ids          = {DorStu04:AcoBook,DorStu04:book}
 }
 
 @PhDThesis{DorigoPhD,
-  author =       Dorigo,
-  title =        {Optimization, Learning and Natural Algorithms},
-  school =       depm,
-  year =         1992,
-  atype =         "{Ph.D.} thesis",
-  note =         {In Italian},
-  alias = {Dor92:thesis},
+  author       = Dorigo,
+  title        = {Optimization, Learning and Natural Algorithms},
+  school       = depm,
+  year         = 1992,
+  note         = {In Italian},
+  atype        = {{Ph.D.} thesis},
+  ids          = {Dor92:thesis}
 }
 
 @InCollection{Dre2009gecco,
@@ -3730,14 +3730,14 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{DubLopStu09:hm-bfsp,
-  author =       Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
-  title =        {Effective Hybrid Stochastic Local Search Algorithms for
+  author       = Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
+  title        = {Effective Hybrid Stochastic Local Search Algorithms for
                   Biobjective Permutation Flowshop Scheduling},
-  pages =        {100--114},
-  pdf =          {DubLopStu09hm-bfsp.pdf},
-  doi =          {10.1007/978-3-642-04918-7_8},
-  crossref =     "HM2009",
-  alias =        {DuboisHM09},
+  pages        = {100--114},
+  pdf          = {DubLopStu09hm-bfsp.pdf},
+  doi          = {10.1007/978-3-642-04918-7_8},
+  crossref     = {HM2009},
+  ids          = {DuboisHM09}
 }
 
 @Misc{DubLopStu10:journal-anytime-supp,
@@ -3772,24 +3772,24 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{DubLopStu2012evocop,
-  author =       Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
-  title =        "{Pareto} Local Search Algorithms for Anytime
-                  Bi-objective Optimization",
-  crossref =     "EVOCOP2012",
-  pages =        {206--217},
-  doi =          {10.1007/978-3-642-29124-1_18},
-  alias =        "DubLopStu12:evocop",
+  author       = Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
+  title        = {{Pareto} Local Search Algorithms for Anytime Bi-objective
+                  Optimization},
+  pages        = {206--217},
+  crossref     = {EVOCOP2012},
+  doi          = {10.1007/978-3-642-29124-1_18},
+  ids          = {DubLopStu12:evocop}
 }
 
 @InCollection{DubLopStu2013hm,
-  author =       Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
-  title =        "Combining Two Search Paradigms for Multi-objective
-                  Optimization: {Two}-{Phase} and {Pareto} Local Search",
-  pages =        {97--117},
-  doi =          {10.1007/978-3-642-30671-6_3},
-  crossref =     "Tal2013hm",
-  alias =        "DubLopStu2012hm",
-  pdf =          {DubLopStu2013hm.pdf},
+  author       = Dubois-Lacoste #and# Lopez-Ibanez #and# Stuetzle,
+  title        = {Combining Two Search Paradigms for Multi-objective
+                  Optimization: {Two}-{Phase} and {Pareto} Local Search},
+  pages        = {97--117},
+  doi          = {10.1007/978-3-642-30671-6_3},
+  crossref     = {Tal2013hm},
+  ids          = {DubLopStu2012hm},
+  pdf          = {DubLopStu2013hm.pdf}
 }
 
 @Misc{DubPagStu2017:flowshop-makespan-supp,
@@ -4049,7 +4049,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    springer,
   year =         2003,
   isbn =         3540401849,
-  alias =        "Eiben2003",
+  ids =        "Eiben2003",
 }
 
 @Book{EibSmi2007,
@@ -4059,7 +4059,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2007,
   series =       natcompser,
   edition =      Second,
-  alias =        "EibSmi07"
+  ids =        "EibSmi07"
 }
 
 @InCollection{Ela2011:gecco,
@@ -4180,7 +4180,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   author =       Eshelman #and# Schaffer,
   title =        {Real-Coded Genetic Algorithms and Interval-Schemata},
   pages =        {187--202},
-  alias =        {DBLP:conf/foga/EshelmanS92},
+  ids =        {DBLP:conf/foga/EshelmanS92},
   crossref =     {FOGA1992},
 }
 
@@ -4550,7 +4550,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Stochastic Multiobjective Optimizers",
   pages =        {584--593},
   crossref =     "PPSN1996",
-  alias =        {Fonseca96},
+  ids =        {Fonseca96},
 }
 
 @InCollection{FonFon2012,
@@ -4567,7 +4567,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Optimisers with the Second-Order Attainment Function},
   pages        = {250--264},
   crossref     = {EMO2005},
-  alias        = {lpaquete:15},
+  ids          = {lpaquete:15},
   doi          = {10.1007/978-3-540-31880-4_18},
   abstract     = {The attainment function has been proposed as a measure of the
                   statistical performance of stochastic multiobjective
@@ -4904,7 +4904,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Approach},
   publisher =    {Harcourt College Publishers},
   year =         2000,
-  alias = "furlong00:stats"
+  ids = "furlong00:stats"
 }
 
 @InCollection{GaeCla04,
@@ -4961,7 +4961,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Routing Problems with Time Windows",
   crossref =     "NIO1999",
   pages =        "63--76",
-  alias =        {GamTaiAga99:newideas},
+  ids =        {GamTaiAga99:newideas},
 }
 
 @InCollection{GanDelKin04:ants2004,
@@ -5348,7 +5348,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   and the Attainment Function},
   pages =        "213--225",
   crossref =     "EMO2001",
-  alias =        {Fonseca01},
+  ids =        {Fonseca01},
   doi =          "10.1007/3-540-44719-9_15",
   annote =       "Proposed looking at anytime behavior as a multi-objective
                   problem",
@@ -5395,7 +5395,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   annote       = {Also available as Tech. Rep. AIDA-00-07, Intellectics Group,
                   Darmstadt University of Technology, Germany.},
   crossref     = {evoworkshops2001},
-  alias        = {GunMid01:evoworkshops}
+  ids        = {GunMid01:evoworkshops}
 }
 
 @InCollection{GunMid02:EvoWorkshops,
@@ -5538,7 +5538,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   author =       Hansen_MP,
   pages =        {574--586},
   crossref =     "MCDM1997",
-  alias =        "Han1997"
+  ids =        "Han1997"
 }
 
 @Misc{HanAkiBau2019pycma,
@@ -5951,7 +5951,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    mk,
   address =      add-sanfran,
   year =         2005,
-  alias =        {HooStu04:book}
+  ids =        {HooStu04:book}
 }
 
 @InProceedings{HooStu1998uai,
@@ -5993,7 +5993,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     {GECCO2008},
   pages =        {641--648},
   annote =       "Proposed $\epsilon$-box",
-  alias =        "Hor08"
+  ids =        "Hor08"
 }
 
 @InProceedings{HorNafGol1994npga,
@@ -6105,7 +6105,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref =     "CPAIOR2010",
   pages =        {186--202},
   keywords =      {MIP, ParamILS},
-  alias =        {HutHooLey10-mipconfig},
+  ids =        {HutHooLey10-mipconfig},
   doi = 	 {10.1007/978-3-642-13520-0_23}
 }
 
@@ -6184,7 +6184,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Automatic Algorithm Configuration Based on Local Search},
   crossref =     "AAAI2007",
   pages =        {1152--1157},
-  alias =        {HutHooStu07}
+  ids =        {HutHooStu07}
 }
 
 @InCollection{HutLopFaw2014lion,
@@ -6261,7 +6261,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2007,
   number =       {TR/IRIDIA/2007-019},
   month =        oct,
-  alias =        {SocDor97:iridia019},
+  ids =        {SocDor97:iridia019},
 }
 
 @TechReport{IRIDIA-2009-015,
@@ -6495,7 +6495,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2017,
   number =       {TR/IRIDIA/2017-011},
   month =        nov,
-  alias =        "BezLopStu2017:techreport-011",
+  ids =        "BezLopStu2017:techreport-011",
   url =
                   {http://iridia.ulb.ac.be/IridiaTrSeries/link/IridiaTr2017-011.pdf},
   note =         "Published as a book chapter~\cite{BezLopStu2020chapter}"
@@ -6591,7 +6591,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Stoyan, Dietrich},
   publisher =    {Wiley},
   year =         2008,
-  alias =        "Illian2008",
+  ids =        "Illian2008",
 }
 
 @InCollection{IreMerMid2001,
@@ -6600,7 +6600,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Algorithms},
   pages =        {359--372},
   crossref =     "EMO2001",
-  alias =        {IrediMid01,IreMerMid01},
+  ids =        {IrediMid01,IreMerMid01},
   keywords = {BicriterionAnt}
 }
 
@@ -6971,7 +6971,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    oup,
   title =        {The Origins of Order},
   year =         1993,
-  alias =        "kauffman1993"
+  ids =        "kauffman1993"
 }
 
 @InProceedings{Kazantzis02,
@@ -7039,7 +7039,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher    = ieeep,
   annote       = {Proposed PSO},
   doi          = {10.1109/ICNN.1995.488968},
-  alias        = {Kennedy95}
+  ids        = {Kennedy95}
 }
 
 @InProceedings{KenEbe1997binpso,
@@ -7051,7 +7051,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages        = {4104--4108},
   address      = ieeep-ad,
   publisher    = ieeep,
-  alias        = {Kennedy97a}
+  ids        = {Kennedy97a}
 }
 
 @Book{KenEbeShi01,
@@ -7287,7 +7287,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Bounded {Pareto} Archiving: {Theory} and Practice},
   crossref =     "MMO2004",
   pages =        {39--64},
-  alias =        {Knowles+CorneLNEMS535},
+  ids =        {Knowles+CorneLNEMS535},
   doi =          {10.1007/978-3-642-17144-4_2}
 }
 
@@ -7710,7 +7710,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        "A New Version of {Ant} {System} for Subset Problems",
   pages =        "1459--1464",
   crossref =     "CEC1999",
-  alias =        "LegMic99",
+  ids =        "LegMic99",
 }
 
 @Book{LemPopBan2003,
@@ -8116,7 +8116,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages        = {97--108},
   pdf          = {LopBlu09-Beam-ACO-TSPTW-evocop.pdf},
   doi          = {10.1007/978-3-642-01009-5_9},
-  alias        = {Lop++09},
+  ids        = {Lop++09},
 }
 
 @InCollection{LopBlu09:lion,
@@ -8794,7 +8794,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   author =       {Maron, Oded and Moore, Andrew W.},
   crossref = "NIPS1994",
   pages =        {59--66},
-  alias = "marmoo1994hoeffding"
+  ids = "marmoo1994hoeffding"
 }
 
 @InCollection{MarMor99,
@@ -9059,7 +9059,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   crossref     = {GECCO2011},
   keywords     = {continuous optimization, landscape analysis, instance
                   features},
-  alias        = {MerBisTraPreuWeiRud11:gecco}
+  ids        = {MerBisTraPreuWeiRud11:gecco}
 }
 
 @InCollection{MerHuh2008:ppsn,
@@ -9407,7 +9407,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   school =       {School of Information Technology, Bond University},
   year =         2005,
   address =      {Australia},
-  alias = "montgomery05:phd"
+  ids = "montgomery05:phd"
 }
 
 @Book{Montgomery2012,
@@ -10049,7 +10049,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Salesman Problem: An Experimental Study},
   pages =        {177--199},
   crossref =     "MMO2004",
-  alias =        {lpaquete:10},
+  ids =        {lpaquete:10},
   abstract =     {In this article, we study {Pareto} local optimum sets for the
                   biobjective Traveling Salesman Problem applying
                   straightforward extensions of local search algorithms for the
@@ -10128,7 +10128,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   Salesman Problem},
   pages        = {479--493},
   crossref     = {EMO2003},
-  alias        = {lpaquete:8},
+  ids        = {lpaquete:8},
   doi          = {10.1007/3-540-36970-8_34}
 }
 
@@ -10143,7 +10143,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          {10.1201/9781351236423-24},
   year =         2018,
   editor =       {Teofilo F. Gonzalez},
-  alias =        {paquete18}
+  ids =        {paquete18}
 }
 
 @TechReport{PaqStuLop-IRIDIA-2005-029,
@@ -10628,7 +10628,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   address =      add-berlin,
   year =         1988,
   edition =      Second,
-  alias =        "preparata:computational",
+  ids =        "preparata:computational",
 }
 
 @InCollection{PriAllLop2022gecco,
@@ -10801,7 +10801,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year         = 2017,
   note         = {\proglang{R} package version 1.10},
   url          = {https://cran.r-project.org/package=ParamHelpers},
-  alias        = {Bischl2017}
+  ids        = {Bischl2017}
 }
 
 @Manual{R:Rmpi,
@@ -10837,7 +10837,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   note =         {\proglang{R} package version 0.14},
   url =          {http://r-forge.r-project.org/projects/lhs/},
   year =         2016,
-  alias =        "Carnell2016",
+  ids =        "Carnell2016",
 }
 
 @Manual{R:mco,
@@ -10977,7 +10977,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   address      = mit-ad,
   annote       = {Kinematics of a Robot Arm Benchmark},
   keywords     = {Gaussian processes, data processing},
-  alias        = {Rasmussen2006},
+  ids        = {Rasmussen2006},
   isbn         = {026218253X}
 }
 
@@ -11107,7 +11107,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2008,
   isbn =         {3-900051-07-0},
   url =          {http://www.R-project.org},
-  alias ={R2008lang},
+  ids ={R2008lang},
 }
 
 @InCollection{RobFil05demo,
@@ -11358,7 +11358,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   year =         2003,
   doi =          {10.1007/978-1-4757-3799-8},
   pages =        "2083",
-  alias =        "SatWilNot2003;SanWilNot03",
+  ids =        "SatWilNot2003;SanWilNot03",
 }
 
 @InProceedings{Santucci2024ijcci,
@@ -11659,7 +11659,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Assessing the performance of multiobjective genetic
                   algorithms for optimization of a batch process scheduling
                   problem},
-  alias =        {Shaw99},
+  ids =        {Shaw99},
   crossref =     "CEC1999",
   pages =        {34--75},
   volume =       1
@@ -12002,7 +12002,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {A {\MaxMinAntSystem} for the University Course Timetabling Problem},
   pages =        {1--13},
   crossref =     "ANTS2002",
-  alias = {antsystimtabl:ants2002},
+  ids = {antsystimtabl:ants2002},
 }
 
 @InCollection{SocSamMan03:evoworkshops,
@@ -12036,7 +12036,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InProceedings{SotBasDol20016_ES,
-  alias =        "Sotelo_ES",
+  ids =        "Sotelo_ES",
   year =         2001,
   author =       Sotelo #and# Basulado #and# Doldan #and# Baran,
   title =        {Algoritmos Evolutivos Multiobjetivo Combinados para la
@@ -12460,7 +12460,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        "Multi-criteria Decision Making Based on {PROMETHEE} Method",
   crossref =     "CCIE2010",
   pages =        "416--418",
-  alias =        "ZhaMin2010:ccie"
+  ids =        "ZhaMin2010:ccie"
 }
 
 @Book{SutBar1998reinf,
@@ -12990,7 +12990,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InProceedings{VelLam1998gp,
-  alias =        {Veldhuizen98a},
+  ids =        {Veldhuizen98a},
   key =          {Van Veldhuizen and Lamont, 1998a},
   title =        "Evolutionary Computation and Convergence to a
                   {Pareto} Front",
@@ -13811,7 +13811,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title        = {Quality Assessment of {Pareto} Set Approximations},
   pages        = {373--404},
   crossref     = {MOOINTEVO2008},
-  alias        = {ZKT2008},
+  ids        = {ZKT2008},
   doi          = {10.1007/978-3-540-88908-3_14}
 }
 
@@ -13840,7 +13840,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
   pages        = {95--100},
   annote       = {Proposed SPEA2},
   crossref     = {EUROGEN2001},
-  alias        = {ZLT2002a}
+  ids        = {ZLT2002a}
 }
 
 @InCollection{ZitThi1998ppsn,
@@ -13849,7 +13849,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   {A} Comparative Case Study},
   crossref =     "PPSN1998",
   pages =        {292--301},
-  alias =        {Zitzler98},
+  ids =        {Zitzler98},
   doi =          "10.1007/BFb0056872",
   annote =       {Proposed hypervolume measure},
 }
@@ -13964,13 +13964,13 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Misc{url:MOEAD,
-  author =       Zhang_Qingfu,
-  title =        {{MOEA/D} homepage},
+  author       = Zhang_Qingfu,
+  title        = {{MOEA/D} homepage},
   howpublished = {\url{https://sites.google.com/view/moead/}},
-  year =         2007,
-  annote =       "Previous URL was at
-                  \url{https://dces.essex.ac.uk/staff/zhang/webofmoead.htm}.",
-  alias =        "MOEAD2007"
+  year         = 2007,
+  annote       = {Previous URL was at
+                  \url{https://dces.essex.ac.uk/staff/zhang/webofmoead.htm}.},
+  ids          = {MOEAD2007}
 }
 
 @Misc{url:SMAC3,

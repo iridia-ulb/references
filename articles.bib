@@ -13,10 +13,11 @@
 %%    different key.
 %% 4. 'author' and 'editor' fields should be taken from authors.bib.
 %% 5. 'publishers', 'series' and 'institution' should be taken from abbrev.bib.
-%% 6. 'journal' should be taken from journal.bib.
-%% 7. The 'alias' field is used when a repeated entry is found.
-%%    Delete one and add its key as the alias field of the other.
+%% 6. The 'ids' field (biblatex) is used when a repeated entry is found.
+%%    Delete one and add its key to the 'ids' field of the other.
 %%    This helps to locate entries that have been renamed or deleted.
+%%    If the key is changed, add the old key to 'ids'.
+%% 7. 'journal' should be taken from journal.bib.
 %% 8. Since some bib-styles mandate title-case but others mandate sentence-case
 %%    and converting from title-case to sentence-case is done automatically but
 %%    the opposite cannot be done, then titles should preferably be in
@@ -116,15 +117,15 @@
 }
 
 @Article{AddLocSch2008,
-  title =        {Disk Packing in a Square: A New Global Optimization Approach},
-  author =       {Addis, Bernardetta and Locatelli, Marco and Schoen, Fabio},
-  journal =      informsjoc,
-  year =         2008,
-  number =       4,
-  pages =        {516--524},
-  volume =       20,
-  doi =          {10.1287/ijoc.1080.0263},
-  alias =        "Addis2008"
+  author       = {Addis, Bernardetta and Locatelli, Marco and Schoen, Fabio},
+  title        = {Disk Packing in a Square: A New Global Optimization Approach},
+  journal      = informsjoc,
+  year         = 2008,
+  volume       = 20,
+  number       = 4,
+  pages        = {516--524},
+  doi          = {10.1287/ijoc.1080.0263},
+  ids          = {Addis2008}
 }
 
 @Article{Ade92,
@@ -715,16 +716,16 @@
 }
 
 @Article{AppCooRoh2003,
-  title =        {Chained {Lin}-{Kernighan} for Large Traveling Salesman
+  author       = Applegate_D #and# Cook_W #and# { Andr{\'e} Rohe},
+  title        = {Chained {Lin}-{Kernighan} for Large Traveling Salesman
                   Problems},
-  author =       Applegate_D #and# Cook_W #and# " Andr{\'e} Rohe",
-  journal =      informsjoc,
-  volume =       15,
-  number =       1,
-  pages =        {82--92},
-  year =         2003,
-  alias =        "AppCooRoh99",
-  doi =          "10.1287/ijoc.15.1.82.15157"
+  journal      = informsjoc,
+  year         = 2003,
+  volume       = 15,
+  number       = 1,
+  pages        = {82--92},
+  ids          = {AppCooRoh99},
+  doi          = {10.1287/ijoc.15.1.82.15157}
 }
 
 @Article{AppEtAl09,
@@ -919,15 +920,15 @@
 }
 
 @Article{AudEgla1977,
-  title =        {New approach to the design of multifactor experiments},
-  author =       {Audze, P. and Egl{\~a}js, Vilnis},
-  journal =      {Problems of Dynamics and Strengths},
-  year =         1977,
-  note =         {(in Russian)},
-  pages =        {104--107},
-  volume =       35,
-  publisher =    {Zinatne Publishing House, Riga},
-  alias =        "Audze1977"
+  author       = {Audze, P. and Egl{\~a}js, Vilnis},
+  title        = {New approach to the design of multifactor experiments},
+  journal      = {Problems of Dynamics and Strengths},
+  year         = 1977,
+  volume       = 35,
+  pages        = {104--107},
+  note         = {(in Russian)},
+  publisher    = {Zinatne Publishing House, Riga},
+  ids          = {Audze1977}
 }
 
 @Article{AudOrb06:mads,
@@ -1983,7 +1984,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   doi          = {10.1162/evco_a_00217},
   supplement   = {http://iridia.ulb.ac.be/supp/IridiaSupp2015-007/},
   pdf          = {BezLopStu2017assessment.pdf},
-  alias        = {BezLopStu2016assessment},
+  ids          = {BezLopStu2016assessment},
   abstract     = {Research on multi-objective evolutionary algorithms (MOEAs)
                   has produced over the past decades a large number of
                   algorithms and a rich literature on performance assessment
@@ -2062,17 +2063,17 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BiaBirMan2006jmma,
-  author =       Bianchi_L #and# Birattari #and# " M. Manfrin and
-                  M. Mastrolilli "#and# Paquete #and# Rossi-Doria #and#
+  author       = Bianchi_L #and# Birattari #and# { M. Manfrin and
+                  M. Mastrolilli }#and# Paquete #and# Rossi-Doria #and#
                   Schiavinotto,
-  title =        {Hybrid Metaheuristics for the Vehicle Routing Problem with
+  title        = {Hybrid Metaheuristics for the Vehicle Routing Problem with
                   Stochastic Demands},
-  journal =      jmma,
-  year =         2006,
-  volume =       5,
-  number =       1,
-  pages =        {91--110},
-  alias =        {Bia++06}
+  journal      = jmma,
+  year         = 2006,
+  volume       = 5,
+  number       = 1,
+  pages        = {91--110},
+  ids          = {Bia++06}
 }
 
 @Article{BiaDorGam2009survey,
@@ -2135,16 +2136,16 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BirPelDor2007:tec,
-  author =       Birattari #and# Pellegrini #and# Dorigo,
-  title =        {On the invariance of ant colony optimization},
-  journal =      tec,
-  year =         2007,
-  volume =       11,
-  number =       6,
-  pages =        {732--742},
-  doi =          {10.1109/TEVC.2007.892762},
-  alias =        {BirPelDor2007ieee-tevc},
-  pdf =          {BirPelDor2007ieee-tevc.pdf},
+  author       = Birattari #and# Pellegrini #and# Dorigo,
+  title        = {On the invariance of ant colony optimization},
+  journal      = tec,
+  year         = 2007,
+  volume       = 11,
+  number       = 6,
+  pages        = {732--742},
+  doi          = {10.1109/TEVC.2007.892762},
+  ids          = {BirPelDor2007ieee-tevc},
+  pdf          = {BirPelDor2007ieee-tevc.pdf}
 }
 
 @Article{BirZloDor06meta_design,
@@ -2311,28 +2312,27 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{Blu05:cor,
-  author =       Blum,
-  title =        {{Beam-ACO}---{Hybridizing} Ant Colony Optimization
-                  with Beam Search: {An} Application to Open Shop
-                  Scheduling},
-  journal =      cor,
-  year =         2005,
-  volume =       32,
-  number =       6,
-  pages =        {1565--1591},
-  alias = {BlumCOR05},
+  author       = Blum,
+  title        = {{Beam-ACO}---{Hybridizing} Ant Colony Optimization with Beam
+                  Search: {An} Application to Open Shop Scheduling},
+  journal      = cor,
+  year         = 2005,
+  volume       = 32,
+  number       = 6,
+  pages        = {1565--1591},
+  ids          = {BlumCOR05}
 }
 
 @Article{Blu08:informs,
-  author =       Blum,
-  title =        "Beam-{ACO} for simple assembly line balancing",
-  journal =      informsjoc,
-  year =         2008,
-  volume =       20,
-  number =       4,
-  pages =        {618--627},
-  doi =          {10.1287/ijoc.1080.0271},
-  alias =        {Blu08:ijoc},
+  author       = Blum,
+  title        = {Beam-{ACO} for simple assembly line balancing},
+  journal      = informsjoc,
+  year         = 2008,
+  volume       = 20,
+  number       = 4,
+  pages        = {618--627},
+  doi          = {10.1287/ijoc.1080.0271},
+  ids          = {Blu08:ijoc}
 }
 
 @Article{BluBleLop09-BeamSearch-LCS,
@@ -2447,14 +2447,15 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BluYabBle08:cor,
-  author =       Blum #and# Yabar_Valles #and# Blesa,
-  title =        {An ant colony optimization algorithm for {DNA} sequencing by hybridization},
-  journal =      cor,
-  year =         2008,
-  volume =       35,
-  number =       11,
-  pages =        {3620--3635},
-  alias = {BluYabBle08},
+  author       = Blum #and# Yabar_Valles #and# Blesa,
+  title        = {An ant colony optimization algorithm for {DNA} sequencing by
+                  hybridization},
+  journal      = cor,
+  year         = 2008,
+  volume       = 35,
+  number       = 11,
+  pages        = {3620--3635},
+  ids          = {BluYabBle08}
 }
 
 @Article{BocFawVal2018performance,
@@ -2659,17 +2660,17 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BraGutRAu2006cms,
-  author =       {S. C. Brailsford} #and# Gutjahr #and# {M. S. Rauner and
+  author       = {S. C. Brailsford} #and# Gutjahr #and# {M. S. Rauner and
                   W. Zeppelzauer},
-  title =        {Combined Discrete-event Simulation and Ant Colony
+  title        = {Combined Discrete-event Simulation and Ant Colony
                   Optimisation Approach for Selecting Optimal Screening
                   Policies for Diabetic Retinopathy},
-  journal =      cms,
-  year =         2006,
-  volume =       4,
-  number =       1,
-  pages =        {59--83},
-  alias =        "Bra++06"
+  journal      = cms,
+  year         = 2006,
+  volume       = 4,
+  number       = 1,
+  pages        = {59--83},
+  ids          = {Bra++06}
 }
 
 @Article{BraKauSch2001aes,
@@ -3036,36 +3037,36 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{BucGoo2004maxima,
-  author =       {A. L. Buchsbaum and M. T. Goodrich},
-  title =        {Three-Dimensional Layers of Maxima},
-  journal =      algorithmica,
-  year =         2004,
-  volume =       39,
-  pages =        {275--289},
-  alias =        {Buchsbaum04},
+  author       = {A. L. Buchsbaum and M. T. Goodrich},
+  title        = {Three-Dimensional Layers of Maxima},
+  journal      = algorithmica,
+  year         = 2004,
+  volume       = 39,
+  pages        = {275--289},
+  ids          = {Buchsbaum04}
 }
 
 @Article{BulHarStr99:aor,
-  author =       Bullnheimer #and# Hartl #and# Strauss,
-  title =        "An Improved Ant System Algorithm for the Vehicle Routing
-                  Problem",
-  journal =      aor,
-  year =         1999,
-  volume =       89,
-  pages =        "319--328",
-  alias =        {ASrank99},
+  author       = Bullnheimer #and# Hartl #and# Strauss,
+  title        = {An Improved Ant System Algorithm for the Vehicle Routing
+                  Problem},
+  journal      = aor,
+  year         = 1999,
+  volume       = 89,
+  pages        = {319--328},
+  ids          = {ASrank99}
 }
 
 @Article{BulHarStr99:cejore,
-  author =       Bullnheimer #and# Hartl #and# Strauss,
-  title =        {A new rank-based version of the {Ant} {System}: {A}
+  author       = Bullnheimer #and# Hartl #and# Strauss,
+  title        = {A new rank-based version of the {Ant} {System}: {A}
                   computational study},
-  journal =      cejore,
-  year =         1999,
-  volume =       7,
-  number =       1,
-  pages =        {25--38},
-  alias =        {BulHarStr99:ras},
+  journal      = cejore,
+  year         = 1999,
+  volume       = 7,
+  number       = 1,
+  pages        = {25--38},
+  ids          = {BulHarStr99:ras}
 }
 
 @Article{BurByk2017,
@@ -3204,16 +3205,16 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{CahMelTal2004,
-  author =       {Cahon, Sebastien and Melab, Nordine} #and# Talbi,
-  title =        "{ParadisEO}: A Framework for the Reusable Design of
-                  Parallel and Distributed Metaheuristics",
-  doi =          {10.1023/B:HEUR.0000026900.92269.ec},
-  journal =      joh,
-  number =       3,
-  pages =        {357--380},
-  volume =       10,
-  year =         2004,
-  alias =        {CahMelTal04paradiseo},
+  author       = {Cahon, Sebastien and Melab, Nordine} #and# Talbi,
+  title        = {{ParadisEO}: A Framework for the Reusable Design of Parallel
+                  and Distributed Metaheuristics},
+  journal      = joh,
+  year         = 2004,
+  volume       = 10,
+  number       = 3,
+  pages        = {357--380},
+  doi          = {10.1023/B:HEUR.0000026900.92269.ec},
+  ids          = {CahMelTal04paradiseo}
 }
 
 @Article{CaiHuaQuiMa2009,
@@ -4002,7 +4003,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2003,
   volume =       7,
   number =       2,
-  alias =        "Coello03"
+  ids =        "Coello03"
 }
 
 @Article{Coello2006evolutionary,
@@ -4046,7 +4047,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       34,
   number =       1,
   pages =        "39--53",
-  alias =        "ColDorManTru94:jorbel"
+  ids =        "ColDorManTru94:jorbel"
 }
 
 @Article{ColLagMar2024changeover,
@@ -4233,7 +4234,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =     1997,
   volume =   48,
   pages =    {295--305},
-  alias = "CosHer97"
+  ids = "CosHer97"
 }
 
 @Article{CoyGolRunWas2001,
@@ -4351,7 +4352,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   definite; Potential field; Riesz kernel; Reproducing Hilbert
                   space; Signed measure},
   publisher =    {SP Birkhäuser Verlag Boston},
-  alias =        "Damelin2010"
+  ids =        "Damelin2010"
 }
 
 @Article{Damas:2001:PDW,
@@ -4837,7 +4838,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       2,
   pages =        "159--168",
   doi =          {10.1007/BF01417909},
-  alias =        {DAGP90},
+  ids =        {DAGP90},
 }
 
 @Article{DenZha2019approxhv,
@@ -4958,7 +4959,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   keywords =     "Evolutionary multi-objective optimization, Production
                   planning, Robust optimization, Simulation-based optimization,
                   Uncertainty modelling",
-  alias =        "DIAZ2017266"
+  ids =        "DIAZ2017266"
 }
 
 @Article{DiaHanXu2018,
@@ -4976,7 +4977,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   keywords =     "Genetic algorithms, Combinatorial optimization, Production
                   planning, Simulation-based optimization, Uncertainty
                   modelling",
-  alias =        {DIAZ2018976},
+  ids =        {DIAZ2018976},
 }
 
 @Article{DiaLop2020ejor,
@@ -5051,7 +5052,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       9,
   pages =        "317--365",
   year =         1998,
-  alias =        "DicDor98:jair",
+  ids =        "DicDor98:jair",
 }
 
 @Article{DicDucGam2005,
@@ -5176,7 +5177,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2004,
   volume =       131,
   pages =        {79--99},
-  alias =        {DoeGutHarStrStu03}
+  ids =        {DoeGutHarStrStu03}
 }
 
 @Article{DoeGutHarStrStu06:ejor,
@@ -5332,7 +5333,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       3,
   pages =        1461,
   doi =          {10.4249/scholarpedia.1461},
-  alias =        {Dor2007:sch-aco}
+  ids =        {Dor2007:sch-aco}
 }
 
 @Article{Dor2016sipolicy,
@@ -5394,13 +5395,13 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       43,
   number =       2,
   pages =        "73--81",
-  alias =        "DorGam1997:bio",
+  ids =        "DorGam1997:bio",
   doi = "10.1016/S0303-2647(97)01708-5"
 }
 
 @Article{DorGam1997:tec,
   key =          "DorGam97:tec",
-  alias =        "DorGam97:tec",
+  ids =        "DorGam97:tec",
   author =       Dorigo #and# Gambardella,
   title =        "{Ant} {Colony} {System}: A Cooperative Learning
                   Approach to the Traveling Salesman Problem",
@@ -5435,7 +5436,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       26,
   number =       1,
   pages =        "29--41",
-  alias =        {DorManCol96:tsmcb},
+  ids =        {DorManCol96:tsmcb},
 }
 
 @Article{DorStuDic2000:fgcs,
@@ -5463,7 +5464,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   title =        {Parameter tuning in an evolutionary algorithm for commodity
                   transportation optimization},
   journal =      ec,
-  alias =        {ParamTunComm},
+  ids =        {ParamTunComm},
   year =         2010,
   pages =        {1--8}
 }
@@ -5477,7 +5478,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       5,
   year =         2004,
   pages =        {841--856},
-  alias =        {DreSia04}
+  ids =        {DreSia04}
 }
 
 @Article{DroJanWeg2006,
@@ -5523,7 +5524,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       2,
   pages =        {125--154},
   doi =          {10.1007/s10472-011-9235-0},
-  alias =        {DubLopStu2010amai},
+  ids =        {DubLopStu2010amai},
   pdf = {DubLopStu2011amai.pdf},
 }
 
@@ -5551,7 +5552,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages =        {369--385},
   doi =          {10.1016/j.ejor.2014.10.062},
   pdf =          "DubLopStu2015ejor.pdf",
-  alias =        {DubLopStu2013cor},
+  ids =        {DubLopStu2013cor},
   keywords =     "Pareto local search",
 }
 
@@ -6071,7 +6072,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       6,
   number =       2,
   pages =        {109--113},
-  alias =        {FR95},
+  ids =        {FR95},
 }
 
 @Article{FeoResSmi1994,
@@ -6397,7 +6398,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       1,
   year =         2010,
   doi =          {10.1371/journal.pbio.1000292},
-  alias =        "Floreano:2010eg",
+  ids =        "Floreano:2010eg",
 }
 
 @Article{FloUrz2000nn,
@@ -6409,7 +6410,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume =       13,
   number =       {4-5},
   pages =        {431--443},
-  alias =        {Floreano:2000uy},
+  ids =        {Floreano:2000uy},
 }
 
 @Article{Flores1986pragmatic,
@@ -6866,7 +6867,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year =         2000,
   volume =       6,
   number =       3,
-  alias =        {Gandibleux00}
+  ids =        {Gandibleux00}
 }
 
 @Article{Gao2016,
@@ -7463,7 +7464,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       1,
   pages =        {218--229},
   doi =          {10.1016/S0377-2217(01)00329-0},
-  alias =        {GraPriGag:ejor},
+  ids =        {GraPriGag:ejor},
 }
 
 @Article{Gre86,
@@ -7559,7 +7560,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume       = 57,
   number       = 2,
   pages        = {179--182},
-  alias        = {Fonseca02a},
+  ids        = {Fonseca02a},
   doi          = {10.1016/S0167-7152(02)00046-9}
 }
 
@@ -7817,7 +7818,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages =        {231--259},
   volume =       21,
   year =         2013,
-  alias =        "Hadka13borg",
+  ids =        "Hadka13borg",
 }
 
 @Article{HadReed2012ec,
@@ -8082,7 +8083,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   number =       10,
   pages =        {1186--1194},
   volume =       51,
-  alias =        "Hardin2004",
+  ids =        "Hardin2004",
 }
 
 @Article{HarSho87a,
@@ -8462,7 +8463,7 @@ Traveling Salesman Heuristic},
   volume       = 58,
   number       = 301,
   pages        = {13--30},
-  alias        = {hoeffding1963probability}
+  ids        = {hoeffding1963probability}
 }
 
 @Article{HonKahMoo1997,
@@ -8610,7 +8611,7 @@ Traveling Salesman Heuristic},
   title =        {A quantum particle swarm optimization driven urban traffic
                   light scheduling model},
   year =         2018,
-  alias = "Hu2018"
+  ids = "Hu2018"
 }
 
 @Article{HuYanWang2017,
@@ -8622,7 +8623,7 @@ Traveling Salesman Heuristic},
   title =        {Real-time traffic jams prediction inspired by {Biham},
                   {Middleton} and {Levine} (BML) model},
   year =         2017,
-  alias =        "Hu2017"
+  ids =        "Hu2017"
 }
 
 @Article{HuaAllNot2006global,
@@ -8704,7 +8705,7 @@ Traveling Salesman Heuristic},
   number =       4,
   pages =        {354--365},
   volume =       51,
-  alias =        "Hung2009",
+  ids =        "Hung2009",
   doi =          {10.1198/TECH.2009.07097}
 }
 
@@ -8777,7 +8778,7 @@ Traveling Salesman Heuristic},
   year =         2017,
   volume =       243,
   pages =        {1--25},
-  alias =        "HutLinBal++2017:aij",
+  ids =        "HutLinBal++2017:aij",
   doi =          {10.1016/j.artint.2016.09.006}
 }
 
@@ -8950,7 +8951,7 @@ Traveling Salesman Heuristic},
   month =        jun,
   pages =        {993--996},
   url = {http://www.jmlr.org/papers/volume9/igel08a/igel08a.pdf},
-  alias =        {Igel:2008ut}
+  ids =        {Igel:2008ut}
 }
 
 @Article{Ilich98,
@@ -9525,7 +9526,7 @@ Traveling Salesman Heuristic},
   pages =        {131--148},
   volume =       26,
   keywords =     {Bayesian design},
-  alias =        "Johnson1990b"
+  ids =        "Johnson1990b"
 }
 
 @Article{JohPapYan1988,
@@ -9560,7 +9561,7 @@ Traveling Salesman Heuristic},
   annote       = {Proposed EGO algorithm},
   doi          = {10.1023/A:1008306431147},
   keywords     = {EGO, bayesian optimization},
-  alias        = {JonSchWel98go}
+  ids        = {JonSchWel98go}
 }
 
 @Article{JonSpe1992formal,
@@ -9941,7 +9942,7 @@ Traveling Salesman Heuristic},
   pages =        {676--689},
   journal =      jors,
   doi =          {10.1057/jors.2015.77},
-  alias =        "Ken++2016:jors",
+  ids =        "Ken++2016:jors",
 }
 
 @Article{KerHooNeuTra2019,
@@ -10706,7 +10707,7 @@ Traveling Salesman Heuristic},
   number =       1,
   pages =        {69--83},
   doi =          {10.1007/s12293-010-0032-9},
-  alias =        {DBLP:journals/memetic/Kramer10}
+  ids =        {DBLP:journals/memetic/Kramer10}
 }
 
 @Article{KraErdBeh2012sumo,
@@ -10811,7 +10812,7 @@ Traveling Salesman Heuristic},
   volume       = 22,
   number       = 4,
   pages        = {469--476},
-  alias        = {kung:maxima},
+  ids        = {kung:maxima},
   doi          = {10.1145/321906.321910}
 }
 
@@ -11116,7 +11117,7 @@ Traveling Salesman Heuristic},
   author =       Laumanns,
   journal =      arxiv # {0711.2949},
   year =         2007,
-  alias =        {laumanns2007stochastic},
+  ids =        {laumanns2007stochastic},
   url =          {https://arxiv.org/abs/0711.2949}
 }
 
@@ -11418,7 +11419,7 @@ Traveling Salesman Heuristic},
   author =       {Li, Zhiyi and Shahidehpour, Mohammad and Bahramirad, Shay and
                   Khodaei, Amin},
   doi =          {10.1109/TSG.2016.2526032},
-  alias =        "Li2016",
+  ids =        "Li2016",
   journal =      ieeetsg,
   number =       4,
   pages =        {1--1},
@@ -11940,7 +11941,7 @@ Optimization},
   pages =        "1570--1583",
   keywords =     "Ant colony optimization, Travelling salesman problem with
                   time windows, Hybridization",
-  alias =        "LopBlu09tsptw",
+  ids =        "LopBlu09tsptw",
   abstract =     {The travelling salesman problem with time windows is
                   a difficult optimization problem that arises, for
                   example, in logistics. This paper deals with the
@@ -12061,7 +12062,7 @@ Optimization},
   pages =        {111--137},
   pdf =          {LopPaqStu04-techrepAIDA-04-11.pdf},
   doi =          {10.1007/s10852-005-9034-x},
-  alias =        {LopPaqStu06:jmma},
+  ids =        {LopPaqStu06:jmma},
   abstract =     {We present variants of an ant colony optimization
                   (MO-ACO) algorithm and of an evolutionary algorithm
                   (SPEA2) for tackling multi-objective combinatorial
@@ -12505,7 +12506,7 @@ abstract = {Reducing energy consumption of water distribution
   number =       3,
   pages =        {475--510},
   year =         2010,
-  alias =        "Lust09",
+  ids =        "Lust09",
 }
 
 @Article{LusTeg2010arxiv,
@@ -12705,7 +12706,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       11,
   number =       4,
   pages =        {358--369},
-  alias =        {Man99:informs}
+  ids =        {Man99:informs}
 }
 
 @Article{ManCar2000:fgcs,
@@ -12716,7 +12717,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       16,
   number =       8,
   pages =        "927--935",
-  alias =        {ManCar00}
+  ids =        {ManCar00}
 }
 
 @Article{ManCol99,
@@ -13213,7 +13214,7 @@ abstract = {Reducing energy consumption of water distribution
   number =       2,
   pages =        {239--245},
   volume =       21,
-  alias =        "McKay1979",
+  ids =        "McKay1979",
   abstract =     {Two types of sampling plans are examined as alternatives to
                   simple random sampling in Monte Carlo studies. These plans
                   are shown to be improvements over simple random sampling with
@@ -13344,7 +13345,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       18,
   number =       1,
   pages =        {105--111},
-  alias =        {MerMid02:ai}
+  ids =        {MerMid02:ai}
 }
 
 @Article{MerMid2002:ec,
@@ -13582,7 +13583,7 @@ abstract = {Reducing energy consumption of water distribution
   number =       3,
   pages =        {451--471},
   year =         2008,
-  alias =        {GerardoMinella,MinRuiCia08mfsp}
+  ids =        {GerardoMinella,MinRuiCia08mfsp}
 }
 
 @Article{MisAfsLar2022rximo,
@@ -13732,7 +13733,7 @@ abstract = {Reducing energy consumption of water distribution
   year =         2005,
   volume =       10,
   pages =        {327--343},
-  alias =        {Mon++05},
+  ids =        {Mon++05},
 }
 
 @Article{MonRandHen08:bias,
@@ -13874,7 +13875,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       43,
   doi =          {10.1016/0378-3758(94)00035-T},
   keywords =     {Bayesian prediction},
-  alias =        "Morris1995"
+  ids =        "Morris1995"
 }
 
 @Article{MosFon1990,
@@ -13991,7 +13992,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       20,
   doi =          {10.1162/EVCO_a_00086},
   publisher =    {MIT Press},
-  alias =        "Mueller2012"
+  ids =        "Mueller2012"
 }
 
 @Article{Muhlenbein93,
@@ -14154,7 +14155,7 @@ abstract = {Reducing energy consumption of water distribution
   number =       9,
   pages =        {1--14},
   volume =       43,
-  alias =        "Nash2011"
+  ids =        "Nash2011"
 }
 
 @Article{NawEnsHam83,
@@ -14727,7 +14728,7 @@ abstract = {Reducing energy consumption of water distribution
   volume       = 26,
   pages        = {297--307},
   annote       = {Proposed beam search},
-  alias        = {OwMor88}
+  ids        = {OwMor88}
 }
 
 @Article{OzeKar2007:jors,
@@ -14914,7 +14915,7 @@ abstract = {Reducing energy consumption of water distribution
   number =       1,
   pages =        "117--128",
   year =         2013,
-  alias =        "PanRui2012"
+  ids =        "PanRui2012"
 }
 
 @Article{PanRuiAlf2017:cor,
@@ -14988,7 +14989,7 @@ abstract = {Reducing energy consumption of water distribution
   year =         2006,
   volume =       169,
   number =       3,
-  alias = {lpaquete:14},
+  ids = {lpaquete:14},
   pages =        {943--959},
 }
 
@@ -15180,7 +15181,7 @@ abstract = {Reducing energy consumption of water distribution
   title =        {Multiobjective evolutionary optimization of traffic flow and
                   pollution in {Montevideo}, {Uruguay}},
   year =         2018,
-  alias =        "Peres2018",
+  ids =        "Peres2018",
   volume =       70,
   pages =        {472--485},
   publisher =    {Elsevier}
@@ -15535,7 +15536,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       22,
   keywords =     {Kriging; Entropy; Design of experiments; Space-filling;
                   Sphere packing; Maximin design; Minimax design},
-  alias =        "Pronzato2012"
+  ids =        "Pronzato2012"
 }
 
 @Article{Psaraftis1995:aor,
@@ -15995,7 +15996,7 @@ abstract = {Reducing energy consumption of water distribution
   number =       4,
   pages =        "25--34",
   year =         1987,
-  alias =        "Reynolds1987",
+  ids =        "Reynolds1987",
 }
 
 @Article{Rez2021jds,
@@ -17327,7 +17328,7 @@ abstract = {Reducing energy consumption of water distribution
   year =         2016,
   pages =        {96--108},
   volume =       148,
-  alias =        "Shields2016"
+  ids =        "Shields2016"
 }
 
 @Article{ShmHoo05:bmc,
@@ -17339,7 +17340,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       6,
   pages =        30,
   doi =          {10.1186/1471-2105-6-30},
-  alias =        {ShmHoo05:protein}
+  ids =        {ShmHoo05:protein}
 }
 
 @Article{SilConRey2023automatic,
@@ -17788,7 +17789,7 @@ abstract = {Reducing energy consumption of water distribution
   volume       = 16,
   number       = 3,
   pages        = {235--247},
-  alias        = {SocBlu2007:nca}
+  ids        = {SocBlu2007:nca}
 }
 
 @Article{SocDor2008:ejor,
@@ -17865,7 +17866,7 @@ abstract = {Reducing energy consumption of water distribution
   number =       1,
   pages =        {54--63},
   year =         2017,
-  alias = "SorArnPal2019",
+  ids = "SorArnPal2019",
   doi =          "10.1111/itor.12443",
   keywords =     "reproducibility, vehicle routing",
 }
@@ -18256,7 +18257,7 @@ abstract = {Reducing energy consumption of water distribution
   volume =       16,
   number =       8,
   pages =        {889--914},
-  alias = {StuHoo00:fgcs},
+  ids = {StuHoo00:fgcs},
 }
 
 @Article{SuZhaYue2021enhanced,
@@ -18687,7 +18688,7 @@ Twin-Screw Extrusion Configuration Problem},
   number =       3,
   pages =        {355--394},
   doi =          {10.1162/1063656041774974},
-  alias =        "Teo:2004vg"
+  ids =        "Teo:2004vg"
 }
 
 @Article{TerSumTam2021auto,
@@ -19019,7 +19020,7 @@ Twin-Screw Extrusion Configuration Problem},
   volume =       17,
   number =       3,
   pages =        {183--202},
-  alias =        {Trianni:2011wl}
+  ids =        {Trianni:2011wl}
 }
 
 @Article{TriSriSanGho2016survey,
@@ -19320,7 +19321,7 @@ Twin-Screw Extrusion Configuration Problem},
   number =       3,
   pages =        "772--795",
   year =         2005,
-  alias = {Varadharajan05}
+  ids = {Varadharajan05}
 }
 
 @Article{VasPas2006preliminary,
@@ -19427,7 +19428,7 @@ Twin-Screw Extrusion Configuration Problem},
   year =         2013,
   pages =        {331--342},
   doi =          {10.1016/j.ejor.2012.12.019},
-  alias =        "verel2012"
+  ids =        "verel2012"
 }
 
 @Article{ViaFalPu2006pref,
@@ -20298,7 +20299,7 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   annote       = {Proposed the combination of quality indicators; proposed
                   epsilon-indicator},
   amonth       = apr,
-  alias        = {perfassess},
+  ids          = {perfassess},
   doi          = {10.1109/TEVC.2003.810758}
 }
 
