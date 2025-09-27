@@ -126,7 +126,7 @@ jobs:
       fail-fast: false
       matrix:
         main: ["testbib", "testshortbib"]
-        style: ["../bibstyles/splncs04abbrev", "../bibstyles/abbrvnatamp"]
+        style: ["../bibstyles/splncs04abbrev", "../bibstyles/abbrvnatamp", "../bibstyles/ACM-Reference-Format"]
         include:
           - main: "testbiblatex"
             style: ""

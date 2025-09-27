@@ -17,8 +17,9 @@ fold_end() {
 }
 
 latexmake() {
-    local TEXMAIN=$1
-    local BST=$2
+    local TEXMAIN="$1"
+    local BST="$2"
+    local W_AS_ERROR=${3:-1}
     fold_start latexmk.1 "latexmk $TEXMAIN $BST"
     rm -f *.bbl *.aux *.log *.out *.bcf *.blg *.fls *.hd *.fdb_latexmk *.run.xml *.syctex.gz
 
@@ -26,32 +27,33 @@ latexmake() {
         rm -f tmp.bst
     fi
     if [ "$BST" != "" ]; then
-        ln -s ${BST}.bst tmp.bst
+        ln -s "${BST}.bst" tmp.bst
     fi
 
-    latexmk -silent -halt-on-error -interaction=nonstopmode -gg --pdf $TEXMAIN | tee .bibtex-warnings
+    latexmk -silent -halt-on-error -interaction=nonstopmode -gg --pdf "$TEXMAIN" | tee .bibtex-warnings
     if [ $? -ne 0 ]; then
         fold_end latexmk.1
         echo "Error: latexmk failed"
-        LOGFILE=${TEXMAIN%.*}.log
-        cat "$LOGFILE"
+        cat "${TEXMAIN%.*}.log"
         exit 1
     fi
 
-    grep --quiet "Warning--" .bibtex-warnings
-    if [ $? -eq 0 ]; then
-        fold_end latexmk.1
-        echo "Error: Please fix bibtex Warnings:"
-        grep "Warning--" .bibtex-warnings
-        exit 1
-    fi
+    if [ $W_AS_ERROR -eq 1 ]; then
+        grep --quiet "Warning--" .bibtex-warnings
+        if [ $? -eq 0 ]; then
+            fold_end latexmk.1
+            echo "Error: Please fix bibtex Warnings:"
+            grep "Warning--" .bibtex-warnings
+            exit 1
+        fi
 
-    grep --quiet "WARN" .bibtex-warnings
-    if [ $? -eq 0 ]; then
-        fold_end latexmk.1
-        echo "Error: Please fix biblatex Warnings:"
-        grep "WARN" .bibtex-warnings
-        exit 1
+        grep --quiet "WARN" .bibtex-warnings
+        if [ $? -eq 0 ]; then
+            fold_end latexmk.1
+            echo "Error: Please fix biblatex Warnings:"
+            grep "WARN" .bibtex-warnings
+            exit 1
+        fi
     fi
     fold_end latexmk.1
 }
@@ -66,13 +68,22 @@ TEXMAIN="testbib.tex"
 if [ "${1:-}" = "-single" ]; then
     TEXMAIN="$2"
     BST="${3:-}"
-    latexmake "$TEXMAIN" "$BST"
+    # FIXME: ACM-Reference-Format produces too many warnings
+    if [[ $BST == *"ACM-Reference-Format"* ]]; then
+        echo "BibTeX warnings are not errors"
+        W_AS_ERROR=0
+    else
+        W_AS_ERROR=1
+    fi
+    latexmake "$TEXMAIN" "$BST" $W_AS_ERROR
 else
     for main in "testbib" "testshortbib"; do
-        # FIXME: Too many warnings
-        # "../bibstyles/ACM-Reference-Format"
         for bst in "../bibstyles/splncs04abbrev" "../bibstyles/abbrvnatamp" "$main"; do
             latexmake "${main}.tex" "$bst"
+        done
+        # FIXME: Too many warnings
+        for bst in "../bibstyles/ACM-Reference-Format"; do
+            latexmake "${main}.tex" "$bst" 0
         done
     done
     latexmake "testbiblatex.tex" ""
