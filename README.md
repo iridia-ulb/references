@@ -96,7 +96,7 @@ everyone wishes to use the same software. The current system is software
 agnostic and can be used with any editor (although Emacs is certainly
 recommended).
 
-In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](./bibstyles) (`.bst` files) and [checks for common errors](./test/test.sh) in encoding entries; and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
+In addition, this repository has further benefits: automatic generation of [HTML](https://iridia-ulb.github.io/references/) and [PDF](https://iridia-ulb.github.io/references/testbib.pdf) output, which makes easier to search for entries, copy them to non-LaTeX documents and inspect them for errors; automatic testing with various [BibTeX/BibLaTeX styles](./bibstyles) (`.bst` files) and [checks for common errors](./test/test.sh) in encoding entries; [automatic check of DOIs](./scripts/doi_check.R); and the use of [git branches](#method-c-branches-and-worktrees) allows users to have personal copies for specific papers, while making very easy to sync with the main branch.
 
 [&laquo; Back to ToC](#table-of-contents)
 
