@@ -6,10 +6,10 @@ check_bad_thing() {
     local MSG=$2
     local TYPE=${3:-"-e"}
     local WHERE=${4:-$FILES}
-    grep --quiet $TYPE $WHAT $WHERE
+    grep --quiet $TYPE "$WHAT" $WHERE
     if [ $? -eq 0 ]; then
         echo "Error: $MSG"
-        grep -H -n $TYPE $WHAT $WHERE
+        grep -H -n $TYPE "$WHAT" $WHERE
         exit 1
     fi
 }
@@ -58,15 +58,22 @@ done
 checkdups=0
 for filename in "$@"; do
     case "$filename" in
-        *"journals.bib"|*"abbrev.bib")
-            checkdups=1
-            break
-            ;;
         *"authors.bib")
             checkdups=1
-            check_bad_thing "^@string.\+=.*[[:space:]\"][[:space:]]*[A-Z]\.\([A-Z]\.\)\+" "Initials must be separated by a space" "-e" "$filename"
+            # fall-through
+            ;&
+        *"journals.bib"|*"abbrev.bib")
+            checkdups=1
+            # Check keys
+            check_bad_thing '^@string\{[[:space:]]*=' "Empty key!" "-Poi" "$filename"
+            check_bad_thing '^@string\{[^\s=]*[^-_[:alnum:]\s][^=]*\s+=' "Keys should only contain alphanumeric characters or '-' or '_' " "-Poi" "$filename"
             ;;
-
+        *"biblio.bib"|*"articles.bib"|*"crossref.bib")
+            # Check keys
+            # FIXME: Forbid short years (09 instead of 2009), '-sp' or '-sup' instead of '-supp', and ":".
+            check_bad_thing '^@[[:alpha:]]+\{[[:space:]]*,' "Empty key!" "-Po" "$filename"
+            check_bad_thing '^@[[:alpha:]]+\{([^,]*[^-_:[:alnum:]][^,]*),' "Keys should only contain alphanumeric characters or '-', '_' and ':'" "-Po" "$filename"
+            ;;
     esac
 done
 
