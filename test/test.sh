@@ -88,5 +88,5 @@ else
     done
     latexmake "testbiblatex.tex" ""
 fi
-echo "No bibtex warnings! Good job!"
+echo "No errors! Good job!"
 exit 0
