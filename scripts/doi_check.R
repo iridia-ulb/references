@@ -152,9 +152,14 @@ normalize_text <- function(text) {
 
 # Try to extract family name (last part after last comma or space)
 extract_family_name <- function(author) {
-  author <- trimws(author)
-  if (length(author) == 0L)
-    return("")
+  res <- trimws(author$family)
+  if (length(res) == 0L) {
+    author <- trimws(author$name)
+    if (length(author) == 0L)
+      return("")
+  } else {
+    author <- res
+  }
   if (grepl(",", author, fixed = TRUE)) {
     return(strsplit(author, ",")[[1]][1])
   } else if (grepl(" ", author, fixed = TRUE)) {
@@ -170,7 +175,7 @@ parse_author_names <- function(authors) {
     # Simple string parsing for BibTeX authors
     authors <- strsplit(authors, " and ", fixed = TRUE)[[1L]]
   }
-  authors <- sapply(authors, function(x) normalize_text(extract_family_name(x$family)))
+  authors <- sapply(authors, function(x) normalize_text(extract_family_name(x)))
   unlist(authors[lengths(authors) > 0L])
 }
 
