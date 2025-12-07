@@ -11,7 +11,6 @@
 # Usage: Rscript doi_check.R [bibfile1] [bibfile2] ...
 #        If no files specified, checks all main bib files with DOI entries
 #
-
 options(warn=2)  # Turn warnings into errors
 library(cli)
 library(rbibutils)
@@ -69,6 +68,12 @@ tryCatch({
 }, error = function(e) {
   doi_org_available <<- FALSE
 })
+
+tryCatch_trace <- function(expr, error)
+  tryCatch(withCallingHandlers(expr, error = function(e) {
+    print(head(sys.calls(), -1))
+    signalCondition(e)
+  }), error = error)
 
 # Function to check for common DOI format issues
 check_doi_issues <- function(doi, entry_key) {
@@ -148,6 +153,8 @@ normalize_text <- function(text) {
 # Try to extract family name (last part after last comma or space)
 extract_family_name <- function(author) {
   author <- trimws(author)
+  if (length(author) == 0L)
+    return("")
   if (grepl(",", author, fixed = TRUE)) {
     return(strsplit(author, ",")[[1]][1])
   } else if (grepl(" ", author, fixed = TRUE)) {
@@ -335,7 +342,7 @@ explain_differences <- function(bib_entry, bib_key, crossref_data) {
     return(TRUE)
 
   mismatch_count <<- mismatch_count + 1L
-  cat("MISMATCH found in entry", bib_key, " with DOI:", bib_entry$doi, "\n")
+  cat("MISMATCH found in entry", bib_key, "with DOI:", bib_entry$doi, "\n")
   # Only print titles when they don't match
   cat("  Title match:", title_match, "\n")
   if (!title_match) {
@@ -441,7 +448,7 @@ process_bib_file <- function(filename, changed_entries = NULL) {
   else
     macro_files <- NULL
 
-  tryCatch({
+  tryCatch_trace({
     # Read bibliography with macro files
     bibs <- readBib(filename, direct=TRUE, macros=macro_files)
 
