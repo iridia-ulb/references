@@ -26,25 +26,27 @@ changed_entries=""
 diff_tmpfile="$(mktemp)"
 # Extract DOI entries from changed lines in bib files
 for file in articles.bib biblio.bib crossref.bib; do
+  #echo "git diff --name-only $base_ref HEAD"
+  #git diff --name-only $base_ref HEAD
   if git diff --name-only $base_ref HEAD | grep -q "^$file$"; then
     echo "Processing changes in $file" >&2
-
     # Get all entries that have DOI changes (added or modified DOI lines)
     # This creates a temp file with the diff and processes it
-    git diff $base_ref HEAD -- "$file" > "$diff_tmpfile"
-
+    git diff -U10 $base_ref HEAD -- "$file" > "$diff_tmpfile"
+    # cat "$diff_tmpfile"
     # Find entries where DOI field was added or modified
     while IFS=: read -r linenum line; do
-        entry_start=$(head -n "$linenum" "$diff_tmpfile" | grep -n "^[+-]@[A-Za-z]*{" | tail -1)
+        entry_start=$(head -n "$linenum" "$diff_tmpfile" | grep -n "^[-+ ]@[A-Za-z]*{" | tail -1)
         if [ -n "$entry_start" ]; then
+            # FIXME: Why generate entry_start with a line number if we delete it here?
             entry_line=$(echo "$entry_start" | cut -d: -f2)
-            entry_key=$(echo "$entry_line" | sed 's/^[+-]@[A-Za-z]*{\([^,}]*\).*/\1/')
+            entry_key=$(echo "$entry_line" | sed 's/^[-+ ]@[A-Za-z]*{\([^,}]*\).*/\1/')
             if [ -n "$entry_key" ]; then
                 echo "Found changed DOI in entry: $entry_key" >&2
                 changed_entries="$changed_entries $entry_key"
             fi
         fi
-    done < <(grep -n "^[+-].*doi\s*=" "$diff_tmpfile")
+    done < <(grep -n "^[-+].*doi\s*=" "$diff_tmpfile")
   fi
 done
 rm -f "$diff_tmpfile"
