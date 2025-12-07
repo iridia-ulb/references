@@ -36,10 +36,8 @@ for file in articles.bib biblio.bib crossref.bib; do
     # cat "$diff_tmpfile"
     # Find entries where DOI field was added or modified
     while IFS=: read -r linenum line; do
-        entry_start=$(head -n "$linenum" "$diff_tmpfile" | grep -n "^[-+ ]@[A-Za-z]*{" | tail -1)
-        if [ -n "$entry_start" ]; then
-            # FIXME: Why generate entry_start with a line number if we delete it here?
-            entry_line=$(echo "$entry_start" | cut -d: -f2)
+        entry_line=$(head -n "$linenum" "$diff_tmpfile" | grep "^[-+ ]@[A-Za-z]*{" | tail -1)
+        if [ -n "$entry_line" ]; then
             entry_key=$(echo "$entry_line" | sed 's/^[-+ ]@[A-Za-z]*{\([^,}]*\).*/\1/')
             if [ -n "$entry_key" ]; then
                 echo "Found changed DOI in entry: $entry_key" >&2
