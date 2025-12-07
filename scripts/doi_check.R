@@ -433,7 +433,7 @@ process_bib_file <- function(filename, changed_entries = NULL) {
   cat("Processing file:", filename, "\n")
   # Define macro files for parsing
   if (endsWith(filename, "biblio.bib"))
-    macro_files <- c("abbrev.bib", "authors.bib", "crossref.bib")
+    macro_files <- c("abbrev.bib", "authors.bib", "journals.bib", "crossref.bib")
   else if (endsWith(filename, "crossref.bib"))
     macro_files <- c("abbrev.bib", "authors.bib")
   else if (endsWith(filename, "articles.bib"))
