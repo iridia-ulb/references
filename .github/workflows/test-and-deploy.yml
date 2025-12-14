@@ -26,7 +26,7 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: 📥 Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 50
 
@@ -65,7 +65,23 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             base_ref="${{ github.event.pull_request.base.sha }}"
           else
-            base_ref="HEAD~1"
+            # Use GitHub `before` ref for push events, fallback to `git rev-list` if necessary
+            if [ -n "${{ github.event.before }}" ]; then
+              base_ref="${{ github.event.before }}"
+            else
+              first_commit_in_push=$(git rev-list --boundary $(git rev-parse HEAD) --not $(git rev-parse HEAD^) | grep -e "^-" | sed 's/^-//')
+              base_ref="$first_commit_in_push"
+            fi
+
+            # Ensure base_ref exists locally, try to unshallow fetch if it doesn't
+            if ! git cat-file -e "${base_ref}^{commit}" 2>/dev/null; then
+              echo "⚠️ Base ref $base_ref not found locally. Attempting unshallow fetch."
+              git fetch --unshallow
+              if ! git cat-file -e "${base_ref}^{commit}" 2>/dev/null; then
+                echo "⚠️ Base ref $base_ref still not found. Using HEAD^ as fallback."
+                base_ref=$(git rev-parse HEAD^)
+              fi
+            fi
           fi
 
           changed_entries=$(./scripts/extract_changed_dois.sh "$base_ref")
@@ -137,7 +153,7 @@ jobs:
 
     steps:
       - name: 📥 Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # - name: 📋 Cache TinyTeX
       #   id: cache-tinytex
