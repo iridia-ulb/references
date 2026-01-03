@@ -18,12 +18,13 @@ library(jsonlite)
 library(httr2)
 
 crossref_whitelist <- scan(what=character(), quiet=TRUE, text='
+10.1002/9781118557563
 10.1109/CERMA.2007.60
 10.1609/aimag.v17i3.1232
-10.2420/AF09.2014.59
-10.4230/LIPIcs.CP.2022.35
-10.1002/9781118557563
 10.2420/AF08.2014.21
+10.2420/AF09.2014.59
+10.3929/ethz-b-000023822
+10.4230/LIPIcs.CP.2022.35
 ')
 
 # Configuration
