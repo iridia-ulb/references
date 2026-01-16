@@ -225,19 +225,17 @@ This method is suggested in case you work on your paper (alone or with your
 collaborators) on web-based systems such as Overleaf.
 
 1. Within the local repository of your paper, add the following lines to a `.gitignore` file:
+   ```
+   !bib/*.bib
+   !bib/README.md
+   ```
 
-```
-!bib/*.bib
-!bib/README.md
-```
-
-2. Now create a *fake submodule*.
-
-```
+2. Create a *fake submodule*.
+    ```
     git clone https://github.com/iridia-ulb/references.git bib
     git add -f .gitignore bib/README.md bib/*.bib
     git ci -a -m "Setup https://github.com/iridia-ulb/references"
-```
+    ```
 
 3. Now `git` commands at the top directory operate in your own git repository,
    but `git` commands within the directory `bib` operate in the `iridia-ulb`
@@ -262,48 +260,50 @@ repository and you want to update the master repository frequently. The script
 [`setup_worktree.sh`](/setup_worktree.sh) will do all these steps for you.
 
 1. Get a copy of the master repository in some folder, e.g., `/path/to/references-master`:
-```
-    git clone https://github.com/iridia-ulb/references.git /path/to/references-master
-```
+   ```
+   git clone https://github.com/iridia-ulb/references.git /path/to/references-master
+   ```
 
 2. Now, assuming that your paper resides in `/path/to/mypaper`, create a branch
    and a worktree for your paper:
-```
-    cd /path/to/references-master
-    git worktree add --track -B mypaper /path/to/mypaper/bib
-```
+   ```
+   cd /path/to/references-master
+   git worktree add --track -B mypaper /path/to/mypaper/bib
+   ```
 
 3. Within the local repository of your paper, add the following lines to a `.gitignore` file:
-```
-!bib/*.bib
-!bib/README.md
-```
+   ```
+   !bib/*.bib
+   !bib/README.md
+   ```
 
-3. Now convince `git` that `bib` is a fake submodule:
-```
-    cd /path/to/mypaper/
-    mv bib/.git bib/_git
-    git add -f .gitignore .bib/README.md bib/*.bib
-    git ci -a -m "Setup https://github.com/iridia-ulb/references"
-    mv bib/_git bib/.git
-```
+4. Now convince `git` that `bib` is a fake submodule:
+   ```
+   cd /path/to/mypaper/
+   mv bib/.git bib/_git
+   git add -f .gitignore .bib/README.md bib/*.bib
+   git ci -a -m "Setup https://github.com/iridia-ulb/references"
+   mv bib/_git bib/.git
+   ```
 
-4. If you wish to import changes from the master branch, you do:
- ```
-     cd /path/to/mypaper/bib
-     git rebase -i master
-```
+5. If you wish to import changes from the master branch, you do:
+   ```
+   cd /path/to/mypaper/bib
+   git rebase -i master
+   ```
 
-5. If you wish to push changes to iridia-ulb master, you do:
-```
-    cd /path/to/references-master
-    git merge --ff-only mypaper
-    git push
-```
-6. You can also easily find out which worktrees need to be merged into master:
-```
-    git branch --no-merged master
-```
+6. If you wish to push changes to iridia-ulb master, you do:
+   ```
+   cd /path/to/references-master
+   git merge --ff-only mypaper
+   git push
+   ```
+
+7. You can also easily find out which worktrees need to be merged into master:
+   ```
+   git branch --no-merged master
+   ```
+
 
 #### Other methods ####
 
