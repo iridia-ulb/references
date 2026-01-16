@@ -170,29 +170,28 @@ these rules:
 Using the IRIDIA BibTeX Repository
 ----------------------------------
 
-The IRIDIA BibTex repository is essentially a collection of `.bib` files,
-so all you need to do is include these files in your paper.
+The IRIDIA BibTex repository is essentially a collection of `.bib` files, so
+all you need to do is include these files in your paper.
 
-The `.bib` files define some commands, for example `\MaxMinAntSystem`. You
-can override any command by just defining it with `\newcommand` or
-`\providecommand` before the bibliography line. This trick also works for other
-commands defined by BibTeX styles (`.bst`). For example, disabling doi
-information can be normally achieved with `\providecommand{\doi}[1]{}`.
+The `.bib` files define some commands, for example `\MaxMinAntSystem`. You can
+override any command by just defining it with `\newcommand` or
+`\providecommand` before the `\bibliography` command. This trick also works for
+other commands defined by BibTeX styles (`.bst`). For example, disabling doi
+information is often possible with `\providecommand{\doi}[1]{}`.
 
-However, one of the purposes of this repository is to keep the list of
-references as independent as possible from the working paper(s),
-whenever possible. Hence, we suggest two main ways of setting up your
-local copy of the IRIDIA BibTex repository.
-The instructions below work for Linux/Mac, but can of course be adapted
-for Windows too.
+One of the purposes of this repository is to keep the list of references as
+independent as possible from the working paper(s), whenever possible. Hence, we
+suggest three ways of setting up your local copy of the IRIDIA BibTex
+repository.  The instructions below work for Linux/Mac, but can be adapted for
+Windows too.
 
 #### Method A: Symbolic links ####
 
-This method is suggested when working on your paper offline,
-whether you are using a versioning system for your paper or not. In case
-you use a versioning system to work on your paper with other collaborators,
-make sure everyone in the team uses the IRIDIA BibTex repository and
-follows the same instructions.
+This method is suggested when working on your paper offline, whether you are
+using a versioning system like `git` for your paper or not. If you use a
+versioning system to work on your paper with other collaborators, make sure
+everyone in the team uses the IRIDIA BibTex repository and follows the same
+instructions.
 
 1. Clone the repository
    ```
@@ -225,25 +224,31 @@ follows the same instructions.
 This method is suggested in case you work on your paper (alone or with your
 collaborators) on web-based systems such as Overleaf.
 
-1. Within your existing local repository, create a *fake submodule*. The trailing "slash (`/`) is important!
+1. Within the local repository of your paper, add the following lines to a `.gitignore` file:
+   ```
+   !bib/*.bib
+   !bib/README.md
+   ```
 
-```
+2. Create a *fake submodule*.
+    ```
     git clone https://github.com/iridia-ulb/references.git bib
-    git add bib/
-```
+    git add -f .gitignore bib/README.md bib/*.bib
+    git ci -a -m "Setup https://github.com/iridia-ulb/references"
+    ```
 
-2. Now `git` commands at the top directory operate in your own git
-   repository, but `git` commands within the directory `bib` operate in
-   the `iridia-ulb` repository. The `bib` directory will be available to
-   all users of the repository, however, only the users who perform the above
-   command can perform operations in the `iridia-ulb` repository.
+3. Now `git` commands at the top directory operate in your own git repository,
+   but `git` commands within the directory `bib` operate in the `iridia-ulb`
+   repository. The `bib` directory will be available to all users of the
+   repository, however, only the user who created the fake submodule can
+   push/pull changes from/to the `iridia-ulb` repository.
 
-3. In the main `tex` file of your paper, include the BibTex files with
+4. In the main `tex` file of your paper, include the BibTex files with
    ```latex
     \bibliography{bib/abbrev,bib/journals,bib/authors,bib/biblio,bib/crossref}
    ```
 
-4. See the sections ["Updating"](#updating-your-working-copy),
+5. See the sections ["Updating"](#updating-your-working-copy),
    ["Contributing"](#contributing-to-the-iridia-bibtex-repository), and
    ["Before Submitting a paper"](#before-submitting-a-paper).
 
@@ -255,35 +260,50 @@ repository and you want to update the master repository frequently. The script
 [`setup_worktree.sh`](/setup_worktree.sh) will do all these steps for you.
 
 1. Get a copy of the master repository in some folder, e.g., `/path/to/references-master`:
-
-```
-    git clone https://github.com/iridia-ulb/references.git /path/to/references-master
-```
+   ```
+   git clone https://github.com/iridia-ulb/references.git /path/to/references-master
+   ```
 
 2. Now, assuming that your paper resides in `/path/to/mypaper`, create a branch
    and a worktree for your paper:
+   ```
+   cd /path/to/references-master
+   git worktree add --track -B mypaper /path/to/mypaper/bib
+   ```
 
-```
-    cd /path/to/references-master
-    git worktree add -b mypaper /path/to/mypaper/bib
-```
+3. Within the local repository of your paper, add the following lines to a `.gitignore` file:
+   ```
+   !bib/*.bib
+   !bib/README.md
+   ```
 
-3. If you wish to import changes from the master branch, you do:
-```
-    cd /path/to/mypaper/bib
-    git rebase -i master
-```
+4. Now convince `git` that `bib` is a fake submodule:
+   ```
+   cd /path/to/mypaper/
+   mv bib/.git bib/_git
+   git add -f .gitignore .bib/README.md bib/*.bib
+   git ci -a -m "Setup https://github.com/iridia-ulb/references"
+   mv bib/_git bib/.git
+   ```
 
-4. If you wish to push changes to iridia-ulb master, you do:
-```
-    cd /path/to/references-master
-    git merge --ff-only mypaper
-    git push
-```
-5. You can also easily find out which worktrees need to be merged into master:
-```
-    git branch --no-merged master
-```
+5. If you wish to import changes from the master branch, you do:
+   ```
+   cd /path/to/mypaper/bib
+   git rebase -i master
+   ```
+
+6. If you wish to push changes to iridia-ulb master, you do:
+   ```
+   cd /path/to/references-master
+   git merge --ff-only mypaper
+   git push
+   ```
+
+7. You can also easily find out which worktrees need to be merged into master:
+   ```
+   git branch --no-merged master
+   ```
+
 
 #### Other methods ####
 
