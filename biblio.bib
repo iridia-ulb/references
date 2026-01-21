@@ -186,12 +186,13 @@
 }
 
 @InCollection{AkiSanYan2019optuna,
-  doi =          {10.1145/3292500.3330701},
-  author =       {Takuya Akiba and Shotaro Sano and Toshihiko Yanase and Takeru
+  author       = {Takuya Akiba and Shotaro Sano and Toshihiko Yanase and Takeru
                   Ohta and Masanori Koyama},
-  title =        {Optuna: A Next-generation Hyperparameter Optimization Framework},
-  pages =        "2623--2631",
-  crossref =     "SIGKDD2019"
+  title        = {Optuna: A Next-generation Hyperparameter Optimization
+                  Framework},
+  pages        = {2623--2631},
+  doi          = {10.1145/3292500.3330701},
+  crossref     = {SIGKDD2019}
 }
 
 @TechReport{AktAtaGur2007conic,
@@ -1456,13 +1457,34 @@
 }
 
 @InCollection{BezLopStu2020chapter,
-  author =       Bezerra #and# Lopez-Ibanez #and# Stuetzle,
-  title =        "Automatic Configuration of Multi-objective Optimizers and
-                  Multi-objective Configuration",
-  crossref = "BarFilKorTal2020high",
-  pages =        "69--92",
-  doi =          {10.1007/978-3-030-18764-4_4},
-  abstract="Heuristic optimizers are an important tool in academia and industry, and their performance-optimizing configuration requires a significant amount of expertise. As the proper configuration of algorithms is a crucial aspect in the engineering of heuristic algorithms, a significant research effort has been dedicated over the last years towards moving this step to the computer and, thus, make it automatic. These research efforts go way beyond tuning only numerical parameters of already fully defined algorithms, but exploit automatic configuration as a means for automatic algorithm design. In this chapter, we review two main aspects where the research on automatic configuration and multi-objective optimization intersect. The first is the automatic configuration of multi-objective optimizers, where we discuss means and specific approaches. In addition, we detail a case study that shows how these approaches can be used to design new, high-performing multi-objective evolutionary algorithms. The second aspect is the research on multi-objective configuration, that is, the possibility of using multiple performance metrics for the evaluation of algorithm configurations. We highlight some few examples in this direction.",
+  author       = Bezerra #and# Lopez-Ibanez #and# Stuetzle,
+  title        = {Automatic Configuration of Multi-objective Optimizers and
+                  Multi-objective Configuration},
+  pages        = {69--92},
+  crossref     = {BarFilKorTal2020high},
+  doi          = {10.1007/978-3-030-18764-4_4},
+  abstract     = {Heuristic optimizers are an important tool in academia and
+                  industry, and their performance-optimizing configuration
+                  requires a significant amount of expertise. As the proper
+                  configuration of algorithms is a crucial aspect in the
+                  engineering of heuristic algorithms, a significant research
+                  effort has been dedicated over the last years towards moving
+                  this step to the computer and, thus, make it automatic. These
+                  research efforts go way beyond tuning only numerical
+                  parameters of already fully defined algorithms, but exploit
+                  automatic configuration as a means for automatic algorithm
+                  design. In this chapter, we review two main aspects where the
+                  research on automatic configuration and multi-objective
+                  optimization intersect. The first is the automatic
+                  configuration of multi-objective optimizers, where we discuss
+                  means and specific approaches. In addition, we detail a case
+                  study that shows how these approaches can be used to design
+                  new, high-performing multi-objective evolutionary
+                  algorithms. The second aspect is the research on
+                  multi-objective configuration, that is, the possibility of
+                  using multiple performance metrics for the evaluation of
+                  algorithm configurations. We highlight some few examples in
+                  this direction.}
 }
 
 @PhDThesis{Bezerra2016PhD,
@@ -3526,10 +3548,10 @@ doi = "10.1007/978-0-387-36797-2"
   title        = {{\softwarepackage{ACVIZ}}: Algorithm Configuration
                   Visualizations for {\rpackage{irace}}: Supplementary
                   material},
-  howpublished = {\url{http://doi.org/10.5281/zenodo.4714582}},
+  howpublished = {Zenodo},
   month        = sep,
   year         = 2020,
-  publisher    = {Zenodo}
+  doi          = {10.5281/zenodo.4714582}
 }
 
 @PhDThesis{Dewez2004PhD,
@@ -4285,6 +4307,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          {10.1145/3449639.3459276},
   crossref =     "GECCO2021",
   pages =        {395--402},
+}
+
+@Book{FanWan1994numtheory,
+  author       = {Fang, K. T.}#and#{Wang, Y.},
+  title        = {Number-Theoretic Methods in Statistics},
+  year         = 1994,
+  publisher    = chapman,
+  address      = add-london,
+  keywords     = {hypersphere, Monte-Carlo sampling, low-discrepancy sequences}
 }
 
 @InProceedings{FarAma2002nafips,
@@ -5131,6 +5162,19 @@ doi =           {10.1007/978-3-642-38516-2_16},
   keywords =     "Safe RL"
 }
 
+@InCollection{GenBre2009approx,
+  author       = {Genz, Alan and Bretz, Frank},
+  title        = {Methods That Approximate the Integral},
+  booktitle    = {Computation of Multivariate Normal and $t$ Probabilities},
+  publisher    = springer,
+  year         = 2009,
+  volume       = 195,
+  series       = lnstat,
+  pages        = {29--54},
+  address      = add-berlin-heidelberg,
+  doi          = {10.1007/978-3-642-01689-9_4}
+}
+
 @TechReport{GenGraMac1997hownotto,
   author =       Gent_IP #and# {Stuart A. Grant and Ewen MacIntyre and Patrick
                   Prosser and Paul Shaw and Barbara M. Smith} #and# Walsh_T,
@@ -5156,10 +5200,18 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{GenPot2010:handbook,
-  author =       Gendreau #and# Potvin,
-  title =        {Tabu Search},
-  crossref = "Handbook2010",
-  pages =        {41--59}
+  author       = Gendreau #and# Potvin,
+  title        = {Tabu Search},
+  pages        = {41--59},
+  crossref     = {Handbook2010}
+}
+
+@Book{Gentle2006montecarlo,
+  author       = {Gentle, J. E.},
+  title        = {Random Number Generation and {Monte} {Carlo} Methods},
+  year         = 2006,
+  publisher    = springer,
+  address      = add-ny
 }
 
 @InCollection{GesHutKotMal2014lion,
@@ -6071,6 +6123,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          {10.1145/1356058.1356080}
 }
 
+@Book{HuaWang2012numtheory,
+  author       = {L. Hua} #and# {Y. Wang},
+  title        = {Applications of Number Theory to Numerical Analysis},
+  year         = 1981,
+  publisher    = springer,
+  address      = add-berlin,
+  doi          = {10.1007/978-3-642-67829-5}
+}
+
 @InCollection{HuaYaHaoCai2006,
   author =       {Han Huang and Xiaowei Yang and Zhifeng Hao and
                   Ruichu Cai},
@@ -6726,6 +6787,16 @@ doi =           {10.1007/978-3-642-38516-2_16},
   title =        {Evolutionary many-objective optimization: {A} short review},
   doi =          {10.1109/CEC.2008.4631121},
   pages =        {2419--2426},
+}
+
+@InProceedings{IshTsuSak2009hvapprox,
+  author       = Ishibuchi #and# {N. Tsukamoto} #and# {Y. Sakane} #and#
+                  {Y. Nojima},
+  title        = {Hypervolume approximation using achievement scalarizing
+                  functions for evolutionary many-objective optimization},
+  pages        = {530--537},
+  crossref     = {CEC2009},
+  doi          = {10.1109/CEC.2009.4982991}
 }
 
 @InCollection{IzzGetHenSim2015evolving,
@@ -7448,10 +7519,10 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Book{KolFri2009,
-  title =        {Probabilistic graphical models: principles and techniques},
-  author =       {Koller, Daphne and Friedman, Nir},
-  year =         {2009},
-  publisher =    mit-pub
+  author       = {Koller, Daphne and Friedman, Nir},
+  title        = {Probabilistic graphical models: principles and techniques},
+  year         = 2009,
+  publisher    = mit-pub
 }
 
 @InProceedings{KopYos2007visualization,
@@ -9824,16 +9895,16 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Misc{NobVerWan2021gecco-supp,
-  author =       {Jacob de Nobel} #and# Vermetten_D #and# Wang_H #and#
-                  Doerr_C #and# Baeck_Thomas,
-  title =        {Data and Code from Tuning as a means of assessing the
+  author       = {Jacob de Nobel} #and# Vermetten_D #and# Wang_H #and# Doerr_C
+                  #and# Baeck_Thomas,
+  title        = {Data and Code from Tuning as a means of assessing the
                   benefits of new ideas in interplay with existing algorithmic
                   modules},
-  month =        feb,
-  year =         2021,
-  publisher =    {Zenodo},
-  version =      {1.0},
-  doi =          {10.5281/zenodo.4524959},
+  howpublished = {Zenodo},
+  month        = feb,
+  year         = 2021,
+  version      = {1.0},
+  doi          = {10.5281/zenodo.4524959}
 }
 
 @Book{NocWri2006,
@@ -10057,12 +10128,13 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Misc{PanVerLopBac2024transfer-supp,
-  author       = {Shuaiqun Pan} #and# Vermetten_D #and# Lopez-Ibanez #and# Baeck_Thomas #and# Wang_H,
+  author       = {Shuaiqun Pan} #and# Vermetten_D #and# Lopez-Ibanez #and#
+                  Baeck_Thomas #and# Wang_H,
   title        = {Transfer Learning of Surrogate Models via Domain Affine
                   Transformation: Supplementary Material},
-  howpublished = {\url{https://doi.org/10.5281/zenodo.10608095}},
+  howpublished = {Zenodo},
   year         = 2024,
-  publisher    = {Zenodo}
+  doi          = {10.5281/zenodo.10608095}
 }
 
 @Book{PapSte1982:ph,
@@ -10435,20 +10507,22 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InCollection{PerLopHooStu2017:lion,
-  author =       Perez_L #and# Lopez-Ibanez #and# Hoos #and# Stuetzle,
-  title =        "An Experimental Study of Adaptive Capping in {\rpackage{irace}}",
-  crossref =     "LION2017",
-  pages = {235--250},
-  pdf =          {PerLopHooStu2017lion.pdf},
-  doi = {10.1007/978-3-319-69404-7_17},
-  supplement =   {http://iridia.ulb.ac.be/supp/IridiaSupp2016-007/},
+  author       = Perez_L #and# Lopez-Ibanez #and# Hoos #and# Stuetzle,
+  title        = {An Experimental Study of Adaptive Capping in
+                  {\rpackage{irace}}},
+  pages        = {235--250},
+  crossref     = {LION2017},
+  pdf          = {PerLopHooStu2017lion.pdf},
+  doi          = {10.1007/978-3-319-69404-7_17},
+  supplement   = {http://iridia.ulb.ac.be/supp/IridiaSupp2016-007/}
 }
 
 @Misc{PerLopHooStu2017:lion-supp,
-  author =       Perez_L #and# Lopez-Ibanez #and# Hoos #and# Stuetzle,
-  title =        "An experimental study of adaptive capping in irace: Supplementary material",
+  author       = Perez_L #and# Lopez-Ibanez #and# Hoos #and# Stuetzle,
+  title        = {An experimental study of adaptive capping in irace:
+                  Supplementary material},
   howpublished = {\url{http://iridia.ulb.ac.be/supp/IridiaSupp2016-007/}},
-  year =         2017,
+  year         = 2017
 }
 
 @InCollection{PerLopStu2014ants,
@@ -11852,8 +11926,9 @@ doi =           {10.1007/978-3-642-38516-2_16},
   author       = Shavarani_Mahdi #and# Lopez-Ibanez #and# Knowles,
   title        = {On Benchmarking Interactive Evolutionary Multi-Objective
                   Algorithms: Supplementary material},
-  howpublished = {\url{https://doi.org/10.5281/zenodo.7863301}},
-  year         = 2023
+  howpublished = {Zenodo},
+  year         = 2023,
+  doi          = {10.5281/zenodo.7863301}
 }
 
 @PhDThesis{Shavazipour2018PhD,
