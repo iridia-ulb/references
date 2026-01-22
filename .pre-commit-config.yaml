@@ -5,6 +5,7 @@ ci:
 
         for more information, see https://pre-commit.ci
 
+default_stages: [commit, manual]
 repos:
   - repo: local
     hooks:
