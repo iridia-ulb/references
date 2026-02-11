@@ -4632,6 +4632,40 @@ doi =           {10.1007/978-3-642-38516-2_16},
   publisher =    ieeep,
 }
 
+@InProceedings{FolOdgZha2023practical,
+  author       = {Jose Pablo Folch and James A. C. Odgers and Shiqiang Zhang
+                  and Robert Matthew Lee and Behrang Shafei and David Walz and
+                  Calvin Tsay and Mark van der Wilk and Ruth Misener},
+  title        = {Practical Path-based {Bayesian} Optimization},
+  booktitle    = {NeurIPS 2023 Workshop on Adaptive Experimental Design and
+                  Active Learning in the Real World},
+  year         = 2023,
+  url          = {https://openreview.net/forum?id=E8zSTm2bGu},
+  abstract     = {There has been a surge in interest in data-driven
+                  experimental design with applications to chemical engineering
+                  and drug manufacturing. Bayesian optimization (BO) has proven
+                  to be adaptable to such cases, since we can model the
+                  reactions of interest as expensive black-box
+                  functions. Sometimes, the cost of this black-box functions
+                  can be separated into two parts: (a) the cost of the
+                  experiment itself, and (b) the cost of changing the input
+                  parameters. In this short paper, we extend the SnAKe
+                  algorithm to deal with both types of costs simultaneously. We
+                  further propose extensions to the case of a maximum allowable
+                  input change, as well as to the multi-objective setting.}
+}
+
+@InProceedings{FolZhaLee2022snake,
+  author       = {Folch, Jose Pablo and Zhang, Shiqiang and Lee, Robert and
+                  Shafei, Behrang and Walz, David and Tsay, Calvin and van der
+                  Wilk, Mark and Misener, Ruth},
+  title        = {{SnAKe}: {Bayesian} Optimization with Pathwise Exploration},
+  pages        = {35226--35239},
+  crossref     = {NIPS2022},
+  url          =
+                  {https://proceedings.neurips.cc/paper_files/paper/2022/hash/e4bab1843c8d5a69f5abfd0824593493-Abstract-Conference.html}
+}
+
 @InProceedings{FonFle1993:moga,
   author =       Fonseca #and# Fleming,
   title =        {Genetic Algorithms for Multiobjective Optimization:
@@ -8253,6 +8287,15 @@ doi =           {10.1007/978-3-642-38516-2_16},
   epub         = {https://proceedings.mlr.press/v235/liu24bs.html}
 }
 
+@InProceedings{LiuWanQiy2023,
+  author       = {Liu, Peng and Wang, Haowei and Qiyu, Wei},
+  title        = {Bayesian Optimization with Switching Cost: Regret Analysis
+                  and Lookahead Variants},
+  pages        = {4011--4018},
+  crossref     = {IJCAI2023},
+  doi          = {10.24963/ijcai.2023/446}
+}
+
 @Misc{LocalSolver,
   author =       {{Innovation 24}},
   title =        "{LocalSolver}",
@@ -11585,7 +11628,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InProceedings{SanBai2022permutations,
-  author       = {Valentino Santucci and Marco Baioletti},
+  author       = Santucci_V #and# {Marco Baioletti},
   title        = {A Fast Randomized Local Search for Low Budget Optimization in
                   Black-Box Permutation Problems},
   crossref     = {WCCI2022},
@@ -11593,14 +11636,14 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @Book{SanWilNot2003,
-  author =       {Thomas J. Santner and Brian J. Williams and William I. Notz},
-  title =        {The Design and Analysis of Computer Experiments},
-  publisher =    springer-verlag,
-  address =      add-ny,
-  year =         2003,
-  doi =          {10.1007/978-1-4757-3799-8},
-  pages =        "2083",
-  ids =        "SatWilNot2003;SanWilNot03",
+  author       = {Thomas J. Santner and Brian J. Williams and William I. Notz},
+  title        = {The Design and Analysis of Computer Experiments},
+  year         = 2003,
+  publisher    = springer-verlag,
+  address      = add-ny,
+  doi          = {10.1007/978-1-4757-3799-8},
+  pages        = 2083,
+  ids          = {SatWilNot2003;SanWilNot03}
 }
 
 @InProceedings{Santucci2024ijcci,
@@ -13242,14 +13285,24 @@ doi =           {10.1007/978-3-642-38516-2_16},
 }
 
 @InProceedings{VelLam1998gp,
-  ids =        {Veldhuizen98a},
-  key =          {Van Veldhuizen and Lamont, 1998a},
-  title =        "Evolutionary Computation and Convergence to a
-                  {Pareto} Front",
-  author =       VanVeldhuizen #and# Lamont,
-  pages =        {221--228},
-  crossref =     {GP1998},
-  keywords = "generational distance"
+  author       = VanVeldhuizen #and# Lamont,
+  title        = {Evolutionary Computation and Convergence to a {Pareto} Front},
+  pages        = {221--228},
+  ids          = {Veldhuizen98a},
+  key          = {Van Veldhuizen and Lamont, 1998a},
+  crossref     = {GP1998},
+  keywords     = {generational distance}
+}
+
+@InProceedings{VelRanGupRub2017process,
+  author       = {Pratibha Vellanki and Santu Rana and Sunil Gupta and David
+                  Rubin and Alessandra Sutti and Thomas Dorin and Murray Height
+                  and Paul G. Sanders and Svetha Venkatesh},
+  title        = {Process-constrained batch {Bayesian} optimisation},
+  pages        = {3414--3423},
+  crossref     = {NIPS2017},
+  url          =
+                  {https://proceedings.neurips.cc/paper/2017/hash/1f71e393b3809197ed66df836fe833e5-Abstract.html}
 }
 
 @PhDThesis{Veldhuizen1999phd,
