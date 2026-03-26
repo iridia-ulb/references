@@ -8357,6 +8357,38 @@ doi =           {10.1007/978-3-642-38516-2_16},
   isbn =         {978-88-86037-21-1}
 }
 
+@InCollection{Lop2026hvapprox,
+  author       = Lopez-Ibanez,
+  title        = {Approximating the Hypervolume Indicator using Fast
+                  Low-Discrepancy Sequences},
+  annote       = {Proposed Rphi-FWE+},
+  crossref     = {GECCO2026},
+  doi          = {10.1145/3795095.3805198},
+  abstract     = {The hypervolume indicator measures the volume of the
+                  objective space weakly dominated by a set of solutions in
+                  multi-objective optimization problems. It is one the most
+                  popular unary quality metrics for comparing multi-objective
+                  optimizers. The computation of the hypervolume requires
+                  exponential time on the number of objectives, hence, it
+                  becomes computationally expensive for thousands of points in
+                  more than 5 dimensions. To overcome this limitation, several
+                  methods for approximating the hypervolume have been proposed
+                  in the literature. A recent proposal uses polar coordinates
+                  to transform the hypervolume into an integral over the
+                  hypersphere that is approximated via (quasi-)Monte Carlo
+                  sampling. In this paper, we replace two key components of
+                  this proposal with: (1) $R_\phi$, a fast multi-dimensional
+                  generalization of the Kronecker sequence that generates
+                  sampling points in the hypercube, and (2) a simple and
+                  efficient mapping from the hypercube to the positive orthant
+                  of the hypersphere. We compare these components with other
+                  possible alternatives, including the well-known Sobol and
+                  Halton low-discrepancy sequences. Our experimental results
+                  show that combination of these two components, which we call
+                  $R_\phi$-FWE+, typically achieves lower approximation error
+                  at equal or lower computation cost.}
+}
+
 @TechReport{LopBlu08:tsptw,
   author       = Lopez-Ibanez #and# Blum,
   title        = {Beam-{ACO} Based on Stochastic Sampling: {A} Case Study on
@@ -11399,6 +11431,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   url          = {http://www.R-project.org},
   doi          = {10.32614/R.manuals},
   ids          = {R2008lang}
+}
+
+@Misc{Rob2018unreasonable,
+  author       = {Roberts, Martin},
+  title        = {The Unreasonable Effectiveness of Quasirandom Sequences},
+  howpublished =
+                  {\url{https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/}},
+  month        = apr,
+  year         = 2018,
+  note         = {Last visited: 13/04/2025},
+  annote       = {Proposed the Rphi low-discrepancy sequence}
 }
 
 @InCollection{RobFil05demo,
