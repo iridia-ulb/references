@@ -1,0 +1,191 @@
+.button {
+    font-family: inherit;
+    font-size: 80%;
+    padding: 0.5em 0.5em;
+    color: white; /* rgba not supported (IE 8) */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-hover,
+.button:hover,
+.button:focus {
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    text-decoration: none; color : white
+}
+
+a:link {text-decoration: none; color : #326fa3}
+a:visited {text-decoration: none;  color : #326fa3}
+a:active {text-decoration: none; color: #666666}
+a:hover {text-decoration: underline}
+
+}
+.button:focus {
+    outline: 0;
+}
+.button-active,
+.button:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+    border-color: #000;
+}
+a.button,
+a:link.button,
+a:visited.button,
+a:hover.button,
+a:active.button {
+    color: white;
+    text-decoration: none;
+}
+
+.background-green {
+    background: rgb(28, 184, 65);
+    /* this is a green */
+}
+
+.background-maroon {
+    background: rgb(202, 60, 60);
+    /* this is a maroon */
+}
+.background-orange {
+    background: rgb(223, 117, 20);
+    /* this is an orange */
+}
+
+.background-blue {
+    background: rgb(66, 184, 221);
+    /* this is a light blue */
+}
+
+#at {
+    float: none;
+    display: inline;
+    vertical-align: middle;
+    border: 0;
+    width: 1em;
+    height: auto;
+}
+dt
+{
+    float: left;
+    text-align: right;
+    margin: 0;
+    width: 3.5em;
+    font-size: 90%;
+}
+dd
+{
+    text-align: left;
+    margin-left: 3.6em;
+    margin-bottom: .75em;
+}
+
+h1 { color: #326fa3; font: 30px  'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;}
+
+h2 { color: #326fa3; font: 20px   'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;}
+
+h3 { color: #326fa3; font: 14px   'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;}
+
+.authors { font-weight: bold; color: #326fa3; font-size: 14px; margin-top: 0em; padding: 0px}
+.authors dt { float: left;}
+.authors dd { margin-left: 8em; }
+
+
+
+div#navlist  { background-color: #f5f5f5; border: 1px solid #C9D1D7; padding: 1ex; padding-top: 0px; margin: 1em; margin-top: 2em; width: 20em; }
+
+#navlist h2 { color: black; font-size: 85%; }
+#navlist ul, #navlist ol { list-style-type: decimal; color:#326fa3; font-size: 85%;  }
+
+blockquote { font-size: smaller; }
+
+ol.publications {
+    margin-left: 3em;
+    padding: 0;
+    counter-reset: publication;
+}
+
+ol.publications li{
+    margin: 0;
+    padding: .5em 0em .5em 0em;
+    display: block;
+}
+
+ol.publications > li:before {
+    display: inline-block;
+    min-width: 4ex;
+    padding-right: 1.5ex;
+    text-align: right;
+    margin-left: -5.5ex;
+    content: "["counter(publication)"] ";
+    counter-increment: publication;
+}
+
+dd:target {
+    border:1px solid #dac89d;
+    background: #ffffd3;
+}
+
+ul.publinks {
+   margin: 0 auto 1em;
+    margin: 0;
+    padding: 0;
+    border: none;
+display:inline-block;
+vertical-align: middle;
+}
+
+ul.publinks > li {
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+    display: inline-block;
+    margin-left: -4px;
+    line-height: 24px; /* minimum to fix pdfdoc icon */
+}
+
+a.pdfdoc {
+    display:inline-block;
+    line-height:22px;
+/*    padding-left:23px;
+    background:transparent url(../img/pdf22.png) center left no-repeat;*/
+}
+
+ul.publinks > li > a {
+    white-space: nowrap;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+ul.publinks > li > a.pdfdoc {
+    white-space: nowrap;
+    margin-left: 3px;
+/*    padding-left: 23px;
+    background:transparent url(../img/pdf22.png) center left no-repeat;*/
+    margin-right: 3px;
+    min-height: 22px;
+}
+
+ul.publinks:before {
+ content: "[ ";
+}
+
+ul.publinks:after {
+ content: "]";
+}
+
+.inline-citation {
+    max-width:50em; margin-left: 4em; margin-right: 4em;
+}
+
+.repo-gh {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #9d9d9d;
+    text-decoration: none;
+}
