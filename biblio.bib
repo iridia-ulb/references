@@ -482,6 +482,16 @@
   doi =          {10.1109/WSC.2003.1261410},
 }
 
+@InProceedings{AraSei1989rst,
+  author       = {Aragon, C. R. and Seidel, R. G.},
+  title        = {Randomized search trees},
+  booktitle    = {30th Annual Symposium on Foundations of Computer Science},
+  year         = 1989,
+  pages        = {540--545},
+  keywords     = {Binary search trees, Treap, Dynamic programming},
+  doi          = {10.1109/SFCS.1989.63531}
+}
+
 @Book{AroBar2009,
   title =        {Computational complexity: a modern approach},
   author =       {Arora, Sanjeev and Barak, Boaz},
@@ -3428,20 +3438,44 @@ doi = "10.1007/978-0-387-36797-2"
 }
 
 @InCollection{DebAg1999polymut,
-  author =       Deb #and# "S. Agrawal",
-  title =        "A Niched-Penalty Approach for Constraint Handling in Genetic
-                  Algorithms",
-  crossref =     "ICANNGA1999",
-  pages =        "235--243",
-  keywords =     "polynomial mutation"
+  author       = Deb #and# {S. Agrawal},
+  title        = {A Niched-Penalty Approach for Constraint Handling in Genetic
+                  Algorithms},
+  pages        = {235--243},
+  crossref     = {ICANNGA1999},
+  keywords     = {polynomial mutation}
 }
 
 @InCollection{DebAgrPra2000ppsn,
-  title=     {A fast elitist non-dominated sorting genetic algorithm
-             for multi-objective optimization: {NSGA-II}},
-  author=    Deb #and# Agarwal #and# Pratap #and# Meyarivan,
-  crossref= "PPSN2000",
-  pages=     {849--858},
+  author       = Deb #and# Agarwal #and# Pratap #and# Meyarivan,
+  title        = {A fast elitist non-dominated sorting genetic algorithm for
+                  multi-objective optimization: {NSGA-II}},
+  pages        = {849--858},
+  crossref     = {PPSN2000},
+  doi          = {10.1007/3-540-45356-3_83},
+  abstract     = {Multi-objective evolutionary algorithms which use
+                  non-dominated sorting and sharing have been mainly criticized
+                  for their (i) O(MN3) computational complexity (where M is the
+                  number of objectives and N is the population size), (ii)
+                  non-elitism approach, and (iii) the need for specifying a
+                  sharing parameter. In this paper, we suggest a non-dominated
+                  sorting based multi-objective evolutionary algorithm (we
+                  called it the Non-dominated Sorting GA-II or NSGA-II) which
+                  alleviates all the above three difficulties. Specifically, a
+                  fast non-dominated sorting approach with O(MN2) computational
+                  complexity is presented. Second, a selection operator is
+                  presented which creates a mating pool by combining the parent
+                  and child populations and selecting the best (with respect to
+                  fitness and spread) N solutions. Simulation results on five
+                  difficult test problems show that the proposed NSGA-II, in
+                  most problems, is able to find much better spread of
+                  solutions and better convergence near the true Pareto-optimal
+                  front compared to PAES and SPEA---two other elitist
+                  multi-objective EAs which pay special attention towards
+                  creating a diverse Pareto-optimal front. Because of NSGA-II's
+                  low computational requirements, elitist approach, and
+                  parameter-less sharing approach, NSGA-II should find
+                  increasing applications in the years to come.}
 }
 
 @TechReport{DebJain02,
@@ -3507,7 +3541,24 @@ doi = "10.1007/978-0-387-36797-2"
   pages        = {105--145},
   keywords     = {DTLZ benchmark},
   doi          = {10.1007/1-84628-137-7_6},
-  crossref     = {AbrJaiGol2005emo}
+  crossref     = {AbrJaiGol2005emo},
+  abstract     = {After adequately demonstrating the ability to solve different
+                  two-objective optimization problems, multiobjective
+                  evolutionary algorithms (MOEAs) must demonstrate their
+                  efficacy in handling problems having more than two
+                  objectives. In this study, we have suggested three different
+                  approaches for systematically designing test problems for
+                  this purpose. The simplicity of construction, scalability to
+                  any number of decision variables and objectives, knowledge of
+                  the shape and the location of the resulting Pareto-optimal
+                  front, and introduction of controlled difficulties in both
+                  converging to the true Pareto-optimal front and maintaining a
+                  widely distributed set of solutions are the main features of
+                  the suggested test problems. Because of the above features,
+                  they should be found useful in various research activities on
+                  MOEAs, such as testing the performance of a new MOEA,
+                  comparing different MOEAs, and better understanding of the
+                  working principles of MOEAs.}
 }
 
 @InCollection{DeeKar1982,
@@ -4562,15 +4613,68 @@ doi =           {10.1007/978-3-642-38516-2_16},
   doi =          "10.1007/978-3-642-37140-0_42",
 }
 
+@InCollection{Fiel2023ndtree,
+  author       = Fieldsend,
+  title        = {On the Active Use of an {ND}-{Tree}-Based Archive
+                  for Multi-Objective Optimisation},
+  pages        = {1--14},
+  crossref     = {EA2023},
+  doi          = {10.1007/978-3-031-42616-2_1},
+  abstract     = {A number of data structures have been proposed for the
+                  storage and efficient update of unbounded sets of mutually
+                  non-dominating solutions. The recent ND-Tree has proved an
+                  effective data structure across a range of update
+                  environments, and may reasonably be considered the
+                  state-of-the-art. However, although it is efficient as a
+                  passive store of non-dominated solutions --- which may be
+                  extracted at the end of an optimisation --- its design is
+                  ill-suited to being an active source of parent solutions to
+                  directly exploit during a optimisation run. We introduce a
+                  number of modifications to the construction and maintenance
+                  of the ND-Tree to facilitate its use as an active archive
+                  (source of parents) during optimisation, and compare and
+                  contrast the run-time performance changes these cause (and
+                  discuss their drivers). Illustrations are provided with data
+                  sequences from a tunable generator and also a simple
+                  evolution strategy --- but we emphasise such data structures
+                  are optimisation algorithm agnostic, and may be effectively
+                  integrated across the range of evolutionary (and
+                  non-evolutionary) optimisers.},
+}
+
 @InCollection{Fieldsend2020data,
-  title =        {Data structures for non-dominated sets: implementations and
+  author       = Fieldsend,
+  title        = {Data structures for non-dominated sets: implementations and
                   empirical assessment of two decades of advances},
-  author =       Fieldsend,
-  crossref =     "GECCO2020",
-  booktitle =    {Proceedings of the 2020 Genetic and Evolutionary Computation
-                  Conference},
-  pages =        {489--497},
-  annote =       "unbounded archives"
+  pages        = {489--497},
+  keywords     = {Unbounded archive},
+  doi          = {10.1145/3377930.3390150},
+  crossref     = {GECCO2020},
+  abstract     = {Many data structures have been developed over the last two
+                  decades for the storage and efficient update of unconstrained
+                  sets of mutually non-dominating solutions. Typically,
+                  analysis has been provided in the original works for these
+                  data structures in terms of worst/average case complexity
+                  performance. Often, however, other aspects such as
+                  rebalancing costs of underlying data structures, cache sizes,
+                  etc., can also significantly affect behaviour. Empirical
+                  performance comparison has often (but not always) been
+                  limited to run-time comparison with a basic linear list. No
+                  comprehensive comparison between the different specialised
+                  data structures proposed in the last two decades has thus far
+                  been undertaken. We take significant strides in addressing
+                  this here. Eight data structures from the literature are
+                  implemented within the same overarching open source Java
+                  framework. We additionally highlight and rectify some errors
+                  in published work --- and offer additional efficiency
+                  gains. Run-time performances are compared and contrasted,
+                  using data sequences embodying a number of different
+                  characteristics. We show that in different scenarios
+                  different data structures are preferable, and that those with
+                  the lowest big O complexity are not always the best
+                  performing. We also find that performance profiles can vary
+                  drastically with computational architecture, in a non-linear
+                  fashion.}
 }
 
 @InCollection{FinVos2002,
@@ -4811,6 +4915,17 @@ doi =           {10.1007/978-3-642-38516-2_16},
   keywords =     {Docker, Improving transparency, OCR, Open science,
                   Replicability, Reproducibility},
   pages =        {519--524},
+}
+
+@InCollection{ForGrePar2013,
+  author       = {Fortin, F{\'e'}lix-Antoine and Grenier, Simon and Parizeau,
+                  Marc},
+  title        = {Generalizing the improved run-time complexity algorithm for
+                  non-dominated sorting},
+  pages        = {615--622},
+  annote       = {Proposed $O(n\log^{m-1}n)$ algorithm},
+  crossref     = {GECCO2015},
+  doi          = {10.1145/2463372.2463454}
 }
 
 @InCollection{FosBickHardKok2007,
@@ -5326,10 +5441,23 @@ doi =           {10.1007/978-3-642-38516-2_16},
 
 @InCollection{Gla2017fast,
   author       = Glasmachers,
-  title        = {A fast incremental {BSP} tree archive for non-dominated
-                  points},
+  title        = {A Fast Incremental {BSP} Tree Archive for Non-dominated
+                  Points},
   pages        = {252--266},
   crossref     = {EMO2017},
+  doi          = {10.1007/978-3-319-54157-0_18},
+  abstract     = {Maintaining an archive of all non-dominated points is a
+                  standard task in multi-objective optimization. Sometimes it
+                  is sufficient to store all evaluated points and to obtain the
+                  non-dominated subset in a post-processing step. Alternatively
+                  the non-dominated set can be updated on the fly. While
+                  keeping track of many non-dominated points efficiently is
+                  easy for two objectives, we propose an efficient algorithm
+                  based on a binary space partitioning BSP tree for the general
+                  case of three or more objectives. Our analysis and our
+                  empirical results demonstrate the superiority of the method
+                  over the brute-force baseline method, as well as graceful
+                  scaling to large numbers of objectives.},
   keywords     = {archiving}
 }
 

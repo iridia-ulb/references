@@ -1775,15 +1775,15 @@ Local Search for the Probabilistic Traveling Salesman Problem},
 }
 
 @Article{Bentley1980,
-  author =       Bentley,
-  title =        {Multidimensional Divide-and-conquer},
-  journal =      cacm,
-  year =         1980,
-  volume =       23,
-  number =       4,
-  doi =          "10.1145/358841.358850",
-  pages =        {214--229},
-  abstract =     "Most results in the field of algorithm design are single
+  author       = Bentley,
+  title        = {Multidimensional Divide-and-conquer},
+  journal      = cacm,
+  year         = 1980,
+  volume       = 23,
+  number       = 4,
+  pages        = {214--229},
+  doi          = {10.1145/358841.358850},
+  abstract     = {Most results in the field of algorithm design are single
                   algorithms that solve single problems. In this paper we
                   discuss multidimensional divide-and-conquer, an algorithmic
                   paradigm that can be instantiated in many different ways to
@@ -1797,7 +1797,7 @@ Local Search for the Probabilistic Traveling Salesman Problem},
                   second level is the more novel contribution of this paper: a
                   detailed study of an algorithmic paradigm that is specific
                   enough to be described precisely yet general enough to solve
-                  a wide variety of problems."
+                  a wide variety of problems.}
 }
 
 @Article{BerBen2012jmlr,
@@ -2321,6 +2321,17 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   month        = aug,
   doi          = {10.1016/0305-0483(95)00015-g},
   keywords     = {single container loading, 3DBPP}
+}
+
+@Article{BlaDeb2020pymoo,
+  author       = {J. Blank} #and# Deb,
+  title        = {{\softwarepackage{pymoo}}: Multi-Objective Optimization in
+                  {Python}},
+  journal      = ieee-access,
+  year         = 2020,
+  volume       = 8,
+  pages        = {89497--89509},
+  doi          = {10.1109/ACCESS.2020.2990567}
 }
 
 @Article{BlaDebDhe2021energy,
@@ -3201,7 +3212,9 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   year         = 2004,
   volume       = 39,
   pages        = {275--289},
-  ids          = {Buchsbaum04}
+  annote       = {Proposed the best-known $O(n\log n)$ algorithm for 3D},
+  ids          = {Buchsbaum04},
+  doi          = {10.1007/s00453-004-1082-5}
 }
 
 @Article{BulHarStr99:aor,
@@ -4766,7 +4779,8 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume       = 18,
   number       = 4,
   pages        = {577--601},
-  annote       = {Proposed NSGA-III}
+  annote       = {Proposed NSGA-III},
+  doi          = {10.1109/TEVC.2013.2281535}
 }
 
 @Article{DebKok2010tec-ged,
@@ -6264,6 +6278,34 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   pages        = {634--652},
   doi          = {10.1145/285055.285059},
   keywords     = {approximation ratio,set cover}
+}
+
+@Article{Fenwick1994,
+  author       = {Fenwick, Peter M.},
+  title        = {A new data structure for cumulative frequency tables},
+  journal      = spe,
+  year         = 1994,
+  volume       = 24,
+  number       = 3,
+  pages        = {327--336},
+  annote       = {Independently proposed Fenwick trees after
+                  \cite{Ryabko1989fast}},
+  keywords     = {Binary indexed tree, Arithmetic coding, Cumulative
+                  frequencies},
+  doi          = {10.1002/spe.4380240306},
+  abstract     = {A new method (the `binary indexed tree') is presented for
+                  maintaining the cumulative frequencies which are needed to
+                  support dynamic arithmetic data compression. It is based on a
+                  decomposition of the cumulative frequencies into portions
+                  which parallel the binary representation of the index of the
+                  table element (or symbol). The operations to traverse the
+                  data structure are based on the binary coding of the
+                  index. In comparison with previous methods, the binary
+                  indexed tree is faster, using more compact data and simpler
+                  code. The access time for all operations is either constant
+                  or proportional to the logarithm of the table size. In
+                  conjunction with the compact data structure, this makes the
+                  new method particularly suitable for large symbol alphabets.}
 }
 
 @Article{FeoRes1989,
@@ -7902,6 +7944,40 @@ Local Search for the Probabilistic Traveling Salesman Problem},
   volume  =    29,
   year    =    1986,
   pages   =    {206--219}
+}
+
+@Article{GusSyb2018ndtree,
+  author       = {Gustavsson, Patrik and Syberfeldt, Anna},
+  title        = {A New Algorithm Using the Non-Dominated Tree to Improve
+                  Non-Dominated Sorting},
+  journal      = ec,
+  year         = 2018,
+  volume       = 26,
+  number       = 1,
+  pages        = {89--116},
+  abstract     = {Non-dominated sorting is a technique often used in
+                  evolutionary algorithms to determine the quality of solutions
+                  in a population. The most common algorithm is the Fast
+                  Non-dominated Sort (FNS). This algorithm, however, has the
+                  drawback that its performance deteriorates when the
+                  population size grows. The same drawback applies also to
+                  other non-dominating sorting algorithms such as the Efficient
+                  Non-dominated Sort with Binary Strategy (ENS-BS). An
+                  algorithm suggested to overcome this drawback is the
+                  Divide-and-Conquer Non-dominated Sort (DCNS) which works well
+                  on a limited number of objectives but deteriorates when the
+                  number of objectives grows. This article presents a new, more
+                  efficient algorithm called the Efficient Non-dominated Sort
+                  with Non-Dominated Tree (ENS-NDT). ENS-NDT is an extension of
+                  the ENS-BS algorithm and uses a novel Non-Dominated Tree
+                  (NDTree) to speed up the non-dominated sorting. ENS-NDT is
+                  able to handle large population sizes and a large number of
+                  objectives more efficiently than existing algorithms for
+                  non-dominated sorting. In the article, it is shown that with
+                  ENS-NDT the runtime of multi-objective optimization
+                  algorithms such as the Non-Dominated Sorting Genetic
+                  Algorithm II (NSGA-II) can be substantially reduced.},
+  doi          = {10.1162/evco_a_00204}
 }
 
 @Article{Gut2000:fgcs,
@@ -9600,26 +9676,83 @@ Traveling Salesman Heuristic},
 }
 
 @Article{Jas2018ejor,
-  title =        {Many-Objective {Pareto} Local Search},
-  author =       Jaszkiewicz,
-  journal =      ejor,
-  year =         2018,
-  volume =       271,
-  number =       3,
-  pages =        {1001--1013},
-  doi =          {10.1016/j.ejor.2018.06.009}
+  author       = Jaszkiewicz,
+  title        = {Many-Objective {Pareto} Local Search},
+  journal      = ejor,
+  year         = 2018,
+  volume       = 271,
+  number       = 3,
+  pages        = {1001--1013},
+  annote       = {Shows how to efficiently find the best solution according to
+                  Chebyshev scalarisation using an ND-tree archive},
+  doi          = {10.1016/j.ejor.2018.06.009},
+  abstract     = {We propose a new Pareto Local Search Algorithm for the
+                  many-objective combinatorial optimization. Pareto Local
+                  Search proved to be a very effective tool in the case of the
+                  bi-objective combinatorial optimization and it was used in a
+                  number of the state-of-the-art algorithms for problems of
+                  this kind. On the other hand, the standard Pareto Local
+                  Search algorithm becomes very inefficient for problems with
+                  more than two objectives. We build an effective
+                  Many-Objective Pareto Local Search algorithm using three new
+                  mechanisms: the efficient update of large Pareto archives
+                  with ND-Tree data structure, a new mechanism for the
+                  selection of the promising solutions for the neighborhood
+                  exploration, and a partial exploration of the
+                  neighborhoods. We apply the proposed algorithm to the
+                  instances of two different problems, i.e. the traveling
+                  salesperson problem and the traveling salesperson problem
+                  with profits with up to 5 objectives showing high
+                  effectiveness of the proposed algorithm.}
 }
 
 @Article{JasLus2018ndtree,
-  title =        {{ND}-tree-based update: a fast algorithm for the dynamic
-                  nondominance problem},
-  author =       Jaszkiewicz #and# Lust,
-  journal =      tec,
-  year =         2018,
-  number =       5,
-  pages =        {778--791},
-  volume =       22,
-  publisher =    {IEEE}
+  author       = Jaszkiewicz #and# Lust,
+  title        = {{ND}-Tree-Based Update: A Fast Algorithm for the Dynamic
+                  Nondominance Problem},
+  journal      = tec,
+  year         = 2018,
+  volume       = 22,
+  number       = 5,
+  pages        = {778--791},
+  doi          = {10.1109/TEVC.2018.2799684},
+  publisher    = {IEEE},
+  abstract     = {In this paper, we propose a new method called ND-Tree-based
+                  update (ND-Tree) for the dynamic nondominance problem, i.e.,
+                  the problem of online update of a Pareto archive composed of
+                  mutually nondominated points. It uses a new ND-Tree data
+                  structure in which each node represents a subset of points
+                  contained in a hyperrectangle defined by its local
+                  approximate ideal and nadir points. By building subsets
+                  containing points located close in the objective space and
+                  using basic properties of the local ideal and nadir points we
+                  can efficiently avoid searching many branches in the
+                  tree. ND-Tree may be used in multiobjective evolutionary
+                  algorithms and other multiobjective metaheuristics to update
+                  an archive of potentially nondominated points. We prove that
+                  the proposed algorithm has sublinear time complexity under
+                  mild assumptions. We experimentally compare ND-Tree to the
+                  simple list, Quad-tree, and M-Front methods using artificial
+                  and realistic benchmarks with up to ten objectives and show
+                  that with this new method substantial reduction of the number
+                  of point comparisons and computational time can be
+                  obtained. Furthermore, we apply the method to the
+                  nondominated sorting problem showing that it is highly
+                  competitive to some recently proposed algorithms dedicated to
+                  this problem.}
+}
+
+@Article{JasZie2024tec,
+  author       = Jaszkiewicz #and# {Zielniewicz, Piotr},
+  title        = {Improving the Efficiency of the Distance-Based Hypervolume
+                  Estimation Using {ND-Tree}},
+  journal      = tec,
+  year         = 2025,
+  volume       = 29,
+  number       = 3,
+  pages        = {726--733},
+  keywords     = {Data structures, Chebycheff functions},
+  doi          = {10.1109/TEVC.2024.3391857}
 }
 
 @Article{Jasz02mogls,
@@ -9635,14 +9768,15 @@ Traveling Salesman Heuristic},
 }
 
 @Article{Jen03,
-  title =        "Reducing the run-time complexity of multiobjective
-                  {EA}s: The {NSGA-II} and other algorithms",
-  author =       Jensen,
-  journal =      tec,
-  volume =       7,
-  number =       5,
-  pages =        {503--515},
-  year =         2003
+  author       = Jensen,
+  title        = {Reducing the run-time complexity of multiobjective {EA}s: The
+                  {NSGA-II} and other algorithms},
+  journal      = tec,
+  year         = 2003,
+  volume       = 7,
+  number       = 5,
+  pages        = {503--515},
+  doi          = {10.1109/TEVC.2003.817234}
 }
 
 @Article{Jensen2004,
@@ -10445,6 +10579,19 @@ Traveling Salesman Heuristic},
                   Conference for Learning Representations, San Diego, 2015~\cite{KinBa2015adam}"
 }
 
+@Article{KipKosPap2021dynamic,
+  author       = {Kipouridis, E. and Kosmatopoulos, A. and Papadopoulos,
+                  A. N. and Tsichlas, K.},
+  title        = {Dynamic layers of maxima with applications to dominating
+                  queries},
+  journal      = comgeo,
+  year         = 2021,
+  volume       = 93,
+  pages        = 101699,
+  month        = Feb,
+  doi          = {10.1016/j.comgeo.2020.101699}
+}
+
 @Article{KirTou1985,
   author       = Kirkpatrick #and# {G. Toulouse},
   title        = {Configuration Space Analysis of Travelling Salesman Problems},
@@ -11125,7 +11272,7 @@ Traveling Salesman Heuristic},
   volume       = 22,
   number       = 4,
   pages        = {469--476},
-  ids        = {kung:maxima},
+  ids          = {kung:maxima},
   doi          = {10.1145/321906.321910}
 }
 
@@ -11388,6 +11535,18 @@ Traveling Salesman Heuristic},
   pages =        {127--132},
   year =         1990,
   publisher =    elsevier
+}
+
+@Article{Lang2022ndtree,
+  author       = {Lang, Bruno},
+  title        = {Space-Partitioned {ND-Trees} for the Dynamic Nondominance
+                  Problem},
+  journal      = tec,
+  year         = 2022,
+  volume       = 26,
+  number       = 5,
+  pages        = {1004--1014},
+  doi          = {10.1109/TEVC.2022.3145631}
 }
 
 @Article{Langevin93tsptw,
@@ -14584,13 +14743,14 @@ abstract = {Reducing energy consumption of water distribution
 }
 
 @Article{NanShaIsh2020reverse,
-  title =        {Reverse strategy for non-dominated archiving},
-  author =       {Nan, Yang and Shang, Ke} #and# Ishibuchi #and# {He, Linjun},
-  journal =      ieee-access,
-  year =         2020,
-  pages =        {119458--119469},
-  volume =       8,
-  publisher =    {IEEE}
+  author       = {Nan, Yang and Shang, Ke} #and# Ishibuchi #and# {He, Linjun},
+  title        = {Reverse Strategy for Non-Dominated Archiving},
+  journal      = ieee-access,
+  year         = 2020,
+  volume       = 8,
+  pages        = {119458--119469},
+  publisher    = {IEEE},
+  doi          = {10.1109/ACCESS.2020.3005970}
 }
 
 @Article{NarSetTan2016sc,
@@ -15436,6 +15596,18 @@ abstract = {Reducing energy consumption of water distribution
   number =       10,
   pages =        {1345--1359},
   year =         2009
+}
+
+@Article{PapTaoFu2005skyline,
+  author       = {Papadias, Dimitris and Tao, Yufei and Fu, Greg and Seeger,
+                  Bernhard},
+  title        = {Progressive skyline computation in database systems},
+  journal      = tods,
+  year         = 2005,
+  volume       = 30,
+  number       = 1,
+  pages        = {41--82},
+  doi          = {10.1145/1061318.1061320}
 }
 
 @Article{PaqSchStu07:aor,
@@ -18641,25 +18813,26 @@ abstract = {Reducing energy consumption of water distribution
 }
 
 @Article{SriDeb1994:nsga,
-  author =       {N. Srinivas} #and# Deb,
-  title =        {Multiobjective Optimization Using Nondominated
-                  Sorting in Genetic Algorithms},
-  journal =      ec,
-  year =         1994,
-  volume =       2,
-  pages =        {221--248},
-  number =       3
+  author       = {N. Srinivas} #and# Deb,
+  title        = {Multiobjective Optimization Using Nondominated Sorting in
+                  Genetic Algorithms},
+  journal      = ec,
+  year         = 1994,
+  volume       = 2,
+  number       = 3,
+  pages        = {221--248},
+  annote       = {Proposed NSGA}
 }
 
 @Article{Ste1996jmcda,
-  author =       Stewart_TJ,
-  title =        "Robustness of Additive Value Function Methods in {MCDM}",
-  journal =      jmcda,
-  year =         1996,
-  volume =       5,
-  number =       4,
-  pages =        {301--309},
-  keywords = {machine decision-making}
+  author       = Stewart_TJ,
+  title        = {Robustness of Additive Value Function Methods in {MCDM}},
+  journal      = jmcda,
+  year         = 1996,
+  volume       = 5,
+  number       = 4,
+  pages        = {301--309},
+  keywords     = {machine decision-making}
 }
 
 @Article{Ste1999ejor,
@@ -21109,6 +21282,19 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   doi =          {10.18637/jss.v077.i01}
 }
 
+@Article{Ryabko1989fast,
+  author       = {Ryabko, B. Ya.},
+  title        = {A fast on-line code},
+  journal      = {Doklady Akademii Nauk SSSR},
+  year         = 1989,
+  volume       = 306,
+  number       = 3,
+  pages        = {548--552},
+  note         = {Translation in \textit{Soviet Mathematics - Doklady}, 39(3):
+                  533--537, 1989},
+  annote       = {Proposed Fenwick trees}
+}
+
 @Article{scikit-learn2011,
   title =        {Scikit-learn: Machine learning in {\proglang{Python}}},
   author =       {Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel,
@@ -21121,7 +21307,6 @@ Integer Algorithm Parameters of Swarm Intelligence Algorithms},
   pages =        {2825--2830},
   year =         2011
 }
-
 @Article{vanZyl04,
   author =       vanZyl #and# Savic #and# Walters,
   title =        {Operational Optimization of Water Distribution
