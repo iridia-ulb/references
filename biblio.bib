@@ -8385,6 +8385,44 @@ doi =           {10.1007/978-3-642-38516-2_16},
                   at equal or lower computation cost.}
 }
 
+@InProceedings{LopAlvFerVal2022euro,
+  author       = Lopez-Ibanez #and# Alvarez_Nicolas #and#
+                  Fernandez_Alzueta_Silvino #and# {Valledor Pellicer, Pablo},
+  title        = {A Real-world Case Study of Automatic Selection of {GRASP}
+                  Configurations with Single-selectors vs Multi-Selectors},
+  booktitle    = {EURO 2022: Conference handbook and abstracts: 32nd European
+                  Conference on Operational Research (EURO XXXII), Helsinki,
+                  Finland, July 3--6, 2022},
+  year         = 2022,
+  isbn         = {978-951-95254-1-9},
+  abstract     = {We report a case study in algorithm selection and
+                  configuration of a GRASP used in the steel industry. The goal
+                  of the project was to automatically set the 18 parameters
+                  that control the GRASP given the value of 102 features of a
+                  new instance to be solved. The effort required to evaluate
+                  the GRASP with different parameter configurations precludes
+                  the application of traditional automatic configuration
+                  methods, such as irace.  Instead, we generated a small number
+                  of configurations using optimized latin-hypercube
+                  sampling. Then, we trained regression models, namely, ridge
+                  regression and extremely randomized trees, to predict the
+                  performance of these configurations given instance features.
+                  We compared two ways of setting up such models: A
+                  multi-selector creates one separate model per configuration
+                  whereas a single-selector creates a single model for all
+                  configurations using the parameter settings as additional
+                  features of the model. Our preliminary results suggest that
+                  single-selectors outperform multi-selectors. Ridge regression
+                  performed better in cross-validation, whereas the tree models
+                  performed best in completely new instances. Moreover, the
+                  models were not able to identify the best features by
+                  themselves, thus feature selection was crucial. Due to the
+                  commercial sensitivity of the project, data and feature names
+                  are fully anonymised and algorithmic details have been
+                  simplified. Nevertheless, we believe our experience can be
+                  useful for future similar projects.}
+}
+
 @TechReport{LopBlu08:tsptw,
   author       = Lopez-Ibanez #and# Blum,
   title        = {Beam-{ACO} Based on Stochastic Sampling: {A} Case Study on
@@ -11112,8 +11150,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 
 @InCollection{QuaSunLop2026gecco,
   author       = {Quan, Guorui and Sun, Mingfei} #and# Lopez-Ibanez #and#
-                  {{\'A}lvarez-Gil, Nicol{\'a}s} #and# {Fern{\'a}ndez Alzueta,
-                  Silvino},
+                  Alvarez_Nicolas #and# Fernandez_Alzueta_Silvino,
   title        = {Accelerating {LLM}-Based Algorithm Evolution for the {3D}
                   Container Loading Problem},
   crossref     = {GECCO2026},
@@ -11122,8 +11159,7 @@ doi =           {10.1007/978-3-642-38516-2_16},
 
 @Misc{QuaSunLop2026gecco-supp,
   author       = {Quan, Guorui and Sun, Mingfei} #and# Lopez-Ibanez #and#
-                  {{\'A}lvarez-Gil, Nicol{\'a}s} #and# {Fern{\'a}ndez Alzueta,
-                  Silvino},
+                  Alvarez_Nicolas #and# Fernandez_Alzueta_Silvino,
   title        = {Accelerating {LLM}-Based Algorithm Evolution for the {3D}
                   Container Loading Problem: Supplementary Material},
   howpublished = {Zenodo},
