@@ -169,17 +169,19 @@ jobs:
         #if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
         env:
           TINYTEX_INSTALLER: TinyTeX-1
-          TINYTEX_VERSION: 2023.12
+          TINYTEX_VERSION: 2025.12
 
       - name: 📦 Install LaTeX packages
         #if: ${{ env.FILES_CHANGED != 0 }} #&& steps.cache-tinytex.outputs.cache-hit != 'true'}}
+        # FIXME: How to find the repository URL automatically according to the version?
         run: |
           texlive_packages=./.github/texlive_packages
+          mirror=https://ftp.math.utah.edu/pub/tex/historic
           which tlmgr
           tlmgr --version
           echo "Updating TexLive"
           # Keep no backups (not required, simply makes cache bigger)
-          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
+          tlmgr option repository ${mirror}/systems/texlive/2025/tlnet-final
           tlmgr option -- autobackup 0
           echo "Updating tlmgr itself"
           tlmgr update --self
