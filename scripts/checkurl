@@ -1,5 +1,7 @@
 #!/bin/bash
 set -u
+# FIXME: This script is not working
+exit 1
 #set -o pipefail
 # TODO:
 # * Make check_url more robust
