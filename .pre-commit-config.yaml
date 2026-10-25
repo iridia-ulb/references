@@ -1,4 +1,5 @@
 ci:
+  skip: [check-bib-urls]
   autofix_prs: true
   autofix_commit_msg: |
         [pre-commit.ci] auto fixes from pre-commit.com hooks [skip ci]
@@ -14,6 +15,12 @@ repos:
         entry: scripts/pre-commit
         language: script
         files: '.+\.bib$'
+      - id: check-bib-urls
+        name: check URLs in .bib (added lines only)
+        entry: scripts/check-bib-urls --staged
+        language: script
+        files: '\.bib$'
+        stages: [pre-commit]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0

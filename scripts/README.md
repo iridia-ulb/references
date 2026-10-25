@@ -48,3 +48,29 @@ The script is designed to be integrated into existing testing workflows. It retu
 - Exit code 1: Validation errors found
 
 This makes it suitable for use in continuous integration pipelines alongside existing bibliography validation tools.
+
+## URL checker
+
+`check-bib-urls` checks the URLs and DOIs in `.bib` files lightly and politely:
+it only sends HTTP `HEAD` requests (falling back to a 1-byte ranged `GET`),
+never downloads the targets, and waits between requests to the same host.
+DOIs are checked via `https://doi.org/api/handles/<doi>`, so publisher sites are not contacted.
+
+```bash
+# Stand-alone, whole files (default: all tracked .bib files)
+scripts/check-bib-urls articles.bib
+pre-commit run check-bib-urls --all-files
+
+# Only lines added in the staged diff (what the pre-commit hook does)
+scripts/check-bib-urls --staged
+```
+
+Options: `--delay SECS` (delay per host, default 2), `--jobs N` (hosts in parallel, default 4),
+`--strict`, `--ignore FILE`, `--no-cache`, `--list` (print extracted URLs, no network).
+
+- `.urlignore`: glob patterns (one per line, `#` for comments) of URLs/DOIs to skip.
+- Cache: URLs found OK are remembered for 7 days in `~/.cache/bib-url-check`.
+- By default only 404/410 fail; other problems (network errors, 5xx, 429) are warnings,
+  and `--strict` makes them fail too. 202/401/403 are ignored, as CRAN does.
+- Requires bash >= 4.3 (the macOS default bash 3.2 is too old).
+- Offline self-check: `test/test-check-bib-urls.sh`.
