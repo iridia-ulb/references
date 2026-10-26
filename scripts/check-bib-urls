@@ -7,10 +7,7 @@
 #
 # Options:
 #   --staged       only check lines added in `git diff --cached`
-#   --delay SECS   delay between requests to the same host (default 2)
-#   --jobs N       max hosts checked in parallel (default 4)
 #   --strict       also fail on network errors / 5xx / 429 (default: warn)
-#   --ignore FILE  glob patterns of URLs to skip (default: .urlignore if present)
 #   --no-cache     do not use the cache of recently-OK URLs
 #   --list         only print the extracted "kind<TAB>target<TAB>file:line" (no network)
 #
@@ -21,8 +18,10 @@ if [ "${BASH_VERSINFO[0]}" -lt 4 ] || { [ "${BASH_VERSINFO[0]}" -eq 4 ] && [ "${
   echo "check-bib-urls: bash >= 4.3 required" >&2; exit 2
 fi
 
-STAGED=0 DELAY=2 JOBS=4 STRICT=0 USE_CACHE=1 LIST=0
-IGNORE=.urlignore
+STAGED=0 STRICT=0 USE_CACHE=1 LIST=0
+IGNORE=.urlignore   # glob patterns of URLs to skip
+DELAY=2             # seconds between requests to the same host
+JOBS=4              # max hosts checked in parallel
 CACHE_TTL=$((7 * 24 * 3600))
 CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/bib-url-check"
 UA='bib-url-check/1.0 (+https://github.com/iridia-ulb/references; link checker, HEAD only)'
@@ -32,13 +31,10 @@ files=()
 while [ $# -gt 0 ]; do
   case $1 in
     --staged) STAGED=1 ;;
-    --delay) DELAY=$2; shift ;;
-    --jobs) JOBS=$2; shift ;;
     --strict) STRICT=1 ;;
-    --ignore) IGNORE=$2; shift ;;
     --no-cache) USE_CACHE=0 ;;
     --list) LIST=1 ;;
-    -h|--help) sed -n '2,17p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,13p' "$0"; exit 0 ;;
     -*) echo "check-bib-urls: unknown option $1" >&2; exit 2 ;;
     *) files+=("$1") ;;
   esac

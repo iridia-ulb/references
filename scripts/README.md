@@ -65,10 +65,11 @@ pre-commit run check-bib-urls --all-files
 scripts/check-bib-urls --staged
 ```
 
-Options: `--delay SECS` (delay per host, default 2), `--jobs N` (hosts in parallel, default 4),
-`--strict`, `--ignore FILE`, `--no-cache`, `--list` (print extracted URLs, no network).
+Options: `--staged`, `--strict`, `--no-cache`, `--list` (print extracted URLs, no network).
+The per-host delay (2 s), the number of parallel hosts (4) and the ignore file name (`.urlignore`)
+are set at the top of the script.
 
-- `.urlignore`: glob patterns (one per line, `#` for comments) of URLs/DOIs to skip.
+- `.urlignore` (repository root): glob patterns (one per line, `#` for comments) of URLs/DOIs to skip.
 - Cache: URLs found OK are remembered for 7 days in `~/.cache/bib-url-check`.
 - By default only 404/410 fail; other problems (network errors, 5xx, 429) are warnings,
   and `--strict` makes them fail too. 202/401/403 are ignored, as CRAN does.
