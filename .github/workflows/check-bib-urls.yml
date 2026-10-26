@@ -1,0 +1,11 @@
+name: Check URLs in .bib files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: scripts/check-bib-urls

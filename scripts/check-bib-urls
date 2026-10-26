@@ -1,0 +1,173 @@
+#!/usr/bin/env bash
+# Check URLs/DOIs in .bib files, lightly and politely (HEAD requests only).
+#
+# Usage:
+#   scripts/check-bib-urls [options] [file.bib ...]   # stand-alone: whole files
+#   scripts/check-bib-urls --staged [file.bib ...]    # only lines added in the staged diff
+#
+# Options:
+#   --staged       only check lines added in `git diff --cached`
+#   --strict       also fail on network errors / 5xx / 429 (default: warn)
+#   --no-cache     do not use the cache of recently-OK URLs
+#   --list         only print the extracted "kind<TAB>target<TAB>file:line" (no network)
+#
+# Exit status: 1 if a URL is definitely broken (404/410), else 0.
+set -u -o pipefail
+
+if [ "${BASH_VERSINFO[0]}" -lt 4 ] || { [ "${BASH_VERSINFO[0]}" -eq 4 ] && [ "${BASH_VERSINFO[1]}" -lt 3 ]; }; then
+  echo "check-bib-urls: bash >= 4.3 required" >&2; exit 2
+fi
+
+STAGED=0 STRICT=0 USE_CACHE=1 LIST=0
+IGNORE=.urlignore   # glob patterns of URLs to skip
+DELAY=2             # seconds between requests to the same host
+JOBS=4              # max hosts checked in parallel
+CACHE_TTL=$((7 * 24 * 3600))
+CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/bib-url-check"
+UA='bib-url-check/1.0 (+https://github.com/iridia-ulb/references; link checker, HEAD only)'
+IGNORE_CODES='^(202|401|403)$'   # as CRAN; 429 is handled separately
+
+files=()
+while [ $# -gt 0 ]; do
+  case $1 in
+    --staged) STAGED=1 ;;
+    --strict) STRICT=1 ;;
+    --no-cache) USE_CACHE=0 ;;
+    --list) LIST=1 ;;
+    -h|--help) sed -n '2,13p' "$0"; exit 0 ;;
+    -*) echo "check-bib-urls: unknown option $1" >&2; exit 2 ;;
+    *) files+=("$1") ;;
+  esac
+  shift
+done
+if [ ${#files[@]} -eq 0 ]; then
+  if [ "$STAGED" = 1 ]; then
+    mapfile -t files < <(git diff --cached --name-only --diff-filter=AM -- '*.bib')
+  else
+    mapfile -t files < <(git ls-files '*.bib')
+  fi
+fi
+[ ${#files[@]} -eq 0 ] && exit 0
+
+work=$(mktemp -d); trap 'rm -rf "$work"' EXIT
+if [ "$LIST" = 0 ]; then mkdir -p "$CACHE"; touch "$CACHE/ok"; fi
+
+# 1. Emit "file<TAB>line<TAB>text" for the lines to check.
+emit_lines() {
+  if [ "$STAGED" = 1 ]; then
+    git diff --cached -U0 --no-color -- "${files[@]}" | awk '
+      /^\+\+\+ b\// { f = substr($0, 7); next }
+      /^@@/ { split($3, a, ","); n = substr(a[1], 2) + 0; next }
+      /^\+/ { print f "\t" n "\t" substr($0, 2); n++ }'
+  else
+    for f in "${files[@]}"; do awk -v f="$f" '{ print f "\t" NR "\t" $0 }' "$f"; done
+  fi
+}
+
+# 2. Extract "kind<TAB>target<TAB>file:line" (kind = url|doi), skipping comments.
+emit_lines | awk -F'\t' '
+  function unescape(x) { gsub(/\\_/, "_", x); gsub(/\\%/, "%", x); gsub(/\\&/, "\\&", x); gsub(/\\#/, "#", x); return x }
+  $3 ~ /^[[:space:]]*%/ { next }
+  { loc = $1 ":" $2; s = $3
+    if (s ~ /^[[:space:]]*[Dd][Oo][Ii][[:space:]]*=/) {
+      v = s; sub(/^[^=]*=[[:space:]]*[{"]?/, "", v); sub(/[}",[:space:]]*$/, "", v)
+      sub(/^https?:\/\/(dx\.)?doi\.org\//, "", v)
+      v = unescape(v)
+      if (v != "") print "doi\t" v "\t" loc
+      next
+    }
+    while (match(s, /https?:\/\/[^[:space:]{}"\047<>]+/)) {
+      u = substr(s, RSTART, RLENGTH); s = substr(s, RSTART + RLENGTH)
+      sub(/[.,;]+$/, "", u); u = unescape(u)
+      if (match(u, /^https?:\/\/(dx\.)?doi\.org\//)) { print "doi\t" substr(u, RLENGTH + 1) "\t" loc }
+      else print "url\t" u "\t" loc
+    } }' > "$work/all.tsv"
+
+# 3. Drop ignored URLs (glob patterns, '#' comments).
+is_ignored() {  # is_ignored KIND TARGET
+  [ -f "$IGNORE" ] || return 1
+  local p cand2=$2
+  [ "$1" = doi ] && cand2="https://doi.org/$2"
+  while IFS= read -r p || [ -n "$p" ]; do
+    case $p in ''|'#'*) continue ;; esac
+    # shellcheck disable=SC2254
+    case $2 in $p) return 0 ;; esac
+    # shellcheck disable=SC2254
+    case $cand2 in $p) return 0 ;; esac
+  done < "$IGNORE"
+  return 1
+}
+: > "$work/kept.tsv"
+while IFS=$'\t' read -r kind target loc; do
+  is_ignored "$kind" "$target" || printf '%s\t%s\t%s\n' "$kind" "$target" "$loc" >> "$work/kept.tsv"
+done < "$work/all.tsv"
+mv "$work/kept.tsv" "$work/all.tsv"
+
+if [ "$LIST" = 1 ]; then cat "$work/all.tsv"; exit 0; fi
+
+# 4. Unique targets, with the host as the grouping key.
+awk -F'\t' '!seen[$1 FS $2]++ {
+    h = "doi.org"
+    if ($1 == "url") { h = $2; sub(/^https?:\/\//, "", h); sub(/[\/?#].*/, "", h); sub(/^[^@]*@/, "", h) }
+    print h "\t" $1 "\t" $2 }' "$work/all.tsv" | sort -t$'\t' -k1,1 > "$work/targets.tsv"
+[ -s "$work/targets.tsv" ] || exit 0
+
+# Percent-encode characters that would break a URL path (DOIs may contain <>#? etc.)
+encode_doi() { printf '%s' "$1" | sed -e 's/%/%25/g' -e 's/#/%23/g' -e 's/?/%3F/g' -e 's/ /%20/g' -e 's/</%3C/g' -e 's/>/%3E/g' -e 's/"/%22/g'; }
+
+curl_code() {  # curl_code [extra args...] URL  -> prints HTTP code (000 on failure)
+  local out
+  out=$(curl -sS -o /dev/null -L --globoff --max-redirs 5 --connect-timeout 5 --max-time 20 \
+       --retry 1 --retry-delay 3 -A "$UA" -H 'Accept: */*' \
+       -w '%{http_code}' "$@" 2>/dev/null) || true
+  echo "${out:-000}"
+}
+
+check_one() {  # echoes the HTTP code for a target
+  local kind=$1 target=$2 url code
+  if [ "$kind" = doi ]; then url="https://doi.org/api/handles/$(encode_doi "$target")"; else url=$target; fi
+  code=$(curl_code -I "$url")
+  case $code in 000|400|405|501) code=$(curl_code -r 0-0 --max-filesize 65536 "$url") ;; esac
+  case $code in 429|503) sleep 5; code=$(curl_code -I "$url") ;; esac
+  echo "$code"
+}
+
+cached_ok() {
+  [ "$USE_CACHE" = 1 ] || return 1
+  local now; now=$(date +%s)
+  awk -F'\t' -v t="$1" -v now="$now" -v ttl="$CACHE_TTL" \
+    '$1 == t && now - $2 < ttl { f = 1 } END { exit !f }' "$CACHE/ok"
+}
+
+check_host() {  # check_host HOST  (sequential, throttled)
+  local host=$1 first=1 kind target code
+  awk -F'\t' -v h="$host" '$1 == h' "$work/targets.tsv" | while IFS=$'\t' read -r _ kind target; do
+    cached_ok "$kind:$target" && continue
+    [ $first = 1 ] || sleep "$DELAY"
+    first=0
+    code=$(check_one "$kind" "$target")
+    if [[ $code =~ ^[23] ]] || [[ $code =~ $IGNORE_CODES ]]; then
+      printf '%s\t%s\n' "$kind:$target" "$(date +%s)" >> "$CACHE/ok"
+    else
+      printf '%s\t%s\t%s\n' "$code" "$kind" "$target"
+    fi
+  done > "$work/res.$(printf '%s' "$host" | tr -c 'A-Za-z0-9.-' '_')"
+}
+
+# 5. One worker per host, at most $JOBS hosts at a time.
+for host in $(cut -f1 "$work/targets.tsv" | uniq); do
+  while [ "$(jobs -rp | wc -l)" -ge "$JOBS" ]; do wait -n; done
+  check_host "$host" &
+done
+wait
+
+# 6. Report with file:line locations.
+cat "$work"/res.* 2>/dev/null | while IFS=$'\t' read -r code kind target; do
+  awk -F'\t' -v k="$kind" -v t="$target" -v c="$code" '$1 == k && $2 == t {
+    printf "%s: %s %s %s\n", $3, (c == 404 || c == 410 ? "BROKEN" : "WARNING"), c, t }' "$work/all.tsv"
+done | sort -u > "$work/report"
+cat "$work/report"
+status=0
+if [ "$STRICT" = 1 ]; then [ -s "$work/report" ] && status=1
+elif grep -q -E ': BROKEN (404|410) ' "$work/report"; then status=1; fi
+exit $status
