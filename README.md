@@ -794,7 +794,7 @@ Copyright
 To the extent that the contents of bib files may be subject to
 copyright, the contents of the IRIDIA BibTeX Repository are placed
 under the public domain by associating it to the Creative Commons CC0
-1.0 Universal license (http://creativecommons.org/publicdomain/zero/1.0/).
+1.0 Universal license <https://creativecommons.org/publicdomain/zero/1.0/>.
 
 As a personal note, we will appreciate if modifications are [submitted back to
 us for consideration](https://github.com/iridia-ulb/references).
